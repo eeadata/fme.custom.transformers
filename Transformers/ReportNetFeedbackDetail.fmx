@@ -1,0 +1,1831 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ReportNetFeedbackDetail,1,ReportNet,23260fd5-1ee7-46a3-b942-8ce658ade320,"Linked Always",No,NO_PARALLELISM,,No,18528,YES,No,34
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="ReportNet"
+#!   DESCRIPTION=""
+#!   DOC_EXTENTS="8916.26 2404.71"
+#!   DOC_TOP_LEFT="-3716.21 -1637.52"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18528"
+#!   FME_DOCUMENT_GUID="23260fd5-1ee7-46a3-b942-8ce658ade320"
+#!   FME_DOCUMENT_PRIORGUID="5928c526-a504-4a77-91b2-678e9a558a95"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked Always"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.1 (20180730 - Build 18528 - WIN64)"
+#!   LAST_SAVE_DATE="2018-10-31T16:59:50"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="34"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="ReportNetFeedbackDetail"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-3759.41 825.008"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI URL_OR_ATTR_ENCODED QAFILE https%http QAfile:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;QAfile&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR EIONETLOGIN EionetLogin:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;EionetLogin&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR EIONETPASSWORD EionetPassWord:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;EionetPassWord&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ENVELOPE_FEEDBACKID Envelope Feedbackid:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;Envelope_feedbackId&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR REPORTNETENVELOPEFILEID ReportNetEnvelopeFileId:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ReportNetEnvelopeFileId&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="32"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get span elements with error codes&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;failed can hold other info&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="950.32659037680423 254.68539965734135"
+#!   TOP_LEFT="950.32659037680423 254.68539965734135"
+#!   BOTTOM_RIGHT="1380.3265903768042 255.68539965734135"
+#!   BOUNDING_RECT="950.32659037680423 254.68539965734135 430 -1"
+#!   ORDER="500000000000229"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="6"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="33"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get span elements linked to the errorcodes with info message about error&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1002.4481175852343 -767.19510765109999"
+#!   TOP_LEFT="1002.4481175852343 -767.19510765109999"
+#!   BOTTOM_RIGHT="1432.4481175852343 -766.19510765109999"
+#!   BOUNDING_RECT="1002.4481175852343 -767.19510765109999 430 -1"
+#!   ORDER="500000000000230"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="8"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="34"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Map span elements from html to features&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-1721.5782893272603 292.81018090515408"
+#!   TOP_LEFT="-1721.5782893272603 292.81018090515408"
+#!   BOTTOM_RIGHT="-1256.5782893272603 293.81018090515408"
+#!   BOUNDING_RECT="-1721.5782893272603 292.81018090515408 465 -1"
+#!   ORDER="500000000000231"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="3"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="35"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get first character in sup (the number next to error label - used to map to error message)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="375.3208403193039 -283.19031909984642"
+#!   TOP_LEFT="375.3208403193039 -283.19031909984642"
+#!   BOTTOM_RIGHT="805.3208403193039 -282.19031909984642"
+#!   BOUNDING_RECT="375.3208403193039 -283.19031909984642 430 -1"
+#!   ORDER="500000000000237"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="12"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="36"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get span elements with error codes,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;failed are not used&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="926.32659037680514 767.19052470858969"
+#!   TOP_LEFT="926.32659037680514 767.19052470858969"
+#!   BOTTOM_RIGHT="1356.3265903768051 768.19052470858969"
+#!   BOUNDING_RECT="926.32659037680514 767.19052470858969 430 -1"
+#!   ORDER="500000000000229"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="14"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="37"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Cases where the error label is matched twice&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="259.69468405773932 389.68614966484165"
+#!   TOP_LEFT="259.69468405773932 389.68614966484165"
+#!   BOTTOM_RIGHT="689.69468405773932 390.68614966484165"
+#!   BOUNDING_RECT="259.69468405773932 389.68614966484165 430 -1"
+#!   ORDER="500000000000243"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="13"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="38"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Merge with error flag&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1864.9604967158666 386.56111841452821"
+#!   TOP_LEFT="1864.9604967158666 386.56111841452821"
+#!   BOTTOM_RIGHT="2294.9604967158666 387.56111841452821"
+#!   BOUNDING_RECT="1864.9604967158666 386.56111841452821 430 -1"
+#!   ORDER="500000000000244"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="7"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="39"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Merge with field value (shared parent element)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2414.9659967708612 430.3115559189032"
+#!   TOP_LEFT="2414.9659967708612 430.3115559189032"
+#!   BOTTOM_RIGHT="2844.9659967708612 431.3115559189032"
+#!   BOUNDING_RECT="2414.9659967708612 430.3115559189032 430 -1"
+#!   ORDER="500000000000245"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="10"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="40"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;remove i18n: namespace&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2312.2091956363238 292.81018090515408"
+#!   TOP_LEFT="-2312.2091956363238 292.81018090515408"
+#!   BOTTOM_RIGHT="-1882.2091956363238 293.81018090515408"
+#!   BOUNDING_RECT="-2312.2091956363238 292.81018090515408 430 -1"
+#!   ORDER="500000000000246"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="4"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="71"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Error_details,Error_label&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="3602.0274587521253 115.62615626156264"
+#!   TOP_LEFT="3602.0274587521253 115.62615626156264"
+#!   BOTTOM_RIGHT="4103.1660316603165 16.875468754687574"
+#!   BOUNDING_RECT="3602.0274587521253 115.62615626156264 501.13857290819124 98.750687506875067"
+#!   ORDER="500000000000258"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="53"
+#!   NAME="Errors"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3031.2803128031278 -824.65944686177181"
+#!   ORDER="500000000000254"
+#!   BOTTOM_RIGHT="5200.0520005200051 -1637.5163751637515"
+#!   BOUNDING_RECT="3031.2803128031278 -824.65944686177181 2168.7716877168773 812.85692830197968"
+#!   STICKY="true"
+#!   COLOUR="0.62745098039215685,0.68627450980392157,0.83137254901960789"
+#!   CONTENTS="62 50 63 56 60 48 49 61 52 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="67"
+#!   NAME="Remove double whitespces and linefeed"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="3556.603153142426 209.05999340327799"
+#!   ORDER="500000000000257"
+#!   BOTTOM_RIGHT="4415.669156691567 -437.50437504375043"
+#!   BOUNDING_RECT="3556.603153142426 209.05999340327799 859.06600354914053 646.56436844702841"
+#!   STICKY="true"
+#!   COLOUR="0.17254901960784313,0.20784313725490197,0.10588235294117647"
+#!   CONTENTS="71 65 69 68 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="-3089.962722516324 108.43458714921644"
+#!   BOUNDING_RECT="-3089.962722516324 108.43458714921644 563 71"
+#!   ORDER="500000000000207"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="@Value(EionetPassWord)"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="@Value(EionetLogin)"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_feedback_body"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;QAfile&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller_feedbackfile"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="XMLFeatureMapper"
+#!   VERSION="4"
+#!   POSITION="-1697.5782893272603 115.30905589390386"
+#!   BOUNDING_RECT="-1697.5782893272603 115.30905589390386 453.13269198218768 71"
+#!   ORDER="500000000000213"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="MAPPED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_source_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_feature_type_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XFMAP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="_feedback_body"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="CONFIGURATION_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONFIGURATION_TYPE" PARM_VALUE="Embedded xfMap script"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_COUNT_PER_XML" PARM_VALUE="_xml_feature_count_"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE_ATTR" PARM_VALUE="_xml_feature_type_"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPLE_XFMAP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="errorcode errorflag span sup ReportNetEnvelopeFileId name span_count qname ancestor sequence sequence_parent"/>
+#!     <XFORM_PARM PARM_NAME="OPTIONAL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCRIPT_XFMAP" PARM_VALUE="&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;?&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;xfMap&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;lt&gt;feature-map&lt;space&gt;multi-feature-construction=&lt;quote&gt;true&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;note&lt;gt&gt;&lt;space&gt;construct&lt;space&gt;an&lt;space&gt;FME&lt;space&gt;feature&lt;space&gt;when&lt;space&gt;we&lt;space&gt;read&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Feature&lt;apos&gt;&lt;space&gt;element.&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;note&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;mapping&lt;space&gt;match=&lt;quote&gt;span&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;feature-type&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;Feature&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;feature-type&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;tab&gt;&lt;lt&gt;attributes&lt;gt&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;name&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;extract&lt;space&gt;expr=&lt;quote&gt;&lt;at&gt;name&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;local-name&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;extract&lt;space&gt;expr=&lt;quote&gt;.&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;errorcode&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;extract&lt;space&gt;expr=&lt;quote&gt;&lt;at&gt;errorcode&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;errorflag&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;extract&lt;space&gt;expr=&lt;quote&gt;&lt;at&gt;errorflag&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;span_count&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;maprule&lt;space&gt;expr=&lt;quote&gt;activate-count&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;qname&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;qname&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;ancestor&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;qname&lt;quote&gt;&lt;space&gt;ancestor=&lt;quote&gt;parent&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;sequence&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;sequence&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;literal&lt;space&gt;expr=&lt;quote&gt;sequence_parent&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;sequence&lt;quote&gt;&lt;space&gt;&lt;space&gt;ancestor=&lt;quote&gt;parent&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attributes&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;mapping&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;feature-map&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;lt&gt;feature-content-map&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;mapping&lt;space&gt;match=&lt;quote&gt;span&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;attributes&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;local-name&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;extract&lt;space&gt;expr=&lt;quote&gt;.&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attributes&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;mapping&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;mapping&lt;space&gt;match=&lt;quote&gt;sup&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;attributes&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;attribute&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;matched&lt;space&gt;expr=&lt;quote&gt;local-name&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;name&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;extract&lt;space&gt;expr=&lt;quote&gt;.&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;value&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attribute&lt;gt&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;attributes&lt;gt&gt;&lt;lf&gt;&lt;tab&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;mapping&lt;gt&gt;&lt;tab&gt;&lt;tab&gt;&lt;lf&gt;&lt;tab&gt;&lt;lt&gt;&lt;solidus&gt;feature-content-map&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;xfMap&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_XFMAP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFeatureMapper_2"/>
+#!     <XFORM_PARM PARM_NAME="XML_INPUT_TYPE" PARM_VALUE="Attribute with XML document"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_NAME" PARM_VALUE="_xml_source_"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_VALUE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XRS" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="-2288.2091956363238 115.30905589390386"
+#!   BOUNDING_RECT="-2288.2091956363238 115.30905589390386 -1 -1"
+#!   ORDER="500000000000224"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="i18n:"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_feedback_body"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeKeeper"
+#!   VERSION="3"
+#!   POSITION="-988.19702704882093 108.43458714921644"
+#!   BOUNDING_RECT="-988.19702704882093 108.43458714921644 -1 -1"
+#!   ORDER="500000000000225"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="ReportNetEnvelopeFileId,QAfile,span,span_count,errorcode,sequence,sup,Envelope_feedbackId,ancestor,name,qname,sequence_parent,errorflag"/>
+#!     <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="974.32659037680423 -10.316600362658846"
+#!   BOUNDING_RECT="974.32659037680423 -10.316600362658846 -1 -1"
+#!   ORDER="500000000000226"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST errorcode ATTRIBUTE_HAS_A_VALUE &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="FeatureMerger"
+#!   VERSION="17"
+#!   POSITION="1864.9604967158666 209.05999340327799"
+#!   BOUNDING_RECT="1864.9604967158666 209.05999340327799 -1 -1"
+#!   ORDER="500000000000227"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="MERGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UNMERGED_REQUESTOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="USED_SUPPLIER"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="UNUSED_SUPPLIER"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Prefix Supplier"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CLEANING_TOLERANCE" PARM_VALUE="None"/>
+#!     <XFORM_PARM PARM_NAME="CONNECT_Z_MODE" PARM_VALUE="First Wins"/>
+#!     <XFORM_PARM PARM_NAME="GENERATE_LIST_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="Build Polygons"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="IGNORE_NULLS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;sup&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;sub_sup&lt;closeparen&gt; AUTO"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS_TO_INCLUDE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS_TO_INCLUDE_MODE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="REJECT_NULL_MISSING_KEYS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE="info_"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="974.32659037680514 -541.56720137203774"
+#!   BOUNDING_RECT="974.32659037680514 -541.56720137203774 -1 -1"
+#!   ORDER="500000000000226"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST sup ATTRIBUTE_HAS_A_VALUE &quot;&quot;&#10;TEST &lt;at&gt;Value&lt;openparen&gt;name&lt;closeparen&gt; = errValue"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="AttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="3037.5303753037529 265.05999340327799"
+#!   BOUNDING_RECT="3037.5303753037529 265.05999340327799 -1 -1"
+#!   ORDER="500000000000233"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Error_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_flag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_details" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Field_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="errorcode Error_code RENAME_SET_DEFAULT  errorflag Error_flag RENAME_SET_DEFAULT  span Error_label RENAME_SET_DEFAULT  info_span Error_details RENAME_SET_DEFAULT  val_span Field_value RENAME_SET_DEFAULT "/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="FeatureMerger"
+#!   VERSION="17"
+#!   POSITION="2414.9659967708612 209.05999340327799"
+#!   BOUNDING_RECT="2414.9659967708612 209.05999340327799 -1 -1"
+#!   ORDER="500000000000227"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="MERGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="val_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UNMERGED_REQUESTOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="USED_SUPPLIER"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="UNUSED_SUPPLIER"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_span" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Prefix Supplier"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CLEANING_TOLERANCE" PARM_VALUE="None"/>
+#!     <XFORM_PARM PARM_NAME="CONNECT_Z_MODE" PARM_VALUE="First Wins"/>
+#!     <XFORM_PARM PARM_NAME="GENERATE_LIST_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="Build Polygons"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="IGNORE_NULLS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;sequence_parent&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;sequence_parent&lt;closeparen&gt; AUTO"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS_TO_INCLUDE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS_TO_INCLUDE_MODE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="REJECT_NULL_MISSING_KEYS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE="val_"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="AttributeTrimmer"
+#!   VERSION="3"
+#!   POSITION="-425.68740976319623 108.43458714921644"
+#!   BOUNDING_RECT="-425.68740976319623 108.43458714921644 -1 -1"
+#!   ORDER="500000000000235"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="span,sup"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeTrimmer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="SubstringExtractor"
+#!   VERSION="2"
+#!   POSITION="974.32659037680514 -294.69144411109664"
+#!   BOUNDING_RECT="974.32659037680514 -294.69144411109664 -1 -1"
+#!   ORDER="500000000000236"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="END" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTR" PARM_VALUE="sub_sup"/>
+#!     <XFORM_PARM PARM_NAME="SRC_STRING" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;sup&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="START" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SubstringExtractor"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="DuplicateFilter"
+#!   VERSION="5"
+#!   POSITION="283.69468405773932 168.43458714921644"
+#!   BOUNDING_RECT="283.69468405773932 168.43458714921644 -1 -1"
+#!   ORDER="500000000000239"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#!   OUTPUT_FT_ORDER="DUPLICATE%UNIQUE"
+#! >
+#!     <OUTPUT_FEAT NAME="DUPLICATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UNIQUE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="INPUT_ORDERED_CHOICE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="KEYATTR" PARM_VALUE="span"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DuplicateFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="14"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="950.32659037680514 545.93896219296448"
+#!   BOUNDING_RECT="950.32659037680514 545.93896219296448 -1 -1"
+#!   ORDER="500000000000226"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST errorcode ATTRIBUTE_HAS_A_VALUE &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="Sorter"
+#!   VERSION="2"
+#!   POSITION="-425.68740976319623 -154.06803787703393"
+#!   BOUNDING_RECT="-425.68740976319623 -154.06803787703393 -1 -1"
+#!   ORDER="500000000000242"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="SORTED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="SORT_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="span ALPHA DESCENDING errorcode ALPHA DESCENDING sup ALPHA DESCENDING"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="45"
+#!   TYPE="AttributeKeeper"
+#!   VERSION="3"
+#!   POSITION="3037.5303753037529 6.2500625006250061"
+#!   BOUNDING_RECT="3037.5303753037529 6.2500625006250061 -1 -1"
+#!   ORDER="500000000000248"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Error_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_flag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_details" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Field_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="Error_label,ReportNetEnvelopeFileId,QAfile,Field_value,Envelope_feedbackId,Error_code,Error_details,Error_flag"/>
+#!     <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="48"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="3109.2454700641088 -1424.9856929457499"
+#!   BOUNDING_RECT="3109.2454700641088 -1424.9856929457499 457 71"
+#!   ORDER="500000000000253"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_errorMsg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _errorMsg SET_TO ReportNetFeedback&lt;space&gt;call&lt;space&gt;to&lt;space&gt;envelope&lt;space&gt;error:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;_http_status_code&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_http"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="49"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="3109.2454700641088 -1162.3059540960744"
+#!   BOUNDING_RECT="3109.2454700641088 -1162.3059540960744 715.015625 71"
+#!   ORDER="500000000000253"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_errorMsg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _errorMsg SET_TO ReportNetFeedbackDetail&lt;space&gt;XML&lt;space&gt;feature&lt;space&gt;mapper&lt;space&gt;error"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_xmlfeaturemapper"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="56"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="3109.2454700641088 -928.13055684888809"
+#!   BOUNDING_RECT="3109.2454700641088 -928.13055684888809 518.41518654245647 71"
+#!   ORDER="500000000000253"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_errorMsg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _error SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_rejection_code&lt;closeparen&gt;  _errorMsg SET_TO ReportNetFeedbackDetail&lt;space&gt;feaure&lt;space&gt;merger&lt;space&gt;error&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_merger"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="60"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="4187.5425879491095 -1224.8065791023246"
+#!   BOUNDING_RECT="4187.5425879491095 -1224.8065791023246 -1 -1"
+#!   ORDER="500000000000253"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_errorMsg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feedback_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorcode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_errorflag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_span_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_qname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_ancestor" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sequence_parent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="info_sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sub_sup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _error SET_TO &lt;at&gt;Value&lt;openparen&gt;_error&lt;closeparen&gt;&lt;space&gt;:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;fme_rejection_code&lt;closeparen&gt;  _errorMsg SET_TO &lt;at&gt;Value&lt;openparen&gt;_errorMsg&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;fme&lt;space&gt;rejection&lt;space&gt;code:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;fme_rejection_code&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;ReportNetEnvelopeFileId:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;ReportNetEnvelopeFileId&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;space&gt;envelope&lt;space&gt;feedback&lt;space&gt;id:&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;Envelope_feedbackId&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_merger_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="65"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="3630.603153142426 -82.191819114847192"
+#!   BOUNDING_RECT="3630.603153142426 -82.191819114847192 -1 -1"
+#!   ORDER="500000000000256"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Error_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_flag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_details" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Field_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;space&gt;&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="Error_details,Error_label"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="68"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="3630.603153142426 -267.13084992707081"
+#!   BOUNDING_RECT="3630.603153142426 -267.13084992707081 -1 -1"
+#!   ORDER="500000000000256"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18528"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Error_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_flag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Error_details" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Field_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="Error_details,Error_label"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_3"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="41"
+#!   NAME="Input"
+#!   POSITION="-3716.2127850169486 55.30905589390386"
+#!   BOUNDING_RECT="-3716.2127850169486 55.30905589390386 -1 -1"
+#!   COLLAPSED="false"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="QAfile" ATTR_VALUE="$(QAFILE)" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" ATTR_VALUE="$(EIONETLOGIN)" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" ATTR_VALUE="$(EIONETPASSWORD)" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" ATTR_VALUE="$(ENVELOPE_FEEDBACKID)" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" ATTR_VALUE="$(REPORTNETENVELOPEFILEID)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="43"
+#!   NAME="Output"
+#!   POSITION="4518.981496925865 209.05999340327799"
+#!   BOUNDING_RECT="4518.981496925865 209.05999340327799 589.07000358914047 71"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="50"
+#!   NAME="Rejected"
+#!   POSITION="4706.4833719446151 -1424.9856929457499"
+#!   BOUNDING_RECT="4706.4833719446151 -1424.9856929457499 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_error" />
+#!     <XFORM_ATTR ATTR_NAME="_errorMsg" />
+#!     <XFORM_ATTR ATTR_NAME="QAfile" />
+#!     <XFORM_ATTR ATTR_NAME="EionetLogin" />
+#!     <XFORM_ATTR ATTR_NAME="EionetPassWord" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_feedbackId" />
+#!     <XFORM_ATTR ATTR_NAME="ReportNetEnvelopeFileId" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="42"
+#!   SOURCE_NODE="41"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 MAPPED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 REQUESTOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 MERGED"
+#!   TARGET_PORT_DESC="fi 0 REQUESTOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 1 SUPPLIER"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="46"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="45"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 MERGED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 UNIQUE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="14"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 REQUESTOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 SORTED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="66"
+#!   SOURCE_NODE="45"
+#!   TARGET_NODE="65"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="63"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="60"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="49"
+#!   TARGET_NODE="60"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="61"
+#!   SOURCE_NODE="56"
+#!   TARGET_NODE="60"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="62"
+#!   SOURCE_NODE="60"
+#!   TARGET_NODE="50"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="69"
+#!   SOURCE_NODE="65"
+#!   TARGET_NODE="68"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="70"
+#!   SOURCE_NODE="68"
+#!   TARGET_NODE="43"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="54"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="48"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="-475 -1450"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="55"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="49"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="-271 -1162"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="14"
+#!   SOURCE_PORT_DESC="fo 0 DUPLICATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 3 UNUSED_SUPPLIER"
+#!   TARGET_PORT_DESC="fi 1 SUPPLIER"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="58"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="56"
+#!   SOURCE_PORT_DESC="fo 4 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="59"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="56"
+#!   SOURCE_PORT_DESC="fo 4 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_QAFILE <at>Value<openparen>QAfile<closeparen>
+DEFAULT_MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_EIONETLOGIN <at>Value<openparen>EionetLogin<closeparen>
+DEFAULT_MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_EIONETPASSWORD <at>Value<openparen>EionetPassWord<closeparen>
+DEFAULT_MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_ENVELOPE_FEEDBACKID <at>Value<openparen>Envelope_feedbackId<closeparen>
+DEFAULT_MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_REPORTNETENVELOPEFILEID <at>Value<openparen>ReportNetEnvelopeFileId<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ReportNetFeedbackDetail_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ReportNetFeedbackDetail_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ReportNetFeedbackDetail_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Input1541001590 Input Splitter"   INPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,QAfile,$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_QAFILE),EionetLogin,$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_EIONETLOGIN),EionetPassWord,$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_EIONETPASSWORD),Envelope_feedbackId,$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_ENVELOPE_FEEDBACKID),ReportNetEnvelopeFileId,$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_REPORTNETENVELOPEFILEID), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile       INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Input"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>QAfile<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_feedback_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>EionetLogin<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile)"    AUTH_PASSWORD "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>EionetPassWord<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile)"    AUTH_METHOD "BASIC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR ""    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile_Output"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_http    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile_<REJECTED>"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_errorMsg" "SET_TO" "ReportNetFeedback<space>call<space>to<space>envelope<space>error:<space><at>Value<openparen>_http_status_code<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_http_OUTPUT"
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_6e135575_3392_4951_a4ea_1dc5c38206583_replacer { findText replaceText invalidValue} {     set attrs [split \"_feedback_body\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_HTTPCaller_feedbackfile_Output"    OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_6e135575_3392_4951_a4ea_1dc5c38206583_replacer {i18n:} {} {_FME_NO_OP_}")
+# -------------------------------------------------------------------------
+INCLUDE [    if { [string equal {} {}] }    {       puts {MACRO XML_SOURCE_VALUE_CLAUSE};    }    else    {       puts {MACRO XML_SOURCE_VALUE_CLAUSE XML_SOURCE_VALUE ""};    } ]
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_XMLFeatureMapper_2    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_OUTPUT"    XML_STREAM "_feedback_body"    XFMAP_STREAM_WWJD "<lt>?xml<space>version=<quote>1.0<quote>?<gt><lf><lt>xfMap<gt><lf><tab><lt>feature-map<space>multi-feature-construction=<quote>true<quote><gt><lf><tab><tab><lt>note<gt><space>construct<space>an<space>FME<space>feature<space>when<space>we<space>read<space>the<space><apos>Feature<apos><space>element.<space><lt><solidus>note<gt><lf><tab><tab><lt>mapping<space>match=<quote>span<quote><gt><lf><tab><tab><tab><lt>feature-type<gt><lf><tab><tab><tab><tab><lt>literal<space>expr=<quote>Feature<quote><solidus><gt><lf><tab><tab><tab><lt><solidus>feature-type<gt><lf><space><space><space><space><space><space><space><space><space><space><tab><lt>attributes<gt><tab><tab><tab><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>name<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>extract<space>expr=<quote><at>name<quote><space><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>local-name<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>extract<space>expr=<quote>.<quote><solidus><gt><lf><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>errorcode<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>extract<space>expr=<quote><at>errorcode<quote><space><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>errorflag<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>extract<space>expr=<quote><at>errorflag<quote><space><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>span_count<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>maprule<space>expr=<quote>activate-count<quote><space><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>qname<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>qname<quote><space><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>ancestor<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>qname<quote><space>ancestor=<quote>parent<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>sequence<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>sequence<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>attribute<gt><lf><tab><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>literal<space>expr=<quote>sequence_parent<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>sequence<quote><space><space>ancestor=<quote>parent<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><lf><tab><tab><tab><lt><solidus>attributes<gt><lf><tab><tab><lt><solidus>mapping<gt><lf><tab><lt><solidus>feature-map<gt><lf><tab><lt>feature-content-map<gt><lf><tab><tab><lt>mapping<space>match=<quote>span<quote><gt><lf><tab><tab><tab><lt>attributes<gt><lf><tab><tab><tab><tab><lt>attribute<gt><lf><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>local-name<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>extract<space>expr=<quote>.<quote><solidus><gt><lf><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><tab><tab><tab><lt><solidus>attributes<gt><lf><tab><tab><lt><solidus>mapping<gt><lf><tab><tab><lt>mapping<space>match=<quote>sup<quote><gt><lf><tab><tab><tab><lt>attributes<gt><lf><tab><tab><tab><tab><lt>attribute<gt><lf><tab><tab><tab><tab><lt>name<gt><lf><tab><tab><tab><tab><tab><tab><lt>matched<space>expr=<quote>local-name<quote><solidus><gt><lf><tab><tab><tab><tab><tab><lt><solidus>name<gt><lf><tab><tab><tab><tab><tab><lt>value<gt><lf><tab><tab><tab><tab><tab><tab><lt>extract<space>expr=<quote>.<quote><solidus><gt><lf><tab><tab><tab><tab><lt><solidus>value<gt><lf><tab><tab><tab><tab><lt><solidus>attribute<gt><space><space><space><space><space><space><space><space><space><space><lf><tab><tab><tab><lt><solidus>attributes<gt><lf><tab><tab><lt><solidus>mapping<gt><tab><tab><lf><tab><lt><solidus>feature-content-map<gt><lf><lt><solidus>xfMap<gt><lf>"    XML_SOURCE_NAME "_xml_source_"    $(XML_SOURCE_VALUE_CLAUSE)    FEATURE_COUNT_PER_XML _xml_feature_count_    FEATURE_TYPE_ATTR "_xml_feature_type_"    MERGE_ATTRIBUTES_FROM_INPUT Yes    REJECT_INVALID_GEOM Yes    OUTPUT MAPPED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_XMLFeatureMapper_2_MAPPED"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_XMLFeatureMapper_2_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_xmlfeaturemapper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_XMLFeatureMapper_2_<REJECTED>"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_errorMsg" "SET_TO" "ReportNetFeedbackDetail<space>XML<space>feature<space>mapper<space>error" }    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_xmlfeaturemapper_OUTPUT"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_2_995b911f_7df5_478d_96dd_ef92d78e82713_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_2    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_XMLFeatureMapper_2_MAPPED"    OUTPUT { FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"        @KeepAttributes(fme_encoded,ReportNetEnvelopeFileId,QAfile,span,span_count,errorcode,sequence,sup,Envelope_feedbackId,ancestor,name,qname,sequence_parent,errorflag,fme_pcre_match,"^fme_$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_2_995b911f_7df5_478d_96dd_ef92d78e82713_LIST_EXP)")         }
+# -------------------------------------------------------------------------
+Tcl2 proc $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeTrimmer_0f592b3a_fdbc_4979_9993_921ca9895a6e3_trimmer { trimChars} {    set attrs [split {span,sup} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeTrimmer    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"      @Tcl2("$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeTrimmer_0f592b3a_fdbc_4979_9993_921ca9895a6e3_trimmer {} ")
+# -------------------------------------------------------------------------
+FACTORY_DEF * SortFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_Sorter    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"    SORT_BY span ALPHA DESCENDING errorcode ALPHA DESCENDING sup ALPHA DESCENDING    OUTPUT SORTED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Sorter_SORTED"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} DuplicateRemoverFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_DuplicateFilter    COMMAND_PARM_EVALUATION SINGLE_PASS    SUPPORTS_FEATURE_TABLES    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Sorter_SORTED"    KEY_ATTRIBUTES { span }    INPUT_IS_ORDERED YES    OUTPUT DUPLICATE FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_DuplicateFilter_DUPLICATE"    OUTPUT UNIQUE FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_DuplicateFilter_UNIQUE"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_DuplicateFilter_UNIQUE"    TEST errorcode ATTRIBUTE_HAS_A_VALUE "" ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_FAILED"
+# -------------------------------------------------------------------------
+# Since the Tcl "END" index specification starts at -1 for the second
+# last character, and we've defined -1 to be the last charater, we've got
+# small bit of fiddling to do
+Tcl2 proc $(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_fixLastIndex {lastValue} {     if {$lastValue < -1} {         incr lastValue;         return "end$lastValue";     }     elseif {$lastValue == -1} {         return "end";     }     else {         return $lastValue;     } }
+Tcl2 proc $(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_extract {startIdx endIdx} {     FME_SetAttribute [FME_DecodeText sub_sup]         [string range [FME_DecodeTextOrAttr @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>sup<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor)]                       [$(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_fixLastIndex $startIdx]                       [$(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_fixLastIndex $endIdx]]     }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_FAILED"    OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_OUTPUT"         @Tcl2("$(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_extract 0 0")
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_3    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_SubstringExtractor_OUTPUT"    TEST sup ATTRIBUTE_HAS_A_VALUE "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>name<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_3) = errValue ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_3_PASSED"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_4    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_DuplicateFilter_DUPLICATE"    TEST errorcode ATTRIBUTE_HAS_A_VALUE "" ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_4_PASSED"
+# -------------------------------------------------------------------------
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {POLYGONS} == {POLYGONS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {POLYGONS} == {AGGREGATES}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {POLYGONS} == {LINESFROMPOINTS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {POLYGONS} == {POLYGONS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {POLYGONS} == {AGGREGATES}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {POLYGONS} == {LINESFROMPOINTS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+FACTORY_DEF {*} ReferenceFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger    INPUT REFERENCER FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_PASSED"    INPUT REFERENCER FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_4_PASSED"    INPUT REFERENCEE FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Tester_3_PASSED"    CONNECT_Z_MODE FIRST_WINS    REFERENCE_INFO $($(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>sup<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>sub_sup<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger) AUTO    ATTR_ACCUM_MODE "PREFIX_SUPPLIER"    IGNORE_NULLS "No"    HANDLE_NULL_MISSING_KEYS_LIKE_FME2013 No    SUPPLIER_PREFIX "info_"    LIST_ATTRS_TO_INCLUDE { <Unused> }    LIST_ATTRS_TO_INCLUDE_MODE <Unused>    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES YES    REFERENCEES_FIRST No    REJECT_INVALID_GEOM YES    CLEANING_TOLERANCE NONE    OUTPUT COMPLETE FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_MERGED"    OUTPUT UNREFERENCED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_UNUSED_SUPPLIER"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_<REJECTED>"
+# -------------------------------------------------------------------------
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {POLYGONS} == {POLYGONS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {POLYGONS} == {AGGREGATES}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {POLYGONS} == {LINESFROMPOINTS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {POLYGONS} == {POLYGONS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {POLYGONS} == {AGGREGATES}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {POLYGONS} == {LINESFROMPOINTS}} {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+FACTORY_DEF {*} ReferenceFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2    INPUT REFERENCER FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_MERGED"    INPUT REFERENCEE FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_UNUSED_SUPPLIER"    CONNECT_Z_MODE FIRST_WINS    REFERENCE_INFO $($(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>sequence_parent<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>sequence_parent<closeparen>,$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2) AUTO    ATTR_ACCUM_MODE "PREFIX_SUPPLIER"    IGNORE_NULLS "No"    HANDLE_NULL_MISSING_KEYS_LIKE_FME2013 No    SUPPLIER_PREFIX "val_"    LIST_ATTRS_TO_INCLUDE { <Unused> }    LIST_ATTRS_TO_INCLUDE_MODE <Unused>    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES YES    REFERENCEES_FIRST No    REJECT_INVALID_GEOM YES    CLEANING_TOLERANCE NONE    OUTPUT COMPLETE FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_MERGED"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_merger    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_<REJECTED>"    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_<REJECTED>"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_error" "SET_TO" "<at>Value<openparen>fme_rejection_code<closeparen>" }      ATTR_ACTION { "" "_errorMsg" "SET_TO" "ReportNetFeedbackDetail<space>feaure<space>merger<space>error<space>" }    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_merger_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_merger_2    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_http_OUTPUT"    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_xmlfeaturemapper_OUTPUT"    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_merger_OUTPUT"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_error" "SET_TO" "<at>Value<openparen>_error<closeparen><space>:<space><at>Value<openparen>fme_rejection_code<closeparen>" }      ATTR_ACTION { "" "_errorMsg" "SET_TO" "<at>Value<openparen>_errorMsg<closeparen><comma><space>fme<space>rejection<space>code:<space><at>Value<openparen>fme_rejection_code<closeparen><comma><space>ReportNetEnvelopeFileId:<space><at>Value<openparen>ReportNetEnvelopeFileId<closeparen><comma><space><space>envelope<space>feedback<space>id:<space><at>Value<openparen>Envelope_feedbackId<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_merger_2_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_FeatureMerger_2_MERGED" 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION { "errorcode" "Error_code" "RENAME_SET_DEFAULT" "" }      ATTR_ACTION { "errorflag" "Error_flag" "RENAME_SET_DEFAULT" "" }      ATTR_ACTION { "span" "Error_label" "RENAME_SET_DEFAULT" "" }      ATTR_ACTION { "info_span" "Error_details" "RENAME_SET_DEFAULT" "" }      ATTR_ACTION { "val_span" "Field_value" "RENAME_SET_DEFAULT" "" }    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_c15993f4_6f39_432b_a41f_49ecb42e15f93_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"    OUTPUT { FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"        @KeepAttributes(fme_encoded,Error_label,ReportNetEnvelopeFileId,QAfile,Field_value,Envelope_feedbackId,Error_code,Error_details,Error_flag,fme_pcre_match,"^fme_$($(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_c15993f4_6f39_432b_a41f_49ecb42e15f93_LIST_EXP)")         }
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_2_1d09f875_3335_4d4b_a379_8b27c54878c02_replacer { findText replaceText invalidValue} {     set attrs [split \"Error_details,Error_label\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_2    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"    OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"         @Tcl2("$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_2_1d09f875_3335_4d4b_a379_8b27c54878c02_replacer {<space><space>} {} {_FME_NO_OP_}")
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_3_f394f766_a908_4b8e_a7b7_8f25186c8e6b1_replacer { findText replaceText invalidValue} {     set attrs [split \"Error_details,Error_label\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_3    INPUT  FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_3_OUTPUT"         @Tcl2("$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_3_f394f766_a908_4b8e_a7b7_8f25186c8e6b1_replacer {<lf>} {<space>} {_FME_NO_OP_}")
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Output1541001590 Output Collector"   INPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_StringReplacer_3_OUTPUT"   OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Output"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Rejected1541001590 Output Collector"   INPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_AttributeCreator_merger_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(ReportNetFeedbackDetail_WORKSPACE_NAME)_Rejected" @RemoveAttributes(fme_rejection_code,_feedback_body,_http_status_code,errorcode,errorflag,span,sup,name,span_count,qname,ancestor,sequence,sequence_parent,info_QAfile,info_Envelope_feedbackId,info_ReportNetEnvelopeFileId,info_errorcode,info_errorflag,info_span,info_sup,info_name,info_span_count,info_qname,info_ancestor,info_sequence,info_sequence_parent,info_sub_sup,sub_sup)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ReportNetFeedbackDetail_WORKSPACE_NAME))}]

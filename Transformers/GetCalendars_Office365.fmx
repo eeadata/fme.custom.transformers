@@ -1,0 +1,1597 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN GetCalendars_Office365,1,Office365,8795ab94-4b89-42ea-89e9-92d9260cf657,"Embedded Always",No,NO_PARALLELISM,,No,14440,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Provides a list of calendar using Office 365 REST API </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="723 -168"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Embedded Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Provides a list of calendar using Office 365 REST API &lt;/p&gt;&#10;"
+#! TITLE="GetCalendars_Office365"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14440"
+#! ZOOM_SCALE="100"
+#! CATEGORY="Office365"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+ &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The following parameters need to be provided.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Mailbox:&lt;/span&gt; The mailbox to read from. &quot;Me&quot; means the mailbox default assigned to the login of Office365, another mailbox can be provided by providing the full email address of that mailbox.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;CalendarGroupName:&lt;/span&gt; The group of calanders to read. Use the group name. (getCalandarGroups can provide you a list. no group name will take the default)&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Office365Login and Office365Password: &lt;/span&gt;Office 365 account&lt;/p&gt;&#10;"
+#! HISTORY="20&lt;solidus&gt;04&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,Initiation"
+#! FME_DOCUMENT_PRIORGUID="48359485-df16-4d8e-a39d-2682c182c71f"
+#! DOC_TOP_LEFT="-1360 -1488"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2015-05-12T21:42:20"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP5 (20141210 - Build 14440 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need an Office365 account &lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4520 1229"
+#! FME_DOCUMENT_GUID="8795ab94-4b89-42ea-89e9-92d9260cf657"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR Mailbox Mailbox:"
+#! DEFAULT_VALUE="Me"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR CalendarGroupName Calendar group name:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR Office365Login Office365 Login:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI PASSWORD_OR_ATTR Office365Password Office365 Password:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="HTTPFetcher"
+#! VERSION="3"
+#! POSITION="1755 -1112"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_office365ulr&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="$(Office365Login)"/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="$(Office365Password)"/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPFetcher"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_jsonreader"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="13 -1069"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateUrl"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_office365ulr,https:&lt;solidus&gt;&lt;solidus&gt;outlook.office365.com&lt;solidus&gt;api&lt;solidus&gt;v1.0&lt;solidus&gt;$(Mailbox)&lt;solidus&gt;calendars"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="JSONFragmenter"
+#! VERSION="3"
+#! POSITION="2454 -1092"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="EXPLODED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json[&quot;value&quot;][*]"/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter"/>
+#! <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_jsonreader"/>
+#! <XFORM_PARM PARM_NAME="EXPLODE_FORMAT" PARM_VALUE="JSON"/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="Id"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="20"
+#! TYPE="BulkAttributeRenamer"
+#! VERSION="1"
+#! POSITION="2465 -1275"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="AT_"/>
+#! <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#! <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="String Replace"/>
+#! <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;at&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="19"
+#! TYPE="AttributeExposer"
+#! VERSION="0"
+#! POSITION="2469 -1454"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Color" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="AT_odata.etag,AT_odata.id,ChangeKey,Id,Name,Color"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="17"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="-72 -330"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Calendars"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Rejected"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="Office365Password" PARM_VALUE="$(Office365Password)"/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="GetCalendarGroups_Office365"/>
+#! <XFORM_PARM PARM_NAME="Office365Login" PARM_VALUE="$(Office365Login)"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GetCalendarGroups_Office365"/>
+#! <XFORM_PARM PARM_NAME="Mailbox" PARM_VALUE="$(Mailbox)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="18"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="-593 -763"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="FindGroup"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <OUTPUT_FEAT NAME="NoGroup"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(CalendarGroupName)&lt;space&gt;NOT_ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;$(CalendarGroupName)&lt;space&gt;NOT_ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;$(CalendarGroupName)&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,FindGroup"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="NoGroup"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="21"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="632 -455"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="FoundName"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Name&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;$(CalendarGroupName)&lt;quote&gt;,FoundName"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="29"
+#! TYPE="AttributeKeeper"
+#! VERSION="2"
+#! POSITION="648 -686"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="Id"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="31"
+#! TYPE="AttributeRenamer"
+#! VERSION="2"
+#! POSITION="656 -843"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Id,CalendarGroupId,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="35"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1227 -683"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="CalendarGroupId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateUrl_2"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_office365ulr,https:&lt;solidus&gt;&lt;solidus&gt;outlook.office365.com&lt;solidus&gt;api&lt;solidus&gt;v1.0&lt;solidus&gt;$(Mailbox)&lt;solidus&gt;calendargroups&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;CalendarGroupId&lt;closeparen&gt;&lt;solidus&gt;calendars&lt;lf&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="44"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="2522 -431"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector"/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="50"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="1291 -259"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="NotInTheList"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="FoundSelection"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FoundSelection"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NAME" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;Name&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="39"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1930 -345"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_error,Group&lt;space&gt;was&lt;space&gt;not&lt;space&gt;found&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;Name&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="Input"
+#! POSITION="-1360 -577"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="Calendars"
+#! POSITION="3160 -1061"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="Id" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" />
+#! <XFORM_ATTR ATTR_NAME="Name" />
+#! <XFORM_ATTR ATTR_NAME="Color" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Rejected"
+#! POSITION="1733 -1445"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" />
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="20"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="20"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="19"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="17"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="17"
+#! TARGET_NODE="21"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="29"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="32"
+#! SOURCE_NODE="29"
+#! TARGET_NODE="31"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="33"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="36"
+#! SOURCE_NODE="31"
+#! TARGET_NODE="35"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="37"
+#! SOURCE_NODE="35"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="38"
+#! SOURCE_NODE="17"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS="717 -1488"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="51"
+#! SOURCE_NODE="17"
+#! TARGET_NODE="50"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS="489 -369"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="53"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="50"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="40"
+#! SOURCE_NODE="50"
+#! TARGET_NODE="39"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="39"
+#! TARGET_NODE="44"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="42"
+#! SOURCE_NODE="39"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#! NAME="FoundSelection"
+#! FME_DOCUMENT_PRIORGUID=""
+#! IS_VISIBLE="true"
+#! DOC_TOP_LEFT="-1211 -1044"
+#! VIEW_POSITION="-1230 3"
+#! DOC_EXTENTS="3082 1044"
+#! SUPPRESS_UPGRADE="false"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! ZOOM_SCALE="100"
+#! FME_DOCUMENT_GUID=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY=""
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! DESCRIPTION="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="FoundSelection"
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! HISTORY=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR NAME Name:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;Name&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="StatisticsCalculator"
+#! VERSION="6"
+#! POSITION="-514 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="SUMMARY"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="CUMULATIVE"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMPUTE_HISTOGRAM" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ATTIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAX_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StatisticsCalculator"/>
+#! <XFORM_PARM PARM_NAME="STATS_ATTRS" PARM_VALUE="Name"/>
+#! <XFORM_PARM PARM_NAME="RANGE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUM_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE="_countCalcGroups"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NUMERIC_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HISTO_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="STDEV_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEDIAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MIN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PREPEND_ATTR_NAME_CHOICE" PARM_VALUE="For multiple results only"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="StatisticsCalculator"
+#! VERSION="6"
+#! POSITION="-536 -1044"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="SUMMARY"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="CUMULATIVE"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMPUTE_HISTOGRAM" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ATTIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAX_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StatisticsCalculator_2"/>
+#! <XFORM_PARM PARM_NAME="STATS_ATTRS" PARM_VALUE="Name"/>
+#! <XFORM_PARM PARM_NAME="RANGE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUM_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE="_countCalcGroupsFailed"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NUMERIC_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HISTO_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="STDEV_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEDIAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MIN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PREPEND_ATTR_NAME_CHOICE" PARM_VALUE="For multiple results only"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="124 -361"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="1 1 NUM"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="1098 -511"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="NotInTheList"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="AllOk"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;NUM_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_countCalcGroups&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_countCalcGroupsFailed&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,NotInTheList"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_3"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="AllOk"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="Aggregator"
+#! VERSION="11"
+#! POSITION="-536 -358"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator"/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE="Name"/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="20"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="561 -978"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroups" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="_countCalcGroupsFailed" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger_2"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="1 1 NUM"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="NotInTheList"
+#! POSITION="1871 -580"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="Name" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="FailedTest"
+#! POSITION="-1211 -1035"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="Name" ATTR_VALUE="$(NAME)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="12"
+#! NAME="AllFeatures"
+#! POSITION="-1125 -72"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="Name" ATTR_VALUE="$(NAME)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="5"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="20"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="20"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="20"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! <SUBDOCUMENT
+#! NAME="GetCalendarGroups_Office365"
+#! FME_DOCUMENT_PRIORGUID=""
+#! IS_VISIBLE="true"
+#! DOC_TOP_LEFT="395 -1111"
+#! VIEW_POSITION="63 3"
+#! DOC_EXTENTS="2719 362"
+#! SUPPRESS_UPGRADE="false"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! ZOOM_SCALE="100"
+#! FME_DOCUMENT_GUID=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY="Office365"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Retrieve all Calendar groups from user&lt;/p&gt;&#10;"
+#! TITLE="GetCalendarGroups_Office365"
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! HISTORY=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR Mailbox Mailbox:"
+#! DEFAULT_VALUE="Me"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR Office365Login Office365 Login:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI PASSWORD_OR_ATTR Office365Password Office365 Password:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="HTTPFetcher"
+#! VERSION="3"
+#! POSITION="1779 -768"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_office365ulr&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="$(Office365Login)"/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="$(Office365Password)"/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPFetcher"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_jsonreader"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1151 -768"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateUrl"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_office365ulr,https:&lt;solidus&gt;&lt;solidus&gt;outlook.office365.com&lt;solidus&gt;api&lt;solidus&gt;v1.0&lt;solidus&gt;$(Mailbox)&lt;solidus&gt;calendargroups"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="JSONFragmenter"
+#! VERSION="3"
+#! POSITION="2478 -749"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="EXPLODED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json[&quot;value&quot;][*]"/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter"/>
+#! <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_jsonreader"/>
+#! <XFORM_PARM PARM_NAME="EXPLODE_FORMAT" PARM_VALUE="JSON"/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="Id"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="BulkAttributeRenamer"
+#! VERSION="1"
+#! POSITION="2489 -932"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="AT_"/>
+#! <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#! <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="String Replace"/>
+#! <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;at&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="AttributeExposer"
+#! VERSION="0"
+#! POSITION="2493 -1111"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="AT_odata.etag,AT_odata.id,ChangeKey,Id,Name,ClassId"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="Input"
+#! POSITION="395 -768"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="9"
+#! NAME="Calendars"
+#! POSITION="3114 -811"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="Id" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.etag" />
+#! <XFORM_ATTR ATTR_NAME="AT_odata.id" />
+#! <XFORM_ATTR ATTR_NAME="ChangeKey" />
+#! <XFORM_ATTR ATTR_NAME="Name" />
+#! <XFORM_ATTR ATTR_NAME="ClassId" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Rejected"
+#! POSITION="1752 -1057"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" />
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="_jsonreader" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(GetCalendars_Office365_WORKSPACE_NAME)_Mailbox Me
+DEFAULT_MACRO $(GetCalendars_Office365_WORKSPACE_NAME)_CalendarGroupName 
+DEFAULT_MACRO $(GetCalendars_Office365_WORKSPACE_NAME)_Office365Login 
+DEFAULT_MACRO $(GetCalendars_Office365_WORKSPACE_NAME)_Office365Password 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO GetCalendars_Office365_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetCalendars_Office365_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetCalendars_Office365_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_Input1431459740 Input Splitter"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,$($(GetCalendars_Office365_WORKSPACE_NAME)_CalendarGroupName$encode),$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter) NOT_ATTRIBUTE_VALUE_NULL "" ENCODED TEST @EvaluateExpression(STRING_ENCODED,$($(GetCalendars_Office365_WORKSPACE_NAME)_CalendarGroupName$encode),$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter) NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST @EvaluateExpression(STRING_ENCODED,$($(GetCalendars_Office365_WORKSPACE_NAME)_CalendarGroupName$encode),$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter) ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_FindGroup OUTPUT FAILED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_NoGroup INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_NoGroup
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_CreateUrl ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_NoGroup" ATTR _office365ulr https:<solidus><solidus>outlook.office365.com<solidus>api<solidus>v1.0<solidus>$($(GetCalendars_Office365_WORKSPACE_NAME)_Mailbox$encode)<solidus>calendars    OUTPUT OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365 Input Input Collector"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_FindGroup"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Input"
+MACRO GetCalendarGroups_Office365_WORKSPACE_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)_XFORMER_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)_SUB_DOC_NAME GetCalendarGroups_Office365
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)_Mailbox $($(GetCalendars_Office365_WORKSPACE_NAME)_Mailbox)
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)_Office365Login $($(GetCalendars_Office365_WORKSPACE_NAME)_Office365Login)
+MACRO $(GetCalendarGroups_Office365_WORKSPACE_NAME)_Office365Password $($(GetCalendars_Office365_WORKSPACE_NAME)_Office365Password)
+DEFAULT_MACRO GetCalendarGroups_Office365_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetCalendarGroups_Office365_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetCalendarGroups_Office365_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Input1431459740 Input Splitter"   INPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCalendarGroups_Office365_WORKSPACE_NAME)_CreateUrl ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Input" ATTR _office365ulr https:<solidus><solidus>outlook.office365.com<solidus>api<solidus>v1.0<solidus>$($(GetCalendarGroups_Office365_WORKSPACE_NAME)_Mailbox$encode)<solidus>calendargroups    OUTPUT OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher       INPUT  FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT"    TARGET_URL @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_office365ulr<closeparen>,$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher)    SAVE_FILE No    OUTPUT_FILENAME "<Unused>"    TARGET_ATTR "_jsonreader"    HTTP_METHOD GET    AUTH_USERNAME "@EvaluateExpression(STRING,$($(GetCalendarGroups_Office365_WORKSPACE_NAME)_Office365Login$encode),$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher)"    AUTH_PASSWORD "@EvaluateExpression(STRING,$($(GetCalendarGroups_Office365_WORKSPACE_NAME)_Office365Password$encode),$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher)"    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(GetCalendarGroups_Office365_WORKSPACE_NAME)_JSONFragmenter    INPUT  FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR Yes    JSON_ATTR _jsonreader    EXPLODE_QUERY "json<openbracket><quote>value<quote><closebracket><openbracket>*<closebracket>"    RECURSIVE_FLATTEN NO    OUTPUT EXPLODED FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_JSONFragmenter_EXPLODED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendarGroups_Office365_WORKSPACE_NAME)_BulkAttributeRenamer    INPUT  FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_JSONFragmenter_EXPLODED"    OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, STRINGREPLACE, YES, "@EvaluateExpression(STRING_ENCODED,<at>,$(GetCalendarGroups_Office365_WORKSPACE_NAME)_BulkAttributeRenamer)", "AT_", "<Unused>", "<Unused>", "-_")
+
+# -------------------------------------------------------------------------
+
+# Expose all attributes.  This ensures that if you expose fme_dataset, you will get it.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendarGroups_Office365_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Calendars1431459740 Output Collector"   INPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_AttributeExposer_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Calendars" @RemoveAttributes(_office365ulr,_http_status_code,_jsonreader,json_type,json_index)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Rejected1431459740 Output Collector"   INPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"   OUTPUT FEATURE_TYPE "$(GetCalendarGroups_Office365_WORKSPACE_NAME)_Rejected"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetCalendarGroups_Office365_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365 Calendars Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365 Rejected Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Rejected"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Rejected"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365 Calendars Splitter"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars_0_1f28grqVES4="   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars_1_1f28grqVES4="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars_1_1f28grqVES4="    OUTPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Name<closeparen>,$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2) = @EvaluateExpression(STRING_ENCODED,$($(GetCalendars_Office365_WORKSPACE_NAME)_CalendarGroupName$encode),$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2) ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_FoundName OUTPUT FAILED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_<lt>UNFILTERED<gt>
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetCalendars_Office365_WORKSPACE_NAME)_AttributeKeeper_72bb210f_2799_4e05_88d2_eecb299796ef0_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_AttributeKeeper    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_FoundName"    OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"        @KeepAttributes(Id,fme_regexp_match,"^fme_$($(GetCalendars_Office365_WORKSPACE_NAME)_AttributeKeeper_72bb210f_2799_4e05_88d2_eecb299796ef0_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL, Id,CalendarGroupId,"")
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_CreateUrl_2 ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeRenamer_OUTPUT" ATTR _office365ulr https:<solidus><solidus>outlook.office365.com<solidus>api<solidus>v1.0<solidus>$($(GetCalendars_Office365_WORKSPACE_NAME)_Mailbox$encode)<solidus>calendargroups<solidus><at>Value<openparen>CalendarGroupId<closeparen><solidus>calendars<lf>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_CreateUrl_2_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher       INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT"    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_CreateUrl_2_OUTPUT"    TARGET_URL @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_office365ulr<closeparen>,$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher)    SAVE_FILE No    OUTPUT_FILENAME "<Unused>"    TARGET_ATTR "_jsonreader"    HTTP_METHOD GET    AUTH_USERNAME "@EvaluateExpression(STRING,$($(GetCalendars_Office365_WORKSPACE_NAME)_Office365Login$encode),$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher)"    AUTH_PASSWORD "@EvaluateExpression(STRING,$($(GetCalendars_Office365_WORKSPACE_NAME)_Office365Password$encode),$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher)"    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_JSONFragmenter    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR Yes    JSON_ATTR _jsonreader    EXPLODE_QUERY "json<openbracket><quote>value<quote><closebracket><openbracket>*<closebracket>"    RECURSIVE_FLATTEN NO    OUTPUT EXPLODED FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_JSONFragmenter_EXPLODED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_BulkAttributeRenamer    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_JSONFragmenter_EXPLODED"    OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, STRINGREPLACE, YES, "@EvaluateExpression(STRING_ENCODED,<at>,$(GetCalendars_Office365_WORKSPACE_NAME)_BulkAttributeRenamer)", "AT_", "<Unused>", "<Unused>", "-_")
+
+# -------------------------------------------------------------------------
+
+# Expose all attributes.  This ensures that if you expose fme_dataset, you will get it.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection AllFeatures Input Collector"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Calendars_0_1f28grqVES4="   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection_AllFeatures"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection FailedTest Input Collector"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_TestFilter_2_<lt>UNFILTERED<gt>"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection_FailedTest"
+MACRO FoundSelection_WORKSPACE_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection
+MACRO $(FoundSelection_WORKSPACE_NAME)_XFORMER_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection
+MACRO $(FoundSelection_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(FoundSelection_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(FoundSelection_WORKSPACE_NAME)_SUB_DOC_NAME FoundSelection
+MACRO $(FoundSelection_WORKSPACE_NAME)_NAME <at>Value<openparen>Name<closeparen>
+DEFAULT_MACRO FoundSelection_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(FoundSelection_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(FoundSelection_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FoundSelection_WORKSPACE_NAME)_FailedTest1431459740 Input Splitter"   INPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FailedTest"   OUTPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FailedTest" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,Name,$($(FoundSelection_WORKSPACE_NAME)_NAME), FEATURE_TYPE)"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FoundSelection_WORKSPACE_NAME)_AllFeatures1431459740 Input Splitter"   INPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_AllFeatures"   OUTPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_AllFeatures_0_LD9PfeSkcVc=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,Name,$($(FoundSelection_WORKSPACE_NAME)_NAME), FEATURE_TYPE)"   OUTPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_AllFeatures_1_LD9PfeSkcVc=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,Name,$($(FoundSelection_WORKSPACE_NAME)_NAME), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO __$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_e7ed8fcd_312d_43b5_b655_bbfbe4a5a1860_GROUP_BY
+
+DYNAMIC_FUNCTION_CONFIGURATION Python FMEOBJECTS
+DYNAMIC_FUNCTION_CONFIGURATION Python import StatisticsCalculator
+DYNAMIC_FUNCTION_CONFIGURATION Python "StatisticsCalculator.connectTransformer(    '$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator',{     'GROUP_BY_MACRO':'__$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_e7ed8fcd_312d_43b5_b655_bbfbe4a5a1860_GROUP_BY',     'STATS_ATTRS':'Name',     'COUNT_ATTR':'_countCalcGroups',     'COMPUTE_HISTOGRAM':'NO',     'HISTO_ATTR':'<Unused>',     'PREPEND_ATTR_NAME':'No',     None:None})"
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_InputProcessor    INPUT  FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_AllFeatures_0_LD9PfeSkcVc="    OUTPUT FEATURE_TYPE __ORIGINAL__       @Python(StatisticsCalculator.recordFeature,$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator)
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_UnneededInputNuker    INPUT FEATURE_TYPE __ORIGINAL__
+FACTORY_DEF * SortFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_CompleteOutputter    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__
+FACTORY_DEF * CreationFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_SummaryCreator    CREATE_AT_END    NUMBER_TO_CREATE 1    OUTPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_SUMMARY"
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_SummaryExploder    LIST_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_stats{}    MODE LEAN_AND_MEAN    CLONE_GEOMETRY no    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__    INPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_SUMMARY"       @Python(StatisticsCalculator.summarizeStatistics,$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator,__SINGLE_GUY__)    OUTPUT ELEMENT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_SUMMARY"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(FoundSelection_WORKSPACE_NAME)_Aggregator_BREAK_ATTR
+
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_Aggregator    INPUT  FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_AllFeatures_1_LD9PfeSkcVc="    MODE ONE_LEVEL    $($(FoundSelection_WORKSPACE_NAME)_Aggregator_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    CONCATENATE_FIELDS Name    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_Aggregator_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_FeatureMerger    INPUT REFERENCER FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_SUMMARY"    INPUT REFERENCEE FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_Aggregator_AGGREGATE"    REFERENCE_INFO $($(FoundSelection_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE 1 1 NUM    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FeatureMerger_MERGED"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO __$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_af2a6341_cbcc_4636_8baa_020f20edf9c40_GROUP_BY
+
+DYNAMIC_FUNCTION_CONFIGURATION Python FMEOBJECTS
+DYNAMIC_FUNCTION_CONFIGURATION Python import StatisticsCalculator
+DYNAMIC_FUNCTION_CONFIGURATION Python "StatisticsCalculator.connectTransformer(    '$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2',{     'GROUP_BY_MACRO':'__$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_af2a6341_cbcc_4636_8baa_020f20edf9c40_GROUP_BY',     'STATS_ATTRS':'Name',     'COUNT_ATTR':'_countCalcGroupsFailed',     'COMPUTE_HISTOGRAM':'NO',     'HISTO_ATTR':'<Unused>',     'PREPEND_ATTR_NAME':'No',     None:None})"
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_InputProcessor    INPUT  FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FailedTest"    OUTPUT FEATURE_TYPE __ORIGINAL__       @Python(StatisticsCalculator.recordFeature,$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2)
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_UnneededInputNuker    INPUT FEATURE_TYPE __ORIGINAL__
+FACTORY_DEF * SortFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_CompleteOutputter    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__
+FACTORY_DEF * CreationFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_SummaryCreator    CREATE_AT_END    NUMBER_TO_CREATE 1    OUTPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_SummaryExploder    LIST_NAME $(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_stats{}    MODE LEAN_AND_MEAN    CLONE_GEOMETRY no    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__    INPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"       @Python(StatisticsCalculator.summarizeStatistics,$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2,__SINGLE_GUY__)    OUTPUT ELEMENT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2    INPUT REFERENCER FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FeatureMerger_MERGED"    INPUT REFERENCEE FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"    REFERENCE_INFO $($(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO)    REFERENCE_TABLE 1 1 NUM    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_MERGED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_TestFilter_3    INPUT  FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_FeatureMerger_2_MERGED"    OUTPUT FEATURE_TYPE $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_TestFactory_0 INPUT FEATURE_TYPE $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_0 NUM_TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_countCalcGroups<closeparen>,$(FoundSelection_WORKSPACE_NAME)_TestFilter_3) = @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_countCalcGroupsFailed<closeparen>,$(FoundSelection_WORKSPACE_NAME)_TestFilter_3) ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_NotInTheList OUTPUT FAILED FEATURE_TYPE $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_AllOk INPUT FEATURE_TYPE $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(FoundSelection_WORKSPACE_NAME)_TestFilter_3_AllOk
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FoundSelection_WORKSPACE_NAME)_TestFilter_3 AllOk Output Nuker"   INPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_TestFilter_3_AllOk"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FoundSelection_WORKSPACE_NAME)_NotInTheList1431459740 Output Collector"   INPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_TestFilter_3_NotInTheList"   OUTPUT FEATURE_TYPE "$(FoundSelection_WORKSPACE_NAME)_NotInTheList" @RemoveAttributes(_countCalcGroups,_countCalcGroupsFailed)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(FoundSelection_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection NotInTheList Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection_NotInTheList"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection_NotInTheList"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_FoundSelection_NotInTheList" ATTR _error Group<space>was<space>not<space>found<space><openparen><at>Value<openparen>Name<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator OUTPUT Splitter"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT_0_m/Bq89v5Z1M="   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT_1_m/Bq89v5Z1M="
+# -------------------------------------------------------------------------
+
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         if { [string length {}] > 0 } {             set catter "" ;             set comma "" ;             foreach attr {} {                 set catter "$catter$comma@Value(\"$attr\")" ;                 set comma ",_," ;             } ;             puts "MACRO CATMAC _@Concatenate($catter)" ;         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {$(GetCalendars_Office365_WORKSPACE_NAME)_Inspector} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_FeatureDirector    INPUT  FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT_0_m/Bq89v5Z1M="    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___FeatureDirector1    INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_VectorSetterUpper    INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+
+Tcl2 proc $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___PointCloudThinner    INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_thinPointCloud")
+Tcl2 proc $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_RasterSetterUpper    INPUT FEATURE_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+
+DEFAULT_MACRO $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_VIS_FEAT_TYPE $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+
+FACTORY_DEF * RecorderFactory    FACTORY_NAME $(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($($(GetCalendars_Office365_WORKSPACE_NAME)_Inspector_0dfaac96_2cba_4e2e_8981_76bfb5f8e7f20_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA _error,varchar<openparen>255<closeparen>,Id,varchar<openparen>255<closeparen>,AT_odata.etag,varchar<openparen>255<closeparen>,AT_odata.id,varchar<openparen>255<closeparen>,ChangeKey,varchar<openparen>255<closeparen>,Name,varchar<openparen>255<closeparen>,ClassId,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_Calendars1431459740 Output Collector"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeExposer_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_Calendars" @RemoveAttributes(_office365ulr,CalendarGroupId,_http_status_code,_jsonreader,json_type,json_index)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCalendars_Office365_WORKSPACE_NAME)_Rejected1431459740 Output Collector"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_GetCalendarGroups_Office365_Rejected"   INPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT_1_m/Bq89v5Z1M="   OUTPUT FEATURE_TYPE "$(GetCalendars_Office365_WORKSPACE_NAME)_Rejected" @RemoveAttributes(Id,AT_odata.etag,AT_odata.id,ChangeKey,Name,ClassId,CalendarGroupId)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetCalendars_Office365_WORKSPACE_NAME))}]

@@ -1,0 +1,80 @@
+# =========================================================================
+
+TRANSFORMER_NAME: AttributeChooser
+
+ALIASES: 
+
+VERSION: 0
+ 
+CATEGORY: Infrastructure
+
+INPUT_TAGS: <BLANK>
+
+OUTPUT_TAGS: OUTPUT 
+
+PRESERVES_ATTRIBUTES: yes
+
+
+FEATURE_HOLDING: NONE
+
+NUKERS_REQUIRED: yes
+
+ATTRIBUTES_ADDED: $(LIST_NAME){}.name $(LIST_NAME){}.value
+
+
+PARAMETER_NAME: TRANSFORMER_GROUP
+PARAMETER_TYPE: GROUP XFORMER_NAME
+PARAMETER_PROMPT: Transformer
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: PARAMETERS_GROUP
+PARAMETER_TYPE: GROUP ATTRIBUTES%LIST_NAME
+PARAMETER_PROMPT: Parameters
+PARAMETER_DEFAULT:
+
+
+PARAMETER_NAME: ATTRIBUTES
+PARAMETER_TYPE: ORDEREDLIST ATTRLIST
+PARAMETER_PROMPT: Select attributes:
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: LIST_NAME
+PARAMETER_TYPE: STRING_ENCODED
+PARAMETER_PROMPT: List Name:
+PARAMETER_DEFAULT: _attribute_selection
+
+TOOLTIP_START
+
+TOOLTIP_END
+ 
+CHANGE_LOG_START
+
+CHANGE_LOG_END
+
+TEMPLATE_START
+
+Tcl2 proc $(XFORMER_NAME)_doSplit {}
+{
+    set listName [FME_DecodeText {$(LIST_NAME)}];
+    set bits {$(ATTRIBUTES)};
+    set attrNum 0;
+    foreach bit $bits
+    {
+        FME_SetAttribute "$listName{$attrNum}.name" [FME_DecodeText $bit];
+        FME_SetAttribute "$listName{$attrNum}.value" [FME_GetAttribute [FME_DecodeText $bit]];
+        incr attrNum;
+    }
+}
+         
+FACTORY_DEF * TeeFactory
+   FACTORY_NAME $(XFORMER_NAME)
+   $(INPUT_LINES)
+   OUTPUT FEATURE_TYPE $(OUTPUT_OUTPUT_FTYPE)
+                 @Tcl2($(XFORMER_NAME)_doSplit)
+                 $(OUTPUT_OUTPUT_FUNCS)
+
+TEMPLATE_END
+
+
+# =========================================================================
+

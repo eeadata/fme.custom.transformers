@@ -1,0 +1,779 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ExtractFileFromZip,1,FileSystem,c464cace-251c-4bce-ac35-fb00df6cdf59,"Embedded Always",No,NO_PARALLELISM,,No,18520,YES,Yes,
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Extracts one file form a zip into a local disk. Use this together with the "getMetaDataFromZip" Transformer who tells you whats inside the zip file.</p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="FileSystem"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extracts one file form a zip into a local disk. Use this together with the &quot;getMetaDataFromZip&quot; Transformer who tells you whats inside the zip file.&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2670 752"
+#!   DOC_TOP_LEFT="-196 -896"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="c464cace-251c-4bce-ac35-fb00df6cdf59"
+#!   FME_DOCUMENT_PRIORGUID="f13732a4-8410-4703-a144-dd1a147cc950,d12cdc8f-994a-4524-8626-1eef60c73e8a"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Embedded Always"
+#!   HISTORY="20&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-04-03T15:39:25"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="ExtractFileFromZip"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Zipsourcefile:&lt;/span&gt; The location towards the zip-file&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;sourceFile:&lt;/span&gt; The sourcefile inside the zip to be extracted.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;destinationFolder:&lt;/span&gt; The destination folder this file should be extracted to.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-812.508 578.131"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="Yes"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ZIPSOURCEFILE Zipsourcefile:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;zipSourceFile&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SOURCEFILE Sourcefile:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;sourceFile&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR DESTINATIONFOLDER Destinationfolder:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;destinationFolder&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="1128 -144"
+#!   BOUNDING_RECT="1128 -144 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="_status"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;zipfile&lt;comma&gt;os.path&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Extracts&lt;space&gt;one&lt;space&gt;file&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;unzipOneFile&lt;openparen&gt;self&lt;comma&gt;source_filename&lt;comma&gt;filename&lt;comma&gt;dest_dir&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;zfile&lt;space&gt;=&lt;space&gt;zipfile.ZipFile&lt;openparen&gt;source_filename&lt;closeparen&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;zfile.extract&lt;openparen&gt;filename&lt;comma&gt;dest_dir&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;source_filename&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;zipSourceFile&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;filename&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;sourceFile&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dest_dir&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;destinationFolder&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;status&lt;space&gt;=&lt;space&gt;&lt;quote&gt;success&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;execute&lt;space&gt;unzip&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#self.unzipOneFile&lt;openparen&gt;source_filename&lt;comma&gt;filename&lt;comma&gt;dest_dir&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;try:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.unzipOneFile&lt;openparen&gt;source_filename&lt;comma&gt;filename&lt;comma&gt;dest_dir&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;except&lt;space&gt;Exception:&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;status=&lt;quote&gt;failed&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;set&lt;space&gt;if&lt;space&gt;successfull&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_status&lt;quote&gt;&lt;comma&gt;status&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="unZipPython"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1129 -420"
+#!   BOUNDING_RECT="1129 -420 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="SUCCESS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="FAILED"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;success&lt;quote&gt;,SUCCESS"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="SubDocumentTransformer"
+#!   VERSION="4"
+#!   POSITION="472 -161"
+#!   BOUNDING_RECT="472 -161 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NotFound"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="Action" PARM_VALUE="EXIST"/>
+#!     <XFORM_PARM PARM_NAME="FILEINPUT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;destinationFolder&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILEOUTPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="FileSystemDeleteMoveCopyExist"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateOutputFolder"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="SubDocumentTransformer"
+#!   VERSION="4"
+#!   POSITION="1821 -500"
+#!   BOUNDING_RECT="1821 -500 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NotFound"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="Action" PARM_VALUE="EXIST"/>
+#!     <XFORM_PARM PARM_NAME="FILEINPUT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;destinationFolder&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILEOUTPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="FileSystemDeleteMoveCopyExist"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RemoveFolder"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="Inspector"
+#!   VERSION="3"
+#!   POSITION="1853 -896"
+#!   BOUNDING_RECT="1853 -896 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#!     <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Failed"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="INPUT"
+#!   POSITION="-196 -315"
+#!   BOUNDING_RECT="-196 -315 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" ATTR_VALUE="$(ZIPSOURCEFILE)" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" ATTR_VALUE="$(SOURCEFILE)" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" ATTR_VALUE="$(DESTINATIONFOLDER)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="7"
+#!   NAME="SUCCESS"
+#!   POSITION="2474 -288"
+#!   BOUNDING_RECT="2474 -288 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="zipSourceFile" />
+#!     <XFORM_ATTR ATTR_NAME="sourceFile" />
+#!     <XFORM_ATTR ATTR_NAME="destinationFolder" />
+#!     <XFORM_ATTR ATTR_NAME="action" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" />
+#!     <XFORM_ATTR ATTR_NAME="_status" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="8"
+#!   NAME="FAILED"
+#!   POSITION="2473 -593"
+#!   BOUNDING_RECT="2473 -593 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 FileName"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 SUCCESS"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 FileName"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 2 Failed"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#!   NAME="FileSystemDeleteMoveCopyExist"
+#!   CATEGORY="FileSystem"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer can &quot;move&quot;,&quot;copy&quot;,&quot;delete&quot; files. Can as well check if a file &quot;exist&quot; and create or delete folders.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   DOC_DYNAMIC_INPUT_ATTRS="0"
+#!   DOC_EXTENTS="2255.12 316.626"
+#!   DOC_TOP_LEFT="-1145.49 -772.997"
+#!   FME_DOCUMENT_GUID="a00aa5f7-88aa-4e07-82e6-efd0a28f1645"
+#!   FME_DOCUMENT_PRIORGUID="586f1436-db1b-4b0e-834f-a37aa167723d"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   HISTORY="20&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#!   IS_VISIBLE="true"
+#!   LAST_SAVE_BUILD="FME(R) 2017.1.2.1 (20180117 - Build 17725 - WIN64)"
+#!   LAST_SAVE_DATE="2018-04-16T16:00:53"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SUPPRESS_UPGRADE="false"
+#!   TITLE="FileSystemDeleteMoveCopyExist"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;action&lt;/span&gt;:The action you like to perform. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;fileInput&lt;/span&gt;: provide the input file path.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;fileOutput&lt;/span&gt;: provide the output file path. (Is not used when you delete or test the existance of a file) &lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="0 0"
+#!   XFORM_DEPRECATED="Yes"
+#!   ZOOM_SCALE="100"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL LOOKUP_CHOICE_OR_ATTR Action Delete&lt;space&gt;File,DELETE%Copy&lt;space&gt;File,COPY%Move&lt;space&gt;File,MOVE%Make&lt;space&gt;Directory,MKDIR%Remove&lt;space&gt;Directory,RMDIR%Does&lt;space&gt;File&lt;space&gt;or&lt;space&gt;Folder&lt;space&gt;Exist,EXIST Action:"
+#!   DEFAULT_VALUE="EXIST"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FILEINPUT Fileinput:"
+#!   DEFAULT_VALUE="@Value(fileInput)"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR FILEOUTPUT Fileoutput:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-55.371600000000001 -484.99700000000001"
+#!   BOUNDING_RECT="-55.371600000000001 -484.99700000000001 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="_status "/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;import&lt;space&gt;os&lt;comma&gt;shutil&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;define&lt;space&gt;and&lt;space&gt;get&lt;space&gt;parameters&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._fileInput&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;fileInput&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._fileOutput&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;fileOutput&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._action&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;action&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;delete&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;DELETE&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;os.remove&lt;openparen&gt;self._fileInput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;deleted&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;delete&lt;space&gt;folder&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;RMDIR&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;shutil.rmtree&lt;openparen&gt;self._fileInput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;deleted&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;copy&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;COPY&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;shutil.copy&lt;openparen&gt;self._fileInput&lt;comma&gt;self._fileOutput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;copied&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;move&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;MOVE&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;shutil.move&lt;openparen&gt;self._fileInput&lt;comma&gt;self._fileOutput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;moved&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;&lt;space&gt;mkdir&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;MKDIR&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;created&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;os.makedirs&lt;openparen&gt;self._fileInput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;created&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;exist&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;EXIST&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;exist&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;_status&lt;apos&gt;&lt;comma&gt;self._status&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="489.62799999999999 -525.99699999999996"
+#!   BOUNDING_RECT="489.62799999999999 -525.99699999999996 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="DoesNotExist"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Failed"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;deleted&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;copied&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;moved&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;exist&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;created&lt;quote&gt;,Success,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;BEGINS_WITH&lt;space&gt;notexist:&lt;quote&gt;,DoesNotExist"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-586.99699999999996 -484.99700000000001"
+#!   BOUNDING_RECT="-586.99699999999996 -484.99700000000001 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="action {$(Action)} fileInput {$(FILEINPUT)} fileOutput {$(FILEOUTPUT)}"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="FileName"
+#!   POSITION="-1145.49 -456.37099999999998"
+#!   BOUNDING_RECT="-1145.49 -456.37099999999998 0 0"
+#!   COLLAPSED="false"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="fileInput" ATTR_VALUE="$(FILEINPUT)" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" ATTR_VALUE="$(FILEOUTPUT)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Success"
+#!   POSITION="1109.6300000000001 -495.99700000000001"
+#!   BOUNDING_RECT="1109.6300000000001 -495.99700000000001 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Failed"
+#!   POSITION="1108.6300000000001 -772.99699999999996"
+#!   BOUNDING_RECT="1108.6300000000001 -772.99699999999996 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="5"
+#!   NAME="NotFound"
+#!   POSITION="1108.6300000000001 -629.99699999999996"
+#!   BOUNDING_RECT="1108.6300000000001 -629.99699999999996 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 1 DoesNotExist"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 2 Failed"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 
+DEFAULT_MACRO $(ExtractFileFromZip_WORKSPACE_NAME)_ZIPSOURCEFILE <at>Value<openparen>zipSourceFile<closeparen>
+DEFAULT_MACRO $(ExtractFileFromZip_WORKSPACE_NAME)_SOURCEFILE <at>Value<openparen>sourceFile<closeparen>
+DEFAULT_MACRO $(ExtractFileFromZip_WORKSPACE_NAME)_DESTINATIONFOLDER <at>Value<openparen>destinationFolder<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ExtractFileFromZip_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ExtractFileFromZip_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ExtractFileFromZip_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_INPUT1554298765 Input Splitter"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_INPUT"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_INPUT" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,zipSourceFile,$($(ExtractFileFromZip_WORKSPACE_NAME)_ZIPSOURCEFILE),sourceFile,$($(ExtractFileFromZip_WORKSPACE_NAME)_SOURCEFILE),destinationFolder,$($(ExtractFileFromZip_WORKSPACE_NAME)_DESTINATIONFOLDER), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder FileName Input Collector"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_INPUT"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder_FileName"
+MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_XFORMER_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_SUB_DOC_NAME FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action EXIST
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT <at>Value<openparen>destinationFolder<closeparen>
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT 
+DEFAULT_MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName1554298765 Input Splitter"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,fileInput,$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT),fileOutput,$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+Tcl2 proc $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"action {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action)} fileInput {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT)} fileOutput {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName"    OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>import<space>os<comma>shutil<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>define<space>and<space>get<space>parameters<lf><space><space><space><space><space><space><space><space>self._status=<apos><apos><lf><space><space><space><space><space><space><space><space>self._fileInput<space>=<space>feature.getAttribute<openparen><apos>fileInput<apos><closeparen><lf><space><space><space><space><space><space><space><space>self._fileOutput<space>=<space>feature.getAttribute<openparen><apos>fileOutput<apos><closeparen><lf><space><space><space><space><space><space><space><space>self._action<space>=<space>feature.getAttribute<openparen><apos>action<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>delete<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>DELETE<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>os.remove<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>deleted<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>delete<space>folder<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>RMDIR<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.rmtree<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>deleted<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>copy<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>COPY<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.copy<openparen>self._fileInput<comma>self._fileOutput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>copied<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>move<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>MOVE<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.move<openparen>self._fileInput<comma>self._fileOutput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>moved<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote><space>mkdir<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>MKDIR<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>created<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>os.makedirs<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>created<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>exist<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>EXIST<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>exist<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><apos>_status<apos><comma>self._status<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = deleted ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = copied ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = moved ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = exist ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = created ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Success OUTPUT FAILED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Condition_2 INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) BEGINS_WITH notexist: ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_DoesNotExist OUTPUT FAILED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Success1554298765 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Success"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Failed1554298765 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Failed"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_NotFound1554298765 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_DoesNotExist"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_NotFound"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder Success Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder_Success"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder NotFound Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder_NotFound"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder Failed Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder_Failed"
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_unZipPython    INPUT  FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_CreateOutputFolder_Success"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>zipfile<comma>os.path<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>#<lf><space><space><space><space>#<space>Extracts<space>one<space>file<lf><space><space><space><space>#<lf><space><space><space><space>def<space>unzipOneFile<openparen>self<comma>source_filename<comma>filename<comma>dest_dir<closeparen>:<lf><space><space><space><space><space><space><space><space>zfile<space>=<space>zipfile.ZipFile<openparen>source_filename<closeparen><space><lf><space><space><space><space><space><space><space><space>zfile.extract<openparen>filename<comma>dest_dir<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>source_filename<space>=<space>feature.getAttribute<openparen><quote>zipSourceFile<quote><closeparen><lf><space><space><space><space><space><space><space><space>filename<space>=<space>feature.getAttribute<openparen><quote>sourceFile<quote><closeparen><lf><space><space><space><space><space><space><space><space>dest_dir<space>=<space>feature.getAttribute<openparen><quote>destinationFolder<quote><closeparen><lf><space><space><space><space><space><space><space><space>#<lf><space><space><space><space><space><space><space><space>status<space>=<space><quote>success<quote><lf><space><space><space><space><space><space><space><space>#<space>execute<space>unzip<lf><space><space><space><space><space><space><space><space>#self.unzipOneFile<openparen>source_filename<comma>filename<comma>dest_dir<closeparen><lf><space><space><space><space><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space><space><space><space><space>self.unzipOneFile<openparen>source_filename<comma>filename<comma>dest_dir<closeparen><lf><space><space><space><space><space><space><space><space>except<space>Exception:<space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>status=<quote>failed<quote><lf><space><space><space><space><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space><space><space><space><space>#<space>set<space>if<space>successfull<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_status<quote><comma>status<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_unZipPython_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_unZipPython_OUTPUT"    OUTPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter) = success ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_SUCCESS OUTPUT FAILED FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED INPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter FAILED Splitter"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED_0_v7foclai+M8="   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED_1_fvSl8H+vrxQ="
+# -------------------------------------------------------------------------
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {$(ExtractFileFromZip_WORKSPACE_NAME)_Failed} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_FeatureDirector    INPUT  FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED_1_fvSl8H+vrxQ="    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___FeatureDirector1    INPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_VectorSetterUpper    INPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+Tcl2 proc $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___PointCloudThinner    INPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_thinPointCloud")
+Tcl2 proc $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_RasterSetterUpper    INPUT FEATURE_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+DEFAULT_MACRO $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_VIS_FEAT_TYPE $(ExtractFileFromZip_WORKSPACE_NAME)_Failed$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+FACTORY_DEF * RecorderFactory    FACTORY_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_Failed_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($($(ExtractFileFromZip_WORKSPACE_NAME)_Failed_a9526056_1006_410b_99eb_9dc5445d3fdf0_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA zipSourceFile,varchar<openparen>255<closeparen>,sourceFile,varchar<openparen>255<closeparen>,destinationFolder,varchar<openparen>255<closeparen>,fileInput,varchar<openparen>255<closeparen>,fileOutput,varchar<openparen>255<closeparen>,action,varchar<openparen>255<closeparen>,_status,varchar<openparen>255<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder FileName Input Collector"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_FAILED_0_v7foclai+M8="   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_FileName"
+MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_XFORMER_NAME $(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_SUB_DOC_NAME FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action EXIST
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT <at>Value<openparen>destinationFolder<closeparen>
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT 
+DEFAULT_MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName1554298765 Input Splitter"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,fileInput,$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT),fileOutput,$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+Tcl2 proc $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"action {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action)} fileInput {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT)} fileOutput {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName"    OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>import<space>os<comma>shutil<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>define<space>and<space>get<space>parameters<lf><space><space><space><space><space><space><space><space>self._status=<apos><apos><lf><space><space><space><space><space><space><space><space>self._fileInput<space>=<space>feature.getAttribute<openparen><apos>fileInput<apos><closeparen><lf><space><space><space><space><space><space><space><space>self._fileOutput<space>=<space>feature.getAttribute<openparen><apos>fileOutput<apos><closeparen><lf><space><space><space><space><space><space><space><space>self._action<space>=<space>feature.getAttribute<openparen><apos>action<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>delete<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>DELETE<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>os.remove<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>deleted<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>delete<space>folder<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>RMDIR<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.rmtree<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>deleted<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>copy<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>COPY<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.copy<openparen>self._fileInput<comma>self._fileOutput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>copied<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>move<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>MOVE<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.move<openparen>self._fileInput<comma>self._fileOutput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>moved<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote><space>mkdir<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>MKDIR<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>created<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>os.makedirs<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>created<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>exist<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>EXIST<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>exist<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><apos>_status<apos><comma>self._status<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = deleted ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = copied ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = moved ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = exist ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = created ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Success OUTPUT FAILED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Condition_2 INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) BEGINS_WITH notexist: ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_DoesNotExist OUTPUT FAILED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Success1554298765 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Success"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Failed1554298765 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Failed"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_NotFound1554298765 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_DoesNotExist"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_NotFound"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder Success Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_Success"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder NotFound Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_NotFound"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder Failed Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_Failed"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_Failed"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_SUCCESS1554298765 Output Collector"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_TestFilter_SUCCESS"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_SUCCESS"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ExtractFileFromZip_WORKSPACE_NAME)_FAILED1554298765 Output Collector"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_Success"   INPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_RemoveFolder_Failed"   OUTPUT FEATURE_TYPE "$(ExtractFileFromZip_WORKSPACE_NAME)_FAILED"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ExtractFileFromZip_WORKSPACE_NAME))}]

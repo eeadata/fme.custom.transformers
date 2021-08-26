@@ -1,0 +1,1189 @@
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN TestServiceURL,1,"Web Services",f01ba323-ab42-410d-a057-1295baf046b2,"Embedded Always",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Tests a URL trying to access to the service capabilities </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-389 671"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Embedded Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tests a URL trying to access to the service capabilities &lt;/p&gt;&#10;"
+#! TITLE="TestServiceURL"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="101"
+#! CATEGORY="Web Services"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Checks the URL and gets the HTTP errors if they are.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Gets and checks the service capabilities.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Gets the XML from the GetCapabilities function and it checks it. &lt;/p&gt;&#10;"
+#! HISTORY="23&lt;solidus&gt;07&lt;solidus&gt;2014,I&lt;u00f1&gt;aki&lt;space&gt;Diaz&lt;space&gt;de&lt;space&gt;Cerio,V.1.0"
+#! FME_DOCUMENT_PRIORGUID="5e66b01a-c3e0-4f6e-9463-c6a346b678e6,47168407-ad26-4648-875a-2051b0da1fb6"
+#! DOC_TOP_LEFT="-1007 -640"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-09-30T12:13:40"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN32)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The URL of a WMS or WFS service &lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4322 1061"
+#! FME_DOCUMENT_GUID="f01ba323-ab42-410d-a057-1295baf046b2"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SERVICEURL serviceURL:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;serviceURL&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="42"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Checkcapabilities for WMS and WFS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="89 421"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="89 421"
+#! BOTTOM_RIGHT="648 358"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#! IDENTIFIER="43"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Current results to local parameters&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="549 -479"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="549 -479"
+#! BOTTOM_RIGHT="549 -479"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="9"
+#! />
+#! <COMMENT
+#! IDENTIFIER="44"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Filter the results and add output&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;global results&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1008 -635"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1008 -635"
+#! BOTTOM_RIGHT="1008 -635"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="15"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="45"
+#! NAME="Check Capabilities"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="56 317"
+#! BOTTOM_RIGHT="2150 -801"
+#! STICKY="true"
+#! COLOUR="0.247059,0.403922,0.964706"
+#! CONTENTS="44 22 27 9 26 28 33 3 5 8 6 11 43 7 16 21 24 10 30 14 29 12 13 31 32 15 4 23 25 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="46"
+#! NAME="Clean the output"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2229 -138"
+#! BOTTOM_RIGHT="3315 -422"
+#! STICKY="true"
+#! COLOUR="0.0666667,0.294118,0.921569"
+#! CONTENTS="17 20 2 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-468 209"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="errorType,FME_NULL_VALUE,hasError,False,errorDescription,FME_NULL_VALUE"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="2303 -228"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="EType_WMTS,EType_WFS,EType_WMS,Error_WMTS,Error_WFS,Error_WMS,EDescription_WMTS,EDescription_WFS,EDescription_WMS,getCapabilities"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="CheckCapabilities"
+#! VERSION="1"
+#! POSITION="95 214"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Capabilities"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WMSCapabilities"/>
+#! <XFORM_PARM PARM_NAME="SaveCapabilities" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OutputFile" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="serviceUrl" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;serviceURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="ServiceType" PARM_VALUE="WMS"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="CheckCapabilities"
+#! VERSION="1"
+#! POSITION="98 -2"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Capabilities"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WFSCapabilities"/>
+#! <XFORM_PARM PARM_NAME="SaveCapabilities" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OutputFile" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="serviceUrl" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;serviceURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="ServiceType" PARM_VALUE="WFS"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeCopier"
+#! VERSION="3"
+#! POSITION="602 210"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WMS_error"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,Error_WMS,&quot;&quot;,errorDescription,EDescription_WMS,&quot;&quot;,errorType,EType_WMS,&quot;&quot;,capabilities,capabilities_WMS,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="1123 117"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Error"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="WMS"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="WFS"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="WMTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="WMS&lt;amp&gt;WFS"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <OUTPUT_FEAT NAME="WMS&lt;amp&gt;WMTS&lt;space&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="5"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#! <OUTPUT_FEAT NAME="WMS&lt;amp&gt;WMTS&lt;amp&gt;WFS"/>
+#! <FEAT_COLLAPSED COLLAPSED="6"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#! <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="7"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;quote&gt;,Error,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;quote&gt;,WMS,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;quote&gt;,WFS,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;quote&gt;,WMTS,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;quote&gt;,WMS&lt;amp&gt;WFS,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;quote&gt;,WMS&lt;amp&gt;WMTS&lt;space&gt;,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WFS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Error_WMTS&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;False&lt;quote&gt;,WMS&lt;amp&gt;WMTS&lt;amp&gt;WFS"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="AttributeCopier"
+#! VERSION="3"
+#! POSITION="602 -43"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WFS_error"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,Error_WFS,&quot;&quot;,errorDescription,EDescription_WFS,&quot;&quot;,errorType,EType_WFS,&quot;&quot;,capabilities,capabilities_WFS,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="CheckCapabilities"
+#! VERSION="1"
+#! POSITION="98 -213"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Capabilities"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WMTSCapabilities"/>
+#! <XFORM_PARM PARM_NAME="SaveCapabilities" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OutputFile" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="serviceUrl" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;serviceURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="ServiceType" PARM_VALUE="WMTS"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="AttributeCopier"
+#! VERSION="3"
+#! POSITION="602 -264"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WMTS_error"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,Error_WMTS,&quot;&quot;,errorDescription,EDescription_WMTS,&quot;&quot;,errorType,EType_WMTS,&quot;&quot;,capabilities,capabilities_WMTS,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 74"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_WMS"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,False,errorDescription,WMS,errorType,OK,capabilities,&lt;at&gt;Value&lt;openparen&gt;capabilities_WMS&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 -67"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_WFS"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,False,errorDescription,WFS,errorType,OK,capabilities,&lt;at&gt;Value&lt;openparen&gt;capabilities_WFS&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 -211"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_WMTS"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,False,errorDescription,WMTS,errorType,OK,capabilities,&lt;at&gt;Value&lt;openparen&gt;capabilities_WMTS&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 -351"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_WMS_WFS"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,False,errorDescription,WMS&lt;amp&gt;WFS,errorType,OK,capabilities,&lt;at&gt;Value&lt;openparen&gt;capabilities_WMS&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 -497"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_WMS_WMTS"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,False,errorDescription,WMS&lt;amp&gt;WMTS,errorType,OK,capabilities,&lt;at&gt;Value&lt;openparen&gt;capabilities_WMS&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 -640"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_WMS_WMTS_WFS"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,False,errorDescription,WMS&lt;amp&gt;WMTS&lt;amp&gt;WFS,errorType,OK,capabilities,&lt;at&gt;Value&lt;openparen&gt;capabilities_WMS&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="16"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1665 220"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="serviceURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EType_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Error_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="EDescription_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="getCapabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Out_error"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="hasError,True,capabilities,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="17"
+#! NAME="URLTested"
+#! POSITION="2816 -294"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="serviceURL" />
+#! <XFORM_ATTR ATTR_NAME="fme_basename" />
+#! <XFORM_ATTR ATTR_NAME="errorType" />
+#! <XFORM_ATTR ATTR_NAME="hasError" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" />
+#! <XFORM_ATTR ATTR_NAME="OutputXMLFile" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" />
+#! <XFORM_ATTR ATTR_NAME="capabilities" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMTS" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WFS" />
+#! <XFORM_ATTR ATTR_NAME="capabilities_WMS" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="18"
+#! NAME="URL"
+#! POSITION="-1007 210"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="serviceURL" ATTR_VALUE="$(SERVICEURL)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="17"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 3"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 4"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 5"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="32"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 6"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="33"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="35"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="36"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="37"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="38"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="39"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="40"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(TestServiceURL_WORKSPACE_NAME)_SERVICEURL <at>Value<openparen>serviceURL<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO TestServiceURL_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(TestServiceURL_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(TestServiceURL_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_URL1412072020 Input Splitter"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_URL"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_URL" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,serviceURL,$($(TestServiceURL_WORKSPACE_NAME)_SERVICEURL), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_URL" ATTR errorType FME_NULL_VALUE ATTR hasError False ATTR errorDescription FME_NULL_VALUE    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities URL Input Collector"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities_URL"
+MACRO CheckCapabilities_WORKSPACE_NAME $(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_XFORMER_NAME $(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(CheckCapabilities_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_serviceUrl <at>Value<openparen>serviceURL<closeparen>
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_ServiceType WMS
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_SaveCapabilities No
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_OutputFile 
+INCLUDE_CUSTOM_TRANSFORMER_VER CheckCapabilities:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities Capabilities Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities_Capabilities"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities_Capabilities"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_WMS_error    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMSCapabilities_Capabilities"    OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMS_error_OUTPUT"         @CopyAttributes(ATTR_LIST_DEF_VAL, hasError,Error_WMS,"",errorDescription,EDescription_WMS,"",errorType,EType_WMS,"",capabilities,capabilities_WMS,"")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities URL Input Collector"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMS_error_OUTPUT"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities_URL"
+MACRO CheckCapabilities_WORKSPACE_NAME $(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_XFORMER_NAME $(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(CheckCapabilities_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_serviceUrl <at>Value<openparen>serviceURL<closeparen>
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_ServiceType WFS
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_SaveCapabilities No
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_OutputFile 
+INCLUDE_CUSTOM_TRANSFORMER_VER CheckCapabilities:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities Capabilities Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities_Capabilities"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities_Capabilities"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_WFS_error    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WFSCapabilities_Capabilities"    OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WFS_error_OUTPUT"         @CopyAttributes(ATTR_LIST_DEF_VAL, hasError,Error_WFS,"",errorDescription,EDescription_WFS,"",errorType,EType_WFS,"",capabilities,capabilities_WFS,"")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities URL Input Collector"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WFS_error_OUTPUT"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities_URL"
+MACRO CheckCapabilities_WORKSPACE_NAME $(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_XFORMER_NAME $(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(CheckCapabilities_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_serviceUrl <at>Value<openparen>serviceURL<closeparen>
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_ServiceType WMTS
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_SaveCapabilities No
+MACRO $(CheckCapabilities_WORKSPACE_NAME)_OutputFile 
+INCLUDE_CUSTOM_TRANSFORMER_VER CheckCapabilities:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities Capabilities Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities_Capabilities"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities_Capabilities"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_WMTS_error    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMTSCapabilities_Capabilities"    OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMTS_error_OUTPUT"         @CopyAttributes(ATTR_LIST_DEF_VAL, hasError,Error_WMTS,"",errorDescription,EDescription_WMTS,"",errorType,EType_WMTS,"",capabilities,capabilities_WMTS,"")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_WMTS_error_OUTPUT"    OUTPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_Error OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_1 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_2 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_WFS OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_3
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_3 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_3 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMTS OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_4
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_4 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_4 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS<amp>WFS OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_5
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_5 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_5 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = True ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS<amp>WMTS<space> OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_6
+FACTORY_DEF * TestFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TestFactory_6 INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_6 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WFS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Error_WMTS<closeparen>,$(TestServiceURL_WORKSPACE_NAME)_TestFilter) = False ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS<amp>WMTS<amp>WFS OUTPUT FAILED FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_7
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_7 OUTPUT FEATURE_TYPE $(TestServiceURL_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_TestFilter <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WMTS_WFS ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS<amp>WMTS<amp>WFS" ATTR hasError False ATTR errorDescription WMS<amp>WMTS<amp>WFS ATTR errorType OK ATTR capabilities <at>Value<openparen>capabilities_WMS<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WMTS_WFS_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WMTS ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS<amp>WMTS<space>" ATTR hasError False ATTR errorDescription WMS<amp>WMTS ATTR errorType OK ATTR capabilities <at>Value<openparen>capabilities_WMS<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WMTS_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WFS ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS<amp>WFS" ATTR hasError False ATTR errorDescription WMS<amp>WFS ATTR errorType OK ATTR capabilities <at>Value<openparen>capabilities_WMS<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WFS_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_WMTS ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMTS" ATTR hasError False ATTR errorDescription WMTS ATTR errorType OK ATTR capabilities <at>Value<openparen>capabilities_WMTS<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMTS_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_WFS ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_WFS" ATTR hasError False ATTR errorDescription WFS ATTR errorType OK ATTR capabilities <at>Value<openparen>capabilities_WFS<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WFS_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_WMS ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_WMS" ATTR hasError False ATTR errorDescription WMS ATTR errorType OK ATTR capabilities <at>Value<openparen>capabilities_WMS<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_Out_error ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_TestFilter_Error" ATTR hasError True ATTR capabilities ""    OUTPUT OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_error_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(TestServiceURL_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TestServiceURL_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WFS_OUTPUT"    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMTS_OUTPUT"    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WMTS_WFS_OUTPUT"    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_OUTPUT"    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WMS_WMTS_OUTPUT"    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_WFS_OUTPUT"    INPUT  FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_Out_error_OUTPUT"    OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(EType_WMTS,EType_WFS,EType_WMS,Error_WMTS,Error_WFS,Error_WMS,EDescription_WMTS,EDescription_WFS,EDescription_WMS,getCapabilities)        @RemoveAttributes(fme_regexp_match"$($(TestServiceURL_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TestServiceURL_WORKSPACE_NAME)_URLTested1412072020 Output Collector"   INPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(TestServiceURL_WORKSPACE_NAME)_URLTested"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(TestServiceURL_WORKSPACE_NAME))}]

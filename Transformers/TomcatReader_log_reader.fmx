@@ -1,0 +1,2364 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN TomcatReader_log_reader,1,Manipulators,25545edc-8cb2-4d8d-bed1-9c39dbaaa623,"Embedded Always",No,NO_PARALLELISM,,No,16492,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Transform Tomcat log files into flat easy to consume feature list. </p>
+# 
+# TRANSFORMER_END
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Manipulators"
+#!   LAST_SAVE_DATE="2016-07-01T17:12:26"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   DOC_TOP_LEFT="-3589.88 -3468.16"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   WORKSPACE_VERSION="1"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   VIEW_POSITION="-3746.91 -356.254"
+#!   ZOOM_SCALE="100"
+#!   FME_PROCESS_GROUP_BY=""
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Transform Tomcat log files into flat easy to consume feature list. &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="7694.79 3366.78"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License: LGPL-2.1+&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License as published by the Free Software Foundation; either&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Lesser General Public License for more details.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;&#10;        &lt;br/&gt;&#10;    &lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License: GPL-2+&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License as published by the Free Software Foundation; either&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;details.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;"
+#!   ITERATION_COUNT_ATTR=""
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.0.0 (20160419 - Build 16492 - WIN64)"
+#!   FMX_INSERT_MODE="Embedded Always"
+#!   FME_DOCUMENT_PRIORGUID="fd22dd26-790f-453a-9f79-c676828c5b65,711a2f63-792d-4ebc-9d10-ed56dc5311dd"
+#!   FME_BUILD_NUM="16492"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   SHOW_ANNOTATIONS="true"
+#!   MAX_LOOP_ITERATIONS=""
+#!   FME_DOCUMENT_GUID="25545edc-8cb2-4d8d-bed1-9c39dbaaa623"
+#!   SHOW_INFO_NODES="true"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   PASSWORD=""
+#!   TITLE="TomcatReader_log_reader"
+#!   XFORM_DEPRECATED="No"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The tomcat log has its own structure and is not that easy to convert into a flat readable structure. This transformer helps you reading these files so you can consume them into any BI tools available to you. Very usefull to overlook FME Server as it is hosted on Tomcat server. You can use it to detect errors or attacks from outside and make FME send you notifications.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Currently the transformer can handle the following files:&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- localhost_access_log.txt files&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- catalina.log files&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- localhost.log files &lt;/p&gt;&#10;"
+#!   HISTORY="01&lt;solidus&gt;07&lt;solidus&gt;2016,Jan&lt;space&gt;Bliki,initial&lt;space&gt;creation"
+#!   FME_SERVER_SERVICES=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL MULTIFILE_OR_ATTR file Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|Zip_Files(*.zip)|*.zip|All_Files|* Localhost access log file(s):"
+#!   DEFAULT_VALUE="\\kongoni.eea.dmz1\s$\apps\FMEServer\Utilities\tomcat\logs\localhost_access_log.2016-04-14.txt"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL MULTIFILE_OR_ATTR file_2 Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|Zip_Files(*.zip)|*.zip|All_Files|* Catalina log file(s):"
+#!   DEFAULT_VALUE="\\kongoni.eea.dmz1\s$\apps\FMEServer\Utilities\tomcat\logs\catalina.2016-04-23.log"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL MULTIFILE_OR_ATTR file_3 Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|Zip_Files(*.zip)|*.zip|All_Files|* Localhost log file(s):"
+#!   DEFAULT_VALUE="\\kongoni.eea.dmz1\s$\apps\FMEServer\Utilities\tomcat\logs\localhost.2016-04-14.log"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="24"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt;&quot;&gt;Read Tomcat localhost_access_log format.&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ipAddress :&lt;/span&gt;                  (^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|^\d:\d:\d:\d:\d:\d:\d:\d)&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;port:&lt;/span&gt;                              (-|\d{1,}) &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;attribute2:&lt;/span&gt;                   (-|.{1,})&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;requestDateTime:     &lt;/span&gt;\[(.{1,})\]&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;httpURL:                      &amp;quot;&lt;/span&gt;(.{1,})&amp;quot;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;httpMethod:               &lt;/span&gt;(\d{3,})&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;httpResponseTime:&lt;/span&gt; (-|\d{1,})&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-1323.24 -101.377"
+#!   TOP_LEFT="-1323.24 -101.377"
+#!   BOTTOM_RIGHT="125.02 -506.381"
+#!   BOUNDING_RECT="-1323.24 -101.377 1448.26 405.004"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="25"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt;&quot;&gt;Read httpURL.&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Method :&lt;/span&gt;                 (^\w+) &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;httpURL:&lt;/span&gt;&#9;&#9;  &#9;    &#9;&#9;(/[^\s]+)&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;HTTPVersion:&#9;&#9;&#9;&lt;/span&gt;(/[^\s]+)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="262.916 -101.377"
+#!   TOP_LEFT="262.916 -101.377"
+#!   BOTTOM_RIGHT="1839.32 -506.381"
+#!   BOUNDING_RECT="262.916 -101.377 1576.4 405.004"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="35"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt;&quot;&gt;Catalina-log&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;dateTime:&lt;/span&gt;                 (^\d{1,2}-[A-Z][a-z]{1,}-\d{4} \d{1,2}:\d{1,2}:\d{1,2}).\d{1,3}&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;messageStatus:    &lt;/span&gt; ([A-Z]{1,}) &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;procedure:               &lt;/span&gt;\[(.+)\] &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;tomcatObject:&lt;/span&gt;        ([a-z\.A-Z0-9]{1,}) &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;messageStr:&lt;/span&gt;&#9;           (.+)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1164.2 -1240.06"
+#!   TOP_LEFT="1164.2 -1240.06"
+#!   BOTTOM_RIGHT="3067.43 -1335.69"
+#!   BOUNDING_RECT="1164.2 -1240.06 1903.23 95.6257"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="85"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13pt;&quot;&gt;localhost.log&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;dateTime:&lt;/span&gt;                 (^\d{1,2}-[A-Z][a-z]{1,}-\d{4} \d{1,2}:\d{1,2}:\d{1,2}).\d{1,3}&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;messageStatus:    &lt;/span&gt; ([A-Z]{1,}) &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;procedure:               &lt;/span&gt;\[(.+)\] &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;tomcatObject:&lt;/span&gt;        ([a-z\.A-Z0-9]{1,}) &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;messageStr:&lt;/span&gt;&#9;           (.+)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1132.78 -2305.33"
+#!   TOP_LEFT="1132.78 -2305.33"
+#!   BOTTOM_RIGHT="3036.01 -2400.96"
+#!   BOUNDING_RECT="1132.78 -2305.33 1903.23 95.6257"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="56"
+#!   NAME="Concatinate lines together."
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-1291.74 -1443.76"
+#!   BOTTOM_RIGHT="1031.26 -2131.27"
+#!   BOUNDING_RECT="-1291.74 -1443.76 2323 687.507"
+#!   STICKY="true"
+#!   COLOUR="0.803922,0.329412,0.286275"
+#!   CONTENTS="53 46 48 54 47 51 43 49 50 44 52 45 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="81"
+#!   NAME="Concatinate lines together"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-1291.74 -2634.42"
+#!   BOTTOM_RIGHT="1047.74 -3115.39"
+#!   BOUNDING_RECT="-1291.74 -2634.42 2339.48 480.971"
+#!   STICKY="true"
+#!   COLOUR="0.882353,0.694118,0.764706"
+#!   CONTENTS="73 80 79 72 75 66 78 70 71 74 76 77 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="-1323.24 -530.117"
+#!   BOUNDING_RECT="-1323.24 -530.117 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="subParts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="subParts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_notused"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;^&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;3&lt;closecurly&gt;&lt;backslash&gt;.&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;3&lt;closecurly&gt;&lt;backslash&gt;.&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;3&lt;closecurly&gt;&lt;backslash&gt;.&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;3&lt;closecurly&gt;|&lt;backslash&gt;d:&lt;backslash&gt;d:&lt;backslash&gt;d:&lt;backslash&gt;d:&lt;backslash&gt;d:&lt;backslash&gt;d:&lt;backslash&gt;d:&lt;backslash&gt;d&lt;closeparen&gt;&lt;space&gt;&lt;openparen&gt;-|&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;space&gt;&lt;openparen&gt;-|.&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;space&gt;&lt;backslash&gt;&lt;openbracket&gt;&lt;openparen&gt;.&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;backslash&gt;&lt;closebracket&gt;&lt;space&gt;&lt;quote&gt;&lt;openparen&gt;.&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;quote&gt;&lt;space&gt;&lt;openparen&gt;&lt;backslash&gt;d&lt;opencurly&gt;3&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;space&gt;&lt;openparen&gt;-|&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="subParts"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="FeatureReader"
+#!   VERSION="8"
+#!   POSITION="-1890.75 -503.977"
+#!   BOUNDING_RECT="-1890.75 -503.977 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="text_line"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_%text_line"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_WHOLE_FILE_AT_ONCE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_EXPOSE_ATTRS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_SKIP_FOOTER" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Only Use Result"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_SKIP_LINES" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE="utf-8"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS" PARM_VALUE="fme_dataset,char(50)"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Data Features"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_SKIP_LINES,&quot;OPTIONAL INTEGER&quot;,TEXTLINE&lt;space&gt;Number&lt;space&gt;of&lt;space&gt;Lines&lt;space&gt;to&lt;space&gt;Skip:,TEXTLINE_READ_WHOLE_FILE_AT_ONCE,&quot;OPTIONAL ACTIVECHOICE YES,READ_BOTTOM_UP,SKIP_LINES,SKIP_FOOTER%NO&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Whole&lt;space&gt;File&lt;space&gt;at&lt;space&gt;Once:,TEXTLINE_SKIP_FOOTER,&quot;OPTIONAL INTEGER&quot;,TEXTLINE&lt;space&gt;Number&lt;space&gt;of&lt;space&gt;Footer&lt;space&gt;Lines&lt;space&gt;to&lt;space&gt;Skip:,TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS,&quot;IGNORE TEXT&quot;,TEXTLINE&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,TEXTLINE_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP TEXTLINE_EXPOSE_FORMAT_ATTRS&quot;,TEXTLINE&lt;space&gt;Schema&lt;space&gt;Attributes,TEXTLINE_READ_BOTTOM_UP,&quot;OPTIONAL CHOICE Yes%No&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Bottom&lt;space&gt;Up:,TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING SYSTEM%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceREAD_WHOLE_FILE_AT_ONCE&lt;comma&gt;NO&lt;comma&gt;SourceREAD_BOTTOM_UP&lt;comma&gt;No&lt;comma&gt;SourceSKIP_LINES&lt;comma&gt;0&lt;comma&gt;SourceSKIP_FOOTER&lt;comma&gt;0&lt;comma&gt;SourceENCODING&lt;comma&gt;utf-8&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;FME_DISCLOSURE_OPEN&lt;comma&gt;SourceTEXTLINE_EXPOSE_FORMAT_ATTRS&lt;comma&gt;&lt;quote&gt;fme_dataset&lt;comma&gt;char&lt;openparen&gt;50&lt;closeparen&gt;&lt;quote&gt;,METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE="text_line,&quot;text_line_data,fme_geometry{0},fme_dataset&quot;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(file)"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_BOTTOM_UP" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-676.858 -526.992"
+#!   BOUNDING_RECT="-676.858 -526.992 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="subParts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="subParts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; ipAddress SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;0&lt;closecurly&gt;.part&lt;closeparen&gt;  port SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;closeparen&gt;  attribute2 SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;2&lt;closecurly&gt;.part&lt;closeparen&gt;  requestDateTime SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;3&lt;closecurly&gt;.part&lt;closeparen&gt;  httpURL SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;4&lt;closecurly&gt;.part&lt;closeparen&gt;  httpMethod SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;5&lt;closecurly&gt;.part&lt;closeparen&gt;  httpResponseTime SET_TO &lt;at&gt;Value&lt;openparen&gt;subParts&lt;opencurly&gt;6&lt;closecurly&gt;.part&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="-676.858 -724.492"
+#!   BOUNDING_RECT="-676.858 -724.492 441.016 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="fme_geometry&lt;opencurly&gt;&lt;closecurly&gt; subParts&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_2"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_notused,text_line_data"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="TextDecoder"
+#!   VERSION="0"
+#!   POSITION="1532.77 -684.927"
+#!   BOUNDING_RECT="1532.77 -684.927 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ENCODING" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_DECODE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;httpURL&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="httpURL"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextDecoder"/>
+#!     <XFORM_PARM PARM_NAME="ENCODING_TYPE" PARM_VALUE="URL (Percent Encoding)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="1532.77 -479.997"
+#!   BOUNDING_RECT="1532.77 -479.997 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="httpURL"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="%"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="%%"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="262.916 -539.997"
+#!   BOUNDING_RECT="262.916 -539.997 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url_parts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url_parts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_notused"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;^&lt;backslash&gt;w+&lt;closeparen&gt;&lt;space&gt;&lt;openparen&gt;.&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;space&gt;&lt;openparen&gt;.+&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="url_parts"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_2"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;httpURL&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="921.066 -479.997"
+#!   BOUNDING_RECT="921.066 -479.997 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url_parts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="url_parts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; port SET_TO &lt;at&gt;Value&lt;openparen&gt;url_parts&lt;opencurly&gt;0&lt;closecurly&gt;.part&lt;closeparen&gt;  httpURL SET_TO &lt;at&gt;Value&lt;openparen&gt;url_parts&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;closeparen&gt;  httpVersion SET_TO &lt;at&gt;Value&lt;openparen&gt;url_parts&lt;opencurly&gt;2&lt;closecurly&gt;.part&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="910.05 -684.927"
+#!   BOUNDING_RECT="910.05 -684.927 441.016 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="url_parts&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_3"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_notused"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="DateFormatter"
+#!   VERSION="4"
+#!   POSITION="2143.88 -569.757"
+#!   BOUNDING_RECT="2143.88 -569.757 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="requestDateTime"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="ISO DateTime (%Y-%m-%dT%H:%M:%S)"/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="%d/%b/%Y:%H:%M:%S +0200"/>
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="30"
+#!   TYPE="Logger"
+#!   VERSION="3"
+#!   POSITION="-676.858 -946"
+#!   BOUNDING_RECT="-676.858 -946 733.494 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_NotMatched"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Erorr in localhost"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="32"
+#!   TYPE="Logger"
+#!   VERSION="3"
+#!   POSITION="876.292 -946"
+#!   BOUNDING_RECT="876.292 -946 841.101 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ipAddress" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="port" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="requestDateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpMethod" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="httpResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_2_NotMatched"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Error in httpURL"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="34"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="1217.33 -1713.09"
+#!   BOUNDING_RECT="1217.33 -1713.09 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_notused"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;^&lt;backslash&gt;d&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;openbracket&gt;A-Z&lt;closebracket&gt;&lt;openbracket&gt;a-z&lt;closebracket&gt;&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;backslash&gt;d&lt;opencurly&gt;4&lt;closecurly&gt;&lt;space&gt;&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;:&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;:&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;.&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;A-Z&lt;closebracket&gt;&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;space&gt;&lt;backslash&gt;&lt;openbracket&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;backslash&gt;&lt;closebracket&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;a-z&lt;backslash&gt;.A-Z0-9&lt;dollar&gt;&lt;closebracket&gt;&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;openparen&gt;&lt;space&gt;|&lt;backslash&gt;.&lt;closeparen&gt;&lt;openparen&gt;.+&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="_parts"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_3"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="36"
+#!   TYPE="FeatureReader"
+#!   VERSION="8"
+#!   POSITION="-1856.27 -1600.02"
+#!   BOUNDING_RECT="-1856.27 -1600.02 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="text_line"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_%text_line"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_WHOLE_FILE_AT_ONCE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_EXPOSE_ATTRS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_SKIP_FOOTER" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Only Use Result"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader_2"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_SKIP_LINES" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE="utf-8"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS" PARM_VALUE="fme_dataset,char(50)"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Data Features"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_SKIP_LINES,&quot;OPTIONAL INTEGER&quot;,TEXTLINE&lt;space&gt;Number&lt;space&gt;of&lt;space&gt;Lines&lt;space&gt;to&lt;space&gt;Skip:,TEXTLINE_READ_WHOLE_FILE_AT_ONCE,&quot;OPTIONAL ACTIVECHOICE YES,READ_BOTTOM_UP,SKIP_LINES,SKIP_FOOTER%NO&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Whole&lt;space&gt;File&lt;space&gt;at&lt;space&gt;Once:,TEXTLINE_SKIP_FOOTER,&quot;OPTIONAL INTEGER&quot;,TEXTLINE&lt;space&gt;Number&lt;space&gt;of&lt;space&gt;Footer&lt;space&gt;Lines&lt;space&gt;to&lt;space&gt;Skip:,TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS,&quot;IGNORE TEXT&quot;,TEXTLINE&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,TEXTLINE_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP TEXTLINE_EXPOSE_FORMAT_ATTRS&quot;,TEXTLINE&lt;space&gt;Schema&lt;space&gt;Attributes,TEXTLINE_READ_BOTTOM_UP,&quot;OPTIONAL CHOICE Yes%No&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Bottom&lt;space&gt;Up:,TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING SYSTEM%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceSKIP_LINES&lt;comma&gt;0&lt;comma&gt;SourceREAD_WHOLE_FILE_AT_ONCE&lt;comma&gt;NO&lt;comma&gt;SourceSKIP_FOOTER&lt;comma&gt;0&lt;comma&gt;SourceTEXTLINE_EXPOSE_FORMAT_ATTRS&lt;comma&gt;&lt;quote&gt;fme_dataset&lt;comma&gt;char&lt;openparen&gt;50&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;FME_DISCLOSURE_OPEN&lt;comma&gt;SourceREAD_BOTTOM_UP&lt;comma&gt;No&lt;comma&gt;SourceENCODING&lt;comma&gt;utf-8,METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE="text_line,&quot;text_line_data,fme_geometry{0},fme_dataset&quot;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(file_2)"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_BOTTOM_UP" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="43"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="-1217.74 -1684.79"
+#!   BOUNDING_RECT="-1217.74 -1684.79 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="dateTime"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="^&lt;backslash&gt;d&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;openbracket&gt;A-Z&lt;closebracket&gt;&lt;openbracket&gt;a-z&lt;closebracket&gt;&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;backslash&gt;d&lt;opencurly&gt;4&lt;closecurly&gt;&lt;space&gt;&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;:&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;:&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;.&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tomcat_DateTime"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="44"
+#!   TYPE="Counter"
+#!   VERSION="2"
+#!   POSITION="-575.358 -1647.47"
+#!   BOUNDING_RECT="-575.358 -1647.47 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DOMAIN" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="START" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Counter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="45"
+#!   TYPE="VariableSetter"
+#!   VERSION="3"
+#!   POSITION="-31.423 -1647.47"
+#!   BOUNDING_RECT="-31.423 -1647.47 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableSetter"/>
+#!     <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_countLine&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="_counterLineExtra"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="46"
+#!   TYPE="VariableRetriever"
+#!   VERSION="3"
+#!   POSITION="-575.358 -1932.47"
+#!   BOUNDING_RECT="-575.358 -1932.47 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableRetriever"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="_counterLineExtra"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="47"
+#!   TYPE="Aggregator"
+#!   VERSION="12"
+#!   POSITION="552.114 -1647.47"
+#!   BOUNDING_RECT="552.114 -1647.47 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="AGGREGATE"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Geometry - Assemble One Level"/>
+#!     <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;cr&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE="messageStr"/>
+#!     <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="Homogeneous Collection (If Possible)"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="48"
+#!   TYPE="AttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="-31.423 -1932.47"
+#!   BOUNDING_RECT="-31.423 -1932.47 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="text_line_data messageStr RENAME_SET_DEFAULT "/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="57"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="1823.02 -1677.84"
+#!   BOUNDING_RECT="1823.02 -1677.84 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; dateTime SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;0&lt;closecurly&gt;.part&lt;closeparen&gt;  messageStatus SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;closeparen&gt;  procedure SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;2&lt;closecurly&gt;.part&lt;closeparen&gt;  tomcatObject SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;3&lt;closecurly&gt;.part&lt;closeparen&gt;  messageStr SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;5&lt;closecurly&gt;.part&lt;closeparen&gt;&lt;lf&gt;&lt;at&gt;Value&lt;openparen&gt;messageStr&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="60"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1812 -1873.89"
+#!   BOUNDING_RECT="1812 -1873.89 441.016 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="_parts&lt;opencurly&gt;&lt;closecurly&gt; fme_geometry&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_4"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_countLine,_notused,text_line_data"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="59"
+#!   TYPE="AttributeTrimmer"
+#!   VERSION="3"
+#!   POSITION="2431.3 -1773.09"
+#!   BOUNDING_RECT="2431.3 -1773.09 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE="&lt;tab&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeTrimmer"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="messageStr"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="62"
+#!   TYPE="DateFormatter"
+#!   VERSION="4"
+#!   POSITION="2990.53 -1775.35"
+#!   BOUNDING_RECT="2990.53 -1775.35 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="dateTime"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="ISO DateTime (%Y-%m-%dT%H:%M:%S)"/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="%d-%b-%Y %H:%M:%S"/>
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="64"
+#!   TYPE="Logger"
+#!   VERSION="3"
+#!   POSITION="1780.7 -2140.89"
+#!   BOUNDING_RECT="1780.7 -2140.89 673.007 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_3_NotMatched"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Error in Catalina log file"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="66"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="-1217.74 -2727.17"
+#!   BOUNDING_RECT="-1217.74 -2727.17 502.111 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="dateTime"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="^&lt;backslash&gt;d&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;openbracket&gt;A-Z&lt;closebracket&gt;&lt;openbracket&gt;a-z&lt;closebracket&gt;&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;backslash&gt;d&lt;opencurly&gt;4&lt;closecurly&gt;&lt;space&gt;&lt;backslash&gt;d&lt;backslash&gt;d:&lt;backslash&gt;d&lt;backslash&gt;d:&lt;backslash&gt;d&lt;backslash&gt;d.&lt;backslash&gt;d&lt;backslash&gt;d&lt;backslash&gt;d&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tomcat_DateTime_2"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="70"
+#!   TYPE="Counter"
+#!   VERSION="2"
+#!   POSITION="-582.233 -2724.42"
+#!   BOUNDING_RECT="-582.233 -2724.42 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DOMAIN" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="START" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Counter_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="71"
+#!   TYPE="VariableSetter"
+#!   VERSION="3"
+#!   POSITION="-57.4833 -2726.04"
+#!   BOUNDING_RECT="-57.4833 -2726.04 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableSetter_2"/>
+#!     <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_countLine&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="_counterLineExtra"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="72"
+#!   TYPE="VariableRetriever"
+#!   VERSION="3"
+#!   POSITION="-597.233 -2962.92"
+#!   BOUNDING_RECT="-597.233 -2962.92 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableRetriever_2"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="_counterLineExtra"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="73"
+#!   TYPE="Aggregator"
+#!   VERSION="12"
+#!   POSITION="567.739 -2849.22"
+#!   BOUNDING_RECT="567.739 -2849.22 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="AGGREGATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator_2"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Geometry - Assemble One Level"/>
+#!     <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;cr&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="_countLine"/>
+#!     <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE="messageStr"/>
+#!     <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="Homogeneous Collection (If Possible)"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="74"
+#!   TYPE="AttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="-62.6733 -2969.39"
+#!   BOUNDING_RECT="-62.6733 -2969.39 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16167"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="text_line_data messageStr RENAME_SET_DEFAULT "/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="82"
+#!   TYPE="FeatureReader"
+#!   VERSION="8"
+#!   POSITION="-1856.27 -2543.78"
+#!   BOUNDING_RECT="-1856.27 -2543.78 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="text_line"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_%text_line"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_WHOLE_FILE_AT_ONCE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_EXPOSE_ATTRS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_SKIP_FOOTER" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Only Use Result"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader_3"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_SKIP_LINES" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE="utf-8"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS" PARM_VALUE="fme_dataset,char(50)"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Data Features"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_SKIP_LINES,&quot;OPTIONAL INTEGER&quot;,TEXTLINE&lt;space&gt;Number&lt;space&gt;of&lt;space&gt;Lines&lt;space&gt;to&lt;space&gt;Skip:,TEXTLINE_READ_WHOLE_FILE_AT_ONCE,&quot;OPTIONAL ACTIVECHOICE YES,READ_BOTTOM_UP,SKIP_LINES,SKIP_FOOTER%NO&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Whole&lt;space&gt;File&lt;space&gt;at&lt;space&gt;Once:,TEXTLINE_SKIP_FOOTER,&quot;OPTIONAL INTEGER&quot;,TEXTLINE&lt;space&gt;Number&lt;space&gt;of&lt;space&gt;Footer&lt;space&gt;Lines&lt;space&gt;to&lt;space&gt;Skip:,TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS,&quot;IGNORE TEXT&quot;,TEXTLINE&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,TEXTLINE_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP TEXTLINE_EXPOSE_FORMAT_ATTRS&quot;,TEXTLINE&lt;space&gt;Schema&lt;space&gt;Attributes,TEXTLINE_READ_BOTTOM_UP,&quot;OPTIONAL CHOICE Yes%No&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Bottom&lt;space&gt;Up:,TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING SYSTEM%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceSKIP_LINES&lt;comma&gt;0&lt;comma&gt;SourceREAD_WHOLE_FILE_AT_ONCE&lt;comma&gt;NO&lt;comma&gt;SourceSKIP_FOOTER&lt;comma&gt;0&lt;comma&gt;SourceTEXTLINE_EXPOSE_FORMAT_ATTRS&lt;comma&gt;&lt;quote&gt;fme_dataset&lt;comma&gt;char&lt;openparen&gt;50&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;FME_DISCLOSURE_OPEN&lt;comma&gt;SourceREAD_BOTTOM_UP&lt;comma&gt;No&lt;comma&gt;SourceENCODING&lt;comma&gt;utf-8,METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE="text_line,&quot;text_line_data,fme_geometry{0},fme_dataset&quot;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(file_3)"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_BOTTOM_UP" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="86"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="1287.39 -2818.54"
+#!   BOUNDING_RECT="1287.39 -2818.54 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_notused"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;^&lt;backslash&gt;d&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;openbracket&gt;A-Z&lt;closebracket&gt;&lt;openbracket&gt;a-z&lt;closebracket&gt;&lt;opencurly&gt;2&lt;closecurly&gt;-&lt;backslash&gt;d&lt;opencurly&gt;4&lt;closecurly&gt;&lt;space&gt;&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;:&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;:&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;.&lt;backslash&gt;d&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;A-Z&lt;closebracket&gt;&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;space&gt;&lt;backslash&gt;&lt;openbracket&gt;&lt;openparen&gt;.+&lt;closeparen&gt;&lt;backslash&gt;&lt;closebracket&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;a-z&lt;backslash&gt;.A-Z0-9&lt;dollar&gt;&lt;closebracket&gt;&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;openparen&gt;&lt;space&gt;|&lt;backslash&gt;.&lt;closeparen&gt;&lt;openparen&gt;.+&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="_parts"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_4"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="88"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="1876.14 -2818.54"
+#!   BOUNDING_RECT="1876.14 -2818.54 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notused" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parts{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; dateTime SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;0&lt;closecurly&gt;.part&lt;closeparen&gt;  messageStatus SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;closeparen&gt;  procedure SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;2&lt;closecurly&gt;.part&lt;closeparen&gt;  tomcatObject SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;3&lt;closecurly&gt;.part&lt;closeparen&gt;  messageStr SET_TO &lt;at&gt;Value&lt;openparen&gt;_parts&lt;opencurly&gt;5&lt;closecurly&gt;.part&lt;closeparen&gt;&lt;lf&gt;&lt;at&gt;Value&lt;openparen&gt;messageStr&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="90"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1876.14 -3073.91"
+#!   BOUNDING_RECT="1876.14 -3073.91 441.016 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="_parts&lt;opencurly&gt;&lt;closecurly&gt; fme_geometry&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_5"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_countLine,_notused,text_line_data"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="94"
+#!   TYPE="Logger"
+#!   VERSION="3"
+#!   POSITION="1832.02 -3397.16"
+#!   BOUNDING_RECT="1832.02 -3397.16 907.26 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_countLine" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_geometry{0}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_4_NotMatched"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Error translating localhost.log file"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="96"
+#!   TYPE="AttributeTrimmer"
+#!   VERSION="3"
+#!   POSITION="2468.81 -2914.41"
+#!   BOUNDING_RECT="2468.81 -2914.41 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE="&lt;tab&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeTrimmer_2"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="messageStr"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="97"
+#!   TYPE="DateFormatter"
+#!   VERSION="4"
+#!   POSITION="3021.78 -2916.67"
+#!   BOUNDING_RECT="3021.78 -2916.67 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="dateTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="procedure" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tomcatObject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="messageStr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="dateTime"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="ISO DateTime (%Y-%m-%dT%H:%M:%S)"/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="%d-%b-%Y %H:%M:%S"/>
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="92"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-2656.94 -620.742"
+#!   BOUNDING_RECT="-2656.94 -620.742 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="Process"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(file)&lt;space&gt;ATTRIBUTE_HAS_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Process"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="103"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-2656.94 -1634.39"
+#!   BOUNDING_RECT="-2656.94 -1634.39 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="Process"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(file_2)&lt;space&gt;ATTRIBUTE_HAS_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Process"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="106"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-2631.28 -2568.78"
+#!   BOUNDING_RECT="-2631.28 -2568.78 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="Process"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_3"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(file_3)&lt;space&gt;ATTRIBUTE_HAS_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Process"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="26"
+#!   NAME="Initiator"
+#!   POSITION="-3589.88 -1556.27"
+#!   BOUNDING_RECT="-3589.88 -1556.27 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="28"
+#!   NAME="Localhost_access_log.txt"
+#!   POSITION="2801 -629.757"
+#!   BOUNDING_RECT="2801 -629.757 619.532 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="68"
+#!   NAME="Catalina.log"
+#!   POSITION="3596.95 -1775.35"
+#!   BOUNDING_RECT="3596.95 -1775.35 507.964 71"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="100"
+#!   NAME="localhost.log"
+#!   POSITION="3706.17 -2916.67"
+#!   BOUNDING_RECT="3706.17 -2916.67 -1 -1"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="99"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="92"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="104"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="103"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="107"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="106"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="2"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="28"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="58"
+#!   SOURCE_NODE="34"
+#!   TARGET_NODE="57"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="49"
+#!   SOURCE_NODE="43"
+#!   TARGET_NODE="44"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="50"
+#!   SOURCE_NODE="44"
+#!   TARGET_NODE="45"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="51"
+#!   SOURCE_NODE="45"
+#!   TARGET_NODE="47"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="46"
+#!   TARGET_NODE="48"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="55"
+#!   SOURCE_NODE="47"
+#!   TARGET_NODE="34"
+#!   SOURCE_PORT_DESC="fo 0 AGGREGATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="53"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="47"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="61"
+#!   SOURCE_NODE="57"
+#!   TARGET_NODE="60"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="65"
+#!   SOURCE_NODE="59"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="63"
+#!   SOURCE_NODE="60"
+#!   TARGET_NODE="59"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="69"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="68"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="75"
+#!   SOURCE_NODE="66"
+#!   TARGET_NODE="70"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="76"
+#!   SOURCE_NODE="70"
+#!   TARGET_NODE="71"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="77"
+#!   SOURCE_NODE="71"
+#!   TARGET_NODE="73"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="78"
+#!   SOURCE_NODE="72"
+#!   TARGET_NODE="74"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="87"
+#!   SOURCE_NODE="73"
+#!   TARGET_NODE="86"
+#!   SOURCE_PORT_DESC="fo 0 AGGREGATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="79"
+#!   SOURCE_NODE="74"
+#!   TARGET_NODE="73"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="89"
+#!   SOURCE_NODE="86"
+#!   TARGET_NODE="88"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="91"
+#!   SOURCE_NODE="88"
+#!   TARGET_NODE="90"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="93"
+#!   SOURCE_NODE="90"
+#!   TARGET_NODE="96"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="102"
+#!   SOURCE_NODE="92"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 Process"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="98"
+#!   SOURCE_NODE="96"
+#!   TARGET_NODE="97"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="101"
+#!   SOURCE_NODE="97"
+#!   TARGET_NODE="100"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="105"
+#!   SOURCE_NODE="103"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 0 Process"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="108"
+#!   SOURCE_NODE="106"
+#!   TARGET_NODE="82"
+#!   SOURCE_PORT_DESC="fo 0 Process"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="30"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 1 text_line"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="33"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="67"
+#!   SOURCE_NODE="34"
+#!   TARGET_NODE="64"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="38"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="43"
+#!   SOURCE_PORT_DESC="fo 1 text_line"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="54"
+#!   SOURCE_NODE="43"
+#!   TARGET_NODE="46"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="80"
+#!   SOURCE_NODE="66"
+#!   TARGET_NODE="72"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="83"
+#!   SOURCE_NODE="82"
+#!   TARGET_NODE="66"
+#!   SOURCE_PORT_DESC="fo 1 text_line"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="95"
+#!   SOURCE_NODE="86"
+#!   TARGET_NODE="94"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_file \\kongoni.eea.dmz1\s$\apps\FMEServer\Utilities\tomcat\logs\localhost_access_log.2016-04-14.txt
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_file_2 \\kongoni.eea.dmz1\s$\apps\FMEServer\Utilities\tomcat\logs\catalina.2016-04-23.log
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_file_3 \\kongoni.eea.dmz1\s$\apps\FMEServer\Utilities\tomcat\logs\localhost.2016-04-14.log
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO TomcatReader_log_reader_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(TomcatReader_log_reader_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(TomcatReader_log_reader_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator1467385946 Input Splitter"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator"   OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator_0_buBY8K2fIzE="   OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator_1_nPx8LwB7LJ4="   OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator_2_xHS9zQo1LlA="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator_0_buBY8K2fIzE="    OUTPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(TomcatReader_log_reader_WORKSPACE_NAME)_file$encode),$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter) ATTRIBUTE_HAS_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_Process OUTPUT FAILED FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED text_line
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_DIRECTIVES SKIP_LINES,0,READ_WHOLE_FILE_AT_ONCE,NO,SKIP_FOOTER,0,TEXTLINE_EXPOSE_FORMAT_ATTRS,fme_dataset<comma>char<openparen>50<closeparen>,EXPOSE_ATTRS_GROUP,FME_DISCLOSURE_OPEN,READ_BOTTOM_UP,No,ENCODING,utf-8
+
+# Values come in encoded and come out decoded.
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_findInListElseDefault { valueEncoded defaultValue } {    if { [lsearch [split {$($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED)}] $valueEncoded] >= 0} {       return $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_[FME_DecodeText $valueEncoded]    } else {       return $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_$defaultValue    } }
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS
+INCLUDE [       if { {RESULT_ONLY} == {MERGE} } {          puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS <Unused>";       } else {          puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS RESULT_ONLY";       };    ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_Process"    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  $($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    READER_TYPE         TEXTLINE    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$($(TomcatReader_log_reader_WORKSPACE_NAME)_file$encode),$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader)"    QUERYFCT_IDS        ""    READER_DIRECTIVES META_MACROS,SourceREAD_WHOLE_FILE_AT_ONCE<comma>NO<comma>SourceREAD_BOTTOM_UP<comma>No<comma>SourceSKIP_LINES<comma>0<comma>SourceSKIP_FOOTER<comma>0<comma>SourceENCODING<comma>utf-8<comma>SourceEXPOSE_ATTRS_GROUP<comma>FME_DISCLOSURE_OPEN<comma>SourceTEXTLINE_EXPOSE_FORMAT_ATTRS<comma><quote>fme_dataset<comma>char<openparen>50<closeparen><quote>,METAFILE,TEXTLINE    QUERYFCT_OUTPUT     "DATA_ONLY"    CONTINUE_ON_READER_ERROR YES    READER_PARAMS_WWJD     $($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE *         @SupplyAttributes(fme_feature_type,@FeatureType())         @Tcl2("set FME_FeatureType [$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_findInListElseDefault [FME_EncodeText $FME_FeatureType] {<OTHER>}]")         @Transform(TEXTLINE,FME_GENERIC,ALIAS_GEOMETRY)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_036c6de1_54cd_4a96_9936_08a9f8ffbf6d0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   set attrName $matchedChars;   FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];   set index 0;   set parts [lindex $results 1];   foreach part $parts {      if {[llength $matchedParts] > 0} {          set attrName "$matchedParts{$index}.part";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matchedParts{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      incr index;   };   set index 0;   set regexMatches [lindex $results 0];   foreach part $regexMatches {      if {[llength $matches] > 0} {          set attrName "$matches{$index}.match";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matches{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      set isFirstMatch 0;      incr index;   };   return $index; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_text_line"    TEST @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_036c6de1_54cd_4a96_9936_08a9f8ffbf6d0_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>text_line_data<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher)} {<openparen>^<backslash>d<opencurly>1<comma>3<closecurly><backslash>.<backslash>d<opencurly>1<comma>3<closecurly><backslash>.<backslash>d<opencurly>1<comma>3<closecurly><backslash>.<backslash>d<opencurly>1<comma>3<closecurly>|<backslash>d:<backslash>d:<backslash>d:<backslash>d:<backslash>d:<backslash>d:<backslash>d:<backslash>d<closeparen><space><openparen>-|<backslash>d<opencurly>1<comma><closecurly><closeparen><space><openparen>-|.<opencurly>1<comma><closecurly><closeparen><space><backslash><openbracket><openparen>.<opencurly>1<comma><closecurly><closeparen><backslash><closebracket><space><quote><openparen>.<opencurly>1<comma><closecurly><closeparen><quote><space><openparen><backslash>d<opencurly>3<comma><closecurly><closeparen><space><openparen>-|<backslash>d<opencurly>1<comma><closecurly><closeparen>} {_notused} {} {subParts}") > 0    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NotMatched_Logger    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NOT_MATCHED"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NotMatched_LOGGED"                  @Log("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NotMatched: Erorr in localhost","20","20")                  @FeatureType("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NotMatched_LOGGED")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NotMatched LOGGED Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_NotMatched_LOGGED"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_MATCHED"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "ipAddress" "SET_TO" "<at>Value<openparen>subParts<opencurly>0<closecurly>.part<closeparen>"     ATTR_ACTION "" "port" "SET_TO" "<at>Value<openparen>subParts<opencurly>1<closecurly>.part<closeparen>"     ATTR_ACTION "" "attribute2" "SET_TO" "<at>Value<openparen>subParts<opencurly>2<closecurly>.part<closeparen>"     ATTR_ACTION "" "requestDateTime" "SET_TO" "<at>Value<openparen>subParts<opencurly>3<closecurly>.part<closeparen>"     ATTR_ACTION "" "httpURL" "SET_TO" "<at>Value<openparen>subParts<opencurly>4<closecurly>.part<closeparen>"     ATTR_ACTION "" "httpMethod" "SET_TO" "<at>Value<openparen>subParts<opencurly>5<closecurly>.part<closeparen>"     ATTR_ACTION "" "httpResponseTime" "SET_TO" "<at>Value<openparen>subParts<opencurly>6<closecurly>.part<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP ";    foreach attr [split "fme_geometry<opencurly><closecurly> subParts<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"        @RemoveAttributes(fme_encoded,_notused,text_line_data)        @RemoveAttributes(fme_pcre_match"$($(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_a27ace00_eb58_46a3_8c14_b60520b983f40_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   set attrName $matchedChars;   FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];   set index 0;   set parts [lindex $results 1];   foreach part $parts {      if {[llength $matchedParts] > 0} {          set attrName "$matchedParts{$index}.part";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matchedParts{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      incr index;   };   set index 0;   set regexMatches [lindex $results 0];   foreach part $regexMatches {      if {[llength $matches] > 0} {          set attrName "$matches{$index}.match";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matches{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      set isFirstMatch 0;      incr index;   };   return $index; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"    TEST @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_a27ace00_eb58_46a3_8c14_b60520b983f40_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>httpURL<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2)} {<openparen>^<backslash>w+<closeparen><space><openparen>.<opencurly>1<comma><closecurly><closeparen><space><openparen>.+<closeparen>} {_notused} {} {url_parts}") > 0    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NotMatched_Logger    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NOT_MATCHED"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NotMatched_LOGGED"                  @Log("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NotMatched: Error in httpURL","20","20")                  @FeatureType("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NotMatched_LOGGED")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NotMatched LOGGED Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_NotMatched_LOGGED"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_2_MATCHED"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "port" "SET_TO" "<at>Value<openparen>url_parts<opencurly>0<closecurly>.part<closeparen>"     ATTR_ACTION "" "httpURL" "SET_TO" "<at>Value<openparen>url_parts<opencurly>1<closecurly>.part<closeparen>"     ATTR_ACTION "" "httpVersion" "SET_TO" "<at>Value<openparen>url_parts<opencurly>2<closecurly>.part<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_3_LIST_EXP ";    foreach attr [split "url_parts<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_3    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_3_OUTPUT"        @RemoveAttributes(fme_encoded,_notused)        @RemoveAttributes(fme_pcre_match"$($(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_3_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_StringReplacer_38dcb0f5_06f0_4238_a672_83dbe6ae09710_replacer { findText replaceText invalidValue} {     set attrs [split \"httpURL\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_3_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringReplacer_38dcb0f5_06f0_4238_a672_83dbe6ae09710_replacer {%%} {%} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TextEncoderFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TextDecoder    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringReplacer_OUTPUT"    ACTION URL_DECODE    RESULT_ATTR "httpURL"    VALUE_TO_ENCODE "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>httpURL<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_TextDecoder)"    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TextDecoder_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_2_formatter {invalidValue} {       set dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {requestDateTime} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set srcfmt {};        if {{%d/%b/%Y:%H:%M:%S +0200} != {FME_AUTOMATIC}} {            set srcfmt {%d/%b/%Y:%H:%M:%S +0200};        } else {          set comment { In Automatic mode we ignore the millisecond part };          regexp {^[^.]*} $date date;        };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };        };        set sourceFormatOpt {};        if {[string length $srcfmt] > 0} {           set sourceFormatOpt \"-format {$srcfmt}\";        };        set comment { Compute the output value and catch any errors };        set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                           set output [clock format $seconds -format $dateFormat];        }];        set comment { If there was error then we try again by removing digits after last decimal };        if { $error != 0 } {           set index [string last "." $date];           if { $index > 0 } {              set date [eval string range $date 0 [expr $index-1]];              set dateLen [string length $date];              set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];           };        };        if { $error == 0 } {           FME_SetAttribute $attr $output;        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TextDecoder_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_2_OUTPUT"         @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_2_formatter {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator_2_xHS9zQo1LlA="    OUTPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_TestFactory_0 INPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(TomcatReader_log_reader_WORKSPACE_NAME)_file_3$encode),$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3) ATTRIBUTE_HAS_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_Process OUTPUT FAILED FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3 <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_OUTPUT_PORTS_ENCODED text_line
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_DIRECTIVES SKIP_LINES,0,READ_WHOLE_FILE_AT_ONCE,NO,SKIP_FOOTER,0,TEXTLINE_EXPOSE_FORMAT_ATTRS,fme_dataset<comma>char<openparen>50<closeparen>,EXPOSE_ATTRS_GROUP,FME_DISCLOSURE_OPEN,READ_BOTTOM_UP,No,ENCODING,utf-8
+
+# Values come in encoded and come out decoded.
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_findInListElseDefault { valueEncoded defaultValue } {    if { [lsearch [split {$($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_OUTPUT_PORTS_ENCODED)}] $valueEncoded] >= 0} {       return $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_[FME_DecodeText $valueEncoded]    } else {       return $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_$defaultValue    } }
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_COMBINE_ATTRS
+INCLUDE [       if { {RESULT_ONLY} == {MERGE} } {          puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_COMBINE_ATTRS <Unused>";       } else {          puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_COMBINE_ATTRS RESULT_ONLY";       };    ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_3_Process"    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  $($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    READER_TYPE         TEXTLINE    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$($(TomcatReader_log_reader_WORKSPACE_NAME)_file_3$encode),$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3)"    QUERYFCT_IDS        ""    READER_DIRECTIVES META_MACROS,SourceSKIP_LINES<comma>0<comma>SourceREAD_WHOLE_FILE_AT_ONCE<comma>NO<comma>SourceSKIP_FOOTER<comma>0<comma>SourceTEXTLINE_EXPOSE_FORMAT_ATTRS<comma><quote>fme_dataset<comma>char<openparen>50<closeparen><quote><comma>SourceEXPOSE_ATTRS_GROUP<comma>FME_DISCLOSURE_OPEN<comma>SourceREAD_BOTTOM_UP<comma>No<comma>SourceENCODING<comma>utf-8,METAFILE,TEXTLINE    QUERYFCT_OUTPUT     "DATA_ONLY"    CONTINUE_ON_READER_ERROR YES    READER_PARAMS_WWJD     $($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE *         @SupplyAttributes(fme_feature_type,@FeatureType())         @Tcl2("set FME_FeatureType [$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_findInListElseDefault [FME_EncodeText $FME_FeatureType] {<OTHER>}]")         @Transform(TEXTLINE,FME_GENERIC,ALIAS_GEOMETRY)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2_7b02c6a0_0b78_4c9b_b3cd_3e049a65ed9f0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   set attrName $matchedChars;   FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];   set index 0;   set parts [lindex $results 1];   foreach part $parts {      if {[llength $matchedParts] > 0} {          set attrName "$matchedParts{$index}.part";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matchedParts{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      incr index;   };   set index 0;   set regexMatches [lindex $results 0];   foreach part $regexMatches {      if {[llength $matches] > 0} {          set attrName "$matches{$index}.match";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matches{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      set isFirstMatch 0;      incr index;   };   return $index; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_3_text_line"    TEST @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2_7b02c6a0_0b78_4c9b_b3cd_3e049a65ed9f0_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>text_line_data<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2)} {^<backslash>d<opencurly>2<closecurly>-<openbracket>A-Z<closebracket><openbracket>a-z<closebracket><opencurly>2<closecurly>-<backslash>d<opencurly>4<closecurly><space><backslash>d<backslash>d:<backslash>d<backslash>d:<backslash>d<backslash>d.<backslash>d<backslash>d<backslash>d<space>} {dateTime} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_2_VAR _counterLineExtra
+INCLUDE [if {{Local} == {Local}} {   puts {MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_2_VAR $(WB_CURRENT_CONTEXT)__counterLineExtra}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2_NOT_MATCHED"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_2_OUTPUT"        @GlobalVariable(fme_encoded,$($(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_2_VAR),fme_result_attribute,_countLine)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRenamer_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_2_OUTPUT" 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "text_line_data" "messageStr" "RENAME_SET_DEFAULT" ""    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+# Create the DomainName that this transformer will use.
+# Because @Count itself will evalute the expression to calculate the
+# domain, we don't need to do anything in Tcl per feature going by
+
+INCLUDE [    set domainPrefix {};    if { {Local} == {Local} }    {       set domainPrefix [FME_EncodeText {$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_}];    };    puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_FULL_DOMAIN ${domainPrefix}_countLine"; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_Counter    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_2_MATCHED"         @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)    OUTPUT FEATURE_TYPE ___TOREJECTOR___         "_countLine" @Count(REJECTABLE,fme_encoded,$($(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_FULL_DOMAIN),"1")
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_Rejector    INPUT FEATURE_TYPE ___TOREJECTOR___    TEST @Value(fme_rejection_code) != ""    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_<REJECTED>"       @RemoveAttributes(___fme_rejection_code___)    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_OUTPUT"       @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2 <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_<REJECTED>"
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2_VAR _counterLineExtra
+INCLUDE [ if {{Local} == {Local}} {   puts {MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2_VAR $(WB_CURRENT_CONTEXT)__counterLineExtra}; } ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2_OUTPUT"        @GlobalVariable(fme_encoded,$($(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2_VAR),"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_countLine<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2)")
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR
+INCLUDE [if {"Yes" == "Yes"} {puts {MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE _countLine} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_2_OUTPUT"    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"    MODE ONE_LEVEL    GROUP_BY _countLine    $($(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR)    REMOVE_GEOMETRY NO    ACCUMULATE_ATTRIBUTES Yes    CONCATENATE_FIELDS messageStr    SEPARATOR <cr><lf>    PRODUCE_MULTIS YES    OUTPUT AGGREGATE FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_2_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_24b7927b_ab53_4f3d_8880_dcf949544d7a0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   set attrName $matchedChars;   FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];   set index 0;   set parts [lindex $results 1];   foreach part $parts {      if {[llength $matchedParts] > 0} {          set attrName "$matchedParts{$index}.part";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matchedParts{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      incr index;   };   set index 0;   set regexMatches [lindex $results 0];   foreach part $regexMatches {      if {[llength $matches] > 0} {          set attrName "$matches{$index}.match";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matches{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      set isFirstMatch 0;      incr index;   };   return $index; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_2_AGGREGATE"    TEST @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_24b7927b_ab53_4f3d_8880_dcf949544d7a0_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>text_line_data<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4)} {<openparen>^<backslash>d<opencurly>2<closecurly>-<openbracket>A-Z<closebracket><openbracket>a-z<closebracket><opencurly>2<closecurly>-<backslash>d<opencurly>4<closecurly><space><backslash>d<opencurly>1<comma><closecurly>:<backslash>d<opencurly>1<comma><closecurly>:<backslash>d<opencurly>1<comma><closecurly><closeparen>.<backslash>d<opencurly>1<comma><closecurly><space><openparen><openbracket>A-Z<closebracket><opencurly>1<comma><closecurly><closeparen><space><backslash><openbracket><openparen>.+<closeparen><backslash><closebracket><space><openparen><openbracket>a-z<backslash>.A-Z0-9<dollar><closebracket><opencurly>1<comma><closecurly><closeparen><openparen><space>|<backslash>.<closeparen><openparen>.+<closeparen>} {_notused} {} {_parts}") > 0    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NotMatched_Logger    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NOT_MATCHED"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NotMatched_LOGGED"                  @Log("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NotMatched: Error translating localhost.log file","20","20")                  @FeatureType("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NotMatched_LOGGED")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NotMatched LOGGED Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_NotMatched_LOGGED"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_4    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_4_MATCHED"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "dateTime" "SET_TO" "<at>Value<openparen>_parts<opencurly>0<closecurly>.part<closeparen>"     ATTR_ACTION "" "messageStatus" "SET_TO" "<at>Value<openparen>_parts<opencurly>1<closecurly>.part<closeparen>"     ATTR_ACTION "" "procedure" "SET_TO" "<at>Value<openparen>_parts<opencurly>2<closecurly>.part<closeparen>"     ATTR_ACTION "" "tomcatObject" "SET_TO" "<at>Value<openparen>_parts<opencurly>3<closecurly>.part<closeparen>"     ATTR_ACTION "" "messageStr" "SET_TO" "<at>Value<openparen>_parts<opencurly>5<closecurly>.part<closeparen><lf><at>Value<openparen>messageStr<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_5_LIST_EXP ";    foreach attr [split "_parts<opencurly><closecurly> fme_geometry<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_5    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_5_OUTPUT"        @RemoveAttributes(fme_encoded,_countLine,_notused,text_line_data)        @RemoveAttributes(fme_pcre_match"$($(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_5_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_2_146984f8_bd6c_43d1_8b3c_ee44520b40920_trimmer { trimChars} {    set attrs [split {messageStr} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_5_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_2_OUTPUT"      @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_2_146984f8_bd6c_43d1_8b3c_ee44520b40920_trimmer {<tab>} ")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_3_formatter {invalidValue} {       set dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {dateTime} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set srcfmt {};        if {{%d-%b-%Y %H:%M:%S} != {FME_AUTOMATIC}} {            set srcfmt {%d-%b-%Y %H:%M:%S};        } else {          set comment { In Automatic mode we ignore the millisecond part };          regexp {^[^.]*} $date date;        };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };        };        set sourceFormatOpt {};        if {[string length $srcfmt] > 0} {           set sourceFormatOpt \"-format {$srcfmt}\";        };        set comment { Compute the output value and catch any errors };        set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                           set output [clock format $seconds -format $dateFormat];        }];        set comment { If there was error then we try again by removing digits after last decimal };        if { $error != 0 } {           set index [string last "." $date];           if { $index > 0 } {              set date [eval string range $date 0 [expr $index-1]];              set dateLen [string length $date];              set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];           };        };        if { $error == 0 } {           FME_SetAttribute $attr $output;        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_3    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_3_OUTPUT"         @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_3_formatter {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Initiator_1_nPx8LwB7LJ4="    OUTPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(TomcatReader_log_reader_WORKSPACE_NAME)_file_2$encode),$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2) ATTRIBUTE_HAS_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_Process OUTPUT FAILED FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2 <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_OUTPUT_PORTS_ENCODED text_line
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_DIRECTIVES SKIP_LINES,0,READ_WHOLE_FILE_AT_ONCE,NO,SKIP_FOOTER,0,TEXTLINE_EXPOSE_FORMAT_ATTRS,fme_dataset<comma>char<openparen>50<closeparen>,EXPOSE_ATTRS_GROUP,FME_DISCLOSURE_OPEN,READ_BOTTOM_UP,No,ENCODING,utf-8
+
+# Values come in encoded and come out decoded.
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_findInListElseDefault { valueEncoded defaultValue } {    if { [lsearch [split {$($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_OUTPUT_PORTS_ENCODED)}] $valueEncoded] >= 0} {       return $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_[FME_DecodeText $valueEncoded]    } else {       return $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_$defaultValue    } }
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_COMBINE_ATTRS
+INCLUDE [       if { {RESULT_ONLY} == {MERGE} } {          puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_COMBINE_ATTRS <Unused>";       } else {          puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_COMBINE_ATTRS RESULT_ONLY";       };    ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_TestFilter_2_Process"    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  $($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    READER_TYPE         TEXTLINE    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$($(TomcatReader_log_reader_WORKSPACE_NAME)_file_2$encode),$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2)"    QUERYFCT_IDS        ""    READER_DIRECTIVES META_MACROS,SourceSKIP_LINES<comma>0<comma>SourceREAD_WHOLE_FILE_AT_ONCE<comma>NO<comma>SourceSKIP_FOOTER<comma>0<comma>SourceTEXTLINE_EXPOSE_FORMAT_ATTRS<comma><quote>fme_dataset<comma>char<openparen>50<closeparen><quote><comma>SourceEXPOSE_ATTRS_GROUP<comma>FME_DISCLOSURE_OPEN<comma>SourceREAD_BOTTOM_UP<comma>No<comma>SourceENCODING<comma>utf-8,METAFILE,TEXTLINE    QUERYFCT_OUTPUT     "DATA_ONLY"    CONTINUE_ON_READER_ERROR YES    READER_PARAMS_WWJD     $($(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE *         @SupplyAttributes(fme_feature_type,@FeatureType())         @Tcl2("set FME_FeatureType [$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_findInListElseDefault [FME_EncodeText $FME_FeatureType] {<OTHER>}]")         @Transform(TEXTLINE,FME_GENERIC,ALIAS_GEOMETRY)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_1b431fcd_c6d1_46ed_b66e_f21d8b41212f0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   set attrName $matchedChars;   FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];   set index 0;   set parts [lindex $results 1];   foreach part $parts {      if {[llength $matchedParts] > 0} {          set attrName "$matchedParts{$index}.part";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matchedParts{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      incr index;   };   set index 0;   set regexMatches [lindex $results 0];   foreach part $regexMatches {      if {[llength $matches] > 0} {          set attrName "$matches{$index}.match";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matches{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      set isFirstMatch 0;      incr index;   };   return $index; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_FeatureReader_2_text_line"    TEST @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_1b431fcd_c6d1_46ed_b66e_f21d8b41212f0_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>text_line_data<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime)} {^<backslash>d<opencurly>2<closecurly>-<openbracket>A-Z<closebracket><openbracket>a-z<closebracket><opencurly>2<closecurly>-<backslash>d<opencurly>4<closecurly><space><backslash>d<opencurly>1<comma><closecurly>:<backslash>d<opencurly>1<comma><closecurly>:<backslash>d<opencurly>1<comma><closecurly>.<backslash>d<opencurly>1<comma><closecurly>} {dateTime} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_VAR _counterLineExtra
+INCLUDE [if {{Local} == {Local}} {   puts {MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_VAR $(WB_CURRENT_CONTEXT)__counterLineExtra}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_NOT_MATCHED"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_OUTPUT"        @GlobalVariable(fme_encoded,$($(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_VAR),fme_result_attribute,_countLine)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableRetriever_OUTPUT" 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "text_line_data" "messageStr" "RENAME_SET_DEFAULT" ""    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+# Create the DomainName that this transformer will use.
+# Because @Count itself will evalute the expression to calculate the
+# domain, we don't need to do anything in Tcl per feature going by
+
+INCLUDE [    set domainPrefix {};    if { {Local} == {Local} }    {       set domainPrefix [FME_EncodeText {$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_}];    };    puts "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_FULL_DOMAIN ${domainPrefix}_countLine"; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_Counter    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Tomcat_DateTime_MATCHED"         @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)    OUTPUT FEATURE_TYPE ___TOREJECTOR___         "_countLine" @Count(REJECTABLE,fme_encoded,$($(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_FULL_DOMAIN),"1")
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_Rejector    INPUT FEATURE_TYPE ___TOREJECTOR___    TEST @Value(fme_rejection_code) != ""    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_<REJECTED>"       @RemoveAttributes(___fme_rejection_code___)    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_OUTPUT"       @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_<REJECTED>"
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_VAR _counterLineExtra
+INCLUDE [ if {{Local} == {Local}} {   puts {MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_VAR $(WB_CURRENT_CONTEXT)__counterLineExtra}; } ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Counter_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_OUTPUT"        @GlobalVariable(fme_encoded,$($(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_VAR),"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_countLine<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter)")
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_BREAK_ATTR
+INCLUDE [if {"Yes" == "Yes"} {puts {MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE _countLine} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_VariableSetter_OUTPUT"    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"    MODE ONE_LEVEL    GROUP_BY _countLine    $($(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_BREAK_ATTR)    REMOVE_GEOMETRY NO    ACCUMULATE_ATTRIBUTES Yes    CONCATENATE_FIELDS messageStr    SEPARATOR <cr><lf>    PRODUCE_MULTIS YES    OUTPUT AGGREGATE FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_17855b85_ed72_420d_971c_ae5755f795d80_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   set attrName $matchedChars;   FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];   set index 0;   set parts [lindex $results 1];   foreach part $parts {      if {[llength $matchedParts] > 0} {          set attrName "$matchedParts{$index}.part";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matchedParts{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      incr index;   };   set index 0;   set regexMatches [lindex $results 0];   foreach part $regexMatches {      if {[llength $matches] > 0} {          set attrName "$matches{$index}.match";          FME_SetAttribute $attrName [lindex $part 0];          set attrName "$matches{$index}.startIndex";          FME_SetAttribute $attrName [lindex $part 1];      };      set isFirstMatch 0;      incr index;   };   return $index; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Aggregator_AGGREGATE"    TEST @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_17855b85_ed72_420d_971c_ae5755f795d80_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>text_line_data<closeparen>,$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3)} {<openparen>^<backslash>d<opencurly>2<closecurly>-<openbracket>A-Z<closebracket><openbracket>a-z<closebracket><opencurly>2<closecurly>-<backslash>d<opencurly>4<closecurly><space><backslash>d<opencurly>1<comma><closecurly>:<backslash>d<opencurly>1<comma><closecurly>:<backslash>d<opencurly>1<comma><closecurly><closeparen>.<backslash>d<opencurly>1<comma><closecurly><space><openparen><openbracket>A-Z<closebracket><opencurly>1<comma><closecurly><closeparen><space><backslash><openbracket><openparen>.+<closeparen><backslash><closebracket><space><openparen><openbracket>a-z<backslash>.A-Z0-9<dollar><closebracket><opencurly>1<comma><closecurly><closeparen><openparen><space>|<backslash>.<closeparen><openparen>.+<closeparen>} {_notused} {} {_parts}") > 0    OUTPUT PASSED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NotMatched_Logger    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NOT_MATCHED"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NotMatched_LOGGED"                  @Log("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NotMatched: Error in Catalina log file","20","20")                  @FeatureType("$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NotMatched_LOGGED")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NotMatched LOGGED Output Nuker"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_NotMatched_LOGGED"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_3    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_StringSearcher_3_MATCHED"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "dateTime" "SET_TO" "<at>Value<openparen>_parts<opencurly>0<closecurly>.part<closeparen>"     ATTR_ACTION "" "messageStatus" "SET_TO" "<at>Value<openparen>_parts<opencurly>1<closecurly>.part<closeparen>"     ATTR_ACTION "" "procedure" "SET_TO" "<at>Value<openparen>_parts<opencurly>2<closecurly>.part<closeparen>"     ATTR_ACTION "" "tomcatObject" "SET_TO" "<at>Value<openparen>_parts<opencurly>3<closecurly>.part<closeparen>"     ATTR_ACTION "" "messageStr" "SET_TO" "<at>Value<openparen>_parts<opencurly>5<closecurly>.part<closeparen><lf><at>Value<openparen>messageStr<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_4_LIST_EXP ";    foreach attr [split "_parts<opencurly><closecurly> fme_geometry<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_4    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_4_OUTPUT"        @RemoveAttributes(fme_encoded,_countLine,_notused,text_line_data)        @RemoveAttributes(fme_pcre_match"$($(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_4_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_b31d6a31_7138_4174_9a15_f364c0683df70_trimmer { trimChars} {    set attrs [split {messageStr} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeRemover_4_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"      @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_b31d6a31_7138_4174_9a15_f364c0683df70_trimmer {<tab>} ")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_formatter {invalidValue} {       set dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {dateTime} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set srcfmt {};        if {{%d-%b-%Y %H:%M:%S} != {FME_AUTOMATIC}} {            set srcfmt {%d-%b-%Y %H:%M:%S};        } else {          set comment { In Automatic mode we ignore the millisecond part };          regexp {^[^.]*} $date date;        };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };        };        set sourceFormatOpt {};        if {[string length $srcfmt] > 0} {           set sourceFormatOpt \"-format {$srcfmt}\";        };        set comment { Compute the output value and catch any errors };        set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                           set output [clock format $seconds -format $dateFormat];        }];        set comment { If there was error then we try again by removing digits after last decimal };        if { $error != 0 } {           set index [string last "." $date];           if { $index > 0 } {              set date [eval string range $date 0 [expr $index-1]];              set dateLen [string length $date];              set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];           };        };        if { $error == 0 } {           FME_SetAttribute $attr $output;        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter    INPUT  FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"    OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_OUTPUT"         @Tcl2("$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_formatter {_FME_NO_OP_}")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_Localhost_access_log.txt1467385946 Output Collector"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Localhost_access_log.txt"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_Catalina.log1467385946 Output Collector"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_OUTPUT"   OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_Catalina.log"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TomcatReader_log_reader_WORKSPACE_NAME)_localhost.log1467385946 Output Collector"   INPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_DateFormatter_3_OUTPUT"   OUTPUT FEATURE_TYPE "$(TomcatReader_log_reader_WORKSPACE_NAME)_localhost.log"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(TomcatReader_log_reader_WORKSPACE_NAME))}]

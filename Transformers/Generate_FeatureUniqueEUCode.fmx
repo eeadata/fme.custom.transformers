@@ -1,0 +1,433 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN "Generate FeatureUniqueEUCode",1,WISE,dbf5a8c9-bfda-4329-8a74-7cbcadc30ce0,"Linked Always",No,NO_PARALLELISM,,No,15515,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This transformer helps MSs to create valid FeatureUniqueEUCodeType:</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- Uppercases the code</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- Replaces every . (dot) by a - (hyphen)</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- Removes consecutive hyphens</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">- Removes _ (underscore) and - (hyphen) in third position</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">See https://taskman.eionet.europa.eu/issues/69804 </p>
+# 
+# TRANSFORMER_END
+#! ZOOM_SCALE="100"
+#! DOC_EXTENTS="3951.53 1167.26"
+#! SHOW_ANNOTATIONS="true"
+#! LAST_SAVE_DATE="2016-08-04T10:46:12"
+#! ATTR_TYPE_ENCODING="SDF"
+#! BLOCKED_LOOPING="No"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Input:&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FeatureUniqueEUCode: &lt;/p&gt;&#10;"
+#! FME_DOCUMENT_GUID="dbf5a8c9-bfda-4329-8a74-7cbcadc30ce0"
+#! TITLE="Generate FeatureUniqueEUCode"
+#! WORKSPACE_VERSION="1"
+#! FME_PROCESS_GROUP_BY=""
+#! HISTORY="2016&lt;solidus&gt;02&lt;solidus&gt;29,santamik,First&lt;space&gt;version,2016&lt;solidus&gt;03&lt;solidus&gt;06,santamik,Remove&lt;space&gt;consecutive&lt;space&gt;hyphens&lt;space&gt;and&lt;space&gt;remove&lt;space&gt;hyphens&lt;space&gt;in&lt;space&gt;third&lt;space&gt;position"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! PASSWORD=""
+#! XFORM_DEPRECATED="No"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN32)"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! FME_DOCUMENT_PRIORGUID="df358290-e2cb-46d0-ab6c-257130270f0d,4cff485e-67e9-4d5b-a10c-6ee6846c8861,55fbb270-8255-43aa-bb3a-bc94f7b08498"
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! CATEGORY="WISE"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer helps MSs to create valid FeatureUniqueEUCodeType:&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Uppercases the code&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Replaces every . (dot) by a - (hyphen)&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Removes consecutive hyphens&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Removes _ (underscore) and - (hyphen) in third position&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;See https://taskman.eionet.europa.eu/issues/69804 &lt;/p&gt;&#10;"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! VIEW_POSITION="-1248.01 471.005"
+#! SHOW_INFO_NODES="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! FME_SERVER_SERVICES=""
+#! DOC_TOP_LEFT="-2115.76 -714.133"
+#! FMX_INSERT_MODE="Linked Always"
+#! REQUIREMENTS_KEYWORD="none"
+#! ITERATION_COUNT_ATTR=""
+#! MAX_LOOP_ITERATIONS=""
+#! FME_BUILD_NUM="15515"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR FeatureUniqueEUCode FeatureUniqueEUCode:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-1528.76 453.13"
+#! BOUNDING_RECT="-1528.76 453.13 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="FeatureUniqueEUCode {$(FeatureUniqueEUCode)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-1041.25 295.378"
+#! BOUNDING_RECT="-1041.25 295.378 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Uppercase_code"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="FeatureUniqueEUCode,&lt;at&gt;UpperCase&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-552.245 145.875"
+#! BOUNDING_RECT="-552.245 145.875 594.003 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Replace_dots_by_hyphens"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="FeatureUniqueEUCode,&lt;at&gt;ReplaceString&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;.&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;-&lt;quote&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="624.761 -643.133"
+#! BOUNDING_RECT="624.761 -643.133 1043.26 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Remove_underscores_and_hyphens_in_third_position"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;.&lt;opencurly&gt;2&lt;closecurly&gt;&lt;closeparen&gt;&lt;openparen&gt;_|-&lt;closeparen&gt;*&lt;openparen&gt;.*&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;backslash&gt;1&lt;backslash&gt;3"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="FeatureUniqueEUCode"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="99.7568 -25.1267"
+#! BOUNDING_RECT="99.7568 -25.1267 626.25 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Remove_consecutive_hyphens"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;-+&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="-"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="FeatureUniqueEUCode"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="790.886 -228.503"
+#! BOUNDING_RECT="790.886 -228.503 626.25 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Remove_consecutive_underscores"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;_+&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="_"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="FeatureUniqueEUCode"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="18"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="-1092.25 -477.505"
+#! BOUNDING_RECT="-1092.25 -477.505 626.25 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Remove_consecutive_symbols"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;_-&lt;closeparen&gt;+"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="_"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="FeatureUniqueEUCode"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="21"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="-274.125 -606.506"
+#! BOUNDING_RECT="-274.125 -606.506 626.25 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Remove_consecutive_symbols_2"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;-_&lt;closeparen&gt;+"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;FeatureUniqueEUCode&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="-"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="FeatureUniqueEUCode"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="Input"
+#! POSITION="-2115.76 453.13"
+#! BOUNDING_RECT="-2115.76 453.13 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Output"
+#! POSITION="1835.77 -703.133"
+#! BOUNDING_RECT="1835.77 -703.133 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="FeatureUniqueEUCode" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="5"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="21"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_FeatureUniqueEUCode 
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO Generate_FeatureUniqueEUCode_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Input1470300372 Input Splitter"   INPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"FeatureUniqueEUCode {$($(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_FeatureUniqueEUCode$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Uppercase_code ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_ParameterFetcher_OUTPUT" ATTR FeatureUniqueEUCode <at>UpperCase<openparen><at>Value<openparen>FeatureUniqueEUCode<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Uppercase_code_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Replace_dots_by_hyphens ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Uppercase_code_OUTPUT" ATTR FeatureUniqueEUCode <at>ReplaceString<openparen><at>Value<openparen>FeatureUniqueEUCode<closeparen><comma><quote>.<quote><comma><quote>-<quote><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Replace_dots_by_hyphens_OUTPUT" 
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_hyphens_9142cd33_3ff9_40fc_a7cf_af94ca853bcb4_replacer { findText replaceText invalidValue} {     set attrs [split \"FeatureUniqueEUCode\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_hyphens    INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Replace_dots_by_hyphens_OUTPUT"    OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_hyphens_OUTPUT"         @Tcl2("$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_hyphens_9142cd33_3ff9_40fc_a7cf_af94ca853bcb4_replacer {<openparen>-+<closeparen>} {-} {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>FeatureUniqueEUCode<closeparen>,$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_hyphens)}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_underscores_ecc7a450_15b8_4f27_ab8e_24df4e2577814_replacer { findText replaceText invalidValue} {     set attrs [split \"FeatureUniqueEUCode\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_underscores    INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_hyphens_OUTPUT"    OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_underscores_OUTPUT"         @Tcl2("$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_underscores_ecc7a450_15b8_4f27_ab8e_24df4e2577814_replacer {<openparen>_+<closeparen>} {_} {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>FeatureUniqueEUCode<closeparen>,$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_underscores)}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_dcfddebb_4240_4064_ab74_2081afdbe7042_replacer { findText replaceText invalidValue} {     set attrs [split \"FeatureUniqueEUCode\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols    INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_underscores_OUTPUT"    OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_OUTPUT"         @Tcl2("$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_dcfddebb_4240_4064_ab74_2081afdbe7042_replacer {<openparen>_-<closeparen>+} {_} {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>FeatureUniqueEUCode<closeparen>,$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols)}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_2_be12b149_3db4_47ce_b432_366b5e15b3e40_replacer { findText replaceText invalidValue} {     set attrs [split \"FeatureUniqueEUCode\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_2    INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_OUTPUT"    OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_2_OUTPUT"         @Tcl2("$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_2_be12b149_3db4_47ce_b432_366b5e15b3e40_replacer {<openparen>-_<closeparen>+} {-} {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>FeatureUniqueEUCode<closeparen>,$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_2)}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_underscores_and_hyphens_in_third_position_52fab5c1_fe0f_41b1_9b09_b380a32b7f6a3_replacer { findText replaceText invalidValue} {     set attrs [split \"FeatureUniqueEUCode\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_underscores_and_hyphens_in_third_position    INPUT  FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_consecutive_symbols_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_underscores_and_hyphens_in_third_position_OUTPUT"         @Tcl2("$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_underscores_and_hyphens_in_third_position_52fab5c1_fe0f_41b1_9b09_b380a32b7f6a3_replacer {<openparen>.<opencurly>2<closecurly><closeparen><openparen>_|-<closeparen>*<openparen>.*<closeparen>} {<backslash>1<backslash>3} {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>FeatureUniqueEUCode<closeparen>,$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_underscores_and_hyphens_in_third_position)}")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Output1470300372 Output Collector"   INPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Remove_underscores_and_hyphens_in_third_position_OUTPUT"   OUTPUT FEATURE_TYPE "$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(Generate_FeatureUniqueEUCode_WORKSPACE_NAME))}]

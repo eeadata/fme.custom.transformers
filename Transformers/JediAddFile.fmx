@@ -1,0 +1,1806 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN JediAddFile,1,Jedi,1f6aa88f-8b0f-4917-b520-2e38b6ce6ed4,"Linked Always",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Add a new file to a dimension inside the JEDI system. </p>
+# 
+# TRANSFORMER_END
+#!   ITERATION_COUNT_ATTR=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   DOC_TOP_LEFT="-821.884 -1734.39"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   WORKSPACE_VERSION="1"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;An alternative to upload dimension files into the JEDI system. For bulk loading of data this is an easy and straith forward process. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Dimension name&lt;/span&gt;: The name of the dimension you wish to upload a file towards. This is the short name provided inside the JEDI system.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Source file&lt;/span&gt;: The local file you wish to upload towards JEDI.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Basename&lt;/span&gt;: Only used when multiple files are added to the same dimension. This could be a year for example or any attribute that allows you to differenciate this file from the other.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;File group&lt;/span&gt;: The gorup this file belongs to. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Web connection&lt;/span&gt;: JEDI authentication&lt;/p&gt;&#10;"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   FMX_INSERT_MODE="Linked Always"
+#!   FME_DOCUMENT_PRIORGUID="04d3511f-d369-4a6c-ab85-b4b7726f3d3b,908cab91-266b-4c3b-aae3-3141e59d742f,09521b9c-f76a-40dc-a62b-6a9724e417e3"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_DOCUMENT_GUID="1f6aa88f-8b0f-4917-b520-2e38b6ce6ed4"
+#!   ZOOM_SCALE="100"
+#!   BLOCKED_LOOPING="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_BUILD_NUM="16674"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   DOC_EXTENTS="10122.8 1382.89"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   CATEGORY="Jedi"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   TITLE="JediAddFile"
+#!   HISTORY="08&lt;solidus&gt;11&lt;solidus&gt;2016,Jan&lt;space&gt;Bliki,First&lt;space&gt;attemped"
+#!   SHOW_INFO_NODES="true"
+#!   VIEW_POSITION="4450.04 453.13"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   LAST_SAVE_DATE="2016-12-15T16:24:15"
+#!   XFORM_DEPRECATED="No"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add a new file to a dimension inside the JEDI system. &lt;/p&gt;&#10;"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   SHOW_ANNOTATIONS="true"
+#!   PASSWORD=""
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_SERVER_SERVICES=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR DimensionName Dimension name:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE_OR_ATTR SourceFile All_Files(*)|*|ZipFile|*.zip Source file:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR Basename Basename:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR FileGroup File group:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_CONNECTION_OR_ATTR_ENCODED AUTH_NAMED_CONNECTION &quot; &quot; Web Connection:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="20"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Send SourceFile to Microsoft Azure&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="7915.7 -425.879"
+#!   TOP_LEFT="7915.7 -425.879"
+#!   BOTTOM_RIGHT="7914.7 -424.879"
+#!   BOUNDING_RECT="7915.7 -425.879 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="19"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="39"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Create a record inside dbo.Files&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="5962.56 -734.127"
+#!   TOP_LEFT="5962.56 -734.127"
+#!   BOTTOM_RIGHT="5961.56 -733.127"
+#!   BOUNDING_RECT="5962.56 -734.127 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="36"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="41"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Retrieve RecordId&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="6550.74 -734.127"
+#!   TOP_LEFT="6550.74 -734.127"
+#!   BOTTOM_RIGHT="6549.74 -733.127"
+#!   BOUNDING_RECT="6550.74 -734.127 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="40"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="45"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Retrieve RecordId&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="4765.67 -351.5"
+#!   TOP_LEFT="4765.67 -351.5"
+#!   BOTTOM_RIGHT="4764.67 -350.5"
+#!   BOUNDING_RECT="4765.67 -351.5 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="44"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="51"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Job Done&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="8731.34 -425.879"
+#!   TOP_LEFT="8731.34 -425.879"
+#!   BOTTOM_RIGHT="8730.34 -424.879"
+#!   BOUNDING_RECT="8731.34 -425.879 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="50"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="53"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Flag Errors also in the database maybe?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="8487.59 -1283.63"
+#!   TOP_LEFT="8487.59 -1283.63"
+#!   BOTTOM_RIGHT="9237.59 -1333.63"
+#!   BOUNDING_RECT="8487.59 -1283.63 750 50"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="61"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Evaluate if we can find&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dimension name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1686.51 -865.38"
+#!   TOP_LEFT="1686.51 -865.38"
+#!   BOTTOM_RIGHT="1685.51 -864.38"
+#!   BOUNDING_RECT="1686.51 -865.38 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="28"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="64"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Does the file exists if not &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;we should create it. Otherwise&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;we simple make a note in the log &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;that it exists...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="5280.05 -734.127"
+#!   TOP_LEFT="5280.05 -734.127"
+#!   BOTTOM_RIGHT="5279.05 -733.127"
+#!   BOUNDING_RECT="5280.05 -734.127 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="46"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="57"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Set basename if empty&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="3950.04 -927.256"
+#!   TOP_LEFT="3950.04 -927.256"
+#!   BOTTOM_RIGHT="3949.04 -926.256"
+#!   BOUNDING_RECT="3950.04 -927.256 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="56"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="74"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get CubeDimensionId&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1093.76 -494.752"
+#!   TOP_LEFT="1093.76 -494.752"
+#!   BOTTOM_RIGHT="1092.76 -493.752"
+#!   BOUNDING_RECT="1093.76 -494.752 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="25"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="565.499 -696.881"
+#!   BOUNDING_RECT="565.499 -696.881 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_Basename {$(Basename)} _DimensionName {$(DimensionName)} _FileGroup {$(FileGroup)} _SourceFile {$(SourceFile)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="FileSystemDeleteMoveCopyExist"
+#!   VERSION="2"
+#!   POSITION="2909.4 -593.754"
+#!   BOUNDING_RECT="2909.4 -593.754 765.633 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NotFound"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="FILEINPUT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_SourceFile&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILEOUTPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FileSystemDeleteMoveCopyExist"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="Action" PARM_VALUE="EXIST"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="AttributeTrimmer"
+#!   VERSION="3"
+#!   POSITION="2317.77 -459.378"
+#!   BOUNDING_RECT="2317.77 -459.378 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeTrimmer"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE="&lt;quote&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_SourceFile"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="AttributeSplitter"
+#!   VERSION="3"
+#!   POSITION="2317.77 -696.881"
+#!   BOUNDING_RECT="2317.77 -696.881 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_SourceFile"/>
+#!     <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#!     <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;quote&gt;&lt;space&gt;&lt;quote&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_SourceFile"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="ListExploder"
+#!   VERSION="5"
+#!   POSITION="2317.77 -891.382"
+#!   BOUNDING_RECT="2317.77 -891.382 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="ELEMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder"/>
+#!     <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Incoming List"/>
+#!     <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_SourceFile{}"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="19"
+#!   TYPE="AzureBlobUploader"
+#!   VERSION="3"
+#!   POSITION="7978.2 -615.629"
+#!   BOUNDING_RECT="7978.2 -615.629 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="AzureSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Fail"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="AzureSourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_azure_blob_uploader_error_message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="KEY" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszAgZN7+naauS4+K3IoLEqsTQisM5Yc8jVmtCsFCdEanCWs4FUtl/SuIpIsVigJXnxfAenXMf2X4p9Yqk1Qe6pW71VZIXV541ZKyatMjxA7a/scE+QVi3ijSNRfUq9wIUgMPpNN6qQRByHuAwJcJycqC2mfTtR4Kn175spBq2tzvSNOgvYSTBeyKLey9PQkr0X5c68euPVONJSGxNiFKNhY9R6RWaUv3feWKRZzVgU2yV8lcI3Rpr2VG+EaTv3br2yMfMAU2+TEcXK2aAYZ/FmtY9axjvRYhrAz5vnK+Kd/eulJxpSlRgRCBlT9oAkHUU4lo757Ejo+gYnqT7G48/EqQ1kjU+vdfL0)"/>
+#!     <XFORM_PARM PARM_NAME="ACCOUNT" PARM_VALUE="cwsblobstorage01"/>
+#!     <XFORM_PARM PARM_NAME="SRC_DATA" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_SourceFile&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AzureBlobUploader"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONTAINER" PARM_VALUE="cwsblob01"/>
+#!     <XFORM_PARM PARM_NAME="BLOB_NAME" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;AzureSourceFile&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_TYPE" PARM_VALUE="FilePath"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="21"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="7034.71 -615.629"
+#!   BOUNDING_RECT="7034.71 -615.629 489.112 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="AzureSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; AzureSourceFile SET_TO CubeSourceDataFile&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;_DimensionName&lt;closeparen&gt;&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;_filename&lt;closeparen&gt;_&lt;at&gt;Value&lt;openparen&gt;FileId&lt;closeparen&gt;.&lt;at&gt;Value&lt;openparen&gt;_extension&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="FilenamePartExtractor"
+#!   VERSION="3"
+#!   POSITION="3950.04 -517.501"
+#!   BOUNDING_RECT="3950.04 -517.501 476.016 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOTNAME_ATTR" PARM_VALUE="_filename"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FilenamePartExtractor"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_SourceFile&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FULLNAME_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DIRPATH_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DIRNAME_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXTENSION_ATTR" PARM_VALUE="_extension"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="25"
+#!   TYPE="SQLExecutor"
+#!   VERSION="7"
+#!   POSITION="1093.76 -696.881"
+#!   BOUNDING_RECT="1093.76 -696.881 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="select&lt;space&gt;CubeDimensionId&lt;space&gt;&lt;lf&gt;from&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;CubeDimensions&lt;closebracket&gt;&lt;space&gt;where&lt;space&gt;name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_DimensionName&lt;closeparen&gt;&lt;apos&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_2"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Keep Initiator Attributes if Conflict"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="CubeDimensionId"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="28"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1686.51 -1057.01"
+#!   BOUNDING_RECT="1686.51 -1057.01 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="NotFound"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_matched_records&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;0&lt;quote&gt;,NotFound"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="36"
+#!   TYPE="SQLExecutor"
+#!   VERSION="7"
+#!   POSITION="6038.94 -968.879"
+#!   BOUNDING_RECT="6038.94 -968.879 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="INSERT&lt;space&gt;INTO&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;Files&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;UserName&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;CubeDimensionId&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;SourceFile&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;SourceFileReceived&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;FMEJobIdSourceUploaded&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;AzureSourceUploaded&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;FMEJobIdSourceUploadStatus&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;BaseName&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;FileGroup&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;VALUES&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;SESSION_USER&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;Value&lt;openparen&gt;CubeDimensionId&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_SourceFile&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;getdate&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;-1&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;getdate&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;0&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Basename&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_FileGroup&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="40"
+#!   TYPE="SQLExecutor"
+#!   VERSION="7"
+#!   POSITION="6550.74 -968.879"
+#!   BOUNDING_RECT="6550.74 -968.879 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="SELECT&lt;space&gt;FileId&lt;lf&gt;FROM&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;Files&lt;closebracket&gt;&lt;lf&gt;WHERE&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;BaseName&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Basename&lt;closeparen&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;FileGroup&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_FileGroup&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;SourceFile&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_SourceFile&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;CubeDimensionId&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;CubeDimensionId&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;FMEJobIdSourceUploadStatus&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;0&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_3"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Keep Initiator Attributes if Conflict"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="FileId"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="44"
+#!   TYPE="SQLExecutor"
+#!   VERSION="7"
+#!   POSITION="4721.92 -517.501"
+#!   BOUNDING_RECT="4721.92 -517.501 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="SELECT&lt;space&gt;FileId&lt;lf&gt;FROM&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;Files&lt;closebracket&gt;&lt;lf&gt;WHERE&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;BaseName&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Basename&lt;closeparen&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;FileGroup&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_FileGroup&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;--and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;SourceFile&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_SourceFile&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;and&lt;space&gt;&lt;space&gt;&lt;openbracket&gt;CubeDimensionId&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;CubeDimensionId&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_4"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Keep Initiator Attributes if Conflict"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="FileId"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="46"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="5331.3 -1009.5"
+#!   BOUNDING_RECT="5331.3 -1009.5 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="NotExisting"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Exists"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_matched_records&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;0&lt;quote&gt;,NotExisting"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Exists"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="50"
+#!   TYPE="SQLExecutor"
+#!   VERSION="7"
+#!   POSITION="8650.09 -646.879"
+#!   BOUNDING_RECT="8650.09 -646.879 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="AzureSourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="AzureSourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="AzureSourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="FME_SQL_DELIMITER&lt;space&gt;&lt;semicolon&gt;&lt;lf&gt;--&lt;lf&gt;--&lt;space&gt;Update&lt;space&gt;the&lt;space&gt;Files-Table&lt;lf&gt;--&lt;lf&gt;UPDATE&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;Files&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;set&lt;space&gt;&lt;openbracket&gt;FMEJobIdSourceUploadStatus&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;1&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;AzureSourceFile&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;AzureSourceFile&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;ErrorMessages&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;Null&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;FMEJobIdDimensionProcess&lt;closebracket&gt;=NULL&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;FMEJobIdDimensionUploaded&lt;closebracket&gt;=NULL&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;FMEJobIdSQLDWCreated&lt;closebracket&gt;=NULL&lt;lf&gt;WHERE&lt;space&gt;&lt;space&gt;FileId&lt;space&gt;=&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;FileId&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;--&lt;lf&gt;--&lt;space&gt;Updat&lt;space&gt;the&lt;space&gt;CubeDimensions-Table&lt;lf&gt;--&lt;lf&gt;UPDATE&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;CubeDimensions&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;set&lt;space&gt;&lt;openbracket&gt;ActiveFile&lt;closebracket&gt;&lt;space&gt;=&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;FileId&lt;closeparen&gt;&lt;lf&gt;WHERE&lt;space&gt;CubeDimensionId&lt;space&gt;=&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;CubeDimensionId&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_5"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="CubeManager"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Keep Initiator Attributes if Conflict"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="FileId"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="54"
+#!   TYPE="Terminator"
+#!   VERSION="2"
+#!   POSITION="2956.28 -968.879"
+#!   BOUNDING_RECT="2956.28 -968.879 644.626 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Terminator"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="ERROR:&lt;space&gt;Files&lt;space&gt;not&lt;space&gt;found"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="62"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="2286.52 -1318.76"
+#!   BOUNDING_RECT="2286.52 -1318.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_jedi_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _jedi_error SET_TO Dimension&lt;space&gt;name&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_DimensionName&lt;closeparen&gt;&lt;apos&gt;&lt;space&gt;could&lt;space&gt;not&lt;space&gt;be&lt;space&gt;found&lt;space&gt;inside&lt;space&gt;the&lt;space&gt;JEDI&lt;space&gt;system."/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="65"
+#!   TYPE="MessageLogger"
+#!   VERSION="2"
+#!   POSITION="2822.77 -1318.76"
+#!   BOUNDING_RECT="2822.77 -1318.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jedi_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TYPE" PARM_VALUE="ERROR"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MessageLogger"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LOGFEATS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="@Value(_jedi_error)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="69"
+#!   TYPE="MessageLogger"
+#!   VERSION="2"
+#!   POSITION="5810.81 -457.501"
+#!   BOUNDING_RECT="5810.81 -457.501 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_logMessage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_notificationType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TYPE" PARM_VALUE="WARN"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MessageLogger_2"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LOGFEATS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="File &apos;@Value(_SourceFile)&apos; already exsits inside JEDI for this dimension &apos;@Value(_DimensionName)&apos;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="56"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="3950.04 -696.881"
+#!   BOUNDING_RECT="3950.04 -696.881 475.002 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DimensionName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileGroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SourceFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="CubeDimensionId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _Basename SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;_FME_NO_OP_&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;_Basename&lt;closeparen&gt; NOT_ATTRIBUTE_HAS_VALUE _FME_BLANK_STRING_&apos;&lt;at&gt;Value&lt;openparen&gt;_filename&lt;closeparen&gt;&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="71"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="-90.6259 -696.881"
+#!   BOUNDING_RECT="-90.6259 -696.881 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="http:&lt;solidus&gt;&lt;solidus&gt;jedi.discomap.eea.europa.eu&lt;solidus&gt;Dimension&lt;solidus&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(AUTH_NAMED_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="1"
+#!   NAME="Input"
+#!   POSITION="-821.884 -696.881"
+#!   BOUNDING_RECT="-821.884 -696.881 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Success"
+#!   POSITION="9300.94 -826.879"
+#!   BOUNDING_RECT="9300.94 -826.879 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="FileId" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Failed"
+#!   POSITION="8518.84 -1734.39"
+#!   BOUNDING_RECT="8518.84 -1734.39 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_azure_blob_uploader_error_message" />
+#!     <XFORM_ATTR ATTR_NAME="_jedi_error" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="72"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="71"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="25"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="48"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 ELEMENTS"
+#!   TARGET_PORT_DESC="fi 0 FileName"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="19"
+#!   TARGET_NODE="50"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="19"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="59"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="56"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 RESULT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="63"
+#!   SOURCE_NODE="28"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="fo 0 NotFound"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="42"
+#!   SOURCE_NODE="40"
+#!   TARGET_NODE="21"
+#!   SOURCE_PORT_DESC="fo 0 RESULT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="60"
+#!   SOURCE_NODE="44"
+#!   TARGET_NODE="69"
+#!   SOURCE_PORT_DESC="fo 0 RESULT"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="68"
+#!   SOURCE_NODE="46"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 0 NotExisting"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="58"
+#!   SOURCE_NODE="56"
+#!   TARGET_NODE="44"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="66"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="65"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="67"
+#!   SOURCE_NODE="65"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="70"
+#!   SOURCE_NODE="69"
+#!   TARGET_NODE="21"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="73"
+#!   SOURCE_NODE="71"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="19"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 1 Fail"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="28"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="38"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="40"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="47"
+#!   SOURCE_NODE="44"
+#!   TARGET_NODE="46"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="50"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="55"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="54"
+#!   SOURCE_PORT_DESC="fo 2 Failed"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 2 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="1540 -1556"
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(JediAddFile_WORKSPACE_NAME)_DimensionName 
+DEFAULT_MACRO $(JediAddFile_WORKSPACE_NAME)_SourceFile 
+DEFAULT_MACRO $(JediAddFile_WORKSPACE_NAME)_Basename 
+DEFAULT_MACRO $(JediAddFile_WORKSPACE_NAME)_FileGroup 
+DEFAULT_MACRO $(JediAddFile_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO JediAddFile_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(JediAddFile_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(JediAddFile_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_Input1481815455 Input Splitter"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_HTTPCaller       INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_Input"    TARGET_URL "http:<solidus><solidus>jedi.discomap.eea.europa.eu<solidus>Dimension<solidus>"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(JediAddFile_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION),$(JediAddFile_WORKSPACE_NAME)_HTTPCaller)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_HTTPCaller_Output"    OUTPUT REJECTED FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_HTTPCaller <Rejected> Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(JediAddFile_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_Basename {$($(JediAddFile_WORKSPACE_NAME)_Basename$encode)} _DimensionName {$($(JediAddFile_WORKSPACE_NAME)_DimensionName$encode)} _FileGroup {$($(JediAddFile_WORKSPACE_NAME)_FileGroup$encode)} _SourceFile {$($(JediAddFile_WORKSPACE_NAME)_SourceFile$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(JediAddFile_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(JediAddFile_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_HTTPCaller_Output"    OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(JediAddFile_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+MACRO $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_DIRECTIVES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes COMMAND_TIMEOUT 30 NAMED_CONNECTION CubeManager
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,select<space>CubeDimensionId<space><lf>from<space><openbracket>dbo<closebracket>.<openbracket>CubeDimensions<closebracket><space>where<space>name<space>=<space><apos><at>Value<openparen>_DimensionName<closeparen><apos>,$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "CubeManager"    COMBINE_ATTRIBUTES   PREFER_QUERY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    READER_PARAMS        $($(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_<REJECTED>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_INITIATOR"    OUTPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_matched_records<closeparen>,$(JediAddFile_WORKSPACE_NAME)_TestFilter) = 0 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_NotFound OUTPUT FAILED FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_TestFilter <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_AttributeCreator_3    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_TestFilter_NotFound"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "_jedi_error" "SET_TO" "Dimension<space>name<space><apos><at>Value<openparen>_DimensionName<closeparen><apos><space>could<space>not<space>be<space>found<space>inside<space>the<space>JEDI<space>system."    OUTPUT OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_MessageLogger INPUT Input Collector"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_INPUT"
+MACRO MessageLogger_WORKSPACE_NAME $(JediAddFile_WORKSPACE_NAME)_MessageLogger
+MACRO $(MessageLogger_WORKSPACE_NAME)_XFORMER_NAME $(JediAddFile_WORKSPACE_NAME)_MessageLogger
+MACRO $(MessageLogger_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(MessageLogger_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(MessageLogger_WORKSPACE_NAME)_TYPE ERROR
+MACRO $(MessageLogger_WORKSPACE_NAME)_MESSAGE @Value(_jedi_error)
+MACRO $(MessageLogger_WORKSPACE_NAME)_LOGFEATS No
+MACRO $(MessageLogger_WORKSPACE_NAME)_MAXFEATS 20
+MACRO $(MessageLogger_WORKSPACE_NAME)_MAXCOORDS 20
+INCLUDE_CUSTOM_TRANSFORMER_VER MessageLogger:2
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_MessageLogger OUTPUT Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_OUTPUT"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_OUTPUT"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(JediAddFile_WORKSPACE_NAME)_AttributeTrimmer_ff3a943c_e37d_4fc8_9e87_83603afb2d940_trimmer { trimChars} {    set attrs [split {_SourceFile} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_AttributeTrimmer    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_RESULT"    OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"      @Tcl2("$(JediAddFile_WORKSPACE_NAME)_AttributeTrimmer_ff3a943c_e37d_4fc8_9e87_83603afb2d940_trimmer {<quote>} ")
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitDelim [FME_DecodeText {<quote><space><quote>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitDelim]] }      {         set $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitWidths [split [regsub -all {s$} {<quote><space><quote>} {}] s];         proc $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitWidths;            set source [FME_GetAttribute [FME_DecodeText {_SourceFile}]];            set attrNum 0;            set listName [FME_DecodeText {_SourceFile}];            set attrPos 0;            set keepEmptyParts [string equal {No} {No}];            foreach width [set $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               set part [string trim $bit];               if { $keepEmptyParts || $part != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $part;                  incr attrNum;               };               incr attrPos $width;            };         };      }      else      {         proc $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitDelim;            set delim [set $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_d03c7fcb_dc7b_4bf4_94de_a43deb210db30_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute [FME_DecodeText {_SourceFile}]];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              lappend bits [string range $source $startIndex [expr $nextIndex-1]];              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            lappend bits [string range $source $startIndex end];            set listName [FME_DecodeText {_SourceFile}];            set attrNum 0;            foreach bit $bits            {               set trimmedPart [string trim $bit];               if { $keepEmptyParts || $trimmedPart != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $trimmedPart;                  incr attrNum;               };            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"    OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_ListExploder    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    LIST_NAME "_SourceFile{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "INCOMING_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_ListExploder_ELEMENTS"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist FileName Input Collector"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_ListExploder_ELEMENTS"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_FileName"
+MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME $(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_XFORMER_NAME $(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action EXIST
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT <at>Value<openparen>_SourceFile<closeparen>
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT 
+INCLUDE_CUSTOM_TRANSFORMER_VER FileSystemDeleteMoveCopyExist:2
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist Success Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Success"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist NotFound Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_NotFound"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist Failed Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Failed"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Failed"
+# -------------------------------------------------------------------------
+
+# The default behaviour is to abort on any feature entering the transformer.
+# If Workbench has set the _WB_BYPASS_TERMINATION macro to a value of "Yes",
+# then the features will instead be passed through with a feature type of
+# __WB_BYPASS_TERMINATOR__, which Workbench will send to a visualizer or
+# somesuch.
+
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TestFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_Terminator    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Failed"    TEST "$(_WB_BYPASS_TERMINATION)" == Yes    OUTPUT PASSED FEATURE_TYPE __WB_BYPASS_TERMINATOR__       @SupplyAttributes(_wb_termination_feature_type,@FeatureType())       @SupplyAttributes(ENCODED,_wb_termination_message,"ERROR:<space>Files<space>not<space>found")       @SupplyAttributes(_wb_termination_xformer,"$(JediAddFile_WORKSPACE_NAME)_Terminator")       @SupplyAttributes(_wb_termination_feature,Yes)    OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED,"ERROR:<space>Files<space>not<space>found")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_FilenamePartExtractor    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Success"    OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FilenamePartExtractor_OUTPUT"         @SupplyAttributes("_filename",@Filenamepart(ENCODED,ROOTNAME,"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_SourceFile<closeparen>,$(JediAddFile_WORKSPACE_NAME)_FilenamePartExtractor)"))         @SupplyAttributes("_extension",@Filenamepart(ENCODED,EXTENSION,"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_SourceFile<closeparen>,$(JediAddFile_WORKSPACE_NAME)_FilenamePartExtractor)"))
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_FilenamePartExtractor_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "_Basename" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE'_FME_NO_OP_'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>_Basename<closeparen> NOT_ATTRIBUTE_HAS_VALUE _FME_BLANK_STRING_'<at>Value<openparen>_filename<closeparen>'FME_NUM_CONDITIONS2___"    OUTPUT OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+MACRO $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_DIRECTIVES NAMED_CONNECTION CubeManager COMMAND_TIMEOUT 30 QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,SELECT<space>FileId<lf>FROM<space><openbracket>dbo<closebracket>.<openbracket>Files<closebracket><lf>WHERE<space><space><openbracket>BaseName<closebracket><space>=<space><apos><at>Value<openparen>_Basename<closeparen><apos><space><space><lf><space><space>and<space><space><openbracket>FileGroup<closebracket><space>=<space><apos><at>Value<openparen>_FileGroup<closeparen><apos><lf><space><space>--and<space><space><openbracket>SourceFile<closebracket><space>=<space><apos><at>Value<openparen>_SourceFile<closeparen><apos><lf><space><space>and<space><space><openbracket>CubeDimensionId<closebracket><space>=<space><at>Value<openparen>CubeDimensionId<closeparen><lf><lf><lf>,$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "CubeManager"    COMBINE_ATTRIBUTES   PREFER_QUERY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    READER_PARAMS        $($(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4 <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_<REJECTED>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_INITIATOR"    OUTPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_matched_records<closeparen>,$(JediAddFile_WORKSPACE_NAME)_TestFilter_2) = 0 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_NotExisting OUTPUT FAILED FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_Exists INPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(JediAddFile_WORKSPACE_NAME)_TestFilter_2_Exists
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_TestFilter_2 Exists Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_TestFilter_2_Exists"
+# -------------------------------------------------------------------------
+MACRO $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_DIRECTIVES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes NAMED_CONNECTION CubeManager COMMAND_TIMEOUT 30
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_SQLExecutor    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_TestFilter_2_NotExisting"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,INSERT<space>INTO<space><openbracket>dbo<closebracket>.<openbracket>Files<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><openparen><openbracket>UserName<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>CubeDimensionId<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>SourceFile<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>SourceFileReceived<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>FMEJobIdSourceUploaded<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>AzureSourceUploaded<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>FMEJobIdSourceUploadStatus<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>BaseName<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>FileGroup<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><space><closeparen><lf><space><space><space><space><space>VALUES<lf><space><space><space><space><space><space><space><space><space><space><space><openparen><lf><space><space><space><space><space><space><space><space><space><space><space>SESSION_USER<lf><space><space><space><space><space><space><space><space><space><space><space><comma><at>Value<openparen>CubeDimensionId<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_SourceFile<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma>getdate<openparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma>-1<lf><space><space><space><space><space><space><space><space><space><space><space><comma>getdate<openparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma>0<lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_Basename<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_FileGroup<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><closeparen><lf><lf><lf><lf>,$(JediAddFile_WORKSPACE_NAME)_SQLExecutor)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "CubeManager"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    READER_PARAMS        $($(JediAddFile_WORKSPACE_NAME)_SQLExecutor_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor RESULT Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_RESULT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_<REJECTED>"
+# -------------------------------------------------------------------------
+MACRO $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_DIRECTIVES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes COMMAND_TIMEOUT 30 NAMED_CONNECTION CubeManager
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_INITIATOR"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,SELECT<space>FileId<lf>FROM<space><openbracket>dbo<closebracket>.<openbracket>Files<closebracket><lf>WHERE<space><space><openbracket>BaseName<closebracket><space>=<space><apos><at>Value<openparen>_Basename<closeparen><apos><space><space><lf><space><space>and<space><space><openbracket>FileGroup<closebracket><space>=<space><apos><at>Value<openparen>_FileGroup<closeparen><apos><lf><space><space>and<space><space><openbracket>SourceFile<closebracket><space>=<space><apos><at>Value<openparen>_SourceFile<closeparen><apos><lf><space><space>and<space><space><openbracket>CubeDimensionId<closebracket><space>=<space><at>Value<openparen>CubeDimensionId<closeparen><lf><space><space>and<space><space><openbracket>FMEJobIdSourceUploadStatus<closebracket><space>=<space>0<lf><lf>,$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "CubeManager"    COMBINE_ATTRIBUTES   PREFER_QUERY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    READER_PARAMS        $($(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3 INITIATOR Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_INITIATOR"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3 <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_2 INPUT Input Collector"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_4_RESULT"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_2_INPUT"
+MACRO MessageLogger_WORKSPACE_NAME $(JediAddFile_WORKSPACE_NAME)_MessageLogger_2
+MACRO $(MessageLogger_WORKSPACE_NAME)_XFORMER_NAME $(JediAddFile_WORKSPACE_NAME)_MessageLogger_2
+MACRO $(MessageLogger_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(MessageLogger_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(MessageLogger_WORKSPACE_NAME)_TYPE WARN
+MACRO $(MessageLogger_WORKSPACE_NAME)_MESSAGE File '@Value(_SourceFile)' already exsits inside JEDI for this dimension '@Value(_DimensionName)'
+MACRO $(MessageLogger_WORKSPACE_NAME)_LOGFEATS No
+MACRO $(MessageLogger_WORKSPACE_NAME)_MAXFEATS 20
+MACRO $(MessageLogger_WORKSPACE_NAME)_MAXCOORDS 20
+INCLUDE_CUSTOM_TRANSFORMER_VER MessageLogger:2
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_2 OUTPUT Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_2_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_3_RESULT"    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_2_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "AzureSourceFile" "SET_TO" "CubeSourceDataFile<solidus><at>Value<openparen>_DimensionName<closeparen><solidus><at>Value<openparen>_filename<closeparen>_<at>Value<openparen>FileId<closeparen>.<at>Value<openparen>_extension<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader Input Input Collector"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Input"
+MACRO AzureBlobUploader_WORKSPACE_NAME $(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_XFORMER_NAME $(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_KEY fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszAgZN7+naauS4+K3IoLEqsTQisM5Yc8jVmtCsFCdEanCWs4FUtl/SuIpIsVigJXnxfAenXMf2X4p9Yqk1Qe6pW71VZIXV541ZKyatMjxA7a/scE+QVi3ijSNRfUq9wIUgMPpNN6qQRByHuAwJcJycqC2mfTtR4Kn175spBq2tzvSNOgvYSTBeyKLey9PQkr0X5c68euPVONJSGxNiFKNhY9R6RWaUv3feWKRZzVgU2yV8lcI3Rpr2VG+EaTv3br2yMfMAU2+TEcXK2aAYZ/FmtY9axjvRYhrAz5vnK+Kd/eulJxpSlRgRCBlT9oAkHUU4lo757Ejo+gYnqT7G48/EqQ1kjU+vdfL0)
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_SRC_TYPE FilePath
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_ACCOUNT cwsblobstorage01
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_CONTAINER cwsblob01
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_BLOB_NAME <at>Value<openparen>AzureSourceFile<closeparen>
+MACRO $(AzureBlobUploader_WORKSPACE_NAME)_SRC_DATA <at>Value<openparen>_SourceFile<closeparen>
+INCLUDE_CUSTOM_TRANSFORMER_VER AzureBlobUploader:3
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader Success Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Success"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader Fail Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Fail"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Fail"
+# -------------------------------------------------------------------------
+MACRO $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_DIRECTIVES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes NAMED_CONNECTION CubeManager COMMAND_TIMEOUT 30
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5    INPUT  FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Success"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,FME_SQL_DELIMITER<space><semicolon><lf>--<lf>--<space>Update<space>the<space>Files-Table<lf>--<lf>UPDATE<space><openbracket>dbo<closebracket>.<openbracket>Files<closebracket><lf><space><space><space><space>set<space><openbracket>FMEJobIdSourceUploadStatus<closebracket><space>=<space>1<lf><space><space><space><space><space><space><space><space><comma><openbracket>AzureSourceFile<closebracket><space>=<space><apos><at>Value<openparen>AzureSourceFile<closeparen><apos><lf><space><space><space><space><space><space><space><space><comma><openbracket>ErrorMessages<closebracket><space>=<space>Null<lf><space><space><space><space><space><space><space><space><comma><openbracket>FMEJobIdDimensionProcess<closebracket>=NULL<lf><space><space><space><space><space><space><space><space><comma><openbracket>FMEJobIdDimensionUploaded<closebracket>=NULL<lf><space><space><space><space><space><space><space><space><comma><openbracket>FMEJobIdSQLDWCreated<closebracket>=NULL<lf>WHERE<space><space>FileId<space>=<space><at>Value<openparen>FileId<closeparen><semicolon><lf>--<lf>--<space>Updat<space>the<space>CubeDimensions-Table<lf>--<lf>UPDATE<space><openbracket>dbo<closebracket>.<openbracket>CubeDimensions<closebracket><lf><space><space><space><space>set<space><openbracket>ActiveFile<closebracket><space>=<space><at>Value<openparen>FileId<closeparen><lf>WHERE<space>CubeDimensionId<space>=<space><at>Value<openparen>CubeDimensionId<closeparen><semicolon><lf><lf>,$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "CubeManager"    COMBINE_ATTRIBUTES   PREFER_QUERY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    READER_PARAMS        $($(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5 RESULT Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_RESULT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5 <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_Success1481815455 Output Collector"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_5_INITIATOR"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_Success" @RemoveAttributes(AzureSourceFile,_Basename,_response_body,_http_status_code,_DimensionName,_FileGroup,_SourceFile,CubeDimensionId,_element_index,fileInput,fileOutput,action,_status,_extension,_filename,_matched_records,_logMessage,_notificationType,_result) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediAddFile_WORKSPACE_NAME)_Failed1481815455 Output Collector"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_MessageLogger_OUTPUT"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_AzureBlobUploader_Fail"   INPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_SQLExecutor_2_<REJECTED>"   OUTPUT FEATURE_TYPE "$(JediAddFile_WORKSPACE_NAME)_Failed" @RemoveAttributes(AzureSourceFile,_Basename,_response_body,_http_status_code,_DimensionName,_FileGroup,_SourceFile,CubeDimensionId,_element_index,fileInput,fileOutput,action,_status,_extension,_filename,_matched_records,FileId,_logMessage,_notificationType,_result,_reader_error) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(JediAddFile_WORKSPACE_NAME))}]

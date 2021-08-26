@@ -1,0 +1,1464 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN AGO_GenerateToken,3,"ArcGis online",7a3c2500-4857-4e56-bcdf-c1bb941977d5,"Linked by Default",No,NO_PARALLELISM,,No,18592,YES,No,
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Get ArcGis online Token </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="ArcGis online"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get ArcGis online Token &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="3086 951.378"
+#!   DOC_TOP_LEFT="-985 -1251.38"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18592"
+#!   FME_DOCUMENT_GUID="7a3c2500-4857-4e56-bcdf-c1bb941977d5"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="3"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.2.1 (20190319 - Build 18592 - WIN64)"
+#!   LAST_SAVE_DATE="2019-08-20T10:16:37"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="AGO_GenerateToken"
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-1168.76 0"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR loginname Loginname:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL PASSWORD_OR_ATTR password User password:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR referer Arcgis Referer:"
+#!   DEFAULT_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;www.arcgis.com"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="18"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Authenticate the user in ArcGis online and retrieves a Token that can then be sued to request information from ArcGis online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-985 -300"
+#!   TOP_LEFT="-985 -300"
+#!   BOTTOM_RIGHT="-235 -350"
+#!   BOUNDING_RECT="-985 -300 750 50"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19215686274509805"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="19"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;User is already authenticated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="737 -1177"
+#!   TOP_LEFT="737 -1177"
+#!   BOTTOM_RIGHT="737 -1177"
+#!   BOUNDING_RECT="737 -1177 0 0"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19215686274509805"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="15"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="16"
+#!   NAME="Request a token from ArcGis server"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="240 -337"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="1508 -719"
+#!   BOUNDING_RECT="240 -337 1268 382"
+#!   STICKY="true"
+#!   COLOUR="0.40000000000000002,0.20392156862745098,0.36470588235294116"
+#!   CONTENTS="6 2 3 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="HTTPUploader"
+#!   VERSION="3"
+#!   POSITION="313 -446"
+#!   BOUNDING_RECT="313 -446 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#!     <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_url_contents"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_referer21072014&lt;closeparen&gt;&lt;solidus&gt;sharing&lt;solidus&gt;rest&lt;solidus&gt;generateToken"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="username=&lt;at&gt;Value&lt;openparen&gt;_loginname21072014&lt;closeparen&gt;&lt;amp&gt;password=&lt;at&gt;Value&lt;openparen&gt;_password21072014&lt;closeparen&gt;&lt;amp&gt;expiration:1000&lt;space&gt;client=referer&lt;amp&gt;referer=&lt;at&gt;Value&lt;openparen&gt;_referer21072014&lt;closeparen&gt;&lt;space&gt;&lt;amp&gt;f=json"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/x-www-form-urlencoded"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_METHOD" PARM_VALUE="POST"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPUploader"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="JSONExtractor"
+#!   VERSION="1"
+#!   POSITION="950 -507"
+#!   BOUNDING_RECT="950 -507 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="EVALUATED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="ArcGis_token json&lt;openbracket&gt;&lt;quote&gt;token&lt;quote&gt;&lt;closebracket&gt; ArcGis_error json&lt;openbracket&gt;&lt;quote&gt;error&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;&lt;quote&gt;details&lt;quote&gt;&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_url_contents"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-329 -964"
+#!   BOUNDING_RECT="-329 -964 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="NoToken"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="HasToken"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasToken"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,NoToken"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1404.5043750437508 -888.87446874468719"
+#!   BOUNDING_RECT="1404.5043750437508 -888.87446874468719 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Success"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Failed"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="26"
+#!   TYPE="Logger"
+#!   VERSION="4"
+#!   POSITION="1520.4998749987501 -1251.3780937809377"
+#!   BOUNDING_RECT="1520.4998749987501 -1251.3780937809377 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LOG_FEATURE" PARM_VALUE="NONE"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Failed&lt;space&gt;to&lt;space&gt;login&lt;space&gt;into&lt;space&gt;ArcGis&lt;space&gt;online&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_loginname21072014&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;at&gt;Value&lt;openparen&gt;_error&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSG_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEVERITY" PARM_VALUE="WARN"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-336 -773"
+#!   BOUNDING_RECT="-336 -773 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_loginname21072014 {$(loginname)} _password21072014 {$(password)} _referer21072014 {$(referer)}"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="10"
+#!   NAME="Authenticated"
+#!   POSITION="2101 -1088"
+#!   BOUNDING_RECT="2101 -1088 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="24"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="2101 -1214.1257812578126"
+#!   BOUNDING_RECT="2101 -1214.1257812578126 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_error" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#!     <XFORM_ATTR ATTR_NAME="_error" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="21"
+#!   NAME="LOGIN"
+#!   POSITION="-970 -714"
+#!   BOUNDING_RECT="-970 -714 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="6"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 0 EVALUATED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 NoToken"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="26"
+#!   SOURCE_PORT_DESC="fo 0 Failed"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="24"
+#!   SOURCE_PORT_DESC="fo 0 LOGGED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 1 HasToken"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 1 Success"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_loginname 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_password 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_referer https:<solidus><solidus>www.arcgis.com
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO AGO_GenerateToken_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(AGO_GenerateToken_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(AGO_GenerateToken_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN1566288997 Input Splitter"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"
+# -------------------------------------------------------------------------
+Tcl2 proc $(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_loginname21072014 {$($(AGO_GenerateToken_WORKSPACE_NAME)_loginname)} _password21072014 {$($(AGO_GenerateToken_WORKSPACE_NAME)_password$encode)} _referer21072014 {$($(AGO_GenerateToken_WORKSPACE_NAME)_referer)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"    OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST ArcGis_token ATTRIBUTE_IS_EMPTY "" ENCODED TEST ArcGis_token ATTRIBUTE_IS_MISSING "" ENCODED TEST ArcGis_token ATTRIBUTE_VALUE_NULL "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_NoToken OUTPUT FAILED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader       INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_NoToken"    TARGET_URL "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_referer21072014<closeparen><solidus>sharing<solidus>rest<solidus>generateToken,$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader)"    TARGET_ATTR _url_contents    HTTP_METHOD POST    UPLOAD_BODY "@EvaluateExpression(STRING_ENCODED,username=<at>Value<openparen>_loginname21072014<closeparen><amp>password=<at>Value<openparen>_password21072014<closeparen><amp>expiration:1000<space>client=referer<amp>referer=<at>Value<openparen>_referer21072014<closeparen><space><amp>f=json,$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader)"    UPLOAD_CONTENT_TYPE "application/x-www-form-urlencoded"    AUTH_USERNAME ""    AUTH_PASSWORD ""    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader <REJECTED> Transformer Output Nuker"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    MODE EXTRACT    JSON_ATTR _url_contents    QUERIES ArcGis_token json<openbracket><quote>token<quote><closebracket> ArcGis_error json<openbracket><quote>error<quote><closebracket><openbracket><quote>details<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor_EVALUATED"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Condition_1 INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST ArcGis_token ATTRIBUTE_IS_MISSING "" ENCODED TEST ArcGis_token ATTRIBUTE_IS_EMPTY "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Failed OUTPUT FAILED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_Logger_Logger    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Failed"    OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_LOGGED"                  @Log(ENCODED, "<dollar><openparen>AGO_GenerateToken_WORKSPACE_NAME<closeparen>_Logger:<space>@EvaluateExpression(FDIV,STRING_ENCODED,Failed<space>to<space>login<space>into<space>ArcGis<space>online<space><openparen><at>Value<openparen>_loginname21072014<closeparen><closeparen><lf><at>Value<openparen>_error<closeparen>,$(AGO_GenerateToken_WORKSPACE_NAME)_Logger)","<Unused>","1","",WARN,NONE,$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_7797b604_39b1_4d4f_bd0d_7e70cc0c1adb0)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_Authenticated1566288997 Output Collector"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Authenticated" @RemoveAttributes(_loginname21072014,_password21072014,_referer21072014,_error,_http_status_code,_url_contents,ArcGis_error) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_<Rejected>1566288997 Output Collector"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_LOGGED"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_<Rejected>" @RemoveAttributes(_loginname21072014,_password21072014,_referer21072014,_http_status_code,_url_contents) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(AGO_GenerateToken_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN AGO_GenerateToken,2,"ArcGis online",843c526d-1796-4cd7-90f1-21c3a0c4d938,"Linked by Default",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Get ArcGis online Token </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-1170 0"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="2"
+#! FMX_INSERT_MODE="Linked by Default"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get ArcGis online Token &lt;/p&gt;&#10;"
+#! TITLE="AGO_GenerateToken"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="ArcGis online"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! HISTORY=""
+#! FME_DOCUMENT_PRIORGUID="1443bd1e-bef1-4c2e-9a5a-9f250483799a,1064bea9-916f-47d2-a7ee-13575c9ddfd9,2612cd2f-2e03-453f-9916-6ace8a72bf89,6d6c856a-bc27-400a-ad9f-f999639ff56b,5f352f56-5eb6-4c5c-99ce-6a54c3d48c0d"
+#! DOC_TOP_LEFT="-970 -1197"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-07-21T18:13:35"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="3071 877"
+#! FME_DOCUMENT_GUID="843c526d-1796-4cd7-90f1-21c3a0c4d938"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR loginname Loginname:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL PASSWORD_OR_ATTR password User password:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR referer Arcgis Referer:"
+#! DEFAULT_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;www.arcgis.com"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="18"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Authenticate the user in ArcGis online and retrieves a Token that can then be sued to request information from ArcGis online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-965 -320"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="-965 -320"
+#! BOTTOM_RIGHT="-215 -370"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#! IDENTIFIER="19"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;User is already authenticated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="757 -1197"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="757 -1197"
+#! BOTTOM_RIGHT="757 -1197"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="15"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="16"
+#! NAME="Request a token from ArcGis server"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="240 -337"
+#! BOTTOM_RIGHT="1508 -719"
+#! STICKY="true"
+#! COLOUR="0.4,0.203922,0.364706"
+#! CONTENTS="2 3 6 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="HTTPUploader"
+#! VERSION="3"
+#! POSITION="313 -446"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_referer21072014&lt;closeparen&gt;&lt;solidus&gt;sharing&lt;solidus&gt;rest&lt;solidus&gt;generateToken"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/x-www-form-urlencoded"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="username=&lt;at&gt;Value&lt;openparen&gt;_loginname21072014&lt;closeparen&gt;&lt;amp&gt;password=&lt;at&gt;Value&lt;openparen&gt;_password21072014&lt;closeparen&gt;&lt;amp&gt;expiration:1000&lt;space&gt;client=referer&lt;amp&gt;referer=&lt;at&gt;Value&lt;openparen&gt;_referer21072014&lt;closeparen&gt;&lt;space&gt;&lt;amp&gt;f=json"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_METHOD" PARM_VALUE="POST"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPUploader"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_url_contents"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="JSONExtractor"
+#! VERSION="1"
+#! POSITION="950 -507"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="EVALUATED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="ArcGis_token json&lt;openbracket&gt;&lt;quote&gt;token&lt;quote&gt;&lt;closebracket&gt; ArcGis_error json&lt;openbracket&gt;&lt;quote&gt;error&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;&lt;quote&gt;details&lt;quote&gt;&lt;closebracket&gt;"/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_url_contents"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="-329 -964"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="NoToken"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="HasToken"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,NoToken"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasToken"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="22"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="967 -796"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Failed"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Success"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Failed"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Success"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="26"
+#! TYPE="Logger"
+#! VERSION="3"
+#! POSITION="1533 -830"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="LOGGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Failed to loggin into ArcGis online "/>
+#! <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#! <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="20"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-336 -773"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_loginname21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_password21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_referer21072014" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_loginname21072014 {$(loginname)} _password21072014 {$(password)} _referer21072014 {$(referer)}"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Authenticated"
+#! POSITION="2101 -1088"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="24"
+#! NAME="Failed"
+#! POSITION="2101 -942"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="21"
+#! NAME="LOGIN"
+#! POSITION="-970 -714"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="6"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="22"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="26"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="26"
+#! TARGET_NODE="24"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="20"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="20"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_loginname 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_password 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_referer https:<solidus><solidus>www.arcgis.com
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO AGO_GenerateToken_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(AGO_GenerateToken_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(AGO_GenerateToken_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN1405959215 Input Splitter"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_loginname21072014 {$($(AGO_GenerateToken_WORKSPACE_NAME)_loginname)} _password21072014 {$($(AGO_GenerateToken_WORKSPACE_NAME)_password$encode)} _referer21072014 {$($(AGO_GenerateToken_WORKSPACE_NAME)_referer)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"    OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST ArcGis_token ATTRIBUTE_IS_EMPTY "" ENCODED TEST ArcGis_token ATTRIBUTE_IS_MISSING "" ENCODED TEST ArcGis_token ATTRIBUTE_VALUE_NULL "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_NoToken OUTPUT FAILED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader       INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_NoToken"    TARGET_URL "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_referer21072014<closeparen><solidus>sharing<solidus>rest<solidus>generateToken,$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader)"    TARGET_ATTR _url_contents    HTTP_METHOD POST    UPLOAD_BODY "@EvaluateExpression(STRING_ENCODED,username=<at>Value<openparen>_loginname21072014<closeparen><amp>password=<at>Value<openparen>_password21072014<closeparen><amp>expiration:1000<space>client=referer<amp>referer=<at>Value<openparen>_referer21072014<closeparen><space><amp>f=json,$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader)"    UPLOAD_CONTENT_TYPE "application/x-www-form-urlencoded"    AUTH_USERNAME ""    AUTH_PASSWORD ""    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    MODE EXTRACT    JSON_ATTR _url_contents    QUERIES ArcGis_token json<openbracket><quote>token<quote><closebracket> ArcGis_error json<openbracket><quote>error<quote><closebracket><openbracket><quote>details<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor_EVALUATED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST ArcGis_token ATTRIBUTE_IS_MISSING "" ENCODED TEST ArcGis_token ATTRIBUTE_IS_EMPTY "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Failed OUTPUT FAILED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_Logger_Logger    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Failed"    OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_LOGGED"                        @FeatureType("")                  @Log("$(AGO_GenerateToken_WORKSPACE_NAME)_Logger: Failed to loggin into ArcGis online ",20,20)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_Authenticated1405959215 Output Collector"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Authenticated" @RemoveAttributes(_loginname21072014,_password21072014,_referer21072014,_url_contents) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_Failed1405959215 Output Collector"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_LOGGED"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Failed" @RemoveAttributes(_loginname21072014,_password21072014,_referer21072014,_error,_http_status_code,_url_contents) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(AGO_GenerateToken_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN AGO_GenerateToken,1,"ArcGis online",9be0945f-739e-40d8-a4e2-01d1a4f9a537,"Embedded Always",No,NO_PARALLELISM,,No,14230,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Get ArcGis online Token </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-1176 15"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Embedded Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get ArcGis online Token &lt;/p&gt;&#10;"
+#! TITLE="AGO_GenerateToken"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14230"
+#! ZOOM_SCALE="100"
+#! CATEGORY="ArcGis online"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! HISTORY=""
+#! FME_DOCUMENT_PRIORGUID="55eb6467-0ef8-46ff-a5b2-db27591106a1"
+#! DOC_TOP_LEFT="-1140 -817"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-03-14T11:53:39"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 (20140112 - Build 14230 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="3067 803"
+#! FME_DOCUMENT_GUID="9be0945f-739e-40d8-a4e2-01d1a4f9a537"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PASSWORD Password:"
+#! DEFAULT_VALUE="@Value(password)"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR REFERER Referer:"
+#! DEFAULT_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;www.arcgis.com"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR ARCGIS_TOKEN Arcgis Token:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR LOGINNAME Loginname:"
+#! DEFAULT_VALUE="@Value(loginname)"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="18"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Authenticate the user in ArcGis online and retrieves a Token that can then be sued to request information from ArcGis online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-1140 -14"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="-1140 -14"
+#! BOTTOM_RIGHT="-390 -64"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#! IDENTIFIER="19"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;User is already authenticated&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="712 -817"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="712 -817"
+#! BOTTOM_RIGHT="712 -817"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="15"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="16"
+#! NAME="Request a token from ArcGis server"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="66 -31"
+#! BOTTOM_RIGHT="1334 -413"
+#! STICKY="true"
+#! COLOUR="0.4,0.203922,0.364706"
+#! CONTENTS="6 2 3 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="HTTPUploader"
+#! VERSION="3"
+#! POSITION="139 -140"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;referer&lt;closeparen&gt;&lt;solidus&gt;sharing&lt;solidus&gt;rest&lt;solidus&gt;generateToken"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/x-www-form-urlencoded"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="username=&lt;at&gt;Value&lt;openparen&gt;loginname&lt;closeparen&gt;&lt;amp&gt;password=&lt;at&gt;Value&lt;openparen&gt;password&lt;closeparen&gt;&lt;amp&gt;expiration:1000&lt;space&gt;client=referer&lt;amp&gt;referer=&lt;at&gt;Value&lt;openparen&gt;referer&lt;closeparen&gt;&lt;space&gt;&lt;amp&gt;f=json"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_METHOD" PARM_VALUE="POST"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPUploader"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_url_contents"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="JSONExtractor"
+#! VERSION="1"
+#! POSITION="776 -201"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="EVALUATED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="ArcGis_token json&lt;openbracket&gt;&lt;quote&gt;token&lt;quote&gt;&lt;closebracket&gt; ArcGis_error json&lt;openbracket&gt;&lt;quote&gt;error&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;&lt;quote&gt;details&lt;quote&gt;&lt;closebracket&gt;"/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_url_contents"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="-507 -466"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="NoToken"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="HasToken"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,NoToken"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasToken"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="22"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="793 -490"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Failed"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Success"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;ArcGis_token&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Failed"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Success"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="26"
+#! TYPE="Logger"
+#! VERSION="3"
+#! POSITION="1359 -524"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="LOGGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="referer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="loginname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Failed to loggin into ArcGis online $(ARCGIS_TOKEN)"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#! <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="LOGIN"
+#! POSITION="-1132 -324"
+#! COLLAPSED="false"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="password" ATTR_VALUE="$(PASSWORD)" />
+#! <XFORM_ATTR ATTR_NAME="referer" ATTR_VALUE="$(REFERER)" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" ATTR_VALUE="$(ARCGIS_TOKEN)" />
+#! <XFORM_ATTR ATTR_NAME="loginname" ATTR_VALUE="$(LOGINNAME)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Authenticated"
+#! POSITION="1927 -782"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="username" />
+#! <XFORM_ATTR ATTR_NAME="password" />
+#! <XFORM_ATTR ATTR_NAME="referer" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" />
+#! <XFORM_ATTR ATTR_NAME="loginname" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="24"
+#! NAME="Failed"
+#! POSITION="1927 -636"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="username" />
+#! <XFORM_ATTR ATTR_NAME="password" />
+#! <XFORM_ATTR ATTR_NAME="referer" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#! <XFORM_ATTR ATTR_NAME="ArcGis_error" />
+#! <XFORM_ATTR ATTR_NAME="loginname" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="6"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="22"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="26"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="26"
+#! TARGET_NODE="24"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_PASSWORD @Value(password)
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_REFERER https:<solidus><solidus>www.arcgis.com
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_ARCGIS_TOKEN 
+DEFAULT_MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_LOGINNAME @Value(loginname)
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO AGO_GenerateToken_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(AGO_GenerateToken_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(AGO_GenerateToken_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN1394794419 Input Splitter"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN" @EvaluateExpression(ATTR_CREATE_EXPR,password,$($(AGO_GenerateToken_WORKSPACE_NAME)_PASSWORD),referer,$($(AGO_GenerateToken_WORKSPACE_NAME)_REFERER),ArcGis_token,$($(AGO_GenerateToken_WORKSPACE_NAME)_ARCGIS_TOKEN),loginname,$($(AGO_GenerateToken_WORKSPACE_NAME)_LOGINNAME), FEATURE_TYPE)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_LOGIN"    OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST ArcGis_token ATTRIBUTE_IS_EMPTY "" ENCODED TEST ArcGis_token ATTRIBUTE_IS_MISSING "" ENCODED TEST ArcGis_token ATTRIBUTE_VALUE_NULL "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_NoToken OUTPUT FAILED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader       INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_NoToken"    TARGET_URL "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>referer<closeparen><solidus>sharing<solidus>rest<solidus>generateToken,$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader)"    TARGET_ATTR _url_contents    HTTP_METHOD POST    UPLOAD_BODY "@EvaluateExpression(STRING_ENCODED,username=<at>Value<openparen>loginname<closeparen><amp>password=<at>Value<openparen>password<closeparen><amp>expiration:1000<space>client=referer<amp>referer=<at>Value<openparen>referer<closeparen><space><amp>f=json,$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader)"    UPLOAD_CONTENT_TYPE "application/x-www-form-urlencoded"    AUTH_USERNAME ""    AUTH_PASSWORD ""    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    MODE EXTRACT    JSON_ATTR _url_contents    QUERIES ArcGis_token json<openbracket><quote>token<quote><closebracket> ArcGis_error json<openbracket><quote>error<quote><closebracket><openbracket><quote>details<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor_EVALUATED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST ArcGis_token ATTRIBUTE_IS_MISSING "" ENCODED TEST ArcGis_token ATTRIBUTE_IS_EMPTY "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Failed OUTPUT FAILED FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success INPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AGO_GenerateToken_WORKSPACE_NAME)_Logger_Logger    INPUT  FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Failed"    OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_LOGGED"                        @FeatureType("")                  @Log("$(AGO_GenerateToken_WORKSPACE_NAME)_Logger: Failed to loggin into ArcGis online $($(AGO_GenerateToken_WORKSPACE_NAME)_ARCGIS_TOKEN)",20,20)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_Authenticated1394794419 Output Collector"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_HasToken"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_TestFilter_2_Success"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Authenticated" @RemoveAttributes(_url_contents) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AGO_GenerateToken_WORKSPACE_NAME)_Failed1394794419 Output Collector"   INPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Logger_LOGGED"   OUTPUT FEATURE_TYPE "$(AGO_GenerateToken_WORKSPACE_NAME)_Failed" @RemoveAttributes(_error,_http_status_code,_url_contents) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(AGO_GenerateToken_WORKSPACE_NAME))}]
+
+
+
+
+
+
+

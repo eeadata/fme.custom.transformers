@@ -1,0 +1,849 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN GetEnvelopeData,2,,035a7f69-8655-482c-9021-b239d771cd73,"Linked by Default",No,NO_PARALLELISM,,No,19817,YES,No,37,No
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DOC_EXTENTS="2978.81 660.213"
+#!   DOC_TOP_LEFT="-1174.97 -367.628"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="19817"
+#!   FME_DOCUMENT_GUID="035a7f69-8655-482c-9021-b239d771cd73"
+#!   FME_DOCUMENT_PRIORGUID="cfe4b0d7-139a-4d83-816e-545e5cb064d1"
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2019.2.2.0 (20200103 - Build 19817 - WIN64)"
+#!   LAST_SAVE_DATE="2020-04-01T16:34:12"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="GetEnvelopeData"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-2196.9 821.883"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR inputUrl Input XML url:"
+#!   DEFAULT_VALUE="http://cdrtest.eionet.europa.eu/es/eu/wfdpom2018/districts/es010/envwmhpfq/input.xml"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_CONNECTION_OR_ATTR CDRConnection &quot;HTTP Authentication&quot;% Connection:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="70.707499999999996 253.429"
+#!   BOUNDING_RECT="70.707499999999996 253.429 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19817"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(CDRConnection)"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="envelopeXML"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;envelopeURL&lt;closeparen&gt;&lt;solidus&gt;xml"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GetEnvelopeXML"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-557.77999999999997 95.707999999999998"
+#!   BOUNDING_RECT="-557.77999999999997 95.707999999999998 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; envelopeURL SET_TO &lt;at&gt;ReplaceRegEx&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;envelopeURL&lt;closeparen&gt;&lt;comma&gt;&lt;backslash&gt;&lt;backslash&gt;&lt;comma&gt;&lt;quote&gt;&lt;solidus&gt;&lt;quote&gt;&lt;closeparen&gt;  envelopeURL SET_TO &lt;at&gt;ReplaceRegEx&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;envelopeURL&lt;closeparen&gt;&lt;comma&gt;http:&lt;comma&gt;&lt;quote&gt;http:&lt;solidus&gt;&lt;quote&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="XMLFlattener"
+#!   VERSION="2"
+#!   POSITION="674.57600000000002 292.58499999999998"
+#!   BOUNDING_RECT="674.57600000000002 292.58499999999998 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="obligation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="countrycode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="envelopeXML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="envelope&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_FORMAT_NAME" PARM_VALUE="XML"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="obligation countrycode"/>
+#!     <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFlattener"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeCreator"
+#!   VERSION="7"
+#!   POSITION="678.21600000000001 99.699200000000005"
+#!   BOUNDING_RECT="678.21600000000001 99.699200000000005 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="obligation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="countrycode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="countrycode,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;&lt;at&gt;Value&lt;openparen&gt;countrycode&lt;closeparen&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;countrycode&lt;closeparen&gt; = GR&apos;EL&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;countrycode&lt;closeparen&gt; = GB&apos;UK&apos;FME_NUM_CONDITIONS3___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SolveUKGR"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="FilenamePartExtractor"
+#!   VERSION="3"
+#!   POSITION="-553.21500000000003 292.58499999999998"
+#!   BOUNDING_RECT="-553.21500000000003 292.58499999999998 430 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="DIRNAME_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DIRPATH_ATTR" PARM_VALUE="envelopeURL"/>
+#!     <XFORM_PARM PARM_NAME="EXTENSION_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FULLNAME_ATTR" PARM_VALUE="inputFileName"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOTNAME_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="$(inputUrl)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="EnvelopeUrl"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Output"
+#!   POSITION="1372.8399999999999 178.07499999999999"
+#!   BOUNDING_RECT="1372.8399999999999 178.07499999999999 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="countrycode" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" />
+#!     <XFORM_ATTR ATTR_NAME="obligation" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" />
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="13"
+#!   NAME="Input"
+#!   POSITION="-1174.97 199.05500000000001"
+#!   BOUNDING_RECT="-1174.97 199.05500000000001 431 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="15"
+#!   NAME="Error"
+#!   POSITION="589.63099999999997 -296.62799999999999"
+#!   BOUNDING_RECT="589.63099999999997 -296.62799999999999 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(GetEnvelopeData_WORKSPACE_NAME)_inputUrl http://cdrtest.eionet.europa.eu/es/eu/wfdpom2018/districts/es010/envwmhpfq/input.xml
+DEFAULT_MACRO $(GetEnvelopeData_WORKSPACE_NAME)_CDRConnection 
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO GetEnvelopeData_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetEnvelopeData_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetEnvelopeData_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetEnvelopeData_WORKSPACE_NAME)_Input1585751652 Input Splitter"   INPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl    INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl_OUTPUT"         @SupplyAttributes("envelopeURL",@Filenamepart(ENCODED,DIRNAME,"@EvaluateExpression(FDIV,STRING_ENCODED,$($(GetEnvelopeData_WORKSPACE_NAME)_inputUrl$encode),$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl)"))         @SupplyAttributes("inputFileName",@Filenamepart(ENCODED,FILENAME,"@EvaluateExpression(FDIV,STRING_ENCODED,$($(GetEnvelopeData_WORKSPACE_NAME)_inputUrl$encode),$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl)"))
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl_OUTPUT"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "envelopeURL" "SET_TO" "<at>ReplaceRegEx<openparen><at>Value<openparen>envelopeURL<closeparen><comma><backslash><backslash><comma><quote><solidus><quote><closeparen>" }      ATTR_ACTION { "" "envelopeURL" "SET_TO" "<at>ReplaceRegEx<openparen><at>Value<openparen>envelopeURL<closeparen><comma>http:<comma><quote>http:<solidus><quote><closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML       INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>envelopeURL<closeparen><solidus>xml,$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "envelopeXML"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(GetEnvelopeData_WORKSPACE_NAME)_CDRConnection$encode),$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_Output"    OUTPUT REJECTED FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_XMLFlattener    INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_Output"    XML_STREAM "envelopeXML"    XFMAP_FEATURE_PATHS_EXPRESSION "envelope<space>"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    OUTPUT_ONE_FEATURE_PER_INPUT yes    OUTPUT MAPPED FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_XMLFlattener_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_SolveUKGR ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_XMLFlattener_OUTPUT" ATTR countrycode FME_CONDITIONAL:DEFAULT_VALUE'<at>Value<openparen>countrycode<closeparen>'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>countrycode<closeparen> = GR'EL'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>countrycode<closeparen> = GB'UK'FME_NUM_CONDITIONS3___    OUTPUT OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_SolveUKGR_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetEnvelopeData_WORKSPACE_NAME)_Output1585751652 Output Collector"   INPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_SolveUKGR_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Output" @RemoveAttributes(_http_status_code) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetEnvelopeData_WORKSPACE_NAME)_Error1585751652 Output Collector"   INPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_<REJECTED>"   OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Error"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetEnvelopeData_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN GetEnvelopeData,1,,a0a5b7b3-266f-4d37-a3b5-57c3580d1030,"Linked by Default",No,NO_PARALLELISM,,No,18520,YES,No,34
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DOC_EXTENTS="2547.81 589.213"
+#!   DOC_TOP_LEFT="-1174.97 -296.628"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="a0a5b7b3-266f-4d37-a3b5-57c3580d1030"
+#!   FME_DOCUMENT_PRIORGUID="29b364af-8aba-4535-9568-45ea2323fd55,b818ee40-0a1e-4fda-b0e0-3dd8da746205,6c885543-d43d-4630-81d8-62b31fef5f1b,c3981c36-1382-45cd-bc88-d80a8bbdbe82,eb022b4a-bda0-4a6c-b1b2-7037f2138cab"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-05-13T16:12:54"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="34"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="GetEnvelopeData"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-2196.9 765.633"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR inputUrl Input XML url:"
+#!   DEFAULT_VALUE="http://cdrtest.eionet.europa.eu/es/eu/wfdpom2018/districts/es010/envwmhpfq/input.xml"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR CDRPASSWORD cdrPassword:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;cdrPassword&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR CDRUSER cdrUser:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;cdrUser&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="70.707499999999996 253.429"
+#!   BOUNDING_RECT="70.707499999999996 253.429 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="@Value(cdrPassword)"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="@Value(cdrUser)"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="envelopeXML"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;envelopeURL&lt;closeparen&gt;&lt;solidus&gt;xml"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GetEnvelopeXML"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-557.77999999999997 95.707999999999998"
+#!   BOUNDING_RECT="-557.77999999999997 95.707999999999998 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; envelopeURL SET_TO &lt;at&gt;ReplaceRegEx&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;envelopeURL&lt;closeparen&gt;&lt;comma&gt;&lt;backslash&gt;&lt;backslash&gt;&lt;comma&gt;&lt;quote&gt;&lt;solidus&gt;&lt;quote&gt;&lt;closeparen&gt;  envelopeURL SET_TO &lt;at&gt;ReplaceRegEx&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;envelopeURL&lt;closeparen&gt;&lt;comma&gt;http:&lt;comma&gt;&lt;quote&gt;http:&lt;solidus&gt;&lt;quote&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="XMLFlattener"
+#!   VERSION="2"
+#!   POSITION="674.57600000000002 292.58499999999998"
+#!   BOUNDING_RECT="674.57600000000002 292.58499999999998 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="obligation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="countrycode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="envelopeXML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="envelope&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_FORMAT_NAME" PARM_VALUE="XML"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="obligation countrycode"/>
+#!     <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFlattener"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeCreator"
+#!   VERSION="7"
+#!   POSITION="678.21600000000001 99.699200000000005"
+#!   BOUNDING_RECT="678.21600000000001 99.699200000000005 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="obligation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="countrycode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="countrycode,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;&lt;at&gt;Value&lt;openparen&gt;countrycode&lt;closeparen&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;countrycode&lt;closeparen&gt; = GR&apos;EL&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;countrycode&lt;closeparen&gt; = GB&apos;UK&apos;FME_NUM_CONDITIONS3___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SolveUKGR"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="FilenamePartExtractor"
+#!   VERSION="3"
+#!   POSITION="-553.21500000000003 292.58499999999998"
+#!   BOUNDING_RECT="-553.21500000000003 292.58499999999998 430 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="DIRNAME_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DIRPATH_ATTR" PARM_VALUE="envelopeURL"/>
+#!     <XFORM_PARM PARM_NAME="EXTENSION_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FULLNAME_ATTR" PARM_VALUE="inputFileName"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOTNAME_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="$(inputUrl)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="EnvelopeUrl"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Output"
+#!   POSITION="1372.8399999999999 178.07499999999999"
+#!   BOUNDING_RECT="1372.8399999999999 178.07499999999999 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="countrycode" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeURL" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeXML" />
+#!     <XFORM_ATTR ATTR_NAME="obligation" />
+#!     <XFORM_ATTR ATTR_NAME="inputFileName" />
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="13"
+#!   NAME="Input"
+#!   POSITION="-1174.97 199.05500000000001"
+#!   BOUNDING_RECT="-1174.97 199.05500000000001 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="cdrPassword" ATTR_VALUE="$(CDRPASSWORD)" />
+#!     <XFORM_ATTR ATTR_NAME="cdrUser" ATTR_VALUE="$(CDRUSER)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="15"
+#!   NAME="Error"
+#!   POSITION="589.63099999999997 -296.62799999999999"
+#!   BOUNDING_RECT="589.63099999999997 -296.62799999999999 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(GetEnvelopeData_WORKSPACE_NAME)_inputUrl http://cdrtest.eionet.europa.eu/es/eu/wfdpom2018/districts/es010/envwmhpfq/input.xml
+DEFAULT_MACRO $(GetEnvelopeData_WORKSPACE_NAME)_CDRPASSWORD <at>Value<openparen>cdrPassword<closeparen>
+DEFAULT_MACRO $(GetEnvelopeData_WORKSPACE_NAME)_CDRUSER <at>Value<openparen>cdrUser<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO GetEnvelopeData_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetEnvelopeData_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetEnvelopeData_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetEnvelopeData_WORKSPACE_NAME)_Input1557756774 Input Splitter"   INPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,cdrPassword,$($(GetEnvelopeData_WORKSPACE_NAME)_CDRPASSWORD),cdrUser,$($(GetEnvelopeData_WORKSPACE_NAME)_CDRUSER), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl    INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl_OUTPUT"         @SupplyAttributes("envelopeURL",@Filenamepart(ENCODED,DIRNAME,"@EvaluateExpression(FDIV,STRING_ENCODED,$($(GetEnvelopeData_WORKSPACE_NAME)_inputUrl$encode),$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl)"))         @SupplyAttributes("inputFileName",@Filenamepart(ENCODED,FILENAME,"@EvaluateExpression(FDIV,STRING_ENCODED,$($(GetEnvelopeData_WORKSPACE_NAME)_inputUrl$encode),$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl)"))
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_EnvelopeUrl_OUTPUT"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "envelopeURL" "SET_TO" "<at>ReplaceRegEx<openparen><at>Value<openparen>envelopeURL<closeparen><comma><backslash><backslash><comma><quote><solidus><quote><closeparen>" }      ATTR_ACTION { "" "envelopeURL" "SET_TO" "<at>ReplaceRegEx<openparen><at>Value<openparen>envelopeURL<closeparen><comma>http:<comma><quote>http:<solidus><quote><closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML       INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>envelopeURL<closeparen><solidus>xml,$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "envelopeXML"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>cdrUser<closeparen>,$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML)"    AUTH_PASSWORD "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>cdrPassword<closeparen>,$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML)"    AUTH_METHOD "BASIC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_Output"    OUTPUT REJECTED FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_XMLFlattener    INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_Output"    XML_STREAM "envelopeXML"    XFMAP_FEATURE_PATHS_EXPRESSION "envelope<space>"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    OUTPUT_ONE_FEATURE_PER_INPUT yes    OUTPUT MAPPED FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_XMLFlattener_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetEnvelopeData_WORKSPACE_NAME)_SolveUKGR ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_XMLFlattener_OUTPUT" ATTR countrycode FME_CONDITIONAL:DEFAULT_VALUE'<at>Value<openparen>countrycode<closeparen>'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>countrycode<closeparen> = GR'EL'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>countrycode<closeparen> = GB'UK'FME_NUM_CONDITIONS3___    OUTPUT OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_SolveUKGR_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetEnvelopeData_WORKSPACE_NAME)_Output1557756774 Output Collector"   INPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_SolveUKGR_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Output" @RemoveAttributes(_http_status_code) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetEnvelopeData_WORKSPACE_NAME)_Error1557756774 Output Collector"   INPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_GetEnvelopeXML_<REJECTED>"   OUTPUT FEATURE_TYPE "$(GetEnvelopeData_WORKSPACE_NAME)_Error"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetEnvelopeData_WORKSPACE_NAME))}]
+
+

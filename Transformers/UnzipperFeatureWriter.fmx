@@ -1,0 +1,326 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN UnzipperFeatureWriter,1,Infrastructure,d0857ea7-d7a9-4614-9b3d-cba66dc7ed69,"Embedded Always",No,NO_PARALLELISM,,No,18520,YES,No,27
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This transformer extracts a zip file to a temporary directory, returning the path in both Windows- and Unix-style. Using these paths, you can copy the files to a permanent location using a File Copy writer, or make further use of them in a FeatureReader, for example. </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Infrastructure"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer extracts a zip file to a temporary directory, returning the path in both Windows- and Unix-style. Using these paths, you can copy the files to a permanent location using a File Copy writer, or make further use of them in a FeatureReader, for example. &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2259.76 777.879"
+#!   DOC_TOP_LEFT="490.503 -449.754"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="d0857ea7-d7a9-4614-9b3d-cba66dc7ed69"
+#!   FME_DOCUMENT_PRIORGUID="9386c889-56b3-4937-9aa0-50fa8b28a60d"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Embedded Always"
+#!   HISTORY="2014-01-26,De&lt;space&gt;Wet&lt;space&gt;van&lt;space&gt;Niekerk,Created,2016-02-04,De&lt;space&gt;Wet&lt;space&gt;van&lt;space&gt;Niekerk,Updated&lt;space&gt;for&lt;space&gt;FME&lt;space&gt;Hub,03&lt;solidus&gt;04&lt;solidus&gt;2019,Jan&lt;space&gt;Bliki,Incoperate&lt;space&gt;with&lt;space&gt;the&lt;space&gt;other&lt;space&gt;Os..."
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-04-03T15:24:17"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="27"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="UnzipperFeatureWriter"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Input Ports&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Initiator&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This port accepts any feature. Each feature is expected to have as attribute the path to a zipfile.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Output Ports&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Output&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Will output a feature for each file inside the zipfile. Each feature will have a &lt;span style=&quot; font-weight:600;&quot;&gt;path_windows&lt;/span&gt; attribute, with backslashes and forward slashes respectively.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;&amp;lt;Rejected&amp;gt;&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Upon unzipping error, outputs the original Initiator feature with the addition of the &lt;span style=&quot; font-weight:600;&quot;&gt;_reader_error&lt;/span&gt; attribute which contains the last error message from the transformer.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Parameters&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Zipfile path&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The path to a zipfile from which you would like to extract files. This can be set to an attribute or a file on the system. Pleas note that if you specify a file directly, its contents will be extracted once for every initiator feature that enters the transformer.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Usage notes&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The files will be extracted to a temporary location, so if you would like to save them, you would need to use a File Copy writer to write them out to a permanent location. &lt;/p&gt;&#10;"
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="0 525.005"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI FILENAME_MUSTEXIST_OR_ATTR ZIPFILE_PATH ZIP_FIle|*.zip|All_files|*.* Zipfile path:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="13"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Gets listing of zip file contents&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;(extraction is performed automatically&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;to temp location)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1547.2580625806254 328.12503125031253"
+#!   TOP_LEFT="1547.2580625806254 328.12503125031253"
+#!   BOTTOM_RIGHT="1547.2580625806254 328.12503125031253"
+#!   BOUNDING_RECT="1547.2580625806254 328.12503125031253 0 0"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19215686274509805"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="5"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="FeatureReader"
+#!   VERSION="8"
+#!   POSITION="1615.2573125731253 68"
+#!   BOUNDING_RECT="1615.2573125731253 68 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_unzipper_zipfile_path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_unzipper_zipfile_path" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_unzipper_zipfile_path" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_unzipper_zipfile_path" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Initiator and Result"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_unzipper_zipfile_path&lt;closeparen&gt;&lt;solidus&gt;**&lt;solidus&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE="PATH"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="PATH"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceOFFSET_DATETIME&lt;comma&gt;&lt;comma&gt;SourceGLOB_PATTERN&lt;comma&gt;*&lt;comma&gt;SourceRECURSE_DIRECTORIES&lt;comma&gt;YES&lt;comma&gt;SourceTYPE&lt;comma&gt;ANY&lt;comma&gt;SourceRETRIEVE_FILE_PROPERTIES&lt;comma&gt;NO&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;&lt;comma&gt;SourcePATH_EXPOSE_FORMAT_ATTRS&lt;comma&gt;,METAFILE,PATH"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="PATH_GLOB_PATTERN,&quot;OPTIONAL TEXT_ENCODED&quot;,PATH&lt;space&gt;Path&lt;space&gt;Filter:,PATH_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP PATH_EXPOSE_FORMAT_ATTRS&quot;,PATH&lt;space&gt;Schema&lt;space&gt;Attributes,PATH_TYPE,&quot;OPTIONAL LOOKUP_CHOICE Any,ANY%Directory,DIRECTORY%File,FILE&quot;,PATH&lt;space&gt;Allowed&lt;space&gt;Path&lt;space&gt;Type:,PATH_RECURSE_DIRECTORIES,&quot;OPTIONAL CHOICE YES%NO&quot;,PATH&lt;space&gt;Recurse&lt;space&gt;Into&lt;space&gt;Subfolders:,PATH_RETRIEVE_FILE_PROPERTIES,&quot;OPTIONAL CHOICE YES%NO&quot;,PATH&lt;space&gt;Retrieve&lt;space&gt;file&lt;space&gt;properties:,PATH_PATH_EXPOSE_FORMAT_ATTRS,&quot;OPTIONAL LITERAL EXPOSED_ATTRS PATH%Source&quot;,PATH&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,PATH_OFFSET_DATETIME,&quot;OPTIONAL NO_EDIT TEXT&quot;,PATH&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Schema and Data Features"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="PATH_EXPOSE_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PATH_GLOB_PATTERN" PARM_VALUE="*"/>
+#!     <XFORM_PARM PARM_NAME="PATH_OFFSET_DATETIME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PATH_PATH_EXPOSE_FORMAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PATH_RECURSE_DIRECTORIES" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="PATH_RETRIEVE_FILE_PROPERTIES" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="PATH_TYPE" PARM_VALUE="ANY"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READ_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE="ENVELOPE_INTERSECT%INTERSECTS%CONTAINS%CROSSES%DISJOINT%EQUALS%OVERLAPS%TOUCHES%WITHIN"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="1072.2593125931257 68"
+#!   BOUNDING_RECT="1072.2593125931257 68 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14230"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="_unzipper_zipfile_path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_unzipper_zipfile_path {$(ZIPFILE_PATH)}"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="AttributeExposer"
+#!   VERSION="1"
+#!   POSITION="2156.8858438584393 -113.62415624156233"
+#!   BOUNDING_RECT="2156.8858438584393 -113.62415624156233 -1 -1"
+#!   ORDER="500000000000003"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_unzipper_zipfile_path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_windows" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="path_windows,path_filename,path_extension"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Output"
+#!   POSITION="2750.2625626256272 -113.62415624156233"
+#!   BOUNDING_RECT="2750.2625626256272 -113.62415624156233 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="path_windows" />
+#!     <XFORM_ATTR ATTR_NAME="path_extension" />
+#!     <XFORM_ATTR ATTR_NAME="path_filename" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Initiator"
+#!   POSITION="490.50337503375033 68"
+#!   BOUNDING_RECT="490.50337503375033 68 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="2253.3825938259383 -449.75434375343752"
+#!   BOUNDING_RECT="2253.3825938259383 -449.75434375343752 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;OTHER&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 3 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(UnzipperFeatureWriter_WORKSPACE_NAME)_ZIPFILE_PATH 
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO UnzipperFeatureWriter_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(UnzipperFeatureWriter_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(UnzipperFeatureWriter_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UnzipperFeatureWriter_WORKSPACE_NAME)_Initiator1554297857 Input Splitter"   INPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_Initiator"   OUTPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_Initiator"
+# -------------------------------------------------------------------------
+Tcl2 proc $(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_unzipper_zipfile_path {$($(UnzipperFeatureWriter_WORKSPACE_NAME)_ZIPFILE_PATH$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_Initiator"    OUTPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+MACRO $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED 
+MACRO $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_DIRECTIVES GLOB_PATTERN,*,TYPE,ANY,RECURSE_DIRECTORIES,YES,RETRIEVE_FILE_PROPERTIES,NO
+# Values come in encoded and come out decoded.
+Tcl2 proc $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_findInListElseDefault { valueEncoded defaultValue } {    if { [lsearch [split {$($(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED)}] $valueEncoded] >= 0} {       return $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_[FME_DecodeText $valueEncoded]    } else {       return $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_$defaultValue    } }
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS
+INCLUDE [       if { {MERGE} == {MERGE} } {          puts "MACRO $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS PREFER_RESULT";       } else {          puts "MACRO $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS MERGE";       };    ]
+INCLUDE [    puts {DEFAULT_MACRO FeatureReaderDataset_$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_unzipper_zipfile_path<closeparen><solidus>**<solidus>,$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader)}; ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader    INPUT  FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    $(FCTQUERY_INTERACTION_LINE)    QUERYFCT_TABLE_SEPARATOR SPACE    COMBINE_ATTRIBUTES  $($(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    READER_TYPE         PATH    READER_DATASET      "$(FeatureReaderDataset_$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader)"    QUERYFCT_IDS        "PATH"    READER_DIRECTIVES META_MACROS,SourceOFFSET_DATETIME<comma><comma>SourceGLOB_PATTERN<comma>*<comma>SourceRECURSE_DIRECTORIES<comma>YES<comma>SourceTYPE<comma>ANY<comma>SourceRETRIEVE_FILE_PROPERTIES<comma>NO<comma>SourceEXPOSE_ATTRS_GROUP<comma><comma>SourcePATH_EXPOSE_FORMAT_ATTRS<comma>,METAFILE,PATH    QUERYFCT_OUTPUT     "BASED_ON_CONNECTIONS"    CONTINUE_ON_READER_ERROR YES    READER_PARAMS_WWJD     $($(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE *         @SupplyAttributes(fme_feature_type,@FeatureType())         @Tcl2("set FME_FeatureType [$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_findInListElseDefault [FME_EncodeText $FME_FeatureType] {<OTHER>}]")         @Transform(PATH,FME_GENERIC,ALIAS_GEOMETRY)    OUTPUT READER_ERROR FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UnzipperFeatureWriter_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_<OTHER>"    OUTPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UnzipperFeatureWriter_WORKSPACE_NAME)_Output1554297857 Output Collector"   INPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_AttributeExposer_OUTPUT"   OUTPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_Output" @RemoveAttributes(_unzipper_zipfile_path)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UnzipperFeatureWriter_WORKSPACE_NAME)_<Rejected>1554297857 Output Collector"   INPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_FeatureReader_<REJECTED>"   OUTPUT FEATURE_TYPE "$(UnzipperFeatureWriter_WORKSPACE_NAME)_<Rejected>"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(UnzipperFeatureWriter_WORKSPACE_NAME))}]

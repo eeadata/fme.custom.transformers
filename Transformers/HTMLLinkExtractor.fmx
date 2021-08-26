@@ -1,0 +1,284 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN HTMLLinkExtractor,1,"HTML Tools",4c252ef3-2147-4a1f-a669-b126dfaa5b0f,"Embedded by Default",No,NO_PARALLELISM,,No,15480,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Extracts Hyperlink definitions from HTML files. </p>
+# 
+# TRANSFORMER_END
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! FME_PROCESS_GROUP_BY=""
+#! BLOCKED_LOOPING="No"
+#! DOC_TOP_LEFT="-812.002 -312.325"
+#! MAX_LOOP_ITERATIONS=""
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! SHOW_ANNOTATIONS="true"
+#! PASSWORD=""
+#! LAST_SAVE_BUILD="FME(R) 2015.1.0.1 (20150507 - Build 15480 - WIN64)"
+#! FME_BUILD_NUM="15480"
+#! ZOOM_SCALE="101"
+#! CATEGORY="HTML Tools"
+#! HISTORY="30&lt;solidus&gt;06&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,First&lt;space&gt;version"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extracts Hyperlink definitions from HTML files. &lt;/p&gt;&#10;"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extracts the hyperlink tags from HTML and returns the Title,Description and URL. &lt;/p&gt;&#10;"
+#! TITLE="HTMLLinkExtractor"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FME 2015 SP1 &lt;/p&gt;&#10;"
+#! FME_DOCUMENT_GUID="4c252ef3-2147-4a1f-a669-b126dfaa5b0f"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License: LGPL-2.1+&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License as published by the Free Software Foundation; either&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Lesser General Public License for more details.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/span&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;&#10;        &lt;br/&gt;&#10;    &lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License: GPL-2+&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License as published by the Free Software Foundation; either&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;details.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This Custom Transformer may only be used in conjunction with a validily licensed copy of FME software.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This Custom Transformer may only be used in conjunction with a validily licensed copy of FME software.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_DATE="2015-07-02T09:03:11"
+#! FMX_INSERT_MODE="Embedded by Default"
+#! REQUIREMENTS_KEYWORD="none"
+#! VIEW_POSITION="-1841.6 905.95"
+#! ATTR_TYPE_ENCODING="SDF"
+#! ITERATION_COUNT_ATTR=""
+#! FME_SERVER_SERVICES=""
+#! DOC_EXTENTS="2903.29 57.668"
+#! FME_DOCUMENT_PRIORGUID="1f00f0ae-8a65-4ccb-b0f3-2a533cd9eb33,a628b885-2f4e-47cb-ad48-c388b8d4941d"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_ATTR html Html content:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-176.189 -254.657"
+#! BOUNDING_RECT="-176.189 -254.657 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="__html" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__html {$(html)}"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="XMLFragmenter"
+#! VERSION="3"
+#! POSITION="987.981 -259.256"
+#! BOUNDING_RECT="987.981 -259.256 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__html" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="a.href" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="a.title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="a" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="__html"/>
+#! <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFragmenter"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS_EXCEPT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="a"/>
+#! <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="a.href a.title a"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#! <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="386.826 -262.897"
+#! BOUNDING_RECT="386.826 -262.897 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__html" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="__html"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="UTF-16"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="UTF-8"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="AttributeRenamer"
+#! VERSION="3"
+#! POSITION="1563.64 -285.791"
+#! BOUNDING_RECT="1563.64 -285.791 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__html" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Href" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="a,Description,,a.href,Href,,a.title,Title,"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="2"
+#! NAME="Input"
+#! POSITION="-812.002 -261.502"
+#! BOUNDING_RECT="-812.002 -261.502 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="Output"
+#! POSITION="2091.29 -312.325"
+#! BOUNDING_RECT="2091.29 -312.325 -1 -1"
+#! COLLAPSED="false"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="Description" />
+#! <XFORM_ATTR ATTR_NAME="Href" />
+#! <XFORM_ATTR ATTR_NAME="Title" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="10"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(HTMLLinkExtractor_WORKSPACE_NAME)_html 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO HTMLLinkExtractor_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(HTMLLinkExtractor_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(HTMLLinkExtractor_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(HTMLLinkExtractor_WORKSPACE_NAME)_Input1435820591 Input Splitter"   INPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__html {$($(HTMLLinkExtractor_WORKSPACE_NAME)_html)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(HTMLLinkExtractor_WORKSPACE_NAME)_StringReplacer_53398aa7_f277_40e5_9644_e0329de1de8f0_replacer { findText replaceText invalidValue} {     set attrs [split \"__html\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(HTMLLinkExtractor_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(HTMLLinkExtractor_WORKSPACE_NAME)_StringReplacer_53398aa7_f277_40e5_9644_e0329de1de8f0_replacer {UTF-16} {UTF-8} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(HTMLLinkExtractor_WORKSPACE_NAME)_XMLFragmenter    INPUT  FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_StringReplacer_OUTPUT"    XML_STREAM "__html"    XFMAP_FEATURE_PATHS_EXPRESSION "a"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    MERGE_ATTRIBUTES_FROM_INPUT Yes    OUTPUT MAPPED FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_XMLFragmenter_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(HTMLLinkExtractor_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_XMLFragmenter_FRAGMENTS"    OUTPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL_ENCODED, a,Description,,a.href,Href,,a.title,Title,)
+
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(HTMLLinkExtractor_WORKSPACE_NAME)_Output1435820591 Output Collector"   INPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"   OUTPUT FEATURE_TYPE "$(HTMLLinkExtractor_WORKSPACE_NAME)_Output" @RemoveAttributes(__html,xml_fragment,xml_id,xml_matched_element,xml_parent_id,xml_parent_child_pos)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(HTMLLinkExtractor_WORKSPACE_NAME))}]

@@ -1,0 +1,369 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN MSWordSetter,1,"Microsoft Word",d0f1102d-f3f7-4752-8f25-be45664a174e,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,Yes
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">When a word document is produced by more then one workbench file. This simple transformer will initiate the global variable so all other transformers can concatinate to the same file. </p>
+# 
+# TRANSFORMER_END
+#!   ZOOM_SCALE="100"
+#!   XFORM_DEPRECATED="Yes"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   HISTORY="09&lt;solidus&gt;05&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,Initiation&lt;space&gt;of&lt;space&gt;the&lt;space&gt;transformer."
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   BLOCKED_LOOPING="No"
+#!   TITLE="MSWordSetter"
+#!   FME_DOCUMENT_GUID="d0f1102d-f3f7-4752-8f25-be45664a174e"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When a word document is produced by more then one workbench file. This simple transformer will initiate the global variable so all other transformers can concatinate to the same file. &lt;/p&gt;&#10;"
+#!   DOC_TOP_LEFT="-2332 -1651"
+#!   SHOW_INFO_NODES="true"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   FME_BUILD_NUM="16674"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   VIEW_POSITION="-1843.77 453.13"
+#!   DOC_EXTENTS="3432 1829"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_DOCUMENT_PRIORGUID="99f12b57-3197-4d46-b9f7-a54bf3ea8abb,1fee9a3e-7440-4c0d-bf9a-43b82f89bce2"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   LAST_SAVE_DATE="2016-11-25T17:13:33"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+ &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   PASSWORD=""
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUP_BY=""
+#!   CATEGORY="Microsoft Word"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   MAX_LOOP_ITERATIONS=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   SHOW_ANNOTATIONS="true"
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_SERVER_SERVICES=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI FILENAME_OR_ATTR ValidationReportFile Microsoft_Word|*.docx|Microsoft_Word_Json-Config|*.folder.json Word document generated:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="45"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &apos;-//W3C//DTD HTML 4.0//EN&apos; &apos;http://www.w3.org/TR/REC-html40/strict.dtd&apos;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica&apos;; font-size:12px;&quot;&gt;Microsoft Word Setter&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica&apos;; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;.Lucida Grande UI&apos;; font-size:16px;&quot;&gt;Creates a global variable pointing to the correct path to the word file.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica&apos;; font-size:12pt;&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica&apos;; font-size:12px;&quot;&gt;Author   : Jan.Bliki@eea.europa.eu&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica&apos;; font-size:12px;&quot;&gt;Created : May 2015&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2332 178"
+#!   TOP_LEFT="-2332 178"
+#!   BOTTOM_RIGHT="-889 -17"
+#!   BOUNDING_RECT="-2332 178 1443 195"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="46"
+#!   NAME="Collect parameters"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-1628 -674"
+#!   BOTTOM_RIGHT="-1060 -1649"
+#!   BOUNDING_RECT="-1628 -674 568 975"
+#!   STICKY="true"
+#!   COLOUR="0.619608,0.784314,0.847059"
+#!   CONTENTS="6 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="49"
+#!   NAME="Tell workspace word is initiated"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &apos;-//W3C//DTD HTML 4.0//EN&apos; &apos;http://www.w3.org/TR/REC-html40/strict.dtd&apos;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10px;&quot;&gt;Tell all other MSWord&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10px;&quot;&gt;transformers that the doc is initiated.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="146 -675"
+#!   BOTTOM_RIGHT="931 -1651"
+#!   BOUNDING_RECT="146 -675 785 976"
+#!   STICKY="true"
+#!   COLOUR="0.87451,0.54902,0.0156863"
+#!   CONTENTS="8 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="27"
+#!   NAME="Depending what user selected we modify the path"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-1016 -684"
+#!   BOTTOM_RIGHT="119 -1641"
+#!   BOUNDING_RECT="-1016 -684 1135 957"
+#!   STICKY="true"
+#!   COLOUR="0.964706,0.403922,0.427451"
+#!   CONTENTS="23 20 19 11 17 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeCreator"
+#!   VERSION="5"
+#!   POSITION="-1533 -1089"
+#!   BOUNDING_RECT="-1533 -1089 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_ValidationReportFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TakeValues"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_ValidationReportFile,$(ValidationReportFile)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="VariableSetter"
+#!   VERSION="2"
+#!   POSITION="328 -1074"
+#!   BOUNDING_RECT="328 -1074 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_ValidationReportFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="setDocxActive"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__MSWordJson&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="AttributeCreator"
+#!   VERSION="5"
+#!   POSITION="-360 -1156"
+#!   BOUNDING_RECT="-360 -1156 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_ValidationReportFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="msWordJsonPath"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__MSWordJson,&lt;at&gt;Value&lt;openparen&gt;_ValidationReportFile&lt;closeparen&gt;.folder.json"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-942 -966"
+#!   BOUNDING_RECT="-942 -966 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME=".folder.json"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_ValidationReportFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME=".docx"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_ValidationReportFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE=".docx"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_ValidationReportFile&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;ENDS_WITH&lt;space&gt;.folder.json&lt;quote&gt;,.folder.json"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="19"
+#!   TYPE="AttributeCreator"
+#!   VERSION="5"
+#!   POSITION="-368 -974"
+#!   BOUNDING_RECT="-368 -974 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14440"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_ValidationReportFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="msWordJsonPath_2"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__MSWordJson,&lt;at&gt;Value&lt;openparen&gt;_ValidationReportFile&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="21"
+#!   NAME="Input"
+#!   POSITION="-2251 -1102"
+#!   BOUNDING_RECT="-2251 -1102 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="22"
+#!   NAME="Output"
+#!   POSITION="1100 -1072"
+#!   BOUNDING_RECT="1100 -1072 0 0"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="19"
+#!   SOURCE_PORT_DESC="fo 0 .folder.json"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="19"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 1 .docx"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(MSWordSetter_WORKSPACE_NAME)_ValidationReportFile 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO MSWordSetter_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(MSWordSetter_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(MSWordSetter_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordSetter_WORKSPACE_NAME)_Input1480090413 Input Splitter"   INPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_TakeValues ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_Input" ATTR _ValidationReportFile $($(MSWordSetter_WORKSPACE_NAME)_ValidationReportFile$encode)    OUTPUT OUTPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_TakeValues_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_TakeValues_OUTPUT"    OUTPUT FEATURE_TYPE $(MSWordSetter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(MSWordSetter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_ValidationReportFile<closeparen>,$(MSWordSetter_WORKSPACE_NAME)_TestFilter) ENDS_WITH .folder.json ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(MSWordSetter_WORKSPACE_NAME)_TestFilter_.folder.json OUTPUT FAILED FEATURE_TYPE $(MSWordSetter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_TestFilter_.docx INPUT FEATURE_TYPE $(MSWordSetter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(MSWordSetter_WORKSPACE_NAME)_TestFilter_.docx
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_msWordJsonPath ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_TestFilter_.docx" ATTR __MSWordJson <at>Value<openparen>_ValidationReportFile<closeparen>.folder.json    OUTPUT OUTPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_msWordJsonPath_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_msWordJsonPath_2 ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_TestFilter_.folder.json" ATTR __MSWordJson <at>Value<openparen>_ValidationReportFile<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_msWordJsonPath_2_OUTPUT" 
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(MSWordSetter_WORKSPACE_NAME)_setDocxActive_VAR __MSWordJson
+INCLUDE [ if {{Global} == {Local}} {   puts {MACRO $(MSWordSetter_WORKSPACE_NAME)_setDocxActive_VAR $(WB_CURRENT_CONTEXT)___MSWordJson}; } ]
+Tcl2 proc $(MSWordSetter_WORKSPACE_NAME)_setDocxActive_469b777f_a296_41a0_92dc_fc8a936d931d0_setGlobalVar {varName varValue} {   set attrName $(MSWordSetter_WORKSPACE_NAME)_setDocxActive_tempAttr;   FME_SetAttribute $attrName [FME_DecodeText $varValue];   FME_Execute GlobalVariable $varName fme_attribute_name $attrName;   FME_UnsetAttributes $(MSWordSetter_WORKSPACE_NAME)_setDocxActive_tempAttr; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWordSetter_WORKSPACE_NAME)_setDocxActive    INPUT  FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_msWordJsonPath_OUTPUT"    INPUT  FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_msWordJsonPath_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_setDocxActive_OUTPUT"        @Tcl2("$(MSWordSetter_WORKSPACE_NAME)_setDocxActive_469b777f_a296_41a0_92dc_fc8a936d931d0_setGlobalVar {$($(MSWordSetter_WORKSPACE_NAME)_setDocxActive_VAR)} {@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__MSWordJson<closeparen>,$(MSWordSetter_WORKSPACE_NAME)_setDocxActive)} ")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordSetter_WORKSPACE_NAME)_Output1480090413 Output Collector"   INPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_setDocxActive_OUTPUT"   OUTPUT FEATURE_TYPE "$(MSWordSetter_WORKSPACE_NAME)_Output" @RemoveAttributes(_ValidationReportFile,__MSWordJson)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(MSWordSetter_WORKSPACE_NAME))}]

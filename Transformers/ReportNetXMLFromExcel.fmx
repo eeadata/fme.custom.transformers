@@ -1,0 +1,296 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ReportNetXMLFromExcel,1,ReportNet,52c5a549-5521-4f12-9e94-aff3301897a2,"Embedded Always",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Transforms ReportNet XML originaly produced from an Excel file. ReportNet extracts Excel in a particular way. This simple transformer gives you the means to quickly convert these back into a table. </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-1209 12"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Embedded Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Transforms ReportNet XML originaly produced from an Excel file. ReportNet extracts Excel in a particular way. This simple transformer gives you the means to quickly convert these back into a table. &lt;/p&gt;&#10;"
+#! TITLE="ReportNetXMLFromExcel"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="ReportNet"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;XML File on disk&lt;/span&gt;: A file path towards an xml-file.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Attributes to expose&lt;/span&gt;: A list of fields you wish to expose inside the workflow. In order to see what fields you have available simply run the result into an inspector and check the available attributes. &lt;/p&gt;&#10;"
+#! HISTORY="23&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#! FME_DOCUMENT_PRIORGUID="c2f82a95-91c4-42ff-bb1a-77b3a056cce6,1733381b-1280-4531-bca8-06e43a15760b"
+#! DOC_TOP_LEFT="-1059 -747"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-07-23T11:20:40"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;No requirements. &lt;/p&gt;&#10;"
+#! DOC_EXTENTS="2014 636"
+#! FME_DOCUMENT_GUID="52c5a549-5521-4f12-9e94-aff3301897a2"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL FILENAME_MUSTEXIST_OR_ATTR xmlfile XML_File|.xml XML File on disk:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL USER_DEFINED_LIST ExposeAttributes Attributes to Expose:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="13"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ReportNet produces XML files from Excel files.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The content is always formated in the same way and this transformer gives a simple mean to extract these into a table structure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-1059 -111"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="-1059 -111"
+#! BOTTOM_RIGHT="-309 -161"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="XMLFragmenter"
+#! VERSION="3"
+#! POSITION="183 -370"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_xmlfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS_EXCEPT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Fragment_Row-tag"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="XML file"/>
+#! <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="@Value(_xmlfile)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="Row"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="XMLFlattener"
+#! VERSION="2"
+#! POSITION="183 -554"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_xmlfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="$(ExposeAttributes)"/>
+#! <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="xml_fragment"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Flatten_XML-tags"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#! <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="*"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lt&gt;structure&lt;space&gt;&lt;space&gt;&lt;lf&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;&lt;lf&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;&lt;lf&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;&lt;lf&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;&lt;lf&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;lf&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;attribute-identifier=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="188 -747"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_xmlfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xml_fragment,xml_id,xml_matched_element,xml_parent_id,xml_parent_child_pos"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CleanUpXML"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-374 -361"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_xmlfile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_xmlfile {$(xmlfile)}"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="Output"
+#! POSITION="955 -552"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="BWID" />
+#! <XFORM_ATTR ATTR_NAME="Changes" />
+#! <XFORM_ATTR ATTR_NAME="Class" />
+#! <XFORM_ATTR ATTR_NAME="StartDate" />
+#! <XFORM_ATTR ATTR_NAME="EndDate" />
+#! <XFORM_ATTR ATTR_NAME="GroupID" />
+#! <XFORM_ATTR ATTR_NAME="ManMeas" />
+#! <XFORM_ATTR ATTR_NAME="NuSeasons" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="XML"
+#! POSITION="-1030 -634"
+#! COLLAPSED="false"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="4"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="5"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(ReportNetXMLFromExcel_WORKSPACE_NAME)_xmlfile 
+DEFAULT_MACRO $(ReportNetXMLFromExcel_WORKSPACE_NAME)_ExposeAttributes 
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ReportNetXMLFromExcel_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ReportNetXMLFromExcel_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ReportNetXMLFromExcel_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_XML1406107240 Input Splitter"   INPUT FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_XML"   OUTPUT FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_XML"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_xmlfile {$($(ReportNetXMLFromExcel_WORKSPACE_NAME)_xmlfile$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_XML"    OUTPUT FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(ReportNetXMLFromExcel_WORKSPACE_NAME)_Fragment_Row-tag    INPUT  FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    XML_FILE "@Value(_xmlfile)"    XFMAP_FEATURE_PATHS_EXPRESSION "Row"    MERGE_ATTRIBUTES_FROM_INPUT Yes    OUTPUT MAPPED FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_Fragment_Row-tag_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(ReportNetXMLFromExcel_WORKSPACE_NAME)_Flatten_XML-tags    INPUT  FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_Fragment_Row-tag_FRAGMENTS"    XML_STREAM "xml_fragment"    XFMAP_FEATURE_PATHS_EXPRESSION "*"    XFMAP_FEATURE_PATHS_STRUCTURE "<lt>structure<space><space><lf>separator=<quote>.<quote><space><lf>map-empty-elements=<quote>yes<quote><space><lf>matched-prefix=<quote>attributes<quote><space><lf>matched-attributes=<quote>yes<quote><space><lf>cardinality=<quote>+<opencurly>?<closecurly><quote><lf>except-expression=<quote><quote><lf>structure-prefix=<quote><quote><lf>child-position-attribute=<quote><quote><lf>attribute-identifier=<quote><quote><lf>ui-mode=<quote>basic<quote><solidus><gt>"    OUTPUT_ONE_FEATURE_PER_INPUT yes    OUTPUT MAPPED FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_Flatten_XML-tags_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(ReportNetXMLFromExcel_WORKSPACE_NAME)_CleanUpXML_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetXMLFromExcel_WORKSPACE_NAME)_CleanUpXML    INPUT  FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_Flatten_XML-tags_OUTPUT"    OUTPUT FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_CleanUpXML_OUTPUT"        @RemoveAttributes(xml_fragment,xml_id,xml_matched_element,xml_parent_id,xml_parent_child_pos)        @RemoveAttributes(fme_regexp_match"$($(ReportNetXMLFromExcel_WORKSPACE_NAME)_CleanUpXML_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_Output1406107240 Output Collector"   INPUT FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_CleanUpXML_OUTPUT"   OUTPUT FEATURE_TYPE "$(ReportNetXMLFromExcel_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ReportNetXMLFromExcel_WORKSPACE_NAME))}]

@@ -1,0 +1,1615 @@
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN SchemaMapFileFromXML,1,EEAValidation,14894727-20b0-4288-bd70-eca2237903af,"Embedded Always",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Produces a schema mapping file based on an XML file. If you are one of those who doesn't like to type hunders of fieldnames in the AttributeExposer then this transfomer is your friend. It can as well be used by the schema mapper where you can add new names for the fieds. </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-1864 238"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Embedded Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Produces a schema mapping file based on an XML file. If you are one of those who doesn&apos;t like to type hunders of fieldnames in the AttributeExposer then this transfomer is your friend. It can as well be used by the schema mapper where you can add new names for the fieds. &lt;/p&gt;&#10;"
+#! TITLE="SchemaMapFileFromXML"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="93"
+#! CATEGORY="EEAValidation"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE.  See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Should be used during the development of your dataflow. Disable or remove the transformer once the schema file is created. This can be heavy especialy when you scan many XML files... &lt;/p&gt;&#10;"
+#! HISTORY="20&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#! FME_DOCUMENT_PRIORGUID="de5885b2-1371-4cd5-ac8c-07588a7a5d06"
+#! DOC_TOP_LEFT="-2048 -1076"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-07-23T11:37:36"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="5923 501"
+#! FME_DOCUMENT_GUID="14894727-20b0-4288-bd70-eca2237903af"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR XMLAttribute XML Attribute:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR ElementsToMatch Elements to match:"
+#! DEFAULT_VALUE="*"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL FILENAME_OR_ATTR SchemaFile CSV_File|.csv Schema mapping file:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI INTEGER RATE Sampling Amount:"
+#! DEFAULT_VALUE="1"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="31"
+#! NAME="We only take the first file"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-1454 -467"
+#! BOTTOM_RIGHT="-824 -1119"
+#! STICKY="true"
+#! COLOUR="0.992157,0.109804,0.694118"
+#! CONTENTS="22 8 9 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="32"
+#! NAME="Check if schema file exist"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-799 -476"
+#! BOTTOM_RIGHT="-199 -1112"
+#! STICKY="true"
+#! COLOUR="0.129412,0.529412,0.211765"
+#! CONTENTS="11 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="33"
+#! NAME="Read previous file"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-162 -477"
+#! BOTTOM_RIGHT="434 -1113"
+#! STICKY="true"
+#! COLOUR="0.137255,0.0901961,0.854902"
+#! CONTENTS="10 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="34"
+#! NAME="Make new file"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="460 -481"
+#! BOTTOM_RIGHT="1148 -1110"
+#! STICKY="true"
+#! COLOUR="0.619608,0.937255,0.721569"
+#! CONTENTS="6 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="35"
+#! NAME="Flatten XML and explode"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1187 -485"
+#! BOTTOM_RIGHT="1760 -1314"
+#! STICKY="true"
+#! COLOUR="0.0627451,0.294118,0.192157"
+#! CONTENTS="1 17 16 3 2 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="36"
+#! NAME="Remove &quot; not to break CSV"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1796 -484"
+#! BOTTOM_RIGHT="2437 -1322"
+#! STICKY="true"
+#! COLOUR="0.384314,0.756863,0.964706"
+#! CONTENTS="7 29 13 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="37"
+#! NAME="Find old parameter if filled"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2467 -484"
+#! BOTTOM_RIGHT="3099 -1316"
+#! STICKY="true"
+#! COLOUR="0.247059,0.0431373,0.866667"
+#! CONTENTS="12 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="38"
+#! NAME="Prepare and write to CSV"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3133 -484"
+#! BOTTOM_RIGHT="3732 -1319"
+#! STICKY="true"
+#! COLOUR="0.509804,0.792157,0.909804"
+#! CONTENTS="4 28 5 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="XMLFlattener"
+#! VERSION="2"
+#! POSITION="1280 -575"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="_xmlAttribute"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFlattener"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#! <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_elementsToMatch&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;no&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;xmldoc_&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="AttributeExploder"
+#! VERSION="1"
+#! POSITION="1261 -808"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_NAME_LABEL" PARM_VALUE="_attr_name"/>
+#! <XFORM_PARM PARM_NAME="KEEP_GEOMETRY" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRIBUTES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="EXPLODING_TYPE" PARM_VALUE="Features"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExploder"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_VALUE_LABEL" PARM_VALUE="_attr_value"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="1267 -1076"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="xmldoc_"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_attr_name&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;LIKE&lt;space&gt;xmldoc_%&lt;quote&gt;,xmldoc_"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="onlyXMLParams"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="3207 -766"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_newrow" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="prepString"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_newrow,&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;_attr_name&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;_attr_value&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;targetAttribute&lt;closeparen&gt;&lt;quote&gt;&lt;cr&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeFileWriter"
+#! VERSION="2"
+#! POSITION="3211 -980"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_newrow" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="OVERWRITE_FILE" PARM_VALUE="Append to file"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFileWriter"/>
+#! <XFORM_PARM PARM_NAME="CHAR_ENCODING" PARM_VALUE="utf-8"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FILE_NAME" PARM_VALUE="@Value(_schemaFile)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SOURCE_ATTR" PARM_VALUE="_newrow"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeFileWriter"
+#! VERSION="2"
+#! POSITION="631 -908"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="OVERWRITE_FILE" PARM_VALUE="Overwrite file"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="startFile"/>
+#! <XFORM_PARM PARM_NAME="CHAR_ENCODING" PARM_VALUE="utf-8"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FILE_NAME" PARM_VALUE="@Value(_schemaFile)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SOURCE_ATTR" PARM_VALUE="_FileHeader"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="1916 -777"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_attr_value"/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RemoveQuotes"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;apos&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;quote&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-1341 -898"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_FileHeader,&lt;quote&gt;xmlfield&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;value&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;newfield&lt;quote&gt;&lt;cr&gt;,_xmlAttribute,$(XMLAttribute),_elementsToMatch,$(ElementsToMatch),_schemaFile,$(SchemaFile),_previousFile,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="Sampler"
+#! VERSION="1"
+#! POSITION="-1346 -579"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="SAMPLED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <OUTPUT_FEAT NAME="NOT_SAMPLED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RATE" PARM_VALUE="$(RATE)"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sampler"/>
+#! <XFORM_PARM PARM_NAME="SAMPLE_TYPE_LONG" PARM_VALUE="First N Features"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="AttributeFileReader"
+#! VERSION="2"
+#! POSITION="-46 -585"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFileReader"/>
+#! <XFORM_PARM PARM_NAME="CHAR_ENCODING" PARM_VALUE="utf-8"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FILE_NAME" PARM_VALUE="@Value(_schemaFile)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="_previousFile"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="-716 -726"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Exists"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Does_not_Exist"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="Input" PARM_VALUE="@Value(_schemaFile)"/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="FileExistanceChecker"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SchemaExist"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="2551 -760"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Output"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="findFieldInString"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="findFieldInString"/>
+#! <XFORM_PARM PARM_NAME="_ATTR_NAME" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_attr_name&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="_PREVIOUSFILE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_previousFile&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="1925 -1049"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_FileHeader" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_xmlAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_elementsToMatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_attr_name"/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="remove_xmldoc_"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="xmldoc_"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="14"
+#! NAME="Input"
+#! POSITION="-2048 -676"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="15"
+#! NAME="Schema"
+#! POSITION="3875 -865"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_attr_name" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#! NAME="findFieldInString"
+#! FME_DOCUMENT_PRIORGUID=""
+#! IS_VISIBLE="true"
+#! DOC_TOP_LEFT="-635 -936"
+#! VIEW_POSITION="-678 0"
+#! DOC_EXTENTS="3430 789"
+#! SUPPRESS_UPGRADE="false"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! ZOOM_SCALE="100"
+#! FME_DOCUMENT_GUID=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY=""
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! DESCRIPTION="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="findFieldInString"
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! HISTORY=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI STRING_OR_ATTR_ENCODED _ATTR_NAME Attr Name:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_attr_name&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI STRING_OR_ATTR_ENCODED _PREVIOUSFILE Previousfile:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_previousFile&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="23"
+#! NAME="Extract &quot;targetAttribute&quot; from previous file"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1328 -57"
+#! BOTTOM_RIGHT="2474 -717"
+#! STICKY="true"
+#! COLOUR="0.537255,0.909804,0.964706"
+#! CONTENTS="7 17 8 18 5 16 6 4 19 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="24"
+#! NAME="Attribute not found, make empty &quot;targetAttribute&quot;"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1344 -771"
+#! BOTTOM_RIGHT="2481 -1160"
+#! STICKY="true"
+#! COLOUR="0.992157,0.301961,0.619608"
+#! CONTENTS="9 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="25"
+#! NAME="Make a list from prev file"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="628 -63"
+#! BOTTOM_RIGHT="1286 -1154"
+#! STICKY="true"
+#! COLOUR="0.619608,0.937255,0.831373"
+#! CONTENTS="14 2 3 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="26"
+#! NAME="Get parameters"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-17 -63"
+#! BOTTOM_RIGHT="589 -1152"
+#! STICKY="true"
+#! COLOUR="0.482353,0.701961,0.258824"
+#! CONTENTS="1 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="56 -417"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_searchAttrString,&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;_attr_name&lt;closeparen&gt;&lt;quote&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="761 -381"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_previousFile"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;cr&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="ListSearcher"
+#! VERSION="3"
+#! POSITION="753 -672"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListSearcher"/>
+#! <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_list_index"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_list{}"/>
+#! <XFORM_PARM PARM_NAME="SEARCH_TYPE" PARM_VALUE="First regular expression match"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INDEX_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_searchAttrString&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="ListIndexer"
+#! VERSION="1"
+#! POSITION="1402 -147"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="_foundElement"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListIndexer"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_list{}"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="@Value(_list_index)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="1413 -369"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_listFound"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter_2"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_foundElement_list"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="ListIndexer"
+#! VERSION="1"
+#! POSITION="1409 -571"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute_listFound" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="targetAttribute"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListIndexer_2"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_listFound{}"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="1989 -154"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute_listFound" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="targetAttribute_listFound"/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;quote&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="AttributeRenamer"
+#! VERSION="2"
+#! POSITION="1994 -423"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_foundElement_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_listFound{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="targetAttribute_listFound,targetAttribute,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1706 -936"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_searchAttrString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="targetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="targetAttribute,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Input"
+#! POSITION="-635 -417"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_attr_name" ATTR_VALUE="$(_ATTR_NAME)" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" ATTR_VALUE="$(_PREVIOUSFILE)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="11"
+#! NAME="Output"
+#! POSITION="2795 -678"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_attr_name" />
+#! <XFORM_ATTR ATTR_NAME="_previousFile" />
+#! <XFORM_ATTR ATTR_NAME="_matched_characters" />
+#! <XFORM_ATTR ATTR_NAME="_matched_parts{}" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! <SUBDOCUMENT
+#! NAME="FileExistanceChecker"
+#! FME_DOCUMENT_PRIORGUID=""
+#! IS_VISIBLE="false"
+#! DOC_TOP_LEFT="123 -1034"
+#! VIEW_POSITION="0 0"
+#! DOC_EXTENTS="2873 513"
+#! GUID="9bfbd5e5-28e7-4d15-a08a-7632b54347f3"
+#! SUPPRESS_UPGRADE="false"
+#! XFORM_DEPRECATED="No"
+#! ZOOM_SCALE="100"
+#! FME_DOCUMENT_GUID="9bfbd5e5-28e7-4d15-a08a-7632b54347f3"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY="Filters"
+#! REQUIREMENTS_KEYWORD="none"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copyright (c) 2013 Safe Software Inc.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Permission is granted to anyone, free of charge, to use, modify and distribute the object code form of this transformer for any purpose, subject to the following restrictions:&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1) The origin of this transformer and associated FME(R) software must not be misrepresented.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2) This transformer may only be used in conjunction with a validly licensed copy of FME software.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;THIS SOFTWARE IS PROVIDED BY SAFE SOFTWARE INC. &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, NONINFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL SAFE SOFTWARE INC. BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. &lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer checks if input file paths or directories exist and routes features accordingly. &lt;/p&gt;&#10;"
+#! TITLE="FileExistanceChecker"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You can set the &quot;Input File Path&quot; parameter to an attribute or a string.&lt;/p&gt;&#10;"
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! HISTORY="2013-10-29,Arash&lt;space&gt;Ouji,Original&lt;space&gt;Implementation"
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FME 2013 SP1+ &lt;/p&gt;&#10;"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI FILENAME_OR_ATTR Input Any_Format|*.* Input File Path:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="16"
+#! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;Get parameter value&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="727 -563"
+#! ORDER="12"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="727 -563"
+#! BOTTOM_RIGHT="727 -563"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="3"
+#! />
+#! <COMMENT
+#! IDENTIFIER="17"
+#! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;import fmeobjects&#13;&lt;br&gt;import os&#13;&lt;br&gt;&#13;&lt;br&gt;def processFeature(feature):&#13;&lt;br&gt;   &#13;&lt;br&gt;   # Get input path attribute&#13;&lt;br&gt;   fullpath=feature.getAttribute(&amp;quot;FEC_FullPath&amp;quot;)&#13;&lt;br&gt;   &#13;&lt;br&gt;   # Check if the file exists&#13;&lt;br&gt;   if os.path.exists(fullpath):&#13;&lt;br&gt;      feature.setAttribute(&amp;quot;FEC_exists&amp;quot;,&amp;quot;Yes&amp;quot;)&#13;&lt;br&gt;   else:&#13;&lt;br&gt;      feature.setAttribute(&amp;quot;FEC_exists&amp;quot;,&amp;quot;No&amp;quot;)&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1050 -1034"
+#! ORDER="14"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1050 -1034"
+#! BOTTOM_RIGHT="1050 -1034"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="1"
+#! />
+#! <COMMENT
+#! IDENTIFIER="18"
+#! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;Use OS library to &#13;&lt;br&gt;check if file exists&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1320 -521"
+#! ORDER="15"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1320 -521"
+#! BOTTOM_RIGHT="1320 -521"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="1"
+#! />
+#! <COMMENT
+#! IDENTIFIER="19"
+#! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;PASSED=File exists&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1893 -569"
+#! ORDER="16"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1893 -569"
+#! BOTTOM_RIGHT="1893 -569"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="2"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="20"
+#! NAME="Cleanup"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2338 -566"
+#! BOTTOM_RIGHT="2970 -1207"
+#! STICKY="true"
+#! COLOUR="0.109804,0.94902,0.137255"
+#! CONTENTS="4 5 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="PythonCaller"
+#! VERSION="4"
+#! POSITION="1266 -661"
+#! ORDER="13"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FEC_FullPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="FEC_exists" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;os&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;input&lt;space&gt;path&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fullpath=feature.getAttribute&lt;openparen&gt;&lt;quote&gt;FEC_FullPath&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Check&lt;space&gt;if&lt;space&gt;the&lt;space&gt;file&lt;space&gt;exists&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;fullpath&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;FEC_exists&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;Yes&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;FEC_exists&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;No&lt;quote&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="processFeature"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="FEC_exists"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="1845 -676"
+#! ORDER="9"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FEC_FullPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="FEC_exists" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="FEC_FullPath" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="FEC_exists" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;FEC_exists&lt;closeparen&gt; = Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeCreator"
+#! VERSION="3"
+#! POSITION="705 -649"
+#! ORDER="8"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="FEC_FullPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="Use Empty String"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="FEC_FullPath,$(Input)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="2420 -646"
+#! ORDER="10"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="FEC_FullPath,FEC_exists"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="2418 -912"
+#! ORDER="11"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="FEC_FullPath,FEC_exists"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="PythonCaller_INPUT_1"
+#! POSITION="123 -642"
+#! COLLAPSED="false"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="7"
+#! NAME="Does_not_Exist"
+#! POSITION="2996 -996"
+#! COLLAPSED="false"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="Exists"
+#! POSITION="2989 -726"
+#! COLLAPSED="false"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="10"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(SchemaMapFileFromXML_WORKSPACE_NAME)_XMLAttribute 
+DEFAULT_MACRO $(SchemaMapFileFromXML_WORKSPACE_NAME)_ElementsToMatch *
+DEFAULT_MACRO $(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaFile 
+DEFAULT_MACRO $(SchemaMapFileFromXML_WORKSPACE_NAME)_RATE 1
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO SchemaMapFileFromXML_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SchemaMapFileFromXML_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SchemaMapFileFromXML_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Input1406108256 Input Splitter"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+INCLUDE [ puts "MACRO REAL_RATE [expr $($(SchemaMapFileFromXML_WORKSPACE_NAME)_RATE) * -1 ]" ]
+FACTORY_DEF * SamplingFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_Sampler    SAMPLE_RATE $(REAL_RATE)    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Input"    OUTPUT SAMPLED FEATURE_TYPE ___SAMPLED___
+# This TeeFactory is needed because Sampler will still output features if it has no OUTPUT clauses specified.
+# This way we behave nicely even if there are no output connections on the transformer. See PR#28886.
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_Sampler_Sampled    INPUT FEATURE_TYPE ___SAMPLED___    OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Sampler_SAMPLED"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Sampler_SAMPLED" ATTR _FileHeader <quote>xmlfield<quote><comma><quote>value<quote><comma><quote>newfield<quote><cr> ATTR _xmlAttribute $($(SchemaMapFileFromXML_WORKSPACE_NAME)_XMLAttribute$encode) ATTR _elementsToMatch $($(SchemaMapFileFromXML_WORKSPACE_NAME)_ElementsToMatch$encode) ATTR _schemaFile $($(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaFile$encode) ATTR _previousFile ""    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist PythonCaller_INPUT_1 Input Collector"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_PythonCaller_INPUT_1"
+MACRO FileExistanceChecker_WORKSPACE_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist
+MACRO $(FileExistanceChecker_WORKSPACE_NAME)_XFORMER_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist
+MACRO $(FileExistanceChecker_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(FileExistanceChecker_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(FileExistanceChecker_WORKSPACE_NAME)_SUB_DOC_NAME FileExistanceChecker
+MACRO $(FileExistanceChecker_WORKSPACE_NAME)_Input @Value(_schemaFile)
+DEFAULT_MACRO FileExistanceChecker_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(FileExistanceChecker_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(FileExistanceChecker_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller_INPUT_11406108256 Input Splitter"   INPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller_INPUT_1"   OUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller_INPUT_1"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(FileExistanceChecker_WORKSPACE_NAME)_AttributeCreator INPUT  FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller_INPUT_1" ATTR FEC_FullPath $($(FileExistanceChecker_WORKSPACE_NAME)_Input$encode)    OUTPUT OUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>os<lf><lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><lf><space><space><space>#<space>Get<space>input<space>path<space>attribute<lf><space><space><space>fullpath=feature.getAttribute<openparen><quote>FEC_FullPath<quote><closeparen><lf><space><space><space><lf><space><space><space>#<space>Check<space>if<space>the<space>file<space>exists<lf><space><space><space>if<space>os.path.exists<openparen>fullpath<closeparen>:<lf><space><space><space><space><space><space>feature.setAttribute<openparen><quote>FEC_exists<quote><comma><quote>Yes<quote><closeparen><lf><space><space><space>else:<lf><space><space><space><space><space><space>feature.setAttribute<openparen><quote>FEC_exists<quote><comma><quote>No<quote><closeparen>    OUTPUT PYOUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(FileExistanceChecker_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_PythonCaller_OUTPUT"    TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>FEC_exists<closeparen>,$(FileExistanceChecker_WORKSPACE_NAME)_Tester) = Yes ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_Tester_FAILED"
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_2    INPUT  FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_Tester_FAILED"    OUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"        @RemoveAttributes(FEC_FullPath,FEC_exists)        @RemoveAttributes(fme_regexp_match"$($(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(FEC_FullPath,FEC_exists)        @RemoveAttributes(fme_regexp_match"$($(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileExistanceChecker_WORKSPACE_NAME)_Does_not_Exist1406108256 Output Collector"   INPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_Does_not_Exist"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileExistanceChecker_WORKSPACE_NAME)_Exists1406108256 Output Collector"   INPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(FileExistanceChecker_WORKSPACE_NAME)_Exists"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(FileExistanceChecker_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist Exists Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_Exists"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_Exists"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist Does_not_Exist Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_Does_not_Exist"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_Does_not_Exist"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeFileReader    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_Exists"    OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeFileReader_OUTPUT"         @File(ENCODED_ATTR,DestReadSrcWrite,_previousFile,"@Value(_schemaFile)",utf-8)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_startFile    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeFileReader_OUTPUT"    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_SchemaExist_Does_not_Exist"    OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_startFile_OUTPUT"         @File(ENCODED_ATTR,DestWriteSrcRead,_FileHeader,"@Value(_schemaFile)",utf-8)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_XMLFlattener    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_startFile_OUTPUT"    XML_STREAM "_xmlAttribute"    XFMAP_FEATURE_PATHS_EXPRESSION "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_elementsToMatch<closeparen>,$(SchemaMapFileFromXML_WORKSPACE_NAME)_XMLFlattener)"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>no<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote>xmldoc_<quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    OUTPUT_ONE_FEATURE_PER_INPUT yes    OUTPUT MAPPED FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_XMLFlattener_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttributeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeExploder    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_XMLFlattener_OUTPUT"    ATTR_NAME_LABEL "_attr_name"    ATTR_VALUE_LABEL "_attr_value"    KEEP_GEOMETRY No    KEEP_ATTRIBUTES Yes    EXPLODING_TYPE EXPLODE_AS_FEATURES    LIST_NAME "<Unused>{}"    OUTPUT EXPLODED FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeExploder_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeExploder_OUTPUT"    OUTPUT FEATURE_TYPE $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_TestFactory_0 INPUT FEATURE_TYPE $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_attr_name<closeparen>,$(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams) LIKE xmldoc_% ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_xmldoc_ OUTPUT FAILED FEATURE_TYPE $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(SchemaMapFileFromXML_WORKSPACE_NAME)_RemoveQuotes_fa9ae1d7_38d0_4ff4_9fce_0d02fca16d770_replacer { findText replaceText invalidValue} {     set attrs [split \"_attr_value\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };          if { $newAttrVal != $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_RemoveQuotes    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_onlyXMLParams_xmldoc_"    OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_RemoveQuotes_OUTPUT"         @Tcl2("$(SchemaMapFileFromXML_WORKSPACE_NAME)_RemoveQuotes_fa9ae1d7_38d0_4ff4_9fce_0d02fca16d770_replacer {<quote>} {<apos>} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(SchemaMapFileFromXML_WORKSPACE_NAME)_remove_xmldoc__2ea3031a_b3bb_4be8_8f2b_db51b2deac090_replacer { findText replaceText invalidValue} {     set attrs [split \"_attr_name\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };          if { $newAttrVal != $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_remove_xmldoc_    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_RemoveQuotes_OUTPUT"    OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_remove_xmldoc__OUTPUT"         @Tcl2("$(SchemaMapFileFromXML_WORKSPACE_NAME)_remove_xmldoc__2ea3031a_b3bb_4be8_8f2b_db51b2deac090_replacer {xmldoc_} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString Input Input Collector"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_remove_xmldoc__OUTPUT"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString_Input"
+MACRO findFieldInString_WORKSPACE_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString
+MACRO $(findFieldInString_WORKSPACE_NAME)_XFORMER_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString
+MACRO $(findFieldInString_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(findFieldInString_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(findFieldInString_WORKSPACE_NAME)_SUB_DOC_NAME findFieldInString
+MACRO $(findFieldInString_WORKSPACE_NAME)__ATTR_NAME <at>Value<openparen>_attr_name<closeparen>
+MACRO $(findFieldInString_WORKSPACE_NAME)__PREVIOUSFILE <at>Value<openparen>_previousFile<closeparen>
+DEFAULT_MACRO findFieldInString_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(findFieldInString_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(findFieldInString_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(findFieldInString_WORKSPACE_NAME)_Input1406108256 Input Splitter"   INPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,_attr_name,$($(findFieldInString_WORKSPACE_NAME)__ATTR_NAME),_previousFile,$($(findFieldInString_WORKSPACE_NAME)__PREVIOUSFILE), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_Input" ATTR _searchAttrString <quote><at>Value<openparen>_attr_name<closeparen><quote>    OUTPUT OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+Tcl2 set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitDelim [FME_DecodeText {<cr>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitDelim]] }      {         set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitWidths [split [regsub -all {s$} {<cr>} {}] s];         proc $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitWidths;            set source [FME_GetAttribute {"_previousFile"}];            set attrNum 0;            set listName {_list};            set attrPos 0;            foreach width [set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitDelim;            set delim [set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_b5039c75_1ca5_4daf_a609_dcdda0557b640_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_previousFile"}];            set keepEmptyParts [string equal {Yes} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_list};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+# most of this is close to the code from listindexer but not exact beucase
+# we have a type LIST_ATTR rather than type LIST_NAME so need
+# to figure out the list name
+Tcl2 proc $(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0_indexer {index prefix} {    set lastBrace [string last  \"{}\" {_list{}}];    set listAttr [string range {_list{}} 0 [expr $lastBrace+1]];    regsub \"{}\" $listAttr \"{$index}\" listWithIndex;    regsub \"{}\" $listAttr {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_ListSearcher    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    OUTPUT FEATURE_TYPE $(findFieldInString_WORKSPACE_NAME)_ListSearcher__IndexedFeatures___         "$(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0" @SearchList("_list{}","@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_searchAttrString<closeparen>,$(findFieldInString_WORKSPACE_NAME)_ListSearcher)",REGULAR_EXPRESSION_ENCODED)
+FACTORY_DEF * TestFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_ListSearcher__Tester    INPUT FEATURE_TYPE $(findFieldInString_WORKSPACE_NAME)_ListSearcher__IndexedFeatures___    TEST @Value($(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0) == "-1"    OUTPUT PASSED FEATURE_TYPE  "$(findFieldInString_WORKSPACE_NAME)_ListSearcher_NOT_FOUND" @RemoveAttributes($(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0)    OUTPUT FAILED FEATURE_TYPE  $(findFieldInString_WORKSPACE_NAME)_ListSearcher__IndexFound__
+FACTORY_DEF * TestFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_ListSearcher__Tester2    INPUT FEATURE_TYPE $(findFieldInString_WORKSPACE_NAME)_ListSearcher__IndexFound__    TEST NO == "NO"    OUTPUT PASSED FEATURE_TYPE  "$(findFieldInString_WORKSPACE_NAME)_ListSearcher_FOUND" @CopyAttributes(_list_index, $(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0) @RemoveAttributes($(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0)    OUTPUT FAILED FEATURE_TYPE  "$(findFieldInString_WORKSPACE_NAME)_ListSearcher_FOUND"  @Tcl2("$(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0_indexer {@Value($(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0)} {<Unused>}") @CopyAttributes(_list_index, $(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0) @RemoveAttributes($(findFieldInString_WORKSPACE_NAME)_ListSearcher_c6bc3229_a106_47e3_82a5_e2210a1f072d0)
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_AttributeCreator_2 ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListSearcher_NOT_FOUND" ATTR targetAttribute ""    OUTPUT OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT" 
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(findFieldInString_WORKSPACE_NAME)_ListIndexer_indexer {index numElements prefix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {_list{}} \"{$index}\" listWithIndex;    regsub \"{}\" {_list{}} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_ListIndexer    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListSearcher_FOUND"    TEST @Value(_list_index) >= 0    OUTPUT PASSED FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListIndexer_OUTPUT" @Tcl2("$(findFieldInString_WORKSPACE_NAME)_ListIndexer_indexer @Value(_list_index) 0 {_foundElement}")    OUTPUT FAILED FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListIndexer_OUTPUT" @Tcl2("$(findFieldInString_WORKSPACE_NAME)_ListIndexer_indexer @Value(_list_index) @NumElements(_list{})  {_foundElement}")
+# -------------------------------------------------------------------------
+
+Tcl2 set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitDelim]] }      {         set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_doSplit {}         {            global $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitWidths;            set source [FME_GetAttribute {"_foundElement_list"}];            set attrNum 0;            set listName {_listFound};            set attrPos 0;            foreach width [set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_doSplit {}         {            global $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitDelim;            set delim [set $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_c717f053_702a_4d96_aa6b_d48c39b0d3ac0_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_foundElement_list"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_listFound};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListIndexer_OUTPUT"    OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_OUTPUT"         @Tcl2($(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_doSplit)
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(findFieldInString_WORKSPACE_NAME)_ListIndexer_2_indexer {index numElements prefix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {_listFound{}} \"{$index}\" listWithIndex;    regsub \"{}\" {_listFound{}} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_ListIndexer_2    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeSplitter_2_OUTPUT"    TEST 2 >= 0    OUTPUT PASSED FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListIndexer_2_OUTPUT" @Tcl2("$(findFieldInString_WORKSPACE_NAME)_ListIndexer_2_indexer 2 0 {targetAttribute}")    OUTPUT FAILED FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListIndexer_2_OUTPUT" @Tcl2("$(findFieldInString_WORKSPACE_NAME)_ListIndexer_2_indexer 2 @NumElements(_listFound{})  {targetAttribute}")
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(findFieldInString_WORKSPACE_NAME)_StringReplacer_0ab30d3c_0ae7_468d_b766_b79382b2242e0_replacer { findText replaceText invalidValue} {     set attrs [split \"targetAttribute_listFound\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       set noMatch true;       if {$length > 0} {          if {{NO} == {YES}} {             set newAttrVal [regsub $(casemac) -all -- $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             set newAttrVal [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };          if { $newAttrVal != $attrVal } {             set noMatch false;             FME_SetAttribute $attr $newAttrVal;          };       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_ListIndexer_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(findFieldInString_WORKSPACE_NAME)_StringReplacer_0ab30d3c_0ae7_468d_b766_b79382b2242e0_replacer {<quote>} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(findFieldInString_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_StringReplacer_OUTPUT"    OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL, targetAttribute_listFound,targetAttribute,"")
+
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(findFieldInString_WORKSPACE_NAME)_Output1406108256 Output Collector"   INPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"   INPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(findFieldInString_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(findFieldInString_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString_Output"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString_Output"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_prepString ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_findFieldInString_Output" ATTR _newrow <quote><at>Value<openparen>_attr_name<closeparen><quote><comma><quote><at>Value<openparen>_attr_value<closeparen><quote><comma><quote><at>Value<openparen>targetAttribute<closeparen><quote><cr>    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_prepString_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeFileWriter    INPUT  FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_prepString_OUTPUT"    OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeFileWriter_OUTPUT"         @File(ENCODED_ATTR,DestAppendSrcRead,_newrow,"@Value(_schemaFile)",utf-8)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Schema1406108256 Output Collector"   INPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_AttributeFileWriter_OUTPUT"   OUTPUT FEATURE_TYPE "$(SchemaMapFileFromXML_WORKSPACE_NAME)_Schema" @RemoveAttributes(_FileHeader,_xmlAttribute,_elementsToMatch,_schemaFile,_previousFile,_searchAttrString,targetAttribute,_list_index,_foundElement_list,_newrow) @RemoveAttributes(fme_regexp_match,_list{},_listFound{})
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SchemaMapFileFromXML_WORKSPACE_NAME))}]

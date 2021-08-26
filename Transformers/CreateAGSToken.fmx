@@ -1,0 +1,657 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN CreateAGSToken,2,"ArcGis Server",60dbf626-fc40-4093-b225-9f8da613109f,"Linked by Default",No,NO_PARALLELISM,,No,19630,YES,No,35,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Create ArcGIS Server Token</p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="ArcGis Server"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Create ArcGIS Server Token&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2099 418"
+#!   DOC_TOP_LEFT="-1268 -799"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="19630"
+#!   FME_DOCUMENT_GUID="60dbf626-fc40-4093-b225-9f8da613109f"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="23&lt;solidus&gt;09&lt;solidus&gt;2014,I&lt;u00f1&gt;aki&lt;space&gt;Diaz&lt;space&gt;de&lt;space&gt;Cerio,V.1.0"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2019.1.2.0 (20190829 - Build 19630 - WIN64)"
+#!   LAST_SAVE_DATE="2019-11-14T09:36:33"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="35"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="CreateAGSToken"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Using ArcGIS Server User and Password&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-1675.02 381.254"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR URL URL"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;URL&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR USER user:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;user&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PASSWORD password:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;password&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="12"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Create ArcGIS Server Token Using ArcGIS Server User and Password &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-771 -736"
+#!   TOP_LEFT="-771 -736"
+#!   BOTTOM_RIGHT="258 -799"
+#!   BOUNDING_RECT="-771 -736 1029 63"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="13"
+#!   NAME="Create ArcGIS Server Token"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-783 -381"
+#!   ORDER="500000000000000"
+#!   PALETTE_COLOR=""
+#!   BOTTOM_RIGHT="771 -714"
+#!   BOUNDING_RECT="-783 -381 1554 333"
+#!   STICKY="true"
+#!   COLOUR="0.086274509803921567,0.73725490196078436,0.14509803921568629,0.39215686274509803"
+#!   CONTENTS="9 2 1 8 3 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="AttributeCreator"
+#!   VERSION="5"
+#!   POSITION="-709 -489"
+#!   BOUNDING_RECT="-709 -489 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_getTokenRequest,&lt;at&gt;Value&lt;openparen&gt;URL&lt;closeparen&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;tokens&lt;solidus&gt;generateToken?username=&lt;at&gt;Value&lt;openparen&gt;user&lt;closeparen&gt;&lt;amp&gt;password=&lt;at&gt;Value&lt;openparen&gt;password&lt;closeparen&gt;&lt;amp&gt;,Token,&quot;&quot;,_error,&quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-202 -514"
+#!   BOUNDING_RECT="-202 -514 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;urllib&lt;lf&gt;import&lt;space&gt;json&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Re-usable&lt;space&gt;function&lt;space&gt;to&lt;space&gt;get&lt;space&gt;a&lt;space&gt;token&lt;space&gt;required&lt;space&gt;for&lt;space&gt;Admin&lt;space&gt;changes&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;user&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;query_dict&lt;space&gt;=&lt;space&gt;&lt;opencurly&gt;&lt;apos&gt;username&lt;apos&gt;:feature.getAttribute&lt;openparen&gt;&lt;quote&gt;user&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;password&lt;apos&gt;:feature.getAttribute&lt;openparen&gt;&lt;quote&gt;password&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;client&lt;apos&gt;:&lt;apos&gt;requestip&lt;apos&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;query_string&lt;space&gt;=&lt;space&gt;urllib.urlencode&lt;openparen&gt;query_dict&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;url&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;URL&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;+&lt;space&gt;&lt;quote&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;admin&lt;solidus&gt;generateToken&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;try:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;token&lt;space&gt;=&lt;space&gt;json.loads&lt;openparen&gt;urllib.urlopen&lt;openparen&gt;url&lt;space&gt;+&lt;space&gt;&lt;quote&gt;?f=json&lt;quote&gt;&lt;comma&gt;&lt;space&gt;query_string&lt;closeparen&gt;.read&lt;openparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;apos&gt;token&lt;apos&gt;&lt;space&gt;not&lt;space&gt;in&lt;space&gt;token:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Token&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;error&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_error&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;Token&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;generated.&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;print&lt;space&gt;token&lt;openbracket&gt;&lt;apos&gt;messages&lt;apos&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Token&lt;quote&gt;&lt;comma&gt;&lt;space&gt;token&lt;openbracket&gt;&lt;apos&gt;token&lt;apos&gt;&lt;closebracket&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;print&lt;space&gt;token&lt;openbracket&gt;&lt;apos&gt;token&lt;apos&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;except:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Token&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;error&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_error&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;Token&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;generated.&lt;apos&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="processFeature"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="298 -466"
+#!   BOUNDING_RECT="298 -466 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="AND"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;Token&lt;closeparen&gt; NOT_CONTAINS error&#10;TEST Token NOT_ATTRIBUTE_VALUE_NULL &quot;&quot;&#10;TEST Token NOT_ATTRIBUTE_IS_EMPTY &quot;&quot;&#10;TEST Token NOT_ATTRIBUTE_IS_MISSING &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Server"
+#!   POSITION="-1268 -541"
+#!   BOUNDING_RECT="-1268 -541 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="URL" ATTR_VALUE="$(URL)" />
+#!     <XFORM_ATTR ATTR_NAME="user" ATTR_VALUE="$(USER)" />
+#!     <XFORM_ATTR ATTR_NAME="password" ATTR_VALUE="$(PASSWORD)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="5"
+#!   NAME="Token"
+#!   POSITION="824 -465"
+#!   BOUNDING_RECT="824 -465 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="Password" />
+#!     <XFORM_ATTR ATTR_NAME="User" />
+#!     <XFORM_ATTR ATTR_NAME="URL" />
+#!     <XFORM_ATTR ATTR_NAME="Token" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="831 -591"
+#!   BOUNDING_RECT="831 -591 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 35
+DEFAULT_MACRO $(CreateAGSToken_WORKSPACE_NAME)_URL <at>Value<openparen>URL<closeparen>
+DEFAULT_MACRO $(CreateAGSToken_WORKSPACE_NAME)_USER <at>Value<openparen>user<closeparen>
+DEFAULT_MACRO $(CreateAGSToken_WORKSPACE_NAME)_PASSWORD <at>Value<openparen>password<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO CreateAGSToken_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(CreateAGSToken_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(CreateAGSToken_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateAGSToken_WORKSPACE_NAME)_Server1573720593 Input Splitter"   INPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Server"   OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Server" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,URL,$($(CreateAGSToken_WORKSPACE_NAME)_URL),user,$($(CreateAGSToken_WORKSPACE_NAME)_USER),password,$($(CreateAGSToken_WORKSPACE_NAME)_PASSWORD), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(CreateAGSToken_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Server" ATTR _getTokenRequest <at>Value<openparen>URL<closeparen><solidus>arcgis<solidus>tokens<solidus>generateToken?username=<at>Value<openparen>user<closeparen><amp>password=<at>Value<openparen>password<closeparen><amp> ATTR Token  ATTR _error     OUTPUT OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(CreateAGSToken_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>urllib<lf>import<space>json<lf><lf><lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<space><space><space><space><lf><space><space><space><space>#Re-usable<space>function<space>to<space>get<space>a<space>token<space>required<space>for<space>Admin<space>changes<lf><space><space><space><space>feature.getAttribute<openparen><quote>user<quote><closeparen><lf><space><space><space><space>query_dict<space>=<space><opencurly><apos>username<apos>:feature.getAttribute<openparen><quote>user<quote><closeparen><comma><apos>password<apos>:feature.getAttribute<openparen><quote>password<quote><closeparen><comma><apos>client<apos>:<apos>requestip<apos><closecurly><lf><space><space><space><space><lf><space><space><space><space>query_string<space>=<space>urllib.urlencode<openparen>query_dict<closeparen><lf><space><space><space><space>url<space>=<space>feature.getAttribute<openparen><quote>URL<quote><closeparen><space>+<space><quote><solidus>arcgis<solidus>admin<solidus>generateToken<quote><lf><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space>token<space>=<space>json.loads<openparen>urllib.urlopen<openparen>url<space>+<space><quote>?f=json<quote><comma><space>query_string<closeparen>.read<openparen><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>if<space><apos>token<apos><space>not<space>in<space>token:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>Token<quote><comma><space><apos>error<apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_error<quote><comma><space><apos>Token<space>can<space>not<space>be<space>generated.<apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>print<space>token<openbracket><apos>messages<apos><closebracket><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>Token<quote><comma><space>token<openbracket><apos>token<apos><closebracket><closeparen><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>print<space>token<openbracket><apos>token<apos><closebracket><lf><space><space><space><space>except:<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>Token<quote><comma><space><apos>error<apos><closeparen><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_error<quote><comma><space><apos>Token<space>can<space>not<space>be<space>generated.<apos><closeparen>    OUTPUT PYOUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(CreateAGSToken_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_PythonCaller_OUTPUT"    TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Token<closeparen>,$(CreateAGSToken_WORKSPACE_NAME)_Tester) NOT_CONTAINS error ENCODED TEST Token NOT_ATTRIBUTE_VALUE_NULL "" ENCODED TEST Token NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST Token NOT_ATTRIBUTE_IS_MISSING "" ENCODED    BOOLEAN_OPERATOR AND    COMPOSITE_TEST_EXPR "<Unused>"    OUTPUT PASSED FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_FAILED"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateAGSToken_WORKSPACE_NAME)_Token1573720593 Output Collector"   INPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_PASSED"   OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Token"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateAGSToken_WORKSPACE_NAME)_<Rejected>1573720593 Output Collector"   INPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_FAILED"   OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_<Rejected>"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(CreateAGSToken_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN CreateAGSToken,1,"ArcGis Server",82b16353-4e47-43ab-bc73-9b9aef864925,"Linked by Default",No,NO_PARALLELISM,,No,18520,YES,No,
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Create ArcGIS Server Token</p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="ArcGis Server"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Create ArcGIS Server Token&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2099 418"
+#!   DOC_TOP_LEFT="-1268 -799"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="82b16353-4e47-43ab-bc73-9b9aef864925"
+#!   FME_DOCUMENT_PRIORGUID="ae6e5c22-a844-4d1d-86f9-469087ae12a0"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="23&lt;solidus&gt;09&lt;solidus&gt;2014,I&lt;u00f1&gt;aki&lt;space&gt;Diaz&lt;space&gt;de&lt;space&gt;Cerio,V.1.0"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2018-10-24T12:17:56"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="CreateAGSToken"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Using ArcGIS Server User and Password&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-1675.02 831.258"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR URL URL"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;URL&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR USER user:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;user&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PASSWORD password:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;password&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="12"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Create ArcGIS Server Token Using ArcGIS Server User and Password &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-771 -736"
+#!   TOP_LEFT="-771 -736"
+#!   BOTTOM_RIGHT="258 -799"
+#!   BOUNDING_RECT="-771 -736 1029 63"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19215686274509805"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="13"
+#!   NAME="Create ArcGIS Server Token"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-783 -381"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="771 -714"
+#!   BOUNDING_RECT="-783 -381 1554 333"
+#!   STICKY="true"
+#!   COLOUR="0.10980392156862745,0.92156862745098034,0.18431372549019609"
+#!   CONTENTS="8 2 9 1 3 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="AttributeCreator"
+#!   VERSION="5"
+#!   POSITION="-709 -489"
+#!   BOUNDING_RECT="-709 -489 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_getTokenRequest,&lt;at&gt;Value&lt;openparen&gt;URL&lt;closeparen&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;tokens&lt;solidus&gt;generateToken?username=&lt;at&gt;Value&lt;openparen&gt;user&lt;closeparen&gt;&lt;amp&gt;password=&lt;at&gt;Value&lt;openparen&gt;password&lt;closeparen&gt;&lt;amp&gt;,Token,&quot;&quot;,_error,&quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-202 -514"
+#!   BOUNDING_RECT="-202 -514 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;urllib&lt;lf&gt;import&lt;space&gt;json&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Re-usable&lt;space&gt;function&lt;space&gt;to&lt;space&gt;get&lt;space&gt;a&lt;space&gt;token&lt;space&gt;required&lt;space&gt;for&lt;space&gt;Admin&lt;space&gt;changes&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;user&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;query_dict&lt;space&gt;=&lt;space&gt;&lt;opencurly&gt;&lt;apos&gt;username&lt;apos&gt;:feature.getAttribute&lt;openparen&gt;&lt;quote&gt;user&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;password&lt;apos&gt;:feature.getAttribute&lt;openparen&gt;&lt;quote&gt;password&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;client&lt;apos&gt;:&lt;apos&gt;requestip&lt;apos&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;query_string&lt;space&gt;=&lt;space&gt;urllib.urlencode&lt;openparen&gt;query_dict&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;url&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;URL&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;+&lt;space&gt;&lt;quote&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;admin&lt;solidus&gt;generateToken&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;try:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;token&lt;space&gt;=&lt;space&gt;json.loads&lt;openparen&gt;urllib.urlopen&lt;openparen&gt;url&lt;space&gt;+&lt;space&gt;&lt;quote&gt;?f=json&lt;quote&gt;&lt;comma&gt;&lt;space&gt;query_string&lt;closeparen&gt;.read&lt;openparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;apos&gt;token&lt;apos&gt;&lt;space&gt;not&lt;space&gt;in&lt;space&gt;token:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Token&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;error&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_error&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;Token&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;generated.&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;print&lt;space&gt;token&lt;openbracket&gt;&lt;apos&gt;messages&lt;apos&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Token&lt;quote&gt;&lt;comma&gt;&lt;space&gt;token&lt;openbracket&gt;&lt;apos&gt;token&lt;apos&gt;&lt;closebracket&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;print&lt;space&gt;token&lt;openbracket&gt;&lt;apos&gt;token&lt;apos&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;except:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Token&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;error&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_error&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;Token&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;generated.&lt;apos&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="processFeature"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="298 -466"
+#!   BOUNDING_RECT="298 -466 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="user" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_getTokenRequest" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="AND"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;Token&lt;closeparen&gt; NOT_CONTAINS error&#10;TEST Token NOT_ATTRIBUTE_VALUE_NULL &quot;&quot;&#10;TEST Token NOT_ATTRIBUTE_IS_EMPTY &quot;&quot;&#10;TEST Token NOT_ATTRIBUTE_IS_MISSING &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Server"
+#!   POSITION="-1268 -541"
+#!   BOUNDING_RECT="-1268 -541 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="URL" ATTR_VALUE="$(URL)" />
+#!     <XFORM_ATTR ATTR_NAME="user" ATTR_VALUE="$(USER)" />
+#!     <XFORM_ATTR ATTR_NAME="password" ATTR_VALUE="$(PASSWORD)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="5"
+#!   NAME="Token"
+#!   POSITION="824 -465"
+#!   BOUNDING_RECT="824 -465 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="Password" />
+#!     <XFORM_ATTR ATTR_NAME="User" />
+#!     <XFORM_ATTR ATTR_NAME="URL" />
+#!     <XFORM_ATTR ATTR_NAME="Token" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="831 -591"
+#!   BOUNDING_RECT="831 -591 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 
+DEFAULT_MACRO $(CreateAGSToken_WORKSPACE_NAME)_URL <at>Value<openparen>URL<closeparen>
+DEFAULT_MACRO $(CreateAGSToken_WORKSPACE_NAME)_USER <at>Value<openparen>user<closeparen>
+DEFAULT_MACRO $(CreateAGSToken_WORKSPACE_NAME)_PASSWORD <at>Value<openparen>password<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO CreateAGSToken_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(CreateAGSToken_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(CreateAGSToken_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateAGSToken_WORKSPACE_NAME)_Server1540376276 Input Splitter"   INPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Server"   OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Server" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,URL,$($(CreateAGSToken_WORKSPACE_NAME)_URL),user,$($(CreateAGSToken_WORKSPACE_NAME)_USER),password,$($(CreateAGSToken_WORKSPACE_NAME)_PASSWORD), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(CreateAGSToken_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Server" ATTR _getTokenRequest <at>Value<openparen>URL<closeparen><solidus>arcgis<solidus>tokens<solidus>generateToken?username=<at>Value<openparen>user<closeparen><amp>password=<at>Value<openparen>password<closeparen><amp> ATTR Token  ATTR _error     OUTPUT OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(CreateAGSToken_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>urllib<lf>import<space>json<lf><lf><lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<space><space><space><space><lf><space><space><space><space>#Re-usable<space>function<space>to<space>get<space>a<space>token<space>required<space>for<space>Admin<space>changes<lf><space><space><space><space>feature.getAttribute<openparen><quote>user<quote><closeparen><lf><space><space><space><space>query_dict<space>=<space><opencurly><apos>username<apos>:feature.getAttribute<openparen><quote>user<quote><closeparen><comma><apos>password<apos>:feature.getAttribute<openparen><quote>password<quote><closeparen><comma><apos>client<apos>:<apos>requestip<apos><closecurly><lf><space><space><space><space><lf><space><space><space><space>query_string<space>=<space>urllib.urlencode<openparen>query_dict<closeparen><lf><space><space><space><space>url<space>=<space>feature.getAttribute<openparen><quote>URL<quote><closeparen><space>+<space><quote><solidus>arcgis<solidus>admin<solidus>generateToken<quote><lf><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space>token<space>=<space>json.loads<openparen>urllib.urlopen<openparen>url<space>+<space><quote>?f=json<quote><comma><space>query_string<closeparen>.read<openparen><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>if<space><apos>token<apos><space>not<space>in<space>token:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>Token<quote><comma><space><apos>error<apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_error<quote><comma><space><apos>Token<space>can<space>not<space>be<space>generated.<apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>print<space>token<openbracket><apos>messages<apos><closebracket><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>Token<quote><comma><space>token<openbracket><apos>token<apos><closebracket><closeparen><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>print<space>token<openbracket><apos>token<apos><closebracket><lf><space><space><space><space>except:<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>Token<quote><comma><space><apos>error<apos><closeparen><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_error<quote><comma><space><apos>Token<space>can<space>not<space>be<space>generated.<apos><closeparen>    OUTPUT PYOUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(CreateAGSToken_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_PythonCaller_OUTPUT"    TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Token<closeparen>,$(CreateAGSToken_WORKSPACE_NAME)_Tester) NOT_CONTAINS error ENCODED TEST Token NOT_ATTRIBUTE_VALUE_NULL "" ENCODED TEST Token NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST Token NOT_ATTRIBUTE_IS_MISSING "" ENCODED    BOOLEAN_OPERATOR AND    OUTPUT PASSED FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_FAILED"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateAGSToken_WORKSPACE_NAME)_Token1540376276 Output Collector"   INPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_PASSED"   OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Token"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateAGSToken_WORKSPACE_NAME)_<Rejected>1540376276 Output Collector"   INPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_Tester_FAILED"   OUTPUT FEATURE_TYPE "$(CreateAGSToken_WORKSPACE_NAME)_<Rejected>"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(CreateAGSToken_WORKSPACE_NAME))}]
+

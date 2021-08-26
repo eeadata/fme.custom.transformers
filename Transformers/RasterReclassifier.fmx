@@ -1,0 +1,668 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN RasterReclassifier,1,Rasters,a092e9ee-7051-4325-acb2-0bbf421f9080,"Embedded Always",No,NO_PARALLELISM,,No,15485,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Reclassify a raster based on two input rasters. </p>
+# 
+# TRANSFORMER_END
+#! REQUIREMENTS_KEYWORD="none"
+#! ITERATION_COUNT_ATTR=""
+#! FME_DOCUMENT_PRIORGUID="ef3048e8-39e9-4453-b0bb-cc13e9b0011d"
+#! LAST_SAVE_DATE="2015-08-13T14:57:08"
+#! DOC_EXTENTS="5586.42 759.691"
+#! FME_PROCESS_GROUP_BY=""
+#! XFORM_DEPRECATED="No"
+#! ZOOM_SCALE="100"
+#! BLOCKED_LOOPING="No"
+#! FME_DOCUMENT_GUID="a092e9ee-7051-4325-acb2-0bbf421f9080"
+#! HISTORY="7&lt;solidus&gt;Aug&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,First&lt;space&gt;Quickscan&lt;space&gt;example"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.0.3 (20150623 - Build 15485 - WIN64)"
+#! VIEW_POSITION="-3207.03 618.006"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A classification file describes the behavier of values inside two input rasters. The &quot;Classification&quot; attribute describes how the values of both rasters need to be interpreted and returned as a new raster.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The format of the Classification attributes looks like this.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;RasterValueA&amp;gt; &amp;lt;RasterValueB&amp;gt; &amp;lt;New Value&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;RasterValueA&amp;gt; &amp;lt;RasterValueB&amp;gt; &amp;lt;New Value&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;RasterValueA&amp;gt; &amp;lt;RasterValueB&amp;gt; &amp;lt;New Value&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Imagine you have a RasterA that contains value 1 and 2.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Imagine you have a RasterB that contains value 4 and 5&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- We want to have the following matrix translated.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;|   |4 | 5 |&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;-----------&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;|1 | 6 | 7 |&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;-----------&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;|2 | 8 | 9 |&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Build a Classification attribute that contains the following list&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1 4 6&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1 5 7&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2 4 8&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2 5 9&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The result will be a new raster where the combination of both rasters are tranformed into values 6,7,8,9 &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The transformer makes use of the colorPallette and expects Rasters that contain only one band. Performance wise this process is extreemly good and can handle large datasets.&lt;/p&gt;&#10;"
+#! TITLE="RasterReclassifier"
+#! SHOW_INFO_NODES="true"
+#! FME_SERVER_SERVICES=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None &lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Reclassify a raster based on two input rasters. &lt;/p&gt;&#10;"
+#! PASSWORD=""
+#! CATEGORY="Rasters"
+#! SHOW_ANNOTATIONS="true"
+#! MAX_LOOP_ITERATIONS=""
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_BUILD_NUM="15485"
+#! DOC_TOP_LEFT="-3201.71 -899.507"
+#! FMX_INSERT_MODE="Embedded Always"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! ATTR_TYPE_ENCODING="SDF"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR Classification Classification:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI FLOAT_OR_ATTR NODATA_VALUE Nodata Value:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="20"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Converts to classification&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;format to a 16bit color table.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-874.367 -690.008"
+#! TOP_LEFT="-874.367 -690.008"
+#! BOTTOM_RIGHT="-875.367 -689.008"
+#! BOUNDING_RECT="-874.367 -690.008 -1 -1"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="18"
+#! />
+#! <COMMENT
+#! IDENTIFIER="21"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make one 16Bit Raster &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;from both 8Bit rasters&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-1951.7 -139.816"
+#! TOP_LEFT="-1951.7 -139.816"
+#! BOTTOM_RIGHT="-1952.7 -138.816"
+#! BOUNDING_RECT="-1951.7 -139.816 -1 -1"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="1"
+#! />
+#! <COMMENT
+#! IDENTIFIER="22"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Collect classification&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-1331.83 -363.818"
+#! TOP_LEFT="-1331.83 -363.818"
+#! BOTTOM_RIGHT="-1332.83 -362.818"
+#! BOUNDING_RECT="-1331.83 -363.818 -1 -1"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="3"
+#! />
+#! <COMMENT
+#! IDENTIFIER="23"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add Pallette to image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-224.594 -371.818"
+#! TOP_LEFT="-224.594 -371.818"
+#! BOTTOM_RIGHT="-225.594 -370.818"
+#! BOUNDING_RECT="-224.594 -371.818 -1 -1"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="2"
+#! />
+#! <COMMENT
+#! IDENTIFIER="24"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Conv image to RGB band&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="235.305 -714.571"
+#! TOP_LEFT="235.305 -714.571"
+#! BOTTOM_RIGHT="234.305 -713.571"
+#! BOUNDING_RECT="235.305 -714.571 -1 -1"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="4"
+#! />
+#! <COMMENT
+#! IDENTIFIER="25"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract the red banf as uint8&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="884.42 -322.693"
+#! TOP_LEFT="884.42 -322.693"
+#! BOTTOM_RIGHT="883.42 -321.693"
+#! BOUNDING_RECT="884.42 -322.693 -1 -1"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="5"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="RasterExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="-1951.7 -409.818"
+#! BOUNDING_RECT="-1951.7 -409.818 569.328 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="RESULT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION_LIST" PARM_VALUE="INTERPRETATION_LIST &quot;UINT16&quot; EXPRESSION_LIST &quot;&lt;openparen&gt;A&lt;openbracket&gt;0&lt;closebracket&gt;*256&lt;closeparen&gt;+B&lt;openbracket&gt;0&lt;closebracket&gt;&quot;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterExpressionEvaluator"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Two Rasters"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="RasterPaletteAdder"
+#! VERSION="0"
+#! POSITION="-172.235 -506.819"
+#! BOUNDING_RECT="-172.235 -506.819 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Classification" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_colorPallette" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PALETTE_ATTR" PARM_VALUE="_colorPallette"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterPaletteAdder"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-1285.47 -513.819"
+#! BOUNDING_RECT="-1285.47 -513.819 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Classification" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Classification,$(Classification)"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="RasterPaletteResolver"
+#! VERSION="0"
+#! POSITION="382.025 -528.568"
+#! BOUNDING_RECT="382.025 -528.568 490.547 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Classification" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_colorPallette" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterPaletteResolver"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="RasterExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="951.405 -502.694"
+#! BOUNDING_RECT="951.405 -502.694 610.297 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="RESULT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Classification" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_colorPallette" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="EXPRESSION_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION_LIST" PARM_VALUE="INTERPRETATION_LIST &quot;UINT8&quot; EXPRESSION_LIST &quot;A&lt;openbracket&gt;0&lt;closebracket&gt;&quot;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterExpressionEvaluator_3"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="One Raster"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="1017.58 -745.194"
+#! BOUNDING_RECT="1017.58 -745.194 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="false"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RGB"/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="18"
+#! TYPE="PythonCaller"
+#! VERSION="4"
+#! POSITION="-708.007 -477.005"
+#! BOUNDING_RECT="-708.007 -477.005 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Classification" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_colorPallette" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.colorList=&lt;openbracket&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;factor=256&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;enter=&lt;space&gt;chr&lt;openparen&gt;10&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Prepare&lt;space&gt;colorPallette&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;colorPallette=&lt;quote&gt;RGB24&lt;quote&gt;&lt;space&gt;+&lt;space&gt;enter&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Read&lt;space&gt;classification&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;classification&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;Classification&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Split&lt;space&gt;classification&lt;space&gt;attribute&lt;space&gt;by&lt;space&gt;line&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lines&lt;space&gt;=&lt;space&gt;classification.split&lt;openparen&gt;enter&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;loop&lt;space&gt;trough&lt;space&gt;every&lt;space&gt;line&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;i&lt;space&gt;in&lt;space&gt;lines:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;split&lt;space&gt;values&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;o&lt;space&gt;=&lt;space&gt;i.split&lt;openparen&gt;&lt;apos&gt;&lt;space&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;create&lt;space&gt;colorPallette&lt;space&gt;values&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;try:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;value=int&lt;openparen&gt;o&lt;openbracket&gt;0&lt;closebracket&gt;&lt;closeparen&gt;*factor&lt;space&gt;+&lt;space&gt;int&lt;openparen&gt;o&lt;openbracket&gt;1&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;color=str&lt;openparen&gt;o&lt;openbracket&gt;2&lt;closebracket&gt;&lt;closeparen&gt;&lt;space&gt;+&lt;apos&gt;&lt;comma&gt;0&lt;comma&gt;0&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;add&lt;space&gt;to&lt;space&gt;list&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.colorList.append&lt;openparen&gt;&lt;openbracket&gt;value&lt;comma&gt;str&lt;openparen&gt;value&lt;closeparen&gt;&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;color&lt;space&gt;+&lt;space&gt;enter&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;except:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Add&lt;space&gt;to&lt;space&gt;colorPallette&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;colorPallette=colorPallette&lt;space&gt;+&lt;space&gt;str&lt;openparen&gt;value&lt;closeparen&gt;&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;color&lt;space&gt;+&lt;space&gt;enter&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;sort&lt;space&gt;list&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.colorList&lt;space&gt;=&lt;space&gt;sorted&lt;openparen&gt;self.colorList&lt;comma&gt;&lt;space&gt;key=lambda&lt;space&gt;list:&lt;space&gt;list&lt;openbracket&gt;0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Produce&lt;space&gt;color&lt;space&gt;table&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;i&lt;space&gt;in&lt;space&gt;self.colorList:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;colorPallette=colorPallette&lt;space&gt;+&lt;space&gt;i&lt;openbracket&gt;1&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;send&lt;space&gt;colorPallette&lt;space&gt;back&lt;space&gt;to&lt;space&gt;FME&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_colorPallette&lt;quote&gt;&lt;comma&gt;colorPallette&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="_colorPallette"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="27"
+#! TYPE="RasterBandNodataSetter"
+#! VERSION="1"
+#! POSITION="-2602.2 -354.567"
+#! BOUNDING_RECT="-2602.2 -354.567 565.184 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterBandNodataSetter"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_CELL_VALUES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NODATA_VALUE" PARM_VALUE="$(NODATA_VALUE)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="30"
+#! TYPE="RasterBandNodataSetter"
+#! VERSION="1"
+#! POSITION="-2601.03 -579.006"
+#! BOUNDING_RECT="-2601.03 -579.006 580.562 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterBandNodataSetter_2"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_CELL_VALUES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NODATA_VALUE" PARM_VALUE="$(NODATA_VALUE)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="33"
+#! TYPE="RasterBandNodataSetter"
+#! VERSION="1"
+#! POSITION="1671.02 -540.005"
+#! BOUNDING_RECT="1671.02 -540.005 580.484 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Classification" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_colorPallette" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterBandNodataSetter_3"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_CELL_VALUES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NODATA_VALUE" PARM_VALUE="$(NODATA_VALUE)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="36"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="1724.7 -899.507"
+#! BOUNDING_RECT="1724.7 -899.507 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector"/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="12"
+#! NAME="RasterA"
+#! POSITION="-3201.71 -266.316"
+#! BOUNDING_RECT="-3201.71 -266.316 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="14"
+#! NAME="RasterB"
+#! POSITION="-3189.71 -635.319"
+#! BOUNDING_RECT="-3189.71 -635.319 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="16"
+#! NAME="Output"
+#! POSITION="2384.71 -581.195"
+#! BOUNDING_RECT="2384.71 -581.195 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_colorPallette" />
+#! <XFORM_ATTR ATTR_NAME="Classification" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="8"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="10"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="27"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="27"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="30"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="32"
+#! SOURCE_NODE="30"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="33"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="35"
+#! SOURCE_NODE="33"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="37"
+#! SOURCE_NODE="33"
+#! TARGET_NODE="36"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(RasterReclassifier_WORKSPACE_NAME)_Classification 
+DEFAULT_MACRO $(RasterReclassifier_WORKSPACE_NAME)_NODATA_VALUE 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO RasterReclassifier_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(RasterReclassifier_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(RasterReclassifier_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(RasterReclassifier_WORKSPACE_NAME)_RasterA1439470628 Input Splitter"   INPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterA"   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterA"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(RasterReclassifier_WORKSPACE_NAME)_RasterB1439470628 Input Splitter"   INPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterB"   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterB"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_2    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterB"    OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_2_OUTPUT"      @RasterNodata(BAND,"@EvaluateExpression(FDIV,FLOAT,$($(RasterReclassifier_WORKSPACE_NAME)_NODATA_VALUE$encode),$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_2)",ReplaceCellValues)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterA"    OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_OUTPUT"      @RasterNodata(BAND,"@EvaluateExpression(FDIV,FLOAT,$($(RasterReclassifier_WORKSPACE_NAME)_NODATA_VALUE$encode),$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter)",ReplaceCellValues)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RasterEvaluationFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterExpressionEvaluator    INPUT A FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_OUTPUT"    INPUT B FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_2_OUTPUT"    INTERPRETATION_LIST "UINT16" EXPRESSION_LIST "<openparen>A<openbracket>0<closebracket>*256<closeparen>+B<openbracket>0<closebracket>"    FORCE_FLOAT_DIVISION yes    OUTPUT RESULT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterExpressionEvaluator_RESULT"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_AttributeCreator ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterExpressionEvaluator_RESULT" ATTR Classification $($(RasterReclassifier_WORKSPACE_NAME)_Classification$encode)    OUTPUT OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>self.colorList=<openbracket><closebracket><lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>factor=256<lf><space><space><space><space><space><space><space><space>enter=<space>chr<openparen>10<closeparen><lf><space><space><space><space><space><space><space><space>#<space>Prepare<space>colorPallette<space>attribute<lf><space><space><space><space><space><space><space><space>colorPallette=<quote>RGB24<quote><space>+<space>enter<lf><space><space><space><space><space><space><space><space>#<space>Read<space>classification<space>attribute<lf><space><space><space><space><space><space><space><space>classification<space>=<space>feature.getAttribute<openparen><quote>Classification<quote><closeparen><lf><space><space><space><space><space><space><space><space>#<space>Split<space>classification<space>attribute<space>by<space>line<lf><space><space><space><space><space><space><space><space>lines<space>=<space>classification.split<openparen>enter<closeparen><lf><space><space><space><space><space><space><space><space>#<space>loop<space>trough<space>every<space>line<lf><space><space><space><space><space><space><space><space>for<space>i<space>in<space>lines:<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>split<space>values<lf><space><space><space><space><space><space><space><space><space><space><space><space>o<space>=<space>i.split<openparen><apos><space><apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>create<space>colorPallette<space>values<lf><space><space><space><space><space><space><space><space><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>value=int<openparen>o<openbracket>0<closebracket><closeparen>*factor<space>+<space>int<openparen>o<openbracket>1<closebracket><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>color=str<openparen>o<openbracket>2<closebracket><closeparen><space>+<apos><comma>0<comma>0<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>add<space>to<space>list<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self.colorList.append<openparen><openbracket>value<comma>str<openparen>value<closeparen><space>+<space><apos><space><apos><space>+<space>color<space>+<space>enter<closebracket><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>except:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Add<space>to<space>colorPallette<space>attribute<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>colorPallette=colorPallette<space>+<space>str<openparen>value<closeparen><space>+<space><apos><space><apos><space>+<space>color<space>+<space>enter<lf><space><space><space><space><space><space><space><space>#<space>sort<space>list<lf><space><space><space><space><space><space><space><space>self.colorList<space>=<space>sorted<openparen>self.colorList<comma><space>key=lambda<space>list:<space>list<openbracket>0<closebracket><closeparen><lf><space><space><space><space><space><space><space><space>#<space>Produce<space>color<space>table<lf><space><space><space><space><space><space><space><space>for<space>i<space>in<space>self.colorList:<lf><space><space><space><space><space><space><space><space><space><space><space><space>colorPallette=colorPallette<space>+<space>i<openbracket>1<closebracket><lf><space><space><space><space><space><space><space><space>#<space>send<space>colorPallette<space>back<space>to<space>FME<space><space><space><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_colorPallette<quote><comma>colorPallette<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteAdder    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteAdder_OUTPUT"       @RasterPaletteAttributes(ADD, _colorPallette)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteAdder_OUTPUT"    OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver_OUTPUT"       @ResolveRasterPalettes()
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver OUTPUT Splitter"   INPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver_OUTPUT"   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver_OUTPUT_0_c6OE+tz1MTQ="   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver_OUTPUT_1_c6OE+tz1MTQ="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RasterEvaluationFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterExpressionEvaluator_3    INPUT A FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver_OUTPUT_0_c6OE+tz1MTQ="    INTERPRETATION_LIST "UINT8" EXPRESSION_LIST "A<openbracket>0<closebracket>"    FORCE_FLOAT_DIVISION yes    OUTPUT RESULT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterExpressionEvaluator_3_RESULT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterExpressionEvaluator_3_RESULT"    OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3_OUTPUT"      @RasterNodata(BAND,"@EvaluateExpression(FDIV,FLOAT,$($(RasterReclassifier_WORKSPACE_NAME)_NODATA_VALUE$encode),$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3)",DoNotReplaceCellValues)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3 OUTPUT Splitter"   INPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3_OUTPUT"   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3_OUTPUT_0_oNE2+GQvM40="   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3_OUTPUT_1_oNE2+GQvM40="
+# -------------------------------------------------------------------------
+
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {$(RasterReclassifier_WORKSPACE_NAME)_Inspector} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector_FeatureDirector    INPUT  FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3_OUTPUT_1_oNE2+GQvM40="    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector___FeatureDirector1    INPUT FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector_VectorSetterUpper    INPUT FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+
+Tcl2 proc $(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector___PointCloudThinner    INPUT FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_thinPointCloud")
+Tcl2 proc $(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector_RasterSetterUpper    INPUT FEATURE_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# $(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+
+DEFAULT_MACRO $(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_VIS_FEAT_TYPE $(RasterReclassifier_WORKSPACE_NAME)_Inspector$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+
+FACTORY_DEF * RecorderFactory    FACTORY_NAME $(RasterReclassifier_WORKSPACE_NAME)_Inspector_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($($(RasterReclassifier_WORKSPACE_NAME)_Inspector_58cf0467_3aad_4b1b_abd6_e6f578562a8b1_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA Classification,varchar<openparen>255<closeparen>,_colorPallette,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(RasterReclassifier_WORKSPACE_NAME)_RGB (Disabled) Nuker"   INPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterPaletteResolver_OUTPUT_1_c6OE+tz1MTQ="
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(RasterReclassifier_WORKSPACE_NAME)_Output1439470628 Output Collector"   INPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_RasterBandNodataSetter_3_OUTPUT_0_oNE2+GQvM40="   OUTPUT FEATURE_TYPE "$(RasterReclassifier_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(RasterReclassifier_WORKSPACE_NAME))}]

@@ -1,0 +1,432 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN UploadToHDFS,1,Jedi,29b96964-96f9-48eb-9cee-4a61fe72548f,"Embedded by Default",Yes,NO_PARALLELISM,,No,19817,YES,No,,No
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="Yes"
+#!   CATEGORY="Jedi"
+#!   DESCRIPTION=""
+#!   DOC_EXTENTS="4415.71 915.595"
+#!   DOC_TOP_LEFT="-2507.95 -527.255"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="19817"
+#!   FME_DOCUMENT_GUID="29b96964-96f9-48eb-9cee-4a61fe72548f"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Embedded by Default"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2019.2.2.0 (20200103 - Build 19817 - WIN64)"
+#!   LAST_SAVE_DATE="2020-02-28T11:28:29"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="UploadToHDFS"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-1646.89 475.005"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NO_EDIT OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR _TOTAL_FEATURES_WRITTEN Total Features Written:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_total_features_written&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NO_EDIT OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR _COUNTER Counter:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_counter&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI LIST_NAME LIST_ATTR &quot;&quot; List Attribute:"
+#!   DEFAULT_VALUE="_feature_type{}"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="11"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-926.43335767409462 306.07562387899452"
+#!   TOP_LEFT="-926.43335767409462 306.07562387899452"
+#!   BOTTOM_RIGHT="-707.68167015721951 307.07562387899452"
+#!   BOUNDING_RECT="-926.43335767409462 306.07562387899452 218.75168751687517 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="4"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="19"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Set Counter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-1582.7680843312969 306.07462387899483"
+#!   TOP_LEFT="-1582.7680843312969 306.07462387899483"
+#!   BOTTOM_RIGHT="-1326.5160218106716 307.07462387899483"
+#!   BOUNDING_RECT="-1582.7680843312969 306.07462387899483 256.2520625206252 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="17"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-273.42071243572695 33.969537197689561"
+#!   BOUNDING_RECT="-273.42071243572695 33.969537197689561 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19817"
+#! >
+#!     <OUTPUT_FEAT NAME="MoreValues"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_counter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NoMore"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_counter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="NoMore"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_counter&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_total_features_written&lt;lt&gt;closeparen&lt;gt&gt;&quot;,MoreValues"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="ExpressionEvaluator"
+#!   VERSION="3"
+#!   POSITION="626.73333705103346 -211.08508581141641"
+#!   BOUNDING_RECT="626.73333705103346 -211.08508581141641 512.63699999999994 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_counter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ACTION" PARM_VALUE="Create New Attribute"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_counter)+1"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_counter"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ExpressionEvaluator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="ListIndexer"
+#!   VERSION="2"
+#!   POSITION="-999.31335767409473 161.69962387899477"
+#!   BOUNDING_RECT="-999.31335767409473 161.69962387899477 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19817"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_counter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_counter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="@Value(_counter)"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="$(LIST_ATTR)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="_feature_type{_counter}.name"/>
+#!     <XFORM_PARM PARM_NAME="SUFFIX" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListIndexer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="Inspector"
+#!   VERSION="5"
+#!   POSITION="-408.01846536742778 388.34001388676734"
+#!   BOUNDING_RECT="-408.01846536742778 388.34001388676734 454 71"
+#!   ORDER="500000000000300"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19817"
+#! >
+#!     <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#!     <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-1671.2690843312971 161.69962387899477"
+#!   BOUNDING_RECT="-1671.2690843312971 161.69962387899477 430 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_counter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _counter SET_TO 0"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="0 0"
+#!   BOUNDING_RECT="0 0 454 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19817"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;function&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;class&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="12"
+#!   NAME="ListIndexer_Input"
+#!   POSITION="-2507.9478322658874 161.69962387899477"
+#!   BOUNDING_RECT="-2507.9478322658874 161.69962387899477 492.00106825772946 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" ATTR_VALUE="$(_TOTAL_FEATURES_WRITTEN)" />
+#!     <XFORM_ATTR ATTR_NAME="_counter" ATTR_VALUE="$(_COUNTER)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="14"
+#!   NAME="ListIndexer_Input"
+#!   POSITION="1268.7626876268764 -456.25456254562562"
+#!   BOUNDING_RECT="1268.7626876268764 -456.25456254562562 639.00106825772946 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="loop"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="16"
+#!   NAME="Output"
+#!   POSITION="750.00750007500085 161.69962387899477"
+#!   BOUNDING_RECT="750.00750007500085 161.69962387899477 430 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 MoreValues"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="14"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 1 NoMore"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 
+DEFAULT_MACRO $(UploadToHDFS_WORKSPACE_NAME)__TOTAL_FEATURES_WRITTEN <at>Value<openparen>_total_features_written<closeparen>
+DEFAULT_MACRO $(UploadToHDFS_WORKSPACE_NAME)__COUNTER <at>Value<openparen>_counter<closeparen>
+DEFAULT_MACRO $(UploadToHDFS_WORKSPACE_NAME)_LIST_ATTR _feature_type{}
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO UploadToHDFS_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(UploadToHDFS_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(UploadToHDFS_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_Input1582885709 Input Splitter"   INPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_Input"   OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,_total_features_written,$($(UploadToHDFS_WORKSPACE_NAME)__TOTAL_FEATURES_WRITTEN),_counter,$($(UploadToHDFS_WORKSPACE_NAME)__COUNTER), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_Input"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_counter" "SET_TO" "0" }    OUTPUT OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+# -------------------------------------------------------------------------
+Tcl2 proc $(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_indexer {index numElements prefix suffix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {$($(UploadToHDFS_WORKSPACE_NAME)_LIST_ATTR)} \"{$index}\" listWithIndex;    regsub \"{}\" {$($(UploadToHDFS_WORKSPACE_NAME)_LIST_ATTR)} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    set suffix [FME_DecodeText $suffix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {$suffix != {} } {            set newAttr $newAttr$suffix;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_IntTester    INPUT  FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    TEST "@EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_counter<closeparen>,$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer)" TYPE INT ENCODED    OUTPUT PASSED FEATURE_TYPE __toOutput__
+FACTORY_DEF * TestFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_ListIndexer    INPUT FEATURE_TYPE __toOutput__    TEST "@EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_counter<closeparen>,$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer)" >= 0    OUTPUT PASSED FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT" @Tcl2("$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_indexer @EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_counter<closeparen>,$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer) 0 {_feature_type{_counter}.name} {}")    OUTPUT FAILED FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT" @Tcl2("$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_indexer @EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_counter<closeparen>,$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer) @NumElements($($(UploadToHDFS_WORKSPACE_NAME)_LIST_ATTR)) {_feature_type{_counter}.name} {}")
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer OUTPUT Splitter"   INPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT"   OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT_0_u2Oa2FGy5cY="   OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT_1_o6pMdkPqwpY="
+# -------------------------------------------------------------------------
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {$(UploadToHDFS_WORKSPACE_NAME)_Inspector} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
+FACTORY_DEF {*} InspectorFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_Inspector_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT_1_o6pMdkPqwpY="    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { $(UploadToHDFS_WORKSPACE_NAME)_Inspector }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+FACTORY_DEF * RecorderFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_Inspector_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA _counter,varchar<openparen>255<closeparen>,_total_features_written,varchar<openparen>255<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ListIndexer_OUTPUT_0_u2Oa2FGy5cY="    OUTPUT FEATURE_TYPE $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_counter<closeparen>,$(UploadToHDFS_WORKSPACE_NAME)_TestFilter) < @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_total_features_written<closeparen>,$(UploadToHDFS_WORKSPACE_NAME)_TestFilter) ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" OUTPUT PASSED FEATURE_TYPE $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_MoreValues OUTPUT FAILED FEATURE_TYPE $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_NoMore INPUT FEATURE_TYPE $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(UploadToHDFS_WORKSPACE_NAME)_TestFilter_NoMore
+# -------------------------------------------------------------------------
+INCLUDE TCL
+   if {{OUTGOING} == {OUTGOING}} {      set attrs [list {_counter}];    } else {      set attrAll {<Unused>};      if {[string length $attrAll] == 0} { return; };      set attrs [split {<Unused>} { }];    };    if {{NO_OP} == {NO_OP}} {        set parmList ATTR_CREATE_EXPR_PROPAGATE_MISSING_TYPED_FDIV;    } else {        set parmList ATTR_CREATE_EXPR_PROPAGATE_MISSING_TYPED_FDIV_MULTI_FEATURE;    };    foreach attr $attrs {     lappend parmList $attr;     lappend parmList {<at>Value<openparen>_counter<closeparen>+1};     lappend parmList {FLOAT};    };    lappend parmList {$(UploadToHDFS_WORKSPACE_NAME)_ExpressionEvaluator};    if {{NO_OP} == {OTHER_NULL_VALUE_2}} {     lappend parmList {NO_OP};     lappend parmList {<Unused>};     lappend parmList {0};    };    puts "MACRO __fme_expressionevaluator_evaluateArgs__ [join $parmList ,]";
+END_INCLUDE
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UploadToHDFS_WORKSPACE_NAME)_ExpressionEvaluator    INPUT  FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_TestFilter_MoreValues"    OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ExpressionEvaluator_OUTPUT"         @EvaluateExpression($(__fme_expressionevaluator_evaluateArgs__))
+MACRO __fme_expressionevaluator_evaluateArgs__
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UploadToHDFS_WORKSPACE_NAME)_INCOMPLETE Output Collector"   INPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_ExpressionEvaluator_OUTPUT"   OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_INCOMPLETE"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UploadToHDFS_WORKSPACE_NAME)_Output1582885709 Output Collector"   INPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_TestFilter_NoMore"   OUTPUT FEATURE_TYPE "$(UploadToHDFS_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(UploadToHDFS_WORKSPACE_NAME))}]

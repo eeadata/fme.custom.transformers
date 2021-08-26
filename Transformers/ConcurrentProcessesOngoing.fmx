@@ -1,0 +1,1897 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ConcurrentProcessesOngoing,1,FileSystem,6cdbad75-ab00-456c-8fc7-73d84d0b478d,"Linked Always",No,NO_PARALLELISM,,No,18520,YES,Yes,
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Will check DOS TaskMan for multiple fme.exe processess and wait until there is only one. Should be used together with WorkspaceRunner that is in multi CPU no wait configuration. </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="FileSystem"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Will check DOS TaskMan for multiple fme.exe processess and wait until there is only one. Should be used together with WorkspaceRunner that is in multi CPU no wait configuration. &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="5109.32 2402.02"
+#!   DOC_TOP_LEFT="-3497.53 -1674.52"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="6cdbad75-ab00-456c-8fc7-73d84d0b478d"
+#!   FME_DOCUMENT_PRIORGUID="8b97ed45-4a12-461c-a4cd-1d6a00e98b20,91a25ba0-eb39-477e-becb-01a13b63b81d"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked Always"
+#!   HISTORY="03&lt;solidus&gt;07&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,First&lt;space&gt;creation"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-04-03T15:44:27"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="ConcurrentProcessesOngoing"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Running multiple processesses at once is a great benefit in FME but you can&apos;t chain one after the other as the WorkspaceRunner is not waiting for the process to finish. This is a little hack giving you the possibility to wait by asking DOS what tasks are running and count the number of fme.exe processess. This transformer will wait untill only one fme.exe process is running.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;TimeSetter-input: Connect this to &quot;Succeeded&quot; port of the the WorkspaceRunner. It will produce a timestamp when this happend the first time.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Input: The input must be connected to the &quot;Summary&quot; of the WorkspaceRunner. This will trigger when the last batch of processess is going trough and wait untill all of them has finished.&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-3496.91 481.255"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="Yes"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="42"
+#!   NAME="Remebers the time the process started."
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-3497.5300000000002 727.50599999999997"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="-2317.4700000000003 -5.5"
+#!   BOUNDING_RECT="-3497.5300000000002 727.50599999999997 1180.0599999999999 733.00599999999997"
+#!   STICKY="true"
+#!   COLOUR="0.67450980392156867,0.60392156862745094,0.95686274509803926"
+#!   CONTENTS="35 41 38 40 48 39 37 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="54"
+#!   NAME="If timestamp exist, calculate difference and pass on."
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="307.71800000000002 -865.50999999999999"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="1461.7280000000001 -1674.5160000000001"
+#!   BOUNDING_RECT="307.71800000000002 -865.50999999999999 1154.01 809.00599999999997"
+#!   STICKY="true"
+#!   COLOUR="0.31372549019607843,0.52156862745098043,0.40000000000000002"
+#!   CONTENTS="47 49 52 45 46 43 51 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="55"
+#!   NAME="Wait 10seconds and loop again"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="307.71800000000002 -526.00900000000001"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="1611.788 -780.50900000000001"
+#!   BOUNDING_RECT="307.71800000000002 -526.00900000000001 1304.0699999999999 254.5"
+#!   STICKY="true"
+#!   COLOUR="0.78431372549019607,0.62745098039215685,0.59999999999999998"
+#!   CONTENTS="11 31 30 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="56"
+#!   NAME="One or more processess"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-513.00999999999999 -528.005"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="232.07100000000003 -1137.011"
+#!   BOUNDING_RECT="-513.00999999999999 -528.005 745.08100000000002 609.00599999999997"
+#!   STICKY="true"
+#!   COLOUR="0.19215686274509805,0.33725490196078434,0.23921568627450981"
+#!   CONTENTS="12 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="57"
+#!   NAME="Get Tasks from OS System using TaskList"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-1885.46 -123.004"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="-627.45000000000005 -1041.51"
+#!   BOUNDING_RECT="-1885.46 -123.004 1258.01 918.50599999999997"
+#!   STICKY="true"
+#!   COLOUR="0.6470588235294118,0.12156862745098039,0.93725490196078431"
+#!   CONTENTS="13 5 36 4 32 1 6 16 15 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="58"
+#!   NAME="Loop will jump back in here"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-2839.4699999999998 -104.504"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="-2243.4699999999998 -317.50400000000002"
+#!   BOUNDING_RECT="-2839.4699999999998 -104.504 596 213"
+#!   STICKY="true"
+#!   COLOUR="0.39215686274509803,0.0039215686274509803,0.73725490196078436"
+#!   CONTENTS="28 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="59"
+#!   NAME="Create Temp folder"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-2722.4699999999998 -580.50900000000001"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="-1935.0209999999997 -1035.01"
+#!   BOUNDING_RECT="-2722.4699999999998 -580.50900000000001 787.44899999999996 454.50099999999998"
+#!   STICKY="true"
+#!   COLOUR="0.85882352941176465,0.99215686274509807,0.13725490196078433"
+#!   CONTENTS="2 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="SystemCaller"
+#!   VERSION="3"
+#!   POSITION="-1811.46 -463.50700000000001"
+#!   BOUNDING_RECT="-1811.46 -463.50700000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CMD" PARM_VALUE="tasklist&lt;space&gt;&lt;gt&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;tasklist_file&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SystemCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="SubDocumentTransformer"
+#!   VERSION="1"
+#!   POSITION="-2570.4699999999998 -737.00900000000001"
+#!   BOUNDING_RECT="-2570.4699999999998 -737.00900000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FolderName" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="TempFolderMaker"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TempFolderMaker"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeFileReader"
+#!   VERSION="3"
+#!   POSITION="-1203.46 -433.50700000000001"
+#!   BOUNDING_RECT="-1203.46 -433.50700000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CHAR_ENCODING" PARM_VALUE="ibm850"/>
+#!     <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="_tasklist_text"/>
+#!     <XFORM_PARM PARM_NAME="FILE_NAME" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;tasklist_file&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFileReader"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeCreator"
+#!   VERSION="7"
+#!   POSITION="-1787.46 -213.00399999999999"
+#!   BOUNDING_RECT="-1787.46 -213.00399999999999 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="tasklist_file,&lt;at&gt;Value&lt;openparen&gt;temp_folder&lt;closeparen&gt;&lt;backslash&gt;tasklist.csv"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="StringReplacer"
+#!   VERSION="3"
+#!   POSITION="-1203.46 -634.50900000000001"
+#!   BOUNDING_RECT="-1203.46 -634.50900000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;&lt;space&gt;&lt;opencurly&gt;2&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="|"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_tasklist_text"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="381.71800000000002 -634.50900000000001"
+#!   BOUNDING_RECT="381.71800000000002 -634.50900000000001 531.01599999999996 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;time&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;time.sleep&lt;openparen&gt;10&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_Sleep10Sec"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-439.00999999999999 -784.50900000000001"
+#!   BOUNDING_RECT="-439.00999999999999 -784.50900000000001 621.08100000000002 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="MultiProcessStillOngoing"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="OnlyOneLeft"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="OnlyOneLeft"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;MultiProcessesActive&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;True&lt;quote&gt;,MultiProcessStillOngoing"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Check_how_many_processess"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="32"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-1467.46 -895.50999999999999"
+#!   BOUNDING_RECT="-1467.46 -895.50999999999999 790.01599999999996 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="MultiProcessesActive"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;tasklist&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;_tasklist_text&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pos&lt;space&gt;=&lt;space&gt;tasklist.find&lt;openparen&gt;&lt;quote&gt;fme.exe&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pos2=-1&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;pos&lt;space&gt;!=&lt;space&gt;-1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pos2&lt;space&gt;=&lt;space&gt;tasklist.find&lt;openparen&gt;&lt;quote&gt;fme.exe&lt;quote&gt;&lt;comma&gt;pos+1&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;pos2&lt;space&gt;!=&lt;space&gt;-1&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;MultiProcessesActive&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;True&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;MultiProcessesActive&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;False&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_FindMoreThenoneFME.exe"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="35"
+#!   TYPE="TimeStamper"
+#!   VERSION="1"
+#!   POSITION="-2797.4699999999998 383.00200000000001"
+#!   BOUNDING_RECT="-2797.4699999999998 383.00200000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date/Time (^Y^m^d^H^M^S)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TIME_ATTR" PARM_VALUE="_timestamp"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TimeStamper"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="38"
+#!   TYPE="Sampler"
+#!   VERSION="1"
+#!   POSITION="-2797.4699999999998 619.00599999999997"
+#!   BOUNDING_RECT="-2797.4699999999998 619.00599999999997 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="SAMPLED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="NOT_SAMPLED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#!     <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RATE" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="SAMPLE_TYPE_LONG" PARM_VALUE="First N Features"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sampler"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="37"
+#!   TYPE="VariableSetter"
+#!   VERSION="3"
+#!   POSITION="-2797.4699999999998 173"
+#!   BOUNDING_RECT="-2797.4699999999998 173 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_timestamp&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__TimeStampMultiCPU"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableSetter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="43"
+#!   TYPE="VariableRetriever"
+#!   VERSION="3"
+#!   POSITION="381.71800000000002 -955.50999999999999"
+#!   BOUNDING_RECT="381.71800000000002 -955.50999999999999 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp1" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="_timestamp1"/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__TimeStampMultiCPU"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableRetriever"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="46"
+#!   TYPE="TimeStamper"
+#!   VERSION="1"
+#!   POSITION="981.72400000000005 -1363.52"
+#!   BOUNDING_RECT="981.72400000000005 -1363.52 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp1" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date/Time (^Y^m^d^H^M^S)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TIME_ATTR" PARM_VALUE="_timestamp2"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TimeStamper_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="45"
+#!   TYPE="ExpressionEvaluator"
+#!   VERSION="3"
+#!   POSITION="981.72400000000005 -1528.52"
+#!   BOUNDING_RECT="981.72400000000005 -1528.52 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp1" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TotalSeccondsWaiting" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ACTION" PARM_VALUE="Create New Attribute"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_timestamp2)-@Value(_timestamp1)"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="TotalSeccondsWaiting"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ExpressionEvaluator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="51"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="405.71800000000002 -1116.01"
+#!   BOUNDING_RECT="405.71800000000002 -1116.01 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="NoTimeSet"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp1" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="TimeSet"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Image Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="PID Session Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Session#" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Mem Usage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="tasklist_file" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tasklist_text" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="MultiProcessesActive" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp1" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="TimeSet"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;_timestamp1&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;_timestamp1&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;_timestamp1&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,NoTimeSet"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="24"
+#!   NAME="Input"
+#!   POSITION="-3310.4699999999998 -737.00900000000001"
+#!   BOUNDING_RECT="-3310.4699999999998 -737.00900000000001 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="26"
+#!   NAME="Output"
+#!   POSITION="1604.45 -1183.51"
+#!   BOUNDING_RECT="1604.45 -1183.51 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="TotalSeccondsWaiting" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="28"
+#!   NAME="Loop"
+#!   POSITION="-2747.4699999999998 -213.00399999999999"
+#!   BOUNDING_RECT="-2747.4699999999998 -213.00399999999999 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="false"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="30"
+#!   NAME="Loop"
+#!   POSITION="1089.79 -634.50900000000001"
+#!   BOUNDING_RECT="1089.79 -634.50900000000001 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="loop"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="39"
+#!   NAME="TimeSetter"
+#!   POSITION="-3391.5300000000002 597.50599999999997"
+#!   BOUNDING_RECT="-3391.5300000000002 597.50599999999997 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="24"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="28"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="48"
+#!   SOURCE_NODE="39"
+#!   TARGET_NODE="38"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="36"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="30"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 MultiProcessStillOngoing"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="32"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="41"
+#!   SOURCE_NODE="35"
+#!   TARGET_NODE="37"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="40"
+#!   SOURCE_NODE="38"
+#!   TARGET_NODE="35"
+#!   SOURCE_PORT_DESC="fo 0 SAMPLED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="43"
+#!   TARGET_NODE="51"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="50"
+#!   SOURCE_NODE="45"
+#!   TARGET_NODE="26"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="49"
+#!   SOURCE_NODE="46"
+#!   TARGET_NODE="45"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="53"
+#!   SOURCE_NODE="51"
+#!   TARGET_NODE="26"
+#!   SOURCE_PORT_DESC="fo 0 NoTimeSet"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="44"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="43"
+#!   SOURCE_PORT_DESC="fo 1 OnlyOneLeft"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="47"
+#!   SOURCE_NODE="51"
+#!   TARGET_NODE="46"
+#!   SOURCE_PORT_DESC="fo 1 TimeSet"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#!   NAME="FileSystemDeleteMoveCopyExist"
+#!   CATEGORY="FileSystem"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer can &quot;move&quot;,&quot;copy&quot;,&quot;delete&quot; files. Can as well check if a file &quot;exist&quot; and create or delete folders.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   DOC_DYNAMIC_INPUT_ATTRS="0"
+#!   DOC_EXTENTS="2278 284"
+#!   DOC_TOP_LEFT="-1785 -451"
+#!   FME_DOCUMENT_GUID="25b64a98-8c0c-461a-b829-6103c9a92206"
+#!   FME_DOCUMENT_PRIORGUID="94852115-d874-4e3d-b15f-4fdb04aee008"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   GUID="25b64a98-8c0c-461a-b829-6103c9a92206"
+#!   HISTORY="20&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#!   IS_VISIBLE="false"
+#!   LAST_SAVE_BUILD=""
+#!   LAST_SAVE_DATE=""
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SUPPRESS_UPGRADE="true"
+#!   TITLE="FileSystemDeleteMoveCopyExist"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;action&lt;/span&gt;:The action you like to perform. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;fileInput&lt;/span&gt;: provide the input file path.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;fileOutput&lt;/span&gt;: provide the output file path. (Is not used when you delete or test the existance of a file) &lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-1827 0"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL LOOKUP_CHOICE_OR_ATTR Action Delete&lt;space&gt;File,DELETE%Copy&lt;space&gt;File,COPY%Move&lt;space&gt;File,MOVE%Make&lt;space&gt;Directory,MKDIR%Remove&lt;space&gt;Directory,RMDIR%Does&lt;space&gt;File&lt;space&gt;or&lt;space&gt;Folder&lt;space&gt;Exist,EXIST Action:"
+#!   DEFAULT_VALUE="EXIST"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FILEINPUT Fileinput:"
+#!   DEFAULT_VALUE="@Value(fileInput)"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR FILEOUTPUT Fileoutput:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-673 -167"
+#!   BOUNDING_RECT="-673 -167 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="_status "/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;import&lt;space&gt;os&lt;comma&gt;shutil&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;define&lt;space&gt;and&lt;space&gt;get&lt;space&gt;parameters&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._fileInput&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;fileInput&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._fileOutput&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;fileOutput&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._action&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;action&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;delete&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;DELETE&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;os.remove&lt;openparen&gt;self._fileInput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;deleted&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;copy&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;COPY&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;shutil.copy&lt;openparen&gt;self._fileInput&lt;comma&gt;self._fileOutput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;copied&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;move&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;MOVE&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;shutil.move&lt;openparen&gt;self._fileInput&lt;comma&gt;self._fileOutput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;moved&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;&lt;space&gt;mkdir&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;MKDIR&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;created&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;os.mkdir&lt;openparen&gt;self._fileInput&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;created&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;When&lt;space&gt;action&lt;space&gt;is&lt;space&gt;&lt;quote&gt;exist&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;self._action.upper&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;&lt;quote&gt;EXIST&lt;quote&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.exists&lt;openparen&gt;self._fileInput&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;exist&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self._status=&lt;apos&gt;notexist:&lt;apos&gt;&lt;space&gt;+&lt;space&gt;self._fileInput&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;_status&lt;apos&gt;&lt;comma&gt;self._status&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-127 -279"
+#!   BOUNDING_RECT="-127 -279 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Failed"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;deleted&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;copied&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;moved&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;exist&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;created&lt;quote&gt;,Success"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-1189 -385"
+#!   BOUNDING_RECT="-1189 -385 0 0"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="action {$(Action)} fileInput {$(FILEINPUT)} fileOutput {$(FILEOUTPUT)}"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="FileName"
+#!   POSITION="-1785 -275"
+#!   BOUNDING_RECT="-1785 -275 0 0"
+#!   COLLAPSED="false"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="fileInput" ATTR_VALUE="$(FILEINPUT)" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" ATTR_VALUE="$(FILEOUTPUT)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="5"
+#!   NAME="Success"
+#!   POSITION="487 -334"
+#!   BOUNDING_RECT="487 -334 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="Failed"
+#!   POSITION="493 -451"
+#!   BOUNDING_RECT="493 -451 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 Failed"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! <SUBDOCUMENT
+#!   NAME="TempFolderMaker"
+#!   CATEGORY="FileSystem"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Creates a folder in your local temp-folder structure.&lt;/p&gt;&#10;"
+#!   DOC_DYNAMIC_INPUT_ATTRS="0"
+#!   DOC_EXTENTS="4594.03 1575.02"
+#!   DOC_TOP_LEFT="-821.001 -1866.02"
+#!   FME_DOCUMENT_GUID="381ccad1-97b1-4024-b1d5-c9adbdb93db2"
+#!   FME_DOCUMENT_PRIORGUID="1f280783-58cc-42a3-bb5d-9803a5a7dfaa"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   GUID="381ccad1-97b1-4024-b1d5-c9adbdb93db2"
+#!   HISTORY="17&lt;solidus&gt;06&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,First&lt;space&gt;creation"
+#!   IS_VISIBLE="false"
+#!   LAST_SAVE_BUILD=""
+#!   LAST_SAVE_DATE=""
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SUPPRESS_UPGRADE="true"
+#!   TITLE="TempFolderMaker"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sometimes we need to safe temporary files. This Transformer will find your temp location and create a unique temp folder. You can as well produce your own temp folder name if that is required. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WARNING: Only tested on WINDOWS invironments..&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-186.002 282.003"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR FolderName Folder Name:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="34"
+#!   NAME="Stop the process"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Stop the process as this might result in serious loss or failure.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1592.02 -294.00299999999999"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="2188.02 -858.00900000000001"
+#!   BOUNDING_RECT="1592.02 -294.00299999999999 596 564.00599999999997"
+#!   STICKY="true"
+#!   COLOUR="0.88627450980392153,0.26666666666666666,0.792156862745098"
+#!   CONTENTS="7 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="35"
+#!   NAME="Try to find a temp area."
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;First check FME_TEMP, then TEMP and as last TMP, if none is environment variable exist the process must be terminated.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-224 -291.00299999999999"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="1548.01 -858.00900000000001"
+#!   BOUNDING_RECT="-224 -291.00299999999999 1772.01 567.00599999999997"
+#!   STICKY="true"
+#!   COLOUR="0.50980392156862742,0.078431372549019607,0.80392156862745101"
+#!   CONTENTS="17 1 5 16 18 20 4 6 2 3 19 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="36"
+#!   NAME="Extend the temp folder using a current date and random number"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The random number is used to eleminate the acidental processess to run in the same seccond.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1592.02 -921.00900000000001"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="2841.0299999999997 -1462.261"
+#!   BOUNDING_RECT="1592.02 -921.00900000000001 1249.01 541.25199999999995"
+#!   STICKY="true"
+#!   COLOUR="0.83137254901960789,0.054901960784313725,0.41960784313725491"
+#!   CONTENTS="9 26 10 8 27 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="37"
+#!   NAME="Create the folder"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2919.0300000000002 -921.00900000000001"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="3528.0360000000001 -1461.0140000000001"
+#!   BOUNDING_RECT="2919.0300000000002 -921.00900000000001 609.00599999999997 540.005"
+#!   STICKY="true"
+#!   COLOUR="0.93725490196078431,0.26666666666666666,0.30196078431372547"
+#!   CONTENTS="11 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="38"
+#!   NAME="Use the folder created by the user"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1602.02 -1488.02"
+#!   ORDER="500000000000000"
+#!   BOTTOM_RIGHT="2832.0299999999997 -1866.0229999999999"
+#!   BOUNDING_RECT="1602.02 -1488.02 1230.01 378.00299999999999"
+#!   STICKY="true"
+#!   COLOUR="0.25882352941176473,0.59215686274509804,0.70980392156862748"
+#!   CONTENTS="13 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="EnvironmentVariableFetcher"
+#!   VERSION="0"
+#!   POSITION="-150 -461.75400000000002"
+#!   BOUNDING_RECT="-150 -461.75400000000002 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ENV_ATTR" PARM_VALUE="temp"/>
+#!     <XFORM_PARM PARM_NAME="ENV_VAR" PARM_VALUE="FME_TEMP"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FME_TEMP"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="EnvironmentVariableFetcher"
+#!   VERSION="0"
+#!   POSITION="464.99000000000001 -461.75400000000002"
+#!   BOUNDING_RECT="464.99000000000001 -461.75400000000002 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ENV_ATTR" PARM_VALUE="temp"/>
+#!     <XFORM_PARM PARM_NAME="ENV_VAR" PARM_VALUE="TEMP"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TEMP"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="EnvironmentVariableFetcher"
+#!   VERSION="0"
+#!   POSITION="1068.01 -461.75400000000002"
+#!   BOUNDING_RECT="1068.01 -461.75400000000002 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ENV_ATTR" PARM_VALUE="temp"/>
+#!     <XFORM_PARM PARM_NAME="ENV_VAR" PARM_VALUE="TMP"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TMP"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-150 -636.25699999999995"
+#!   BOUNDING_RECT="-150 -636.25699999999995 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="Empty"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="HasPath"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasPath"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Empty"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="464.99000000000001 -636.25699999999995"
+#!   BOUNDING_RECT="464.99000000000001 -636.25699999999995 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="Empty"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="HasPath"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasPath"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Empty"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1068.01 -636.25699999999995"
+#!   BOUNDING_RECT="1068.01 -636.25699999999995 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="Empty"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="HasPath"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasPath"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;temp&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Empty"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="Terminator"
+#!   VERSION="2"
+#!   POSITION="1672.02 -566.75400000000002"
+#!   BOUNDING_RECT="1672.02 -566.75400000000002 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="getTempFolder-Transformer&lt;space&gt;could&lt;space&gt;not&lt;space&gt;find&lt;space&gt;Temp&lt;space&gt;Folder"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Terminator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="TimeStamper"
+#!   VERSION="1"
+#!   POSITION="1666.02 -1115.26"
+#!   BOUNDING_RECT="1666.02 -1115.26 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date/Time (^Y^m^d^H^M^S)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TIME_ATTR" PARM_VALUE="_timestamp"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TimeStamper"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="RandomNumberGenerator"
+#!   VERSION="2"
+#!   POSITION="1666.02 -1316.26"
+#!   BOUNDING_RECT="1666.02 -1316.26 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_random_number" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="MAX" PARM_VALUE="100000"/>
+#!     <XFORM_PARM PARM_NAME="MIN" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PLACES" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTR" PARM_VALUE="_random_number"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RandomNumberGenerator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeCreator"
+#!   VERSION="7"
+#!   POSITION="2311.52 -1185.76"
+#!   BOUNDING_RECT="2311.52 -1185.76 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_random_number" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="temp_folder,&lt;at&gt;Value&lt;openparen&gt;temp&lt;closeparen&gt;&lt;backslash&gt;&lt;at&gt;Value&lt;openparen&gt;_timestamp&lt;closeparen&gt;_&lt;at&gt;Value&lt;openparen&gt;_random_number&lt;closeparen&gt;&lt;backslash&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="SubDocumentTransformer"
+#!   VERSION="1"
+#!   POSITION="3007.0300000000002 -1115.26"
+#!   BOUNDING_RECT="3007.0300000000002 -1115.26 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="Success"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_random_number" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_random_number" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileInput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fileOutput" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="Action" PARM_VALUE="MKDIR"/>
+#!     <XFORM_PARM PARM_NAME="FILEINPUT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;temp_folder&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILEOUTPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="FileSystemDeleteMoveCopyExist"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FileSystemDeleteMoveCopyExist"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="972.00900000000001 -1373.26"
+#!   BOUNDING_RECT="972.00900000000001 -1373.26 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="MissingFolder"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="HasFolder"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="HasFolder"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(FolderName)&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;$(FolderName)&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;$(FolderName)&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,MissingFolder"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="AttributeCreator"
+#!   VERSION="7"
+#!   POSITION="2014.52 -1683.02"
+#!   BOUNDING_RECT="2014.52 -1683.02 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15480"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="temp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="temp_folder,&lt;at&gt;Value&lt;openparen&gt;temp&lt;closeparen&gt;&lt;backslash&gt;$(FolderName)&lt;backslash&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="14"
+#!   NAME="input"
+#!   POSITION="-821.00099999999998 -461.75400000000002"
+#!   BOUNDING_RECT="-821.00099999999998 -461.75400000000002 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="15"
+#!   NAME="output"
+#!   POSITION="3773.0300000000002 -1245.76"
+#!   BOUNDING_RECT="3773.0300000000002 -1245.76 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="temp_folder" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="14"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 Empty"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 Empty"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 Empty"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 FileName"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 Success"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 MissingFolder"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="33"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 FileName"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 HasPath"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 HasPath"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 HasPath"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 1 Failed"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 1 HasFolder"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ConcurrentProcessesOngoing_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ConcurrentProcessesOngoing_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ConcurrentProcessesOngoing_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Input1554299067 Input Splitter"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Input"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop1554299067 Input Splitter"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop"   OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeSetter1554299067 Input Splitter"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeSetter"   OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeSetter"
+# -------------------------------------------------------------------------
+INCLUDE [ puts "MACRO REAL_RATE [expr 1 * -1 ]" ]
+FACTORY_DEF {*} SamplingFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Sampler    SAMPLE_RATE $(REAL_RATE)    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeSetter"    OUTPUT SAMPLED FEATURE_TYPE ___SAMPLED___
+# This TeeFactory is needed because Sampler will still output features if it has no OUTPUT clauses specified.
+# This way we behave nicely even if there are no output connections on the transformer. See PR#28886.
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Sampler_Sampled    INPUT FEATURE_TYPE ___SAMPLED___    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Sampler_SAMPLED"
+# -------------------------------------------------------------------------
+Tcl2 proc $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_formatGetter { inVal } {    if { [string compare $inVal {FME Date/Time (^Y^m^d^H^M^S)}] == 0 } {       return {^Y^m^d^H^M^S};    } elseif { [string compare $inVal {FME Date (^Y^m^d)}] == 0} {       return {^Y^m^d};    } elseif { [string compare $inVal {FME Time (^H^M^S)}] == 0} {       return {^H^M^S};    } elseif { [string compare $inVal {ISO Date (^Y-^m-^d)}] == 0} {       return {^Y-^m-^d};    } elseif { [string compare $inVal {ISO DateTime (^Y-^m-^dT^H:^M:^S)}] == 0} {       return {^Y-^m-^dT^H:^M:^S};    } elseif { [string compare $inVal {ISO Time (^H:^M:^S)}] == 0} {       return {^H:^M:^S};    } elseif { [string compare $inVal {Locale Date (^c)}] == 0} {       return {^c};    };    return $inVal; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Sampler_SAMPLED"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_OUTPUT"         @SupplyAttributes(ENCODED, _timestamp, @Timestamp(@Tcl2("$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_formatGetter {FME Date/Time (^Y^m^d^H^M^S)} ")))
+# -------------------------------------------------------------------------
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter_VAR __TimeStampMultiCPU
+INCLUDE [ if {{Global} == {Local}} {   puts {MACRO $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter_VAR $(WB_CURRENT_CONTEXT)___TimeStampMultiCPU}; } ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_OUTPUT"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter_OUTPUT"        @GlobalVariable(fme_encoded,$($(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter_VAR),"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_timestamp<closeparen>,$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter)")
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter OUTPUT Transformer Output Nuker"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableSetter_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker input Input Collector"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker_input"
+MACRO TempFolderMaker_WORKSPACE_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker
+MACRO $(TempFolderMaker_WORKSPACE_NAME)_XFORMER_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker
+MACRO $(TempFolderMaker_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(TempFolderMaker_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(TempFolderMaker_WORKSPACE_NAME)_SUB_DOC_NAME TempFolderMaker
+MACRO $(TempFolderMaker_WORKSPACE_NAME)_FolderName 
+DEFAULT_MACRO TempFolderMaker_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(TempFolderMaker_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(TempFolderMaker_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TempFolderMaker_WORKSPACE_NAME)_input1554299067 Input Splitter"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_input"   OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_input"
+# -------------------------------------------------------------------------
+Tcl2 proc $(TempFolderMaker_WORKSPACE_NAME)_FME_TEMP_retriever {} {    global env;    if {[catch {set value $env(FME_TEMP)}]} {      set value {};    };    FME_SetAttribute {"temp"} $value; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_FME_TEMP    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_input"    OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FME_TEMP_OUTPUT"         @Tcl2("$(TempFolderMaker_WORKSPACE_NAME)_FME_TEMP_retriever")
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FME_TEMP_OUTPUT"    OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST temp ATTRIBUTE_VALUE_NULL "" ENCODED TEST temp ATTRIBUTE_IS_EMPTY "" ENCODED TEST temp ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_Empty OUTPUT FAILED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_HasPath INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_HasPath
+# -------------------------------------------------------------------------
+Tcl2 proc $(TempFolderMaker_WORKSPACE_NAME)_TEMP_retriever {} {    global env;    if {[catch {set value $env(TEMP)}]} {      set value {};    };    FME_SetAttribute {"temp"} $value; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TEMP    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_Empty"    OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TEMP_OUTPUT"         @Tcl2("$(TempFolderMaker_WORKSPACE_NAME)_TEMP_retriever")
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TEMP_OUTPUT"    OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_Condition_1 INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST temp ATTRIBUTE_VALUE_NULL "" ENCODED TEST temp ATTRIBUTE_IS_EMPTY "" ENCODED TEST temp ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_Empty OUTPUT FAILED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_HasPath INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_HasPath
+# -------------------------------------------------------------------------
+Tcl2 proc $(TempFolderMaker_WORKSPACE_NAME)_TMP_retriever {} {    global env;    if {[catch {set value $env(TMP)}]} {      set value {};    };    FME_SetAttribute {"temp"} $value; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TMP    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_Empty"    OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TMP_OUTPUT"         @Tcl2("$(TempFolderMaker_WORKSPACE_NAME)_TMP_retriever")
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TMP_OUTPUT"    OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_Condition_1 INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_0 TEST temp ATTRIBUTE_VALUE_NULL "" ENCODED TEST temp ATTRIBUTE_IS_EMPTY "" ENCODED TEST temp ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_Empty OUTPUT FAILED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_HasPath INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_HasPath
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_HasPath"    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_2_HasPath"    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_HasPath"    OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_Condition_1 INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(TempFolderMaker_WORKSPACE_NAME)_FolderName$encode),$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4) ATTRIBUTE_VALUE_NULL "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(TempFolderMaker_WORKSPACE_NAME)_FolderName$encode),$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4) ATTRIBUTE_IS_EMPTY "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(TempFolderMaker_WORKSPACE_NAME)_FolderName$encode),$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4) ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_MissingFolder OUTPUT FAILED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_HasFolder INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_HasFolder
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_AttributeCreator_2 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_HasFolder" ATTR temp_folder <at>Value<openparen>temp<closeparen><backslash>$($(TempFolderMaker_WORKSPACE_NAME)_FolderName$encode)<backslash>    OUTPUT OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT" 
+# -------------------------------------------------------------------------
+Tcl2 proc $(TempFolderMaker_WORKSPACE_NAME)_TimeStamper_formatGetter { inVal } {    if { [string compare $inVal {FME Date/Time (^Y^m^d^H^M^S)}] == 0 } {       return {^Y^m^d^H^M^S};    } elseif { [string compare $inVal {FME Date (^Y^m^d)}] == 0} {       return {^Y^m^d};    } elseif { [string compare $inVal {FME Time (^H^M^S)}] == 0} {       return {^H^M^S};    } elseif { [string compare $inVal {ISO Date (^Y-^m-^d)}] == 0} {       return {^Y-^m-^d};    } elseif { [string compare $inVal {ISO DateTime (^Y-^m-^dT^H:^M:^S)}] == 0} {       return {^Y-^m-^dT^H:^M:^S};    } elseif { [string compare $inVal {ISO Time (^H:^M:^S)}] == 0} {       return {^H:^M:^S};    } elseif { [string compare $inVal {Locale Date (^c)}] == 0} {       return {^c};    };    return $inVal; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_TimeStamper    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_4_MissingFolder"    OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TimeStamper_OUTPUT"         @SupplyAttributes(ENCODED, _timestamp, @Timestamp(@Tcl2("$(TempFolderMaker_WORKSPACE_NAME)_TimeStamper_formatGetter {FME Date/Time (^Y^m^d^H^M^S)} ")))
+# -------------------------------------------------------------------------
+Tcl2 proc $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_generator {paramMin paramMax paramPlaces} {    set absoluteMax [expr abs($paramMax)];    set absoluteMin [expr abs($paramMin)];    if {$absoluteMin > $absoluteMax} {       set temp $absoluteMax;       set absoluteMax $absoluteMin;       set absoluteMin $temp;    };    set maxNumDigits 1;    if {$absoluteMax > 0} {       set maxNumDigits [expr int(log10($absoluteMax) + 1)];    };    set positiveParamPlaces [expr abs($paramPlaces)];    if {$paramMin > $paramMax} {       FME_SetAttribute {"_random_number"} NaN;    } elseif {$paramPlaces < 0 && $maxNumDigits <= $positiveParamPlaces} {       FME_SetAttribute {"_random_number"} 0;    } else {       set randomNumber [expr rand()];       set mult [expr pow(10, $paramPlaces)];       set innerMin [expr double($paramMin)];       set innerMax [expr double($paramMax)];       if {$paramPlaces > 0} {          set addValue [expr pow(10, -$paramPlaces)];          set indexDotMin [string first "." $innerMin];          set indexDotMax [string first "." $innerMax];          set countDecPlacesMin [expr [string length $innerMin] - $indexDotMin - 1];          set countDecPlacesMax [expr [string length $innerMax] - $indexDotMax - 1];          set countTruncatedDecPlaces [expr $countDecPlacesMin - $paramPlaces];          if {$countTruncatedDecPlaces > 0} {             set zeroes [string repeat "0" $countTruncatedDecPlaces];             set truncatedDecPlaces [string range $innerMin [expr $indexDotMin + 1 + $paramPlaces] [string length $innerMin]];             if {![string equal $truncatedDecPlaces $zeroes]}             {                set truncatedResult [string range $innerMin 0 [expr $indexDotMin + $paramPlaces]];                if {$innerMin > 0} {                   set truncatedResult [expr $truncatedResult + $addValue];                };                set innerMin $truncatedResult;             };          };          set countTruncatedDecPlaces [expr $countDecPlacesMax - $paramPlaces];          if {$countTruncatedDecPlaces > 0} {             set zeroes [string repeat "0" $countTruncatedDecPlaces];             set truncatedDecPlaces [string range $innerMax [expr $indexDotMax + 1 + $paramPlaces] [string length $innerMax]];             if {![string equal $truncatedDecPlaces $zeroes]}             {                set truncatedResult [string range $innerMax 0 [expr $indexDotMax + $paramPlaces]];                if {$innerMax < 0} {                   set truncatedResult [expr $truncatedResult - $addValue];                };                set innerMax $truncatedResult;             };          };       } else {          set innerMin [expr ceil($paramMin * $mult) * 1.0 / $mult];          set innerMax [expr floor($paramMax * $mult) * 1.0 / $mult];       };       set integerMin $innerMin;       set integerMax $innerMax;       set integerMin [expr wide($innerMin * $mult)];       set integerMax [expr wide($innerMax * $mult)];       set integerResult [expr $integerMin + wide($randomNumber * ($integerMax + 1 - $integerMin))];       set result [expr $integerResult * 1.0 / $mult];       set formatString "%.0f";       if {$paramPlaces > 0} {          set formatString [format "%%.%df" $paramPlaces];       };       FME_SetAttribute {"_random_number"} [format $formatString $result];    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_MinRejecter    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TimeStamper_OUTPUT"    TEST "0" TYPE NUM ENCODED    OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator__toMaxRejecter__
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_MaxRejecter    INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator__toMaxRejecter__    TEST "100000" TYPE NUM ENCODED    OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator__toPlacesRejecter__
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_PlacesRejecter    INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator__toPlacesRejecter__    TEST "0" TYPE INT ENCODED    OUTPUT PASSED FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator__toOutput__
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_RandomNumberGenerator    INPUT FEATURE_TYPE $(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator__toOutput__    OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_OUTPUT"         @Tcl2("$(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_generator {0} {100000} {0} ")
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_AttributeCreator ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_RandomNumberGenerator_OUTPUT" ATTR temp_folder <at>Value<openparen>temp<closeparen><backslash><at>Value<openparen>_timestamp<closeparen>_<at>Value<openparen>_random_number<closeparen><backslash>    OUTPUT OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist FileName Input Collector"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_FileName"
+MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME $(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_XFORMER_NAME $(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_SUB_DOC_NAME FileSystemDeleteMoveCopyExist
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action MKDIR
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT <at>Value<openparen>temp_folder<closeparen>
+MACRO $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT 
+DEFAULT_MACRO FileSystemDeleteMoveCopyExist_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName1554299067 Input Splitter"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,fileInput,$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT),fileOutput,$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+Tcl2 proc $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"action {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Action)} fileInput {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEINPUT)} fileOutput {$($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FILEOUTPUT)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_FileName"    OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>import<space>os<comma>shutil<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>define<space>and<space>get<space>parameters<lf><space><space><space><space><space><space><space><space>self._status=<apos><apos><lf><space><space><space><space><space><space><space><space>self._fileInput<space>=<space>feature.getAttribute<openparen><apos>fileInput<apos><closeparen><lf><space><space><space><space><space><space><space><space>self._fileOutput<space>=<space>feature.getAttribute<openparen><apos>fileOutput<apos><closeparen><lf><space><space><space><space><space><space><space><space>self._action<space>=<space>feature.getAttribute<openparen><apos>action<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>delete<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>DELETE<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>os.remove<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>deleted<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>copy<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>COPY<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.copy<openparen>self._fileInput<comma>self._fileOutput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>copied<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>move<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>MOVE<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>shutil.move<openparen>self._fileInput<comma>self._fileOutput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>moved<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote><space>mkdir<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>MKDIR<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>created<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>os.mkdir<openparen>self._fileInput<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>created<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>When<space>action<space>is<space><quote>exist<quote><lf><space><space><space><space><space><space><space><space>if<space><openparen>self._action.upper<openparen><closeparen><space>==<space><quote>EXIST<quote><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.exists<openparen>self._fileInput<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>exist<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self._status=<apos>notexist:<apos><space>+<space>self._fileInput<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><apos>_status<apos><comma>self._status<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = deleted ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = copied ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = moved ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = exist ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_status<closeparen>,$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter) = created ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Success OUTPUT FAILED FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed INPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Success1554299067 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Success"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Failed1554299067 Output Collector"   INPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_TestFilter_Failed"   OUTPUT FEATURE_TYPE "$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME)_Failed"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(FileSystemDeleteMoveCopyExist_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist Success Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Success"   OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist Failed Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Failed"   OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Failed"
+# -------------------------------------------------------------------------
+# The default behaviour is to abort on any feature entering the transformer.
+# If Workbench has set the _WB_BYPASS_TERMINATION macro to a value of "Yes",
+# then the features will instead be passed through with a feature type of
+# __WB_BYPASS_TERMINATOR__, which Workbench will send to a visualizer or
+# somesuch.
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TestFactory    FACTORY_NAME $(TempFolderMaker_WORKSPACE_NAME)_Terminator    INPUT  FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_TestFilter_3_Empty"    TEST "$(_WB_BYPASS_TERMINATION)" == Yes    OUTPUT PASSED FEATURE_TYPE __WB_BYPASS_TERMINATOR__       @SupplyAttributes(_wb_termination_feature_type,@FeatureType())       @SupplyAttributes(ENCODED,_wb_termination_message,"getTempFolder-Transformer<space>could<space>not<space>find<space>Temp<space>Folder")       @SupplyAttributes(_wb_termination_xformer,"$(TempFolderMaker_WORKSPACE_NAME)_Terminator")       @SupplyAttributes(_wb_termination_feature,Yes)    OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED,"getTempFolder-Transformer<space>could<space>not<space>find<space>Temp<space>Folder")
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TempFolderMaker_WORKSPACE_NAME)_output1554299067 Output Collector"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Success"   INPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_FileSystemDeleteMoveCopyExist_Failed"   OUTPUT FEATURE_TYPE "$(TempFolderMaker_WORKSPACE_NAME)_output" @RemoveAttributes(temp,_timestamp,_random_number,fileInput,fileOutput,action,_status)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(TempFolderMaker_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker_output"   OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker_output"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeCreator ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TempFolderMaker_output"    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop" ATTR tasklist_file <at>Value<openparen>temp_folder<closeparen><backslash>tasklist.csv    OUTPUT OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_SystemCaller    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_SystemCaller_OUTPUT"         @System(LOG_PREFIX,$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_SystemCaller,ENCODED,"@EvaluateExpression(FDIV,STRING_ENCODED,tasklist<space><gt><space><at>Value<openparen>tasklist_file<closeparen>,$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_SystemCaller)")
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeFileReader    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_SystemCaller_OUTPUT"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeFileReader_OUTPUT"         @File(ENCODED_PARAMS,DestReadSrcWrite,_tasklist_text,"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>tasklist_file<closeparen>,$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeFileReader)",ibm850)
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_StringReplacer_ccd7549a_2a11_4b52_a7b6_688b25906b160_replacer { findText replaceText invalidValue} {     set attrs [split \"_tasklist_text\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_AttributeFileReader_OUTPUT"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_StringReplacer_ccd7549a_2a11_4b52_a7b6_688b25906b160_replacer {<openparen><space><opencurly>2<comma><closecurly><closeparen>} {|} {_FME_NO_OP_}")
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_PythonCaller_FindMoreThenoneFME.exe    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_StringReplacer_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>tasklist<space>=<space>feature.getAttribute<openparen><quote>_tasklist_text<quote><closeparen><lf><space><space><space><space><space><space><space><space>pos<space>=<space>tasklist.find<openparen><quote>fme.exe<quote><closeparen><lf><space><space><space><space><space><space><space><space>pos2=-1<lf><space><space><space><space><space><space><space><space>if<space>pos<space>!=<space>-1:<lf><space><space><space><space><space><space><space><space><space><space><space><space>pos2<space>=<space>tasklist.find<openparen><quote>fme.exe<quote><comma>pos+1<closeparen><lf><space><space><space><space><space><space><space><space>if<space><openparen>pos2<space>!=<space>-1<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>MultiProcessesActive<quote><comma><quote>True<quote><closeparen><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>MultiProcessesActive<quote><comma><quote>False<quote><closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_PythonCaller_FindMoreThenoneFME.exe_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_PythonCaller_FindMoreThenoneFME.exe_OUTPUT"    OUTPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_Condition_1 INPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>MultiProcessesActive<closeparen>,$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess) = True ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_MultiProcessStillOngoing OUTPUT FAILED FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_OnlyOneLeft INPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_OnlyOneLeft
+# -------------------------------------------------------------------------
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableRetriever_VAR __TimeStampMultiCPU
+INCLUDE [if {{Global} == {Local}} {   puts {MACRO $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableRetriever_VAR $(WB_CURRENT_CONTEXT)___TimeStampMultiCPU}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableRetriever    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_OnlyOneLeft"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableRetriever_OUTPUT"        @GlobalVariable(fme_encoded,$($(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableRetriever_VAR),fme_result_attribute,_timestamp1)
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_VariableRetriever_OUTPUT"    OUTPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST _timestamp1 ATTRIBUTE_VALUE_NULL "" ENCODED TEST _timestamp1 ATTRIBUTE_IS_EMPTY "" ENCODED TEST _timestamp1 ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_NoTimeSet OUTPUT FAILED FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TimeSet INPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TimeSet
+# -------------------------------------------------------------------------
+Tcl2 proc $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_2_formatGetter { inVal } {    if { [string compare $inVal {FME Date/Time (^Y^m^d^H^M^S)}] == 0 } {       return {^Y^m^d^H^M^S};    } elseif { [string compare $inVal {FME Date (^Y^m^d)}] == 0} {       return {^Y^m^d};    } elseif { [string compare $inVal {FME Time (^H^M^S)}] == 0} {       return {^H^M^S};    } elseif { [string compare $inVal {ISO Date (^Y-^m-^d)}] == 0} {       return {^Y-^m-^d};    } elseif { [string compare $inVal {ISO DateTime (^Y-^m-^dT^H:^M:^S)}] == 0} {       return {^Y-^m-^dT^H:^M:^S};    } elseif { [string compare $inVal {ISO Time (^H:^M:^S)}] == 0} {       return {^H:^M:^S};    } elseif { [string compare $inVal {Locale Date (^c)}] == 0} {       return {^c};    };    return $inVal; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_2    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_TimeSet"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_2_OUTPUT"         @SupplyAttributes(ENCODED, _timestamp2, @Timestamp(@Tcl2("$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_2_formatGetter {FME Date/Time (^Y^m^d^H^M^S)} ")))
+# -------------------------------------------------------------------------
+INCLUDE TCL
+   if {{OUTGOING} == {OUTGOING}} {      set attrs [list {TotalSeccondsWaiting}];    } else {      set attrAll {<Unused>};      if {[string length $attrAll] == 0} { return; };      set attrs [split {<Unused>} { }];    };    if {{NO_OP} == {NO_OP}} {        set parmList ATTR_CREATE_EXPR_PROPAGATE_MISSING_TYPED_FDIV;    } else {        set parmList ATTR_CREATE_EXPR_PROPAGATE_MISSING_TYPED_FDIV_MULTI_FEATURE;    };    foreach attr $attrs {     lappend parmList $attr;     lappend parmList {<at>Value<openparen>_timestamp2<closeparen>-<at>Value<openparen>_timestamp1<closeparen>};     lappend parmList {FLOAT};    };    lappend parmList {$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_ExpressionEvaluator};    if {{NO_OP} == {OTHER_NULL_VALUE_2}} {     lappend parmList {NO_OP};     lappend parmList {<Unused>};     lappend parmList {0};    };    puts "MACRO __fme_expressionevaluator_evaluateArgs__ [join $parmList ,]";
+END_INCLUDE
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_ExpressionEvaluator    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TimeStamper_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_ExpressionEvaluator_OUTPUT"         @EvaluateExpression($(__fme_expressionevaluator_evaluateArgs__))
+MACRO __fme_expressionevaluator_evaluateArgs__
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_PythonCaller_Sleep10Sec    INPUT  FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Check_how_many_processess_MultiProcessStillOngoing"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>time<lf>import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>time.sleep<openparen>10<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_PythonCaller_Sleep10Sec_OUTPUT"
+FACTORY_DEF * BranchingFactory   TARGET_FACTORY "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop1554299067 Input Splitter"   FACTORY_NAME "Loop to $(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop1554299067 Input Splitter"   MAXIMUM_COUNT -1   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_PythonCaller_Sleep10Sec_OUTPUT"   OUTPUT PASSED FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Loop"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Output1554299067 Output Collector"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_ExpressionEvaluator_OUTPUT"   INPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_TestFilter_NoTimeSet"   OUTPUT FEATURE_TYPE "$(ConcurrentProcessesOngoing_WORKSPACE_NAME)_Output" @RemoveAttributes(temp_folder,"Image Name","PID Session Name",Session#,"Mem Usage",tasklist_file,_tasklist_text,MultiProcessesActive,_timestamp1,_timestamp2)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ConcurrentProcessesOngoing_WORKSPACE_NAME))}]

@@ -1,0 +1,930 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN WISE_Validation_XML,1,WISE,063efcc7-4964-4935-b38d-891aae75bca4,"Linked by Default",No,NO_PARALLELISM,,No,15515,YES,No
+# TRANSFORMER_END
+#! FME_PROCESS_GROUP_BY=""
+#! SHOW_ANNOTATIONS="true"
+#! HISTORY=""
+#! LEGAL_TERMS_CONDITIONS=""
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! ATTR_TYPE_ENCODING="SDF"
+#! FMX_INSERT_MODE="Linked by Default"
+#! DESCRIPTION=""
+#! FME_SERVER_SERVICES=""
+#! XFORM_DEPRECATED="No"
+#! FME_BUILD_NUM="15515"
+#! FME_DOCUMENT_PRIORGUID="cb1493ac-9080-4cb1-9d44-a67ae7e359a2"
+#! FME_DOCUMENT_GUID="063efcc7-4964-4935-b38d-891aae75bca4"
+#! WORKSPACE_VERSION="1"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! LAST_SAVE_DATE="2015-11-06T12:59:25"
+#! PASSWORD=""
+#! CATEGORY="WISE"
+#! ZOOM_SCALE="100"
+#! MAX_LOOP_ITERATIONS=""
+#! REQUIREMENTS=""
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN32)"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! BLOCKED_LOOPING="No"
+#! DOC_EXTENTS="2757.62 1418.19"
+#! REQUIREMENTS_KEYWORD=""
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! USAGE=""
+#! ITERATION_COUNT_ATTR=""
+#! SHOW_INFO_NODES="true"
+#! VIEW_POSITION="-1233.01 1008.01"
+#! TITLE="WISE_Validation_XML"
+#! DOC_TOP_LEFT="-1545.33 -709.095"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _SERVER Server:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_Server&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _PASSWORD Password:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_Password&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL STRING_OR_ATTR_ENCODED _DATABASE Database:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_Database&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR _IDENVELOPE Idenvelope:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_IDEnvelope&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _SOURCE_XML _source_xml"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_source_xml&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _SCHEMALOCATION Schemalocation:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_schemaLocation&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _TIMESTAMP Timestamp:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_timestamp&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _USER User:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_User&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="23"
+#! NAME="VALIDATE Schema"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="413.44 433.911"
+#! BOTTOM_RIGHT="1017.33 -463.005"
+#! BOUNDING_RECT="413.44 433.911 603.886 896.916"
+#! STICKY="true"
+#! COLOUR="0.47451,0.458824,0.211765"
+#! CONTENTS="19 12 4 2 11 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="24"
+#! NAME="INSERT ERROR SCHEMA"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="421.33 -496.095"
+#! BOTTOM_RIGHT="1017.33 -709.095"
+#! BOUNDING_RECT="421.33 -496.095 596 213"
+#! STICKY="true"
+#! COLOUR="0.419608,0.14902,0.647059"
+#! CONTENTS="3 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="25"
+#! NAME="INSERT ERROR BY URL error"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-1017.33 433.911"
+#! BOTTOM_RIGHT="-403.33 -169.676"
+#! BOUNDING_RECT="-1017.33 433.911 614 603.587"
+#! STICKY="true"
+#! COLOUR="0.494118,0.337255,0.309804"
+#! CONTENTS="7 14 6 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="26"
+#! NAME="VALIDATE Syntax"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-277.56 428.647"
+#! BOTTOM_RIGHT="276.44 -381.098"
+#! BOUNDING_RECT="-277.56 428.647 554 809.745"
+#! STICKY="true"
+#! COLOUR="0.992157,0.666667,0.156863"
+#! CONTENTS="9 16 17 8 10 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="XMLValidator"
+#! VERSION="1"
+#! POSITION="490.29 327.877"
+#! BOUNDING_RECT="490.29 327.877 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.file" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.col" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.desc" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLValidator_Schema"/>
+#! <XFORM_PARM PARM_NAME="SCHEMA_LOC" PARM_VALUE="@Value(_schemaLocation)"/>
+#! <XFORM_PARM PARM_NAME="XML_INPUT_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VAL_MODE_1" PARM_VALUE="Syntax and Schema"/>
+#! <XFORM_PARM PARM_NAME="XML_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Text"/>
+#! <XFORM_PARM PARM_NAME="VALIDATION_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIMIT_ERRORS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR_TEXT" PARM_VALUE="_response_body"/>
+#! <XFORM_PARM PARM_NAME="ERRORS_COUNT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_xml_error"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="490.98 -607.695"
+#! BOUNDING_RECT="490.98 -607.695 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLValidator_Failed"/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="ListExploder"
+#! VERSION="4"
+#! POSITION="490.29 -4.67692"
+#! BOUNDING_RECT="490.29 -4.67692 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="LIST_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="line" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="col" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="desc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder_Schema_error"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_xml_error{}"/>
+#! <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Original"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="HTTPCaller"
+#! VERSION="0"
+#! POSITION="-925.33 706.094"
+#! BOUNDING_RECT="-925.33 706.094 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="Output"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#! <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#! <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_source_xml&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#! <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller_URL_XML"/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-925.33 338.647"
+#! BOUNDING_RECT="-925.33 338.647 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ErrorMessage2" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_URL_Error"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="ErrorMessage2,Erroroneus&lt;space&gt;XML&lt;space&gt;URL"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="SQLExecutor"
+#! VERSION="6"
+#! POSITION="-893.75 156.628"
+#! BOUNDING_RECT="-893.75 156.628 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="RESULT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ErrorMessage3" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INITIATOR"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ErrorMessage2" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_SERVER" PARM_VALUE="@Value(_Server)"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_URL_error"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_USER_NAME" PARM_VALUE="@Value(_User)"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_USE_SSPI" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_PASSWORD" PARM_VALUE="@Value(_Password)"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="ErrorMessage3"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="FME_SQL_DELIMITER&lt;space&gt;&lt;semicolon&gt;&lt;lf&gt;begin&lt;space&gt;try&lt;lf&gt;INSERT&lt;space&gt;INTO&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;IMPORT_ERRORS&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;envelopeImportID&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;importID&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;schema&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;table&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;message&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;raisedAt&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;VALUES&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_IDEnvelope&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;null&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;XML&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_source_xml&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;ErrorMessage2&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_timestamp&lt;closeparen&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;SELECT&lt;space&gt;&lt;apos&gt;&lt;apos&gt;&lt;space&gt;AS&lt;space&gt;ErrorMessage3&lt;lf&gt;end&lt;space&gt;try&lt;lf&gt;begin&lt;space&gt;catch&lt;lf&gt;SELECT&lt;space&gt;ERROR_MESSAGE&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;AS&lt;space&gt;ErrorMessage3&lt;lf&gt;end&lt;space&gt;catch&lt;semicolon&gt;"/>
+#! <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_ENCRYPT_CONNECTION,&quot;OPTIONAL CHECKBOX YES%NO&quot;,MSSQL_ADO&lt;space&gt;Encrypt&lt;space&gt;Connection,MSSQL_ADO_USER_NAME,&quot;OPTIONAL TEXT&quot;,MSSQL_ADO&lt;space&gt;Username:,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_SERVER,&quot;OPTIONAL TEXT&quot;,MSSQL_ADO&lt;space&gt;Server:,MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_USE_SSPI,&quot;OPTIONAL ACTIVECHOICE_LOOKUP Windows&lt;space&gt;Authentication,YES,USER_NAME,PASSWORD%SQL&lt;space&gt;Server&lt;space&gt;Authentication,NO&quot;,MSSQL_ADO&lt;space&gt;Authentication:,MSSQL_ADO_PASSWORD,&quot;OPTIONAL PASSWORD&quot;,MSSQL_ADO&lt;space&gt;Password:"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_ENCRYPT_CONNECTION" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#! <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_Database&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="XMLValidator"
+#! VERSION="1"
+#! POSITION="-203.56 335.386"
+#! BOUNDING_RECT="-203.56 335.386 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.file" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.col" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.desc" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLValidator_XML_Syntax"/>
+#! <XFORM_PARM PARM_NAME="SCHEMA_LOC" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_INPUT_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VAL_MODE_1" PARM_VALUE="Syntax Only"/>
+#! <XFORM_PARM PARM_NAME="XML_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Text"/>
+#! <XFORM_PARM PARM_NAME="VALIDATION_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIMIT_ERRORS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR_TEXT" PARM_VALUE="_response_body"/>
+#! <XFORM_PARM PARM_NAME="ERRORS_COUNT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_xml_error"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="ListExploder"
+#! VERSION="4"
+#! POSITION="-203.56 38.5541"
+#! BOUNDING_RECT="-203.56 38.5541 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="LIST_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="line" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="col" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="desc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder_XML_Syntax"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_xml_error{}"/>
+#! <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Original"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="-170.52 -194.895"
+#! BOUNDING_RECT="-170.52 -194.895 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="line" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="col" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="desc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_Syntax_xml_Error"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;apos&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="desc"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;u00b4&gt;"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="490.29 -267.435"
+#! BOUNDING_RECT="490.29 -267.435 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Server" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Password" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Database" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_User" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="file" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="line" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="col" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="desc" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_Schema_DESC_Error"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;apos&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="desc"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;u00b4&gt;"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="27"
+#! NAME="XMLValidator_Schema_Passed"
+#! POSITION="1212.29 213.376"
+#! BOUNDING_RECT="1212.29 213.376 -1 -1"
+#! COLLAPSED="false"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_Database" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" />
+#! <XFORM_ATTR ATTR_NAME="_Password" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" />
+#! <XFORM_ATTR ATTR_NAME="_Server" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" />
+#! <XFORM_ATTR ATTR_NAME="_User" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.col" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.desc" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.file" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.line" />
+#! <XFORM_ATTR ATTR_NAME="_xml_error{}.type" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="31"
+#! NAME="HTTPCaller_URL_XML_Input"
+#! POSITION="-1545.33 709.094"
+#! BOUNDING_RECT="-1545.33 709.094 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_Server" ATTR_VALUE="$(_SERVER)" />
+#! <XFORM_ATTR ATTR_NAME="_Password" ATTR_VALUE="$(_PASSWORD)" />
+#! <XFORM_ATTR ATTR_NAME="_Database" ATTR_VALUE="$(_DATABASE)" />
+#! <XFORM_ATTR ATTR_NAME="_IDEnvelope" ATTR_VALUE="$(_IDENVELOPE)" />
+#! <XFORM_ATTR ATTR_NAME="_source_xml" ATTR_VALUE="$(_SOURCE_XML)" />
+#! <XFORM_ATTR ATTR_NAME="_schemaLocation" ATTR_VALUE="$(_SCHEMALOCATION)" />
+#! <XFORM_ATTR ATTR_NAME="_timestamp" ATTR_VALUE="$(_TIMESTAMP)" />
+#! <XFORM_ATTR ATTR_NAME="_User" ATTR_VALUE="$(_USER)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="27"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="27"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="32"
+#! SOURCE_NODE="31"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__SERVER <at>Value<openparen>_Server<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__PASSWORD <at>Value<openparen>_Password<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__DATABASE <at>Value<openparen>_Database<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__IDENVELOPE <at>Value<openparen>_IDEnvelope<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__SOURCE_XML <at>Value<openparen>_source_xml<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__SCHEMALOCATION <at>Value<openparen>_schemaLocation<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__TIMESTAMP <at>Value<openparen>_timestamp<closeparen>
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)__USER <at>Value<openparen>_User<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO WISE_Validation_XML_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(WISE_Validation_XML_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(WISE_Validation_XML_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_Input1446811165 Input Splitter"   INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_Input"   OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,_Server,$($(WISE_Validation_XML_WORKSPACE_NAME)__SERVER),_Password,$($(WISE_Validation_XML_WORKSPACE_NAME)__PASSWORD),_Database,$($(WISE_Validation_XML_WORKSPACE_NAME)__DATABASE),_IDEnvelope,$($(WISE_Validation_XML_WORKSPACE_NAME)__IDENVELOPE),_source_xml,$($(WISE_Validation_XML_WORKSPACE_NAME)__SOURCE_XML),_schemaLocation,$($(WISE_Validation_XML_WORKSPACE_NAME)__SCHEMALOCATION),_timestamp,$($(WISE_Validation_XML_WORKSPACE_NAME)__TIMESTAMP),_User,$($(WISE_Validation_XML_WORKSPACE_NAME)__USER), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML       INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_Input"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_source_xml<closeparen>,$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "<Unused>"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_Output"    OUTPUT REJECTED FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_<Rejected>"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_AttributeCreator_URL_Error ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_<Rejected>" ATTR ErrorMessage2 Erroroneus<space>XML<space>URL    OUTPUT OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_AttributeCreator_URL_Error_OUTPUT" 
+# -------------------------------------------------------------------------
+MACRO $(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error_DIRECTIVES ENCRYPT_CONNECTION NO USER_NAME @Value(_User) COMMAND_TIMEOUT 30 SERVER @Value(_Server) QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes USE_SSPI NO PASSWORD @Value(_Password)
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_AttributeCreator_URL_Error_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,FME_SQL_DELIMITER<space><semicolon><lf>begin<space>try<lf>INSERT<space>INTO<space><openbracket>dbo<closebracket>.<openbracket>IMPORT_ERRORS<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><openparen><openbracket>envelopeImportID<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>importID<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>schema<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>table<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>message<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>raisedAt<closebracket><closeparen><lf><space><space><space><space><space>VALUES<lf><space><space><space><space><space><space><space><space><space><space><space><openparen><at>Value<openparen>_IDEnvelope<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma>null<lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos>XML<apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_source_xml<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>ErrorMessage2<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_timestamp<closeparen><apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space>SELECT<space><apos><apos><space>AS<space>ErrorMessage3<lf>end<space>try<lf>begin<space>catch<lf>SELECT<space>ERROR_MESSAGE<openparen><closeparen><space>AS<space>ErrorMessage3<lf>end<space>catch<semicolon>,$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_Database<closeparen>,$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error)"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    READER_PARAMS        $($(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error_INITIATOR"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error RESULT Output Nuker"   INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error_RESULT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error INITIATOR Output Nuker"   INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_SQLExecutor_URL_error_INITIATOR"
+# -------------------------------------------------------------------------
+
+INCLUDE [    if {{No} == {No}} {       puts {MACRO ERRORS_COUNT_CLAUSE ERRORS_COUNT_LIMIT -1};    }    else    {       puts {MACRO ERRORS_COUNT_CLAUSE ERRORS_COUNT_LIMIT <Unused>};    } ]
+FACTORY_DEF * XMLValidationFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_XML_Syntax    INPUT INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_HTTPCaller_URL_XML_Output"    MODE SYNTAX    XML_TEXT_ATTR "_response_body"    LIST_ATTR _xml_error    $(ERRORS_COUNT_CLAUSE)    OUTPUT PASSED FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_XML_Syntax_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_XML_Syntax_FAILED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_ListExploder_XML_Syntax    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_XML_Syntax_FAILED"    LIST_NAME "_xml_error{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "ORIGINAL_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_ListExploder_XML_Syntax_LIST_FOUND"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Syntax_xml_Error_47169c91_be8c_4ac2_8a1f_ecde2d7ec9e21_replacer { findText replaceText invalidValue} {     set attrs [split \"desc\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Syntax_xml_Error    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_ListExploder_XML_Syntax_LIST_FOUND"    OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Syntax_xml_Error_OUTPUT"         @Tcl2("$(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Syntax_xml_Error_47169c91_be8c_4ac2_8a1f_ecde2d7ec9e21_replacer {<apos>} {<u00b4>} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    if {{No} == {No}} {       puts {MACRO ERRORS_COUNT_CLAUSE ERRORS_COUNT_LIMIT -1};    }    else    {       puts {MACRO ERRORS_COUNT_CLAUSE ERRORS_COUNT_LIMIT <Unused>};    } ]
+FACTORY_DEF * XMLValidationFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema    INPUT INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_XML_Syntax_PASSED"    MODE SCHEMA    XML_TEXT_ATTR "_response_body"    LIST_ATTR _xml_error    EXTERNAL_SCHEMA_FILE "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>_schemaLocation<closeparen>,$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema)"    $(ERRORS_COUNT_CLAUSE)    OUTPUT PASSED FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_FAILED"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema FAILED Splitter"   INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_FAILED"   OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_FAILED_0_MNqhw6bRQW0="   OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_FAILED_1_MNqhw6bRQW0="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_ListExploder_Schema_error    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_FAILED_0_MNqhw6bRQW0="    LIST_NAME "_xml_error{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "ORIGINAL_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_ListExploder_Schema_error_LIST_FOUND"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Schema_DESC_Error_30afffeb_bc07_4cb9_aa12_79858356b7cb1_replacer { findText replaceText invalidValue} {     set attrs [split \"desc\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Schema_DESC_Error    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_ListExploder_Schema_error_LIST_FOUND"    OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Schema_DESC_Error_OUTPUT"         @Tcl2("$(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Schema_DESC_Error_30afffeb_bc07_4cb9_aa12_79858356b7cb1_replacer {<apos>} {<u00b4>} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_FeatureDirector    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Syntax_xml_Error_OUTPUT"    INPUT  FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_StringReplacer_Schema_DESC_Error_OUTPUT"    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___FeatureDirector1    INPUT FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_VectorSetterUpper    INPUT FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+
+Tcl2 proc $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___PointCloudThinner    INPUT FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_thinPointCloud")
+Tcl2 proc $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_RasterSetterUpper    INPUT FEATURE_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+
+DEFAULT_MACRO $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_VIS_FEAT_TYPE $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+
+FACTORY_DEF * RecorderFactory    FACTORY_NAME $(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($($(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Failed_3a7df7aa_e50b_45ff_9d44_99c3c2e30eb71_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA _Server,varchar<openparen>255<closeparen>,_Password,varchar<openparen>255<closeparen>,_Database,varchar<openparen>255<closeparen>,_IDEnvelope,varchar<openparen>255<closeparen>,_source_xml,varchar<openparen>255<closeparen>,_schemaLocation,varchar<openparen>255<closeparen>,_timestamp,varchar<openparen>255<closeparen>,_User,varchar<openparen>255<closeparen>,_http_status_code,varchar<openparen>255<closeparen>,_response_body,varchar<openparen>255<closeparen>,type,varchar<openparen>255<closeparen>,file,varchar<openparen>255<closeparen>,line,varchar<openparen>255<closeparen>,col,varchar<openparen>255<closeparen>,desc,varchar<openparen>255<closeparen>,_element_index,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_Passed1446811165 Output Collector"   INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_PASSED"   INPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_FAILED_1_MNqhw6bRQW0="   OUTPUT FEATURE_TYPE "$(WISE_Validation_XML_WORKSPACE_NAME)_XMLValidator_Schema_Passed"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(WISE_Validation_XML_WORKSPACE_NAME))}]

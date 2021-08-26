@@ -1,0 +1,914 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN XMLXPathExtractor,1,Web,2ff2ea25-fc60-42ee-87be-5b4a85638940,"Linked by Default",No,NO_PARALLELISM,,No,17259,YES,No,27
+# <p>Transform attributes containing an XPath with the actual content of the XML. </p>
+# TRANSFORMER_END
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   PYTHON_COMPATIBILITY="27"
+#!   USAGE="&lt;p&gt;This transformer will read XPath&apos;s (Using XQuery) stored inside a precreated attribute and replace the attributes content with the actual XML content. &lt;/p&gt;&#10;&lt;p&gt;QXuery is automatically compiled inside this transformer. The transformer will automaticaly find the name spaces and declare them. If an XPath is not formated correctly an error will occur showing the compiled XQuery. &lt;/p&gt;&#10;&lt;p&gt;When the Xpath is not found an &lt;em&gt;error&lt;/em&gt;&lt;attribute name&gt; will be generated giving you additional control. &lt;/p&gt;&#10;&lt;h1&gt;Attributes&lt;/h1&gt;&#10;&lt;p&gt;&lt;strong&gt;Attributes&lt;/strong&gt;: A list of attributes that need to be translated. Every attribute must contain an XPath expression. &lt;/p&gt;&#10;&lt;p&gt;&lt;strong&gt;XML Type&lt;/strong&gt;: Is the content provided as an attribute or as a file. &lt;/p&gt;&#10;&lt;p&gt;&lt;strong&gt;XML&lt;/strong&gt;: Provide the attribute that contains the XML content. (If XML Type is set to attribute) &lt;/p&gt;&#10;&lt;p&gt;&lt;strong&gt;XML File&lt;/strong&gt;: Point to the XML file if XML Type is set as &quot;File&quot;. &lt;/p&gt;&#10;&lt;h1&gt;Example&lt;/h1&gt;&#10;&lt;p&gt;Imaging you have the following XML. &lt;/p&gt;&#10;&lt;p&gt;&lt;root xmlns:ns1=&quot;http://mynamespace.com&quot; xmlns:ns2=&quot;http://mynamespace2.com&quot;&gt; &#10;&lt;ns2:a&gt;test a&lt;/ns2:a&gt; &#10;&lt;b&gt;test b&lt;/b&gt; &#10;&lt;ns1:c po=&apos;po value&apos;&gt; &#10;&lt;d&gt;test d&lt;/d&gt; &#10;&lt;/ns1:c&gt; &#10;&lt;list&gt;1&lt;/list&gt; &#10;&lt;list&gt;2&lt;/list&gt; &#10;&lt;/root&gt; &lt;/p&gt;&#10;&lt;p&gt;Before the transformer use an AttributeCreator and produce for every value you wish to extract an attribute like demonstrated in this example. &lt;/p&gt;&#10;&lt;p&gt;a = /root/ns2:a &#10;b = /root/b &#10;d = /root/ns1:c/d &#10;po = /root/ns1:c/@po &#10;c = /root/ns1:c &#10;list = /root/list &#10;list1 = /root/list[0] &lt;/p&gt;&#10;&lt;p&gt;Select all these attributes and list them into the &quot;Attributes&quot; parameter. Link the XML inside the &quot;XML&quot; Parameter. The transformer will return the following values for each attribute in this example as &lt;/p&gt;&#10;&lt;p&gt;a = test a &#10;b = test b &#10;d = test d &#10;po = po value &#10;c = &lt;ns1:c xmlns:ns1=&quot;&quot;http://mynamespace.com&quot; xmlns:ns2=&quot;http://mynamespace2.com&quot; po=&quot;po value&quot;&gt; &#10;&lt;d&gt;test d&lt;/d&gt; &#10;&lt;/ns1:c&gt; &#10;list = 1,2 &#10;list1 = 1 &lt;/p&gt;&#10;&lt;p&gt;Notice that when multiple tags exist, The content of all these tags will be comma sperated as result. See the example for &apos;list&apos;. &lt;/p&gt;"
+#!   MARKDOWN_USAGE="This transformer will read XPath&apos;s (Using XQuery) stored inside a precreated attribute and replace the attributes content with the actual XML content. &#10;&#10;QXuery is automatically compiled inside this transformer. The transformer will automaticaly find the name spaces and declare them. If an XPath is not formated correctly an error will occur showing the compiled XQuery. &#10;&#10;When the Xpath is not found an _error_&lt;attribute name&gt; will be generated giving you additional control. &#10;&#10;#Attributes &#10;&#10;**Attributes**: A list of attributes that need to be translated. Every attribute must contain an XPath expression. &#10;&#10;**XML Type**: Is the content provided as an attribute or as a file. &#10;&#10;**XML**: Provide the attribute that contains the XML content. (If XML Type is set to attribute) &#10;&#10;**XML File**: Point to the XML file if XML Type is set as &quot;File&quot;. &#10;&#10;#Example &#10;&#10;Imaging you have the following XML. &#10;&#10;&lt;root xmlns:ns1=&quot;http://mynamespace.com&quot; xmlns:ns2=&quot;http://mynamespace2.com&quot;&gt; &#10;&lt;ns2:a&gt;test a&lt;/ns2:a&gt; &#10;&lt;b&gt;test b&lt;/b&gt; &#10;&lt;ns1:c po=&apos;po value&apos;&gt; &#10;&lt;d&gt;test d&lt;/d&gt; &#10;&lt;/ns1:c&gt; &#10;&lt;list&gt;1&lt;/list&gt; &#10;&lt;list&gt;2&lt;/list&gt; &#10;&lt;/root&gt; &#10;&#10;Before the transformer use an AttributeCreator and produce for every value you wish to extract an attribute like demonstrated in this example. &#10;&#10;a = /root/ns2:a &#10;b = /root/b &#10;d = /root/ns1:c/d &#10;po = /root/ns1:c/@po &#10;c = /root/ns1:c &#10;list = /root/list &#10;list1 = /root/list[0] &#10;&#10;Select all these attributes and list them into the &quot;Attributes&quot; parameter. Link the XML inside the &quot;XML&quot; Parameter. The transformer will return the following values for each attribute in this example as &#10;&#10;a = test a &#10;b = test b &#10;d = test d &#10;po = po value &#10;c = &lt;ns1:c xmlns:ns1=&quot;&quot;http://mynamespace.com&quot; xmlns:ns2=&quot;http://mynamespace2.com&quot; po=&quot;po value&quot;&gt; &#10;&lt;d&gt;test d&lt;/d&gt; &#10;&lt;/ns1:c&gt; &#10;list = 1,2 &#10;list1 = 1 &#10;&#10;Notice that when multiple tags exist, The content of all these tags will be comma sperated as result. See the example for &apos;list&apos;. &#10;&#10;"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   MARKDOWN_DESCRIPTION="Transform attributes containing an XPath with the actual content of the XML. "
+#!   HISTORY="11&lt;solidus&gt;05&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Create&lt;space&gt;version&lt;space&gt;1"
+#!   VIEW_POSITION="-8587.59 684.382"
+#!   DOC_EXTENTS="7303.08 818.757"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   XFORM_DEPRECATED="No"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   TITLE="XMLXPathExtractor"
+#!   PASSWORD=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   DESCRIPTION="&lt;p&gt;Transform attributes containing an XPath with the actual content of the XML. &lt;/p&gt;"
+#!   FME_DOCUMENT_GUID="2ff2ea25-fc60-42ee-87be-5b4a85638940"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   CATEGORY="Web"
+#!   BLOCKED_LOOPING="No"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_BUILD_NUM="17259"
+#!   LAST_SAVE_DATE="2017-05-15T09:55:54"
+#!   FME_PROCESS_GROUP_BY=""
+#!   DOC_TOP_LEFT="-8544.21 -809.257"
+#!   SHOW_ANNOTATIONS="true"
+#!   USE_MARKDOWN="YES"
+#!   FME_SERVER_SERVICES=""
+#!   FME_DOCUMENT_PRIORGUID="dd381815-13b0-4df9-9d2d-e67727dd9c97,4f777ec4-559f-4e34-bbb0-734b043186c8,92eb52a8-7e78-4ed6-8408-cca99c9b0b80"
+#!   LAST_SAVE_BUILD="FME(R) 2017.0.0.0 (20170228 - Build 17259 - WIN64)"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   ZOOM_SCALE="100"
+#!   WORKSPACE_VERSION="1"
+#!   SHOW_INFO_NODES="true"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   FMX_INSERT_MODE="Linked by Default"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR AttributesNames &quot; &quot; Attributes:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE_OR_ATTR TypeFileOrAttribute &quot;Attribute specifying XML&quot;%&quot;XML File&quot; XLM Type:"
+#!   DEFAULT_VALUE="Attribute specifying XML"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_ATTR XMLAttribute XML:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL FILENAME_MUSTEXIST_OR_ATTR XMLFile XML|*.xml XML File:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="36"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Build XQuery from listed attributes&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and namespaces&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-4521.05 -336.124"
+#!   TOP_LEFT="-4521.05 -336.124"
+#!   BOTTOM_RIGHT="-4522.05 -335.124"
+#!   BOUNDING_RECT="-4521.05 -336.124 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="34"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="42"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract namespaces from XML&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Using XML Attirbute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-5856.31 9.49963"
+#!   TOP_LEFT="-5856.31 9.49963"
+#!   BOTTOM_RIGHT="-5857.31 10.4996"
+#!   BOUNDING_RECT="-5856.31 9.49963 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="40"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="47"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Try to fetch content&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Using XML Attribute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2823.47 -46.7507"
+#!   TOP_LEFT="-2823.47 -46.7507"
+#!   BOTTOM_RIGHT="-2824.47 -45.7507"
+#!   BOUNDING_RECT="-2823.47 -46.7507 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="46"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="20"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract namespaces from XML&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Using XML File&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-5856.31 -513.63"
+#!   TOP_LEFT="-5856.31 -513.63"
+#!   BOTTOM_RIGHT="-5857.31 -512.63"
+#!   BOUNDING_RECT="-5856.31 -513.63 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="19"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="23"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Try to fetch content&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Using XML File&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2814.09 -537.631"
+#!   TOP_LEFT="-2814.09 -537.631"
+#!   BOTTOM_RIGHT="-2815.09 -536.631"
+#!   BOUNDING_RECT="-2814.09 -537.631 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="22"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="55"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Check what type of source&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-7225.07 -295.755"
+#!   TOP_LEFT="-7225.07 -295.755"
+#!   BOTTOM_RIGHT="-7226.07 -294.755"
+#!   BOUNDING_RECT="-7225.07 -295.755 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="41"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="56"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Check what type of source&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-3744.85 -357.63"
+#!   TOP_LEFT="-3744.85 -357.63"
+#!   BOTTOM_RIGHT="-3745.85 -356.63"
+#!   BOUNDING_RECT="-3744.85 -357.63 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="51"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="58"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get the file parameter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-6497.94 -554.255"
+#!   TOP_LEFT="-6497.94 -554.255"
+#!   BOTTOM_RIGHT="-6498.94 -553.255"
+#!   BOUNDING_RECT="-6497.94 -554.255 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="48"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="59"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Get the xml attribute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-6497.94 -168.996"
+#!   TOP_LEFT="-6497.94 -168.996"
+#!   BOTTOM_RIGHT="-6498.94 -167.996"
+#!   BOUNDING_RECT="-6497.94 -168.996 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="4"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="60"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make a list of all attributes&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;that contain an xpath&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-5124.18 -357.63"
+#!   TOP_LEFT="-5124.18 -357.63"
+#!   BOTTOM_RIGHT="-5125.18 -356.63"
+#!   BOUNDING_RECT="-5124.18 -357.63 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="5"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="61"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Remove all the attributes starting with __&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2093.27 -402.752"
+#!   TOP_LEFT="-2093.27 -402.752"
+#!   BOTTOM_RIGHT="-2094.27 -401.752"
+#!   BOUNDING_RECT="-2093.27 -402.752 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="31"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="57"
+#!   COMMENT_VALUE="&lt;b&gt;ParameterFetcher_2&amp;nbsp;[ParameterFetcher&amp;nbsp;Version&amp;nbsp;4]&lt;/b&gt;&lt;br&gt;$(TypeFileOrAttribute)&amp;nbsp;-&amp;gt;&amp;nbsp;__TypeFileOrAttribute&lt;br&gt;$(AttributesNames)&amp;nbsp;-&amp;gt;&amp;nbsp;__AttributesNames"
+#!   POSITION="-8383.46 -276.87"
+#!   TOP_LEFT="-8383.46 -276.87"
+#!   BOTTOM_RIGHT="-8384.46 -275.87"
+#!   BOUNDING_RECT="-8383.46 -276.87 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="true"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="32"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-6497.94 -322.747"
+#!   BOUNDING_RECT="-6497.94 -322.747 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__XMLAttribute $(XMLAttribute)"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeSplitter"
+#!   VERSION="3"
+#!   POSITION="-5085.43 -530.131"
+#!   BOUNDING_RECT="-5085.43 -530.131 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="__AttributesToTranslate"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#!     <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="__AttributesNames"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="34"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-4459.55 -537.631"
+#!   BOUNDING_RECT="-4459.55 -537.631 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;function&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;class&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;the&lt;space&gt;list&lt;space&gt;of&lt;space&gt;attributes&lt;space&gt;to&lt;space&gt;map&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AttrList&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__AttributesToTranslate&lt;opencurly&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;namespaces&lt;space&gt;from&lt;space&gt;the&lt;space&gt;XML&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Namespaces&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__XMLNamespaces&lt;opencurly&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Set&lt;space&gt;new&lt;space&gt;XQuery&lt;space&gt;string&lt;space&gt;to&lt;space&gt;empty&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Loop&lt;space&gt;trough&lt;space&gt;namespaces&lt;space&gt;and&lt;space&gt;compile&lt;space&gt;them&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;namespace&lt;space&gt;in&lt;space&gt;Namespaces:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;namespace&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;declare&lt;space&gt;namespace&lt;space&gt;&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;semicolon&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;namespace&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Loop&lt;space&gt;trough&lt;space&gt;every&lt;space&gt;attribute&lt;comma&gt;&lt;space&gt;take&lt;space&gt;content&lt;space&gt;and&lt;space&gt;create&lt;space&gt;XQuery&lt;space&gt;syntax.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;attrName&lt;space&gt;in&lt;space&gt;AttrList:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AttrVal&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;attrName&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;If&lt;space&gt;we&lt;space&gt;don&lt;apos&gt;t&lt;space&gt;try&lt;space&gt;to&lt;space&gt;extract&lt;space&gt;a&lt;space&gt;parameter&lt;space&gt;then&lt;space&gt;use&lt;space&gt;the&lt;space&gt;text&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;so&lt;space&gt;we&lt;space&gt;get&lt;space&gt;the&lt;space&gt;content&lt;space&gt;in&lt;space&gt;the&lt;space&gt;tag.&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;if&lt;space&gt;&lt;openparen&gt;exists&lt;openparen&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;then&lt;backslash&gt;n&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;AttrVal.find&lt;openparen&gt;&lt;apos&gt;&lt;at&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;==&lt;space&gt;-1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;We&lt;space&gt;have&lt;space&gt;no&lt;space&gt;parameter&lt;space&gt;&lt;at&gt;&lt;comma&gt;&lt;space&gt;check&lt;space&gt;if&lt;space&gt;the&lt;space&gt;content&lt;space&gt;has&lt;space&gt;tags.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;&lt;openparen&gt;&lt;space&gt;not&lt;openparen&gt;&lt;apos&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;text&lt;openparen&gt;&lt;closeparen&gt;&lt;openbracket&gt;normalize-space&lt;openparen&gt;.&lt;closeparen&gt;&lt;space&gt;!=&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;closebracket&gt;&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;&lt;apos&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;*&lt;closeparen&gt;&lt;space&gt;then&lt;backslash&gt;n&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;If&lt;space&gt;tags&lt;space&gt;extract&lt;space&gt;XML&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;fme:set-attribute&lt;openparen&gt;&lt;quote&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;attrName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;else&lt;backslash&gt;n&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Extract&lt;space&gt;content&lt;space&gt;of&lt;space&gt;the&lt;space&gt;tag&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;fme:set-attribute&lt;openparen&gt;&lt;quote&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;attrName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;data&lt;openparen&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;text&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Read&lt;space&gt;out&lt;space&gt;parameter&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;fme:set-attribute&lt;openparen&gt;&lt;quote&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;attrName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;data&lt;openparen&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;else&lt;space&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;fme:set-attribute&lt;openparen&gt;&lt;quote&gt;_error_&lt;apos&gt;&lt;space&gt;+&lt;space&gt;attrName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;Did&lt;space&gt;not&lt;space&gt;find&lt;space&gt;XPath&lt;space&gt;&lt;openparen&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;AttrVal&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;for&lt;space&gt;attribute&lt;space&gt;&lt;openparen&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;attrName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;quote&gt;&lt;space&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;XqueryExpr&lt;space&gt;=&lt;space&gt;XqueryExpr&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;backslash&gt;n&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;it&lt;space&gt;back&lt;space&gt;to&lt;space&gt;FME&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;__XQueryExpr&lt;quote&gt;&lt;comma&gt;XqueryExpr&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="__XQueryExpr"/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_2"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="40"
+#!   TYPE="XMLXQueryExtractor"
+#!   VERSION="0"
+#!   POSITION="-5881.31 -197.377"
+#!   BOUNDING_RECT="-5881.31 -197.377 550.006 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INVALID"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="Attribute specifying XML"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SEPARATOR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_RESULT_ATTR" PARM_VALUE="__XMLNamespaces"/>
+#!     <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="__XMLAttribute"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_TYPE_NAME" PARM_VALUE="List attribute"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="distinct-values&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;solidus&gt;&lt;solidus&gt;descendant-or-self::*&lt;solidus&gt;&lt;openparen&gt;.|&lt;at&gt;*&lt;closeparen&gt;&lt;solidus&gt;concat&lt;openparen&gt;&lt;apos&gt;declare&lt;space&gt;namespace&lt;space&gt;&lt;apos&gt;&lt;comma&gt;prefix-from-QName&lt;openparen&gt;node-name&lt;openparen&gt;.&lt;closeparen&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;apos&gt;&lt;comma&gt;namespace-uri&lt;openparen&gt;.&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;&lt;quote&gt;&lt;semicolon&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLXQueryExtractor_2"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="46"
+#!   TYPE="XMLXQueryExtractor"
+#!   VERSION="0"
+#!   POSITION="-2873.47 -247.377"
+#!   BOUNDING_RECT="-2873.47 -247.377 615.631 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INVALID"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="Attribute specifying XML"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="__XQueryExpr"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEPARATOR_VALUE" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_RESULT_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="__XMLAttribute"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_TYPE_NAME" PARM_VALUE="Separated values"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="Attribute specifying an XQuery"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLXQueryExtractor_4"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="31"
+#!   TYPE="BulkAttributeRemover"
+#!   VERSION="2"
+#!   POSITION="-1966.14 -590.131"
+#!   BOUNDING_RECT="-1966.14 -590.131 519.755 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXP" PARM_VALUE="^__"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRemover_2"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="19"
+#!   TYPE="XMLXQueryExtractor"
+#!   VERSION="0"
+#!   POSITION="-5881.31 -703.882"
+#!   BOUNDING_RECT="-5881.31 -703.882 550.006 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INVALID"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="XML file"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SEPARATOR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="@Value(__XMLFile)"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_RESULT_ATTR" PARM_VALUE="__XMLNamespaces"/>
+#!     <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_TYPE_NAME" PARM_VALUE="List attribute"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="distinct-values&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;solidus&gt;&lt;solidus&gt;descendant-or-self::*&lt;solidus&gt;&lt;openparen&gt;.|&lt;at&gt;*&lt;closeparen&gt;&lt;solidus&gt;concat&lt;openparen&gt;&lt;apos&gt;declare&lt;space&gt;namespace&lt;space&gt;&lt;apos&gt;&lt;comma&gt;prefix-from-QName&lt;openparen&gt;node-name&lt;openparen&gt;.&lt;closeparen&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;apos&gt;&lt;comma&gt;namespace-uri&lt;openparen&gt;.&lt;closeparen&gt;&lt;comma&gt;&lt;apos&gt;&lt;quote&gt;&lt;semicolon&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLXQueryExtractor_3"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="XMLXQueryExtractor"
+#!   VERSION="0"
+#!   POSITION="-2864.09 -738.257"
+#!   BOUNDING_RECT="-2864.09 -738.257 615.631 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INVALID"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="XML file"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="__XQueryExpr"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEPARATOR_VALUE" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="@Value(__XMLFile)"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_RESULT_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_TYPE_NAME" PARM_VALUE="Separated values"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="Attribute specifying an XQuery"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLXQueryExtractor_5"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="32"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-7934.45 -518.881"
+#!   BOUNDING_RECT="-7934.45 -518.881 444.016 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__TypeFileOrAttribute $(TypeFileOrAttribute) __AttributesNames $(AttributesNames)"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher_2"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="41"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-7285.45 -458.881"
+#!   BOUNDING_RECT="-7285.45 -458.881 604.131 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="Attribute&lt;space&gt;specifying&lt;space&gt;XML"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="XML&lt;space&gt;File"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="XML&lt;space&gt;File"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__TypeFileOrAttribute&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Attribute&lt;lt&gt;space&lt;gt&gt;specifying&lt;lt&gt;space&lt;gt&gt;XML&lt;quote&gt;,Attribute&lt;space&gt;specifying&lt;space&gt;XML"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="48"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-6497.94 -703.882"
+#!   BOUNDING_RECT="-6497.94 -703.882 485.383 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__XMLFile $(XMLFile)"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher_3"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="51"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-3792.73 -530.131"
+#!   BOUNDING_RECT="-3792.73 -530.131 604.131 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="Attribute&lt;space&gt;specifying&lt;space&gt;XML"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="XML&lt;space&gt;File"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__TypeFileOrAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLFile" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLNamespaces{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XMLAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__AttributesToTranslate{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__XQueryExpr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="XML&lt;space&gt;File"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__TypeFileOrAttribute&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Attribute&lt;lt&gt;space&lt;gt&gt;specifying&lt;lt&gt;space&lt;gt&gt;XML&lt;quote&gt;,Attribute&lt;space&gt;specifying&lt;space&gt;XML"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="13"
+#!   NAME="Output"
+#!   POSITION="-1241.13 -650.131"
+#!   BOUNDING_RECT="-1241.13 -650.131 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="14"
+#!   NAME="Input"
+#!   POSITION="-8544.21 -518.881"
+#!   BOUNDING_RECT="-8544.21 -518.881 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="14"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="40"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="38"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="34"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="53"
+#!   SOURCE_NODE="19"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 QUERY_RESULTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="31"
+#!   SOURCE_PORT_DESC="fo 0 QUERY_RESULTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="33"
+#!   SOURCE_NODE="31"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="44"
+#!   SOURCE_NODE="32"
+#!   TARGET_NODE="41"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="34"
+#!   TARGET_NODE="51"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="39"
+#!   SOURCE_NODE="40"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 QUERY_RESULTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="37"
+#!   SOURCE_NODE="41"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 Attribute&lt;lt&gt;space&lt;gt&gt;specifying&lt;lt&gt;space&lt;gt&gt;XML"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="46"
+#!   TARGET_NODE="31"
+#!   SOURCE_PORT_DESC="fo 0 QUERY_RESULTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="50"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="19"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="54"
+#!   SOURCE_NODE="51"
+#!   TARGET_NODE="46"
+#!   SOURCE_PORT_DESC="fo 0 Attribute&lt;lt&gt;space&lt;gt&gt;specifying&lt;lt&gt;space&lt;gt&gt;XML"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="49"
+#!   SOURCE_NODE="41"
+#!   TARGET_NODE="48"
+#!   SOURCE_PORT_DESC="fo 1 XML&lt;lt&gt;space&lt;gt&gt;File"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="45"
+#!   SOURCE_NODE="51"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 1 XML&lt;lt&gt;space&lt;gt&gt;File"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+FME_PYTHON_VERSION 27
+DEFAULT_MACRO $(XMLXPathExtractor_WORKSPACE_NAME)_AttributesNames 
+DEFAULT_MACRO $(XMLXPathExtractor_WORKSPACE_NAME)_TypeFileOrAttribute Attribute specifying XML
+DEFAULT_MACRO $(XMLXPathExtractor_WORKSPACE_NAME)_XMLAttribute 
+DEFAULT_MACRO $(XMLXPathExtractor_WORKSPACE_NAME)_XMLFile 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO XMLXPathExtractor_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(XMLXPathExtractor_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(XMLXPathExtractor_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLXPathExtractor_WORKSPACE_NAME)_Input1494834954 Input Splitter"   INPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2_doFetch {} {    foreach {name val} {"__TypeFileOrAttribute {$($(XMLXPathExtractor_WORKSPACE_NAME)_TypeFileOrAttribute$encode)} __AttributesNames {$($(XMLXPathExtractor_WORKSPACE_NAME)_AttributesNames$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2_OUTPUT"         @Tcl2($(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_2_OUTPUT"    OUTPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>__TypeFileOrAttribute<closeparen>,$(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter) = Attribute<space>specifying<space>XML ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_Attribute<space>specifying<space>XML OUTPUT FAILED FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_XML<space>File INPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_XML<space>File
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3_doFetch {} {    foreach {name val} {"__XMLFile {$($(XMLXPathExtractor_WORKSPACE_NAME)_XMLFile$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_XML<space>File"    OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3_OUTPUT"         @Tcl2($(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_3    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_3_OUTPUT"    XQUERY_EXPR distinct-values<openparen><lf><space><space><space><space><space><space><solidus><solidus>descendant-or-self::*<solidus><openparen>.|<at>*<closeparen><solidus>concat<openparen><apos>declare<space>namespace<space><apos><comma>prefix-from-QName<openparen>node-name<openparen>.<closeparen><closeparen><comma><apos><space>=<space><quote><apos><comma>namespace-uri<openparen>.<closeparen><comma><apos><quote><semicolon><apos><closeparen><lf><space><space><space><space><space><space><closeparen><lf><lf><space><space><space><space><space><space><lf><space><space><space><space><space><space>    XML_FILE "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>__XMLFile<closeparen>,$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_3)"    MODE SINGLE_FEATURE    EXTRACT_MODE yes    LIST_ATTR __XMLNamespaces    WRITE_HEADER No    EXTRACT_TYPE LIST    RESULTS_SEPARATOR <Unused>    USE_W3C_UPDATE_EXTENSIONS no    SIMPLIFY_ON_SINGLE no    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_3_QUERY_RESULTS"
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__XMLAttribute {$($(XMLXPathExtractor_WORKSPACE_NAME)_XMLAttribute)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_Attribute<space>specifying<space>XML"    OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_2    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    XQUERY_EXPR distinct-values<openparen><lf><space><space><space><space><space><space><solidus><solidus>descendant-or-self::*<solidus><openparen>.|<at>*<closeparen><solidus>concat<openparen><apos>declare<space>namespace<space><apos><comma>prefix-from-QName<openparen>node-name<openparen>.<closeparen><closeparen><comma><apos><space>=<space><quote><apos><comma>namespace-uri<openparen>.<closeparen><comma><apos><quote><semicolon><apos><closeparen><lf><space><space><space><space><space><space><closeparen><lf><lf><space><space><space><space><space><space><lf><space><space><space><space><space><space>    XML_ATTR __XMLAttribute    MODE SINGLE_FEATURE    EXTRACT_MODE yes    LIST_ATTR __XMLNamespaces    WRITE_HEADER No    EXTRACT_TYPE LIST    RESULTS_SEPARATOR <Unused>    USE_W3C_UPDATE_EXTENSIONS no    REMOVE_SOURCE_XML_ATTR No    SIMPLIFY_ON_SINGLE no    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_2_QUERY_RESULTS"
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitDelim]] }      {         set $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitWidths;            set source [FME_GetAttribute [FME_DecodeText {__AttributesNames}]];            set attrNum 0;            set listName [FME_DecodeText {__AttributesToTranslate}];            set attrPos 0;            set keepEmptyParts [string equal {Yes} {No}];            foreach width [set $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               set part [string trim $bit];               if { $keepEmptyParts || $part != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $part;                  incr attrNum;               };               incr attrPos $width;            };         };      }      else      {         proc $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitDelim;            set delim [set $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_c9437e80_c929_4abd_8add_a4cfffdf80110_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute [FME_DecodeText {__AttributesNames}]];            set keepEmptyParts [string equal {Yes} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              lappend bits [string range $source $startIndex [expr $nextIndex-1]];              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            lappend bits [string range $source $startIndex end];            set listName [FME_DecodeText {__AttributesToTranslate}];            set attrNum 0;            foreach bit $bits            {               set trimmedPart [string trim $bit];               if { $keepEmptyParts || $trimmedPart != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $trimmedPart;                  incr attrNum;               };            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_3_QUERY_RESULTS"    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_2_QUERY_RESULTS"    OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_PythonCaller_2    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>#<space>Template<space>Function<space>interface:<lf>#<space>When<space>using<space>this<space>function<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>#<space>When<space>using<space>this<space>class<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>#<space>Get<space>the<space>list<space>of<space>attributes<space>to<space>map<lf><space><space><space><space><space><space><space><space>AttrList<space>=<space>feature.getAttribute<openparen><quote>__AttributesToTranslate<opencurly><closecurly><quote><closeparen><lf><space><space><space><space><space><space><space><space>#<space>Get<space>namespaces<space>from<space>the<space>XML<lf><space><space><space><space><space><space><space><space>Namespaces<space>=<space>feature.getAttribute<openparen><quote>__XMLNamespaces<opencurly><closecurly><quote><closeparen><lf><space><space><space><space><space><space><space><space>#<space>Set<space>new<space>XQuery<space>string<space>to<space>empty<lf><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space><quote><quote><lf><space><space><space><space><space><space><space><space>#<space>Loop<space>trough<space>namespaces<space>and<space>compile<space>them<lf><space><space><space><space><space><space><space><space>for<space>namespace<space>in<space>Namespaces:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>namespace<space>!=<space><apos>declare<space>namespace<space><space>=<space><quote><quote><semicolon><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space>namespace<space>+<space><apos><backslash>n<apos><lf><space><space><space><space><space><space><space><space>#<space>Loop<space>trough<space>every<space>attribute<comma><space>take<space>content<space>and<space>create<space>XQuery<space>syntax.<lf><space><space><space><space><space><space><space><space>for<space>attrName<space>in<space>AttrList:<lf><space><space><space><space><space><space><space><space><space><space><space><space>AttrVal<space>=<space>feature.getAttribute<openparen>attrName<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>If<space>we<space>don<apos>t<space>try<space>to<space>extract<space>a<space>parameter<space>then<space>use<space>the<space>text<openparen><closeparen><space>so<space>we<space>get<space>the<space>content<space>in<space>the<space>tag.<space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos>if<space><openparen>exists<openparen><apos><space>+<space>AttrVal<space>+<space><apos><closeparen><closeparen><space>then<backslash>n<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>AttrVal.find<openparen><apos><at><apos><closeparen><space>==<space>-1:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>We<space>have<space>no<space>parameter<space><at><comma><space>check<space>if<space>the<space>content<space>has<space>tags.<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space><space>if<space><openparen><space>not<openparen><apos>+<space>AttrVal<space>+<space><apos><solidus>text<openparen><closeparen><openbracket>normalize-space<openparen>.<closeparen><space>!=<space><quote><quote><closebracket><closeparen><space>and<space><apos>+<space>AttrVal<space>+<space><apos><solidus>*<closeparen><space>then<backslash>n<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>If<space>tags<space>extract<space>XML<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space><space><space><space><space><space><opencurly>fme:set-attribute<openparen><quote><apos><space>+<space>attrName<space>+<space><apos><quote><comma><space><apos><space>+<space>AttrVal<space>+<space><apos><space><closeparen><closecurly><semicolon><backslash>n<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space><space>else<backslash>n<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Extract<space>content<space>of<space>the<space>tag<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space><space><space><space><space><space><opencurly>fme:set-attribute<openparen><quote><apos><space>+<space>attrName<space>+<space><apos><quote><comma><space>data<openparen><apos><space>+<space>AttrVal<space>+<space><apos><solidus>text<openparen><closeparen><space><closeparen><closeparen><closecurly><semicolon><backslash>n<apos><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Read<space>out<space>parameter<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space><space><space><opencurly>fme:set-attribute<openparen><quote><apos><space>+<space>attrName<space>+<space><apos><quote><comma><space>data<openparen><apos><space>+<space>AttrVal<space>+<space><apos><closeparen><closeparen><closecurly><semicolon><backslash>n<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space>else<space><backslash>n<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><space><space><space><opencurly>fme:set-attribute<openparen><quote>_error_<apos><space>+<space>attrName<space>+<space><apos><quote><comma><space><quote>Did<space>not<space>find<space>XPath<space><openparen><apos><space>+<space>AttrVal<space>+<space><apos><closeparen><space>for<space>attribute<space><openparen><apos><space>+<space>attrName<space>+<space><apos><closeparen><quote><space><closeparen><closecurly><semicolon><backslash>n<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>XqueryExpr<space>=<space>XqueryExpr<space>+<space><apos><backslash>n<apos><space><lf><space><space><space><space><space><space><space><space>#<space>Send<space>it<space>back<space>to<space>FME<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>__XQueryExpr<quote><comma>XqueryExpr<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"    OUTPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>__TypeFileOrAttribute<closeparen>,$(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2) = Attribute<space>specifying<space>XML ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_Attribute<space>specifying<space>XML OUTPUT FAILED FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_XML<space>File INPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_XML<space>File
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_5    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_XML<space>File"    XQUERY_ATTR __XQueryExpr    XML_FILE "@EvaluateExpression(FDIV,STRING,<at>Value<openparen>__XMLFile<closeparen>,$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_5)"    MODE SINGLE_FEATURE    EXTRACT_MODE yes    WRITE_HEADER No    EXTRACT_TYPE CSV    RESULTS_SEPARATOR <comma>    USE_W3C_UPDATE_EXTENSIONS no    SIMPLIFY_ON_SINGLE no    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_5_QUERY_RESULTS"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_4    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_TestFilter_2_Attribute<space>specifying<space>XML"    XQUERY_ATTR __XQueryExpr    XML_ATTR __XMLAttribute    MODE SINGLE_FEATURE    EXTRACT_MODE yes    WRITE_HEADER No    EXTRACT_TYPE CSV    RESULTS_SEPARATOR <comma>    USE_W3C_UPDATE_EXTENSIONS no    REMOVE_SOURCE_XML_ATTR Yes    SIMPLIFY_ON_SINGLE no    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_4_QUERY_RESULTS"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLXPathExtractor_WORKSPACE_NAME)_BulkAttributeRemover_2    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_5_QUERY_RESULTS"    INPUT  FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_XMLXQueryExtractor_4_QUERY_RESULTS"    OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_BulkAttributeRemover_2_OUTPUT"        @RemoveAttributes(fme_pcre_match,fme_encoded,"^__", NONFME)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLXPathExtractor_WORKSPACE_NAME)_Output1494834954 Output Collector"   INPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_BulkAttributeRemover_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(XMLXPathExtractor_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(XMLXPathExtractor_WORKSPACE_NAME))}]

@@ -1,0 +1,1171 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN AddEvent_Office365,1,Office365,d23cbdf5-f37c-4291-8d86-610407dee4f5,"Linked by Default",No,NO_PARALLELISM,,No,14440,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Add an event into a calendar using Office365 REST API </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-87 39"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Linked by Default"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add an event into a calendar using Office365 REST API &lt;/p&gt;&#10;"
+#! TITLE="AddEvent_Office365"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14440"
+#! ZOOM_SCALE="100"
+#! CATEGORY="Office365"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+ &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The following paramters can be used.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Start date: &lt;/span&gt;The start date and time using FME formating&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;End date:&lt;/span&gt; The end date and time using FME formating, You can also provide minutes by starting with a plus sign. Example +30 would add 30 minutes from the start date.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Subject&lt;/span&gt;: Subject of the event&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Content Type:&lt;/span&gt; Is the content simple Text or HTML&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Content&lt;/span&gt;:the body text of the Event.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;To Recipients:&lt;/span&gt; A coma seperated list of recipients&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Attached Document&lt;/span&gt;: An binary file to be attached.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Mailbox&lt;/span&gt;: The mailbox the event would originate form.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;CalendarId:&lt;/span&gt; An optional calendarId, this would add the event into another calendar of the user then the default.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Office365Login and Office365Password&lt;/span&gt;: Credentials of the Office365 user. &lt;/p&gt;&#10;"
+#! HISTORY="10&lt;solidus&gt;April&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creation"
+#! FME_DOCUMENT_PRIORGUID="168eeb54-3352-4b91-9a3c-316538c2fc08"
+#! DOC_TOP_LEFT="-28 -1328"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2015-05-12T21:59:50"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP5 (20141210 - Build 14440 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;You need an Office365 Email account in order for this to work.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4275 1353"
+#! FME_DOCUMENT_GUID="d23cbdf5-f37c-4291-8d86-610407dee4f5"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR StartDate Start date:"
+#! DEFAULT_VALUE="%Y%m%d%H%M%S"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR EndDate End date:"
+#! DEFAULT_VALUE="%Y%m%d%H%M%S"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR Subject Subject:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI CHOICE_OR_ATTR ContentType Text%Html ContentType:"
+#! DEFAULT_VALUE="Text"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_ATTR Content Content:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR ToRecipients ToRecipients:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL FILENAME_MUSTEXIST_OR_ATTR AttachedDocument All|* AttachedDocument:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR Mailbox Mailbox:"
+#! DEFAULT_VALUE="Me"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR CalendarId Calendar Id:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_OR_ATTR Office365Login Office365 Login:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI PASSWORD_OR_ATTR Office365Password Office365 Password:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="29"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Helvetica&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://outlook.office365.com/api/v1.0/me/calendars/{calendar_id}/events&quot;&gt;&lt;span style=&quot; font-size:13px; text-decoration: underline; color:#0000ff;&quot;&gt;https://outlook.office365.com/api/v1.0/me/calendars/{calendar_id}/events&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#0000ff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://outlook.office365.com/api/v1.0/me/calendars/{calendar_id}/events&quot;&gt;&lt;span style=&quot; font-size:13px; text-decoration: underline; color:#0000ff;&quot;&gt;More timezones... &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://outlook.office365.com/api/v1.0/me/calendars/{calendar_id}/events&quot;&gt;&lt;span style=&quot; font-size:13px; text-decoration: underline; color:#0000ff;&quot;&gt;http://stackoverflow.com/questions/7908343/list-of-timezone-ids-for-use-with-findtimezonebyid-in-c&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-3 25"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="-3 25"
+#! BOTTOM_RIGHT="1510 -38"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="25"
+#! NAME="Read Binary File to Base64"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1165 -944"
+#! BOTTOM_RIGHT="1853 -1496"
+#! STICKY="true"
+#! COLOUR="0.419608,0.784314,0.286275"
+#! CONTENTS="21 15 22 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="26"
+#! NAME="Check Attachment"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="547 -945"
+#! BOTTOM_RIGHT="1139 -1494"
+#! STICKY="true"
+#! COLOUR="0.576471,0.603922,0.109804"
+#! CONTENTS="19 14 20 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="27"
+#! NAME="Prepare ATOM Json"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2673 -584"
+#! BOTTOM_RIGHT="3440 -1490"
+#! STICKY="true"
+#! COLOUR="0.227451,0.384314,0.556863"
+#! CONTENTS="9 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="28"
+#! NAME="Post to Office365"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3502 -587"
+#! BOTTOM_RIGHT="4098 -1490"
+#! STICKY="true"
+#! COLOUR="0.247059,0.976471,0.521569"
+#! CONTENTS="1 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="HTTPUploader"
+#! VERSION="3"
+#! POSITION="3576 -746"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonSendMail" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_jsonSendMail" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_office365ulr&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/json"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="$(Office365Login)"/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="$(Office365Password)"/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_jsonSendMail&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_METHOD" PARM_VALUE="POST"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPUploader"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_url_contents"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="JSONTemplater"
+#! VERSION="0"
+#! POSITION="2810 -735"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_jsonSendMail" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_jsonSendMail"/>
+#! <XFORM_PARM PARM_NAME="ATTENDEES_QUERY_EXPR" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;EmailAddress&lt;quote&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Address&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;janets&lt;at&gt;a830edad9050849NDA1.onmicrosoft.com&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Name&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;Janet&lt;space&gt;Schorr&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;closecurly&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Type&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;Required&lt;quote&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONTemplater"/>
+#! <XFORM_PARM PARM_NAME="CONSECUTIVE_GROUPS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ROOT_QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ROOT_QUERY_EXPR" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Subject&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_Subject&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Body&lt;quote&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;ContentType&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;$(ContentType)&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Content&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_Content&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;closecurly&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Start&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_StartDate&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;End&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_EndDate&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;IsAllDay&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;IsAllDay&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Attendees&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fme:process-features&lt;openparen&gt;&lt;quote&gt;ATTENDEES&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;closebracket&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Attachments&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fme:process-features&lt;openparen&gt;&lt;quote&gt;FILES&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FILES_QUERY_EXPR" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;&lt;at&gt;odata.type&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;#Microsoft.OutlookServices.FileAttachment&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;Name&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_filename&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;ContentBytes&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_AttachedBinFile&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="VISIBLE_QUERY_VALIDATE" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="SUB_TEMPLATE_PARAMS" PARM_VALUE="FILES_QUERY_EXPR,&quot;WHOLE_LINE TEXT_EDIT_XQUERY_OR_ATTR JSON%GET%PROCESS%GEOMETRY%NOBRACES&quot;,&quot;FILES Template Expression:&quot;,ATTENDEES_QUERY_EXPR,&quot;WHOLE_LINE TEXT_EDIT_XQUERY_OR_ATTR JSON%GET%PROCESS%GEOMETRY%NOBRACES&quot;,&quot;ATTENDEES Template Expression:&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-16 -714"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_Content {$(Content)} _Subject {$(Subject)} _AttachedDocument {$(AttachedDocument)} _StartDate {$(StartDate)} _EndDate {$(EndDate)} _CalendarId {$(CalendarId)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="AttributeFileReader"
+#! VERSION="2"
+#! POSITION="1320 -1124"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedBinFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFileReader"/>
+#! <XFORM_PARM PARM_NAME="CHAR_ENCODING" PARM_VALUE="fme-binary"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FILE_NAME" PARM_VALUE="@Value(_AttachedDocument)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="_AttachedBinFile"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="633 -1068"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="NoAttachement"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Attachment"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;_AttachedDocument&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;_AttachedDocument&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,NoAttachement"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Attachment"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="19"
+#! TYPE="FilenamePartExtractor"
+#! VERSION="3"
+#! POSITION="621 -1308"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_AttachedDocument&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="getFileName"/>
+#! <XFORM_PARM PARM_NAME="ROOTNAME_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FULLNAME_ATTR" PARM_VALUE="_filename"/>
+#! <XFORM_PARM PARM_NAME="EXTENSION_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DIRNAME_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DIRPATH_ATTR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="21"
+#! TYPE="BinaryEncoder"
+#! VERSION="0"
+#! POSITION="1318 -1328"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedBinFile" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BinaryEncoder"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ENCODING_TYPE" PARM_VALUE="Base64"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_ENCODE" PARM_VALUE="_AttachedBinFile"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="_AttachedBinFile"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="30"
+#! TYPE="DateFormatter"
+#! VERSION="4"
+#! POSITION="1978 -717"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="_StartDate,_EndDate"/>
+#! <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="%Y-%m-%dT%H:%M:%SZ"/>
+#! <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="Unknown - Automatic Detection"/>
+#! <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="35"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="617 -663"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="PlusMinutes"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Continue"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_EndDate&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;BEGINS_WITH&lt;space&gt;+&lt;quote&gt;,PlusMinutes"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="EndDateType"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Continue"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="37"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="593 -287"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="allDayEvent"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="IsAllDay,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;false&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;_EndDate&lt;closeparen&gt; = -1&apos;true&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="36"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="1279 -418"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Ouput"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="Seconds" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="DateTimeAdd"/>
+#! <XFORM_PARM PARM_NAME="inputFMEDate" PARM_VALUE="_EndDate"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateTimeAdd"/>
+#! <XFORM_PARM PARM_NAME="Hours" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="Minutes" PARM_VALUE="@Value(_Minutes)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="Days" PARM_VALUE="0"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="44"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1289 -264"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_Minutes,&lt;at&gt;Evaluate&lt;openparen&gt;0&lt;at&gt;Value&lt;openparen&gt;_EndDate&lt;closeparen&gt;&lt;closeparen&gt;,_EndDate,&lt;at&gt;Value&lt;openparen&gt;_StartDate&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="40"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-20 -918"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateUrl"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_office365ulr,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;https:&lt;solidus&gt;&lt;solidus&gt;outlook.office365.com&lt;solidus&gt;api&lt;solidus&gt;v1.0&lt;solidus&gt;$(Mailbox)&lt;solidus&gt;calendars&lt;solidus&gt;$(CalendarId)&lt;solidus&gt;events&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST _CalendarId ATTRIBUTE_IS_MISSING _FME_BLANK_STRING_;TEST _CalendarId ATTRIBUTE_IS_EMPTY _FME_BLANK_STRING_&apos;https:&lt;solidus&gt;&lt;solidus&gt;outlook.office365.com&lt;solidus&gt;api&lt;solidus&gt;v1.0&lt;solidus&gt;$(Mailbox)&lt;solidus&gt;events&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="50"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="596 -437"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Ouput"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_Content" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_AttachedDocument" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_CalendarId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_office365ulr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="IsAllDay" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="Seconds" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="DateTimeAdd"/>
+#! <XFORM_PARM PARM_NAME="inputFMEDate" PARM_VALUE="_StartDate"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateTimeAdd_2"/>
+#! <XFORM_PARM PARM_NAME="Hours" PARM_VALUE="-2"/>
+#! <XFORM_PARM PARM_NAME="Minutes" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="Days" PARM_VALUE="0"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="2"
+#! NAME="Input"
+#! POSITION="-28 -572"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="Success"
+#! POSITION="4247 -689"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="task" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" />
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="Rejected"
+#! POSITION="4238 -902"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="task" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" />
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! <XFORM_ATTR ATTR_NAME="_url_contents" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="5"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="19"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="21"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="45"
+#! SOURCE_NODE="35"
+#! TARGET_NODE="44"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="46"
+#! SOURCE_NODE="44"
+#! TARGET_NODE="36"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="36"
+#! TARGET_NODE="30"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="47"
+#! SOURCE_NODE="35"
+#! TARGET_NODE="30"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="48"
+#! SOURCE_NODE="30"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="42"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="40"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="43"
+#! SOURCE_NODE="40"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="49"
+#! SOURCE_NODE="40"
+#! TARGET_NODE="37"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="51"
+#! SOURCE_NODE="37"
+#! TARGET_NODE="50"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="52"
+#! SOURCE_NODE="50"
+#! TARGET_NODE="35"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#! NAME="DateTimeAdd"
+#! FME_DOCUMENT_PRIORGUID=""
+#! IS_VISIBLE="false"
+#! DOC_TOP_LEFT="-899 -870"
+#! VIEW_POSITION="-939 9"
+#! DOC_EXTENTS="2536 54"
+#! SUPPRESS_UPGRADE="false"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! ZOOM_SCALE="100"
+#! FME_DOCUMENT_GUID="869c5226-e200-11e4-8ff2-b5d80ea7bd40"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY="EEACleanup"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Add minutes,hours or days to an FME Date&lt;/p&gt;&#10;"
+#! TITLE="DateTimeAdd"
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! HISTORY=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI ATTR_OR_ATTR inputFMEDate Source Date:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI INTEGER_OR_ATTR Days Days:"
+#! DEFAULT_VALUE="0"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI INTEGER_OR_ATTR Hours Hours:"
+#! DEFAULT_VALUE="0"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI INTEGER_OR_ATTR Minutes Minutes:"
+#! DEFAULT_VALUE="0"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI INTEGER_OR_ATTR Seconds Seconds:"
+#! DEFAULT_VALUE="0"
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="PythonCaller"
+#! VERSION="4"
+#! POSITION="324 -816"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;comma&gt;&lt;space&gt;locale&lt;comma&gt;&lt;space&gt;datetime&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;result&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;try:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;source&lt;space&gt;datetime&lt;space&gt;value.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dateField&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_inputFMEDate&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dateValueField&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;dateField&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dt&lt;space&gt;=&lt;space&gt;datetime.datetime.strptime&lt;openparen&gt;dateValueField&lt;comma&gt;&lt;space&gt;&lt;apos&gt;%Y%m%d%H%M%S&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Calculate&lt;space&gt;timedelta.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;days&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_Days&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;hours&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_Hours&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;minutes&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_Minutes&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;seconds&lt;space&gt;=&lt;space&gt;int&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_Seconds&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;delta=&lt;space&gt;datetime.timedelta&lt;openparen&gt;days&lt;comma&gt;&lt;space&gt;seconds&lt;comma&gt;&lt;space&gt;0&lt;comma&gt;&lt;space&gt;0&lt;comma&gt;&lt;space&gt;minutes&lt;comma&gt;&lt;space&gt;hours&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Create&lt;space&gt;destination&lt;space&gt;datetime&lt;space&gt;string.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;result&lt;space&gt;=&lt;space&gt;&lt;openparen&gt;dt&lt;space&gt;+&lt;space&gt;delta&lt;closeparen&gt;.strftime&lt;openparen&gt;&lt;apos&gt;%Y%m%d%H%M%S&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Set&lt;space&gt;destination&lt;space&gt;datetime&lt;space&gt;string.&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;dateField&lt;comma&gt;&lt;space&gt;result&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;except:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;_error&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;failed&lt;space&gt;datetimeAdd&lt;space&gt;for&lt;space&gt;&lt;quote&gt;&lt;space&gt;+&lt;space&gt;dateField&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="_error"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-271 -828"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Days" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_inputFMEDate {$(inputFMEDate)} _Days {$(Days)} _Hours {$(Hours)} _Minutes {$(Minutes)} _Seconds {$(Seconds)}"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="3"
+#! NAME="Input"
+#! POSITION="-899 -831"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="Ouput"
+#! POSITION="1637 -870"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_inputFMEDate" />
+#! <XFORM_ATTR ATTR_NAME="_Days" />
+#! <XFORM_ATTR ATTR_NAME="_Hours" />
+#! <XFORM_ATTR ATTR_NAME="_Minutes" />
+#! <XFORM_ATTR ATTR_NAME="_Seconds" />
+#! <XFORM_ATTR ATTR_NAME="_error" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="5"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="6"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_StartDate %Y%m%d%H%M%S
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_EndDate %Y%m%d%H%M%S
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_Subject 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_ContentType Text
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_Content 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_ToRecipients 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_AttachedDocument 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_Mailbox Me
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_CalendarId 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_Office365Login 
+DEFAULT_MACRO $(AddEvent_Office365_WORKSPACE_NAME)_Office365Password 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO AddEvent_Office365_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(AddEvent_Office365_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(AddEvent_Office365_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_Input1431460790 Input Splitter"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_Content {$($(AddEvent_Office365_WORKSPACE_NAME)_Content)} _Subject {$($(AddEvent_Office365_WORKSPACE_NAME)_Subject$encode)} _AttachedDocument {$($(AddEvent_Office365_WORKSPACE_NAME)_AttachedDocument$encode)} _StartDate {$($(AddEvent_Office365_WORKSPACE_NAME)_StartDate$encode)} _EndDate {$($(AddEvent_Office365_WORKSPACE_NAME)_EndDate$encode)} _CalendarId {$($(AddEvent_Office365_WORKSPACE_NAME)_CalendarId$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_ParameterFetcher_OUTPUT" ATTR _office365ulr "FME_CONDITIONAL:DEFAULT_VALUE'https:<solidus><solidus>outlook.office365.com<solidus>api<solidus>v1.0<solidus>$($(AddEvent_Office365_WORKSPACE_NAME)_Mailbox$encode)<solidus>calendars<solidus>$($(AddEvent_Office365_WORKSPACE_NAME)_CalendarId$encode)<solidus>events'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST _CalendarId ATTRIBUTE_IS_MISSING _FME_BLANK_STRING_;TEST _CalendarId ATTRIBUTE_IS_EMPTY _FME_BLANK_STRING_'https:<solidus><solidus>outlook.office365.com<solidus>api<solidus>v1.0<solidus>$($(AddEvent_Office365_WORKSPACE_NAME)_Mailbox$encode)<solidus>events'FME_NUM_CONDITIONS2___"    OUTPUT OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl OUTPUT Splitter"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT_0_PROic4K7A8U="   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT_1_PROic4K7A8U="
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_allDayEvent ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT_0_PROic4K7A8U=" ATTR IsAllDay "FME_CONDITIONAL:DEFAULT_VALUE'false'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>_EndDate<closeparen> = -1'true'FME_NUM_CONDITIONS2___"    OUTPUT OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_allDayEvent_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2 Input Input Collector"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_allDayEvent_OUTPUT"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2_Input"
+MACRO DateTimeAdd_WORKSPACE_NAME $(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_XFORMER_NAME $(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(DateTimeAdd_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_SUB_DOC_NAME DateTimeAdd
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_inputFMEDate _StartDate
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Days 0
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Hours -2
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Minutes 0
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Seconds 0
+DEFAULT_MACRO DateTimeAdd_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(DateTimeAdd_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(DateTimeAdd_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DateTimeAdd_WORKSPACE_NAME)_Input1431460790 Input Splitter"   INPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_inputFMEDate {$($(DateTimeAdd_WORKSPACE_NAME)_inputFMEDate$encode)} _Days {$($(DateTimeAdd_WORKSPACE_NAME)_Days$encode)} _Hours {$($(DateTimeAdd_WORKSPACE_NAME)_Hours$encode)} _Minutes {$($(DateTimeAdd_WORKSPACE_NAME)_Minutes$encode)} _Seconds {$($(DateTimeAdd_WORKSPACE_NAME)_Seconds$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(DateTimeAdd_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>fmeobjects<comma><space>locale<comma><space>datetime<lf><lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>result<space>=<space><apos><apos><lf><space><space><space><space><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Get<space>source<space>datetime<space>value.<lf><space><space><space><space><space><space><space><space><space><space><space><space>dateField<space>=<space>feature.getAttribute<openparen><apos>_inputFMEDate<apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>dateValueField<space>=<space>feature.getAttribute<openparen>dateField<closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>dt<space>=<space>datetime.datetime.strptime<openparen>dateValueField<comma><space><apos>%Y%m%d%H%M%S<apos><closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Calculate<space>timedelta.<lf><space><space><space><space><space><space><space><space><space><space><space><space>days<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Days<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>hours<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Hours<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>minutes<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Minutes<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>seconds<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Seconds<apos><closeparen><closeparen><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>delta=<space>datetime.timedelta<openparen>days<comma><space>seconds<comma><space>0<comma><space>0<comma><space>minutes<comma><space>hours<closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Create<space>destination<space>datetime<space>string.<lf><space><space><space><space><space><space><space><space><space><space><space><space>result<space>=<space><openparen>dt<space>+<space>delta<closeparen>.strftime<openparen><apos>%Y%m%d%H%M%S<apos><closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Set<space>destination<space>datetime<space>string.<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>dateField<comma><space>result<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>except:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_error<quote><comma><quote>failed<space>datetimeAdd<space>for<space><quote><space>+<space>dateField<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DateTimeAdd_WORKSPACE_NAME)_Ouput1431460790 Output Collector"   INPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_PythonCaller_OUTPUT"   OUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Ouput"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(DateTimeAdd_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2 Ouput Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2_Ouput"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2_Ouput"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_2_Ouput"    OUTPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_TestFactory_0 INPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_EndDate<closeparen>,$(AddEvent_Office365_WORKSPACE_NAME)_EndDateType) BEGINS_WITH + ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_PlusMinutes OUTPUT FAILED FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_Continue INPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_Continue
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_AttributeCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_PlusMinutes" ATTR _Minutes <at>Evaluate<openparen>0<at>Value<openparen>_EndDate<closeparen><closeparen> ATTR _EndDate <at>Value<openparen>_StartDate<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd Input Input Collector"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_Input"
+MACRO DateTimeAdd_WORKSPACE_NAME $(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_XFORMER_NAME $(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(DateTimeAdd_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_SUB_DOC_NAME DateTimeAdd
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_inputFMEDate _EndDate
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Days 0
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Hours 0
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Minutes @Value(_Minutes)
+MACRO $(DateTimeAdd_WORKSPACE_NAME)_Seconds 0
+DEFAULT_MACRO DateTimeAdd_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(DateTimeAdd_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(DateTimeAdd_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DateTimeAdd_WORKSPACE_NAME)_Input1431460790 Input Splitter"   INPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_inputFMEDate {$($(DateTimeAdd_WORKSPACE_NAME)_inputFMEDate$encode)} _Days {$($(DateTimeAdd_WORKSPACE_NAME)_Days$encode)} _Hours {$($(DateTimeAdd_WORKSPACE_NAME)_Hours$encode)} _Minutes {$($(DateTimeAdd_WORKSPACE_NAME)_Minutes$encode)} _Seconds {$($(DateTimeAdd_WORKSPACE_NAME)_Seconds$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(DateTimeAdd_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>fmeobjects<comma><space>locale<comma><space>datetime<lf><lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>result<space>=<space><apos><apos><lf><space><space><space><space><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Get<space>source<space>datetime<space>value.<lf><space><space><space><space><space><space><space><space><space><space><space><space>dateField<space>=<space>feature.getAttribute<openparen><apos>_inputFMEDate<apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>dateValueField<space>=<space>feature.getAttribute<openparen>dateField<closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>dt<space>=<space>datetime.datetime.strptime<openparen>dateValueField<comma><space><apos>%Y%m%d%H%M%S<apos><closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Calculate<space>timedelta.<lf><space><space><space><space><space><space><space><space><space><space><space><space>days<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Days<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>hours<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Hours<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>minutes<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Minutes<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>seconds<space>=<space>int<openparen>feature.getAttribute<openparen><apos>_Seconds<apos><closeparen><closeparen><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>delta=<space>datetime.timedelta<openparen>days<comma><space>seconds<comma><space>0<comma><space>0<comma><space>minutes<comma><space>hours<closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Create<space>destination<space>datetime<space>string.<lf><space><space><space><space><space><space><space><space><space><space><space><space>result<space>=<space><openparen>dt<space>+<space>delta<closeparen>.strftime<openparen><apos>%Y%m%d%H%M%S<apos><closeparen><lf><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Set<space>destination<space>datetime<space>string.<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>dateField<comma><space>result<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>except:<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>_error<quote><comma><quote>failed<space>datetimeAdd<space>for<space><quote><space>+<space>dateField<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DateTimeAdd_WORKSPACE_NAME)_Ouput1431460790 Output Collector"   INPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_PythonCaller_OUTPUT"   OUTPUT FEATURE_TYPE "$(DateTimeAdd_WORKSPACE_NAME)_Ouput"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(DateTimeAdd_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd Ouput Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_Ouput"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_Ouput"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(AddEvent_Office365_WORKSPACE_NAME)_DateFormatter_formatter {invalidValue} {       set dateFormat {%Y-%m-%dT%H:%M:%SZ};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {_StartDate,_EndDate} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set dateLen [string length $date];        set srcfmt {};        if {{FME_AUTOMATIC} != {FME_AUTOMATIC}} {            set srcfmt {FME_AUTOMATIC};        };        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };        };        set sourceFormatOpt {};        if {[string length $srcfmt] > 0} {           set sourceFormatOpt \"-format {$srcfmt}\";        };        if { (0 == $dateLen) || [catch {                         set seconds [eval clock scan "{$date}" $sourceFormatOpt];                         FME_SetAttribute $attr [clock format $seconds -format $dateFormat];                          }] } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_DateFormatter    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateTimeAdd_Ouput"    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_EndDateType_Continue"    OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateFormatter_OUTPUT"         @Tcl2("$(AddEvent_Office365_WORKSPACE_NAME)_DateFormatter_formatter {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_CreateUrl_OUTPUT_1_PROic4K7A8U="    OUTPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST _AttachedDocument ATTRIBUTE_IS_EMPTY "" ENCODED TEST _AttachedDocument ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_NoAttachement OUTPUT FAILED FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_Attachment INPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_Attachment
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_TestFilter NoAttachement Output Nuker"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_NoAttachement"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_getFileName    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_TestFilter_Attachment"    OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_getFileName_OUTPUT"         @SupplyAttributes("_filename",@Filenamepart(ENCODED,FILENAME,"@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_AttachedDocument<closeparen>,$(AddEvent_Office365_WORKSPACE_NAME)_getFileName)"))
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_AttributeFileReader    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_getFileName_OUTPUT"    OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_AttributeFileReader_OUTPUT"         @File(ENCODED_ATTR,DestReadSrcWrite,_AttachedBinFile,"@Value(_AttachedDocument)",fme-binary)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TextEncoderFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_BinaryEncoder    INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_AttributeFileReader_OUTPUT"    ACTION BASE64_ENCODE    RESULT_ATTR "_AttachedBinFile"    ATTR_TO_ENCODE "_AttachedBinFile"    OUTPUT OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_BinaryEncoder_OUTPUT"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_FILES_INPUT_FACTORY INPUT FEATURE_TYPE __dummy__  INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_BinaryEncoder_OUTPUT" OUTPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_DataFeatures    __xml_templater_bucket__ FILES
+FACTORY_DEF * TeeFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_ATTENDEES_INPUT_FACTORY INPUT FEATURE_TYPE __dummy__  OUTPUT FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_DataFeatures    __xml_templater_bucket__ ATTENDEES
+FACTORY_DEF * XMLTemplaterFactory FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater INPUT CONTROL_FEATURE FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_DateFormatter_OUTPUT" INPUT DATA_FEATURE FEATURE_TYPE $(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_DataFeatures RESULT_ATTR _jsonSendMail BUCKET_ATTR_NAME __xml_templater_bucket__ CONTROL_TEMPLATE_EXPR @EvaluateExpression(STRING_ENCODED,<opencurly><lf><space><space><quote>Subject<quote>:<space>fme:get-attribute<openparen><quote>_Subject<quote><closeparen><comma><lf><space><space><quote>Body<quote>:<space><opencurly><lf><space><space><space><space><quote>ContentType<quote>:<space><quote>$($(AddEvent_Office365_WORKSPACE_NAME)_ContentType$encode)<quote><comma><lf><space><space><space><space><quote>Content<quote>:<space>fme:get-attribute<openparen><quote>_Content<quote><closeparen><lf><space><space><closecurly><comma><lf><space><space><quote>Start<quote>:<space>fme:get-attribute<openparen><quote>_StartDate<quote><closeparen><comma><lf><space><space><quote>End<quote>:<space>fme:get-attribute<openparen><quote>_EndDate<quote><closeparen><comma><lf><space><space><quote>IsAllDay<quote>:fme:get-attribute<openparen><quote>IsAllDay<quote><closeparen><comma><lf><space><space><quote>Attendees<quote>:<space><openbracket><lf><space><space><space><space>fme:process-features<openparen><quote>ATTENDEES<quote><closeparen><lf><space><space><closebracket><comma><lf><space><space><quote>Attachments<quote>:<space><openbracket><lf><space><space><space><space><space><space>fme:process-features<openparen><quote>FILES<quote><closeparen><lf><space><space><closebracket><lf><closecurly>,$(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater) BUCKET_TEMPLATE_EXPR FILES @EvaluateExpression(STRING_ENCODED,<opencurly><lf><space><space><space><space><quote><at>odata.type<quote>:<space><quote>#Microsoft.OutlookServices.FileAttachment<quote><comma><lf><space><space><space><space><quote>Name<quote>:<space>fme:get-attribute<openparen><quote>_filename<quote><closeparen><comma><lf><space><space><space><space><quote>ContentBytes<quote>:<space>fme:get-attribute<openparen><quote>_AttachedBinFile<quote><closeparen><lf><closecurly>,$(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater) BUCKET_TEMPLATE_EXPR ATTENDEES @EvaluateExpression(STRING_ENCODED,<opencurly><lf><space><space><quote>EmailAddress<quote>:<space><opencurly><lf><space><space><space><space><quote>Address<quote>:<space><quote>janets<at>a830edad9050849NDA1.onmicrosoft.com<quote><comma><lf><space><space><space><space><quote>Name<quote>:<space><quote>Janet<space>Schorr<quote><lf><space><space><closecurly><comma><lf><space><space><quote>Type<quote>:<space><quote>Required<quote><lf><closecurly>,$(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater) OUTPUT XML_DOCUMENT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader       INPUT  FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_JSONTemplater_OUTPUT"    TARGET_URL "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_office365ulr<closeparen>,$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader)"    TARGET_ATTR _url_contents    HTTP_METHOD POST    UPLOAD_BODY "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_jsonSendMail<closeparen>,$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader)"    UPLOAD_CONTENT_TYPE "application/json"    AUTH_USERNAME "@EvaluateExpression(STRING,$($(AddEvent_Office365_WORKSPACE_NAME)_Office365Login$encode),$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader)"    AUTH_PASSWORD "@EvaluateExpression(STRING,$($(AddEvent_Office365_WORKSPACE_NAME)_Office365Password$encode),$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader)"    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES No    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_Success1431460790 Output Collector"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader_OUTPUT"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_Success"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(AddEvent_Office365_WORKSPACE_NAME)_Rejected1431460790 Output Collector"   INPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"   OUTPUT FEATURE_TYPE "$(AddEvent_Office365_WORKSPACE_NAME)_Rejected"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(AddEvent_Office365_WORKSPACE_NAME))}]

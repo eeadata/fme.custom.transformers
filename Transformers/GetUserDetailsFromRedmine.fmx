@@ -1,0 +1,349 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN GetUserDetailsFromRedmine,1,Redmine,4e8191d3-8aa2-4cba-a9ba-12c3e157a1b0,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Returns the user details. </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   LAST_SAVE_DATE="2017-02-07T16:55:31"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_BUILD_NUM="16674"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   XFORM_DEPRECATED="No"
+#!   SHOW_ANNOTATIONS="true"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_DOCUMENT_PRIORGUID="6d15edd6-c1e5-4696-a8c7-ede75049fa8a"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   ZOOM_SCALE="100"
+#!   DOC_EXTENTS="2984.92 120"
+#!   TITLE="GetUserDetailsFromRedmine"
+#!   CATEGORY="Redmine"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_SERVER_SERVICES=""
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Returns the user details. &lt;/p&gt;&#10;"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   DOC_TOP_LEFT="159.71 -220"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   PASSWORD=""
+#!   SHOW_INFO_NODES="true"
+#!   VIEW_POSITION="0 987.51"
+#!   HISTORY=""
+#!   WORKSPACE_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Url - URL to Redmine server/site&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;User - Redmine user account&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pass - Redmine user password&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;UsertID - User ID number&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   MAX_LOOP_ITERATIONS=""
+#!   BLOCKED_LOOPING="No"
+#!   FME_DOCUMENT_GUID="4e8191d3-8aa2-4cba-a9ba-12c3e157a1b0"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR URL Url:"
+#!   DEFAULT_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;taskman.eionet.europa.eu"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL NAMED_CONNECTION_OR_ATTR_ENCODED REDMINECONN &quot; &quot; Redmine Connection:"
+#!   DEFAULT_VALUE="EIONET_Web"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR USERID UserId:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="1365.64 -100"
+#!   BOUNDING_RECT="1365.64 -100 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_RedmineURI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_RedmineURI" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="user_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_RedmineURI&lt;closeparen&gt;&lt;solidus&gt;users&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;user_id&lt;closeparen&gt;.json"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(REDMINECONN)"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="JSONFragmenter"
+#!   VERSION="4"
+#!   POSITION="1894.64 -160"
+#!   BOUNDING_RECT="1894.64 -160 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16174"
+#! >
+#!     <OUTPUT_FEAT NAME="EXPLODED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_RedmineURI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="firstname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="lastname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="mail" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter"/>
+#!     <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="id firstname lastname mail"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_ATTRIBUTE" PARM_VALUE="_result"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_response_body&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json[*]"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="742.757 -100"
+#!   BOUNDING_RECT="742.757 -100 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_RedmineURI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="user_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_RedmineURI {$(URL)} user_id {$(USERID)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2464.65 -160"
+#!   BOUNDING_RECT="2464.65 -160 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="user_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="firstname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="lastname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="mail" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="json_type,_RedmineURI,_response_body,json_index,_result,_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="_headers&lt;opencurly&gt;&lt;closecurly&gt; _headers&lt;opencurly&gt;&lt;closecurly&gt;.name _headers&lt;opencurly&gt;&lt;closecurly&gt;.value"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Output"
+#!   POSITION="3144.63 -220"
+#!   BOUNDING_RECT="3144.63 -220 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="9"
+#!   NAME="Input"
+#!   POSITION="159.71 -100"
+#!   BOUNDING_RECT="159.71 -100 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="6"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 EXPLODED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_URL https:<solidus><solidus>taskman.eionet.europa.eu
+DEFAULT_MACRO $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_REDMINECONN EIONET_Web
+DEFAULT_MACRO $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_USERID 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO GetUserDetailsFromRedmine_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetUserDetailsFromRedmine_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetUserDetailsFromRedmine_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_Input1486482931 Input Splitter"   INPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_RedmineURI {$($(GetUserDetailsFromRedmine_WORKSPACE_NAME)_URL)} user_id {$($(GetUserDetailsFromRedmine_WORKSPACE_NAME)_USERID)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller       INPUT  FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_RedmineURI<closeparen><solidus>users<solidus><at>Value<openparen>user_id<closeparen>.json,$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(GetUserDetailsFromRedmine_WORKSPACE_NAME)_REDMINECONN),$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller_Output"    OUTPUT REJECTED FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller <Rejected> Output Nuker"   INPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_JSONFragmenter    INPUT  FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_HTTPCaller_Output"    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR Yes    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response_body<closeparen>,$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_JSONFragmenter)"    OUTPUT_ATTRIBUTE "_result"    EXPLODE_QUERY "json<openbracket>*<closebracket>"    RECURSIVE_FLATTEN YES    OUTPUT EXPLODED FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_JSONFragmenter_EXPLODED"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split "_headers<opencurly><closecurly> _headers<opencurly><closecurly>.name _headers<opencurly><closecurly>.value"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetUserDetailsFromRedmine_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_JSONFragmenter_EXPLODED"    OUTPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,json_type,_RedmineURI,_response_body,json_index,_result,_http_status_code)        @RemoveAttributes(fme_pcre_match"$($(GetUserDetailsFromRedmine_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_Output1486482931 Output Collector"   INPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetUserDetailsFromRedmine_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetUserDetailsFromRedmine_WORKSPACE_NAME))}]

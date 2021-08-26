@@ -1,0 +1,1401 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN MSWordParagrapher,1,Manipulators,1d4f6c8b-153e-490a-b5e3-ed7e970e62b1,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The paragraph writer will produce one heading and body text into the word document. The paragraph writer can as well generate bullet lists or number lists by simply defining the body style to one of the list styles. In this case do not provide any heading text. You can as well control the maximum number of features allowed to be written out to Microsoft word. </p>
+# 
+# TRANSFORMER_END
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   XFORM_DEPRECATED="No"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="16674"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The paragraph writer will produce one heading and body text into the word document. The paragraph writer can as well generate bullet lists or number lists by simply defining the body style to one of the list styles. In this case do not provide any heading text. You can as well control the maximum number of features allowed to be written out to Microsoft word. &lt;/p&gt;&#10;"
+#!   FME_SERVER_SERVICES=""
+#!   SHOW_ANNOTATIONS="true"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   SHOW_INFO_NODES="true"
+#!   CATEGORY="Manipulators"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   LAST_SAVE_DATE="2016-11-28T13:47:06"
+#!   VIEW_POSITION="-1603.14 1106.26"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   DOC_EXTENTS="4223 1499.12"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_DOCUMENT_GUID="1d4f6c8b-153e-490a-b5e3-ed7e970e62b1"
+#!   DOC_TOP_LEFT="-1355 -1131"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_DOCUMENT_PRIORGUID="8f83c310-bb00-4f29-9e57-ddb38f31c8bd,524ef3ce-b362-4ed6-9160-2259a686820c"
+#!   FME_PROCESS_GROUP_BY=""
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Paragraph sequences:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Controls the order inside Microsoft word. The MSWordGenerator transformer will order all json snippets using this parameter. The format must always following numbers and dots. For example 2 or 2.1 or 2.12.2 etc... This will not be shown inside the document and is only used to asure the order is as expected.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Headline level:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Headlines have levels of order.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Headline text:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The text that should be used as headline. A headline will not be written if no content is provided.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Body style:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The style of the body text. You can choosse any of the default styles currently available in word. This includes bullet lists or numberings (Does not make sense form the initiator...). A body text will not be written if no content was provided.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Body text:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The text under the headline. This can be a description and you can use the advanced editor to insert any attribute into the content. &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Multiple lines are supported and will be represented as line feeds inside the work paragraph. References to the web are as well supported and need to be provided as described in the below example.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Use the [LINK] tag in order add a link or reference. For example the following text describes how you can use this.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Examples&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;-----------&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;Please click [LINK]http://eea.europa.eu/|Here[LINK] for more information. &lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In this example the url &quot;http://eea.europa.eu/&quot; will be a hyperlink for the word &quot;Here&quot;. Notice the we use &quot;|&quot; to devide the URL form the text.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;Please click [LINK]http://eea.europa.eu/[LINK] for more information. &lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In this example the hyperlink and text in word are the same and the url will be simply highlighted as a link in word.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Maximum samples:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The maximum number of features that should be written inside the word document. This allows you to control a reasonable amount of features. In some cases you might only want to show some examples rarther then all features. -1 will take all features.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;New page:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;you can enforce a new page before or after the written content. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Generic information:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;No word document will be written unless you finish your workspace with the &lt;span style=&quot; font-weight:600;&quot;&gt;MSWordGenerator&lt;/span&gt;-transformer.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Use the paragraph numbering inside the transformer to control the order inside Microsoft word. The paragraph number syntax must following the numbering code 1, 1.1, 1.2, 1.1.2. This allows you to collect the content radomly while it is at the end correctly ordered.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   HISTORY="01&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator,12&lt;solidus&gt;12&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Added&lt;space&gt;a&lt;space&gt;feature&lt;space&gt;holder&lt;space&gt;and&lt;space&gt;improved&lt;space&gt;the&lt;space&gt;help,24&lt;solidus&gt;11&lt;solidus&gt;2016,Jan&lt;space&gt;Bliki,Redesigned&lt;space&gt;entire&lt;space&gt;process"
+#!   TITLE="MSWordParagrapher"
+#!   REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;No dependencies required &lt;/p&gt;&#10;"
+#!   ZOOM_SCALE="100"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   PASSWORD=""
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   MAX_LOOP_ITERATIONS=""
+#!   WORKSPACE_VERSION="1"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT Paragraph Paragraph sequence:"
+#!   DEFAULT_VALUE="1.1"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE Level Heading1%Heading2%Heading3%Heading4%Heading5%Heading6%Heading7%Heading8%Heading9 Headline level:"
+#!   DEFAULT_VALUE="Heading2"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT HeadlineText Headline text:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE Style Normal%BodyText%BodyText2%BodyText3%Caption%IntenseQuote%List%List2%List3%ListBullet%ListBullet2%ListBullet3%ListContinue%ListContinue2%ListContinue3%ListNumber%ListNumber2%ListNumber3%ListParagraph%MacroText%NoSpacing%Quote%Subtitle%TOCHeading%Title Body style:"
+#!   DEFAULT_VALUE="Normal"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT BodyText Body text:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT Samples Maximum samples:"
+#!   DEFAULT_VALUE="1"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL CHOICE NewPage no%&quot;before this item&quot;%&quot;after this item&quot; New page:"
+#!   DEFAULT_VALUE="no"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="23"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica&apos;; font-size:12px;&quot;&gt;Microsoft Word Paragraph&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica&apos;; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica&apos;; font-size:12px;&quot;&gt;Writes one paragraph into a word document.&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica&apos;; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica&apos;; font-size:12px;&quot;&gt;Author   : Jan.Bliki@eea.europa.eu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-1355 368.125"
+#!   TOP_LEFT="-1355 368.125"
+#!   BOTTOM_RIGHT="88 173.125"
+#!   BOUNDING_RECT="-1355 368.125 1443 195"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="24"
+#!   NAME="Retrieve __MSWordJson"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-202 -51"
+#!   BOTTOM_RIGHT="369 -1065"
+#!   BOUNDING_RECT="-202 -51 571 1014"
+#!   STICKY="true"
+#!   COLOUR="0.976471,0.811765,0.564706"
+#!   CONTENTS="5 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="25"
+#!   NAME="Extract a sample"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="398 -52"
+#!   BOTTOM_RIGHT="957 -1065"
+#!   BOUNDING_RECT="398 -52 559 1013"
+#!   STICKY="true"
+#!   COLOUR="0.721569,0.937255,0.839216"
+#!   CONTENTS="1 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="26"
+#!   NAME="Build Json and Write out"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="980 -56"
+#!   BOTTOM_RIGHT="1539 -1062"
+#!   BOUNDING_RECT="980 -56 559 1006"
+#!   STICKY="true"
+#!   COLOUR="0.721569,0.937255,0.839216"
+#!   CONTENTS="2 6 29 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="27"
+#!   NAME="Get properties"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-808 -53"
+#!   BOTTOM_RIGHT="-237 -1067"
+#!   BOUNDING_RECT="-808 -53 571 1014"
+#!   STICKY="true"
+#!   COLOUR="0.976471,0.811765,0.564706"
+#!   CONTENTS="4 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="28"
+#!   NAME="Wait for all records"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1569 -57"
+#!   BOTTOM_RIGHT="2707 -1059"
+#!   BOUNDING_RECT="1569 -57 1138 1002"
+#!   STICKY="true"
+#!   COLOUR="0.631373,0.564706,0.227451"
+#!   CONTENTS="20 8 7 9 21 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="Sampler"
+#!   VERSION="2"
+#!   POSITION="479 -427"
+#!   BOUNDING_RECT="479 -427 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="SAMPLED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_SAMPLED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="SAMPLE_TYPE_LONG" PARM_VALUE="First N Features"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Only_x_Samples"/>
+#!     <XFORM_PARM PARM_NAME="RATE" PARM_VALUE="$(Samples)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAMPLE_MODE" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="JSONTemplater"
+#!   VERSION="0"
+#!   POSITION="1042 -348"
+#!   BOUNDING_RECT="1042 -348 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="VISIBLE_QUERY_VALIDATE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_jsonContent"/>
+#!     <XFORM_PARM PARM_NAME="CONSECUTIVE_GROUPS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONParagraph"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_TEMPLATE_PARAMS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOT_QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ROOT_QUERY_EXPR" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;style&lt;quote&gt;:&lt;quote&gt;paragraph&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;paragraph&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_paragraph&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;level&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_Level&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;headlineText&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_headlineText&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;bodystyle&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_Style&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;bodyText&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_bodyText&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;newPage&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_newPage&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-733.125 -427"
+#!   BOUNDING_RECT="-733.125 -427 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _Action SET_TO Paragraph  _paragraph SET_TO $(Paragraph)  _headlineText SET_TO $(HeadlineText)  _bodyText SET_TO $(BodyText)  _newPage SET_TO $(NewPage)  _Samples SET_TO $(Samples)  _Style SET_TO $(Style)  _Level SET_TO $(Level)"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TakeValues"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="VariableRetriever"
+#!   VERSION="3"
+#!   POSITION="-132.125 -427"
+#!   BOUNDING_RECT="-132.125 -427 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableRetriever"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="SubDocumentTransformer"
+#!   VERSION="0"
+#!   POSITION="1047 -795"
+#!   BOUNDING_RECT="1047 -795 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WriteJson"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="MSWord_WriteJson"/>
+#!     <XFORM_PARM PARM_NAME="__MSWORDJSON" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__MSWordJson&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="_JSONCONTENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_jsonContent&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="1655 -346"
+#!   BOUNDING_RECT="1655 -346 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__skipRecord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; __skipRecord SET_TO true"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="FeatureHolder"
+#!   VERSION="0"
+#!   POSITION="1652 -586"
+#!   BOUNDING_RECT="1652 -586 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__skipRecord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureHolder"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="2228 -431"
+#!   BOUNDING_RECT="2228 -431 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="delete"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__skipRecord" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="keep"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_paragraph" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headlineText" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_bodyText" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_newPage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Samples" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Style" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Level" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__skipRecord" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__skipRecord&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;true&lt;quote&gt;,delete"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="keep"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="10"
+#!   NAME="Input"
+#!   POSITION="-1355 -487"
+#!   BOUNDING_RECT="-1355 -487 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Output"
+#!   POSITION="2868 -542"
+#!   BOUNDING_RECT="2868 -542 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 SAMPLED"
+#!   TARGET_PORT_DESC="fi 0 ROOT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 JSON"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="309 -1131 1614 -1122"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 1 keep"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#!   NAME="MSWord_WriteJson"
+#!   XFORM_DEPRECATED="No"
+#!   DESCRIPTION="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   DOC_DYNAMIC_INPUT_ATTRS="0"
+#!   SUPPRESS_UPGRADE="false"
+#!   CATEGORY=""
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   VIEW_POSITION="-1050.01 18.7502"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   DOC_EXTENTS="5463.9 1605.89"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_DOCUMENT_GUID=""
+#!   DOC_TOP_LEFT="-1261.38 -1743"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_PROCESS_GROUP_BY=""
+#!   IS_VISIBLE="false"
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   HISTORY=""
+#!   TITLE="MSWord_WriteJson"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   ZOOM_SCALE="100"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR __MSWORDJSON Mswordjson:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;__MSWordJson&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _JSONCONTENT Jsoncontent:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_jsonContent&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="25"
+#!   NAME="Write file to disk"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2046.9 -741"
+#!   BOTTOM_RIGHT="2925.88 -1214.26"
+#!   BOUNDING_RECT="2046.9 -741 878.984 473.261"
+#!   STICKY="true"
+#!   COLOUR="0.792157,0.0431373,0.984314"
+#!   CONTENTS="34 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="26"
+#!   NAME="Collect cache"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="10 -630"
+#!   BOTTOM_RIGHT="564 -1077"
+#!   BOUNDING_RECT="10 -630 554 447"
+#!   STICKY="true"
+#!   COLOUR="0.866667,0.564706,0.356863"
+#!   CONTENTS="9 20 4 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="28"
+#!   NAME="text_line_data"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-596.88 -637.506"
+#!   BOTTOM_RIGHT="-21.875 -1071.88"
+#!   BOUNDING_RECT="-596.88 -637.506 575.005 434.379"
+#!   STICKY="true"
+#!   COLOUR="0.592157,0.929412,0.129412"
+#!   CONTENTS="22 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="50"
+#!   NAME="Make sure attributes are passed on"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3321.91 -1141.26"
+#!   BOTTOM_RIGHT="4109.42 -1681.01"
+#!   BOUNDING_RECT="3321.91 -1141.26 787.507 539.752"
+#!   STICKY="true"
+#!   COLOUR="0.658824,0.294118,0.054902"
+#!   CONTENTS="37 45 48 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="38"
+#!   NAME="LOG WORD TEMP Path"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2059.4 -137.114"
+#!   BOTTOM_RIGHT="2925.03 -718.757"
+#!   BOUNDING_RECT="2059.4 -137.114 865.634 581.643"
+#!   STICKY="true"
+#!   COLOUR="0.792157,0.992157,0.00784314"
+#!   CONTENTS="41 36 32 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="27"
+#!   NAME="We have word initiated?"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="591 -633"
+#!   BOTTOM_RIGHT="1145 -1071"
+#!   BOUNDING_RECT="591 -633 554 438"
+#!   STICKY="true"
+#!   COLOUR="0.811765,0.254902,0.101961"
+#!   CONTENTS="2 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="30"
+#!   NAME="Make a temp folder"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1217.87 -521.88"
+#!   BOTTOM_RIGHT="1968.76 -1111.13"
+#!   BOUNDING_RECT="1217.87 -521.88 750.895 589.25"
+#!   STICKY="true"
+#!   COLOUR="0.137255,0.0509804,0.247059"
+#!   CONTENTS="31 33 29 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="35"
+#!   NAME="Add JSON SNIPPED"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;We already have JSON written, in this case this snipped is going into an array...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1217.87 -1135.01"
+#!   BOTTOM_RIGHT="1968.77 -1606.26"
+#!   BOUNDING_RECT="1217.87 -1135.01 750.9 471.254"
+#!   STICKY="true"
+#!   COLOUR="0.737255,0.509804,0.14902"
+#!   CONTENTS="42 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="VariableRetriever"
+#!   VERSION="2"
+#!   POSITION="81 -741"
+#!   BOUNDING_RECT="81 -741 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="__MSWordJson_cache"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__MSWordJson_cache"/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Get_cache"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="VariableRetriever"
+#!   VERSION="2"
+#!   POSITION="85 -909"
+#!   BOUNDING_RECT="85 -909 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="34"
+#!   TYPE="FeatureWriter"
+#!   VERSION="0"
+#!   POSITION="2201 -882"
+#!   BOUNDING_RECT="2201 -882 539.256 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="SUMMARY"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_WRITE_LAST_EOL" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_DIRECTIVES" PARM_VALUE="END_OF_LINE,System,MIME_TYPE,text&lt;solidus&gt;plain,DESTINATION_DATASETTYPE_VALIDATION,Yes,OVERWRITE_FILE,NO,ENCODING,utf-8,WRITE_LAST_EOL,NO,WRITE_UTF8_BOM,NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureWriter"/>
+#!     <XFORM_PARM PARM_NAME="DATASET_ATTR" PARM_VALUE="_dataset"/>
+#!     <XFORM_PARM PARM_NAME="WRITER_FEATURE_TYPE_PARAMS" PARM_VALUE="WRITER_METAFILE_INFO,ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,,ATTRIBUTE_LENGTH,60,ATTR_TYPE_MAP,char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varbinary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_binary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;buffer&lt;comma&gt;fme_buffer&lt;comma&gt;buffer&lt;comma&gt;fme_binarybuffer&lt;comma&gt;buffer&lt;comma&gt;fme_xml&lt;comma&gt;buffer&lt;comma&gt;fme_json&lt;comma&gt;char&lt;openparen&gt;20&lt;closeparen&gt;&lt;comma&gt;fme_datetime&lt;comma&gt;char&lt;openparen&gt;12&lt;closeparen&gt;&lt;comma&gt;fme_time&lt;comma&gt;char&lt;openparen&gt;8&lt;closeparen&gt;&lt;comma&gt;fme_date&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;31&lt;comma&gt;15&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_real64&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;15&lt;comma&gt;7&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_real32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;11&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;11&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int64&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint64&lt;comma&gt;logical&lt;comma&gt;fme_boolean&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;6&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int16&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;6&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint16&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;4&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int8&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;4&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint8&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;fme_decimal&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;,DEST_ILLEGAL_ATTR_LIST,,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,,FEATURE_TYPE_LENGTH,0,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_NAME,TEXTLINE,GEOM_MAP,text_line_none&lt;comma&gt;fme_no_geom&lt;comma&gt;text_line_none&lt;comma&gt;fme_point&lt;comma&gt;text_line_none&lt;comma&gt;fme_line&lt;comma&gt;text_line_none&lt;comma&gt;fme_polygon&lt;comma&gt;text_line_none&lt;comma&gt;fme_text&lt;comma&gt;text_line_none&lt;comma&gt;fme_ellipse&lt;comma&gt;text_line_none&lt;comma&gt;fme_arc&lt;comma&gt;text_line_none&lt;comma&gt;fme_rectangle&lt;comma&gt;text_line_none&lt;comma&gt;fme_rounded_rectangle&lt;comma&gt;text_line_none&lt;comma&gt;fme_collection&lt;comma&gt;text_line_none&lt;comma&gt;fme_raster&lt;comma&gt;text_line_none&lt;comma&gt;fme_surface&lt;comma&gt;text_line_none&lt;comma&gt;fme_solid&lt;comma&gt;text_line_none&lt;comma&gt;fme_point_cloud&lt;comma&gt;text_line_none&lt;comma&gt;fme_feature_table,READER_ATTR_INDEX_TYPES,,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,no,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,textline.sch,WRITER,TEXTLINE,WRITER_ATTR_INDEX_TYPES,,WRITER_DEFLINE_PARMS,,WRITER_DEF_LINE_TEMPLATE,&lt;opencurly&gt;FME_GEN_GROUP_NAME&lt;closecurly&gt;,WRITER_FORMAT_PARAMETER,MIME_TYPE&lt;comma&gt;text&lt;solidus&gt;plain&lt;comma&gt;DATASET_NAME&lt;comma&gt;&lt;quote&gt;txt&lt;space&gt;file&lt;quote&gt;&lt;comma&gt;FEATURE_TYPE_DEFAULT_NAME&lt;comma&gt;text_line&lt;comma&gt;READER_DATASET_HINT&lt;comma&gt;&lt;quote&gt;Select&lt;space&gt;the&lt;space&gt;Text&lt;space&gt;file&lt;openparen&gt;s&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;WRITER_DATASET_HINT&lt;comma&gt;&lt;quote&gt;Specify&lt;space&gt;a&lt;space&gt;name&lt;space&gt;for&lt;space&gt;the&lt;space&gt;Text&lt;space&gt;file&lt;quote&gt;,WRITER_HAS_DEFLINE_ATTRS,no;text_line:text_line,ftp_feature_type_name,text_line,ftp_writer,TEXTLINE,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,&lt;lt&gt;lt&lt;gt&gt;Unused&lt;lt&gt;gt&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_MIME_TYPE" PARM_VALUE="text/plain"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_DESTINATION_DATASETTYPE_VALIDATION" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE="utf-8"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_END_OF_LINE,&quot;OPTIONAL CHOICE System%Windows%Unix%Macintosh%Source%None&quot;,TEXTLINE&lt;space&gt;Line&lt;space&gt;Termination:,TEXTLINE_MIME_TYPE,&quot;OPTIONAL STRING_OR_CHOICE application/json%application/octet-stream%application/xml%application/x-www-form-urlencoded%image/gif%image/jpeg%image/png%image/tiff%multipart/mixed%multipart/alternative%multipart/related%text/html%text/plain%text/xml&quot;,TEXTLINE&lt;space&gt;MIME&lt;space&gt;Type:,TEXTLINE_DESTINATION_DATASETTYPE_VALIDATION,&quot;IGNORE TEXT&quot;,TEXTLINE&lt;space&gt;,TEXTLINE_OVERWRITE_FILE,&quot;OPTIONAL CHOICE YES%NO&quot;,TEXTLINE&lt;space&gt;Overwrite&lt;space&gt;Existing&lt;space&gt;File:,TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING SYSTEM%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:,TEXTLINE_WRITE_LAST_EOL,&quot;OPTIONAL CHOICE YES%NO&quot;,TEXTLINE&lt;space&gt;Write&lt;space&gt;Last&lt;space&gt;Line&lt;space&gt;Terminator:,TEXTLINE_WRITE_UTF8_BOM,&quot;OPTIONAL CHOICE YES%NO&quot;,TEXTLINE&lt;space&gt;Write&lt;space&gt;UTF&lt;space&gt;Byte&lt;space&gt;Order&lt;space&gt;Mark"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__MSWordJson&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="RUNTIME_MACROS,END_OF_LINE&lt;comma&gt;System&lt;comma&gt;MIME_TYPE&lt;comma&gt;text&lt;solidus&gt;plain&lt;comma&gt;DESTINATION_DATASETTYPE_VALIDATION&lt;comma&gt;Yes&lt;comma&gt;OVERWRITE_FILE&lt;comma&gt;NO&lt;comma&gt;ENCODING&lt;comma&gt;utf-8&lt;comma&gt;WRITE_LAST_EOL&lt;comma&gt;NO&lt;comma&gt;WRITE_UTF8_BOM&lt;comma&gt;NO,METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TOTAL_FEATURES_WRITTEN_ATTR" PARM_VALUE="_total_features_written"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE_LIST_ATTR" PARM_VALUE="_feature_type"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_OVERWRITE_FILE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_END_OF_LINE" PARM_VALUE="System"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_WRITE_UTF8_BOM" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="SUMMARY_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-522.88 -834"
+#!   BOUNDING_RECT="-522.88 -834 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; text_line_data SET_TO &lt;at&gt;Value&lt;openparen&gt;_jsonContent&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="45"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="3395.91 -1231.26"
+#!   BOUNDING_RECT="3395.91 -1231.26 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__IgnoreThis" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; __IgnoreThis SET_TO true"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="37"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="3395.91 -1475.01"
+#!   BOUNDING_RECT="3395.91 -1475.01 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="PassForward"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IgnoreThis" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IgnoreThis" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__IgnoreThis&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;NOT_ATTRIBUTE_HAS_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,PassForward"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="36"
+#!   TYPE="Logger"
+#!   VERSION="3"
+#!   POSITION="2201 -481.496"
+#!   BOUNDING_RECT="2201 -481.496 519.274 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="MSWord JSON-Temp file created:"/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="32"
+#!   TYPE="AttributeKeeper"
+#!   VERSION="3"
+#!   POSITION="2201 -277.114"
+#!   BOUNDING_RECT="2201 -277.114 563.511 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#!     <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="668 -774"
+#!   BOUNDING_RECT="668 -774 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="14338"
+#! >
+#!     <OUTPUT_FEAT NAME="NotInitiated"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Initiated"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="InitiatedMsWord"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;__MSWordJson&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;__MSWordJson&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;__MSWordJson&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__MSWordJson&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;space&lt;gt&gt;&lt;quote&gt;,NotInitiated"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Initiated"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="29"
+#!   TYPE="TempPathnameCreator"
+#!   VERSION="0"
+#!   POSITION="1296.77 -690.632"
+#!   BOUNDING_RECT="1296.77 -690.632 576.006 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="BASENAME" PARM_VALUE="msworddoc"/>
+#!     <XFORM_PARM PARM_NAME="EXTENSION" PARM_VALUE="json"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TempPathnameCreator"/>
+#!     <XFORM_PARM PARM_NAME="PATHNAME_ATTR" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="31"
+#!   TYPE="VariableSetter"
+#!   VERSION="2"
+#!   POSITION="1296.77 -882"
+#!   BOUNDING_RECT="1296.77 -882 580.019 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="__MSWordJson"/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableSetter"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__MSWordJson&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="42"
+#!   TYPE="StringConcatenator"
+#!   VERSION="6"
+#!   POSITION="1404.37 -1337.51"
+#!   BOUNDING_RECT="1404.37 -1337.51 0 0"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson_cache" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="addComma"/>
+#!     <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="&lt;comma&gt;&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="10"
+#!   NAME="JSON"
+#!   POSITION="-1261.38 -834"
+#!   BOUNDING_RECT="-1261.38 -834 0 0"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" ATTR_VALUE="$(__MSWORDJSON)" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" ATTR_VALUE="$(_JSONCONTENT)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Output"
+#!   POSITION="4202.52 -1527.88"
+#!   BOUNDING_RECT="4202.52 -1527.88 0 0"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="__MSWordJson" />
+#!     <XFORM_ATTR ATTR_NAME="_jsonContent" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="29"
+#!   SOURCE_PORT_DESC="fo 0 NotInitiated"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="47"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="37"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="528 -1743 3271 -1725"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="33"
+#!   SOURCE_NODE="29"
+#!   TARGET_NODE="31"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="39"
+#!   SOURCE_NODE="31"
+#!   TARGET_NODE="34"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 text_line"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="40"
+#!   SOURCE_NODE="31"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="41"
+#!   SOURCE_NODE="32"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="46"
+#!   SOURCE_NODE="34"
+#!   TARGET_NODE="45"
+#!   SOURCE_PORT_DESC="fo 0 SUMMARY"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="49"
+#!   SOURCE_NODE="37"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 PassForward"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="44"
+#!   SOURCE_NODE="42"
+#!   TARGET_NODE="34"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 text_line"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="2131 -1437"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="48"
+#!   SOURCE_NODE="45"
+#!   TARGET_NODE="37"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="42"
+#!   SOURCE_PORT_DESC="fo 1 Initiated"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="1118 -1378"
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_Paragraph 1.1
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_Level Heading2
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_HeadlineText 
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_Style Normal
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_BodyText 
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_Samples 1
+DEFAULT_MACRO $(MSWordParagrapher_WORKSPACE_NAME)_NewPage no
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO MSWordParagrapher_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(MSWordParagrapher_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(MSWordParagrapher_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordParagrapher_WORKSPACE_NAME)_Input1480337226 Input Splitter"   INPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_TakeValues    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_Input"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "_Action" "SET_TO" "Paragraph"     ATTR_ACTION "" "_paragraph" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_Paragraph$encode)"     ATTR_ACTION "" "_headlineText" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_HeadlineText)"     ATTR_ACTION "" "_bodyText" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_BodyText)"     ATTR_ACTION "" "_newPage" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_NewPage$encode)"     ATTR_ACTION "" "_Samples" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_Samples$encode)"     ATTR_ACTION "" "_Style" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_Style$encode)"     ATTR_ACTION "" "_Level" "SET_TO" "$($(MSWordParagrapher_WORKSPACE_NAME)_Level$encode)"    OUTPUT OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_TakeValues_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_VAR __MSWordJson
+INCLUDE [if {{Global} == {Local}} {   puts {MACRO $(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_VAR $(WB_CURRENT_CONTEXT)___MSWordJson}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_TakeValues_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_OUTPUT"        @GlobalVariable(fme_encoded,$($(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_VAR),fme_result_attribute,__MSWordJson)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever OUTPUT Splitter"   INPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_OUTPUT"   OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_OUTPUT_0_tWPG0d7D6yY="   OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_OUTPUT_1_1sHmIQyZPcA="
+# -------------------------------------------------------------------------
+
+INCLUDE [ puts "MACRO REAL_RATE [expr $($(MSWordParagrapher_WORKSPACE_NAME)_Samples) * -1 ]" ]
+FACTORY_DEF * SamplingFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_Only_x_Samples    SAMPLE_RATE $(REAL_RATE)    SAMPLE_ORDER ORIGINAL    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_OUTPUT_1_1sHmIQyZPcA="    OUTPUT SAMPLED FEATURE_TYPE ___SAMPLED___
+# This TeeFactory is needed because Sampler will still output features if it has no OUTPUT clauses specified.
+# This way we behave nicely even if there are no output connections on the transformer. See PR#28886.
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_Only_x_Samples_Sampled    INPUT FEATURE_TYPE ___SAMPLED___    OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_Only_x_Samples_SAMPLED"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * XMLTemplaterFactory FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_JSONParagraph INPUT CONTROL_FEATURE FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_Only_x_Samples_SAMPLED" INPUT DATA_FEATURE FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_JSONParagraph_DataFeatures RESULT_ATTR _jsonContent OUTPUT_XML_HEADER NO BUCKET_ATTR_NAME __xml_templater_bucket__ CONTROL_TEMPLATE_EXPR <opencurly><lf><space><space><space><space><quote>style<quote>:<quote>paragraph<quote><comma><lf><space><space><space><space><quote>paragraph<quote>:fme:get-attribute<openparen><quote>_paragraph<quote><closeparen><comma><lf><space><space><space><space><quote>level<quote>:fme:get-attribute<openparen><quote>_Level<quote><closeparen><comma><lf><space><space><space><space><quote>headlineText<quote>:fme:get-attribute<openparen><quote>_headlineText<quote><closeparen><comma><lf><space><space><space><space><quote>bodystyle<quote>:fme:get-attribute<openparen><quote>_Style<quote><closeparen><comma><lf><space><space><space><space><quote>bodyText<quote>:fme:get-attribute<openparen><quote>_bodyText<quote><closeparen><comma><lf><space><space><space><space><quote>newPage<quote>:fme:get-attribute<openparen><quote>_newPage<quote><closeparen><space><space><space><lf><closecurly> OUTPUT XML_DOCUMENT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_JSONParagraph_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordParagrapher_WORKSPACE_NAME)_WriteJson JSON Input Collector"   INPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_JSONParagraph_OUTPUT"   OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_WriteJson_JSON"
+MACRO MSWord_WriteJson_WORKSPACE_NAME $(MSWordParagrapher_WORKSPACE_NAME)_WriteJson
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_XFORMER_NAME $(MSWordParagrapher_WORKSPACE_NAME)_WriteJson
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_SUB_DOC_NAME MSWord_WriteJson
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)___MSWORDJSON <at>Value<openparen>__MSWordJson<closeparen>
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)__JSONCONTENT <at>Value<openparen>_jsonContent<closeparen>
+DEFAULT_MACRO MSWord_WriteJson_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(MSWord_WriteJson_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(MSWord_WriteJson_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWord_WriteJson_WORKSPACE_NAME)_JSON1480337226 Input Splitter"   INPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_JSON"   OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_JSON" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,__MSWordJson,$($(MSWord_WriteJson_WORKSPACE_NAME)___MSWORDJSON),_jsonContent,$($(MSWord_WriteJson_WORKSPACE_NAME)__JSONCONTENT), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_JSON"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "text_line_data" "SET_TO" "<at>Value<openparen>_jsonContent<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_Get_cache_VAR __MSWordJson_cache
+INCLUDE [if {{Global} == {Local}} {   puts {MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_Get_cache_VAR $(WB_CURRENT_CONTEXT)___MSWordJson_cache}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_Get_cache    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_Get_cache_OUTPUT"        @GlobalVariable("$($(MSWord_WriteJson_WORKSPACE_NAME)_Get_cache_VAR)",fme_result_attribute,__MSWordJson_cache)
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_VAR __MSWordJson
+INCLUDE [if {{Global} == {Local}} {   puts {MACRO $(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_VAR $(WB_CURRENT_CONTEXT)___MSWordJson}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_Get_cache_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_OUTPUT"        @GlobalVariable("$($(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_VAR)",fme_result_attribute,__MSWordJson)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson OUTPUT Splitter"   INPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_OUTPUT"   OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_OUTPUT_0_qg7biy1aIVw="   OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_OUTPUT_1_s0IEZt92kDU="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_OUTPUT_0_qg7biy1aIVw="    OUTPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_TestFactory_0 INPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_TESTFILTERINPUTLINE_0 TEST __MSWordJson ATTRIBUTE_VALUE_NULL "" ENCODED TEST __MSWordJson ATTRIBUTE_IS_EMPTY "" ENCODED TEST __MSWordJson ATTRIBUTE_IS_MISSING "" ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__MSWordJson<closeparen>,$(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord) = <space> ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_NotInitiated OUTPUT FAILED FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_Initiated INPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_Initiated
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(MSWord_WriteJson_WORKSPACE_NAME)_addComma_c5b99407_eeba_45fd_9aa6_9cd45965eaf50_doSetAttr {attrText} {    FME_SetAttribute [FME_DecodeText {text_line_data}] [FME_DecodeText $attrText] }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_addComma    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_Initiated"    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_addComma_OUTPUT"        @Tcl2("$(MSWord_WriteJson_WORKSPACE_NAME)_addComma_c5b99407_eeba_45fd_9aa6_9cd45965eaf50_doSetAttr {@EvaluateExpression(FDIV,STRING_ENCODED,<comma><at>Value<openparen>text_line_data<closeparen>,$(MSWord_WriteJson_WORKSPACE_NAME)_addComma)} ")
+
+# -------------------------------------------------------------------------
+
+# On translation startup, prep the temporary directory that this instance of the
+# xformer will populate with its temporary files.  We'll do this by asking for a
+# temporary filename, and then instead of using it as a file, we'll add our UUID to
+# it to make a super unique name, which will become the directory we'll use for all
+# the temp files we hand out.
+# And we'll set up to have the END_TCL delete that entire directory when we shut down.
+# To do that, we'll use the "environment" to hold our master subidirectory, keyed by
+# our UUID as the environment variable name.  That is the only way to pass information
+# from @Tcl2 to FME_END_TCL (via the "env" variable, because they use different Tcl
+# interpretters)
+
+Tcl2 set sampleTempFile [FME_TempFilename];      set ourTempDir {};      append ourTempDir $sampleTempFile {$(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060};      file mkdir $ourTempDir;      set env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_dir) $ourTempDir;      set env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_file) $sampleTempFile;      set gNumTempFilesHandedOut 0;
+
+# Cleanup time. Remove the directory this transformer was using for its temp files, as well as the
+# original temp file that was created as our "seed" to get us a unique starting point.
+
+FME_END_TCL file delete -force $env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_dir) $env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_file) ;      unset env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_dir);      unset env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_file);
+# Actually create and return a well formed filename that is guaranteed not to be there.
+# We know we're working inside a directory unique to our instance of the transformer.
+# So we can just increment serially within there to be sure we're not making a previously existing file
+# We need to also provide a default for the filename base if they didn't give us one (we'll
+# use the XFORMER_NAME), and take care to handle a no-extension-desired situation as well as
+# a situation where the extension started with a .
+
+Tcl2 proc $(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_makeTemp {baseName extension} {      global env;      global gNumTempFilesHandedOut;      if { [string length $extension ] == 0 } {          set extensionSep {};      } elseif { [string index $extension 0] == {.} } {          set extensionSep {};      } else {          set extensionSep {.};      };      if { $baseName == {} } {          set baseName {$(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator};      };      set curClock [clock clicks];      set last7ClockDigits [string range $curClock end-6 end];      append aGoodTempFile $env($(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_6e3b1bf6_3474_40b1_84f8_52d3fbcc56060_dir) [file separator] [FME_DecodeText $baseName] {_}                           $last7ClockDigits {_} $gNumTempFilesHandedOut                           $extensionSep [FME_DecodeText $extension];      incr gNumTempFilesHandedOut;      FME_SetAttribute [FME_DecodeText __MSWordJson] $aGoodTempFile; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_InitiatedMsWord_NotInitiated"    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_OUTPUT"         @Tcl2("$(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_makeTemp {msworddoc} {json}")
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_VAR __MSWordJson
+INCLUDE [ if {{Global} == {Local}} {   puts {MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_VAR $(WB_CURRENT_CONTEXT)___MSWordJson}; } ]
+Tcl2 proc $(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_6832048b_557b_4fa4_9896_0d794897609b0_setGlobalVar {varName varValue} {   set attrName $(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_tempAttr;   FME_SetAttribute $attrName [FME_DecodeText $varValue];   FME_Execute GlobalVariable $varName fme_attribute_name $attrName;   FME_UnsetAttributes $(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_tempAttr; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_TempPathnameCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_OUTPUT"        @Tcl2("$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_6832048b_557b_4fa4_9896_0d794897609b0_setGlobalVar {$($(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_VAR)} {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>__MSWordJson<closeparen>,$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter)} ")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter OUTPUT Splitter"   INPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_OUTPUT"   OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_OUTPUT_0_CCRX4aVqPFw="   OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_OUTPUT_1_vDrDEqyJZk8="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * WriterFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_FeatureWriter    WRITER_TYPE TEXTLINE    WRITER_DATASET @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>__MSWordJson<closeparen>,$(MSWord_WriteJson_WORKSPACE_NAME)_FeatureWriter)    WRITER_SETTINGS RUNTIME_MACROS,END_OF_LINE<comma>System<comma>MIME_TYPE<comma>text<solidus>plain<comma>DESTINATION_DATASETTYPE_VALIDATION<comma>Yes<comma>OVERWRITE_FILE<comma>NO<comma>ENCODING<comma>utf-8<comma>WRITE_LAST_EOL<comma>NO<comma>WRITE_UTF8_BOM<comma>NO,METAFILE,TEXTLINE    WRITER_FEATURE_TYPES WRITER_METAFILE_INFO,ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,,ATTRIBUTE_LENGTH,60,ATTR_TYPE_MAP,char<openparen>width<closeparen><comma>fme_varchar<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_varbinary<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_char<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_binary<openparen>width<closeparen><comma>buffer<comma>fme_buffer<comma>buffer<comma>fme_binarybuffer<comma>buffer<comma>fme_xml<comma>buffer<comma>fme_json<comma>char<openparen>20<closeparen><comma>fme_datetime<comma>char<openparen>12<closeparen><comma>fme_time<comma>char<openparen>8<closeparen><comma>fme_date<comma><quote>number<openparen>31<comma>15<closeparen><quote><comma>fme_real64<comma><quote>number<openparen>15<comma>7<closeparen><quote><comma>fme_real32<comma><quote>number<openparen>11<comma>0<closeparen><quote><comma>fme_int32<comma><quote>number<openparen>11<comma>0<closeparen><quote><comma>fme_uint32<comma><quote>number<openparen>20<comma>0<closeparen><quote><comma>fme_int64<comma><quote>number<openparen>20<comma>0<closeparen><quote><comma>fme_uint64<comma>logical<comma>fme_boolean<comma><quote>number<openparen>6<comma>0<closeparen><quote><comma>fme_int16<comma><quote>number<openparen>6<comma>0<closeparen><quote><comma>fme_uint16<comma><quote>number<openparen>4<comma>0<closeparen><quote><comma>fme_int8<comma><quote>number<openparen>4<comma>0<closeparen><quote><comma>fme_uint8<comma><quote>number<openparen>width<comma>decimal<closeparen><quote><comma><quote>fme_decimal<openparen>width<comma>decimal<closeparen><quote>,DEST_ILLEGAL_ATTR_LIST,,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,,FEATURE_TYPE_LENGTH,0,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_NAME,TEXTLINE,GEOM_MAP,text_line_none<comma>fme_no_geom<comma>text_line_none<comma>fme_point<comma>text_line_none<comma>fme_line<comma>text_line_none<comma>fme_polygon<comma>text_line_none<comma>fme_text<comma>text_line_none<comma>fme_ellipse<comma>text_line_none<comma>fme_arc<comma>text_line_none<comma>fme_rectangle<comma>text_line_none<comma>fme_rounded_rectangle<comma>text_line_none<comma>fme_collection<comma>text_line_none<comma>fme_raster<comma>text_line_none<comma>fme_surface<comma>text_line_none<comma>fme_solid<comma>text_line_none<comma>fme_point_cloud<comma>text_line_none<comma>fme_feature_table,READER_ATTR_INDEX_TYPES,,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,no,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,textline.sch,WRITER,TEXTLINE,WRITER_ATTR_INDEX_TYPES,,WRITER_DEFLINE_PARMS,,WRITER_DEF_LINE_TEMPLATE,<opencurly>FME_GEN_GROUP_NAME<closecurly>,WRITER_FORMAT_PARAMETER,MIME_TYPE<comma>text<solidus>plain<comma>DATASET_NAME<comma><quote>txt<space>file<quote><comma>FEATURE_TYPE_DEFAULT_NAME<comma>text_line<comma>READER_DATASET_HINT<comma><quote>Select<space>the<space>Text<space>file<openparen>s<closeparen><quote><comma>WRITER_DATASET_HINT<comma><quote>Specify<space>a<space>name<space>for<space>the<space>Text<space>file<quote>,WRITER_HAS_DEFLINE_ATTRS,no;text_line:text_line,ftp_feature_type_name,text_line,ftp_writer,TEXTLINE,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,<lt>lt<gt>Unused<lt>gt<gt>    WRITER_PARAMS END_OF_LINE,System,MIME_TYPE,text<solidus>plain,DESTINATION_DATASETTYPE_VALIDATION,Yes,OVERWRITE_FILE,NO,ENCODING,utf-8,WRITE_LAST_EOL,NO,WRITE_UTF8_BOM,NO    DATASET_ATTR _dataset    FEATURE_TYPE_LIST_ATTR _feature_type    TOTAL_FEATURES_WRITTEN_ATTR _total_features_written    INPUT text_line FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_OUTPUT_0_CCRX4aVqPFw="  @FeatureType(ENCODED,text_line)      INPUT text_line FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_addComma_OUTPUT"  @FeatureType(ENCODED,text_line)      OUTPUT SUMMARY FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_FeatureWriter_SUMMARY"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_FeatureWriter_SUMMARY"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "__IgnoreThis" "SET_TO" "true"    OUTPUT OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)___MSWordJson_OUTPUT_1_s0IEZt92kDU="    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    OUTPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>__IgnoreThis<closeparen>,$(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter) NOT_ATTRIBUTE_HAS_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_PassForward OUTPUT FAILED FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(MSWord_WriteJson_WORKSPACE_NAME)_AttributeKeeper_061e1340_607e_4118_afed_b1b8cd308b730_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_AttributeKeeper    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_VariableSetter_OUTPUT_1_vDrDEqyJZk8="    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"        @KeepAttributes(fme_encoded,__MSWordJson,fme_pcre_match,"^fme_$($(MSWord_WriteJson_WORKSPACE_NAME)_AttributeKeeper_061e1340_607e_4118_afed_b1b8cd308b730_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWord_WriteJson_WORKSPACE_NAME)_Logger_Logger    INPUT  FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_Logger_LOGGED"                  @Log("$(MSWord_WriteJson_WORKSPACE_NAME)_Logger: MSWord JSON-Temp file created:","1","1")                  @FeatureType("$(MSWord_WriteJson_WORKSPACE_NAME)_Logger_LOGGED")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWord_WriteJson_WORKSPACE_NAME)_Logger LOGGED Output Nuker"   INPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_Logger_LOGGED"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWord_WriteJson_WORKSPACE_NAME)_Output1480337226 Output Collector"   INPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_TestFilter_PassForward"   OUTPUT FEATURE_TYPE "$(MSWord_WriteJson_WORKSPACE_NAME)_Output" @RemoveAttributes(text_line_data,__MSWordJson_cache,__IgnoreThis,_dataset,_total_features_written) @RemoveAttributes(fme_regexp_match,_feature_type{}.count,_feature_type{}.name)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(MSWord_WriteJson_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordParagrapher_WORKSPACE_NAME)_WriteJson Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_WriteJson_Output"   OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_WriteJson_Output"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_WriteJson_Output"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "__skipRecord" "SET_TO" "true"    OUTPUT OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_FeatureHolder    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_VariableRetriever_OUTPUT_0_tWPG0d7D6yY="    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT SORTED FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_FeatureHolder_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_FeatureHolder_OUTPUT"    OUTPUT FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__skipRecord<closeparen>,$(MSWordParagrapher_WORKSPACE_NAME)_TestFilter) = true ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_delete OUTPUT FAILED FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_keep INPUT FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_keep
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordParagrapher_WORKSPACE_NAME)_TestFilter delete Output Nuker"   INPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_delete"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSWordParagrapher_WORKSPACE_NAME)_Output1480337226 Output Collector"   INPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_TestFilter_keep"   OUTPUT FEATURE_TYPE "$(MSWordParagrapher_WORKSPACE_NAME)_Output" @RemoveAttributes(_Action,_paragraph,_headlineText,_bodyText,_newPage,_Samples,_Style,_Level,__MSWordJson,__skipRecord,_jsonContent)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(MSWordParagrapher_WORKSPACE_NAME))}]

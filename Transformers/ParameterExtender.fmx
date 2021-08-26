@@ -1,0 +1,89 @@
+# =========================================================================
+
+TRANSFORMER_NAME: ParameterExtender
+
+ALIASES: 
+
+VERSION: 0
+ 
+CATEGORY: Infrastructure
+
+INPUT_TAGS: <BLANK>
+
+OUTPUT_TAGS: OUTPUT 
+
+PRESERVES_ATTRIBUTES: yes
+
+
+FEATURE_HOLDING: NONE
+
+NUKERS_REQUIRED: yes
+
+ATTRIBUTES_ADDED: $(NEW_ATTRIBUTES) $(LIST_NAME){}.name $(LIST_NAME){}.value
+
+
+PARAMETER_NAME: TRANSFORMER_GROUP
+PARAMETER_TYPE: GROUP XFORMER_NAME
+PARAMETER_PROMPT: Transformer
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: PARAMETERS_GROUP1
+PARAMETER_TYPE: GROUP ATTRIBUTES%LIST_NAME
+PARAMETER_PROMPT: Ordered attribute list
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: ATTRIBUTES
+PARAMETER_TYPE: OPTIONAL ORDEREDLIST ATTRLIST
+PARAMETER_PROMPT: Attribute list builder:
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: LIST_NAME
+PARAMETER_TYPE: STRING_ENCODED
+PARAMETER_PROMPT: List Name:
+PARAMETER_DEFAULT: _attribute_selection
+
+PARAMETER_NAME: PARAMETERS_GROUP2
+PARAMETER_TYPE: GROUP NEW_ATTRIBUTES
+PARAMETER_PROMPT: Attribute exposer
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: NEW_ATTRIBUTES
+PARAMETER_TYPE: OPTIONAL USER_DEFINED_LIST
+PARAMETER_PROMPT: Attributes to Expose:
+PARAMETER_DEFAULT: 
+
+TOOLTIP_START
+Attributes to Expose: $(NEW_ATTRIBUTES)
+TOOLTIP_END
+ 
+CHANGE_LOG_START
+
+CHANGE_LOG_END
+
+TEMPLATE_START
+
+Tcl2 proc $(XFORMER_NAME)_doSplit {}
+{
+    set listName [FME_DecodeText {$(LIST_NAME)}];
+    set bits {$(ATTRIBUTES)};
+    set attrNum 0;
+    foreach bit $bits
+    {
+        FME_SetAttribute "$listName{$attrNum}.name" [FME_DecodeText $bit];
+        FME_SetAttribute "$listName{$attrNum}.value" [FME_GetAttribute [FME_DecodeText $bit]];
+        incr attrNum;
+    }
+}
+         
+FACTORY_DEF * TeeFactory
+   FACTORY_NAME $(XFORMER_NAME)
+   $(INPUT_LINES)
+   OUTPUT FEATURE_TYPE $(OUTPUT_OUTPUT_FTYPE)
+                 @Tcl2($(XFORMER_NAME)_doSplit)
+                 $(OUTPUT_OUTPUT_FUNCS)
+
+TEMPLATE_END
+
+
+# =========================================================================
+

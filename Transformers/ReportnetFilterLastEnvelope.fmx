@@ -1,0 +1,327 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ReportnetFilterLastEnvelope,1,ReportNet,f538aff2-f1cf-43b4-99e5-a1b2e8171eb1,"Embedded Always",No,NO_PARALLELISM,,No,18520,YES,No,2or3
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Retrieve the last envelope. Is used in connection with the ReportNetEnvelopeReader and will filter out the last receivede envelope from a country for a reporting year. Use this as an example and alter towards your specific needs.</p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="ReportNet"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Retrieve the last envelope. Is used in connection with the ReportNetEnvelopeReader and will filter out the last receivede envelope from a country for a reporting year. Use this as an example and alter towards your specific needs.&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="3483.29 71"
+#!   DOC_TOP_LEFT="-1131.76 -558.255"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="f538aff2-f1cf-43b4-99e5-a1b2e8171eb1"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Embedded Always"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2018-10-25T16:47:45"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="2or3"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="ReportnetFilterLastEnvelope"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-1456.26 100.001"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="Sorter"
+#!   VERSION="2"
+#!   POSITION="613.56754434609695 -487.25493288375111"
+#!   BOUNDING_RECT="613.56754434609695 -487.25493288375111 -1 -1"
+#!   ORDER="500000000000031"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="SORTED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="SORT_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="envelope_countryCode ALPHA ASCENDING envelope_periodStartYear NUMERIC ASCENDING envelope_reportingDate NUMERIC DESCENDING"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="DateTimeConverter"
+#!   VERSION="1"
+#!   POSITION="71.247091141565562 -487.25493288375111"
+#!   BOUNDING_RECT="71.247091141565562 -487.25493288375111 -1 -1"
+#!   ORDER="500000000000032"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DATETIME_ATTR" PARM_VALUE="envelope_reportingDate"/>
+#!     <XFORM_PARM PARM_NAME="IN_FORMAT" PARM_VALUE="%Y-%m-%dT%H:%M:%SZ"/>
+#!     <XFORM_PARM PARM_NAME="OUT_FORMAT" PARM_VALUE="FME"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REFERENCE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REFERENCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPAIR_INPUT" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TEST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_INPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_INPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_RESULT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateTimeConverter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="1160.1652553232077 -487.25493288375111"
+#!   BOUNDING_RECT="1160.1652553232077 -487.25493288375111 -1 -1"
+#!   ORDER="500000000000033"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_comparePrev" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_compareCur" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _comparePrev SET_TO &lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;-1&lt;closebracket&gt;.envelope_countryCode&lt;closeparen&gt;&lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;-1&lt;closebracket&gt;.envelope_periodStartYear&lt;closeparen&gt;  _compareCur SET_TO &lt;at&gt;Value&lt;openparen&gt;envelope_countryCode&lt;closeparen&gt;&lt;at&gt;Value&lt;openparen&gt;envelope_periodStartYear&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1713.1544077147337 -487.25493288375111"
+#!   BOUNDING_RECT="1713.1544077147337 -487.25493288375111 -1 -1"
+#!   ORDER="500000000000034"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="LastestOne"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_comparePrev" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_compareCur" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_comparePrev" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_compareCur" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;&lt;Unused&gt;&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;_comparePrev&lt;space&gt;NOT_ATTRIBUTE_HAS_A_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_compareCur&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;!=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_comparePrev&lt;lt&gt;closeparen&lt;gt&gt;&quot;,LastestOne"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="AttributeExposer"
+#!   VERSION="1"
+#!   POSITION="-479.6932682620282 -487.25493288375105"
+#!   BOUNDING_RECT="-479.6932682620282 -487.25493288375105 -1 -1"
+#!   ORDER="500000000000036"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="envelope_countryCode,envelope_reportingDate,envelope_periodStartYear"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="9"
+#!   NAME="Input"
+#!   POSITION="-1131.7591589209342 -487.25493288375105"
+#!   BOUNDING_RECT="-1131.7591589209342 -487.25493288375105 469.25253385468341 71"
+#!   COLLAPSED="false"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Output"
+#!   POSITION="2351.5302514731711 -547.25493288375105"
+#!   BOUNDING_RECT="2351.5302514731711 -547.25493288375105 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="6"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 SORTED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 LastestOne"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ReportnetFilterLastEnvelope_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ReportnetFilterLastEnvelope_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Input1540478865 Input Splitter"   INPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+# -------------------------------------------------------------------------
+DEFAULT_MACRO $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_EXPRESSION_LIST
+DEFAULT_MACRO $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_TEST_CLAUSE_LIST
+INCLUDE [    set repairInput {};    if {{NO} eq {YES}} {       set repairInput "<comma>repair";    };    set inFormat {FME|ISO};    if { {%Y-%m-%dT%H:%M:%SZ} ne {} } {       set inFormat {%Y-%m-%dT%H:%M:%SZ};       if { [string first "<quote>" $inFormat] != -1 } {          set inFormat [string map {"<quote>" "<backslash><quote>"} $inFormat];       };    };    set outFormat {FME};    if { [string first "<quote>" $outFormat] != -1 } {       set outFormat [string map {"<quote>" "<backslash><quote>"} $outFormat];    };    set parmList {};    set testList {};    set attrs [split {envelope_reportingDate} { }];    foreach attr $attrs {       lappend parmList $attr;       set funcAttr $attr;       if { [string first "<quote>" $attr] != -1 }       {          set funcAttr [string map {"<quote>" "<backslash><quote>"} $attr];          append funcAttr "<quote>";          set funcAttr "<quote>$funcAttr";       };       lappend parmList <at>DateTimeFormat<openparen><at>DateTimeParse<openparen><at>Value<openparen>$funcAttr<closeparen><comma><quote>$inFormat<quote>$repairInput<closeparen><comma><quote>$outFormat<quote><closeparen>;       lappend testList "TEST $attr ATTRIBUTE_VALUE_NULL \"\" ENCODED"    };    puts "MACRO $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_EXPRESSION_LIST [join $parmList {,}]";    puts "MACRO $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_TEST_CLAUSE_LIST [join $testList { }]"; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_1    INPUT  FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_AttributeExposer_OUTPUT"    OUTPUT FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter__TEST_NULL__         @EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV, $($(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_EXPRESSION_LIST), $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter)
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_2    INPUT FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter__TEST_NULL__    $($(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_TEST_CLAUSE_LIST)    BOOLEAN_OPERATOR OR    OUTPUT FAILED FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * SortFactory    FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Sorter    INPUT  FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_DateTimeConverter_OUTPUT"    SORT_BY envelope_countryCode ALPHA ASCENDING envelope_periodStartYear NUMERIC ASCENDING envelope_reportingDate NUMERIC DESCENDING    OUTPUT SORTED FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Sorter_SORTED"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Sorter_SORTED"    MULTI_FEATURE_MODE YES    NUM_PRIOR_FEATURES 1    NUM_SUBSEQUENT_FEATURES 0    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_comparePrev" "SET_TO" "<at>Value<openparen>feature<openbracket>-1<closebracket>.envelope_countryCode<closeparen><at>Value<openparen>feature<openbracket>-1<closebracket>.envelope_periodStartYear<closeparen>" }      ATTR_ACTION { "" "_compareCur" "SET_TO" "<at>Value<openparen>envelope_countryCode<closeparen><at>Value<openparen>envelope_periodStartYear<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST _comparePrev NOT_ATTRIBUTE_HAS_A_VALUE "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_compareCur<closeparen>,$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter) != @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_comparePrev<closeparen>,$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter) ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "<Unused>" OUTPUT PASSED FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_LastestOne OUTPUT FAILED FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter <lt>UNFILTERED<gt> Transformer Output Nuker"   INPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Output1540478865 Output Collector"   INPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_TestFilter_LastestOne"   OUTPUT FEATURE_TYPE "$(ReportnetFilterLastEnvelope_WORKSPACE_NAME)_Output" @RemoveAttributes(_comparePrev,_compareCur,envelope_countryCode,envelope_reportingDate,envelope_periodStartYear)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ReportnetFilterLastEnvelope_WORKSPACE_NAME))}]

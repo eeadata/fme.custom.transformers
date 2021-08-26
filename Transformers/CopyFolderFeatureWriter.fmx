@@ -1,0 +1,357 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN CopyFolderFeatureWriter,1,Infrastructure,abc71f1a-4a06-404c-8d91-d2ccbb5e10fc,"Embedded Always",No,NO_PARALLELISM,,No,18520,YES,No,27
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Copy or move a folder using a FeatureWriter </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Infrastructure"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Copy or move a folder using a FeatureWriter &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2416.5 730.262"
+#!   DOC_TOP_LEFT="65.6247 -1328.14"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="abc71f1a-4a06-404c-8d91-d2ccbb5e10fc"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Embedded Always"
+#!   HISTORY="03&lt;solidus&gt;04&lt;solidus&gt;2019,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creation"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-04-03T15:23:08"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="27"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="CopyFolderFeatureWriter"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Input Ports&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Initiator&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This port accepts any feature. Each feature is expected to have as attribute the path to a zipfile.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Output Ports&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Initiator&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Will output the same feature. No additional attributes are exposed.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Summary&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Provide some general statistics. _feature_type{}.count, _feature_type{}.name,_dataset,_total_feature_written&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Parameters&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Source folder&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The folder that needs to be copied or moved.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Target folder&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The folder path name to copy or move towards&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;File Operation&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifies the operation that will be performed on the input files.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Copy Source Folder&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This parameter indicates whether to only copy the contents of the source folder to the destination folder, or whether to copy the folder name in addition to the contents.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Leaving the default parameter set to &lt;span style=&quot; font-weight:600;&quot;&gt;No&lt;/span&gt; will copy only the contents of the source folder.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;OpenCopy Subfolders&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This parameter specifies whether to additionally copy any subfolders and their contents to the destination folder.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;OpenError on Non-Existent Source&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifies whether FME should issue an error and terminate the translation when the specified source file/folder does not exist.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When set to &lt;span style=&quot; font-weight:600;&quot;&gt;No&lt;/span&gt; and the source file/folder does not exist, FME logs a warning (WARN) to the log file and proceeds.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;OpenError on Invalid Destination&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If the folder cannot be copied for any reason:&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Yes&lt;/span&gt; – FME will log an error message (ERROR) to the log file and terminate the translation.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;No&lt;/span&gt; – FME will log a warning message (WARN) to the log file, and the translation will continue.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-3.12503 231.252"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL DIRNAME_OR_ATTR Source_folder Source folder:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL DIRNAME_OR_ATTR Target_folder Target folder:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI LOOKUP_CHOICE FOLDER_OPERATION Copy,COPY%Move,MOVE Folder Operation:"
+#!   DEFAULT_VALUE="MOVE"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE COPY_SOURCE_DIRECTORY YES%NO Copy Source Folder:"
+#!   DEFAULT_VALUE="NO"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE COPY_SUBDIRECTORIES YES%NO Copy Subfolders:"
+#!   DEFAULT_VALUE="YES"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE FAIL_NONEXISTENT_SOURCE YES%NO Error on Non-Existent Source:"
+#!   DEFAULT_VALUE="YES"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE FAIL_INVALID_DESTINATION YES%NO Error on Invalid Destination:"
+#!   DEFAULT_VALUE="YES"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="11"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Perform the copy or move method&lt;span style=&quot; font-weight:600;&quot;&gt; (File copy)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1173.1076502079716 -804.38366261618546"
+#!   TOP_LEFT="1173.1076502079716 -804.38366261618546"
+#!   BOTTOM_RIGHT="1645.1076502079716 -803.38366261618546"
+#!   BOUNDING_RECT="1173.1076502079716 -804.38366261618546 472 -1"
+#!   ORDER="500000000000018"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="4"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="12"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;No need to keep attributes created in this transformer...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1750.3276784476825 -804.38366261618557"
+#!   TOP_LEFT="1750.3276784476825 -804.38366261618557"
+#!   BOTTOM_RIGHT="2300.1183917692447 -803.38366261618557"
+#!   BOUNDING_RECT="1750.3276784476825 -804.38366261618557 549.79071332156218 -1"
+#!   ORDER="500000000000020"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="7"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="13"
+#!   COMMENT_VALUE="&lt;b&gt;ParameterFetcher&amp;nbsp;[ParameterFetcher&amp;nbsp;Version&amp;nbsp;4]&lt;/b&gt;&lt;br&gt;$(Source_folder)&amp;nbsp;-&amp;gt;&amp;nbsp;filecopy_source_dataset&lt;br&gt;$(Target_folder)&amp;nbsp;-&amp;gt;&amp;nbsp;filecopy_dest_dataset"
+#!   POSITION="456.16329076437614 -597.88141259368535"
+#!   TOP_LEFT="456.16329076437614 -597.88141259368535"
+#!   BOTTOM_RIGHT="455.16329076437614 -596.88141259368535"
+#!   BOUNDING_RECT="456.16329076437614 -597.88141259368535 -1 -1"
+#!   ORDER="500000000000016"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="true"
+#!   ANCHORED_NODE="5"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="FeatureWriter"
+#!   VERSION="0"
+#!   POSITION="1173.1076502079716 -994.13472512681062"
+#!   BOUNDING_RECT="1173.1076502079716 -994.13472512681062 -1 -1"
+#!   ORDER="500000000000008"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="filecopy"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="filecopy_source_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="filecopy_dest_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="SUMMARY"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;filecopy_dest_dataset&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DATASET_ATTR" PARM_VALUE="_dataset"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE_LIST_ATTR" PARM_VALUE="_feature_type"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_COORDINATE_SYSTEM_GRANULARITY" PARM_VALUE="FEATURE"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_COPY_SOURCE_DIRECTORY" PARM_VALUE="$(COPY_SOURCE_DIRECTORY)"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_COPY_SUBDIRECTORIES" PARM_VALUE="$(COPY_SUBDIRECTORIES)"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_DESTINATION_DATASETTYPE_VALIDATION" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_FAIL_INVALID_DESTINATION" PARM_VALUE="$(FAIL_INVALID_DESTINATION)"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_FAIL_NONEXISTENT_SOURCE" PARM_VALUE="$(FAIL_NONEXISTENT_SOURCE)"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_FILE_OPERATION" PARM_VALUE="$(FOLDER_OPERATION)"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_MIME_TYPE" PARM_VALUE="text/plain"/>
+#!     <XFORM_PARM PARM_NAME="FILECOPY_OVERWRITE_FILE" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="FILECOPY"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="RUNTIME_MACROS,FILE_OPERATION&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;FOLDER_OPERATION&lt;closeparen&gt;&lt;comma&gt;OVERWRITE_FILE&lt;comma&gt;YES&lt;comma&gt;COPY_SOURCE_DIRECTORY&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;COPY_SOURCE_DIRECTORY&lt;closeparen&gt;&lt;comma&gt;COPY_SUBDIRECTORIES&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;COPY_SUBDIRECTORIES&lt;closeparen&gt;&lt;comma&gt;FAIL_NONEXISTENT_SOURCE&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;FAIL_NONEXISTENT_SOURCE&lt;closeparen&gt;&lt;comma&gt;FAIL_INVALID_DESTINATION&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;FAIL_INVALID_DESTINATION&lt;closeparen&gt;&lt;comma&gt;MIME_TYPE&lt;comma&gt;text&lt;solidus&gt;plain&lt;comma&gt;DESTINATION_DATASETTYPE_VALIDATION&lt;comma&gt;Yes&lt;comma&gt;COORDINATE_SYSTEM_GRANULARITY&lt;comma&gt;FEATURE,METAFILE,FILECOPY"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="FILECOPY_FAIL_NONEXISTENT_SOURCE,&quot;OPTIONAL CHOICE YES%NO&quot;,FILECOPY&lt;space&gt;Error&lt;space&gt;on&lt;space&gt;Non-Existent&lt;space&gt;Source:,FILECOPY_COORDINATE_SYSTEM_GRANULARITY,&quot;OPTIONAL NO_EDIT TEXT&quot;,FILECOPY&lt;space&gt;,FILECOPY_COPY_SUBDIRECTORIES,&quot;OPTIONAL CHOICE YES%NO&quot;,FILECOPY&lt;space&gt;Copy&lt;space&gt;Subfolders:,FILECOPY_FAIL_INVALID_DESTINATION,&quot;OPTIONAL CHOICE YES%NO&quot;,FILECOPY&lt;space&gt;Error&lt;space&gt;on&lt;space&gt;Invalid&lt;space&gt;Destination:,FILECOPY_OVERWRITE_FILE,&quot;OPTIONAL CHOICE YES%NO&quot;,FILECOPY&lt;space&gt;Overwrite&lt;space&gt;Existing&lt;space&gt;File:,FILECOPY_MIME_TYPE,&quot;OPTIONAL STRING_OR_CHOICE application/json%application/pdf%application/x-dvi%application/x-shockwave-flash%application/x-rar-compressed%application/x-tar%application/zip%audio/mpeg%audio/vnd.rn-realaudio%audio/x-ms-wma%audio/x-wav%image/gif%image/jpeg%image/png%image/svg+xml%image/tiff%text/css%text/csv%text/html%text/plain%text/xml%video/mp4%video/mpeg%video/quicktime%video/x-ms-wmv&quot;,FILECOPY&lt;space&gt;MIME&lt;space&gt;Type:,FILECOPY_FILE_OPERATION,&quot;OPTIONAL LOOKUP_CHOICE Copy,COPY%Move,MOVE&quot;,FILECOPY&lt;space&gt;File&lt;space&gt;Operation:,FILECOPY_DESTINATION_DATASETTYPE_VALIDATION,&quot;OPTIONAL NO_EDIT TEXT&quot;,FILECOPY&lt;space&gt;,FILECOPY_COPY_SOURCE_DIRECTORY,&quot;OPTIONAL CHOICE YES%NO&quot;,FILECOPY&lt;space&gt;Copy&lt;space&gt;Source&lt;space&gt;Folder:"/>
+#!     <XFORM_PARM PARM_NAME="MORE_SUMMARY_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_OUTPUT_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS" PARM_VALUE="filecopy Move"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PER_EACH_INPUT"/>
+#!     <XFORM_PARM PARM_NAME="PER_EACH_INPUT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUMMARY_ATTRS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="TOTAL_FEATURES_WRITTEN_ATTR" PARM_VALUE="_total_features_written"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_DIRECTIVES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_FEATURE_TYPE_PARAMS" PARM_VALUE="Move:filecopy,ftp_feature_type_name,Move,ftp_writer,FILECOPY,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,&lt;lt&gt;lt&lt;gt&gt;Unused&lt;lt&gt;gt&lt;gt&gt;,ftp_attribute_source,1,ftp_user_attributes,filecopy_source_dataset&lt;comma&gt;char&lt;lt&gt;openparen&lt;gt&gt;512&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;filecopy_dest_dataset&lt;comma&gt;char&lt;lt&gt;openparen&lt;gt&gt;512&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;filecopy_dest_filename&lt;comma&gt;char&lt;lt&gt;openparen&lt;gt&gt;128&lt;lt&gt;closeparen&lt;gt&gt;,ftp_user_attribute_values,&lt;comma&gt;&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="WRITER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_METAFILE" PARM_VALUE="ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,,ATTRIBUTE_LENGTH,512,ATTR_TYPE_MAP,char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varbinary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_binary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;string&lt;comma&gt;fme_buffer&lt;comma&gt;string&lt;comma&gt;fme_binarybuffer&lt;comma&gt;string&lt;comma&gt;fme_xml&lt;comma&gt;string&lt;comma&gt;fme_json&lt;comma&gt;datetime&lt;comma&gt;fme_datetime&lt;comma&gt;time&lt;comma&gt;fme_time&lt;comma&gt;date&lt;comma&gt;fme_date&lt;comma&gt;real64&lt;comma&gt;fme_real64&lt;comma&gt;real32&lt;comma&gt;fme_real32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;fme_decimal&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;int32&lt;comma&gt;fme_int32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;11&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint32&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_int64&lt;comma&gt;&lt;quote&gt;number&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint64&lt;comma&gt;logical&lt;comma&gt;fme_boolean&lt;comma&gt;int16&lt;comma&gt;fme_int16&lt;comma&gt;int32&lt;comma&gt;fme_uint16&lt;comma&gt;int16&lt;comma&gt;fme_int8&lt;comma&gt;int16&lt;comma&gt;fme_uint8,DEST_ILLEGAL_ATTR_LIST,,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,,FEATURE_TYPE_LENGTH,0,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_METAFILE,$(FME_HOME_ENCODED)metafile&lt;backslash&gt;FILECOPY.fmf,FORMAT_NAME,FILECOPY,GEOM_MAP,filecopy_none&lt;comma&gt;fme_no_geom&lt;comma&gt;filecopy_none&lt;comma&gt;fme_point&lt;comma&gt;filecopy_none&lt;comma&gt;fme_line&lt;comma&gt;filecopy_none&lt;comma&gt;fme_polygon&lt;comma&gt;filecopy_none&lt;comma&gt;fme_arc&lt;comma&gt;filecopy_none&lt;comma&gt;fme_text&lt;comma&gt;filecopy_none&lt;comma&gt;fme_ellipse&lt;comma&gt;filecopy_none&lt;comma&gt;fme_rectangle&lt;comma&gt;filecopy_none&lt;comma&gt;fme_rounded_rectangle&lt;comma&gt;filecopy_none&lt;comma&gt;fme_collection&lt;comma&gt;filecopy_none&lt;comma&gt;fme_surface&lt;comma&gt;filecopy_none&lt;comma&gt;fme_solid&lt;comma&gt;filecopy_none&lt;comma&gt;fme_raster&lt;comma&gt;filecopy_none&lt;comma&gt;fme_point_cloud&lt;comma&gt;filecopy_none&lt;comma&gt;fme_feature_table,READER_ATTR_INDEX_TYPES,,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,no,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,filecopy.sch,WRITER,FILECOPY,WRITER_ATTR_INDEX_TYPES,,WRITER_DEFLINE_PARMS,,WRITER_DEF_LINE_TEMPLATE,&lt;opencurly&gt;FME_GEN_GROUP_NAME&lt;closecurly&gt;,WRITER_FORMAT_PARAMETER,WRITER_FEATURE_TYPE_EDITING&lt;comma&gt;NO&lt;comma&gt;MIME_TYPE&lt;comma&gt;text&lt;solidus&gt;plain&lt;comma&gt;READER_FEATURE_TYPE_EDITING&lt;comma&gt;NO&lt;comma&gt;FEATURE_TYPE_NAME&lt;comma&gt;FILECOPY&lt;comma&gt;FEATURE_TYPE_DEFAULT_NAME&lt;comma&gt;File1&lt;comma&gt;WRITER_DATASET_HINT&lt;comma&gt;&lt;quote&gt;Specify&lt;space&gt;a&lt;space&gt;folder&lt;space&gt;for&lt;space&gt;the&lt;space&gt;File&lt;space&gt;Copy&lt;quote&gt;,WRITER_HAS_DEFLINE_ATTRS,yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureWriter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="667.66516578312644 -994.13472512681062"
+#!   BOUNDING_RECT="667.66516578312644 -994.13472512681062 441.78646327906205 71"
+#!   ORDER="500000000000009"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="filecopy_source_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="filecopy_dest_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="filecopy_source_dataset $(Source_folder) filecopy_dest_dataset $(Target_folder)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1750.2978221096905 -994.13472512681062"
+#!   BOUNDING_RECT="1750.2978221096905 -994.13472512681062 549.79071332156218 71"
+#!   ORDER="500000000000013"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="filecopy_source_dataset,filecopy_dest_filename,filecopy_dest_dataset"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Initiator"
+#!   POSITION="65.624656246562438 -994.13472512681062"
+#!   BOUNDING_RECT="65.624656246562438 -994.13472512681062 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Initiator"
+#!   POSITION="2482.1237812378126 -1054.1347251268107"
+#!   BOUNDING_RECT="2482.1237812378126 -1054.1347251268107 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="14"
+#!   NAME="Summary"
+#!   POSITION="2482.1237812378126 -1328.1430066268119"
+#!   BOUNDING_RECT="2482.1237812378126 -1328.1430066268119 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 filecopy"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 filecopy"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="14"
+#!   SOURCE_PORT_DESC="fo 1 SUMMARY"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_Source_folder 
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_Target_folder 
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_FOLDER_OPERATION MOVE
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_COPY_SOURCE_DIRECTORY NO
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_COPY_SUBDIRECTORIES YES
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_FAIL_NONEXISTENT_SOURCE YES
+DEFAULT_MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_FAIL_INVALID_DESTINATION YES
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO CopyFolderFeatureWriter_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(CopyFolderFeatureWriter_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(CopyFolderFeatureWriter_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Initiator1554297788 Input Splitter"   INPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Initiator"   OUTPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Initiator"
+# -------------------------------------------------------------------------
+Tcl2 proc $(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"filecopy_source_dataset {$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_Source_folder$encode)} filecopy_dest_dataset {$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_Target_folder$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Initiator"    OUTPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+INCLUDE [    puts {DEFAULT_MACRO FeatureWriterDataset_$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>filecopy_dest_dataset<closeparen>,$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter)}; ]
+FACTORY_DEF * WriterFactory    FACTORY_NAME $(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter    WRITER_TYPE FILECOPY    WRITER_DATASET "$(FeatureWriterDataset_$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter)"    WRITER_SETTINGS RUNTIME_MACROS,FILE_OPERATION<comma><dollar><openparen>FOLDER_OPERATION<closeparen><comma>OVERWRITE_FILE<comma>YES<comma>COPY_SOURCE_DIRECTORY<comma><dollar><openparen>COPY_SOURCE_DIRECTORY<closeparen><comma>COPY_SUBDIRECTORIES<comma><dollar><openparen>COPY_SUBDIRECTORIES<closeparen><comma>FAIL_NONEXISTENT_SOURCE<comma><dollar><openparen>FAIL_NONEXISTENT_SOURCE<closeparen><comma>FAIL_INVALID_DESTINATION<comma><dollar><openparen>FAIL_INVALID_DESTINATION<closeparen><comma>MIME_TYPE<comma>text<solidus>plain<comma>DESTINATION_DATASETTYPE_VALIDATION<comma>Yes<comma>COORDINATE_SYSTEM_GRANULARITY<comma>FEATURE,METAFILE,FILECOPY    WRITER_METAFILE ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,,ATTRIBUTE_LENGTH,512,ATTR_TYPE_MAP,char<openparen>width<closeparen><comma>fme_varchar<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_varbinary<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_char<openparen>width<closeparen><comma>char<openparen>width<closeparen><comma>fme_binary<openparen>width<closeparen><comma>string<comma>fme_buffer<comma>string<comma>fme_binarybuffer<comma>string<comma>fme_xml<comma>string<comma>fme_json<comma>datetime<comma>fme_datetime<comma>time<comma>fme_time<comma>date<comma>fme_date<comma>real64<comma>fme_real64<comma>real32<comma>fme_real32<comma><quote>number<openparen>width<comma>decimal<closeparen><quote><comma><quote>fme_decimal<openparen>width<comma>decimal<closeparen><quote><comma>int32<comma>fme_int32<comma><quote>number<openparen>11<comma>0<closeparen><quote><comma>fme_uint32<comma><quote>number<openparen>20<comma>0<closeparen><quote><comma>fme_int64<comma><quote>number<openparen>20<comma>0<closeparen><quote><comma>fme_uint64<comma>logical<comma>fme_boolean<comma>int16<comma>fme_int16<comma>int32<comma>fme_uint16<comma>int16<comma>fme_int8<comma>int16<comma>fme_uint8,DEST_ILLEGAL_ATTR_LIST,,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,,FEATURE_TYPE_LENGTH,0,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_METAFILE,$(FME_HOME_ENCODED)metafile<backslash>FILECOPY.fmf,FORMAT_NAME,FILECOPY,GEOM_MAP,filecopy_none<comma>fme_no_geom<comma>filecopy_none<comma>fme_point<comma>filecopy_none<comma>fme_line<comma>filecopy_none<comma>fme_polygon<comma>filecopy_none<comma>fme_arc<comma>filecopy_none<comma>fme_text<comma>filecopy_none<comma>fme_ellipse<comma>filecopy_none<comma>fme_rectangle<comma>filecopy_none<comma>fme_rounded_rectangle<comma>filecopy_none<comma>fme_collection<comma>filecopy_none<comma>fme_surface<comma>filecopy_none<comma>fme_solid<comma>filecopy_none<comma>fme_raster<comma>filecopy_none<comma>fme_point_cloud<comma>filecopy_none<comma>fme_feature_table,READER_ATTR_INDEX_TYPES,,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,no,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,filecopy.sch,WRITER,FILECOPY,WRITER_ATTR_INDEX_TYPES,,WRITER_DEFLINE_PARMS,,WRITER_DEF_LINE_TEMPLATE,<opencurly>FME_GEN_GROUP_NAME<closecurly>,WRITER_FORMAT_PARAMETER,WRITER_FEATURE_TYPE_EDITING<comma>NO<comma>MIME_TYPE<comma>text<solidus>plain<comma>READER_FEATURE_TYPE_EDITING<comma>NO<comma>FEATURE_TYPE_NAME<comma>FILECOPY<comma>FEATURE_TYPE_DEFAULT_NAME<comma>File1<comma>WRITER_DATASET_HINT<comma><quote>Specify<space>a<space>folder<space>for<space>the<space>File<space>Copy<quote>,WRITER_HAS_DEFLINE_ATTRS,yes    WRITER_FEATURE_TYPES Move:filecopy,ftp_feature_type_name,Move,ftp_writer,FILECOPY,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,<lt>lt<gt>Unused<lt>gt<gt>,ftp_attribute_source,1,ftp_user_attributes,filecopy_source_dataset<comma>char<lt>openparen<gt>512<lt>closeparen<gt><comma>filecopy_dest_dataset<comma>char<lt>openparen<gt>512<lt>closeparen<gt><comma>filecopy_dest_filename<comma>char<lt>openparen<gt>128<lt>closeparen<gt>,ftp_user_attribute_values,<comma><comma>    WRITER_PARAMS FAIL_NONEXISTENT_SOURCE,$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_FAIL_NONEXISTENT_SOURCE$encode),COORDINATE_SYSTEM_GRANULARITY,FEATURE,COPY_SUBDIRECTORIES,$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_COPY_SUBDIRECTORIES$encode),FAIL_INVALID_DESTINATION,$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_FAIL_INVALID_DESTINATION$encode),OVERWRITE_FILE,YES,MIME_TYPE,text<solidus>plain,FILE_OPERATION,$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_FOLDER_OPERATION),DESTINATION_DATASETTYPE_VALIDATION,Yes,COPY_SOURCE_DIRECTORY,$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_COPY_SOURCE_DIRECTORY$encode)    DATASET_ATTR _dataset    FEATURE_TYPE_LIST_ATTR _feature_type    TOTAL_FEATURES_WRITTEN_ATTR _total_features_written    OUTPUT_PORTS filecopy Move    INPUT filecopy FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"  @FeatureType(ENCODED,Move)    OUTPUT SUMMARY FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter_SUMMARY"    OUTPUT filecopy FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter_filecopy"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(CopyFolderFeatureWriter_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(CopyFolderFeatureWriter_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter_filecopy"    OUTPUT { FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,filecopy_source_dataset,filecopy_dest_filename,filecopy_dest_dataset)        @RemoveAttributes(fme_pcre_match"$($(CopyFolderFeatureWriter_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")         }
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Initiator1554297788 Output Collector"   INPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Initiator"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Summary1554297788 Output Collector"   INPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_FeatureWriter_SUMMARY"   OUTPUT FEATURE_TYPE "$(CopyFolderFeatureWriter_WORKSPACE_NAME)_Summary"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(CopyFolderFeatureWriter_WORKSPACE_NAME))}]

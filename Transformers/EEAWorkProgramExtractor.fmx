@@ -1,0 +1,2529 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN EEAWorkProgramExtractor,1,"Web Services",9f187964-1a64-4ff1-a961-43af26438122,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">EEA Work program data exhange module. Gives access to some data inside the AMP system of EEA. </p>
+# 
+# TRANSFORMER_END
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   HISTORY="04&lt;solidus&gt;01&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Creation"
+#!   FME_PROCESS_GROUP_BY=""
+#!   VIEW_POSITION="281.253 1100.01"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A Transformer that converts the XML from the EEA AMP system and transform it back into tables that can be used inside FME. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Programme year: &amp;lt;YYYY&amp;gt; &lt;/span&gt;The AMP Program year to extract.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer makes use of the API provided by Veronica on the AMP system.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;http://applications/managementplan/exportdata.asmx&lt;/p&gt;&#10;"
+#!   XFORM_DEPRECATED="No"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   DOC_TOP_LEFT="-3750.54 -1843.77"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN32)"
+#!   DOC_EXTENTS="10307 1625.02"
+#!   LAST_SAVE_DATE="2017-02-03T12:04:09"
+#!   FME_DOCUMENT_GUID="9f187964-1a64-4ff1-a961-43af26438122"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   ITERATION_COUNT_ATTR=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   WORKSPACE_VERSION="1"
+#!   FME_BUILD_NUM="16674"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;EEA Work program data exhange module. Gives access to some data inside the AMP system of EEA. &lt;/p&gt;&#10;"
+#!   PASSWORD=""
+#!   SHOW_ANNOTATIONS="true"
+#!   FME_DOCUMENT_PRIORGUID="18020d52-21c3-4252-9d4a-7511110f8c85,ff413109-b988-4a0a-9755-e516c2dcf552,f36d2584-c271-48d9-8ea0-750df7f3d88a,d28ea346-96e2-43d1-b4ee-5700ef560694,818b9f92-971a-4d35-ab9e-0e38caa1aef6"
+#!   ZOOM_SCALE="100"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   SHOW_INFO_NODES="true"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_SERVER_SERVICES=""
+#!   CATEGORY="Web Services"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   BLOCKED_LOOPING="No"
+#!   TITLE="EEAWorkProgramExtractor"
+#!   REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;INTRANET Access is required &lt;/p&gt;&#10;"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   ATTR_TYPE_ENCODING="SDF"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL LOOKUP_LISTBOX_OR_ATTR TableExtractType Activities&lt;space&gt;and&lt;space&gt;products,ExportActivitesAndProductsXML%Activities,ExportActivitesXML%Products,ExportProductsXML%Projects,ExportProjectsXML Extract type:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL STRING_ENCODED_OR_ATTR Programme_year Programme year:"
+#!   DEFAULT_VALUE="2017"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="76"
+#!   NAME="PRODUCT ID"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3124.47 -588.503"
+#!   BOTTOM_RIGHT="4707.16 -914.503"
+#!   BOUNDING_RECT="3124.47 -588.503 1582.69 326"
+#!   STICKY="true"
+#!   COLOUR="0.803922,0.286275,0.0431373"
+#!   CONTENTS="77 78 74 73 75 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="80"
+#!   NAME="PROJECT_ID"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2028.15 -584.248"
+#!   BOTTOM_RIGHT="3088.4 -914.504"
+#!   BOUNDING_RECT="2028.15 -584.248 1060.25 330.256"
+#!   STICKY="true"
+#!   COLOUR="0.329412,0.658824,0.756863"
+#!   CONTENTS="69 71 70 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="81"
+#!   NAME="PROJECT_ID"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2028.15 -934.384"
+#!   BOTTOM_RIGHT="3088.4 -1264.64"
+#!   BOUNDING_RECT="2028.15 -934.384 1060.25 330.256"
+#!   STICKY="true"
+#!   COLOUR="0.329412,0.658824,0.756863"
+#!   CONTENTS="55 65 58 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="82"
+#!   NAME="PROJECT_ID"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2028.15 -1280.39"
+#!   BOTTOM_RIGHT="3088.4 -1610.65"
+#!   BOUNDING_RECT="2028.15 -1280.39 1060.25 330.256"
+#!   STICKY="true"
+#!   COLOUR="0.329412,0.658824,0.756863"
+#!   CONTENTS="67 62 66 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="84"
+#!   NAME="DATEFORMAT"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3124.47 -218.752"
+#!   BOTTOM_RIGHT="4200.35 -518.755"
+#!   BOUNDING_RECT="3124.47 -218.752 1075.88 300.003"
+#!   STICKY="true"
+#!   COLOUR="0.4,0.831373,0.458824"
+#!   CONTENTS="86 88 83 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="92"
+#!   NAME="DATEFORMAT"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="4803.3 -599.5"
+#!   BOTTOM_RIGHT="5879.18 -899.503"
+#!   BOUNDING_RECT="4803.3 -599.5 1075.88 300.003"
+#!   STICKY="true"
+#!   COLOUR="0.4,0.831373,0.458824"
+#!   CONTENTS="90 91 89 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="97"
+#!   NAME="DATEFORMAT"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3124.47 -964.637"
+#!   BOTTOM_RIGHT="4200.35 -1264.64"
+#!   BOUNDING_RECT="3124.47 -964.637 1075.88 300.003"
+#!   STICKY="true"
+#!   COLOUR="0.4,0.831373,0.458824"
+#!   CONTENTS="94 96 95 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="XMLFragmenter"
+#!   VERSION="3"
+#!   POSITION="343.014 -1340.39"
+#!   BOUNDING_RECT="343.014 -1340.39 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_lead" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sortorder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="Table"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="about project_year project_code project project_url project_lead sortorder Table.id Table.rowOrder"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_FORMAT_NAME" PARM_VALUE="XML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFragmenter"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS_EXCEPT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeFilter"
+#!   VERSION="5"
+#!   POSITION="-626.007 -453.13"
+#!   BOUNDING_RECT="-626.007 -453.13 710.382 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;EMPTY&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;MISSING&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;NULL&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="ExportActivitesAndProductsXML"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <OUTPUT_FEAT NAME="ExportActivitesXML"/>
+#!     <FEAT_COLLAPSED COLLAPSED="5"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="5" />
+#!     <OUTPUT_FEAT NAME="ExportProductsXML"/>
+#!     <FEAT_COLLAPSED COLLAPSED="6"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="6" />
+#!     <OUTPUT_FEAT NAME="ExportProjectsXML"/>
+#!     <FEAT_COLLAPSED COLLAPSED="7"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="7" />
+#!     <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="&lt;lt&gt;EMPTY&lt;gt&gt;,&lt;lt&gt;MISSING&lt;gt&gt;,&lt;lt&gt;NULL&lt;gt&gt;,&lt;lt&gt;UNFILTERED&lt;gt&gt;,ExportActivitesAndProductsXML,ExportActivitesXML,ExportProductsXML,ExportProjectsXML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="__AMP_TableExtractType"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="-1934.4 -565.631"
+#!   BOUNDING_RECT="-1934.4 -565.631 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="NTLM"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="http:&lt;solidus&gt;&lt;solidus&gt;applications&lt;solidus&gt;managementplan&lt;solidus&gt;exportdata.asmx&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;__AMP_TableExtractType&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="bliki"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller_2"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE="Programme_Year;&lt;at&gt;Value&lt;openparen&gt;_Programme_year&lt;closeparen&gt; OnlyEionetPlanner;false"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszqLyx8rd18RFoeSsmh+4mDu+oJxvihhs1lTSPVydraeZhvjjsHT4HevmmLDMjZX9Q51CCC20k3rf240HuU40GwR1tmyljAQPY+63fNkKAmsgSvYJHoXlbPRdQoDZPXW5PkRICg/+0E2AM+wdFp3sEJ0Ab3bCv15mgJYhuEE7b5u0uziDpU/7Fzc4oVcAT2Mz1PA1M12xyu85PP9wFxWVdobiNtb4g7Jl7fw1ktJvmvVh3fBSckPVPuVJMvWtI//raavnJU0kTtgl52DOB0pxs6Ws++e2fn8xNOIm6BQhqcIiWBEsBGSJ6X+VquzV9Hi1LPlhAMwHLCEHm4WTT+btQY2L2wpVKIoqq)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="14"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-3126.03 -565.631"
+#!   BOUNDING_RECT="-3126.03 -565.631 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__AMP_TableExtractType {$(TableExtractType)} _Programme_year {$(Programme_year)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="967.759 -1374.76"
+#!   BOUNDING_RECT="967.759 -1374.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_lead" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sortorder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="25"
+#!   TYPE="XMLFragmenter"
+#!   VERSION="3"
+#!   POSITION="352.389 -940.634"
+#!   BOUNDING_RECT="352.389 -940.634 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasProject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductionClosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Programme_Year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ConfirmStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="Table"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="about ID ProductType Title hasProject ProductionClosed Description projectgroup Programme_Year Responsible Table.id Table.rowOrder ConfirmStatus about"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_FORMAT_NAME" PARM_VALUE="XML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFragmenter_2"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS_EXCEPT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="28"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1008.38 -968.76"
+#!   BOUNDING_RECT="1008.38 -968.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasProject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductionClosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Programme_Year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ConfirmStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="31"
+#!   TYPE="XMLFragmenter"
+#!   VERSION="3"
+#!   POSITION="352.389 -656.257"
+#!   BOUNDING_RECT="352.389 -656.257 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inEionetPlanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasProduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasProject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="Table"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="about ID programme_year StartDate EndDate Finalised Responsible inEionetPlanner hasProduct hasProject Table.id Table.rowOrder"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_FORMAT_NAME" PARM_VALUE="XML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFragmenter_3"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS_EXCEPT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="34"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="977.135 -690.632"
+#!   BOUNDING_RECT="977.135 -690.632 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="StartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="EndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="inEionetPlanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasProduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasProject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="33"
+#!   TYPE="XMLFragmenter"
+#!   VERSION="3"
+#!   POSITION="352.389 -270.501"
+#!   BOUNDING_RECT="352.389 -270.501 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level1Code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level1Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level2Code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level2Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level3Code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level3Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductTitle" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductDescr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductResponsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ActivityStartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ActivityEndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ConfirmStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_fragment" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_matched_element" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="xml_parent_child_pos" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="Table"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lf&gt;&lt;lt&gt;structure&lt;space&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;space&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;space&gt;matched-ancestor-attributes=&lt;quote&gt;&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_ATTRS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="Table.rowOrder Table.id Programme_year Level1Code Level1Title Level2Code Level2Title Level3Code Level3Title ProductType ProductID ProductTitle ProductDescr ProductResponsible ActivityStartDate ActivityEndDate ConfirmStatus about"/>
+#!     <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_FORMAT_NAME" PARM_VALUE="XML"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFragmenter_4"/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#!     <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS_EXCEPT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="42"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="967.759 -265.628"
+#!   BOUNDING_RECT="967.759 -265.628 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.rowOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level1Code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level1Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level2Code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level2Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level3Code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Level3Title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductTitle" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductDescr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ProductResponsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ActivityStartDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ActivityEndDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ConfirmStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="36"
+#!   TYPE="BulkAttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="1547.76 -270.501"
+#!   BOUNDING_RECT="1547.76 -270.501 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level1code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level1title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level2code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level2title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level3code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level3title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttitle" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productdescr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productresponsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="activitystartdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="activityenddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE_CHOICE" PARM_VALUE="RENAME"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="CASECHANGE"/>
+#!     <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="lower"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="47"
+#!   TYPE="BulkAttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="1547.76 -690.632"
+#!   BOUNDING_RECT="1547.76 -690.632 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE_CHOICE" PARM_VALUE="RENAME"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="CASECHANGE"/>
+#!     <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer_2"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="lower"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="48"
+#!   TYPE="BulkAttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="1588.39 -994.384"
+#!   BOUNDING_RECT="1588.39 -994.384 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE_CHOICE" PARM_VALUE="RENAME"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="CASECHANGE"/>
+#!     <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer_3"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="lower"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="49"
+#!   TYPE="BulkAttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="1547.76 -1374.76"
+#!   BOUNDING_RECT="1547.76 -1374.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_lead" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sortorder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE_CHOICE" PARM_VALUE="RENAME"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="CASECHANGE"/>
+#!     <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer_4"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="lower"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="56"
+#!   TYPE="AttributeSplitter"
+#!   VERSION="3"
+#!   POSITION="-2585.4 -565.631"
+#!   BOUNDING_RECT="-2585.4 -565.631 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="__AMP_TableExtractType"/>
+#!     <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="__AMP_TableExtractType"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="59"
+#!   TYPE="ListExploder"
+#!   VERSION="5"
+#!   POSITION="-2585.4 -739.755"
+#!   BOUNDING_RECT="-2585.4 -739.755 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="ELEMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Incoming List"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="__AMP_TableExtractType{}"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#!     <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="58"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="2614.65 -1031.88"
+#!   BOUNDING_RECT="2614.65 -1031.88 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="project_id"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="http:&lt;solidus&gt;&lt;solidus&gt;applications.eea.eu.int&lt;solidus&gt;managementplan&lt;solidus&gt;ProjectStructure.aspx?id="/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="55"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="2104.28 -1028.76"
+#!   BOUNDING_RECT="2104.28 -1028.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; project_id SET_TO &lt;at&gt;Value&lt;openparen&gt;hasproject&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="62"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="2614.65 -1415.39"
+#!   BOUNDING_RECT="2614.65 -1415.39 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_lead" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sortorder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="project_id"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="http:&lt;solidus&gt;&lt;solidus&gt;applications&lt;solidus&gt;managementplan&lt;solidus&gt;ProjectStructure.aspx?id="/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="66"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="2061.53 -1415.39"
+#!   BOUNDING_RECT="2061.53 -1415.39 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_lead" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="sortorder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; project_id SET_TO &lt;at&gt;Value&lt;openparen&gt;project_url&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="69"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="2608.4 -697.998"
+#!   BOUNDING_RECT="2608.4 -697.998 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="project_id"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="http:&lt;solidus&gt;&lt;solidus&gt;applications.eea.eu.int&lt;solidus&gt;managementplan&lt;solidus&gt;ProjectStructure.aspx?id="/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="70"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="2102.15 -697.998"
+#!   BOUNDING_RECT="2102.15 -697.998 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; project_id SET_TO &lt;at&gt;Value&lt;openparen&gt;hasproject&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="74"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="3198.47 -708.503"
+#!   BOUNDING_RECT="3198.47 -708.503 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; product_id SET_TO &lt;at&gt;Value&lt;openparen&gt;hasproduct&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_4"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="73"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="3689.66 -708.503"
+#!   BOUNDING_RECT="3689.66 -708.503 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_first_match" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;Product_id=&lt;closeparen&gt;&lt;openparen&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_first_match"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;product_id&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="__product_id"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="77"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="4227.17 -708.503"
+#!   BOUNDING_RECT="4227.17 -708.503 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_first_match" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; product_id SET_TO &lt;at&gt;Value&lt;openparen&gt;__product_id&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_5"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="83"
+#!   TYPE="DateFormatter"
+#!   VERSION="5"
+#!   POSITION="3720.35 -326.752"
+#!   BOUNDING_RECT="3720.35 -326.752 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level1code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level1title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level2code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level2title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level3code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level3title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttitle" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productdescr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productresponsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="activitystartdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="activityenddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="activityenddate,activitystartdate"/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="%Y-%m-%dT%H:%M:%S"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter"/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date (%Y%m%d)"/>
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="86"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="3198.47 -326.752"
+#!   BOUNDING_RECT="3198.47 -326.752 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level1code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level1title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level2code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level2title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level3code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="level3title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttitle" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productdescr" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productresponsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="activitystartdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="activityenddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="activityenddate,activitystartdate"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;backslash&gt;+&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;:&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="89"
+#!   TYPE="DateFormatter"
+#!   VERSION="5"
+#!   POSITION="5399.18 -707.499"
+#!   BOUNDING_RECT="5399.18 -707.499 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_first_match" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="enddate,startdate"/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="%Y-%m-%dT%H:%M:%S"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter_2"/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date (%Y%m%d)"/>
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="90"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="4877.3 -707.499"
+#!   BOUNDING_RECT="4877.3 -707.499 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_first_match" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__product_id{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="enddate,startdate"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;backslash&gt;+&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;:&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_5"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="94"
+#!   TYPE="DateFormatter"
+#!   VERSION="5"
+#!   POSITION="3720.35 -1072.64"
+#!   BOUNDING_RECT="3720.35 -1072.64 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="productionclosed"/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="%Y-%m-%dT%H:%M:%S"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter_3"/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date (%Y%m%d)"/>
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="95"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="3198.47 -1072.64"
+#!   BOUNDING_RECT="3198.47 -1072.64 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="productionclosed"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;backslash&gt;+&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;:&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_6"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="99"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="5995.93 -707.499"
+#!   BOUNDING_RECT="5995.93 -707.499 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="product_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="enddate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="finalised" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ineionetplanner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproduct" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="__product_id&lt;opencurly&gt;&lt;closecurly&gt; __product_id&lt;opencurly&gt;&lt;closecurly&gt;.part __product_id&lt;opencurly&gt;&lt;closecurly&gt;.startIndex"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_first_match"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_5"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="93"
+#!   TYPE="HTMLStripper"
+#!   VERSION="3"
+#!   POSITION="4277.17 -1031.88"
+#!   BOUNDING_RECT="4277.17 -1031.88 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_errors" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FieldNames" PARM_VALUE="description"/>
+#!     <XFORM_PARM PARM_NAME="HandleNewLines" PARM_VALUE="As a new line"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTMLStripper"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="98"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="4803.3 -1072.64"
+#!   BOUNDING_RECT="4803.3 -1072.64 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__amp_tableextracttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="about" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="producttype" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="hasproject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="productionclosed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="projectgroup" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="responsible" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="table.roworder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="confirmstatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_errors"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_6"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="103"
+#!   TYPE="XMLValidator"
+#!   VERSION="1"
+#!   POSITION="-1356.26 -565.631"
+#!   BOUNDING_RECT="-1356.26 -565.631 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__AMP_TableExtractType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Programme_year" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_error{}.type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_error{}.file" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_error{}.col" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_xml_error{}.desc" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Text"/>
+#!     <XFORM_PARM PARM_NAME="VAL_MODE_1" PARM_VALUE="Syntax Only"/>
+#!     <XFORM_PARM PARM_NAME="SCHEMA_LOC" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_ATTR_TEXT" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLValidator"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XML_INPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VALIDATION_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_xml_error"/>
+#!     <XFORM_PARM PARM_NAME="LIMIT_ERRORS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="ERRORS_COUNT" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Projects"
+#!   POSITION="4803.3 -1478.51"
+#!   BOUNDING_RECT="4803.3 -1478.51 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="Input"
+#!   POSITION="-3750.54 -565.631"
+#!   BOUNDING_RECT="-3750.54 -565.631 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="8"
+#!   NAME="Rejected"
+#!   POSITION="-721.752 -1843.77"
+#!   BOUNDING_RECT="-721.752 -1843.77 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="27"
+#!   NAME="Products"
+#!   POSITION="5399.18 -1072.64"
+#!   BOUNDING_RECT="5399.18 -1072.64 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="26"
+#!   NAME="Activities"
+#!   POSITION="6556.45 -767.499"
+#!   BOUNDING_RECT="6556.45 -767.499 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="44"
+#!   NAME="AMPLevels"
+#!   POSITION="4775.18 -321.126"
+#!   BOUNDING_RECT="4775.18 -321.126 645.375 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="14"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 FRAGMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="106"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="103"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 INPUT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="57"
+#!   SOURCE_NODE="14"
+#!   TARGET_NODE="56"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="50"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="49"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="28"
+#!   SOURCE_PORT_DESC="fo 0 FRAGMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="51"
+#!   SOURCE_NODE="28"
+#!   TARGET_NODE="48"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="31"
+#!   TARGET_NODE="34"
+#!   SOURCE_PORT_DESC="fo 0 FRAGMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="33"
+#!   TARGET_NODE="42"
+#!   SOURCE_PORT_DESC="fo 0 FRAGMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="34"
+#!   TARGET_NODE="47"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="112"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="86"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="45"
+#!   SOURCE_NODE="42"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="53"
+#!   SOURCE_NODE="47"
+#!   TARGET_NODE="70"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="54"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="55"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="64"
+#!   SOURCE_NODE="49"
+#!   TARGET_NODE="66"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="65"
+#!   SOURCE_NODE="55"
+#!   TARGET_NODE="58"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="60"
+#!   SOURCE_NODE="56"
+#!   TARGET_NODE="59"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="63"
+#!   SOURCE_NODE="58"
+#!   TARGET_NODE="95"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="61"
+#!   SOURCE_NODE="59"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 ELEMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="68"
+#!   SOURCE_NODE="62"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="67"
+#!   SOURCE_NODE="66"
+#!   TARGET_NODE="62"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="72"
+#!   SOURCE_NODE="69"
+#!   TARGET_NODE="74"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="71"
+#!   SOURCE_NODE="70"
+#!   TARGET_NODE="69"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="78"
+#!   SOURCE_NODE="73"
+#!   TARGET_NODE="77"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="75"
+#!   SOURCE_NODE="74"
+#!   TARGET_NODE="73"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="79"
+#!   SOURCE_NODE="77"
+#!   TARGET_NODE="90"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="85"
+#!   SOURCE_NODE="83"
+#!   TARGET_NODE="44"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="88"
+#!   SOURCE_NODE="86"
+#!   TARGET_NODE="83"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="100"
+#!   SOURCE_NODE="89"
+#!   TARGET_NODE="99"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="91"
+#!   SOURCE_NODE="90"
+#!   TARGET_NODE="89"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="104"
+#!   SOURCE_NODE="93"
+#!   TARGET_NODE="98"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="102"
+#!   SOURCE_NODE="94"
+#!   TARGET_NODE="93"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="96"
+#!   SOURCE_NODE="95"
+#!   TARGET_NODE="94"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="105"
+#!   SOURCE_NODE="98"
+#!   TARGET_NODE="27"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="101"
+#!   SOURCE_NODE="99"
+#!   TARGET_NODE="26"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="107"
+#!   SOURCE_NODE="103"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;Rejected&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="108"
+#!   SOURCE_NODE="103"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="37"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="33"
+#!   SOURCE_PORT_DESC="fo 4 ExportActivitesAndProductsXML"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="31"
+#!   SOURCE_PORT_DESC="fo 5 ExportActivitesXML"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="25"
+#!   SOURCE_PORT_DESC="fo 6 ExportProductsXML"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 7 ExportProjectsXML"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_TableExtractType 
+DEFAULT_MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_Programme_year 2017
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO EEAWorkProgramExtractor_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(EEAWorkProgramExtractor_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(EEAWorkProgramExtractor_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Input1486119849 Input Splitter"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__AMP_TableExtractType {$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_TableExtractType$encode)} _Programme_year {$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_Programme_year)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitDelim [FME_DecodeText {<space>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitDelim]] }      {         set $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitWidths [split [regsub -all {s$} {<space>} {}] s];         proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitWidths;            set source [FME_GetAttribute [FME_DecodeText {__AMP_TableExtractType}]];            set attrNum 0;            set listName [FME_DecodeText {__AMP_TableExtractType}];            set attrPos 0;            set keepEmptyParts [string equal {No} {No}];            foreach width [set $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               set part [string trim $bit];               if { $keepEmptyParts || $part != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $part;                  incr attrNum;               };               incr attrPos $width;            };         };      }      else      {         proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitDelim;            set delim [set $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_3223701e_39a8_454f_af2e_67d27ed5f9c20_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute [FME_DecodeText {__AMP_TableExtractType}]];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              lappend bits [string range $source $startIndex [expr $nextIndex-1]];              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            lappend bits [string range $source $startIndex end];            set listName [FME_DecodeText {__AMP_TableExtractType}];            set attrNum 0;            foreach bit $bits            {               set trimmedPart [string trim $bit];               if { $keepEmptyParts || $trimmedPart != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $trimmedPart;                  incr attrNum;               };            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_ListExploder    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    LIST_NAME "__AMP_TableExtractType{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "INCOMING_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_ListExploder_ELEMENTS"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2       INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_ListExploder_ELEMENTS"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,http:<solidus><solidus>applications<solidus>managementplan<solidus>exportdata.asmx<solidus><at>Value<openparen>__AMP_TableExtractType<closeparen>,$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS Programme_Year;@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_Programme_year<closeparen>,$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2) OnlyEionetPlanner;false    AUTH_USERNAME "bliki"    AUTH_PASSWORD "fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszqLyx8rd18RFoeSsmh+4mDu+oJxvihhs1lTSPVydraeZhvjjsHT4HevmmLDMjZX9Q51CCC20k3rf240HuU40GwR1tmyljAQPY+63fNkKAmsgSvYJHoXlbPRdQoDZPXW5PkRICg/+0E2AM+wdFp3sEJ0Ab3bCv15mgJYhuEE7b5u0uziDpU/7Fzc4oVcAT2Mz1PA1M12xyu85PP9wFxWVdobiNtb4g7Jl7fw1ktJvmvVh3fBSckPVPuVJMvWtI//raavnJU0kTtgl52DOB0pxs6Ws++e2fn8xNOIm6BQhqcIiWBEsBGSJ6X+VquzV9Hi1LPlhAMwHLCEHm4WTT+btQY2L2wpVKIoqq)"    AUTH_METHOD "NTLM"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2_Output"    OUTPUT REJECTED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2_<Rejected>"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    if {{No} == {No}} {       puts {MACRO ERRORS_COUNT_CLAUSE ERRORS_COUNT_LIMIT -1};    }    else    {       puts {MACRO ERRORS_COUNT_CLAUSE ERRORS_COUNT_LIMIT <Unused>};    } ]
+FACTORY_DEF * XMLValidationFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLValidator    INPUT INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2_Output"    MODE SYNTAX    XML_TEXT_ATTR "_response_body"    LIST_ATTR _xml_error    $(ERRORS_COUNT_CLAUSE)    OUTPUT PASSED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLValidator_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLValidator_FAILED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLValidator_PASSED"    OUTPUT FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_FILTER
+
+FACTORY_DEF * AttributeFilterFactory FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_Filter COMMAND_PARM_EVALUATION SINGLE_PASS INPUT FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_FILTER FILTER_ATTRIBUTE __AMP_TableExtractType FILTER_VALUES <lt>EMPTY<gt> <lt>MISSING<gt> <lt>NULL<gt> <lt>UNFILTERED<gt> ExportActivitesAndProductsXML ExportActivitesXML ExportProductsXML ExportProjectsXML OUTPUT <lt>EMPTY<gt> FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<EMPTY> OUTPUT <lt>MISSING<gt> FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<MISSING> OUTPUT <lt>NULL<gt> FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<NULL> OUTPUT <lt>UNFILTERED<gt> FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<UNFILTERED> OUTPUT ExportActivitesAndProductsXML FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportActivitesAndProductsXML OUTPUT ExportActivitesXML FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportActivitesXML OUTPUT ExportProductsXML FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportProductsXML OUTPUT ExportProjectsXML FEATURE_TYPE $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportProjectsXML
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter <EMPTY> Output Nuker"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<EMPTY>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter <MISSING> Output Nuker"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<MISSING>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter <NULL> Output Nuker"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<NULL>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_<UNFILTERED>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportProjectsXML"    XML_STREAM "_response_body"    XFMAP_FEATURE_PATHS_EXPRESSION "Table"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    MERGE_ATTRIBUTES_FROM_INPUT Yes    OUTPUT MAPPED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_FRAGMENTS"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos)        @RemoveAttributes(fme_pcre_match"$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_4    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_4_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, CASECHANGE, <Unused>, "<Unused>", "<Unused>", "lower", "<Unused>", "-_", "RENAME", "NONFME")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_4_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "project_id" "SET_TO" "<at>Value<openparen>project_url<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_2_86369207_ae8c_456c_afc7_8f12781136f20_replacer { findText replaceText invalidValue} {     set attrs [split \"project_id\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_2    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_2_86369207_ae8c_456c_afc7_8f12781136f20_replacer {http:<solidus><solidus>applications<solidus>managementplan<solidus>ProjectStructure.aspx?id=} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_2    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportProductsXML"    XML_STREAM "_response_body"    XFMAP_FEATURE_PATHS_EXPRESSION "Table"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    MERGE_ATTRIBUTES_FROM_INPUT Yes    OUTPUT MAPPED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_2_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_2    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_2_FRAGMENTS"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"        @RemoveAttributes(fme_encoded,xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos)        @RemoveAttributes(fme_pcre_match"$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_3    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_3_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, CASECHANGE, <Unused>, "<Unused>", "<Unused>", "lower", "<Unused>", "-_", "RENAME", "NONFME")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_3_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "project_id" "SET_TO" "<at>Value<openparen>hasproject<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_75ea433a_bd3b_4d37_8533_fddc6c8924450_replacer { findText replaceText invalidValue} {     set attrs [split \"project_id\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_75ea433a_bd3b_4d37_8533_fddc6c8924450_replacer {http:<solidus><solidus>applications.eea.eu.int<solidus>managementplan<solidus>ProjectStructure.aspx?id=} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_6_d3bd78c1_49d3_4613_878d_55327bb54c9b0_replacer { findText replaceText invalidValue} {     set attrs [split \"productionclosed\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_6    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_6_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_6_d3bd78c1_49d3_4613_878d_55327bb54c9b0_replacer {<backslash>+<openbracket>0-9<closebracket><openbracket>0-9<closebracket>:<openbracket>0-9<closebracket><openbracket>0-9<closebracket>} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_3_formatter {invalidValue} {       set dateFormat {FME Date (%Y%m%d)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {productionclosed} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set comment { Don't touch NULL or empty attribute values };        if { [string length $date] == 0 } { continue; };        set srcfmt {};        if {{%Y-%m-%dT%H:%M:%S} != {FME_AUTOMATIC}} {            set srcfmt {%Y-%m-%dT%H:%M:%S};        } else {           set comment { In Automatic mode we ignore the millisecond part };           regexp {^[^.]*} $date date;           set comment { Treat single char as invalid date };           if { [regexp {^.$} $date] } {              set date {};           };        };        set comment { An empty $date at this point is invalid, so don't process further };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };           set sourceFormatOpt {};           if {[string length $srcfmt] > 0} {              set sourceFormatOpt \"-format {$srcfmt}\";           };           set comment { Compute the output value and catch any errors };           set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                              set output [clock format $seconds -format $dateFormat];           }];           set comment { If there was error then we try again by removing digits after last decimal };           if { $error != 0 } {              set index [string last "." $date];              if { $index > 0 } {                 set date [eval string range $date 0 [expr $index-1]];                 set dateLen [string length $date];                 set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];              };           };           if { $error == 0 } {              FME_SetAttribute $attr $output;           };        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_3    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_6_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_3_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_3_formatter {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper Input Input Collector"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_3_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper_Input"
+MACRO HTMLStripper_WORKSPACE_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper
+MACRO $(HTMLStripper_WORKSPACE_NAME)_XFORMER_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper
+MACRO $(HTMLStripper_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(HTMLStripper_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(HTMLStripper_WORKSPACE_NAME)_FieldNames description
+MACRO $(HTMLStripper_WORKSPACE_NAME)_HandleNewLines As a new line
+INCLUDE_CUSTOM_TRANSFORMER_VER HTMLStripper:3
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper_Output"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper_Output"
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_6_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_6    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTMLStripper_Output"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_6_OUTPUT"        @RemoveAttributes(fme_encoded,_errors)        @RemoveAttributes(fme_pcre_match"$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_6_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_3    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportActivitesXML"    XML_STREAM "_response_body"    XFMAP_FEATURE_PATHS_EXPRESSION "Table"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    MERGE_ATTRIBUTES_FROM_INPUT Yes    OUTPUT MAPPED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_3_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_3_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_3    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_3_FRAGMENTS"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_3_OUTPUT"        @RemoveAttributes(fme_encoded,xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos)        @RemoveAttributes(fme_pcre_match"$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_3_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_2    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_3_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_2_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, CASECHANGE, <Unused>, "<Unused>", "<Unused>", "lower", "<Unused>", "-_", "RENAME", "NONFME")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_3    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_2_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "project_id" "SET_TO" "<at>Value<openparen>hasproject<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_3_7feb5be7_b8ba_4639_b04f_5c5fd12c5e8c0_replacer { findText replaceText invalidValue} {     set attrs [split \"project_id\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_3    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_3_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_3_7feb5be7_b8ba_4639_b04f_5c5fd12c5e8c0_replacer {http:<solidus><solidus>applications.eea.eu.int<solidus>managementplan<solidus>ProjectStructure.aspx?id=} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_4    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_3_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "product_id" "SET_TO" "<at>Value<openparen>hasproduct<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringSearcher_80a97bf5_79e8_4cd6_850f_acc126bc8d9a0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName $matchedChars;      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"    TEST @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringSearcher_80a97bf5_79e8_4cd6_850f_acc126bc8d9a0_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>product_id<closeparen>,$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringSearcher)} {<openparen>Product_id=<closeparen><openparen><openbracket>0-9<closebracket><opencurly>1<comma><closecurly><closeparen>} {_first_match} {} {__product_id}") > 0    OUTPUT PASSED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringSearcher_MATCHED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_5    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringSearcher_MATCHED"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "product_id" "SET_TO" "<at>Value<openparen>__product_id<opencurly>1<closecurly>.part<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_5_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_5_d3269e11_4b10_48fc_b962_94ea35f71fba0_replacer { findText replaceText invalidValue} {     set attrs [split \"enddate,startdate\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_5    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeCreator_5_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_5_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_5_d3269e11_4b10_48fc_b962_94ea35f71fba0_replacer {<backslash>+<openbracket>0-9<closebracket><openbracket>0-9<closebracket>:<openbracket>0-9<closebracket><openbracket>0-9<closebracket>} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_2_formatter {invalidValue} {       set dateFormat {FME Date (%Y%m%d)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {enddate,startdate} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set comment { Don't touch NULL or empty attribute values };        if { [string length $date] == 0 } { continue; };        set srcfmt {};        if {{%Y-%m-%dT%H:%M:%S} != {FME_AUTOMATIC}} {            set srcfmt {%Y-%m-%dT%H:%M:%S};        } else {           set comment { In Automatic mode we ignore the millisecond part };           regexp {^[^.]*} $date date;           set comment { Treat single char as invalid date };           if { [regexp {^.$} $date] } {              set date {};           };        };        set comment { An empty $date at this point is invalid, so don't process further };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };           set sourceFormatOpt {};           if {[string length $srcfmt] > 0} {              set sourceFormatOpt \"-format {$srcfmt}\";           };           set comment { Compute the output value and catch any errors };           set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                              set output [clock format $seconds -format $dateFormat];           }];           set comment { If there was error then we try again by removing digits after last decimal };           if { $error != 0 } {              set index [string last "." $date];              if { $index > 0 } {                 set date [eval string range $date 0 [expr $index-1]];                 set dateLen [string length $date];                 set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];              };           };           if { $error == 0 } {              FME_SetAttribute $attr $output;           };        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_2    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_5_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_2_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_2_formatter {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_5_LIST_EXP ";    foreach attr [split "__product_id<opencurly><closecurly> __product_id<opencurly><closecurly>.part __product_id<opencurly><closecurly>.startIndex"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_5    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_5_OUTPUT"        @RemoveAttributes(fme_encoded,_first_match)        @RemoveAttributes(fme_pcre_match"$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_5_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_4    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeFilter_ExportActivitesAndProductsXML"    XML_STREAM "_response_body"    XFMAP_FEATURE_PATHS_EXPRESSION "Table"    XFMAP_FEATURE_PATHS_STRUCTURE "<lf><lt>structure<space>separator=<quote>.<quote><space>map-empty-elements=<quote>yes<quote><space>matched-prefix=<quote>attributes<quote><space>matched-attributes=<quote>yes<quote><space>cardinality=<quote>+<opencurly>?<closecurly><quote><space>structure-prefix=<quote><quote><space>child-position-attribute=<quote><quote><space>except-expression=<quote><quote><space>ui-mode=<quote>basic<quote><space>matched-ancestor-attributes=<quote><quote><solidus><gt><lf>"    MERGE_ATTRIBUTES_FROM_INPUT Yes    OUTPUT MAPPED FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_4_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_4_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_4    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLFragmenter_4_FRAGMENTS"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_4_OUTPUT"        @RemoveAttributes(fme_encoded,xml_fragment,xml_id,xml_parent_id,_response_body,xml_matched_element,xml_parent_child_pos)        @RemoveAttributes(fme_pcre_match"$($(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_4_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_4_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, CASECHANGE, <Unused>, "<Unused>", "<Unused>", "lower", "<Unused>", "-_", "RENAME", "NONFME")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_4_320e4ec0_ab60_4e9d_81e1_cef9c21006480_replacer { findText replaceText invalidValue} {     set attrs [split \"activityenddate,activitystartdate\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_4    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_4_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_4_320e4ec0_ab60_4e9d_81e1_cef9c21006480_replacer {<backslash>+<openbracket>0-9<closebracket><openbracket>0-9<closebracket>:<openbracket>0-9<closebracket><openbracket>0-9<closebracket>} {} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_formatter {invalidValue} {       set dateFormat {FME Date (%Y%m%d)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {activityenddate,activitystartdate} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set comment { Don't touch NULL or empty attribute values };        if { [string length $date] == 0 } { continue; };        set srcfmt {};        if {{%Y-%m-%dT%H:%M:%S} != {FME_AUTOMATIC}} {            set srcfmt {%Y-%m-%dT%H:%M:%S};        } else {           set comment { In Automatic mode we ignore the millisecond part };           regexp {^[^.]*} $date date;           set comment { Treat single char as invalid date };           if { [regexp {^.$} $date] } {              set date {};           };        };        set comment { An empty $date at this point is invalid, so don't process further };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };           set sourceFormatOpt {};           if {[string length $srcfmt] > 0} {              set sourceFormatOpt \"-format {$srcfmt}\";           };           set comment { Compute the output value and catch any errors };           set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                              set output [clock format $seconds -format $dateFormat];           }];           set comment { If there was error then we try again by removing digits after last decimal };           if { $error != 0 } {              set index [string last "." $date];              if { $index > 0 } {                 set date [eval string range $date 0 [expr $index-1]];                 set dateLen [string length $date];                 set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];              };           };           if { $error == 0 } {              FME_SetAttribute $attr $output;           };        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter    INPUT  FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_4_OUTPUT"    OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_OUTPUT"         @Tcl2("$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_formatter {_FME_NO_OP_}")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Projects1486119849 Output Collector"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Projects"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Rejected1486119849 Output Collector"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_HTTPCaller_2_<Rejected>"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_XMLValidator_FAILED"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Rejected"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Products1486119849 Output Collector"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_6_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Products"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Activities1486119849 Output Collector"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AttributeRemover_5_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_Activities"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AMPLevels1486119849 Output Collector"   INPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_DateFormatter_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAWorkProgramExtractor_WORKSPACE_NAME)_AMPLevels"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(EEAWorkProgramExtractor_WORKSPACE_NAME))}]

@@ -1,0 +1,895 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN MSSQLExtendedProperties,1,Metadata,af153cb2-e794-46d6-8407-96eb59088fda,"Linked by Default",No,NO_PARALLELISM,,No,18520,YES,No,27
+# <p>Add extended porperties in SQL Server for schema
+#  table
+#  view and column. </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Metadata"
+#!   DESCRIPTION="&lt;p&gt;Add extended porperties in SQL Server for schema&#10; table&#10; view and column. &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="5712.42 1402.89"
+#!   DOC_TOP_LEFT="-831.128 -1518.52"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="af153cb2-e794-46d6-8407-96eb59088fda"
+#!   FME_DOCUMENT_PRIORGUID="b0c6b929-4fd6-4209-9b04-61f0244d74c1"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY=",20&lt;solidus&gt;08&lt;solidus&gt;2019,Jan&lt;space&gt;Bliki,Initiation,,"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-08-20T08:45:46"
+#!   MARKDOWN_DESCRIPTION="Add extended porperties in SQL Server for schema, table, view and column. "
+#!   MARKDOWN_USAGE="Alows connect to a particular database before adding metadata.&#10;The meta data will be stored on the level of details provided.&#10;&#10;For example.&#10;- Schema + Table + Columns -&gt; Extended properties will be stored on column level&#10;- Schema + Table -&gt; Extended properties will be stored on table level&#10;- Schema -&gt; Extended properties will be stored on schema level&#10;- none provided -&gt; Extended properties will be stored on database level&#10;&#10;In SQL Server Manager Studio you can see these properties by right click of the item and selecting &quot;Extended properties&quot;.&#10;&#10;As SQL statements you can use sp_addextendedproperty,sp_updateextendedproperty, sp_dropextendedproperty or sys.fn_listextendedproperty "
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="27"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="MSSQLExtendedProperties"
+#!   USAGE="&lt;p&gt;Alows connect to a particular database before adding metadata.&#10;The meta data will be stored on the level of details provided.&lt;/p&gt;&#10;&lt;p&gt;For example.&#10;- Schema + Table + Columns -&amp;gt; Extended properties will be stored on column level&#10;- Schema + Table -&amp;gt; Extended properties will be stored on table level&#10;- Schema -&amp;gt; Extended properties will be stored on schema level&#10;- none provided -&amp;gt; Extended properties will be stored on database level&lt;/p&gt;&#10;&lt;p&gt;In SQL Server Manager Studio you can see these properties by right click of the item and selecting &quot;Extended properties&quot;.&lt;/p&gt;&#10;&lt;p&gt;As SQL statements you can use sp_addextendedproperty,sp_updateextendedproperty, sp_dropextendedproperty or sys.fn_listextendedproperty &lt;/p&gt;"
+#!   USE_MARKDOWN="YES"
+#!   VIEW_POSITION="-871.884 265.628"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_CHOICE_OR_ATTR AttributeName MS_Description Attribute name:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR AttributeValue Attribute value:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR Schema Schema name:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR Table Table/View name:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR Column Column name:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED Microsoft_SQL_Server_CONNECTION FAMILY:Microsoft&lt;space&gt;SQL&lt;space&gt;Server%INCLUDE_EXPAND%FMT:MSSQL_ADO SQL Server Connection:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE_OR_ATTR Action Automatic%Add%Update%Drop Action:"
+#!   DEFAULT_VALUE="Automatic"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="17"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;What level do we store the content on. &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Schema - level&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Table - level&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Column - level&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="334.44332993672208 -369.12929076734508"
+#!   TOP_LEFT="334.44332993672208 -369.12929076734508"
+#!   BOTTOM_RIGHT="764.44332993672208 -368.12929076734508"
+#!   BOUNDING_RECT="334.44332993672208 -369.12929076734508 430 -1"
+#!   ORDER="500000000000017"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="5"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="18"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure &apos; is not breaking the SQL statement.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="858.86255304390897 -500.38060328047021"
+#!   TOP_LEFT="858.86255304390897 -500.38060328047021"
+#!   BOTTOM_RIGHT="1288.862553043909 -499.38060328047021"
+#!   BOUNDING_RECT="858.86255304390897 -500.38060328047021 430 -1"
+#!   ORDER="500000000000018"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="13"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="19"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Prepare SQL statement for auto insert/update or delete&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2588.5257207606305 -1234.5088845632829"
+#!   TOP_LEFT="2588.5257207606305 -1234.5088845632829"
+#!   BOTTOM_RIGHT="3018.5257207606305 -1233.5088845632829"
+#!   BOUNDING_RECT="2588.5257207606305 -1234.5088845632829 430 -1"
+#!   ORDER="500000000000019"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="2"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="26"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Generate fn_listextendedproperty properties based on information given &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1430.9064931987268 -381.62941576859509"
+#!   TOP_LEFT="1430.9064931987268 -381.62941576859509"
+#!   BOTTOM_RIGHT="1860.9064931987268 -380.62941576859509"
+#!   BOUNDING_RECT="1430.9064931987268 -381.62941576859509 430 -1"
+#!   ORDER="500000000000017"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="25"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="33"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Prepare SQL statement to delete&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2564.5414521679445 -115.62841575859511"
+#!   TOP_LEFT="2564.5414521679445 -115.62841575859511"
+#!   BOTTOM_RIGHT="2994.5414521679445 -114.62841575859511"
+#!   BOUNDING_RECT="2564.5414521679445 -115.62841575859511 430 -1"
+#!   ORDER="500000000000019"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="32"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="37"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Prepare SQL statement to update&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2582.2913896673194 -445.62955658222904"
+#!   TOP_LEFT="2582.2913896673194 -445.62955658222904"
+#!   BOTTOM_RIGHT="3012.2913896673194 -444.62955658222904"
+#!   BOUNDING_RECT="2582.2913896673194 -445.62955658222904 430 -1"
+#!   ORDER="500000000000019"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="36"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="39"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Prepare SQL statement to insert&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2564.5414521679445 -871.88512060281482"
+#!   TOP_LEFT="2564.5414521679445 -871.88512060281482"
+#!   BOTTOM_RIGHT="2994.5414521679445 -870.88512060281482"
+#!   BOUNDING_RECT="2564.5414521679445 -871.88512060281482 430 -1"
+#!   ORDER="500000000000019"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="38"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="47"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Check if we got an error message&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="4129.166531665318 -724.13104078484525"
+#!   TOP_LEFT="4129.166531665318 -724.13104078484525"
+#!   BOTTOM_RIGHT="4559.166531665318 -723.13104078484525"
+#!   BOUNDING_RECT="4129.166531665318 -724.13104078484525 430 -1"
+#!   ORDER="500000000000024"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19607843137254902"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="44"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="2588.5257207606305 -1518.5151346257837"
+#!   BOUNDING_RECT="2588.5257207606305 -1518.5151346257837 -1 -1"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_sql" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _sql SET_TO DECLARE&lt;space&gt;&lt;at&gt;Error&lt;space&gt;varchar&lt;openparen&gt;50&lt;closeparen&gt;&lt;lf&gt;DECLARE&lt;space&gt;&lt;at&gt;VieworTable&lt;space&gt;varchar&lt;openparen&gt;5&lt;closeparen&gt;&lt;space&gt;=&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;SELECT&lt;space&gt;TOP&lt;space&gt;1&lt;space&gt;IIF&lt;openparen&gt;&lt;openbracket&gt;type&lt;closebracket&gt;=&lt;apos&gt;V&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;View&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;Table&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;TV&lt;space&gt;FROM&lt;space&gt;SYS.OBJECTS&lt;space&gt;sysobj&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;INNER&lt;space&gt;JOIN&lt;space&gt;SYS.SCHEMAS&lt;space&gt;sysschem&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;on&lt;space&gt;sysobj.schema_id&lt;space&gt;=&lt;space&gt;sysschem.schema_id&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;WHERE&lt;space&gt;sysobj.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AND&lt;space&gt;sysschem.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;lf&gt;&lt;closeparen&gt;&lt;lf&gt;IF&lt;space&gt;NOT&lt;space&gt;EXISTS&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_fn_listextendedproperty&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;BEGIN&lt;space&gt;TRY&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXECUTE&lt;space&gt;sp_addextendedproperty&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;name&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;$(AttributeName)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;value&lt;space&gt;=&lt;at&gt;Value&lt;openparen&gt;_AttributeValue&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_schema&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level0type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level0name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_tablename&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level1type&lt;space&gt;=&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;level1name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_columnname&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level2type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level2name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Column)&lt;apos&gt;&lt;lf&gt;END&lt;space&gt;TRY&lt;lf&gt;BEGIN&lt;space&gt;CATCH&lt;lf&gt;&lt;tab&gt;set&lt;space&gt;&lt;at&gt;Error&lt;space&gt;=&lt;space&gt;&lt;apos&gt;ignore&lt;space&gt;add&lt;apos&gt;&lt;lf&gt;END&lt;space&gt;CATCH&lt;lf&gt;ELSE&lt;space&gt;IF&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;_AttributeValue&lt;closeparen&gt;&lt;space&gt;IS&lt;space&gt;NULL&lt;space&gt;BEGIN&lt;space&gt;TRY&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXECUTE&lt;space&gt;sp_dropextendedproperty&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;name&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;$(AttributeName)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_schema&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level0type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level0name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_tablename&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level1type&lt;space&gt;=&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;level1name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_columnname&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level2type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level2name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Column)&lt;apos&gt;&lt;lf&gt;END&lt;space&gt;TRY&lt;lf&gt;BEGIN&lt;space&gt;CATCH&lt;lf&gt;&lt;tab&gt;set&lt;space&gt;&lt;at&gt;Error&lt;space&gt;=&lt;space&gt;&lt;apos&gt;ignore&lt;space&gt;drop&lt;apos&gt;&lt;lf&gt;END&lt;space&gt;CATCH&lt;lf&gt;ELSE&lt;space&gt;BEGIN&lt;space&gt;TRY&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXECUTE&lt;space&gt;sp_updateextendedproperty&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;name&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;$(AttributeName)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;value&lt;space&gt;=&lt;at&gt;Value&lt;openparen&gt;_AttributeValue&lt;closeparen&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_schema&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level0type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level0name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_tablename&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level1type&lt;space&gt;=&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;level1name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_columnname&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level2type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level2name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Column)&lt;apos&gt;&lt;lf&gt;END&lt;space&gt;TRY&lt;lf&gt;BEGIN&lt;space&gt;CATCH&lt;lf&gt;&lt;tab&gt;set&lt;space&gt;&lt;at&gt;Error&lt;space&gt;=&lt;space&gt;&lt;apos&gt;ignore&lt;space&gt;update&lt;apos&gt;&lt;lf&gt;END&lt;space&gt;CATCH&lt;lf&gt;SELECT&lt;space&gt;&lt;at&gt;Error&lt;space&gt;as&lt;space&gt;&lt;openbracket&gt;_Error&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="358.44332993672208 -721.63216579609525"
+#!   BOUNDING_RECT="358.44332993672208 -721.63216579609525 -1 -1"
+#!   ORDER="500000000000013"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; __remark_columnname SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST _Column NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;--&lt;space&gt;&apos;FME_NUM_CONDITIONS2___&quot;  __remark_tablename SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;&lt;space&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST _Table NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;--&lt;space&gt;&apos;FME_NUM_CONDITIONS2___&quot;  __remark_schema SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;&lt;space&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST _Schema NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;--&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-212.34230291960637 -721.63216579609525"
+#!   BOUNDING_RECT="-212.34230291960637 -721.63216579609525 -1 -1"
+#!   ORDER="500000000000015"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_Schema $(Schema) _Table $(Table) _Column $(Column) _AttributeValue $(AttributeValue) _Action $(Action)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="882.86255304390897 -721.63216579609525"
+#!   BOUNDING_RECT="882.86255304390897 -721.63216579609525 -1 -1"
+#!   ORDER="500000000000016"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;apos&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;apos&gt;&lt;apos&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_AttributeValue"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="SQLExecutor"
+#!   VERSION="8"
+#!   POSITION="3157.1351157695367 -781.63216579609525"
+#!   BOUNDING_RECT="3157.1351157695367 -781.63216579609525 -1 -1"
+#!   ORDER="500000000000020"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_sql" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_sql" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(Microsoft_SQL_Server_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="DB_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="_Error"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="$(Microsoft_SQL_Server_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_sql&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="25"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="1430.8907617914128 -721.63216579609525"
+#!   BOUNDING_RECT="1430.8907617914128 -721.63216579609525 -1 -1"
+#!   ORDER="500000000000013"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _fn_listextendedproperty SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;select&lt;space&gt;*&lt;space&gt;from&lt;space&gt;sys.fn_listextendedproperty&lt;openparen&gt;default&lt;comma&gt;&lt;space&gt;default&lt;comma&gt;&lt;space&gt;default&lt;comma&gt;&lt;space&gt;default&lt;comma&gt;&lt;space&gt;default&lt;comma&gt;&lt;space&gt;default&lt;comma&gt;&lt;space&gt;default&lt;closeparen&gt;&apos;BOOL_OP;AND;COMPOSITE_TEST;&lt;Unused&gt;;TEST _Column ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_;TEST _Table ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_;TEST _Schema ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;select&lt;space&gt;*&lt;space&gt;from&lt;space&gt;sys.fn_listextendedproperty&lt;openparen&gt;NULL&lt;comma&gt;&lt;space&gt;&lt;apos&gt;schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Schema&lt;closeparen&gt;&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Table&lt;closeparen&gt;&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Column&lt;closeparen&gt;&lt;apos&gt;&lt;closeparen&gt;&apos;BOOL_OP;AND;COMPOSITE_TEST;&lt;Unused&gt;;TEST _Table ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_;TEST _Schema ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;select&lt;space&gt;*&lt;space&gt;from&lt;space&gt;sys.fn_listextendedproperty&lt;openparen&gt;NULL&lt;comma&gt;&lt;space&gt;&lt;apos&gt;schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Schema&lt;closeparen&gt;&lt;apos&gt;&lt;comma&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Table&lt;closeparen&gt;&lt;apos&gt;&lt;comma&gt;default&lt;comma&gt;&lt;space&gt;default&lt;closeparen&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST _Schema ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;select&lt;space&gt;*&lt;space&gt;from&lt;space&gt;sys.fn_listextendedproperty&lt;openparen&gt;NULL&lt;comma&gt;&lt;space&gt;&lt;apos&gt;schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_Schema&lt;closeparen&gt;&lt;apos&gt;&lt;comma&gt;default&lt;comma&gt;default&lt;comma&gt;default&lt;comma&gt;&lt;space&gt;default&lt;closeparen&gt;&apos;FME_NUM_CONDITIONS4___&quot;  _AttributeValue SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;N&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_AttributeValue&lt;closeparen&gt;&lt;apos&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST _AttributeValue NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_&apos;NULL&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="29"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1962.1460743445386 -786.26007207515818"
+#!   BOUNDING_RECT="1962.1460743445386 -786.26007207515818 491.00345715077628 71"
+#!   ORDER="500000000000022"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="DROP"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UPDATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="ADD"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="AUTO"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="AUTO"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;&lt;Unused&gt;&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_Action&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;DROP&quot;,DROP,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;&lt;Unused&gt;&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_Action&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;UPDATE&quot;,UPDATE,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;&lt;Unused&gt;&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_Action&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;ADD&quot;,ADD"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="32"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="2588.5414521679445 -293.12954076984511"
+#!   BOUNDING_RECT="2588.5414521679445 -293.12954076984511 -1 -1"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_sql" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _sql SET_TO DECLARE&lt;space&gt;&lt;at&gt;VieworTable&lt;space&gt;nvarchar&lt;openparen&gt;5&lt;closeparen&gt;&lt;space&gt;=&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;SELECT&lt;space&gt;TOP&lt;space&gt;1&lt;space&gt;IIF&lt;openparen&gt;&lt;openbracket&gt;type&lt;closebracket&gt;=&lt;apos&gt;V&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;View&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;Table&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;TV&lt;space&gt;FROM&lt;space&gt;SYS.OBJECTS&lt;space&gt;sysobj&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;INNER&lt;space&gt;JOIN&lt;space&gt;SYS.SCHEMAS&lt;space&gt;sysschem&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;on&lt;space&gt;sysobj.schema_id&lt;space&gt;=&lt;space&gt;sysschem.schema_id&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;WHERE&lt;space&gt;sysobj.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AND&lt;space&gt;sysschem.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;lf&gt;&lt;closeparen&gt;&lt;lf&gt;IF&lt;space&gt;EXISTS&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_fn_listextendedproperty&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXECUTE&lt;space&gt;sp_dropextendedproperty&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;name&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;$(AttributeName)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_schema&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level0type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level0name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_tablename&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level1type&lt;space&gt;=&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;level1name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_columnname&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level2type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level2name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Column)&lt;apos&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="36"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="2606.2913896673194 -666.88111909785403"
+#!   BOUNDING_RECT="2606.2913896673194 -666.88111909785403 -1 -1"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_sql" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _sql SET_TO DECLARE&lt;space&gt;&lt;at&gt;VieworTable&lt;space&gt;nvarchar&lt;openparen&gt;5&lt;closeparen&gt;&lt;space&gt;=&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;SELECT&lt;space&gt;TOP&lt;space&gt;1&lt;space&gt;IIF&lt;openparen&gt;&lt;openbracket&gt;type&lt;closebracket&gt;=&lt;apos&gt;V&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;View&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;Table&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;TV&lt;space&gt;FROM&lt;space&gt;SYS.OBJECTS&lt;space&gt;sysobj&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;INNER&lt;space&gt;JOIN&lt;space&gt;SYS.SCHEMAS&lt;space&gt;sysschem&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;on&lt;space&gt;sysobj.schema_id&lt;space&gt;=&lt;space&gt;sysschem.schema_id&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;WHERE&lt;space&gt;sysobj.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AND&lt;space&gt;sysschem.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;lf&gt;&lt;closeparen&gt;&lt;lf&gt;IF&lt;space&gt;EXISTS&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_fn_listextendedproperty&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXECUTE&lt;space&gt;sp_updateextendedproperty&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;name&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;$(AttributeName)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;value&lt;space&gt;=&lt;at&gt;Value&lt;openparen&gt;_AttributeValue&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_schema&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level0type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level0name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_tablename&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level1type&lt;space&gt;=&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;level1name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_columnname&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level2type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level2name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Column)&lt;apos&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_5"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="38"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="2588.5414521679445 -1049.3862456140648"
+#!   BOUNDING_RECT="2588.5414521679445 -1049.3862456140648 -1 -1"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_sql" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fn_listextendedproperty" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_AttributeValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_columnname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_tablename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__remark_schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Schema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Column" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Action" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _sql SET_TO DECLARE&lt;space&gt;&lt;at&gt;VieworTable&lt;space&gt;nvarchar&lt;openparen&gt;5&lt;closeparen&gt;&lt;space&gt;=&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;SELECT&lt;space&gt;TOP&lt;space&gt;1&lt;space&gt;IIF&lt;openparen&gt;&lt;openbracket&gt;type&lt;closebracket&gt;=&lt;apos&gt;V&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;View&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;Table&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;TV&lt;space&gt;FROM&lt;space&gt;SYS.OBJECTS&lt;space&gt;sysobj&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;INNER&lt;space&gt;JOIN&lt;space&gt;SYS.SCHEMAS&lt;space&gt;sysschem&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;on&lt;space&gt;sysobj.schema_id&lt;space&gt;=&lt;space&gt;sysschem.schema_id&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;WHERE&lt;space&gt;sysobj.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AND&lt;space&gt;sysschem.name&lt;space&gt;=&lt;space&gt;&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;lf&gt;&lt;closeparen&gt;&lt;lf&gt;IF&lt;space&gt;NOT&lt;space&gt;EXISTS&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_fn_listextendedproperty&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXECUTE&lt;space&gt;sp_addextendedproperty&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;name&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;$(AttributeName)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;value&lt;space&gt;=&lt;at&gt;Value&lt;openparen&gt;_AttributeValue&lt;closeparen&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_schema&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level0type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Schema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level0name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Schema)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_tablename&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level1type&lt;space&gt;=&lt;space&gt;&lt;at&gt;VieworTable&lt;comma&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;level1name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Table)&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;__remark_columnname&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;level2type&lt;space&gt;=&lt;space&gt;N&lt;apos&gt;Column&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;level2name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(Column)&lt;apos&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_6"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="44"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="4153.166531665318 -901.63216579609525"
+#!   BOUNDING_RECT="4153.166531665318 -901.63216579609525 -1 -1"
+#!   ORDER="500000000000023"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_Error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_Error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST _Error ATTRIBUTE_HAS_A_VALUE &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Input"
+#!   POSITION="-831.12793577593493 -721.63216579609525"
+#!   BOUNDING_RECT="-831.12793577593493 -721.63216579609525 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="8"
+#!   NAME="Output"
+#!   POSITION="4153.166531665318 -595.0054003406666"
+#!   BOUNDING_RECT="4153.166531665318 -595.0054003406666 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_sql" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="23"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="4881.2967998150089 -1156.2617143687521"
+#!   BOUNDING_RECT="4881.2967998150089 -1156.2617143687521 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="25"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="45"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="44"
+#!   SOURCE_PORT_DESC="fo 0 RESULT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="29"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="29"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="fo 0 DROP"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="32"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="42"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="38"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="46"
+#!   SOURCE_NODE="44"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="40"
+#!   SOURCE_NODE="29"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 1 UPDATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 2 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="41"
+#!   SOURCE_NODE="29"
+#!   TARGET_NODE="38"
+#!   SOURCE_PORT_DESC="fo 2 ADD"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="29"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 3 AUTO"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName 
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeValue 
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema 
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_Table 
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_Column 
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_Microsoft_SQL_Server_CONNECTION 
+DEFAULT_MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_Action Automatic
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO MSSQLExtendedProperties_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(MSSQLExtendedProperties_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(MSSQLExtendedProperties_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Input1566283546 Input Splitter"   INPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+Tcl2 proc $(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_Schema {$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)} _Table {$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)} _Column {$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)} _AttributeValue {$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeValue$encode)} _Action {$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Action$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "__remark_columnname" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE''BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST _Column NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'--<space>'FME_NUM_CONDITIONS2___" }      ATTR_ACTION { "" "__remark_tablename" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE'<space>'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST _Table NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'--<space>'FME_NUM_CONDITIONS2___" }      ATTR_ACTION { "" "__remark_schema" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE'<space>'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST _Schema NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'--'FME_NUM_CONDITIONS2___" }    OUTPUT OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(MSSQLExtendedProperties_WORKSPACE_NAME)_StringReplacer_1422b8a5_710d_4a5c_ab27_9a0992dec3851_replacer { findText replaceText invalidValue} {     set attrs [split \"_AttributeValue\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(MSSQLExtendedProperties_WORKSPACE_NAME)_StringReplacer_1422b8a5_710d_4a5c_ab27_9a0992dec3851_replacer {<apos>} {<apos><apos>} {_FME_NO_OP_}")
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_3    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_StringReplacer_OUTPUT"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_fn_listextendedproperty" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE'select<space>*<space>from<space>sys.fn_listextendedproperty<openparen>default<comma><space>default<comma><space>default<comma><space>default<comma><space>default<comma><space>default<comma><space>default<closeparen>'BOOL_OP;AND;COMPOSITE_TEST;<Unused>;TEST _Column ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_;TEST _Table ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_;TEST _Schema ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'select<space>*<space>from<space>sys.fn_listextendedproperty<openparen>NULL<comma><space><apos>schema<apos><comma><space><apos><at>Value<openparen>_Schema<closeparen><apos><comma><space><at>VieworTable<comma><space><apos><at>Value<openparen>_Table<closeparen><apos><comma><space><apos>column<apos><comma><space><apos><at>Value<openparen>_Column<closeparen><apos><closeparen>'BOOL_OP;AND;COMPOSITE_TEST;<Unused>;TEST _Table ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_;TEST _Schema ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'select<space>*<space>from<space>sys.fn_listextendedproperty<openparen>NULL<comma><space><apos>schema<apos><comma><space><apos><at>Value<openparen>_Schema<closeparen><apos><comma><at>VieworTable<comma><space><apos><at>Value<openparen>_Table<closeparen><apos><comma>default<comma><space>default<closeparen>'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST _Schema ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'select<space>*<space>from<space>sys.fn_listextendedproperty<openparen>NULL<comma><space><apos>schema<apos><comma><space><apos><at>Value<openparen>_Schema<closeparen><apos><comma>default<comma>default<comma>default<comma><space>default<closeparen>'FME_NUM_CONDITIONS4___" }      ATTR_ACTION { "" "_AttributeValue" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE'N<apos><at>Value<openparen>_AttributeValue<closeparen><apos>'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST _AttributeValue NOT_ATTRIBUTE_HAS_A_VALUE _FME_BLANK_STRING_'NULL'FME_NUM_CONDITIONS2___" }    OUTPUT OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"    OUTPUT FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_Action<closeparen>,$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter) = DROP ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "<Unused>" OUTPUT PASSED FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_DROP OUTPUT FAILED FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_Condition_2 INPUT FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_Action<closeparen>,$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter) = UPDATE ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "<Unused>" OUTPUT PASSED FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_UPDATE OUTPUT FAILED FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TestFactory FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_Condition_3 INPUT FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_Action<closeparen>,$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter) = ADD ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "<Unused>" OUTPUT PASSED FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_ADD OUTPUT FAILED FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_3
+FACTORY_DEF * TeeFactory FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_AUTO INPUT FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_3 OUTPUT FEATURE_TYPE $(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_AUTO
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_2    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_AUTO"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_sql" "SET_TO" "DECLARE<space><at>Error<space>varchar<openparen>50<closeparen><lf>DECLARE<space><at>VieworTable<space>varchar<openparen>5<closeparen><space>=<space><openparen><lf><space><space><space><space><space><space><space><space>SELECT<space>TOP<space>1<space>IIF<openparen><openbracket>type<closebracket>=<apos>V<apos><comma><apos>View<apos><comma><apos>Table<apos><closeparen><space>as<space>TV<space>FROM<space>SYS.OBJECTS<space>sysobj<lf><space><space><space><space><space><space><space><space>INNER<space>JOIN<space>SYS.SCHEMAS<space>sysschem<lf><space><space><space><space><space><space><space><space><space><space><space><space>on<space>sysobj.schema_id<space>=<space>sysschem.schema_id<lf><space><space><space><space><space><space><space><space>WHERE<space>sysobj.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><lf><space><space><space><space><space><space><space><space>AND<space>sysschem.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><lf><closeparen><lf>IF<space>NOT<space>EXISTS<space><openparen><at>Value<openparen>_fn_listextendedproperty<closeparen><closeparen><space>BEGIN<space>TRY<lf><space><space><space><space>EXECUTE<space>sp_addextendedproperty<space><space><lf><space><space><space><space><space><space><space><space><space><at>name<space>=<space>N<apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName$encode)<apos><space><lf><space><space><space><space><space><space><space><space><comma><at>value<space>=<at>Value<openparen>_AttributeValue<closeparen><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_schema<closeparen><comma><at>level0type<space>=<space>N<apos>Schema<apos><comma><space><at>level0name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_tablename<closeparen><comma><at>level1type<space>=<space><at>VieworTable<comma><space><space><at>level1name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_columnname<closeparen><comma><at>level2type<space>=<space>N<apos>Column<apos><comma><space><at>level2name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)<apos><lf>END<space>TRY<lf>BEGIN<space>CATCH<lf><tab>set<space><at>Error<space>=<space><apos>ignore<space>add<apos><lf>END<space>CATCH<lf>ELSE<space>IF<space><space><at>Value<openparen>_AttributeValue<closeparen><space>IS<space>NULL<space>BEGIN<space>TRY<lf><space><space><space><space><space><space><space><space><space><space><space><space>EXECUTE<space>sp_dropextendedproperty<space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>name<space>=<space>N<apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_schema<closeparen><comma><at>level0type<space>=<space>N<apos>Schema<apos><comma><space><at>level0name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_tablename<closeparen><comma><at>level1type<space>=<space><at>VieworTable<comma><space><space><at>level1name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_columnname<closeparen><comma><at>level2type<space>=<space>N<apos>Column<apos><comma><space><at>level2name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)<apos><lf>END<space>TRY<lf>BEGIN<space>CATCH<lf><tab>set<space><at>Error<space>=<space><apos>ignore<space>drop<apos><lf>END<space>CATCH<lf>ELSE<space>BEGIN<space>TRY<lf><space><space><space><space><space><space><space><space><space><space><space><space><space>EXECUTE<space>sp_updateextendedproperty<space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>name<space>=<space>N<apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><comma><at>value<space>=<at>Value<openparen>_AttributeValue<closeparen><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_schema<closeparen><comma><at>level0type<space>=<space>N<apos>Schema<apos><comma><space><at>level0name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_tablename<closeparen><comma><at>level1type<space>=<space><at>VieworTable<comma><space><space><at>level1name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_columnname<closeparen><comma><at>level2type<space>=<space>N<apos>Column<apos><comma><space><at>level2name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)<apos><lf>END<space>TRY<lf>BEGIN<space>CATCH<lf><tab>set<space><at>Error<space>=<space><apos>ignore<space>update<apos><lf>END<space>CATCH<lf>SELECT<space><at>Error<space>as<space><openbracket>_Error<closebracket>" }    OUTPUT OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_6    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_ADD"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_sql" "SET_TO" "DECLARE<space><at>VieworTable<space>nvarchar<openparen>5<closeparen><space>=<space><openparen><lf><space><space><space><space><space><space><space><space>SELECT<space>TOP<space>1<space>IIF<openparen><openbracket>type<closebracket>=<apos>V<apos><comma><apos>View<apos><comma><apos>Table<apos><closeparen><space>as<space>TV<space>FROM<space>SYS.OBJECTS<space>sysobj<lf><space><space><space><space><space><space><space><space>INNER<space>JOIN<space>SYS.SCHEMAS<space>sysschem<lf><space><space><space><space><space><space><space><space><space><space><space><space>on<space>sysobj.schema_id<space>=<space>sysschem.schema_id<lf><space><space><space><space><space><space><space><space>WHERE<space>sysobj.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><lf><space><space><space><space><space><space><space><space>AND<space>sysschem.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><lf><closeparen><lf>IF<space>NOT<space>EXISTS<space><openparen><at>Value<openparen>_fn_listextendedproperty<closeparen><closeparen><lf><space><space><space><space>EXECUTE<space>sp_addextendedproperty<space><space><lf><space><space><space><space><space><space><space><space><space><at>name<space>=<space>N<apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName$encode)<apos><space><lf><space><space><space><space><space><space><space><space><comma><at>value<space>=<at>Value<openparen>_AttributeValue<closeparen><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_schema<closeparen><comma><at>level0type<space>=<space>N<apos>Schema<apos><comma><space><at>level0name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_tablename<closeparen><comma><at>level1type<space>=<space><at>VieworTable<comma><space><space><at>level1name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_columnname<closeparen><comma><at>level2type<space>=<space>N<apos>Column<apos><comma><space><at>level2name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)<apos><lf><lf>" }    OUTPUT OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_6_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_5    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_UPDATE"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_sql" "SET_TO" "DECLARE<space><at>VieworTable<space>nvarchar<openparen>5<closeparen><space>=<space><openparen><lf><space><space><space><space><space><space><space><space>SELECT<space>TOP<space>1<space>IIF<openparen><openbracket>type<closebracket>=<apos>V<apos><comma><apos>View<apos><comma><apos>Table<apos><closeparen><space>as<space>TV<space>FROM<space>SYS.OBJECTS<space>sysobj<lf><space><space><space><space><space><space><space><space>INNER<space>JOIN<space>SYS.SCHEMAS<space>sysschem<lf><space><space><space><space><space><space><space><space><space><space><space><space>on<space>sysobj.schema_id<space>=<space>sysschem.schema_id<lf><space><space><space><space><space><space><space><space>WHERE<space>sysobj.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><lf><space><space><space><space><space><space><space><space>AND<space>sysschem.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><lf><closeparen><lf>IF<space>EXISTS<space><openparen><at>Value<openparen>_fn_listextendedproperty<closeparen><closeparen><lf><space><space><space><space><space><space><space><space><space>EXECUTE<space>sp_updateextendedproperty<space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><at>name<space>=<space>N<apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><comma><at>value<space>=<at>Value<openparen>_AttributeValue<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_schema<closeparen><comma><at>level0type<space>=<space>N<apos>Schema<apos><comma><space><at>level0name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_tablename<closeparen><comma><at>level1type<space>=<space><at>VieworTable<comma><space><space><at>level1name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_columnname<closeparen><comma><at>level2type<space>=<space>N<apos>Column<apos><comma><space><at>level2name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)<apos><lf><lf>" }    OUTPUT OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_5_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_4    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_TestFilter_DROP"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "_sql" "SET_TO" "DECLARE<space><at>VieworTable<space>nvarchar<openparen>5<closeparen><space>=<space><openparen><lf><space><space><space><space><space><space><space><space>SELECT<space>TOP<space>1<space>IIF<openparen><openbracket>type<closebracket>=<apos>V<apos><comma><apos>View<apos><comma><apos>Table<apos><closeparen><space>as<space>TV<space>FROM<space>SYS.OBJECTS<space>sysobj<lf><space><space><space><space><space><space><space><space>INNER<space>JOIN<space>SYS.SCHEMAS<space>sysschem<lf><space><space><space><space><space><space><space><space><space><space><space><space>on<space>sysobj.schema_id<space>=<space>sysschem.schema_id<lf><space><space><space><space><space><space><space><space>WHERE<space>sysobj.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><lf><space><space><space><space><space><space><space><space>AND<space>sysschem.name<space>=<space><space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><lf><closeparen><lf>IF<space>EXISTS<space><openparen><at>Value<openparen>_fn_listextendedproperty<closeparen><closeparen><lf><space><space><space><space>EXECUTE<space>sp_dropextendedproperty<space><space><lf><space><space><space><space><space><space><space><space><space><at>name<space>=<space>N<apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeName$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_schema<closeparen><comma><at>level0type<space>=<space>N<apos>Schema<apos><comma><space><at>level0name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Schema$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_tablename<closeparen><comma><at>level1type<space>=<space><at>VieworTable<comma><space><space><at>level1name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Table$encode)<apos><space><lf><space><space><space><space><space><space><space><space><at>Value<openparen>__remark_columnname<closeparen><comma><at>level2type<space>=<space>N<apos>Column<apos><comma><space><at>level2name<space>=<space><apos>$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Column$encode)<apos><lf><lf>" }    OUTPUT OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"
+# -------------------------------------------------------------------------
+MACRO $(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_DIRECTIVES COMMAND_TIMEOUT 30 NAMED_CONNECTION "$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Microsoft_SQL_Server_CONNECTION)" QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_5_OUTPUT"    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_AttributeCreator_6_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_sql<closeparen>,$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "@EvaluateExpression(FDIV,STRING_ENCODED,$($(MSSQLExtendedProperties_WORKSPACE_NAME)_Microsoft_SQL_Server_CONNECTION),$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor)"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    QUERYFCT_PROPAGATE_IDS_ON_SQL_EXECUTE YES    READER_PARAMS        $($(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_RESULT"        @SupplyAttributes(fme_feature_type,$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor)    OUTPUT QUERY FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(MSSQLExtendedProperties_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_RESULT"    TEST _Error ATTRIBUTE_HAS_A_VALUE "" ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Tester_PASSED"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Output1566283546 Output Collector"   INPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_INITIATOR"   OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Output" @RemoveAttributes(_fn_listextendedproperty,_AttributeValue,__remark_columnname,__remark_tablename,__remark_schema,_Schema,_Table,_Column,_Action)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(MSSQLExtendedProperties_WORKSPACE_NAME)_<Rejected>1566283546 Output Collector"   INPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_Tester_PASSED"   INPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_SQLExecutor_<REJECTED>"   OUTPUT FEATURE_TYPE "$(MSSQLExtendedProperties_WORKSPACE_NAME)_<Rejected>" @RemoveAttributes(_Error,_sql,_fn_listextendedproperty,_AttributeValue,__remark_columnname,__remark_tablename,__remark_schema,_Schema,_Table,_Column,_Action)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(MSSQLExtendedProperties_WORKSPACE_NAME))}]

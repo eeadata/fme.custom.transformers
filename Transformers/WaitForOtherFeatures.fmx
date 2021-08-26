@@ -1,0 +1,715 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN WaitForOtherFeatures,2,Workflows,5a95481d-5fcd-453b-b554-188ae9570d8f,"Linked by Default",No,NO_PARALLELISM,,No,18520,YES,No,
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Conditional flow.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Block the flow until another process is not finished.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" text-decoration: underline;">Inputs:</span>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" font-weight:600;">Feature_To_Wait</span>: Features which should be processed until continue with the process</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" font-weight:600;">Feautre_Input</span>: Feautres to be processed, and will be sent to output.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" text-decoration: underline;">Output:</span>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" font-weight:600;">Feature_Output:</span> The same features that are come from <span style=" font-weight:600;">Feautre_Input</span>
+# </p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Workflows"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Conditional flow.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Block the flow until another process is not finished.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Inputs:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Feature_To_Wait&lt;/span&gt;: Features which should be processed until continue with the process&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Feautre_Input&lt;/span&gt;: Feautres to be processed, and will be sent to output.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Output:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Feature_Output:&lt;/span&gt; The same features that are come from &lt;span style=&quot; font-weight:600;&quot;&gt;Feautre_Input&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="3784.79 274.127"
+#!   DOC_TOP_LEFT="-1186.14 -473.444"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="5a95481d-5fcd-453b-b554-188ae9570d8f"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="2016&lt;solidus&gt;05&lt;solidus&gt;05,alonso,"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-04-03T16:01:08"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="WaitForOtherFeatures"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-1490.64 1043.76"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="FeatureHolder"
+#!   VERSION="0"
+#!   POSITION="433.25200000000001 -399.31900000000002"
+#!   BOUNDING_RECT="433.25200000000001 -399.31900000000002 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureHolder"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="965.63499999999999 -373.60899999999998"
+#!   BOUNDING_RECT="965.63499999999999 -373.60899999999998 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST FEATURE_TO_WAIT ATTRIBUTE_IS_MISSING &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-564.75400000000002 -199.31700000000001"
+#!   BOUNDING_RECT="-564.75400000000002 -199.31700000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; FEATURE_TO_WAIT SET_TO 1"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateFlag"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="Aggregator"
+#!   VERSION="12"
+#!   POSITION="-51.128300000000003 -199.31700000000001"
+#!   BOUNDING_RECT="-51.128300000000003 -199.31700000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="AGGREGATE"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="FEATURE_TO_WAIT"/>
+#!     <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1475.01 -399.31900000000002"
+#!   BOUNDING_RECT="1475.01 -399.31900000000002 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="FEATURE_TO_WAIT"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RemoveFlag"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="7"
+#!   NAME="Feature_To_Wait"
+#!   POSITION="-1186.1400000000001 -199.31700000000001"
+#!   BOUNDING_RECT="-1186.1400000000001 -199.31700000000001 476.875 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="9"
+#!   NAME="Feature_Output"
+#!   POSITION="2103.46 -373.60899999999998"
+#!   BOUNDING_RECT="2103.46 -373.60899999999998 495.19299999999998 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Feautre_Input"
+#!   POSITION="-1186.1400000000001 -402.44400000000002"
+#!   BOUNDING_RECT="-1186.1400000000001 -402.44400000000002 473.75 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="4"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 AGGREGATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO WaitForOtherFeatures_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(WaitForOtherFeatures_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(WaitForOtherFeatures_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait1554300068 Input Splitter"   INPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait"   OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input1554300068 Input Splitter"   INPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input"   OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_CreateFlag    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "FEATURE_TO_WAIT" "SET_TO" "1" }    OUTPUT OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_CreateFlag_OUTPUT"
+# -------------------------------------------------------------------------
+DEFAULT_MACRO $(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE FEATURE_TO_WAIT} }]
+FACTORY_DEF {*} AggregateFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_CreateFlag_OUTPUT"    MODE ONE_LEVEL    GROUP_BY { FEATURE_TO_WAIT }    $($(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_AGGREGATE"
+# -------------------------------------------------------------------------
+FACTORY_DEF * SortFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_FeatureHolder    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input"    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_AGGREGATE"    OUTPUT SORTED FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_FeatureHolder_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_FeatureHolder_OUTPUT"    TEST FEATURE_TO_WAIT ATTRIBUTE_IS_MISSING "" ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Tester_PASSED"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT { FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_OUTPUT"        @RemoveAttributes(fme_encoded,FEATURE_TO_WAIT)        @RemoveAttributes(fme_pcre_match"$($(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_LIST_EXP)")         }
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_Output1554300068 Output Collector"   INPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_OUTPUT"   OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(WaitForOtherFeatures_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN WaitForOtherFeatures,1,Workflow,2512a70e-8411-444f-99c3-dffa943b8ac9,"Linked by Default",No,NO_PARALLELISM,,No,16177,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Conditional flow.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Block the flow until another process is not finished.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" text-decoration: underline;">Inputs:</span>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" font-weight:600;">Feature_To_Wait</span>: Features which should be processed until continue with the process</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" font-weight:600;">Feautre_Input</span>: Feautres to be processed, and will be sent to output.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" text-decoration: underline;">Output:</span>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <span style=" font-weight:600;">Feature_Output:</span> The same features that are come from <span style=" font-weight:600;">Feautre_Input</span>
+# </p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   WORKSPACE_VERSION="1"
+#!   FME_BUILD_NUM="16177"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   DOC_EXTENTS="3784.79 274.127"
+#!   FME_SERVER_SERVICES=""
+#!   BLOCKED_LOOPING="No"
+#!   HISTORY="2016&lt;solidus&gt;05&lt;solidus&gt;05,alonso,"
+#!   LAST_SAVE_DATE="2016-09-28T12:43:15"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   PASSWORD=""
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   SHOW_INFO_NODES="true"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   DOC_TOP_LEFT="-1186.14 -473.444"
+#!   VIEW_POSITION="-1281.26 506.255"
+#!   XFORM_DEPRECATED="No"
+#!   CATEGORY="Workflow"
+#!   ZOOM_SCALE="100"
+#!   FME_PROCESS_GROUP_BY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   LAST_SAVE_BUILD="FME(R) 2016.0.1.1 (20160224 - Build 16177 - WIN64)"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   MAX_LOOP_ITERATIONS=""
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   TITLE="WaitForOtherFeatures"
+#!   FME_DOCUMENT_PRIORGUID="ac559fc9-af10-4d8a-9181-fc0c7d0af361"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Conditional flow.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Block the flow until another process is not finished.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Inputs:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Feature_To_Wait&lt;/span&gt;: Features which should be processed until continue with the process&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Feautre_Input&lt;/span&gt;: Feautres to be processed, and will be sent to output.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; text-decoration: underline;&quot;&gt;Output:&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Feature_Output:&lt;/span&gt; The same features that are come from &lt;span style=&quot; font-weight:600;&quot;&gt;Feautre_Input&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_DOCUMENT_GUID="2512a70e-8411-444f-99c3-dffa943b8ac9"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="FeatureHolder"
+#!   VERSION="0"
+#!   POSITION="433.252 -399.319"
+#!   BOUNDING_RECT="433.252 -399.319 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureHolder"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="965.635 -373.609"
+#!   BOUNDING_RECT="965.635 -373.609 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST FEATURE_TO_WAIT ATTRIBUTE_IS_MISSING &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-564.754 -199.317"
+#!   BOUNDING_RECT="-564.754 -199.317 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; FEATURE_TO_WAIT SET_TO 1"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreateFlag"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="Aggregator"
+#!   VERSION="12"
+#!   POSITION="-51.1283 -199.317"
+#!   BOUNDING_RECT="-51.1283 -199.317 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="AGGREGATE"/>
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="FEATURE_TO_WAIT"/>
+#!     <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator"/>
+#!     <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1475.01 -399.319"
+#!   BOUNDING_RECT="1475.01 -399.319 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="FEATURE_TO_WAIT"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RemoveFlag"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="7"
+#!   NAME="Feature_To_Wait"
+#!   POSITION="-1186.14 -199.317"
+#!   BOUNDING_RECT="-1186.14 -199.317 476.875 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="9"
+#!   NAME="Feature_Output"
+#!   POSITION="2103.46 -373.609"
+#!   BOUNDING_RECT="2103.46 -373.609 495.193 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="FEATURE_TO_WAIT" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Feautre_Input"
+#!   POSITION="-1186.14 -402.444"
+#!   BOUNDING_RECT="-1186.14 -402.444 473.75 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="4"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO WaitForOtherFeatures_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(WaitForOtherFeatures_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(WaitForOtherFeatures_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait1475059395 Input Splitter"   INPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait"   OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input1475059395 Input Splitter"   INPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input"   OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_CreateFlag    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_To_Wait"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "FEATURE_TO_WAIT" "SET_TO" "1"    OUTPUT OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_CreateFlag_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE FEATURE_TO_WAIT} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_CreateFlag_OUTPUT"    MODE ONE_LEVEL    GROUP_BY FEATURE_TO_WAIT    $($(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_FeatureHolder    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feautre_Input"    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Aggregator_AGGREGATE"    OUTPUT SORTED FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_FeatureHolder_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_FeatureHolder_OUTPUT"    TEST FEATURE_TO_WAIT ATTRIBUTE_IS_MISSING "" ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Tester_PASSED"
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag    INPUT  FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_OUTPUT"        @RemoveAttributes(fme_encoded,FEATURE_TO_WAIT)        @RemoveAttributes(fme_pcre_match"$($(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_Output1475059395 Output Collector"   INPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_RemoveFlag_OUTPUT"   OUTPUT FEATURE_TYPE "$(WaitForOtherFeatures_WORKSPACE_NAME)_Feature_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(WaitForOtherFeatures_WORKSPACE_NAME))}]
+

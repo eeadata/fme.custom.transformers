@@ -1,0 +1,1841 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ValidateMSSQLSchemaTable,1,EEAValidation,916c2459-e9c5-454a-8645-16070781d5ea,"Embedded Always",No,NO_PARALLELISM,,No,15485,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Validates a Microsoft SQL schema against the features retrieved in the workspace to find those attributes that might get truncated.</p>
+# 
+# TRANSFORMER_END
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_BUILD_NUM="15485"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! SHOW_ANNOTATIONS="true"
+#! LAST_SAVE_DATE="2015-08-21T11:31:45"
+#! FMX_INSERT_MODE="Embedded Always"
+#! FME_DOCUMENT_GUID="916c2459-e9c5-454a-8645-16070781d5ea"
+#! WORKSPACE_VERSION="1"
+#! MAX_LOOP_ITERATIONS=""
+#! ZOOM_SCALE="100"
+#! XFORM_DEPRECATED="No"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Microsoft SQL Writer does not provide any details when attributes get truncated. In order to find those fields in large tables it might be usefull to analyse the content and check those against the database schema produced.&lt;/p&gt;&#10;"
+#! REQUIREMENTS_KEYWORD="none"
+#! TITLE="ValidateMSSQLSchemaTable"
+#! HISTORY="21&lt;solidus&gt;08&lt;solidus&gt;20015,Jan&lt;space&gt;Bliki,initial&lt;space&gt;creation"
+#! ITERATION_COUNT_ATTR=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Validates a Microsoft SQL schema against the features retrieved in the workspace to find those attributes that might get truncated.&lt;/p&gt;&#10;"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! FME_DOCUMENT_PRIORGUID="3af79ea5-c885-4c46-919c-c5079c0bb867"
+#! FME_PROCESS_GROUP_BY=""
+#! PASSWORD=""
+#! CATEGORY="EEAValidation"
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.0.3 (20150623 - Build 15485 - WIN64)"
+#! VIEW_POSITION="-1920.02 666.007"
+#! SHOW_INFO_NODES="true"
+#! ATTR_TYPE_ENCODING="SDF"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! DOC_TOP_LEFT="-2203.52 -873.497"
+#! FME_SERVER_SERVICES=""
+#! DOC_EXTENTS="4819.55 485.491"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI NAMED_DB_CONNECTION_OR_ATTR_ENCODED NAMED_CONNECTION &quot;FAMILY:Microsoft SQL Server&quot; Connection:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR TableName Table to validate:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="-1649.52 -388.006"
+#! BOUNDING_RECT="-1649.52 -388.006 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="Output"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="SchemaAnalyser"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SchemaAnalyser"/>
+#! <XFORM_PARM PARM_NAME="PreferString" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="SQLExecutor"
+#! VERSION="6"
+#! POSITION="-395.507 -638.008"
+#! BOUNDING_RECT="-395.507 -638.008 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="RESULT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="columnName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="typename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="columnlength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INITIATOR"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(NAMED_CONNECTION)"/>
+#! <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE="columnName,name,typename,columnlength"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor"/>
+#! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#! <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="select&lt;space&gt;sysobjects.name&lt;comma&gt;syscolumns.name&lt;space&gt;as&lt;space&gt;columnName&lt;comma&gt;systypes.name&lt;space&gt;as&lt;space&gt;typename&lt;comma&gt;syscolumns.prec&lt;space&gt;as&lt;space&gt;columnlength&lt;lf&gt;from&lt;space&gt;sysobjects&lt;lf&gt;inner&lt;space&gt;join&lt;space&gt;syscolumns&lt;space&gt;on&lt;space&gt;sysobjects.id&lt;space&gt;=&lt;space&gt;syscolumns.id&lt;lf&gt;inner&lt;space&gt;join&lt;space&gt;systypes&lt;space&gt;on&lt;space&gt;syscolumns.xtype&lt;space&gt;=&lt;space&gt;systypes.xtype&lt;lf&gt;where&lt;space&gt;sysobjects.name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(TableName)&lt;apos&gt;&lt;space&gt;and&lt;space&gt;systypes.name&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;sysname&lt;apos&gt;"/>
+#! <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="$(NAMED_CONNECTION)"/>
+#! <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="FeatureMerger"
+#! VERSION="13"
+#! POSITION="659.008 -398.008"
+#! BOUNDING_RECT="659.008 -398.008 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Requestor"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Supplier"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;DB_columnName&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;AttributeName&lt;closeparen&gt; AUTO"/>
+#! <XFORM_PARM PARM_NAME="MERGE_COUNT_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="IGNORE_NULLS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="GENERATE_LIST_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="BulkAttributeRenamer"
+#! VERSION="2"
+#! POSITION="178.248 -625.496"
+#! BOUNDING_RECT="178.248 -625.496 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="All Attributes"/>
+#! <XFORM_PARM PARM_NAME="CASE_DISP" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_STR" PARM_VALUE="DB_"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BulkAttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="PATTERN_ACTION_DISP" PARM_VALUE="Add String Prefix"/>
+#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CASE_CHANGE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_PATTERN" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="1390.51 -596.26"
+#! BOUNDING_RECT="1390.51 -596.26 526.008 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="CanBecomeTruncated"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="AllOk"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;DB_typename&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;nvarchar&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;DB_columnlength&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;MaxValueOrLength&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,CanBecomeTruncated"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="AllOk"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="Sampler"
+#! VERSION="1"
+#! POSITION="-990.518 -596.51"
+#! BOUNDING_RECT="-990.518 -596.51 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="SAMPLED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_SAMPLED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sampler"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#! <XFORM_PARM PARM_NAME="RATE" PARM_VALUE="1"/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="SAMPLE_TYPE_LONG" PARM_VALUE="First N Features"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="AttributeKeeper"
+#! VERSION="3"
+#! POSITION="-990.518 -830.006"
+#! BOUNDING_RECT="-990.518 -830.006 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="15"
+#! NAME="MightBeTruncated"
+#! POSITION="2040.52 -614.76"
+#! BOUNDING_RECT="2040.52 -614.76 575.51 71"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="AttributeName" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="17"
+#! NAME="SeemFine"
+#! POSITION="2040.52 -802.497"
+#! BOUNDING_RECT="2040.52 -802.497 575.51 71"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="AttributeName" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnlength" />
+#! <XFORM_ATTR ATTR_NAME="DB_columnName" />
+#! <XFORM_ATTR ATTR_NAME="DB_name" />
+#! <XFORM_ATTR ATTR_NAME="DB_typename" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="19"
+#! NAME="Records"
+#! POSITION="-2203.52 -406.506"
+#! BOUNDING_RECT="-2203.52 -406.506 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="8"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="17"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="19"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#! NAME="SchemaAnalyser"
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_DOCUMENT_GUID="fc5d2af9-252b-48c6-8add-5dabc0c169ce"
+#! SUPPRESS_UPGRADE="false"
+#! ZOOM_SCALE="100"
+#! XFORM_DEPRECATED="No"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer should be used during the creation of FME workspace. It analyses all content and provides detail information to produce a database schema. &lt;/p&gt;&#10;"
+#! REQUIREMENTS_KEYWORD="none"
+#! TITLE="SchemaAnalyser"
+#! HISTORY="20&lt;solidus&gt;10&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,First&lt;space&gt;initiation"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! GUID="fc5d2af9-252b-48c6-8add-5dabc0c169ce"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Provides a table describing the attribute information in order to produce a database schema. How many characters do I need to preserve for this string attribute, are all values numeric and is this a date field are questions this transfer can aswer when you pass you features trough this. &lt;/p&gt;&#10;"
+#! FME_DOCUMENT_PRIORGUID=""
+#! FME_PROCESS_GROUP_BY=""
+#! CATEGORY="EEAValidation"
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! VIEW_POSITION="3141.03 582.006"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! DOC_TOP_LEFT="-1304 -1182"
+#! DOC_EXTENTS="8892 717"
+#! IS_VISIBLE="false"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL CHOICE_OR_ATTR PreferString Yes%No Prefer String rarther then loss:"
+#! DEFAULT_VALUE="No"
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="57"
+#! NAME="GetPreviousAndLast"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3409 -465"
+#! BOTTOM_RIGHT="3965 -1182"
+#! BOUNDING_RECT="3409 -465 556 717"
+#! STICKY="true"
+#! COLOUR="0.129412,0.439216,0.0156863"
+#! CONTENTS="11 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="58"
+#! NAME="Take the values of the next record"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="4579 -474"
+#! BOTTOM_RIGHT="5274 -1182"
+#! BOUNDING_RECT="4579 -474 695 708"
+#! STICKY="true"
+#! COLOUR="0.0784314,0.121569,0.937255"
+#! CONTENTS="13 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="59"
+#! NAME="Who has the most values"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3995 -465"
+#! BOTTOM_RIGHT="4556 -1179"
+#! BOUNDING_RECT="3995 -465 561 714"
+#! STICKY="true"
+#! COLOUR="0.0901961,0.854902,0.466667"
+#! CONTENTS="49 12 14 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="60"
+#! NAME="Sort Results"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2820 -471"
+#! BOTTOM_RIGHT="3374 -1179"
+#! BOUNDING_RECT="2820 -471 554 708"
+#! STICKY="true"
+#! COLOUR="0.976471,0.8,0.0784314"
+#! CONTENTS="10 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="61"
+#! NAME="Aggregate to Attribute"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2227 -468"
+#! BOTTOM_RIGHT="2787 -1173"
+#! BOUNDING_RECT="2227 -468 560 705"
+#! STICKY="true"
+#! COLOUR="0.458824,0.0784314,0.976471"
+#! CONTENTS="7 2 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="62"
+#! NAME="Is this a number or a String"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="626 -474"
+#! BOTTOM_RIGHT="2192 -1176"
+#! BOUNDING_RECT="626 -474 1566 702"
+#! STICKY="true"
+#! COLOUR="0.729412,0.576471,0.027451"
+#! CONTENTS="28 39 29 5 6 4 1 30 19 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="63"
+#! NAME="Remove Null,Empty or &apos;&apos;"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-18 -478"
+#! BOTTOM_RIGHT="578 -1151"
+#! BOUNDING_RECT="-18 -478 596 673"
+#! STICKY="true"
+#! COLOUR="0.109804,0.992157,0.203922"
+#! CONTENTS="33 9 8 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="64"
+#! NAME="Attributes to Features"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-607 -483"
+#! BOTTOM_RIGHT="-53 -1152"
+#! BOUNDING_RECT="-607 -483 554 669"
+#! STICKY="true"
+#! COLOUR="0.0156863,0.701961,0.921569"
+#! CONTENTS="3 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="65"
+#! NAME="Improve selection"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="5905 -477"
+#! BOTTOM_RIGHT="6469 -1182"
+#! BOUNDING_RECT="5905 -477 564 705"
+#! STICKY="true"
+#! COLOUR="0.14902,0.854902,0.776471"
+#! CONTENTS="18 38 15 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="66"
+#! NAME="Remove duplictes"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="5311 -477"
+#! BOTTOM_RIGHT="5865 -1179"
+#! BOUNDING_RECT="5311 -477 554 702"
+#! STICKY="true"
+#! COLOUR="0.458824,0.494118,0.631373"
+#! CONTENTS="22 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="1731 -885"
+#! BOUNDING_RECT="1731 -885 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_length" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@StringLength(@Value(_attr_value))"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringLength"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_length"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="StatisticsCalculator"
+#! VERSION="6"
+#! POSITION="2307 -886"
+#! BOUNDING_RECT="2307 -886 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="SUMMARY"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_length" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="CUMULATIVE"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_length" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="_attr_name Type"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StatsString"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NUMERIC_ATTR" PARM_VALUE="_count"/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#! <XFORM_PARM PARM_NAME="STDEV_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAX_ATTR" PARM_VALUE="_max"/>
+#! <XFORM_PARM PARM_NAME="STATS_ATTRS" PARM_VALUE="_length"/>
+#! <XFORM_PARM PARM_NAME="HISTO_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RANGE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MIN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUM_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMPUTE_HISTOGRAM" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="PREPEND_ATTR_NAME_CHOICE" PARM_VALUE="For multiple results only"/>
+#! <XFORM_PARM PARM_NAME="MEDIAN_ATTR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeExploder"
+#! VERSION="1"
+#! POSITION="-539 -759"
+#! BOUNDING_RECT="-539 -759 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_VALUE_LABEL" PARM_VALUE="_attr_value"/>
+#! <XFORM_PARM PARM_NAME="KEEP_GEOMETRY" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME_LABEL" PARM_VALUE="_attr_name"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExploder"/>
+#! <XFORM_PARM PARM_NAME="EXPLODING_TYPE" PARM_VALUE="Features"/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRIBUTES" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="AttributeClassifier"
+#! VERSION="1"
+#! POSITION="700 -591"
+#! BOUNDING_RECT="700 -591 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="_attr_value"/>
+#! <XFORM_PARM PARM_NAME="CLASS" PARM_VALUE="Double"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="IsThisANumber"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1217 -598"
+#! BOUNDING_RECT="1217 -598 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Numeric"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Type,Numeric"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1223 -871"
+#! BOUNDING_RECT="1223 -871 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="String"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Type,String"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="StatisticsCalculator"
+#! VERSION="6"
+#! POSITION="2301 -601"
+#! BOUNDING_RECT="2301 -601 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="SUMMARY"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="CUMULATIVE"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="_attr_name Type"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StatsNumeric"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NUMERIC_ATTR" PARM_VALUE="_count"/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#! <XFORM_PARM PARM_NAME="STDEV_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MEAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAX_ATTR" PARM_VALUE="_max"/>
+#! <XFORM_PARM PARM_NAME="STATS_ATTRS" PARM_VALUE="_attr_value"/>
+#! <XFORM_PARM PARM_NAME="HISTO_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RANGE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MIN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUM_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMPUTE_HISTOGRAM" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="PREPEND_ATTR_NAME_CHOICE" PARM_VALUE="For multiple results only"/>
+#! <XFORM_PARM PARM_NAME="MEDIAN_ATTR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="67 -614"
+#! BOUNDING_RECT="67 -614 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="Ignore"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Check"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="NotNullOrEmpty"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;_attr_value&lt;space&gt;ATTRIBUTE_VALUE_NULL&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;_attr_value&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;_attr_value&lt;space&gt;ATTRIBUTE_IS_MISSING&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,Ignore"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Check"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="64 -998"
+#! BOUNDING_RECT="64 -998 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="false"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="EmptyAttr"/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="Sorter"
+#! VERSION="2"
+#! POSITION="2894 -790"
+#! BOUNDING_RECT="2894 -790 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="SORTED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="_attr_name ALPHA ASCENDING Type ALPHA ASCENDING _count NUMERIC DESCENDING"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="3483 -766"
+#! BOUNDING_RECT="3483 -766 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="Use Empty String"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttrComp"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Next_Name,&lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;+1&lt;closebracket&gt;._attr_name&lt;closeparen&gt;,Next_Count,&lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;+1&lt;closebracket&gt;._count&lt;closeparen&gt;,Prev_Name,&lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;-1&lt;closebracket&gt;._attr_name&lt;closeparen&gt;,Next_Type,&lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;+1&lt;closebracket&gt;.Type&lt;closeparen&gt;,Next_Max,&lt;at&gt;Value&lt;openparen&gt;feature&lt;openbracket&gt;+1&lt;closebracket&gt;._max&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="YES"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="1"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="1"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="4067 -863"
+#! BOUNDING_RECT="4067 -863 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="TakeOtherOption"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="CurrentOption"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="ThisOption"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BestValue"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_attr_name&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Next_Name&lt;lt&gt;closeparen&lt;gt&gt;&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_count&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Next_Count&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,TakeOtherOption,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_attr_name&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Next_Name&lt;lt&gt;closeparen&lt;gt&gt;&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_count&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;gt&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Next_Count&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,CurrentOption"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="ThisOption"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="4670 -770"
+#! BOUNDING_RECT="4670 -770 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CopyNextRecord"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_count,&lt;at&gt;Value&lt;openparen&gt;Next_Count&lt;closeparen&gt;,_max,&lt;at&gt;Value&lt;openparen&gt;Next_Max&lt;closeparen&gt;,Type,&lt;at&gt;Value&lt;openparen&gt;Next_Type&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="4071 -579"
+#! BOUNDING_RECT="4071 -579 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="PreferString"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="ChooseBest"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PreferString"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(PreferString)&lt;space&gt;=&lt;space&gt;Yes&lt;quote&gt;,PreferString"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="ChooseBest"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="5979 -577"
+#! BOUNDING_RECT="5979 -577 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="String"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Numeric"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="NumberOrString"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Type&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;String&lt;quote&gt;,String"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Numeric"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="16"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="6640 -679"
+#! BOUNDING_RECT="6640 -679 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="int16"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Type,fme_int16"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="17"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="6636 -503"
+#! BOUNDING_RECT="6636 -503 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="fme_char"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Type,fme_char&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_max&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="18"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="5990 -824"
+#! BOUNDING_RECT="5990 -824 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="int16"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="int32"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="real64"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_max&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;=&lt;space&gt;32767&lt;quote&gt;,int16,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_max&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;gt&gt;&lt;space&gt;32767&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_max&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;=&lt;space&gt;2147483647&lt;quote&gt;,int32,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_max&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;gt&gt;&lt;space&gt;2147483647&lt;quote&gt;,real64"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="19"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="1726 -604"
+#! BOUNDING_RECT="1726 -604 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attr_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="abs(@Value(_attr_value))"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="abs"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_attr_value"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="20"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="6639 -851"
+#! BOUNDING_RECT="6639 -851 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="int32"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Type,fme_int32"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="21"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="6641 -1024"
+#! BOUNDING_RECT="6641 -1024 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="real64"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Type,fme_real64"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="22"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="5385 -716"
+#! BOUNDING_RECT="5385 -716 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="Skip"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Take"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_attr_name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SkipDupli"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_attr_name&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;Prev_Name&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,Skip"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Take"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="23"
+#! TYPE="AttributeRenamer"
+#! VERSION="3"
+#! POSITION="7209.57 -716"
+#! BOUNDING_RECT="7209.57 -716 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="AttributeName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Prev_Name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Next_Max" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_attr_name,AttributeName,,Type,SuggestedType,,_max,MaxValueOrLength,,_count,TotalRecords,"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="24"
+#! NAME="Output"
+#! POSITION="7588 -911"
+#! BOUNDING_RECT="7588 -911 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="AttributeName" />
+#! <XFORM_ATTR ATTR_NAME="MaxValueOrLength" />
+#! <XFORM_ATTR ATTR_NAME="SuggestedType" />
+#! <XFORM_ATTR ATTR_NAME="TotalRecords" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="25"
+#! NAME="Input"
+#! POSITION="-1304 -744"
+#! BOUNDING_RECT="-1304 -744 0 0"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="25"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="32"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="33"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="35"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="36"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="37"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="17"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="38"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="39"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="40"
+#! SOURCE_NODE="19"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="42"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="20"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="43"
+#! SOURCE_NODE="18"
+#! TARGET_NODE="21"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="44"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="45"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="22"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS="5196 -921"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="46"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="47"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="22"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="48"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="49"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="50"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="51"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="22"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="52"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="23"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="53"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="23"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="54"
+#! SOURCE_NODE="20"
+#! TARGET_NODE="23"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="55"
+#! SOURCE_NODE="17"
+#! TARGET_NODE="23"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="56"
+#! SOURCE_NODE="23"
+#! TARGET_NODE="24"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_NAMED_CONNECTION 
+DEFAULT_MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TableName 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ValidateMSSQLSchemaTable_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ValidateMSSQLSchemaTable_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Records1440149505 Input Splitter"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Records"   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Records"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser Input Input Collector"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Records"   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Input"
+MACRO SchemaAnalyser_WORKSPACE_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser
+MACRO $(SchemaAnalyser_WORKSPACE_NAME)_XFORMER_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser
+MACRO $(SchemaAnalyser_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(SchemaAnalyser_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(SchemaAnalyser_WORKSPACE_NAME)_SUB_DOC_NAME SchemaAnalyser
+MACRO $(SchemaAnalyser_WORKSPACE_NAME)_PreferString No
+DEFAULT_MACRO SchemaAnalyser_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SchemaAnalyser_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SchemaAnalyser_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaAnalyser_WORKSPACE_NAME)_Input1440149505 Input Splitter"   INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttributeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_AttributeExploder    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Input"    ATTR_NAME_LABEL "_attr_name"    ATTR_VALUE_LABEL "_attr_value"    KEEP_GEOMETRY No    KEEP_ATTRIBUTES No    EXPLODING_TYPE EXPLODE_AS_FEATURES    LIST_NAME "<Unused>{}"    OUTPUT EXPLODED FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_AttributeExploder_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_AttributeExploder_OUTPUT"    OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_TestFactory_0 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_TESTFILTERINPUTLINE_0 TEST _attr_value ATTRIBUTE_VALUE_NULL "" ENCODED TEST _attr_value ATTRIBUTE_IS_EMPTY "" ENCODED TEST _attr_value ATTRIBUTE_IS_MISSING "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_Ignore OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_Check INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_Check
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber_checker {} {    set result 0;    set attr [FME_GetAttribute {"_attr_value"}];    if {$attr == {} && [FME_IsAttributeNull {"_attr_value"}]}    {    		if ({double}=={fmenull}) {    			set result 1;    		};    }    elseif ({double}=={fmenull}) {    			set result 0;    }    elseif ({double} == {date}) {       catch {         if [regexp {^[0-9]{8}$} $attr] {           set dateToNumber [clock scan $attr -format %Y%m%d];           set numberToDate [clock format $dateToNumber -format %Y%m%d];           if ($numberToDate == $attr) {               set result 1;           };         };       };    } elseif ({double} == {nanoption}) {      if {[string equal $attr {-1.#IND}] || [string equal $attr {1.#QNAN}]} {        set result 1;      };    } else {      set result [string is double -strict $attr];    };    return $result; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_Check"    TEST @Tcl2($(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber_checker) == 1    OUTPUT PASSED FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber_FAILED"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_String ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber_FAILED" ATTR Type String    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_String_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StringLength    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_String_OUTPUT"    OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StringLength_OUTPUT"         "_length" "@EvaluateExpression(FLOAT,<at>StringLength<openparen><at>Value<openparen>_attr_value<closeparen><closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_StringLength)"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO __$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_b69bbdf1_2ed3_406c_b634_fdbb594ec2e61_GROUP_BY
+MACRO __$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_b69bbdf1_2ed3_406c_b634_fdbb594ec2e61_GROUP_BY _attr_name Type
+DYNAMIC_FUNCTION_CONFIGURATION Python FMEOBJECTS
+DYNAMIC_FUNCTION_CONFIGURATION Python import StatisticsCalculator
+DYNAMIC_FUNCTION_CONFIGURATION Python "StatisticsCalculator.connectTransformer(    '$(SchemaAnalyser_WORKSPACE_NAME)_StatsString',{     'GROUP_BY_MACRO':'__$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_b69bbdf1_2ed3_406c_b634_fdbb594ec2e61_GROUP_BY',     'GROUP_BY':'_attr_name Type',     'STATS_ATTRS':'_length',     'MAX_ATTR':'_max',     'NUMERIC_ATTR':'_count',     'COMPUTE_HISTOGRAM':'NO',     'HISTO_ATTR':'<Unused>',     'PREPEND_ATTR_NAME':'No',     None:None})"
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsString_InputProcessor    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StringLength_OUTPUT"    OUTPUT FEATURE_TYPE __ORIGINAL__       @Python(StatisticsCalculator.recordFeature,$(SchemaAnalyser_WORKSPACE_NAME)_StatsString)
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsString_UnneededInputNuker    INPUT FEATURE_TYPE __ORIGINAL__
+FACTORY_DEF * SortFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsString_CompleteOutputter    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__
+FACTORY_DEF * CreationFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsString_SummaryCreator    CREATE_AT_END    NUMBER_TO_CREATE 1    OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_SUMMARY"
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsString_SummaryExploder    LIST_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsString_stats{}    MODE LEAN_AND_MEAN    CLONE_GEOMETRY no    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__    INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_SUMMARY"       @Python(StatisticsCalculator.summarizeStatistics,$(SchemaAnalyser_WORKSPACE_NAME)_StatsString,__SINGLE_GUY__)    OUTPUT ELEMENT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_SUMMARY"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_Numeric ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_IsThisANumber_PASSED" ATTR Type Numeric    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Numeric_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_abs    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Numeric_OUTPUT"    OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_abs_OUTPUT"         "_attr_value" "@EvaluateExpression(FLOAT,abs<openparen><at>Value<openparen>_attr_value<closeparen><closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_abs)"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO __$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_11a96fac_4d24_4201_8047_338e1c4707a61_GROUP_BY
+MACRO __$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_11a96fac_4d24_4201_8047_338e1c4707a61_GROUP_BY _attr_name Type
+DYNAMIC_FUNCTION_CONFIGURATION Python FMEOBJECTS
+DYNAMIC_FUNCTION_CONFIGURATION Python import StatisticsCalculator
+DYNAMIC_FUNCTION_CONFIGURATION Python "StatisticsCalculator.connectTransformer(    '$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric',{     'GROUP_BY_MACRO':'__$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_11a96fac_4d24_4201_8047_338e1c4707a61_GROUP_BY',     'GROUP_BY':'_attr_name Type',     'STATS_ATTRS':'_attr_value',     'MAX_ATTR':'_max',     'NUMERIC_ATTR':'_count',     'COMPUTE_HISTOGRAM':'NO',     'HISTO_ATTR':'<Unused>',     'PREPEND_ATTR_NAME':'No',     None:None})"
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_InputProcessor    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_abs_OUTPUT"    OUTPUT FEATURE_TYPE __ORIGINAL__       @Python(StatisticsCalculator.recordFeature,$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric)
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_UnneededInputNuker    INPUT FEATURE_TYPE __ORIGINAL__
+FACTORY_DEF * SortFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_CompleteOutputter    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__
+FACTORY_DEF * CreationFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_SummaryCreator    CREATE_AT_END    NUMBER_TO_CREATE 1    OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_SUMMARY"
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_SummaryExploder    LIST_NAME $(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_stats{}    MODE LEAN_AND_MEAN    CLONE_GEOMETRY no    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__    INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_SUMMARY"       @Python(StatisticsCalculator.summarizeStatistics,$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric,__SINGLE_GUY__)    OUTPUT ELEMENT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_SUMMARY"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_Sorter    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsNumeric_SUMMARY"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_StatsString_SUMMARY"    SORT_BY _attr_name ALPHA ASCENDING Type ALPHA ASCENDING _count NUMERIC DESCENDING    OUTPUT SORTED FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Sorter_SORTED"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_AttrComp NULL_ATTR_MODE EMPTY_2 MULTI_FEATURE_MODE YES  NUM_PRIOR_FEATURES 1 NUM_SUBSEQUENT_FEATURES 1 NULL_ATTR_VALUE_PROMPT "Attribute Replacement Value:" NULL_ATTR_VALUE "" ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Sorter_SORTED" ATTR Next_Name <at>Value<openparen>feature<openbracket>+1<closebracket>._attr_name<closeparen> ATTR Next_Count <at>Value<openparen>feature<openbracket>+1<closebracket>._count<closeparen> ATTR Prev_Name <at>Value<openparen>feature<openbracket>-1<closebracket>._attr_name<closeparen> ATTR Next_Type <at>Value<openparen>feature<openbracket>+1<closebracket>.Type<closeparen> ATTR Next_Max <at>Value<openparen>feature<openbracket>+1<closebracket>._max<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_AttrComp_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_BestValue    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_AttrComp_OUTPUT"    OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TestFactory_0 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_attr_name<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) = @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Next_Name<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_count<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) < @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Next_Count<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TakeOtherOption OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TestFactory_1 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_attr_name<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) = @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Next_Name<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_count<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) >= @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Next_Count<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_BestValue) ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_CurrentOption OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_ThisOption INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_BestValue_ThisOption
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_PreferString    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_BestValue_CurrentOption"    OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_TestFactory_0 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,$($(SchemaAnalyser_WORKSPACE_NAME)_PreferString$encode),$(SchemaAnalyser_WORKSPACE_NAME)_PreferString) = Yes ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_PreferString OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_ChooseBest INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_PreferString_ChooseBest
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_CopyNextRecord ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_BestValue_TakeOtherOption"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_PreferString_PreferString" ATTR _count <at>Value<openparen>Next_Count<closeparen> ATTR _max <at>Value<openparen>Next_Max<closeparen> ATTR Type <at>Value<openparen>Next_Type<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_CopyNextRecord_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_CopyNextRecord_OUTPUT"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_PreferString_ChooseBest"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_BestValue_ThisOption"    OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_TestFactory_0 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_attr_name<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli) = @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Prev_Name<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli) ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_Skip OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_Take INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_Take
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli Skip Output Nuker"   INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_Skip"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_SkipDupli_Take"    OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_TestFactory_0 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Type<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString) = String ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_String OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_Numeric INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_Numeric
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_Numeric"    OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_max<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter) <= 32767 ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_int16 OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TestFactory_1 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_max<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter) > 32767 ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_max<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter) <= 2147483647 ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_int32 OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TestFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TestFactory_2 INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_max<closeparen>,$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter) > 2147483647 ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_real64 OUTPUT FAILED FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_3
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_3 OUTPUT FEATURE_TYPE $(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_real64 ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_real64" ATTR Type fme_real64    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_real64_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_int32 ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_int32" ATTR Type fme_int32    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_int32_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_int16 ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_TestFilter_int16" ATTR Type fme_int16    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_int16_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_fme_char ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_NumberOrString_String" ATTR Type fme_char<openparen><at>Value<openparen>_max<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_fme_char_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaAnalyser_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_int32_OUTPUT"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_fme_char_OUTPUT"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_real64_OUTPUT"    INPUT  FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_int16_OUTPUT"    OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL_ENCODED, _attr_name,AttributeName,,Type,SuggestedType,,_max,MaxValueOrLength,,_count,TotalRecords,)
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaAnalyser_WORKSPACE_NAME)_EmptyAttr (Disabled) Nuker"   INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_NotNullOrEmpty_Ignore"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaAnalyser_WORKSPACE_NAME)_Output1440149505 Output Collector"   INPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"   OUTPUT FEATURE_TYPE "$(SchemaAnalyser_WORKSPACE_NAME)_Output" @RemoveAttributes(Next_Name,Next_Count,Prev_Name,Next_Type,Next_Max)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SchemaAnalyser_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output"   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser Output Splitter"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output"   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output_0_UbNo60DKn9Y="   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output_1_UbNo60DKn9Y="
+# -------------------------------------------------------------------------
+
+INCLUDE [ puts "MACRO REAL_RATE [expr 1 * -1 ]" ]
+FACTORY_DEF * SamplingFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Sampler    SAMPLE_RATE $(REAL_RATE)    INPUT  FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output_1_UbNo60DKn9Y="    OUTPUT SAMPLED FEATURE_TYPE ___SAMPLED___
+# This TeeFactory is needed because Sampler will still output features if it has no OUTPUT clauses specified.
+# This way we behave nicely even if there are no output connections on the transformer. See PR#28886.
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Sampler_Sampled    INPUT FEATURE_TYPE ___SAMPLED___    OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Sampler_SAMPLED"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_AttributeKeeper_9981500e_b6c6_4bff_b2c1_f12fe32967641_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_AttributeKeeper    INPUT  FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_Sampler_SAMPLED"    OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"        @KeepAttributes(fme_encoded,,fme_pcre_match,"^fme_$($(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_AttributeKeeper_9981500e_b6c6_4bff_b2c1_f12fe32967641_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor_DIRECTIVES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes COMMAND_TIMEOUT 30 NAMED_CONNECTION "$($(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_NAMED_CONNECTION)"
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor    INPUT  FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,select<space>sysobjects.name<comma>syscolumns.name<space>as<space>columnName<comma>systypes.name<space>as<space>typename<comma>syscolumns.prec<space>as<space>columnlength<lf>from<space>sysobjects<lf>inner<space>join<space>syscolumns<space>on<space>sysobjects.id<space>=<space>syscolumns.id<lf>inner<space>join<space>systypes<space>on<space>syscolumns.xtype<space>=<space>systypes.xtype<lf>where<space>sysobjects.name<space>=<space><apos>$($(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TableName$encode)<apos><space>and<space>systypes.name<space>!=<space><apos>sysname<apos>,$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "@EvaluateExpression(FDIV,STRING_ENCODED,$($(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_NAMED_CONNECTION),$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor)"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    READER_PARAMS        $($(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor_RESULT"    OUTPUT QUERY FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor_INITIATOR"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor INITIATOR Output Nuker"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor_INITIATOR"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_BulkAttributeRenamer    INPUT  FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SQLExecutor_RESULT"    OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"        @RenameAttributes(PATTERN_REPLACE, ADDPREFIX, <Unused>, "<Unused>", "DB_", "<Unused>", "<Unused>", "-_")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger    INPUT REFERENCER FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_BulkAttributeRenamer_OUTPUT"    INPUT REFERENCEE FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SchemaAnalyser_Output_0_UbNo60DKn9Y="    REFERENCE_INFO $($(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>DB_columnName<closeparen>,$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>AttributeName<closeparen>,$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger) AUTO    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "REQUESTOR_IF_CONFLICT"    IGNORE_NULLS "No"    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_MERGED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_FeatureMerger_MERGED"    OUTPUT FEATURE_TYPE $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>DB_typename<closeparen>,$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter) = nvarchar ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>DB_columnlength<closeparen>,$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter) < @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>MaxValueOrLength<closeparen>,$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter) ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_CanBecomeTruncated OUTPUT FAILED FEATURE_TYPE $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_AllOk INPUT FEATURE_TYPE $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_AllOk
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_MightBeTruncated1440149505 Output Collector"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_CanBecomeTruncated"   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_MightBeTruncated"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SeemFine1440149505 Output Collector"   INPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_TestFilter_AllOk"   OUTPUT FEATURE_TYPE "$(ValidateMSSQLSchemaTable_WORKSPACE_NAME)_SeemFine"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ValidateMSSQLSchemaTable_WORKSPACE_NAME))}]

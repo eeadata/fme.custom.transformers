@@ -1,0 +1,252 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN TreatDates,1,AirQuality,ebdb9947-01be-46c8-a060-0463a1494ff8,"Linked by Default",No,NO_PARALLELISM,,No,15515,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This script checks the compliance with date &amp; time ISO_8601 for a list of date attributes.</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">If a date is not compliant it checks if the reason is that hour time is "24" instead "00". In that case, date string is fixed.</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">If time zone is not included in date, default time zone is stablished</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Finally, dates are converted to desired UTC time zone. </p>
+# 
+# TRANSFORMER_END
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN64)"
+#! BLOCKED_LOOPING="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! DOC_EXTENTS="2297.76 71"
+#! PASSWORD=""
+#! FME_DOCUMENT_PRIORGUID="b258df6e-abb0-4f50-9fdb-a342ea764e6a,aab8163f-0269-4cea-bcab-7ced8bcf855d,a63af153-f6a7-44d3-bba2-18bc70d04eae,78374d63-8d1b-489e-9705-d2ae920e41f7,dadeb93e-b2b6-44a4-a26a-f302fc1c0ba9,6590cc10-51c6-449e-b413-77d72f984a40,22193f91-9803-4b33-83ae-527958fe03c1,3f8358e9-922b-4425-a287-713d133b294d,af91a560-f1b4-41b2-a6e0-2913369bd579,b912f1bf-543c-4a3f-b6f3-4ad2552cb6cb,98b6b631-96e9-4273-98ca-ae148bdbd4d2,1ee0d636-f5ab-4e85-b384-98c404b5fb77,186ada35-ee2c-41e0-b124-d67407dda232,9fd5384f-8f28-463c-b257-90ee2cda9617,1d42291f-1eba-4c0a-b311-a393317fb989"
+#! CATEGORY="AirQuality"
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! SHOW_ANNOTATIONS="true"
+#! FME_BUILD_NUM="15515"
+#! ATTR_TYPE_ENCODING="SDF"
+#! REQUIREMENTS_KEYWORD="none"
+#! SHOW_INFO_NODES="true"
+#! ITERATION_COUNT_ATTR=""
+#! ZOOM_SCALE="100"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FME_SERVER_SERVICES=""
+#! DOC_TOP_LEFT="-1510.88 3.5004"
+#! FME_PROCESS_GROUP_BY=""
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This script checks the compliance with date &amp;amp; time ISO_8601 for a list of date attributes.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If a date is not compliant it checks if the reason is that hour time is &quot;24&quot; instead &quot;00&quot;. In that case, date string is fixed.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If time zone is not included in date, default time zone is stablished&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Finally, dates are converted to desired UTC time zone. &lt;/p&gt;&#10;"
+#! FMX_INSERT_MODE="Linked by Default"
+#! XFORM_DEPRECATED="No"
+#! MAX_LOOP_ITERATIONS=""
+#! HISTORY=""
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! LAST_SAVE_DATE="2016-02-23T16:52:30"
+#! FME_DOCUMENT_GUID="ebdb9947-01be-46c8-a060-0463a1494ff8"
+#! VIEW_POSITION="-2955.03 1095.01"
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="TreatDates"
+#! WORKSPACE_VERSION="1"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR InputDateAttributes &quot;&quot; Input date attributes:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI CHOICE_OR_ATTR Convert Yes%No Convert:"
+#! DEFAULT_VALUE="Yes"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI STRING_OR_CHOICE_OR_ATTR target_UTC 0%1%2%3%4%5%6%7%8%9%10%11%12%-1%-2%-3%-4%-5%-6%-7%-8%-9%-10%-11%-12%-13%-14 Final UTC:"
+#! DEFAULT_VALUE="1"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI STRING_OR_CHOICE_OR_ATTR Default_UTC 0%1%2%3%4%5%6%7%8%9%10%11%12%-1%-2%-3%-4%-5%-6%-7%-8%-9%-10%-11%-12%-13%-14 Deafult UTC:"
+#! DEFAULT_VALUE="1"
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="PythonCaller"
+#! VERSION="4"
+#! POSITION="-311.877 74.5004"
+#! BOUNDING_RECT="-311.877 74.5004 430 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_InputDateAttributes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_target_UTC" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Default_UTC" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Convert" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="#Date:&lt;space&gt;2015&lt;solidus&gt;09&lt;solidus&gt;4&lt;lf&gt;#Author:&lt;space&gt;Koldo&lt;space&gt;Go&lt;u00f1&gt;i&lt;lf&gt;#This&lt;space&gt;script&lt;space&gt;checks&lt;space&gt;the&lt;space&gt;compliance&lt;space&gt;with&lt;space&gt;date&lt;space&gt;&lt;amp&gt;&lt;space&gt;time&lt;space&gt;ISO_8601&lt;space&gt;for&lt;space&gt;a&lt;space&gt;list&lt;space&gt;of&lt;space&gt;date&lt;space&gt;attributes.&lt;lf&gt;#If&lt;space&gt;a&lt;space&gt;date&lt;space&gt;is&lt;space&gt;not&lt;space&gt;compliant&lt;space&gt;it&lt;space&gt;checks&lt;space&gt;if&lt;space&gt;the&lt;space&gt;reason&lt;space&gt;is&lt;space&gt;that&lt;space&gt;hour&lt;space&gt;time&lt;space&gt;is&lt;space&gt;&lt;quote&gt;24&lt;quote&gt;&lt;space&gt;instead&lt;space&gt;&lt;quote&gt;00&lt;quote&gt;.&lt;space&gt;In&lt;space&gt;that&lt;space&gt;case&lt;comma&gt;&lt;space&gt;date&lt;space&gt;string&lt;space&gt;is&lt;space&gt;fixed.&lt;lf&gt;#If&lt;space&gt;time&lt;space&gt;zone&lt;space&gt;is&lt;space&gt;not&lt;space&gt;included&lt;space&gt;in&lt;space&gt;date&lt;comma&gt;&lt;space&gt;default&lt;space&gt;time&lt;space&gt;zone&lt;space&gt;is&lt;space&gt;stablished&lt;lf&gt;#Finally&lt;comma&gt;&lt;space&gt;dates&lt;space&gt;are&lt;space&gt;converted&lt;space&gt;to&lt;space&gt;desired&lt;space&gt;UTC&lt;space&gt;time&lt;space&gt;zone.&lt;lf&gt;&lt;lf&gt;import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;dateutil.parser&lt;comma&gt;&lt;space&gt;pytz&lt;comma&gt;&lt;space&gt;datetime&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Function&lt;space&gt;that&lt;space&gt;solve&lt;space&gt;24h&lt;space&gt;issue&lt;space&gt;and&lt;space&gt;convert&lt;space&gt;datetime&lt;space&gt;to&lt;space&gt;custom&lt;space&gt;UTC:&lt;lf&gt;def&lt;space&gt;processDateTime&lt;openparen&gt;indate&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;try:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#In&lt;space&gt;the&lt;space&gt;case&lt;space&gt;date&lt;space&gt;time&lt;space&gt;comes&lt;space&gt;with&lt;space&gt;miliseconds&lt;space&gt;e.g.&lt;space&gt;&lt;quote&gt;&lt;quote&gt;20110101000000.0000000&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;indateSplit=indate.split&lt;openparen&gt;&lt;apos&gt;.&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;d&lt;space&gt;=&lt;space&gt;dateutil.parser.parse&lt;openparen&gt;indateSplit&lt;openbracket&gt;0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;except&lt;space&gt;ValueError&lt;space&gt;as&lt;space&gt;ve:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;strve=str&lt;openparen&gt;ve&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Check&lt;space&gt;for&lt;space&gt;24&lt;space&gt;hour&lt;space&gt;issue&lt;space&gt;and&lt;space&gt;solve&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;indate&lt;space&gt;=&lt;space&gt;indate.replace&lt;openparen&gt;&lt;apos&gt;24:&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;23:&lt;apos&gt;&lt;comma&gt;&lt;space&gt;1&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;d&lt;space&gt;=&lt;space&gt;dateutil.parser.parse&lt;openparen&gt;indate&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;d&lt;space&gt;+=&lt;space&gt;datetime.timedelta&lt;openparen&gt;hours=1&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Start&lt;space&gt;conversion&lt;space&gt;to&lt;space&gt;custom&lt;space&gt;UTC&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;Convert==&lt;quote&gt;No&lt;quote&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;resultDateTime=d.isoformat&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Set&lt;space&gt;default&lt;space&gt;timezone&lt;space&gt;if&lt;space&gt;none&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;d.tzinfo&lt;space&gt;is&lt;space&gt;None&lt;space&gt;or&lt;space&gt;d.tzinfo.utcoffset&lt;openparen&gt;d&lt;closeparen&gt;&lt;space&gt;is&lt;space&gt;None:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;d&lt;space&gt;=&lt;space&gt;d.replace&lt;openparen&gt;tzinfo=TZ_DEFAULT&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#Convert&lt;space&gt;to&lt;space&gt;UTC&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dUTC&lt;space&gt;=&lt;space&gt;&lt;space&gt;d.astimezone&lt;openparen&gt;pytz.utc&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;resultDateTime&lt;space&gt;=&lt;space&gt;dUTC.astimezone&lt;openparen&gt;TARGET_UTC&lt;closeparen&gt;.isoformat&lt;openparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;resultDateTime&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;#Function&lt;space&gt;to&lt;space&gt;create&lt;space&gt;GMT&lt;space&gt;string&lt;space&gt;from&lt;space&gt;UTC&lt;space&gt;number&lt;lf&gt;def&lt;space&gt;returnGMT&lt;openparen&gt;UTC&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;UTC=-1*int&lt;openparen&gt;UTC&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;UTC&lt;space&gt;&lt;gt&gt;=&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;UTC=&lt;quote&gt;+&lt;quote&gt;&lt;space&gt;+&lt;space&gt;str&lt;openparen&gt;UTC&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;returnGMT=&lt;quote&gt;Etc&lt;solidus&gt;GMT&lt;quote&gt;&lt;space&gt;+&lt;space&gt;str&lt;openparen&gt;UTC&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;return&lt;space&gt;returnGMT&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;#&lt;space&gt;Date&lt;space&gt;time&lt;space&gt;Class:&lt;lf&gt;class&lt;space&gt;DateTimeProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger&lt;space&gt;=&lt;space&gt;fmeobjects.FMELogFile&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#self.logger.logMessageString&lt;openparen&gt;&lt;quote&gt;CLASS&lt;space&gt;CREATED:&lt;space&gt;DateTimeProcessor&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.loggingEnabled&lt;space&gt;=&lt;space&gt;True&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;log&lt;openparen&gt;self&lt;comma&gt;&lt;space&gt;message&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;self.loggingEnabled:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger.logMessageString&lt;openparen&gt;message&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;global&lt;space&gt;TARGET_UTC&lt;comma&gt;TZ_DEFAULT&lt;comma&gt;&lt;space&gt;Convert&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Convert=feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_Convert&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TARGET_UTC=returnGMT&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_target_UTC&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TZ_DEFAULT&lt;space&gt;=&lt;space&gt;returnGMT&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_Default_UTC&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TARGET_UTC&lt;space&gt;=&lt;space&gt;pytz.timezone&lt;openparen&gt;TARGET_UTC&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TZ_DEFAULT&lt;space&gt;=&lt;space&gt;pytz.timezone&lt;openparen&gt;TZ_DEFAULT&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Hardcode&lt;space&gt;the&lt;space&gt;name&lt;space&gt;of&lt;space&gt;the&lt;space&gt;attribute&lt;space&gt;list&lt;space&gt;with&lt;space&gt;date&lt;space&gt;info&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;attributeWithDates&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_InputDateAttributes&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;attributeWithDate&lt;space&gt;in&lt;space&gt;attributeWithDates.split&lt;openparen&gt;&lt;apos&gt;&lt;comma&gt;&lt;apos&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;space&gt;the&lt;space&gt;date&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#self.log&lt;openparen&gt;&lt;quote&gt;Get&lt;space&gt;value&lt;space&gt;of&lt;space&gt;attribute:&lt;space&gt;&lt;quote&gt;&lt;space&gt;+&lt;space&gt;attributeWithDate&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dateValue&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;attributeWithDate&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#self.log&lt;openparen&gt;&lt;quote&gt;&lt;space&gt;value&lt;space&gt;of&lt;space&gt;attribute:&lt;space&gt;&lt;quote&gt;&lt;space&gt;+&lt;space&gt;attributeWithDate&lt;space&gt;+&lt;space&gt;&lt;quote&gt;=&lt;quote&gt;&lt;space&gt;+&lt;space&gt;dateValue&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;dateValue&lt;space&gt;is&lt;space&gt;None&lt;space&gt;or&lt;space&gt;dateValue&lt;space&gt;==&lt;space&gt;&lt;quote&gt;&lt;quote&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.log&lt;openparen&gt;&lt;quote&gt;Date&lt;space&gt;value&lt;space&gt;is&lt;space&gt;empty&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;elif&lt;space&gt;len&lt;openparen&gt;dateValue&lt;closeparen&gt;&lt;lt&gt;16:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.log&lt;openparen&gt;&lt;quote&gt;Date&lt;space&gt;value&lt;space&gt;is&lt;space&gt;too&lt;space&gt;short&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Write&lt;space&gt;no&lt;space&gt;dateValue&lt;space&gt;back&lt;space&gt;to&lt;space&gt;the&lt;space&gt;original&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;attributeWithDate&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;processedDateValue=processDateTime&lt;openparen&gt;dateValue&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#self.log&lt;openparen&gt;&lt;quote&gt;&lt;space&gt;value&lt;space&gt;of&lt;space&gt;attribute&lt;space&gt;&lt;openparen&gt;process&lt;closeparen&gt;:&lt;space&gt;&lt;quote&gt;&lt;space&gt;+&lt;space&gt;attributeWithDate&lt;space&gt;+&lt;space&gt;&lt;quote&gt;=&lt;quote&gt;&lt;space&gt;+&lt;space&gt;processedDateValue&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Write&lt;space&gt;the&lt;space&gt;new&lt;space&gt;value&lt;space&gt;of&lt;space&gt;dateValue&lt;space&gt;back&lt;space&gt;to&lt;space&gt;the&lt;space&gt;original&lt;space&gt;attribute&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;attributeWithDate&lt;comma&gt;&lt;space&gt;processedDateValue&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#! <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="24H_TargetTZ_DefaultTZ"/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="DateTimeProcessor"/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-907.51 74.5004"
+#! BOUNDING_RECT="-907.51 74.5004 490.505 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_InputDateAttributes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_target_UTC" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Default_UTC" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_Convert" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_InputDateAttributes {$(InputDateAttributes)} _target_UTC {$(target_UTC)} _Default_UTC {$(Default_UTC)} _Convert {$(Convert)}"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateAttributesFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeRemover"
+#! VERSION="1"
+#! POSITION="242.002 74.5004"
+#! BOUNDING_RECT="242.002 74.5004 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_Convert,_Default_UTC,_InputDateAttributes,_target_UTC"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="Input"
+#! POSITION="-1510.88 44.5001"
+#! BOUNDING_RECT="-1510.88 44.5001 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="5"
+#! NAME="Output"
+#! POSITION="786.88 44.5001"
+#! BOUNDING_RECT="786.88 44.5001 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_InputDateAttributes" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="6"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="8"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(TreatDates_WORKSPACE_NAME)_InputDateAttributes 
+DEFAULT_MACRO $(TreatDates_WORKSPACE_NAME)_Convert Yes
+DEFAULT_MACRO $(TreatDates_WORKSPACE_NAME)_target_UTC 1
+DEFAULT_MACRO $(TreatDates_WORKSPACE_NAME)_Default_UTC 1
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO TreatDates_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(TreatDates_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(TreatDates_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TreatDates_WORKSPACE_NAME)_Input1456242750 Input Splitter"   INPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher_doFetch {} {    foreach {name val} {"_InputDateAttributes {$($(TreatDates_WORKSPACE_NAME)_InputDateAttributes$encode)} _target_UTC {$($(TreatDates_WORKSPACE_NAME)_target_UTC$encode)} _Default_UTC {$($(TreatDates_WORKSPACE_NAME)_Default_UTC$encode)} _Convert {$($(TreatDates_WORKSPACE_NAME)_Convert$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher    INPUT  FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher_OUTPUT"         @Tcl2($(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(TreatDates_WORKSPACE_NAME)_24H_TargetTZ_DefaultTZ    INPUT  FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_DateAttributesFetcher_OUTPUT"    SYMBOL_NAME DateTimeProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE #Date:<space>2015<solidus>09<solidus>4<lf>#Author:<space>Koldo<space>Go<u00f1>i<lf>#This<space>script<space>checks<space>the<space>compliance<space>with<space>date<space><amp><space>time<space>ISO_8601<space>for<space>a<space>list<space>of<space>date<space>attributes.<lf>#If<space>a<space>date<space>is<space>not<space>compliant<space>it<space>checks<space>if<space>the<space>reason<space>is<space>that<space>hour<space>time<space>is<space><quote>24<quote><space>instead<space><quote>00<quote>.<space>In<space>that<space>case<comma><space>date<space>string<space>is<space>fixed.<lf>#If<space>time<space>zone<space>is<space>not<space>included<space>in<space>date<comma><space>default<space>time<space>zone<space>is<space>stablished<lf>#Finally<comma><space>dates<space>are<space>converted<space>to<space>desired<space>UTC<space>time<space>zone.<lf><lf>import<space>fme<lf>import<space>fmeobjects<lf>import<space>dateutil.parser<comma><space>pytz<comma><space>datetime<lf><lf>#<space>Function<space>that<space>solve<space>24h<space>issue<space>and<space>convert<space>datetime<space>to<space>custom<space>UTC:<lf>def<space>processDateTime<openparen>indate<closeparen>:<lf><space><space><space><space>try:<lf><space><space><space><space><space><space><space><space>#In<space>the<space>case<space>date<space>time<space>comes<space>with<space>miliseconds<space>e.g.<space><quote><quote>20110101000000.0000000<quote><quote><lf><space><space><space><space><space><space><space><space>indateSplit=indate.split<openparen><apos>.<apos><closeparen><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>d<space>=<space>dateutil.parser.parse<openparen>indateSplit<openbracket>0<closebracket><closeparen><lf><space><space><space><space>except<space>ValueError<space>as<space>ve:<lf><space><space><space><space><space><space><space><space>strve=str<openparen>ve<closeparen><lf><space><space><space><space><space><space><space><space>#<space>Check<space>for<space>24<space>hour<space>issue<space>and<space>solve<space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>indate<space>=<space>indate.replace<openparen><apos>24:<apos><comma><space><apos>23:<apos><comma><space>1<closeparen><lf><space><space><space><space><space><space><space><space>d<space>=<space>dateutil.parser.parse<openparen>indate<closeparen><lf><space><space><space><space><space><space><space><space>d<space>+=<space>datetime.timedelta<openparen>hours=1<closeparen><lf><space><space><space><space>#Start<space>conversion<space>to<space>custom<space>UTC<lf><space><space><space><space>if<space>Convert==<quote>No<quote>:<lf><space><space><space><space><space><space><space><space>resultDateTime=d.isoformat<openparen><closeparen><lf><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space>#<space>Set<space>default<space>timezone<space>if<space>none<lf><space><space><space><space><space><space><space><space><space>if<space>d.tzinfo<space>is<space>None<space>or<space>d.tzinfo.utcoffset<openparen>d<closeparen><space>is<space>None:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space>d<space>=<space>d.replace<openparen>tzinfo=TZ_DEFAULT<closeparen><lf><space><space><space><space><space><space><space><space><space>#Convert<space>to<space>UTC<lf><space><space><space><space><space><space><space><space><space>dUTC<space>=<space><space>d.astimezone<openparen>pytz.utc<closeparen><lf><space><space><space><space><space><space><space><space><space>resultDateTime<space>=<space>dUTC.astimezone<openparen>TARGET_UTC<closeparen>.isoformat<openparen><closeparen><space><lf><space><space><space><lf><space><space><space><space>return<space>resultDateTime<lf><space><space><space><space><lf>#Function<space>to<space>create<space>GMT<space>string<space>from<space>UTC<space>number<lf>def<space>returnGMT<openparen>UTC<closeparen>:<lf><space><space><space><space>UTC=-1*int<openparen>UTC<closeparen><lf><space><space><space><space>if<space>UTC<space><gt>=<space>0:<lf><space><space><space><space><space><space><space><space>UTC=<quote>+<quote><space>+<space>str<openparen>UTC<closeparen><lf><space><space><space><space>returnGMT=<quote>Etc<solidus>GMT<quote><space>+<space>str<openparen>UTC<closeparen><lf><space><space><space><space>return<space>returnGMT<lf><space><space><space><space><space><space><space><space><lf>#<space>Date<space>time<space>Class:<lf>class<space>DateTimeProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>self.logger<space>=<space>fmeobjects.FMELogFile<openparen><closeparen><lf><space><space><space><space><space><space><space><space>#self.logger.logMessageString<openparen><quote>CLASS<space>CREATED:<space>DateTimeProcessor<quote><closeparen><lf><space><space><space><space><space><space><space><space>self.loggingEnabled<space>=<space>True<lf><space><space><space><space>def<space>log<openparen>self<comma><space>message<closeparen>:<lf><space><space><space><space><space><space><space><space>if<space>self.loggingEnabled:<lf><space><space><space><space><space><space><space><space><space><space><space><space>self.logger.logMessageString<openparen>message<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>global<space>TARGET_UTC<comma>TZ_DEFAULT<comma><space>Convert<lf><space><space><space><space><space><space><space><space>Convert=feature.getAttribute<openparen><apos>_Convert<apos><closeparen><lf><space><space><space><space><space><space><space><space>TARGET_UTC=returnGMT<openparen>feature.getAttribute<openparen><apos>_target_UTC<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space>TZ_DEFAULT<space>=<space>returnGMT<openparen>feature.getAttribute<openparen><apos>_Default_UTC<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space>TARGET_UTC<space>=<space>pytz.timezone<openparen>TARGET_UTC<closeparen><lf><space><space><space><space><space><space><space><space>TZ_DEFAULT<space>=<space>pytz.timezone<openparen>TZ_DEFAULT<closeparen><lf><space><space><space><space><space><space><space><space>#<space>Hardcode<space>the<space>name<space>of<space>the<space>attribute<space>list<space>with<space>date<space>info<lf><space><space><space><space><space><space><space><space>attributeWithDates<space>=<space>feature.getAttribute<openparen><apos>_InputDateAttributes<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>for<space>attributeWithDate<space>in<space>attributeWithDates.split<openparen><apos><comma><apos><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Get<space>the<space>value<space>of<space>the<space>date<space>attribute<lf><space><space><space><space><space><space><space><space><space><space><space><space>#self.log<openparen><quote>Get<space>value<space>of<space>attribute:<space><quote><space>+<space>attributeWithDate<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>dateValue<space>=<space>feature.getAttribute<openparen>attributeWithDate<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>#self.log<openparen><quote><space>value<space>of<space>attribute:<space><quote><space>+<space>attributeWithDate<space>+<space><quote>=<quote><space>+<space>dateValue<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>dateValue<space>is<space>None<space>or<space>dateValue<space>==<space><quote><quote>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self.log<openparen><quote>Date<space>value<space>is<space>empty<quote><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>elif<space>len<openparen>dateValue<closeparen><lt>16:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>self.log<openparen><quote>Date<space>value<space>is<space>too<space>short<quote><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Write<space>no<space>dateValue<space>back<space>to<space>the<space>original<space>attribute<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>attributeWithDate<comma><space><apos><apos><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>processedDateValue=processDateTime<openparen>dateValue<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#self.log<openparen><quote><space>value<space>of<space>attribute<space><openparen>process<closeparen>:<space><quote><space>+<space>attributeWithDate<space>+<space><quote>=<quote><space>+<space>processedDateValue<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Write<space>the<space>new<space>value<space>of<space>dateValue<space>back<space>to<space>the<space>original<space>attribute<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>attributeWithDate<comma><space>processedDateValue<closeparen><lf><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_24H_TargetTZ_DefaultTZ_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(TreatDates_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(TreatDates_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_24H_TargetTZ_DefaultTZ_OUTPUT"    OUTPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,_Convert,_Default_UTC,_InputDateAttributes,_target_UTC)        @RemoveAttributes(fme_pcre_match"$($(TreatDates_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(TreatDates_WORKSPACE_NAME)_Output1456242750 Output Collector"   INPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(TreatDates_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(TreatDates_WORKSPACE_NAME))}]

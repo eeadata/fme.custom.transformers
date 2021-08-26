@@ -1,0 +1,291 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN SpliterStringCreator,1,Strings,7731f649-772d-4913-bef7-80f12dc84a88,"Embedded Always",No,NO_PARALLELISM,,No,15515,YES,No
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#! VIEW_POSITION="-966.01 798.008"
+#! FME_SERVER_SERVICES=""
+#! SHOW_INFO_NODES="true"
+#! REQUIREMENTS_KEYWORD="none"
+#! FME_DOCUMENT_GUID="7731f649-772d-4913-bef7-80f12dc84a88"
+#! SHOW_ANNOTATIONS="true"
+#! ITERATION_COUNT_ATTR=""
+#! PASSWORD=""
+#! WORKSPACE_VERSION="1"
+#! MAX_LOOP_ITERATIONS=""
+#! DOC_TOP_LEFT="-619 -443"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FMX_INSERT_MODE="Embedded Always"
+#! DOC_EXTENTS="1655 663"
+#! TITLE="SpliterStringCreator"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! LAST_SAVE_DATE="2015-08-26T14:10:51"
+#! FME_BUILD_NUM="15515"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! CATEGORY="Strings"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! ATTR_TYPE_ENCODING="SDF"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! XFORM_DEPRECATED="No"
+#! BLOCKED_LOOPING="No"
+#! FME_DOCUMENT_PRIORGUID=""
+#! ZOOM_SCALE="100"
+#! DESCRIPTION="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN64)"
+#! HISTORY=""
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_ATTR SIZE_SPLITTER_STRING Size Splitter String:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;size_splitter_string&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _FILE_CHUNK_COUNT File Chunk Count:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_file_chunk_count&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FINAL_SPLITTER_STRING Final Splitter String:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;final_splitter_string&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PATH_FILENAME Path Filename:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;path_filename&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="StringConcatenator"
+#! VERSION="6"
+#! POSITION="-46 -37"
+#! BOUNDING_RECT="-46 -37 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="size_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file_chunk_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="final_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;size_splitter_string&lt;closeparen&gt;&lt;at&gt;Value&lt;openparen&gt;final_splitter_string&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="final_splitter_string"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringConcatenator"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="Counter"
+#! VERSION="2"
+#! POSITION="-19 220"
+#! BOUNDING_RECT="-19 220 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="size_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file_chunk_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="final_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_count"/>
+#! <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#! <XFORM_PARM PARM_NAME="START" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="DOMAIN" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;path_filename&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Counter"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="-30 -299"
+#! BOUNDING_RECT="-30 -299 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="size_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_file_chunk_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="final_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="size_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_file_chunk_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="final_splitter_string" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="path_filename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;_count&lt;closeparen&gt; = &lt;at&gt;Evaluate&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_file_chunk_count&lt;closeparen&gt;-1&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_2"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="Tester_2_Passed"
+#! POSITION="993 -90"
+#! BOUNDING_RECT="993 -90 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="size_splitter_string" />
+#! <XFORM_ATTR ATTR_NAME="_file_chunk_count" />
+#! <XFORM_ATTR ATTR_NAME="_count" />
+#! <XFORM_ATTR ATTR_NAME="_concatenated" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="5"
+#! NAME="Counter_Input"
+#! POSITION="-619 198"
+#! BOUNDING_RECT="-619 198 0 0"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="size_splitter_string" ATTR_VALUE="$(SIZE_SPLITTER_STRING)" />
+#! <XFORM_ATTR ATTR_NAME="_file_chunk_count" ATTR_VALUE="$(_FILE_CHUNK_COUNT)" />
+#! <XFORM_ATTR ATTR_NAME="final_splitter_string" ATTR_VALUE="$(FINAL_SPLITTER_STRING)" />
+#! <XFORM_ATTR ATTR_NAME="path_filename" ATTR_VALUE="$(PATH_FILENAME)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="Counter_Input"
+#! POSITION="1036 -443"
+#! BOUNDING_RECT="1036 -443 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="loop"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="7"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="10"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="8"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(SpliterStringCreator_WORKSPACE_NAME)_SIZE_SPLITTER_STRING <at>Value<openparen>size_splitter_string<closeparen>
+DEFAULT_MACRO $(SpliterStringCreator_WORKSPACE_NAME)__FILE_CHUNK_COUNT <at>Value<openparen>_file_chunk_count<closeparen>
+DEFAULT_MACRO $(SpliterStringCreator_WORKSPACE_NAME)_FINAL_SPLITTER_STRING <at>Value<openparen>final_splitter_string<closeparen>
+DEFAULT_MACRO $(SpliterStringCreator_WORKSPACE_NAME)_PATH_FILENAME <at>Value<openparen>path_filename<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO SpliterStringCreator_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SpliterStringCreator_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SpliterStringCreator_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input1440591051 Input Splitter"   INPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input"   OUTPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,size_splitter_string,$($(SpliterStringCreator_WORKSPACE_NAME)_SIZE_SPLITTER_STRING),_file_chunk_count,$($(SpliterStringCreator_WORKSPACE_NAME)__FILE_CHUNK_COUNT),final_splitter_string,$($(SpliterStringCreator_WORKSPACE_NAME)_FINAL_SPLITTER_STRING),path_filename,$($(SpliterStringCreator_WORKSPACE_NAME)_PATH_FILENAME), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(SpliterStringCreator_WORKSPACE_NAME)_Counter_83c24cab_d323_403f_857e_c1a59aa9e5e80_createDomain { in_domainName } {    set domainName $in_domainName;    if { {Local} == {Local} }    {       set xFormName [FME_EncodeText {$(SpliterStringCreator_WORKSPACE_NAME)_Counter_}];       set domainName $xFormName$domainName;    };    return $domainName; }
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SpliterStringCreator_WORKSPACE_NAME)_Counter    INPUT  FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input"    OUTPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_OUTPUT"         "_count" @Count(fme_encoded,@Tcl2("$(SpliterStringCreator_WORKSPACE_NAME)_Counter_83c24cab_d323_403f_857e_c1a59aa9e5e80_createDomain {@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>path_filename<closeparen>,$(SpliterStringCreator_WORKSPACE_NAME)_Counter)}"), "0")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(SpliterStringCreator_WORKSPACE_NAME)_StringConcatenator_d3036c55_34c3_4aac_a1e3_b884918ba0110_doSetAttr {attrText} {    FME_SetAttribute [FME_DecodeText {final_splitter_string}] [FME_DecodeText $attrText] }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SpliterStringCreator_WORKSPACE_NAME)_StringConcatenator    INPUT  FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_OUTPUT"    OUTPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_StringConcatenator_OUTPUT"        @Tcl2("$(SpliterStringCreator_WORKSPACE_NAME)_StringConcatenator_d3036c55_34c3_4aac_a1e3_b884918ba0110_doSetAttr {@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>size_splitter_string<closeparen><at>Value<openparen>final_splitter_string<closeparen>,$(SpliterStringCreator_WORKSPACE_NAME)_StringConcatenator)} ")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SpliterStringCreator_WORKSPACE_NAME)_Tester_2    INPUT  FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_StringConcatenator_OUTPUT"    TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_count<closeparen>,$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2) = @EvaluateExpression(FDIV,STRING_ENCODED,<at>Evaluate<openparen><at>Value<openparen>_file_chunk_count<closeparen>-1<closeparen>,$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2) ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2_FAILED"
+FACTORY_DEF * BranchingFactory   TARGET_FACTORY "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input1440591051 Input Splitter"   FACTORY_NAME "Loop to $(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input1440591051 Input Splitter"   MAXIMUM_COUNT -1   INPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2_FAILED"   OUTPUT PASSED FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Counter_Input"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2_Passed1440591051 Output Collector"   INPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2_PASSED"   OUTPUT FEATURE_TYPE "$(SpliterStringCreator_WORKSPACE_NAME)_Tester_2_Passed"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SpliterStringCreator_WORKSPACE_NAME))}]

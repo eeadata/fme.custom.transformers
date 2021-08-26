@@ -1,0 +1,806 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN JediLogWritter,2,Jedi,c3ff04d7-eabe-42bd-9918-e1f9e90ba7e2,"Linked by Default",No,NO_PARALLELISM,,No,19630,YES,No,36,No
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Jedi"
+#!   DESCRIPTION=""
+#!   DOC_EXTENTS="4091.69 625.489"
+#!   DOC_TOP_LEFT="-1892.4 -484.488"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="19630"
+#!   FME_DOCUMENT_GUID="c3ff04d7-eabe-42bd-9918-e1f9e90ba7e2"
+#!   FME_DOCUMENT_PRIORGUID="f6a4b231-f3a4-49b6-af5d-76817d36ab02,5e86827a-eb5b-4e3c-a90f-80611ce2621d,18d1c8a1-d0ad-4118-8c10-101b482cfbdb"
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2019.1.2.0 (20190829 - Build 19630 - WIN64)"
+#!   LAST_SAVE_DATE="2019-10-14T12:56:20"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="36"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="JediLogWritter"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-2050.02 1553.14"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_DB_CONNECTION_ENCODED SQLServerConn FAMILY:Microsoft&lt;space&gt;SQL&lt;space&gt;Server%INCLUDE_EXPAND%FMT:MSSQL_ADO Connection:"
+#!   DEFAULT_VALUE="CubeManager"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE_OR_ATTR MESSAGETYPE WARNING%ERROR%INFO Message type:"
+#!   DEFAULT_VALUE="INFO"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL RANGE_SLIDER_OR_ATTR FILEID &quot;RANGE:[,]&quot; File Id:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_ATTR MESSAGESTRING &quot; &quot; Message:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR TRANSFORMERPATH Path transformer:"
+#!   DEFAULT_VALUE="FMEWORKSPACE/.../..."
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL CHOICE_OR_ATTR OBJECTPROCESSED Dimension%Cube%Lookup Object:"
+#!   DEFAULT_VALUE="Dimension"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="14"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Write to SQL Database&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="486.13 100.375"
+#!   TOP_LEFT="486.13 100.375"
+#!   BOTTOM_RIGHT="485.13 101.375"
+#!   BOUNDING_RECT="486.13 100.375 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="2"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="18"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Make sure quotes are replaced&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;by double qoutes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-121.005 141.001"
+#!   TOP_LEFT="-121.005 141.001"
+#!   BOTTOM_RIGHT="-122.005 142.001"
+#!   BOUNDING_RECT="-121.005 141.001 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="15"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="20"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Show error information&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1156.26 137.428"
+#!   TOP_LEFT="1156.26 137.428"
+#!   BOTTOM_RIGHT="1155.26 138.428"
+#!   BOUNDING_RECT="1156.26 137.428 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="19"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="23"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Show error information&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1156.26 -202.768"
+#!   TOP_LEFT="1156.26 -202.768"
+#!   BOTTOM_RIGHT="1155.26 -201.768"
+#!   BOUNDING_RECT="1156.26 -202.768 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="22"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="SQLExecutor"
+#!   VERSION="8"
+#!   POSITION="528.13 -43.750399999999999"
+#!   BOUNDING_RECT="528.13 -43.750399999999999 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(SQLServerConn)"/>
+#!     <XFORM_PARM PARM_NAME="DB_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="$(SQLServerConn)"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="INSERT&lt;space&gt;INTO&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;FilesMessages&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;FileId&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;MessageType&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;MessageString&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;ObjectProcessed&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;WorkspaceName&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;TransformerPath&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;ProcessId&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;VALUES&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_FILEID&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_MESSAGETYPE&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_MESSAGESTRING&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_OBJECTPROCESSED&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_WORKSPACE_NAME&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_TRANSFORMERPATH&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;Value&lt;openparen&gt;_FME_JOB_ID&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-1172.8900000000001 -43.750399999999999"
+#!   BOUNDING_RECT="-1172.8900000000001 -43.750399999999999 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_FILEID $(FILEID) _WORKSPACE_NAME $(WORKSPACE_NAME) _MESSAGESTRING $(MESSAGESTRING) _MESSAGETYPE $(MESSAGETYPE) _Microsoft_SQL_Server_CONNECTION $(SQLServerConn) _OBJECTPROCESSED $(OBJECTPROCESSED) _TRANSFORMERPATH $(TRANSFORMERPATH) _FME_JOB_ID $(FME_JOB_ID)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="-47.875700000000002 -43.750399999999999"
+#!   BOUNDING_RECT="-47.875700000000002 -43.750399999999999 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;apos&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;apos&gt;&lt;apos&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_TRANSFORMERPATH,_MESSAGESTRING"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="19"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="1156.26 -13.291600000000001"
+#!   BOUNDING_RECT="1156.26 -13.291600000000001 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19630"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;locale&lt;lf&gt;import&lt;space&gt;os&lt;lf&gt;import&lt;space&gt;subprocess&lt;lf&gt;&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.session&lt;space&gt;=&lt;space&gt;fmeobjects.FMESession&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger&lt;space&gt;=&lt;space&gt;fmeobjects.FMELogFile&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger_encoding&lt;space&gt;=&lt;space&gt;locale.getdefaultlocale&lt;openparen&gt;&lt;closeparen&gt;&lt;openbracket&gt;1&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pargs_encoding&lt;space&gt;=&lt;space&gt;self.logger_encoding&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.penv_encoding&lt;space&gt;=&lt;space&gt;self.logger_encoding&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pstdio_encoding&lt;space&gt;=&lt;space&gt;self.logger_encoding&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.xformername&lt;space&gt;=&lt;space&gt;FME_MacroValues.get&lt;openparen&gt;&lt;apos&gt;SqlCmdExecutor_WORKSPACE_NAME&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;info&lt;openparen&gt;self&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;isinstance&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;str&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;.encode&lt;openparen&gt;self.logger_encoding&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger.logMessageString&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;fmeobjects.FME_INFORM&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;error&lt;openparen&gt;self&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;isinstance&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;str&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;.encode&lt;openparen&gt;self.logger_encoding&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger.logMessageString&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;fmeobjects.FME_ERROR&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#SQLExecutionTime&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;SQLExecutionTime&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;systemcall_output&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;systemcall_output&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;error&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;_error&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#self.info&lt;openparen&gt;u&lt;apos&gt;sqlcmd.exe&lt;space&gt;-&lt;space&gt;finnished&lt;space&gt;in&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;SQLExecutionTime&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.info&lt;openparen&gt;u&lt;apos&gt;-------------------------ERROR----------------------------&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.error&lt;openparen&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;error&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.error&lt;openparen&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;systemcall_output&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.info&lt;openparen&gt;u&lt;apos&gt;-------------------------ERROR----------------------------&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;del&lt;space&gt;self.session&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;del&lt;space&gt;self.logger&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="1156.26 -353.488"
+#!   BOUNDING_RECT="1156.26 -353.488 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19630"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;locale&lt;lf&gt;import&lt;space&gt;os&lt;lf&gt;import&lt;space&gt;subprocess&lt;lf&gt;&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.session&lt;space&gt;=&lt;space&gt;fmeobjects.FMESession&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger&lt;space&gt;=&lt;space&gt;fmeobjects.FMELogFile&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger_encoding&lt;space&gt;=&lt;space&gt;locale.getdefaultlocale&lt;openparen&gt;&lt;closeparen&gt;&lt;openbracket&gt;1&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pargs_encoding&lt;space&gt;=&lt;space&gt;self.logger_encoding&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.penv_encoding&lt;space&gt;=&lt;space&gt;self.logger_encoding&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pstdio_encoding&lt;space&gt;=&lt;space&gt;self.logger_encoding&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.xformername&lt;space&gt;=&lt;space&gt;FME_MacroValues.get&lt;openparen&gt;&lt;apos&gt;SqlCmdExecutor_WORKSPACE_NAME&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;info&lt;openparen&gt;self&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;isinstance&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;str&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;.encode&lt;openparen&gt;self.logger_encoding&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger.logMessageString&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;fmeobjects.FME_INFORM&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;error&lt;openparen&gt;self&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;isinstance&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;str&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;.encode&lt;openparen&gt;self.logger_encoding&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;msg&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;self.xformername&lt;comma&gt;&lt;space&gt;msg&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.logger.logMessageString&lt;openparen&gt;msg&lt;comma&gt;&lt;space&gt;fmeobjects.FME_ERROR&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;reader_error&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;_reader_error&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;message_error&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;_MESSAGESTRING&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.info&lt;openparen&gt;u&lt;apos&gt;-------------------------ERROR----------------------------&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.error&lt;openparen&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;reader_error&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.error&lt;openparen&gt;u&lt;apos&gt;&lt;opencurly&gt;&lt;closecurly&gt;&lt;apos&gt;.format&lt;openparen&gt;message_error&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.info&lt;openparen&gt;u&lt;apos&gt;-------------------------ERROR----------------------------&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;del&lt;space&gt;self.session&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;del&lt;space&gt;self.logger&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="25"
+#!   TYPE="NullAttributeMapper"
+#!   VERSION="1"
+#!   POSITION="-591.63099999999997 -43.750399999999999"
+#!   BOUNDING_RECT="-591.63099999999997 -43.750399999999999 440.01600000000002 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_FILEID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGESTRING" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_MESSAGETYPE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Microsoft_SQL_Server_CONNECTION" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_OBJECTPROCESSED" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_TRANSFORMERPATH" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="Selected Attributes"/>
+#!     <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="_FME_JOB_ID"/>
+#!     <XFORM_PARM PARM_NAME="NEW_VALUE" PARM_VALUE="-1"/>
+#!     <XFORM_PARM PARM_NAME="NULL_TREATMENT" PARM_VALUE="New Value"/>
+#!     <XFORM_PARM PARM_NAME="OTHER_VALUE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP2" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REG_EXP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SOURCE_ATTR_VAL" PARM_VALUE="Null Empty &quot;Missing (Selected Attributes Only)&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="NullAttributeMapper"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="7"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="1768.29 -413.488"
+#!   BOUNDING_RECT="1768.29 -413.488 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="9"
+#!   NAME="Input"
+#!   POSITION="-1892.4000000000001 -43.750399999999999"
+#!   BOUNDING_RECT="-1892.4000000000001 -43.750399999999999 431 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="12"
+#!   NAME="Output"
+#!   POSITION="1768.29 -13.291600000000001"
+#!   BOUNDING_RECT="1768.29 -13.291600000000001 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="25"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="19"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="19"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 2 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 36
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_SQLServerConn CubeManager
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_MESSAGETYPE INFO
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_FILEID 
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_MESSAGESTRING 
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_TRANSFORMERPATH FMEWORKSPACE/.../...
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_OBJECTPROCESSED Dimension
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO JediLogWritter_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(JediLogWritter_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(JediLogWritter_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_Input1571050580 Input Splitter"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+Tcl2 proc $(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_FILEID {$($(JediLogWritter_WORKSPACE_NAME)_FILEID$encode)} _WORKSPACE_NAME {$(WORKSPACE_NAME$encode)} _MESSAGESTRING {$($(JediLogWritter_WORKSPACE_NAME)_MESSAGESTRING)} _MESSAGETYPE {$($(JediLogWritter_WORKSPACE_NAME)_MESSAGETYPE$encode)} _Microsoft_SQL_Server_CONNECTION {$($(JediLogWritter_WORKSPACE_NAME)_SQLServerConn)} _OBJECTPROCESSED {$($(JediLogWritter_WORKSPACE_NAME)_OBJECTPROCESSED$encode)} _TRANSFORMERPATH {$($(JediLogWritter_WORKSPACE_NAME)_TRANSFORMERPATH$encode)} _FME_JOB_ID {$(FME_JOB_ID$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+Tcl2 proc $(JediLogWritter_WORKSPACE_NAME)_NullAttributeMapper_bc33613d_c21b_479e_8ead_3343e72d516e0_null_replacer { otherValue newValue regExp } {    set attrs [split {_FME_JOB_ID} { }];    set decode true;    if { {SELECTED} == {ALL} } {       set attrs [FME_AttributeNames];       set decode false; 	 };    set decodedVal [FME_DecodeText $otherValue];    set decodedRegExp [FME_DecodeText $regExp];    foreach attr $attrs {      set act {NOOP};      if {$decode} {        set attr [FME_DecodeText $attr];      };      if {[FME_AttributeExists $attr]} {          set attrVal [FME_GetAttribute $attr];          if {[FME_IsAttributeNull $attr] } {             if {[string first {SETNULL} {SETNULL EMPTY MISSINGATTR}] != -1} {                 set act {SETVALUE};             };          }          elseif { [string first {EMPTY} {SETNULL EMPTY MISSINGATTR}] != -1 && $attrVal == {}} {             set act {SETVALUE};          }          elseif { $otherValue != {} && [string equal $attrVal $decodedVal]} {             set act {SETVALUE};          }          elseif { $decodedRegExp != {} && [regexp $decodedRegExp $attrVal]==1 }          {             set act {SETVALUE};          };      }      elseif {[string first {MISSINGATTR} {SETNULL EMPTY MISSINGATTR}] != -1} {             set act {SETVALUE};      };      if {$act == {DELETEATTR} } {         FME_UnsetAttributes $attr;      } elseif { $act == {SETVALUE} } {         FME_SetAttribute $attr [FME_DecodeText $newValue];      } elseif { $act == {SETNULL} } {         FME_SetAttributeNull $attr;      } elseif { $act == {EMPTY} }      {         FME_SetAttribute $attr {};      };   }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_NullAttributeMapper    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_NullAttributeMapper_OUTPUT"         @Tcl2("$(JediLogWritter_WORKSPACE_NAME)_NullAttributeMapper_bc33613d_c21b_479e_8ead_3343e72d516e0_null_replacer {} {-1} {}")
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(JediLogWritter_WORKSPACE_NAME)_StringReplacer_1b8ebdf2_e0da_443e_8247_583a8d5620540_replacer { findText replaceText invalidValue} {     set attrs [split \"_TRANSFORMERPATH,_MESSAGESTRING\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_NullAttributeMapper_OUTPUT"    OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(JediLogWritter_WORKSPACE_NAME)_StringReplacer_1b8ebdf2_e0da_443e_8247_583a8d5620540_replacer {<apos>} {<apos><apos>} {_FME_NO_OP_}")
+# -------------------------------------------------------------------------
+MACRO $(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_DIRECTIVES NAMED_CONNECTION "$($(JediLogWritter_WORKSPACE_NAME)_SQLServerConn)" COMMAND_TIMEOUT 30 QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_StringReplacer_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,INSERT<space>INTO<space><openbracket>dbo<closebracket>.<openbracket>FilesMessages<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><openparen><openbracket>FileId<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>MessageType<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>MessageString<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>ObjectProcessed<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>WorkspaceName<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>TransformerPath<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>ProcessId<closebracket><closeparen><lf><space><space><space><space><space>VALUES<lf><space><space><space><space><space><space><space><space><space><space><space><openparen><at>Value<openparen>_FILEID<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_MESSAGETYPE<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_MESSAGESTRING<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_OBJECTPROCESSED<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_WORKSPACE_NAME<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_TRANSFORMERPATH<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><at>Value<openparen>_FME_JOB_ID<closeparen><closeparen><lf><space>,$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "@EvaluateExpression(FDIV,STRING_ENCODED,$($(JediLogWritter_WORKSPACE_NAME)_SQLServerConn),$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3)"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    QUERYFCT_PROPAGATE_IDS_ON_SQL_EXECUTE YES    READER_PARAMS        $($(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_RESULT"        @SupplyAttributes(fme_feature_type,$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3)    OUTPUT QUERY FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3 RESULT Transformer Output Nuker"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_RESULT"
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_PythonCaller_2    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_<REJECTED>"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>locale<lf>import<space>os<lf>import<space>subprocess<lf><lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>self.session<space>=<space>fmeobjects.FMESession<openparen><closeparen><lf><space><space><space><space><space><space><space><space>self.logger<space>=<space>fmeobjects.FMELogFile<openparen><closeparen><lf><space><space><space><space><space><space><space><space>self.logger_encoding<space>=<space>locale.getdefaultlocale<openparen><closeparen><openbracket>1<closebracket><lf><space><space><space><space><space><space><space><space>self.pargs_encoding<space>=<space>self.logger_encoding<space><lf><space><space><space><space><space><space><space><space>self.penv_encoding<space>=<space>self.logger_encoding<space><lf><space><space><space><space><space><space><space><space>self.pstdio_encoding<space>=<space>self.logger_encoding<space><lf><space><space><space><space><space><space><space><space>self.xformername<space>=<space>FME_MacroValues.get<openparen><apos>SqlCmdExecutor_WORKSPACE_NAME<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>info<openparen>self<comma><space>msg<closeparen>:<lf><space><space><space><space><space><space><space><space>if<space>isinstance<openparen>msg<comma><space>str<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space>u<apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen>.encode<openparen>self.logger_encoding<closeparen><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space><apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen><lf><space><space><space><space><space><space><space><space>self.logger.logMessageString<openparen>msg<comma><space>fmeobjects.FME_INFORM<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>error<openparen>self<comma><space>msg<closeparen>:<lf><space><space><space><space><space><space><space><space>if<space>isinstance<openparen>msg<comma><space>str<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space>u<apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen>.encode<openparen>self.logger_encoding<closeparen><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space><apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen><lf><space><space><space><space><space><space><space><space>self.logger.logMessageString<openparen>msg<comma><space>fmeobjects.FME_ERROR<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>reader_error<space>=<space>feature.getAttribute<openparen><quote>_reader_error<quote><closeparen><lf><space><space><space><space><space><space><space><space>message_error<space>=<space>feature.getAttribute<openparen><quote>_MESSAGESTRING<quote><closeparen><lf><space><space><space><space><space><space><space><space>self.info<openparen>u<apos>-------------------------ERROR----------------------------<apos><closeparen><lf><space><space><space><space><space><space><space><space>self.error<openparen>u<apos><opencurly><closecurly><apos>.format<openparen>reader_error<closeparen><closeparen><lf><space><space><space><space><space><space><space><space>self.error<openparen>u<apos><opencurly><closecurly><apos>.format<openparen>message_error<closeparen><closeparen><lf><space><space><space><space><space><space><space><space>self.info<openparen>u<apos>-------------------------ERROR----------------------------<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>del<space>self.session<lf><space><space><space><space><space><space><space><space>del<space>self.logger<lf>    OUTPUT PYOUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_PythonCaller_4    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_INITIATOR"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fmeobjects<lf>import<space>locale<lf>import<space>os<lf>import<space>subprocess<lf><lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>self.session<space>=<space>fmeobjects.FMESession<openparen><closeparen><lf><space><space><space><space><space><space><space><space>self.logger<space>=<space>fmeobjects.FMELogFile<openparen><closeparen><lf><space><space><space><space><space><space><space><space>self.logger_encoding<space>=<space>locale.getdefaultlocale<openparen><closeparen><openbracket>1<closebracket><lf><space><space><space><space><space><space><space><space>self.pargs_encoding<space>=<space>self.logger_encoding<space><lf><space><space><space><space><space><space><space><space>self.penv_encoding<space>=<space>self.logger_encoding<space><lf><space><space><space><space><space><space><space><space>self.pstdio_encoding<space>=<space>self.logger_encoding<space><lf><space><space><space><space><space><space><space><space>self.xformername<space>=<space>FME_MacroValues.get<openparen><apos>SqlCmdExecutor_WORKSPACE_NAME<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>info<openparen>self<comma><space>msg<closeparen>:<lf><space><space><space><space><space><space><space><space>if<space>isinstance<openparen>msg<comma><space>str<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space>u<apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen>.encode<openparen>self.logger_encoding<closeparen><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space><apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen><lf><space><space><space><space><space><space><space><space>self.logger.logMessageString<openparen>msg<comma><space>fmeobjects.FME_INFORM<closeparen><lf><space><space><space><space>def<space>error<openparen>self<comma><space>msg<closeparen>:<lf><space><space><space><space><space><space><space><space>if<space>isinstance<openparen>msg<comma><space>str<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space>u<apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen>.encode<openparen>self.logger_encoding<closeparen><lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>msg<space>=<space><apos><opencurly><closecurly>:<space><opencurly><closecurly><apos>.format<openparen>self.xformername<comma><space>msg<closeparen><lf><space><space><space><space><space><space><space><space>self.logger.logMessageString<openparen>msg<comma><space>fmeobjects.FME_ERROR<closeparen><lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>#SQLExecutionTime<space>=<space>feature.getAttribute<openparen><quote>SQLExecutionTime<quote><closeparen><lf><space><space><space><space><space><space><space><space>systemcall_output<space>=<space>feature.getAttribute<openparen><quote>systemcall_output<quote><closeparen><lf><space><space><space><space><space><space><space><space>error<space>=<space>feature.getAttribute<openparen><quote>_error<quote><closeparen><lf><space><space><space><space><space><space><space><space>#self.info<openparen>u<apos>sqlcmd.exe<space>-<space>finnished<space>in<space><opencurly><closecurly><apos>.format<openparen>SQLExecutionTime<closeparen><closeparen><lf><space><space><space><space><space><space><space><space>self.info<openparen>u<apos>-------------------------ERROR----------------------------<apos><closeparen><lf><space><space><space><space><space><space><space><space>self.error<openparen>u<apos><opencurly><closecurly><apos>.format<openparen>error<closeparen><closeparen><lf><space><space><space><space><space><space><space><space>self.error<openparen>u<apos><opencurly><closecurly><apos>.format<openparen>systemcall_output<closeparen><closeparen><lf><space><space><space><space><space><space><space><space>self.info<openparen>u<apos>-------------------------ERROR----------------------------<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>del<space>self.session<lf><space><space><space><space><space><space><space><space>del<space>self.logger<lf>    OUTPUT PYOUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_PythonCaller_4_OUTPUT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_<Rejected>1571050580 Output Collector"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_<Rejected>" @RemoveAttributes(_FILEID,_WORKSPACE_NAME,_MESSAGESTRING,_MESSAGETYPE,_Microsoft_SQL_Server_CONNECTION,_OBJECTPROCESSED,_TRANSFORMERPATH,_FME_JOB_ID)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_Output1571050580 Output Collector"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_PythonCaller_4_OUTPUT"   OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_Output" @RemoveAttributes(_FILEID,_WORKSPACE_NAME,_MESSAGESTRING,_MESSAGETYPE,_Microsoft_SQL_Server_CONNECTION,_OBJECTPROCESSED,_TRANSFORMERPATH,_FME_JOB_ID,_matched_records)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(JediLogWritter_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN JediLogWritter,1,Jedi,e2a0acd0-b30c-4dde-be9e-613601969638,"Linked by Default",No,NO_PARALLELISM,,No,17539,YES,No,27
+# 
+# TRANSFORMER_END
+#!   FME_BUILD_NUM="17539"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   USAGE=""
+#!   SHOW_INFO_NODES="true"
+#!   FME_DOCUMENT_PRIORGUID="9c2d93e4-5c65-46a7-bb69-1bee8584775d,6610177e-dabc-4921-bb16-49382d6966dd"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   DOC_EXTENTS="1150 1e-05"
+#!   CATEGORY="Jedi"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   WORKSPACE_VERSION="1"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUP_BY=""
+#!   TITLE="JediLogWritter"
+#!   FME_DOCUMENT_GUID="e2a0acd0-b30c-4dde-be9e-613601969638"
+#!   BLOCKED_LOOPING="No"
+#!   FME_SERVER_SERVICES=""
+#!   MARKDOWN_USAGE=""
+#!   ZOOM_SCALE="100"
+#!   LAST_SAVE_BUILD="FME(R) 2017.1.0.0 (20170731 - Build 17539 - WIN64)"
+#!   HISTORY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   MARKDOWN_DESCRIPTION=""
+#!   USE_MARKDOWN="NO"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="27"
+#!   DESCRIPTION=""
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   DOC_TOP_LEFT="-596 -0.000112656"
+#!   VIEW_POSITION="-1059.39 362.504"
+#!   MAX_LOOP_ITERATIONS=""
+#!   LAST_SAVE_DATE="2018-03-16T14:28:48"
+#!   ITERATION_COUNT_ATTR=""
+#!   XFORM_DEPRECATED="No"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR MESSAGETYPE MessageType:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;MessageType&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR FILEID FileId:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;FileId&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR _FME_JOB_ID Fme Job Id:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_FME_JOB_ID&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR FMECONVERSIONPROCESS FmeConversionProcess:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;FmeConversionProcess&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR MESSAGESTRING MessageString:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ErrorMessage&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_SQL_OR_ATTR TRANSFORMERPATH transformerPath:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;transformerPath&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR OBJECTPROCESSED ObjectProcessed:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ObjectProcessed&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR _WORKSPACE_NAME Workspace Name:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;_WORKSPACE_NAME&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="SQLExecutor"
+#!   VERSION="8"
+#!   POSITION="-7.8625e-05 -0.000102656"
+#!   BOUNDING_RECT="-7.8625e-05 -0.000102656 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="MessageType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="FmeConversionProcess" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ErrorMessage" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="transformerPath" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ObjectProcessed" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="MessageType" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="FmeConversionProcess" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ErrorMessage" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="transformerPath" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="ObjectProcessed" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="TEALCubeManager"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DB_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="INSERT&lt;space&gt;INTO&lt;space&gt;&lt;openbracket&gt;dbo&lt;closebracket&gt;.&lt;openbracket&gt;FilesMessages&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;openbracket&gt;FileId&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;MessageType&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;MessageString&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;CreateDate&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;ObjectProcessed&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;WorkspaceName&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;TransformerPath&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;openbracket&gt;ProcessId&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;VALUES&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;FileId&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;MessageType&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;ErrorMessage&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;GETDATE&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;ObjectProcessed&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_WORKSPACE_NAME&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;transformerPath&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;comma&gt;&lt;at&gt;Value&lt;openparen&gt;_FME_JOB_ID&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SQLExecutor_3"/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="CubeManager_staging"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="Logger"
+#!   VERSION="3"
+#!   POSITION="554 -0.000102656"
+#!   BOUNDING_RECT="554 -0.000102656 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17539"
+#! >
+#!     <OUTPUT_FEAT NAME="LOGGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="MessageType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="FmeConversionProcess" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ErrorMessage" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="transformerPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ObjectProcessed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Feature is:"/>
+#!     <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="SQLExecutor_3_Initiator"
+#!   POSITION="-596 -0.000102656"
+#!   BOUNDING_RECT="-596 -0.000102656 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="MessageType" ATTR_VALUE="$(MESSAGETYPE)" />
+#!     <XFORM_ATTR ATTR_NAME="FileId" ATTR_VALUE="$(FILEID)" />
+#!     <XFORM_ATTR ATTR_NAME="_FME_JOB_ID" ATTR_VALUE="$(_FME_JOB_ID)" />
+#!     <XFORM_ATTR ATTR_NAME="FmeConversionProcess" ATTR_VALUE="$(FMECONVERSIONPROCESS)" />
+#!     <XFORM_ATTR ATTR_NAME="ErrorMessage" ATTR_VALUE="$(MESSAGESTRING)" />
+#!     <XFORM_ATTR ATTR_NAME="transformerPath" ATTR_VALUE="$(TRANSFORMERPATH)" />
+#!     <XFORM_ATTR ATTR_NAME="ObjectProcessed" ATTR_VALUE="$(OBJECTPROCESSED)" />
+#!     <XFORM_ATTR ATTR_NAME="_WORKSPACE_NAME" ATTR_VALUE="$(_WORKSPACE_NAME)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="4"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="6"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 2 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_MESSAGETYPE <at>Value<openparen>MessageType<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_FILEID <at>Value<openparen>FileId<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)__FME_JOB_ID <at>Value<openparen>_FME_JOB_ID<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_FMECONVERSIONPROCESS <at>Value<openparen>FmeConversionProcess<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_MESSAGESTRING <at>Value<openparen>ErrorMessage<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_TRANSFORMERPATH <at>Value<openparen>transformerPath<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)_OBJECTPROCESSED <at>Value<openparen>ObjectProcessed<closeparen>
+DEFAULT_MACRO $(JediLogWritter_WORKSPACE_NAME)__WORKSPACE_NAME <at>Value<openparen>_WORKSPACE_NAME<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO JediLogWritter_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(JediLogWritter_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(JediLogWritter_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_Initiator1521206928 Input Splitter"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_Initiator"   OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_Initiator" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,MessageType,$($(JediLogWritter_WORKSPACE_NAME)_MESSAGETYPE),FileId,$($(JediLogWritter_WORKSPACE_NAME)_FILEID),_FME_JOB_ID,$($(JediLogWritter_WORKSPACE_NAME)__FME_JOB_ID),FmeConversionProcess,$($(JediLogWritter_WORKSPACE_NAME)_FMECONVERSIONPROCESS),ErrorMessage,$($(JediLogWritter_WORKSPACE_NAME)_MESSAGESTRING),transformerPath,$($(JediLogWritter_WORKSPACE_NAME)_TRANSFORMERPATH),ObjectProcessed,$($(JediLogWritter_WORKSPACE_NAME)_OBJECTPROCESSED),_WORKSPACE_NAME,$($(JediLogWritter_WORKSPACE_NAME)__WORKSPACE_NAME), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+MACRO $(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_DIRECTIVES NAMED_CONNECTION TEALCubeManager QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes COMMAND_TIMEOUT 30
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_Initiator"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,INSERT<space>INTO<space><openbracket>dbo<closebracket>.<openbracket>FilesMessages<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><openparen><openbracket>FileId<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>MessageType<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>MessageString<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>CreateDate<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>ObjectProcessed<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>WorkspaceName<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>TransformerPath<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><comma><openbracket>ProcessId<closebracket><closeparen><lf><space><space><space><space><space>VALUES<lf><space><space><space><space><space><space><space><space><space><space><space><openparen><at>Value<openparen>FileId<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>MessageType<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>ErrorMessage<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma>GETDATE<openparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>ObjectProcessed<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>_WORKSPACE_NAME<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><apos><at>Value<openparen>transformerPath<closeparen><apos><lf><space><space><space><space><space><space><space><space><space><space><space><comma><at>Value<openparen>_FME_JOB_ID<closeparen><closeparen><lf><space>,$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "CubeManager_staging"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    QUERYFCT_PROPAGATE_IDS_ON_SQL_EXECUTE YES    READER_PARAMS        $($(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_RESULT"        @SupplyAttributes(fme_feature_type,$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3)    OUTPUT QUERY FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3 RESULT Output Nuker"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_RESULT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3 INITIATOR Output Nuker"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_INITIATOR"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(JediLogWritter_WORKSPACE_NAME)_Logger_Logger    INPUT  FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_SQLExecutor_3_<REJECTED>"    OUTPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_Logger_LOGGED"                  @Log("$(JediLogWritter_WORKSPACE_NAME)_Logger: Feature is:","20","20")                  @FeatureType("$(JediLogWritter_WORKSPACE_NAME)_Logger_LOGGED")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(JediLogWritter_WORKSPACE_NAME)_Logger LOGGED Output Nuker"   INPUT FEATURE_TYPE "$(JediLogWritter_WORKSPACE_NAME)_Logger_LOGGED"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(JediLogWritter_WORKSPACE_NAME))}]
+
+
+
+

@@ -1,0 +1,1093 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN SyncDataDictionary,1,,53163eac-e206-4273-906f-ffd5c11d5179,"Linked by Default",No,NO_PARALLELISM,,No,17725,YES,No,27
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Syncs a data dictionary from EEA with a database table</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Adds new rows and updates existing ones.</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">If the table does not exist, it is created</p>
+# 
+# TRANSFORMER_END
+#!   ZOOM_SCALE="54"
+#!   WORKSPACE_VERSION="1"
+#!   FME_SERVER_SERVICES=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   USAGE=""
+#!   FME_DOCUMENT_PRIORGUID="1ccabdac-32f8-48f0-80ed-a746b1e227cf,acd0683d-d197-4e3d-b527-7b3c0fefd0c0"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   DOC_TOP_LEFT="-3806.42 -676.567"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   VIEW_POSITION="-4542.87 1979.19"
+#!   HISTORY=""
+#!   PASSWORD=""
+#!   SHOW_INFO_NODES="true"
+#!   PYTHON_COMPATIBILITY="27"
+#!   XFORM_DEPRECATED="No"
+#!   FME_BUILD_NUM="17725"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   CATEGORY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   ITERATION_COUNT_ATTR=""
+#!   TITLE="SyncDataDictionary"
+#!   DOC_EXTENTS="5524.94 1126.57"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Syncs a data dictionary from EEA with a database table&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Adds new rows and updates existing ones.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If the table does not exist, it is created&lt;/p&gt;&#10;"
+#!   MARKDOWN_DESCRIPTION=""
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   USE_MARKDOWN="NO"
+#!   LAST_SAVE_DATE="2018-08-03T11:38:32"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   MARKDOWN_USAGE=""
+#!   FME_DOCUMENT_GUID="53163eac-e206-4273-906f-ffd5c11d5179"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   LAST_SAVE_BUILD="FME(R) 2017.1.2.1 (20180117 - Build 17725 - WIN64)"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR DictionaryUrl DictionaryUrl:"
+#!   DEFAULT_VALUE="http://dd.eionet.europa.eu/vocabulary/aq/assessmenttype"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT DestinationTable DestinationTable:"
+#!   DEFAULT_VALUE="AssessmentType"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT DestinationTableSchema DestinationTableSchema:"
+#!   DEFAULT_VALUE="dbo"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL NAMED_DB_CONNECTION_ENCODED Connection FAMILY:Microsoft&lt;space&gt;SQL&lt;space&gt;Server%FMT:MSSQL_JDBC_NONSPATIAL Connection:"
+#!   DEFAULT_VALUE="Airquality_Models"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="SQLExecutor"
+#!   VERSION="8"
+#!   POSITION="-2550 -300"
+#!   BOUNDING_RECT="-2550 -300 503.683 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(Connection)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPOSED_ATTRIBUTE_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_ATTRS" PARM_VALUE="Result Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:"/>
+#!     <XFORM_PARM PARM_NAME="DB_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SQL_STATEMENT" PARM_VALUE="--&lt;space&gt;Create&lt;space&gt;schema&lt;space&gt;if&lt;space&gt;it&lt;space&gt;doesn&lt;apos&gt;t&lt;space&gt;exist&lt;lf&gt;IF&lt;space&gt;NOT&lt;space&gt;EXISTS&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;SELECT&lt;space&gt;&lt;space&gt;schema_name&lt;lf&gt;FROM&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;information_schema.schemata&lt;lf&gt;WHERE&lt;space&gt;&lt;space&gt;&lt;space&gt;schema_name&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_DestinationTableSchema&lt;closeparen&gt;&lt;apos&gt;&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;lf&gt;BEGIN&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;EXEC&lt;space&gt;sp_executesql&lt;space&gt;N&lt;apos&gt;CREATE&lt;space&gt;SCHEMA&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;_DestinationTableSchema&lt;closeparen&gt;&lt;apos&gt;&lt;lf&gt;END&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;--&lt;space&gt;Create&lt;space&gt;table&lt;space&gt;if&lt;space&gt;it&lt;space&gt;doesn&lt;apos&gt;t&lt;space&gt;exist&lt;lf&gt;IF&lt;space&gt;&lt;openparen&gt;NOT&lt;space&gt;EXISTS&lt;space&gt;&lt;openparen&gt;SELECT&lt;space&gt;*&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FROM&lt;space&gt;INFORMATION_SCHEMA.TABLES&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;WHERE&lt;space&gt;TABLE_SCHEMA&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;at&gt;Value&lt;openparen&gt;_DestinationTableSchema&lt;closeparen&gt;&lt;apos&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AND&lt;space&gt;&lt;space&gt;TABLE_NAME&lt;space&gt;=&lt;space&gt;&lt;apos&gt;$(DestinationTable)&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;BEGIN&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;CREATE&lt;space&gt;TABLE&lt;space&gt;$(DestinationTableSchema).&lt;openbracket&gt;$(DestinationTable)&lt;closebracket&gt;&lt;space&gt;&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Id&lt;space&gt;nvarchar&lt;openparen&gt;50&lt;closeparen&gt;&lt;space&gt;not&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;URI&lt;space&gt;nvarchar&lt;openparen&gt;500&lt;closeparen&gt;&lt;space&gt;not&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Label&lt;space&gt;nvarchar&lt;openparen&gt;500&lt;closeparen&gt;&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Status&lt;space&gt;nvarchar&lt;openparen&gt;50&lt;closeparen&gt;&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;StatusModified&lt;space&gt;nvarchar&lt;openparen&gt;50&lt;closeparen&gt;&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;AcceptedDate&lt;space&gt;nvarchar&lt;openparen&gt;50&lt;closeparen&gt;&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Notation&lt;space&gt;nvarchar&lt;openparen&gt;250&lt;closeparen&gt;&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;Definition&lt;space&gt;nvarchar&lt;openparen&gt;500&lt;closeparen&gt;&lt;space&gt;null&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;CONSTRAINT&lt;space&gt;&lt;openbracket&gt;PK_$(DestinationTable)&lt;closebracket&gt;&lt;space&gt;PRIMARY&lt;space&gt;KEY&lt;space&gt;CLUSTERED&lt;space&gt;&lt;openparen&gt;Id&lt;space&gt;ASC&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;closeparen&gt;&lt;lf&gt;END&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="$(Connection)"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Initiator Geometry Only"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="sql_CreateDBObjects"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="-1725 -282.81"
+#!   BOUNDING_RECT="-1725 -282.81 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_DictionaryUrl&lt;closeparen&gt;&lt;solidus&gt;csv"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="File"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="$(DestinationTable).csv"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="_response_file_path"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="FeatureReader"
+#!   VERSION="9"
+#!   POSITION="-1057.97 -282.81"
+#!   BOUNDING_RECT="-1057.97 -282.81 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_schema_handling" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="assessmenttype"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="READ_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_PREVIEW_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SKIP_DUPLICATE_DELIMITERS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_PRESERVE_SOURCE_ENCODING" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE="assessmenttype,&quot;URI,Label,Definition,Notation,Status,AcceptedDate&quot;"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_ENFORCE_STRICT_SCHEMA" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_USE_CUSTOM_SCHEMA" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Schema and Data Features"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Initiator and Result"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceDATASET_GROUP&lt;comma&gt;&lt;comma&gt;SourceFEATURE_TYPE_NAME&lt;comma&gt;FILE_NAME&lt;comma&gt;SourceFIELDS_GROUP&lt;comma&gt;&lt;comma&gt;SourceDELIMITER&lt;comma&gt;&lt;lt&gt;comma&lt;gt&gt;&lt;comma&gt;SourceFIELD_NAMES_LINE&lt;comma&gt;1&lt;comma&gt;SourceDATA_START_LINE&lt;comma&gt;2&lt;comma&gt;SourceADVANCED_GROUP&lt;comma&gt;&lt;comma&gt;SourceFIELD_SEPARATION_GROUP&lt;comma&gt;&lt;comma&gt;SourceSKIP_DUPLICATE_DELIMITERS&lt;comma&gt;No&lt;comma&gt;SourceFIELD_QUALIFIER_CHARACTER&lt;comma&gt;&lt;lt&gt;quote&lt;gt&gt;&lt;comma&gt;SourceFIELD_QUALIFIER_ESCAPE_CHARACTER&lt;comma&gt;&lt;lt&gt;quote&lt;gt&gt;&lt;comma&gt;SourceFIELD_NAMES_GROUP&lt;comma&gt;&lt;comma&gt;SourceTRIM_FIELD_NAME_QUALIFIERS&lt;comma&gt;Yes&lt;comma&gt;SourceCASE_SENSITIVE_FIELD_NAMES&lt;comma&gt;Yes&lt;comma&gt;SourceENFORCE_STRICT_SCHEMA&lt;comma&gt;No&lt;comma&gt;SourceFIELD_VALUES_GROUP&lt;comma&gt;&lt;comma&gt;SourceTRIM_FIELD_VALUE_QUALIFIERS&lt;comma&gt;Yes&lt;comma&gt;SourceENCODING_GROUP&lt;comma&gt;&lt;comma&gt;SourceENCODING&lt;comma&gt;&lt;comma&gt;SourcePRESERVE_SOURCE_ENCODING&lt;comma&gt;No&lt;comma&gt;SourceSKIPPED_LINES_GROUP&lt;comma&gt;&lt;comma&gt;SourceREAD_SKIPPED_LINES&lt;comma&gt;No&lt;comma&gt;SourceSCHEMA_GENERATION_GROUP&lt;comma&gt;&lt;comma&gt;SourceSCAN_MAX_ROWS&lt;comma&gt;1000&lt;comma&gt;SourceSCAN_TYPES&lt;comma&gt;No&lt;comma&gt;SourceSCAN_ADDITIONAL_FIELDS&lt;comma&gt;No&lt;comma&gt;SourcePREVIEW_GROUP&lt;comma&gt;&lt;comma&gt;SourcePREVIEW_PLACEHOLDER&lt;comma&gt;&lt;comma&gt;SourceSCHEMA_GROUP&lt;comma&gt;&lt;comma&gt;SourceUSE_CUSTOM_SCHEMA&lt;comma&gt;NO&lt;comma&gt;SourceSCHEMA&lt;comma&gt;&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;&lt;comma&gt;SourceCSV2_EXPOSE_FORMAT_ATTRS&lt;comma&gt;,METAFILE,CSV2"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_CSV2_EXPOSE_FORMAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_%assessmenttype"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GENERIC_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SKIPPED_LINES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELD_QUALIFIER_ESCAPE_CHARACTER" PARM_VALUE="&lt;quote&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELDS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELD_VALUES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_ENCODING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SCHEMA" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FEATURE_TYPE_NAME" PARM_VALUE="FILE_NAME"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELD_QUALIFIER_CHARACTER" PARM_VALUE="&lt;quote&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SCHEMA_GENERATION_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SCHEMA_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_TRIM_FIELD_VALUE_QUALIFIERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="CSV2"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_CASE_SENSITIVE_FIELD_NAMES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_EXPOSE_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_DATASET_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SCAN_ADDITIONAL_FIELDS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_TRIM_FIELD_NAME_QUALIFIERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELD_NAMES_LINE" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;No Spatial Filter&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SCAN_MAX_ROWS" PARM_VALUE="1000"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="CSV2_SKIPPED_LINES_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%READ_SKIPPED_LINES&quot;,CSV2&lt;space&gt;Skipped&lt;space&gt;Lines,CSV2_SKIP_DUPLICATE_DELIMITERS,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Skip&lt;space&gt;Duplicate&lt;space&gt;Delimiters:,CSV2_PRESERVE_SOURCE_ENCODING,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Preserve&lt;space&gt;Source&lt;space&gt;Encoding:,CSV2_SCHEMA_GROUP,&quot;OPTIONAL NAMEDGROUP USE_CUSTOM_SCHEMA%SCHEMA&quot;,CSV2&lt;space&gt;Attributes,CSV2_SCAN_MAX_ROWS,&quot;OPTIONAL INTEGER&quot;,CSV2&lt;space&gt;Maximum&lt;space&gt;Rows&lt;space&gt;to&lt;space&gt;Scan:,CSV2_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING SYSTEM%*&quot;,CSV2&lt;space&gt;Character&lt;space&gt;Encoding:,CSV2_FIELDS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_OPEN%DELIMITER%FIELD_NAMES_LINE%DATA_START_LINE&quot;,CSV2&lt;space&gt;Fields,CSV2_ENFORCE_STRICT_SCHEMA,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Enforce&lt;space&gt;Strict&lt;space&gt;Schema:,CSV2_ADVANCED_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%FIELD_SEPARATION_GROUP%FIELD_NAMES_GROUP%FIELD_VALUES_GROUP%ENCODING_GROUP%SKIPPED_LINES_GROUP%SCHEMA_GENERATION_GROUP&quot;,CSV2&lt;space&gt;Advanced,CSV2_USE_CUSTOM_SCHEMA,&quot;OPTIONAL RADIO_GROUP 2%Automatic,NO%Manual,YES&quot;,CSV2&lt;space&gt;Attribute&lt;space&gt;Definition,CSV2_PREVIEW_GROUP,&quot;OPTIONAL NAMEDGROUP PREVIEW_PLACEHOLDER&quot;,CSV2&lt;space&gt;Preview,CSV2_FIELD_NAMES_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%CASE_SENSITIVE_FIELD_NAMES%ENFORCE_STRICT_SCHEMA&quot;,CSV2&lt;space&gt;Field&lt;space&gt;Names,CSV2_PREVIEW_PLACEHOLDER,&quot;OPTIONAL GUI_LINE_TABLE NO_LABEL%&quot;&quot;&quot;&quot;%STRING&quot;,CSV2&lt;space&gt;Preview,CSV2_TRIM_FIELD_NAME_QUALIFIERS,&quot;OPTIONAL NO_EDIT TEXT&quot;,CSV2&lt;space&gt;,CSV2_SCAN_ADDITIONAL_FIELDS,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Scan&lt;space&gt;for&lt;space&gt;Additional&lt;space&gt;Fields:,CSV2_SCHEMA_GENERATION_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%SCAN_MAX_ROWS%SCAN_TYPES%SCAN_ADDITIONAL_FIELDS&quot;,CSV2&lt;space&gt;Schema&lt;space&gt;Generation,CSV2_FIELD_NAMES_LINE,&quot;OPTIONAL RANGE_SLIDER 1%MAX%0&quot;,CSV2&lt;space&gt;Field&lt;space&gt;Names&lt;space&gt;Line:,CSV2_READ_SKIPPED_LINES,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Read&lt;space&gt;Skipped&lt;space&gt;Lines:,CSV2_FEATURE_TYPE_NAME,&quot;OPTIONAL LOOKUP_CHOICE From&lt;space&gt;Format&lt;space&gt;Name,FORMAT_NAME%From&lt;space&gt;File&lt;space&gt;Name&lt;openparen&gt;s&lt;closeparen&gt;,FILE_NAME&quot;,CSV2&lt;space&gt;Feature&lt;space&gt;Type&lt;space&gt;Name&lt;openparen&gt;s&lt;closeparen&gt;:,CSV2_SCHEMA,&quot;OPTIONAL GUI_LINE_TABLE NO_MOVE%NO_ADD%NO_LABEL%ROW_DELIM:;%COL_DELIM:,%STRETCH_COL:1%COL_DISPLAY_ORDER:2,0,1%&quot;&quot;Name&quot;&quot;%&quot;&quot;STRING_READONLY_ENCODED ATTRIBUTE_NAME&quot;&quot;%&quot;&quot;Type&quot;&quot;%&quot;&quot;CHOICE TYPE boolean%int8%int16%int32%int64%uint8%uint16%uint32%uint64%real32%real64%string%x_coordinate%y_coordinate%z_coordinate&quot;&quot;%&quot;&quot;Read&quot;&quot;%&quot;&quot;CHECKBOX READ YES%NO&quot;&quot;&quot;,CSV2&lt;space&gt;Attributes:,CSV2_FIELD_VALUES_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%TRIM_FIELD_VALUE_QUALIFIERS&quot;,CSV2&lt;space&gt;Field&lt;space&gt;Values,CSV2_TRIM_FIELD_VALUE_QUALIFIERS,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Trim&lt;space&gt;Field&lt;space&gt;Qualifier&lt;space&gt;Characters:,CSV2_DELIMITER,&quot;OPTIONAL STRING_OR_CHOICE_ENCODED ,%;%|%space%tab&quot;,CSV2&lt;space&gt;Delimiter&lt;space&gt;Character:,CSV2_FIELD_SEPARATION_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%SKIP_DUPLICATE_DELIMITERS%FIELD_QUALIFIER_CHARACTER%FIELD_QUALIFIER_ESCAPE_CHARACTER&quot;,CSV2&lt;space&gt;Field&lt;space&gt;Separation,CSV2_DATASET_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_OPEN%FEATURE_TYPE_NAME&quot;,CSV2&lt;space&gt;Dataset&lt;space&gt;Parameters,CSV2_FIELD_QUALIFIER_CHARACTER,&quot;OPTIONAL STRING_ENCODED&quot;,CSV2&lt;space&gt;Field&lt;space&gt;Qualifier&lt;space&gt;Character:,CSV2_SCAN_TYPES,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Scan&lt;space&gt;for&lt;space&gt;Types:,CSV2_CSV2_EXPOSE_FORMAT_ATTRS,&quot;OPTIONAL LITERAL EXPOSED_ATTRS CSV2%Source&quot;,CSV2&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,CSV2_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP CSV2_EXPOSE_FORMAT_ATTRS&quot;,CSV2&lt;space&gt;Schema&lt;space&gt;Attributes,CSV2_DATA_START_LINE,&quot;OPTIONAL RANGE_SLIDER 1%MAX%0&quot;,CSV2&lt;space&gt;Data&lt;space&gt;Start&lt;space&gt;Line:,CSV2_ENCODING_GROUP,&quot;OPTIONAL DISCLOSUREGROUP FME_DISCLOSURE_CLOSED%ENCODING%PRESERVE_SOURCE_ENCODING&quot;,CSV2&lt;space&gt;Encoding,CSV2_FIELD_QUALIFIER_ESCAPE_CHARACTER,&quot;OPTIONAL STRING_ENCODED&quot;,CSV2&lt;space&gt;Field&lt;space&gt;Qualifier&lt;space&gt;Escape&lt;space&gt;Character:,CSV2_CASE_SENSITIVE_FIELD_NAMES,&quot;OPTIONAL CHOICE Yes%No&quot;,CSV2&lt;space&gt;Case&lt;space&gt;Sensitive&lt;space&gt;Field&lt;space&gt;Names:"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_response_file_path&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_READ_SKIPPED_LINES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_PREVIEW_PLACEHOLDER" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELD_SEPARATION_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_FIELD_NAMES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_DATA_START_LINE" PARM_VALUE="2"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CSV2_SCAN_TYPES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="CSV2_ENCODING_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeExposer"
+#!   VERSION="1"
+#!   POSITION="-450 -300"
+#!   BOUNDING_RECT="-450 -300 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_file_path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="URI,Label,Definition,Notation,Status,AcceptedDate"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeKeeper"
+#!   VERSION="3"
+#!   POSITION="-450 -486.195"
+#!   BOUNDING_RECT="-450 -486.195 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#!     <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="Status,_DictionaryUrl,URI,Label,Definition,Notation,AcceptedDate"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-450 -676.567"
+#!   BOUNDING_RECT="-450 -676.567 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;uri&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;URI&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;n&lt;space&gt;=&lt;space&gt;len&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_DictionaryUrl&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;+1&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;Id&lt;quote&gt;&lt;comma&gt;&lt;space&gt;uri&lt;openbracket&gt;n:&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="Id"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="py_ShortCode"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="processFeature"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="FeatureReader"
+#!   VERSION="9"
+#!   POSITION="-1950 450"
+#!   BOUNDING_RECT="-1950 450 609.402 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_schema_handling" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READ_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_DestinationTableSchema&lt;closeparen&gt;.$(DestinationTable)"/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Schema and Data Features"/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(Connection)"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_EXPOSE_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_FME_CONNECTION_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GENERIC_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Only Use Result"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_MSSQL_ADO_EXPOSE_FORMAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_ADVANCED" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceQUERY_FEATURE_TYPES_FOR_MERGE_FILTERS&lt;comma&gt;Yes&lt;comma&gt;SourceFME_CONNECTION_GROUP&lt;comma&gt;&lt;comma&gt;SourceNAMED_CONNECTION&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;Connection&lt;closeparen&gt;&lt;comma&gt;SourceCOMMAND_TIMEOUT&lt;comma&gt;30&lt;comma&gt;SourceWHERE_CLAUSE&lt;comma&gt;&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;&lt;comma&gt;SourceMSSQL_ADO_EXPOSE_FORMAT_ATTRS&lt;comma&gt;&lt;comma&gt;SourceADVANCED&lt;comma&gt;&lt;comma&gt;SourceREAD_CACHE_SIZE&lt;comma&gt;10,METAFILE,MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_WHERE_CLAUSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="$(Connection)"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_MSSQL_ADO_EXPOSE_FORMAT_ATTRS,&quot;OPTIONAL LITERAL EXPOSED_ATTRS MSSQL_ADO%Source&quot;,MSSQL_ADO&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,MSSQL_ADO_FME_CONNECTION_GROUP,&quot;OPTIONAL NAMEDGROUP NAMED_CONNECTION%COMMAND_TIMEOUT&quot;,MSSQL_ADO&lt;space&gt;Database&lt;space&gt;Connection,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;:,MSSQL_ADO_ADVANCED,&quot;OPTIONAL DISCLOSUREGROUP READ_CACHE_SIZE&quot;,MSSQL_ADO&lt;space&gt;Advanced,MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,&quot;OPTIONAL NO_EDIT TEXT&quot;,MSSQL_ADO&lt;space&gt;,MSSQL_ADO_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP MSSQL_ADO_EXPOSE_FORMAT_ATTRS&quot;,MSSQL_ADO&lt;space&gt;Schema&lt;space&gt;Attributes,MSSQL_ADO_WHERE_CLAUSE,&quot;OPTIONAL TEXT&quot;,MSSQL_ADO&lt;space&gt;WHERE&lt;space&gt;Clause:,MSSQL_ADO_READ_CACHE_SIZE,&quot;OPTIONAL TEXT&quot;,MSSQL_ADO&lt;space&gt;Number&lt;space&gt;Of&lt;space&gt;Records&lt;space&gt;To&lt;space&gt;Fetch&lt;space&gt;At&lt;space&gt;A&lt;space&gt;Time,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:"/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="readExisting"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_READ_CACHE_SIZE" PARM_VALUE="10"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="AttributeExposer"
+#!   VERSION="1"
+#!   POSITION="-1200 450"
+#!   BOUNDING_RECT="-1200 450 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="Id,URI,Label,Definition,Notation,Status,AcceptedDate"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="FeatureMerger"
+#!   VERSION="17"
+#!   POSITION="450 150"
+#!   BOUNDING_RECT="450 150 612.556 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="MERGED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="alreadyInDb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UNMERGED_REQUESTOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="USED_SUPPLIER"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="alreadyInDb" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="UNUSED_SUPPLIER"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="alreadyInDb" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="alreadyInDb" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Requestor"/>
+#!     <XFORM_PARM PARM_NAME="IGNORE_NULLS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS_TO_INCLUDE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Supplier"/>
+#!     <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;URI&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;URI&lt;closeparen&gt; AUTO"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS_TO_INCLUDE_MODE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="CONNECT_Z_MODE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REJECT_NULL_MISSING_KEYS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="GENERATE_LIST_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_COUNT_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-450 450"
+#!   BOUNDING_RECT="-450 450 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="alreadyInDb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; alreadyInDb SET_TO 1"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="FeatureWriter"
+#!   VERSION="0"
+#!   POSITION="1718.52 150"
+#!   BOUNDING_RECT="1718.52 150 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="SUMMARY"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_feature_type{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_total_features_written" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TOTAL_FEATURES_WRITTEN_ATTR" PARM_VALUE="_total_features_written"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_FME_CONNECTION_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="MSSQL_ADO_ADVANCED,&quot;OPTIONAL DISCLOSUREGROUP BULK_INSERT%START_TRANSACTION%TRANSACTION_INTERVAL%BEGIN_SQL{0}%END_SQL{0}&quot;,MSSQL_ADO&lt;space&gt;Advanced,MSSQL_ADO_TRANSACTION_INTERVAL,&quot;OPTIONAL TEXT&quot;,MSSQL_ADO&lt;space&gt;Features&lt;space&gt;Per&lt;space&gt;Transaction,MSSQL_ADO_END_SQL{0},&quot;OPTIONAL TEXT_EDIT_SQL_ENCODED&quot;,MSSQL_ADO&lt;space&gt;SQL&lt;space&gt;To&lt;space&gt;Run&lt;space&gt;After&lt;space&gt;Write,MSSQL_ADO_FME_CONNECTION_GROUP,&quot;OPTIONAL NAMEDGROUP NAMED_CONNECTION%COMMAND_TIMEOUT&quot;,MSSQL_ADO&lt;space&gt;Database&lt;space&gt;Connection,MSSQL_ADO_COMMAND_TIMEOUT,&quot;OPTIONAL INTEGER&quot;,MSSQL_ADO&lt;space&gt;Command&lt;space&gt;Timeout&lt;space&gt;&lt;openparen&gt;Seconds&lt;closeparen&gt;,MSSQL_ADO_NAMED_CONNECTION,&quot;IGNORE TEXT&quot;,MSSQL_ADO&lt;space&gt;Connection:,MSSQL_ADO_BEGIN_SQL{0},&quot;OPTIONAL TEXT_EDIT_SQL_ENCODED&quot;,MSSQL_ADO&lt;space&gt;SQL&lt;space&gt;To&lt;space&gt;Run&lt;space&gt;Before&lt;space&gt;Write,MSSQL_ADO_START_TRANSACTION,&quot;OPTIONAL TEXT&quot;,MSSQL_ADO&lt;space&gt;Start&lt;space&gt;Transaction&lt;space&gt;At:,MSSQL_ADO_BULK_INSERT,&quot;OPTIONAL CHOICE YES%NO&quot;,MSSQL_ADO&lt;space&gt;Bulk&lt;space&gt;Insert"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_COMMAND_TIMEOUT" PARM_VALUE="30"/>
+#!     <XFORM_PARM PARM_NAME="SUMMARY_ATTRS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WRITER_FEATURE_TYPE_PARAMS" PARM_VALUE="&lt;dollar&gt;&lt;openparen&gt;DestinationTable&lt;closeparen&gt;:Merged,ftp_feature_type_name_exp,$(DestinationTable),ftp_feature_type_qualifier,$(DestinationTableSchema),ftp_writer,MSSQL_ADO,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,&lt;lt&gt;lt&lt;gt&gt;Unused&lt;lt&gt;gt&lt;gt&gt;,ftp_attribute_source,1,ftp_user_attributes,URI&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;Label&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;Definition&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;Notation&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;Status&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;AcceptedDate&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;Id&lt;comma&gt;varchar&lt;lt&gt;openparen&lt;gt&gt;200&lt;lt&gt;closeparen&lt;gt&gt;,ftp_user_attribute_values,&lt;comma&gt;&lt;comma&gt;&lt;comma&gt;&lt;comma&gt;&lt;comma&gt;&lt;comma&gt;,ftp_format_attributes,fme_db_operation,ftp_format_parameters,fme_configuration_group&lt;comma&gt;&lt;comma&gt;fme_configuration_common_group&lt;comma&gt;&lt;comma&gt;fme_feature_operation&lt;comma&gt;MULTIPLE&lt;comma&gt;fme_table_handling&lt;comma&gt;USE_EXISTING&lt;comma&gt;fme_selection_group&lt;comma&gt;FME_DISCLOSURE_OPEN&lt;comma&gt;fme_selection_method&lt;comma&gt;MATCH_COLUMNS&lt;comma&gt;fme_match_columns&lt;comma&gt;Id&lt;comma&gt;fme_where_builder_clause&lt;comma&gt;&lt;lt&gt;lt&lt;gt&gt;Unused&lt;lt&gt;gt&lt;gt&gt;&lt;comma&gt;fme_advanced_group&lt;comma&gt;&lt;comma&gt;mssql_enable_identity_insert&lt;comma&gt;NO"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_START_TRANSACTION" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_BULK_INSERT" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="WRITER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_END_SQL{0}" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="RUNTIME_MACROS,FME_CONNECTION_GROUP&lt;comma&gt;&lt;comma&gt;NAMED_CONNECTION&lt;comma&gt;&lt;dollar&gt;&lt;openparen&gt;Connection&lt;closeparen&gt;&lt;comma&gt;COMMAND_TIMEOUT&lt;comma&gt;30&lt;comma&gt;ADVANCED&lt;comma&gt;&lt;comma&gt;BULK_INSERT&lt;comma&gt;YES&lt;comma&gt;START_TRANSACTION&lt;comma&gt;0&lt;comma&gt;TRANSACTION_INTERVAL&lt;comma&gt;500&lt;comma&gt;BEGIN_SQL&lt;opencurly&gt;0&lt;closecurly&gt;&lt;comma&gt;&lt;comma&gt;END_SQL&lt;opencurly&gt;0&lt;closecurly&gt;&lt;comma&gt;,METAFILE,MSSQL_ADO"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_TRANSACTION_INTERVAL" PARM_VALUE="500"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureWriter"/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_ADVANCED" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="$(Connection)"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPE_LIST_ATTR" PARM_VALUE="_feature_type"/>
+#!     <XFORM_PARM PARM_NAME="FEATURE_TYPES_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_NAMED_CONNECTION" PARM_VALUE="$(Connection)"/>
+#!     <XFORM_PARM PARM_NAME="WRITER_METAFILE" PARM_VALUE="ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,&lt;backslash&gt;&lt;backslash&gt;&lt;openbracket&gt;&lt;closebracket&gt;&lt;quote&gt;,ATTRIBUTE_LENGTH,128,ATTR_TYPE_MAP,bit&lt;comma&gt;fme_boolean&lt;comma&gt;text&lt;comma&gt;fme_buffer&lt;comma&gt;text&lt;comma&gt;fme_xml&lt;comma&gt;text&lt;comma&gt;fme_json&lt;comma&gt;image&lt;comma&gt;fme_binarybuffer&lt;comma&gt;ntext&lt;comma&gt;fme_buffer&lt;comma&gt;uniqueidentifier&lt;comma&gt;fme_buffer&lt;comma&gt;timestamp&lt;comma&gt;fme_binarybuffer&lt;comma&gt;tinyint&lt;comma&gt;fme_uint8&lt;comma&gt;smallint&lt;comma&gt;fme_int16&lt;comma&gt;smallint&lt;comma&gt;fme_int8&lt;comma&gt;integer&lt;comma&gt;fme_int32&lt;comma&gt;integer&lt;comma&gt;fme_uint16&lt;comma&gt;bigint&lt;comma&gt;fme_int64&lt;comma&gt;bigint&lt;comma&gt;fme_uint32&lt;comma&gt;identity&lt;comma&gt;fme_int32&lt;comma&gt;char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;binary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_binary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;nchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_char&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;datetime2&lt;comma&gt;fme_datetime&lt;comma&gt;datetime&lt;comma&gt;fme_datetime&lt;comma&gt;smalldatetime&lt;comma&gt;fme_datetime&lt;comma&gt;time&lt;comma&gt;fme_time&lt;comma&gt;date&lt;comma&gt;fme_date&lt;comma&gt;&lt;quote&gt;numeric&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;fme_decimal&lt;openparen&gt;width&lt;comma&gt;decimal&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;numeric&lt;openparen&gt;20&lt;comma&gt;0&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;fme_uint64&lt;comma&gt;real&lt;comma&gt;fme_real32&lt;comma&gt;float&lt;comma&gt;fme_real64&lt;comma&gt;money&lt;comma&gt;fme_real64&lt;comma&gt;smallmoney&lt;comma&gt;fme_real64&lt;comma&gt;varchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;nvarchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varchar&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;varbinary&lt;openparen&gt;width&lt;closeparen&gt;&lt;comma&gt;fme_varbinary&lt;openparen&gt;width&lt;closeparen&gt;,DEST_ILLEGAL_ATTR_LIST,FME_WHERE_BUILDER_CLAUSE&lt;comma&gt;MSSQL_UPDATE_KEY_COLUMNS&lt;comma&gt;MSSQL_DROP_TABLE&lt;comma&gt;FME_DB_TRANSACTION&lt;comma&gt;MSSQL_TRUNCATE_TABLE&lt;comma&gt;FME_DB_OPERATION&lt;comma&gt;MSSQL_TABLE_WRITER_MODE&lt;comma&gt;MSSQL_ENABLE_IDENTITY_INSERT&lt;comma&gt;FME_FEATURE_OPERATION&lt;comma&gt;DB_TYPE&lt;comma&gt;FME_TABLE_HANDLING&lt;comma&gt;FME_SELECTION_METHOD&lt;comma&gt;FME_MATCH_COLUMNS&lt;comma&gt;FME_MATCH_ID_ATTRIBUTE&lt;comma&gt;FME_MATCH_REVISION_ATTRIBUTE,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,&lt;backslash&gt;&lt;backslash&gt;&lt;quote&gt;&lt;openbracket&gt;&lt;closebracket&gt;,FEATURE_TYPE_LENGTH,128,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_NAME,MSSQL_ADO,GEOM_MAP,db_none&lt;comma&gt;fme_no_geom&lt;comma&gt;db_none&lt;comma&gt;fme_point&lt;comma&gt;db_none&lt;comma&gt;fme_line&lt;comma&gt;db_none&lt;comma&gt;fme_polygon&lt;comma&gt;db_none&lt;comma&gt;fme_text&lt;comma&gt;db_none&lt;comma&gt;fme_ellipse&lt;comma&gt;db_none&lt;comma&gt;fme_arc&lt;comma&gt;db_none&lt;comma&gt;fme_rectangle&lt;comma&gt;db_none&lt;comma&gt;fme_rounded_rectangle&lt;comma&gt;db_none&lt;comma&gt;fme_collection&lt;comma&gt;db_none&lt;comma&gt;fme_raster&lt;comma&gt;db_none&lt;comma&gt;fme_surface&lt;comma&gt;db_none&lt;comma&gt;fme_solid&lt;comma&gt;db_none&lt;comma&gt;fme_point_cloud&lt;comma&gt;db_none&lt;comma&gt;fme_feature_table,READER_ATTR_INDEX_TYPES,Indexed&lt;comma&gt;IndexedNotNull&lt;comma&gt;Unique&lt;comma&gt;UniqueClustered&lt;comma&gt;Clustered&lt;comma&gt;ClusteredNotNull&lt;comma&gt;NotNull&lt;comma&gt;PrimaryKey,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,yes,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,,WRITER,MSSQL_ADO,WRITER_ATTR_INDEX_TYPES,Indexed&lt;comma&gt;IndexedNotNull&lt;comma&gt;Unique&lt;comma&gt;UniqueClustered&lt;comma&gt;Clustered&lt;comma&gt;ClusteredNotNull&lt;comma&gt;NotNull&lt;comma&gt;PrimaryKey,WRITER_DEFLINE_PARMS,&lt;quote&gt;GUI&lt;space&gt;NAMEDGROUP&lt;space&gt;fme_configuration_group&lt;space&gt;fme_configuration_common_group%fme_spatial_group%fme_advanced_group%oracle_advanced_group&lt;space&gt;Table&lt;quote&gt;&lt;comma&gt;&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;NAMEDGROUP&lt;space&gt;fme_configuration_common_group&lt;space&gt;fme_feature_operation%fme_table_handling%oracle_model%fme_update_geometry%fme_selection_group%fme_table_creation_group&lt;space&gt;General&lt;quote&gt;&lt;comma&gt;&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;ACTIVECHOICE_LOOKUP&lt;space&gt;fme_feature_operation&lt;space&gt;Insert&lt;comma&gt;INSERT&lt;comma&gt;fme_update_geometry&lt;comma&gt;fme_selection_group%Update&lt;comma&gt;UPDATE&lt;comma&gt;++fme_table_handling+USE_EXISTING&lt;comma&gt;++fme_selection_group+FME_DISCLOSURE_OPEN%Delete&lt;comma&gt;DELETE&lt;comma&gt;++fme_table_handling+USE_EXISTING&lt;comma&gt;fme_update_geometry&lt;comma&gt;++fme_selection_group+FME_DISCLOSURE_OPEN&lt;comma&gt;fme_spatial_group&lt;comma&gt;fme_advanced_group&lt;comma&gt;oracle_sequenced_cols%&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_db_operation&lt;lt&gt;closeparen&lt;gt&gt;&lt;comma&gt;MULTIPLE&lt;comma&gt;++fme_table_handling+USE_EXISTING&lt;comma&gt;++fme_selection_group+FME_DISCLOSURE_OPEN&lt;space&gt;Feature&lt;space&gt;Operation&lt;quote&gt;&lt;comma&gt;INSERT&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;ACTIVECHOICE_LOOKUP&lt;space&gt;fme_table_handling&lt;space&gt;Use&lt;lt&gt;space&lt;gt&gt;Existing&lt;comma&gt;USE_EXISTING&lt;comma&gt;fme_table_creation_group%Create&lt;lt&gt;space&lt;gt&gt;If&lt;lt&gt;space&lt;gt&gt;Needed&lt;comma&gt;CREATE_IF_MISSING%Drop&lt;lt&gt;space&lt;gt&gt;and&lt;lt&gt;space&lt;gt&gt;Create&lt;comma&gt;DROP_CREATE%Truncate&lt;lt&gt;space&lt;gt&gt;Existing&lt;comma&gt;TRUNCATE_EXISTING&lt;comma&gt;fme_table_creation_group&lt;space&gt;Table&lt;space&gt;Handling&lt;quote&gt;&lt;comma&gt;CREATE_IF_MISSING&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;DISCLOSUREGROUP&lt;space&gt;fme_selection_group&lt;space&gt;fme_selection_method&lt;space&gt;Row&lt;space&gt;Selection&lt;quote&gt;&lt;comma&gt;&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;WHOLE_LINE&lt;space&gt;RADIOPARAMETERGROUP&lt;space&gt;fme_selection_method&lt;space&gt;fme_match_columns&lt;comma&gt;MATCH_COLUMNS%fme_where_builder_clause&lt;comma&gt;BUILDER&lt;space&gt;Row&lt;space&gt;Selection&lt;space&gt;Method&lt;quote&gt;&lt;comma&gt;MATCH_COLUMNS&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;WHOLE_LINE&lt;space&gt;ATTRLIST_COMMAS&lt;space&gt;fme_match_columns&lt;space&gt;Match&lt;space&gt;Columns&lt;quote&gt;&lt;comma&gt;&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;WHOLE_LINE&lt;space&gt;TEXT_EDIT_SQL_CFG_OR_ATTR&lt;space&gt;fme_where_builder_clause&lt;space&gt;MODE&lt;comma&gt;WHERE&lt;space&gt;WHERE&lt;space&gt;Clause&lt;quote&gt;&lt;comma&gt;&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;DISCLOSUREGROUP&lt;space&gt;fme_advanced_group&lt;space&gt;mssql_enable_identity_insert&lt;space&gt;Advanced&lt;quote&gt;&lt;comma&gt;&lt;comma&gt;&lt;quote&gt;GUI&lt;space&gt;CHOICE&lt;space&gt;mssql_enable_identity_insert&lt;space&gt;NO%YES&lt;space&gt;Insert&lt;space&gt;Into&lt;space&gt;Identity&lt;space&gt;Column&lt;quote&gt;&lt;comma&gt;NO,WRITER_DEF_LINE_TEMPLATE,&lt;opencurly&gt;FME_GEN_GROUP_NAME&lt;closecurly&gt;&lt;comma&gt;mssql_update_key_columns&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;comma&gt;mssql_drop_table&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;comma&gt;mssql_truncate_table&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;comma&gt;mssql_table_writer_mode&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;comma&gt;fme_feature_operation&lt;comma&gt;INSERT&lt;comma&gt;fme_table_handling&lt;comma&gt;CREATE_IF_MISSING&lt;comma&gt;fme_selection_method&lt;comma&gt;MATCH_COLUMNS&lt;comma&gt;fme_match_columns&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;comma&gt;fme_where_builder_clause&lt;comma&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;comma&gt;mssql_enable_identity_insert&lt;comma&gt;NO,WRITER_FORMAT_PARAMETER,NETWORK_AUTHENTICATION&lt;comma&gt;NO&lt;comma&gt;NETWORK_PROXY&lt;comma&gt;NO&lt;comma&gt;DATASET_NAME&lt;comma&gt;Database&lt;comma&gt;FEATURE_TYPE_NAME&lt;comma&gt;Table&lt;comma&gt;FEATURE_TYPE_DEFAULT_NAME&lt;comma&gt;Table1&lt;comma&gt;SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME&lt;comma&gt;YES&lt;comma&gt;ATTRIBUTE_READING&lt;comma&gt;DEFLINE_ATTRS&lt;comma&gt;ADVANCED_PARMS&lt;comma&gt;&lt;quote&gt;MSSQL_ADO_IN_READ_CACHE_SIZE&lt;space&gt;MSSQL_ADO_OUT_BULK_INSERT&lt;space&gt;MSSQL_ADO_OUT_TRANSACTION_INTERVAL&lt;space&gt;MSSQL_ADO_OUT_BEGIN_SQL&lt;opencurly&gt;0&lt;closecurly&gt;&lt;space&gt;MSSQL_ADO_OUT_END_SQL&lt;opencurly&gt;0&lt;closecurly&gt;&lt;quote&gt;,WRITER_HAS_DEFLINE_ATTRS,yes"/>
+#!     <XFORM_PARM PARM_NAME="DYNGROUP_0" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET_ATTR" PARM_VALUE="_dataset"/>
+#!     <XFORM_PARM PARM_NAME="WRITER_DIRECTIVES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MSSQL_ADO_BEGIN_SQL{0}" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="1200 150"
+#!   BOUNDING_RECT="1200 150 430 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_db_operation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Label" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Definition" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Notation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="AcceptedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="alreadyInDb" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; fme_db_operation SET_TO &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;INSERT&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;alreadyInDb&lt;closeparen&gt; = 1&apos;UPDATE&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="29"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-3102.26 -300"
+#!   BOUNDING_RECT="-3102.26 -300 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_DictionaryUrl $(DictionaryUrl) _DestinationTableSchema $(DestinationTableSchema)"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="33"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-3085.97 -507.818"
+#!   BOUNDING_RECT="-3085.97 -507.818 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17725"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_DictionaryUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_DestinationTableSchema" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;url&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_DictionaryUrl&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;url.endswith&lt;openparen&gt;&lt;quote&gt;&lt;solidus&gt;&lt;quote&gt;&lt;closeparen&gt;:&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;_DictionaryUrl&lt;apos&gt;&lt;comma&gt;&lt;space&gt;url&lt;openbracket&gt;:-1&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;schema&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;_DestinationTableSchema&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;not&lt;space&gt;schema:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;_DestinationTableSchema&lt;apos&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;dbo&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="Id"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="py_NormalizeParams"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="processFeature"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="27"
+#!   NAME="sql_CreateTable_Initiator"
+#!   POSITION="-3806.42 -300"
+#!   BOUNDING_RECT="-3806.42 -300 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="27"
+#!   TARGET_NODE="29"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 REQUESTOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 MERGED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 1 SUPPLIER"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Merged"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="29"
+#!   TARGET_NODE="33"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="33"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 1 INITIATOR"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;OTHER&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 1 UNMERGED_REQUESTOR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 2 &lt;lt&gt;OTHER&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+FME_PYTHON_VERSION 27
+DEFAULT_MACRO $(SyncDataDictionary_WORKSPACE_NAME)_DictionaryUrl http://dd.eionet.europa.eu/vocabulary/aq/assessmenttype
+DEFAULT_MACRO $(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable AssessmentType
+DEFAULT_MACRO $(SyncDataDictionary_WORKSPACE_NAME)_DestinationTableSchema dbo
+DEFAULT_MACRO $(SyncDataDictionary_WORKSPACE_NAME)_Connection Airquality_Models
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO SyncDataDictionary_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SyncDataDictionary_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SyncDataDictionary_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateTable_Initiator1533289112 Input Splitter"   INPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateTable_Initiator"   OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateTable_Initiator"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_DictionaryUrl {$($(SyncDataDictionary_WORKSPACE_NAME)_DictionaryUrl$encode)} _DestinationTableSchema {$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTableSchema$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateTable_Initiator"    OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_py_NormalizeParams    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf><lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>url<space>=<space>feature.getAttribute<openparen><apos>_DictionaryUrl<apos><closeparen><lf><space><space><space><space>if<space>url.endswith<openparen><quote><solidus><quote><closeparen>:<space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><apos>_DictionaryUrl<apos><comma><space>url<openbracket>:-1<closebracket><closeparen><lf><space><space><space><space><lf><space><space><space><space>schema<space>=<space>feature.getAttribute<openparen><apos>_DestinationTableSchema<apos><closeparen><lf><space><space><space><space>if<space>not<space>schema:<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><apos>_DestinationTableSchema<apos><comma><space><apos>dbo<apos><closeparen><lf><space><space><space><space><lf><lf>    OUTPUT PYOUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_py_NormalizeParams_OUTPUT"
+
+# -------------------------------------------------------------------------
+MACRO $(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_DIRECTIVES QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS Yes COMMAND_TIMEOUT 30 NAMED_CONNECTION "$($(SyncDataDictionary_WORKSPACE_NAME)_Connection)"
+
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_py_NormalizeParams_OUTPUT"    QUERY_SQL            "@EvaluateExpression(FDIV,STRING_ENCODED,--<space>Create<space>schema<space>if<space>it<space>doesn<apos>t<space>exist<lf>IF<space>NOT<space>EXISTS<space><openparen><lf>SELECT<space><space>schema_name<lf>FROM<space><space><space><space>information_schema.schemata<lf>WHERE<space><space><space>schema_name<space>=<space><apos><at>Value<openparen>_DestinationTableSchema<closeparen><apos><space><closeparen><space><lf><space><lf>BEGIN<lf><space><space><space><space>EXEC<space>sp_executesql<space>N<apos>CREATE<space>SCHEMA<space><at>Value<openparen>_DestinationTableSchema<closeparen><apos><lf>END<lf><lf><lf><lf>--<space>Create<space>table<space>if<space>it<space>doesn<apos>t<space>exist<lf>IF<space><openparen>NOT<space>EXISTS<space><openparen>SELECT<space>*<space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>FROM<space>INFORMATION_SCHEMA.TABLES<space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>WHERE<space>TABLE_SCHEMA<space>=<space><apos><at>Value<openparen>_DestinationTableSchema<closeparen><apos><space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>AND<space><space>TABLE_NAME<space>=<space><apos>$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable$encode)<apos><closeparen><closeparen><lf>BEGIN<lf><space><space><space><space>CREATE<space>TABLE<space>$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTableSchema$encode).<openbracket>$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable$encode)<closebracket><space><openparen><lf><space><space><space><space><space><space><space><space>Id<space>nvarchar<openparen>50<closeparen><space>not<space>null<comma><lf><space><space><space><space><space><space><space><space>URI<space>nvarchar<openparen>500<closeparen><space>not<space>null<comma><lf><space><space><space><space><space><space><space><space>Label<space>nvarchar<openparen>500<closeparen><space>null<comma><lf><space><space><space><space><space><space><space><space>Status<space>nvarchar<openparen>50<closeparen><space>null<comma><lf><space><space><space><space><space><space><space><space>StatusModified<space>nvarchar<openparen>50<closeparen><space>null<comma><lf><space><space><space><space><space><space><space><space>AcceptedDate<space>nvarchar<openparen>50<closeparen><space>null<comma><lf><space><space><space><space><space><space><space><space>Notation<space>nvarchar<openparen>250<closeparen><space>null<comma><lf><space><space><space><space><space><space><space><space>Definition<space>nvarchar<openparen>500<closeparen><space>null<comma><lf><space><space><space><space><space><space><space><space>CONSTRAINT<space><openbracket>PK_$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable$encode)<closebracket><space>PRIMARY<space>KEY<space>CLUSTERED<space><openparen>Id<space>ASC<closeparen><lf><space><space><space><space><closeparen><lf>END<lf><lf>,$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects)"    READER_TYPE          MSSQL_ADO    READER_DATASET       "@EvaluateExpression(FDIV,STRING_ENCODED,$($(SyncDataDictionary_WORKSPACE_NAME)_Connection),$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects)"    COMBINE_ATTRIBUTES   RESULT_ONLY    COMBINE_GEOMETRY     QUERY_ONLY    CONTINUE_ON_READER_ERROR YES    QUERYFCT_PROPAGATE_IDS_ON_SQL_EXECUTE YES    READER_PARAMS        $($(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_RESULT"        @SupplyAttributes(fme_feature_type,$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects)    OUTPUT QUERY FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_INITIATOR"    OUTPUT READER_ERROR FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects RESULT Output Nuker"   INPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_RESULT"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects INITIATOR Splitter"   INPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_INITIATOR"   OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_INITIATOR_0_HnePXg7CyFA="   OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_INITIATOR_1_AkGknbpeel0="
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_<REJECTED>"
+# -------------------------------------------------------------------------
+MACRO $(SyncDataDictionary_WORKSPACE_NAME)_readExisting_OUTPUT_PORTS_ENCODED 
+MACRO $(SyncDataDictionary_WORKSPACE_NAME)_readExisting_DIRECTIVES COMMAND_TIMEOUT,30,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,READ_CACHE_SIZE,10,NAMED_CONNECTION,$($(SyncDataDictionary_WORKSPACE_NAME)_Connection)
+
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(SyncDataDictionary_WORKSPACE_NAME)_readExisting_COMBINE_ATTRS
+INCLUDE [       if { {RESULT_ONLY} == {MERGE} } {          puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_readExisting_COMBINE_ATTRS <Unused>";       } else {          puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_readExisting_COMBINE_ATTRS RESULT_ONLY";       };    ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_readExisting    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_INITIATOR_1_AkGknbpeel0="    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  $($(SyncDataDictionary_WORKSPACE_NAME)_readExisting_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    QUERYFCT_TABLE_SEPARATOR SPACE    READER_TYPE         MSSQL_ADO    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$($(SyncDataDictionary_WORKSPACE_NAME)_Connection),$(SyncDataDictionary_WORKSPACE_NAME)_readExisting)"    QUERYFCT_IDS        "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_DestinationTableSchema<closeparen>.$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable$encode),$(SyncDataDictionary_WORKSPACE_NAME)_readExisting)"    READER_DIRECTIVES META_MACROS,SourceQUERY_FEATURE_TYPES_FOR_MERGE_FILTERS<comma>Yes<comma>SourceFME_CONNECTION_GROUP<comma><comma>SourceNAMED_CONNECTION<comma><dollar><openparen>Connection<closeparen><comma>SourceCOMMAND_TIMEOUT<comma>30<comma>SourceWHERE_CLAUSE<comma><comma>SourceEXPOSE_ATTRS_GROUP<comma><comma>SourceMSSQL_ADO_EXPOSE_FORMAT_ATTRS<comma><comma>SourceADVANCED<comma><comma>SourceREAD_CACHE_SIZE<comma>10,METAFILE,MSSQL_ADO    QUERYFCT_OUTPUT     "BASED_ON_CONNECTIONS"    CONTINUE_ON_READER_ERROR YES    QUERYFCT_RESULT_TAGS $($(SyncDataDictionary_WORKSPACE_NAME)_readExisting_OUTPUT_PORTS_ENCODED)    QUERYFCT_SET_FME_FEATURE_TYPE YES    READER_PARAMS_WWJD     $($(SyncDataDictionary_WORKSPACE_NAME)_readExisting_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_readExisting_<OTHER>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_AttributeExposer_2    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_readExisting_<OTHER>"    OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeExposer_2_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeExposer_2_OUTPUT"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "alreadyInDb" "SET_TO" "1" }    OUTPUT OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller       INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_sql_CreateDBObjects_INITIATOR_0_HnePXg7CyFA="    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_DictionaryUrl<closeparen><solidus>csv,$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller)"    HTTP_METHOD GET    SAVE_FILE YES    OUTPUT_FILENAME "@EvaluateExpression(FDIV,STRING,$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable$encode).csv,$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller)"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "<Unused>"    FILE_PATH_ATTR "_response_file_path"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "<Unused>"    TARGET_ATTRIBUTE_ENCODING <Unused>    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller_Output"    OUTPUT REJECTED FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller <Rejected> Output Nuker"   INPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+# -------------------------------------------------------------------------
+MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED assessmenttype
+MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_DIRECTIVES SKIP_DUPLICATE_DELIMITERS,No,PRESERVE_SOURCE_ENCODING,No,SCAN_MAX_ROWS,1000,ENFORCE_STRICT_SCHEMA,No,USE_CUSTOM_SCHEMA,NO,TRIM_FIELD_NAME_QUALIFIERS,Yes,SCAN_ADDITIONAL_FIELDS,No,FIELD_NAMES_LINE,1,READ_SKIPPED_LINES,No,FEATURE_TYPE_NAME,FILE_NAME,TRIM_FIELD_VALUE_QUALIFIERS,Yes,DELIMITER,<lt>comma<gt>,FIELD_QUALIFIER_CHARACTER,<lt>quote<gt>,SCAN_TYPES,No,DATA_START_LINE,2,FIELD_QUALIFIER_ESCAPE_CHARACTER,<lt>quote<gt>,CASE_SENSITIVE_FIELD_NAMES,Yes
+
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {NONE} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "NONE"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS
+INCLUDE [       if { {MERGE} == {MERGE} } {          puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS PREFER_RESULT";       } else {          puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS MERGE";       };    ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_HTTPCaller_Output"    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  $($(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    QUERYFCT_TABLE_SEPARATOR SPACE    READER_TYPE         CSV2    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response_file_path<closeparen>,$(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader)"    QUERYFCT_IDS        ""    READER_DIRECTIVES META_MACROS,SourceDATASET_GROUP<comma><comma>SourceFEATURE_TYPE_NAME<comma>FILE_NAME<comma>SourceFIELDS_GROUP<comma><comma>SourceDELIMITER<comma><lt>comma<gt><comma>SourceFIELD_NAMES_LINE<comma>1<comma>SourceDATA_START_LINE<comma>2<comma>SourceADVANCED_GROUP<comma><comma>SourceFIELD_SEPARATION_GROUP<comma><comma>SourceSKIP_DUPLICATE_DELIMITERS<comma>No<comma>SourceFIELD_QUALIFIER_CHARACTER<comma><lt>quote<gt><comma>SourceFIELD_QUALIFIER_ESCAPE_CHARACTER<comma><lt>quote<gt><comma>SourceFIELD_NAMES_GROUP<comma><comma>SourceTRIM_FIELD_NAME_QUALIFIERS<comma>Yes<comma>SourceCASE_SENSITIVE_FIELD_NAMES<comma>Yes<comma>SourceENFORCE_STRICT_SCHEMA<comma>No<comma>SourceFIELD_VALUES_GROUP<comma><comma>SourceTRIM_FIELD_VALUE_QUALIFIERS<comma>Yes<comma>SourceENCODING_GROUP<comma><comma>SourceENCODING<comma><comma>SourcePRESERVE_SOURCE_ENCODING<comma>No<comma>SourceSKIPPED_LINES_GROUP<comma><comma>SourceREAD_SKIPPED_LINES<comma>No<comma>SourceSCHEMA_GENERATION_GROUP<comma><comma>SourceSCAN_MAX_ROWS<comma>1000<comma>SourceSCAN_TYPES<comma>No<comma>SourceSCAN_ADDITIONAL_FIELDS<comma>No<comma>SourcePREVIEW_GROUP<comma><comma>SourcePREVIEW_PLACEHOLDER<comma><comma>SourceSCHEMA_GROUP<comma><comma>SourceUSE_CUSTOM_SCHEMA<comma>NO<comma>SourceSCHEMA<comma><comma>SourceEXPOSE_ATTRS_GROUP<comma><comma>SourceCSV2_EXPOSE_FORMAT_ATTRS<comma>,METAFILE,CSV2    QUERYFCT_OUTPUT     "BASED_ON_CONNECTIONS"    CONTINUE_ON_READER_ERROR YES    QUERYFCT_RESULT_TAGS $($(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED)    QUERYFCT_SET_FME_FEATURE_TYPE YES    READER_PARAMS_WWJD     $($(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_<OTHER>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_FeatureReader_<OTHER>"    OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_AttributeKeeper_734620b1_f8b5_49d2_b9f0_17c48464ed110_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_AttributeKeeper    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeExposer_OUTPUT"    OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"        @KeepAttributes(fme_encoded,Status,_DictionaryUrl,URI,Label,Definition,Notation,AcceptedDate,fme_pcre_match,"^fme_$($(SyncDataDictionary_WORKSPACE_NAME)_AttributeKeeper_734620b1_f8b5_49d2_b9f0_17c48464ed110_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_py_ShortCode    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf><lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>uri<space>=<space>feature.getAttribute<openparen><apos>URI<apos><closeparen><lf><space><space><space><space>n<space>=<space>len<openparen>feature.getAttribute<openparen><apos>_DictionaryUrl<apos><closeparen><closeparen>+1<lf><space><space><space><space>feature.setAttribute<openparen><quote>Id<quote><comma><space>uri<openbracket>n:<closebracket><closeparen><lf><space><space><space><space><lf><lf>    OUTPUT PYOUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_py_ShortCode_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF {*} ReferenceFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger    INPUT REFERENCER FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_py_ShortCode_OUTPUT"    INPUT REFERENCEE FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    REFERENCE_INFO $($(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>URI<closeparen>,$(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>URI<closeparen>,$(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger) AUTO    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "REQUESTOR_IF_CONFLICT"    IGNORE_NULLS "No"    HANDLE_NULL_MISSING_KEYS_LIKE_FME2013 No    LIST_ATTRS_TO_INCLUDE { <Unused> }    LIST_ATTRS_TO_INCLUDE_MODE <Unused>    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    REJECT_INVALID_GEOM YES    OUTPUT COMPLETE FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_MERGED"    OUTPUT INCOMPLETE FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_UNMERGED_REQUESTOR"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_MERGED"    INPUT  FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_FeatureMerger_UNMERGED_REQUESTOR"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fme_db_operation" "SET_TO" "FME_CONDITIONAL:DEFAULT_VALUE'INSERT'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>alreadyInDb<closeparen> = 1'UPDATE'FME_NUM_CONDITIONS2___" }    OUTPUT OUTPUT FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * WriterFactory    FACTORY_NAME $(SyncDataDictionary_WORKSPACE_NAME)_FeatureWriter    WRITER_TYPE MSSQL_ADO    WRITER_DATASET @EvaluateExpression(FDIV,STRING_ENCODED,$($(SyncDataDictionary_WORKSPACE_NAME)_Connection),$(SyncDataDictionary_WORKSPACE_NAME)_FeatureWriter)    WRITER_SETTINGS RUNTIME_MACROS,FME_CONNECTION_GROUP<comma><comma>NAMED_CONNECTION<comma><dollar><openparen>Connection<closeparen><comma>COMMAND_TIMEOUT<comma>30<comma>ADVANCED<comma><comma>BULK_INSERT<comma>YES<comma>START_TRANSACTION<comma>0<comma>TRANSACTION_INTERVAL<comma>500<comma>BEGIN_SQL<opencurly>0<closecurly><comma><comma>END_SQL<opencurly>0<closecurly><comma>,METAFILE,MSSQL_ADO    WRITER_METAFILE ATTRIBUTE_CASE,ANY,ATTRIBUTE_INVALID_CHARS,<backslash><backslash><openbracket><closebracket><quote>,ATTRIBUTE_LENGTH,128,ATTR_TYPE_MAP,bit<comma>fme_boolean<comma>text<comma>fme_buffer<comma>text<comma>fme_xml<comma>text<comma>fme_json<comma>image<comma>fme_binarybuffer<comma>ntext<comma>fme_buffer<comma>uniqueidentifier<comma>fme_buffer<comma>timestamp<comma>fme_binarybuffer<comma>tinyint<comma>fme_uint8<comma>smallint<comma>fme_int16<comma>smallint<comma>fme_int8<comma>integer<comma>fme_int32<comma>integer<comma>fme_uint16<comma>bigint<comma>fme_int64<comma>bigint<comma>fme_uint32<comma>identity<comma>fme_int32<comma>char<openparen>width<closeparen><comma>fme_char<openparen>width<closeparen><comma>binary<openparen>width<closeparen><comma>fme_binary<openparen>width<closeparen><comma>nchar<openparen>width<closeparen><comma>fme_char<openparen>width<closeparen><comma>datetime2<comma>fme_datetime<comma>datetime<comma>fme_datetime<comma>smalldatetime<comma>fme_datetime<comma>time<comma>fme_time<comma>date<comma>fme_date<comma><quote>numeric<openparen>width<comma>decimal<closeparen><quote><comma><quote>fme_decimal<openparen>width<comma>decimal<closeparen><quote><comma><quote>numeric<openparen>20<comma>0<closeparen><quote><comma>fme_uint64<comma>real<comma>fme_real32<comma>float<comma>fme_real64<comma>money<comma>fme_real64<comma>smallmoney<comma>fme_real64<comma>varchar<openparen>width<closeparen><comma>fme_varchar<openparen>width<closeparen><comma>nvarchar<openparen>width<closeparen><comma>fme_varchar<openparen>width<closeparen><comma>varbinary<openparen>width<closeparen><comma>fme_varbinary<openparen>width<closeparen>,DEST_ILLEGAL_ATTR_LIST,FME_WHERE_BUILDER_CLAUSE<comma>MSSQL_UPDATE_KEY_COLUMNS<comma>MSSQL_DROP_TABLE<comma>FME_DB_TRANSACTION<comma>MSSQL_TRUNCATE_TABLE<comma>FME_DB_OPERATION<comma>MSSQL_TABLE_WRITER_MODE<comma>MSSQL_ENABLE_IDENTITY_INSERT<comma>FME_FEATURE_OPERATION<comma>DB_TYPE<comma>FME_TABLE_HANDLING<comma>FME_SELECTION_METHOD<comma>FME_MATCH_COLUMNS<comma>FME_MATCH_ID_ATTRIBUTE<comma>FME_MATCH_REVISION_ATTRIBUTE,FEATURE_TYPE_CASE,ANY,FEATURE_TYPE_INVALID_CHARS,<backslash><backslash><quote><openbracket><closebracket>,FEATURE_TYPE_LENGTH,128,FEATURE_TYPE_LENGTH_INCLUDES_PREFIX,false,FEATURE_TYPE_RESERVED_WORDS,,FORMAT_NAME,MSSQL_ADO,GEOM_MAP,db_none<comma>fme_no_geom<comma>db_none<comma>fme_point<comma>db_none<comma>fme_line<comma>db_none<comma>fme_polygon<comma>db_none<comma>fme_text<comma>db_none<comma>fme_ellipse<comma>db_none<comma>fme_arc<comma>db_none<comma>fme_rectangle<comma>db_none<comma>fme_rounded_rectangle<comma>db_none<comma>fme_collection<comma>db_none<comma>fme_raster<comma>db_none<comma>fme_surface<comma>db_none<comma>fme_solid<comma>db_none<comma>fme_point_cloud<comma>db_none<comma>fme_feature_table,READER_ATTR_INDEX_TYPES,Indexed<comma>IndexedNotNull<comma>Unique<comma>UniqueClustered<comma>Clustered<comma>ClusteredNotNull<comma>NotNull<comma>PrimaryKey,SOURCE,no,SUPPORTS_FEAT_TYPE_FANOUT,yes,SUPPORTS_MULTI_GEOM,yes,WORKBENCH_CANNED_SCHEMA,,WRITER,MSSQL_ADO,WRITER_ATTR_INDEX_TYPES,Indexed<comma>IndexedNotNull<comma>Unique<comma>UniqueClustered<comma>Clustered<comma>ClusteredNotNull<comma>NotNull<comma>PrimaryKey,WRITER_DEFLINE_PARMS,<quote>GUI<space>NAMEDGROUP<space>fme_configuration_group<space>fme_configuration_common_group%fme_spatial_group%fme_advanced_group%oracle_advanced_group<space>Table<quote><comma><comma><quote>GUI<space>NAMEDGROUP<space>fme_configuration_common_group<space>fme_feature_operation%fme_table_handling%oracle_model%fme_update_geometry%fme_selection_group%fme_table_creation_group<space>General<quote><comma><comma><quote>GUI<space>ACTIVECHOICE_LOOKUP<space>fme_feature_operation<space>Insert<comma>INSERT<comma>fme_update_geometry<comma>fme_selection_group%Update<comma>UPDATE<comma>++fme_table_handling+USE_EXISTING<comma>++fme_selection_group+FME_DISCLOSURE_OPEN%Delete<comma>DELETE<comma>++fme_table_handling+USE_EXISTING<comma>fme_update_geometry<comma>++fme_selection_group+FME_DISCLOSURE_OPEN<comma>fme_spatial_group<comma>fme_advanced_group<comma>oracle_sequenced_cols%<lt>at<gt>Value<lt>openparen<gt>fme_db_operation<lt>closeparen<gt><comma>MULTIPLE<comma>++fme_table_handling+USE_EXISTING<comma>++fme_selection_group+FME_DISCLOSURE_OPEN<space>Feature<space>Operation<quote><comma>INSERT<comma><quote>GUI<space>ACTIVECHOICE_LOOKUP<space>fme_table_handling<space>Use<lt>space<gt>Existing<comma>USE_EXISTING<comma>fme_table_creation_group%Create<lt>space<gt>If<lt>space<gt>Needed<comma>CREATE_IF_MISSING%Drop<lt>space<gt>and<lt>space<gt>Create<comma>DROP_CREATE%Truncate<lt>space<gt>Existing<comma>TRUNCATE_EXISTING<comma>fme_table_creation_group<space>Table<space>Handling<quote><comma>CREATE_IF_MISSING<comma><quote>GUI<space>DISCLOSUREGROUP<space>fme_selection_group<space>fme_selection_method<space>Row<space>Selection<quote><comma><comma><quote>GUI<space>WHOLE_LINE<space>RADIOPARAMETERGROUP<space>fme_selection_method<space>fme_match_columns<comma>MATCH_COLUMNS%fme_where_builder_clause<comma>BUILDER<space>Row<space>Selection<space>Method<quote><comma>MATCH_COLUMNS<comma><quote>GUI<space>WHOLE_LINE<space>ATTRLIST_COMMAS<space>fme_match_columns<space>Match<space>Columns<quote><comma><comma><quote>GUI<space>WHOLE_LINE<space>TEXT_EDIT_SQL_CFG_OR_ATTR<space>fme_where_builder_clause<space>MODE<comma>WHERE<space>WHERE<space>Clause<quote><comma><comma><quote>GUI<space>DISCLOSUREGROUP<space>fme_advanced_group<space>mssql_enable_identity_insert<space>Advanced<quote><comma><comma><quote>GUI<space>CHOICE<space>mssql_enable_identity_insert<space>NO%YES<space>Insert<space>Into<space>Identity<space>Column<quote><comma>NO,WRITER_DEF_LINE_TEMPLATE,<opencurly>FME_GEN_GROUP_NAME<closecurly><comma>mssql_update_key_columns<comma><quote><quote><quote><quote><quote><quote><comma>mssql_drop_table<comma><quote><quote><quote><quote><quote><quote><comma>mssql_truncate_table<comma><quote><quote><quote><quote><quote><quote><comma>mssql_table_writer_mode<comma><quote><quote><quote><quote><quote><quote><comma>fme_feature_operation<comma>INSERT<comma>fme_table_handling<comma>CREATE_IF_MISSING<comma>fme_selection_method<comma>MATCH_COLUMNS<comma>fme_match_columns<comma><quote><quote><quote><quote><quote><quote><comma>fme_where_builder_clause<comma><quote><quote><quote><quote><quote><quote><comma>mssql_enable_identity_insert<comma>NO,WRITER_FORMAT_PARAMETER,NETWORK_AUTHENTICATION<comma>NO<comma>NETWORK_PROXY<comma>NO<comma>DATASET_NAME<comma>Database<comma>FEATURE_TYPE_NAME<comma>Table<comma>FEATURE_TYPE_DEFAULT_NAME<comma>Table1<comma>SUPPORTS_SCHEMA_IN_FEATURE_TYPE_NAME<comma>YES<comma>ATTRIBUTE_READING<comma>DEFLINE_ATTRS<comma>ADVANCED_PARMS<comma><quote>MSSQL_ADO_IN_READ_CACHE_SIZE<space>MSSQL_ADO_OUT_BULK_INSERT<space>MSSQL_ADO_OUT_TRANSACTION_INTERVAL<space>MSSQL_ADO_OUT_BEGIN_SQL<opencurly>0<closecurly><space>MSSQL_ADO_OUT_END_SQL<opencurly>0<closecurly><quote>,WRITER_HAS_DEFLINE_ATTRS,yes    WRITER_FEATURE_TYPES <dollar><openparen>DestinationTable<closeparen>:Merged,ftp_feature_type_name_exp,$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable),ftp_feature_type_qualifier,$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTableSchema),ftp_writer,MSSQL_ADO,ftp_dynamic_schema,no,ftp_dynamic_feature_type_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_geometry_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_def_name_type,DYN_SCHEMA_PROP_AUTO,ftp_dynamic_schema_sources,<lt>lt<gt>Unused<lt>gt<gt>,ftp_attribute_source,1,ftp_user_attributes,URI<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt><comma>Label<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt><comma>Definition<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt><comma>Notation<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt><comma>Status<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt><comma>AcceptedDate<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt><comma>Id<comma>varchar<lt>openparen<gt>200<lt>closeparen<gt>,ftp_user_attribute_values,<comma><comma><comma><comma><comma><comma>,ftp_format_attributes,fme_db_operation,ftp_format_parameters,fme_configuration_group<comma><comma>fme_configuration_common_group<comma><comma>fme_feature_operation<comma>MULTIPLE<comma>fme_table_handling<comma>USE_EXISTING<comma>fme_selection_group<comma>FME_DISCLOSURE_OPEN<comma>fme_selection_method<comma>MATCH_COLUMNS<comma>fme_match_columns<comma>Id<comma>fme_where_builder_clause<comma><lt>lt<gt>Unused<lt>gt<gt><comma>fme_advanced_group<comma><comma>mssql_enable_identity_insert<comma>NO    WRITER_PARAMS TRANSACTION_INTERVAL,500,COMMAND_TIMEOUT,30,NAMED_CONNECTION,$($(SyncDataDictionary_WORKSPACE_NAME)_Connection),START_TRANSACTION,0,BULK_INSERT,YES    DATASET_ATTR _dataset    FEATURE_TYPE_LIST_ATTR _feature_type    TOTAL_FEATURES_WRITTEN_ATTR _total_features_written INPUT Merged FEATURE_TYPE "$(SyncDataDictionary_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"  @FeatureType(ENCODED,@EvaluateExpression(FDIV,STRING_ENCODED,$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTableSchema$encode).$($(SyncDataDictionary_WORKSPACE_NAME)_DestinationTable$encode),$(SyncDataDictionary_WORKSPACE_NAME)_FeatureWriter))    @SupplyAttributes(ENCODED,fme_template_feature_type,Merged)
+
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SyncDataDictionary_WORKSPACE_NAME))}]

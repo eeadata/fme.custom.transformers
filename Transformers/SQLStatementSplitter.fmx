@@ -1,0 +1,331 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN SQLStatementSplitter,1,EEACleanup,b59613ce-4fd8-4300-bf21-5f755021a2f8,"Linked by Default",No,NO_PARALLELISM,,No,15539,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Splits a Microsoft SQL Batch script into individual SQL Execution scripts in order to be able t oexecute these in the SQLExecuter transformer.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Splits a Microsoft SQL Batch script into individual SQL Execution scripts in order to be able t oexecute these in the SQLExecuter transformer.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! ZOOM_SCALE="100"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;SQLText&lt;/span&gt; attribute expects a text containing all SQL commands.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;These commands are devided by the &quot;GO&quot; command normaly provided by Microsoft SQL.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The &quot;USE &amp;lt;database&amp;gt;&quot; statements will be removed from the list as well as empty SQL statements in order to ensure that we do not create any mistakes.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="SQLStatementSplitter"
+#! ATTR_TYPE_ENCODING="SDF"
+#! SHOW_ANNOTATIONS="true"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! DOC_TOP_LEFT="-707.625 -911.007"
+#! LAST_SAVE_DATE="2015-10-29T10:29:23"
+#! FME_SERVER_SERVICES=""
+#! VIEW_POSITION="-1710.02 672.007"
+#! FME_DOCUMENT_GUID="b59613ce-4fd8-4300-bf21-5f755021a2f8"
+#! WORKSPACE_VERSION="1"
+#! FMX_INSERT_MODE="Linked by Default"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! PASSWORD=""
+#! ITERATION_COUNT_ATTR=""
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! CATEGORY="EEACleanup"
+#! DOC_EXTENTS="2612.26 644.004"
+#! XFORM_DEPRECATED="No"
+#! HISTORY="29&lt;solidus&gt;10&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,Creation&lt;space&gt;of&lt;space&gt;the&lt;space&gt;Transformer."
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! FME_BUILD_NUM="15539"
+#! REQUIREMENTS_KEYWORD="none"
+#! MAX_LOOP_ITERATIONS=""
+#! FME_PROCESS_GROUP_BY=""
+#! LAST_SAVE_BUILD="FME(R) 2015.1.2.1 (20150924 - Build 15539 - WIN32)"
+#! BLOCKED_LOOPING="No"
+#! FME_DOCUMENT_PRIORGUID="6fd35281-17da-46ef-8297-ec9753b7be75"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SQLText SQL Text:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="14"
+#! NAME="Split commands"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="510.382 -267.003"
+#! BOTTOM_RIGHT="1064.38 -911.007"
+#! BOUNDING_RECT="510.382 -267.003 554 644.004"
+#! STICKY="true"
+#! COLOUR="0.466667,0.639216,0.866667"
+#! CONTENTS="1 2 4 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="13"
+#! NAME="Find GO in the string"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Search for GO in the text but only when &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;it is at a new LINE and is not any other word&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-104.624 -267.003"
+#! BOTTOM_RIGHT="470.376 -903.009"
+#! BOUNDING_RECT="-104.624 -267.003 575 636.006"
+#! STICKY="true"
+#! COLOUR="0.768627,0.309804,0.458824"
+#! CONTENTS="10 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="15"
+#! NAME="Remove USE commands"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1114.63 -267.003"
+#! BOTTOM_RIGHT="1668.63 -909.009"
+#! BOUNDING_RECT="1114.63 -267.003 554 642.006"
+#! STICKY="true"
+#! COLOUR="0.737255,0.239216,0.639216"
+#! CONTENTS="3 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="AttributeSplitter"
+#! VERSION="3"
+#! POSITION="584.382 -468.005"
+#! BOUNDING_RECT="584.382 -468.005 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SQLStatements{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="SQLStatements"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="text_line_data"/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="||GOGO||"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="ListExploder"
+#! VERSION="4"
+#! POSITION="584.382 -672.007"
+#! BOUNDING_RECT="584.382 -672.007 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="LIST_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SQLStatements" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="SQLStatements{}"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder"/>
+#! <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Original"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="1188.63 -495.005"
+#! BOUNDING_RECT="1188.63 -495.005 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="USE&lt;space&gt;Databases"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SQLStatements" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="EmptyStrings"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="SQLStatements" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="Other"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="SQLStatements" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Other"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SQLStatements&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;BEGINS_WITH&lt;space&gt;USE&lt;lt&gt;space&lt;gt&gt;&lt;quote&gt;,USE&lt;space&gt;Databases,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;SQLStatements&lt;space&gt;ATTRIBUTE_IS_EMPTY&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,EmptyStrings"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="-30.6243 -606.005"
+#! BOUNDING_RECT="-30.6243 -606.005 451 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="text_line_data"/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openbracket&gt;&lt;backslash&gt;r&lt;backslash&gt;n&lt;closebracket&gt;&lt;openbracket&gt;&lt;backslash&gt;s&lt;closebracket&gt;*GO&lt;openbracket&gt;&lt;backslash&gt;s&lt;closebracket&gt;&lt;openbracket&gt;&lt;backslash&gt;r&lt;backslash&gt;n&lt;closebracket&gt;"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="||GOGO||"/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacerRegEx"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="SQLText"
+#! POSITION="-707.625 -528.005"
+#! BOUNDING_RECT="-707.625 -528.005 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="text_line_data" ATTR_VALUE="$(SQLText)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="8"
+#! NAME="SQLExecutions"
+#! POSITION="1904.63 -606.005"
+#! BOUNDING_RECT="1904.63 -606.005 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="SQLStatements" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="4"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="5"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="9"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(SQLStatementSplitter_WORKSPACE_NAME)_SQLText <at>Value<openparen>text_line_data<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO SQLStatementSplitter_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SQLStatementSplitter_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SQLStatementSplitter_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLStatementSplitter_WORKSPACE_NAME)_SQLText1446110963 Input Splitter"   INPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_SQLText"   OUTPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_SQLText" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,text_line_data,$($(SQLStatementSplitter_WORKSPACE_NAME)_SQLText), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(SQLStatementSplitter_WORKSPACE_NAME)_StringReplacerRegEx_d269394b_292d_4b48_aa91_02fb8adc17341_replacer { findText replaceText invalidValue} {     set attrs [split \"text_line_data\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_StringReplacerRegEx    INPUT  FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_SQLText"    OUTPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_StringReplacerRegEx_OUTPUT"         @Tcl2("$(SQLStatementSplitter_WORKSPACE_NAME)_StringReplacerRegEx_d269394b_292d_4b48_aa91_02fb8adc17341_replacer {<openbracket><backslash>r<backslash>n<closebracket><openbracket><backslash>s<closebracket>*GO<openbracket><backslash>s<closebracket><openbracket><backslash>r<backslash>n<closebracket>} {||GOGO||} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitDelim [FME_DecodeText {||GOGO||}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitDelim]] }      {         set $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitWidths [split [regsub -all {s$} {||GOGO||} {}] s];         proc $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitWidths;            set source [FME_GetAttribute [FME_DecodeText {text_line_data}]];            set attrNum 0;            set listName [FME_DecodeText {SQLStatements}];            set attrPos 0;            set keepEmptyParts [string equal {No} {No}];            foreach width [set $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               set part [string trim $bit];               if { $keepEmptyParts || $part != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $part;                  incr attrNum;               };               incr attrPos $width;            };         };      }      else      {         proc $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitDelim;            set delim [set $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_b729aa2a_388b_4829_866e_550677df3ee91_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute [FME_DecodeText {text_line_data}]];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              lappend bits [string range $source $startIndex [expr $nextIndex-1]];              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            lappend bits [string range $source $startIndex end];            set listName [FME_DecodeText {SQLStatements}];            set attrNum 0;            foreach bit $bits            {               set trimmedPart [string trim $bit];               if { $keepEmptyParts || $trimmedPart != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $trimmedPart;                  incr attrNum;               };            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_StringReplacerRegEx_OUTPUT"    OUTPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_ListExploder    INPUT  FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    LIST_NAME "SQLStatements{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "ORIGINAL_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_ListExploder_LIST_FOUND"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_ListExploder_LIST_FOUND"    OUTPUT FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>SQLStatements<closeparen>,$(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter) BEGINS_WITH USE<space> ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_USE<space>Databases OUTPUT FAILED FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TestFactory_1 INPUT FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 TEST SQLStatements ATTRIBUTE_IS_EMPTY "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_EmptyStrings OUTPUT FAILED FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_Other INPUT FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_Other
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter USE<space>Databases Output Nuker"   INPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_USE<space>Databases"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter EmptyStrings Output Nuker"   INPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_EmptyStrings"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLStatementSplitter_WORKSPACE_NAME)_SQLExecutions1446110963 Output Collector"   INPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_TestFilter_Other"   OUTPUT FEATURE_TYPE "$(SQLStatementSplitter_WORKSPACE_NAME)_SQLExecutions" @RemoveAttributes(_element_index)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SQLStatementSplitter_WORKSPACE_NAME))}]

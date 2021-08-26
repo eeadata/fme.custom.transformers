@@ -1,0 +1,865 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN PointCloudEeaGridNumComponentAdder,2,,2644b323-67c4-4614-9579-7570cc38ff87,"Embedded by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#!   FMX_INSERT_MODE="Embedded by Default"
+#!   SHOW_INFO_NODES="true"
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   LAST_SAVE_DATE="2016-10-20T13:38:26"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2713.26 759.382"
+#!   MAX_LOOP_ITERATIONS=""
+#!   HISTORY=""
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   VIEW_POSITION="-465.63 390.629"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   PASSWORD=""
+#!   DESCRIPTION="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_DOCUMENT_GUID="2644b323-67c4-4614-9579-7570cc38ff87"
+#!   ITERATION_COUNT_ATTR=""
+#!   ZOOM_SCALE="100"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_BUILD_NUM="16674"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   XFORM_DEPRECATED="No"
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   DOC_TOP_LEFT="-249.872 -862.258"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   CATEGORY=""
+#!   FME_PROCESS_GROUP_BY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   TITLE="PointCloudEeaGridNumComponentAdder"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_SERVER_SERVICES=""
+#!   WORKSPACE_VERSION="1"
+#!   BLOCKED_LOOPING="No"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI PC_COMPONENT_ENCODED PC_COMPONENT x%y%z%* Point Cloud Target Component:"
+#!   DEFAULT_VALUE="gid"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_CHOICE_OR_ATTR TARGET_GRID 100%250%1000%10000%100000%1000000 Target Grid:"
+#!   DEFAULT_VALUE="100"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PointCloudExpressionEvaluator"
+#!   VERSION="2"
+#!   POSITION="1275.01 -352.254"
+#!   BOUNDING_RECT="1275.01 -352.254 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid_mask" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPRESSION_TABLE" PARM_VALUE="$(PC_COMPONENT) Int64 &lt;space&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;tab&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;68719476736&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;4294967296&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;268435456&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16777216&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1048576&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;65536&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;4096&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;256&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;100&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;100&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;lf&gt;&lt;closeparen&gt;&lt;space&gt;&lt;amp&gt;&lt;space&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_pointcloud_2_eeagrid_target_grid_mask&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PointCloudExpressionEvaluator"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="680.257 -102.876"
+#!   BOUNDING_RECT="680.257 -102.876 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="250"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(TARGET_GRID)&lt;space&gt;=&lt;space&gt;250&lt;quote&gt;,250"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="PointCloudExpressionEvaluator"
+#!   VERSION="2"
+#!   POSITION="1275.01 -102.876"
+#!   BOUNDING_RECT="1275.01 -102.876 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPRESSION_TABLE" PARM_VALUE="$(PC_COMPONENT) Int64 1099511627776&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;68719476736&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;4294967296&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;268435456&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16777216&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1048576&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;65536&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;4096&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;256&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;250&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;amp&gt;&lt;space&gt;3&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;250&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;amp&gt;&lt;space&gt;3&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PointCloudExpressionEvaluator_2"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeValueMapper"
+#!   VERSION="6"
+#!   POSITION="774.008 -643.506"
+#!   BOUNDING_RECT="774.008 -643.506 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid_mask" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
+#!     <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_pointcloud_2_eeagrid_target_grid_mask"/>
+#!     <XFORM_PARM PARM_NAME="MAPPING_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="1000,1099511627520,10000,1099511562240,100000,1099494850560,1000000,1095216660480"/>
+#!     <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="_pointcloud_2_eeagrid_target_grid"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward (Source To Destination)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="751.132 -373.191"
+#!   BOUNDING_RECT="751.132 -373.191 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _pointcloud_2_eeagrid_target_grid SET_TO $(TARGET_GRID)"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="16"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1915.64 -102.876"
+#!   BOUNDING_RECT="1915.64 -102.876 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_pointcloud_2_eeagrid_target_grid_mask,_pointcloud_2_eeagrid_target_grid"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="GeometryFilter"
+#!   VERSION="7"
+#!   POSITION="184.377 -742.006"
+#!   BOUNDING_RECT="184.377 -742.006 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="POINTCLOUD"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="BREAK_AGG" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryFilter"/>
+#!     <XFORM_PARM PARM_NAME="INSTANTIATE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GEOM_PORT_NAMES" PARM_VALUE="&quot;Point Cloud&quot;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Input"
+#!   POSITION="-249.872 -102.876"
+#!   BOUNDING_RECT="-249.872 -102.876 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Result"
+#!   POSITION="2463.39 -102.876"
+#!   BOUNDING_RECT="2463.39 -102.876 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="21"
+#!   NAME="Rejected"
+#!   POSITION="2463.39 -862.258"
+#!   BOUNDING_RECT="2463.39 -862.258 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 RESULT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 250"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 RESULT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="3"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="16"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 POINTCLOUD"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;lt&lt;gt&gt;UNFILTERED&lt;lt&gt;gt&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="21"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;UNFILTERED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PC_COMPONENT gid
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TARGET_GRID 100
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input1476963506 Input Splitter"   INPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+MACRO OUTPUT_POINTCLOUD_FTYPE not_selected
+MACRO OUTPUT_POINTCLOUD_FTYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_POINTCLOUD
+MACRO OUTPUT_INSTANCE_FTYPE not_selected
+
+Lookup $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_RouterTable   ""  "not_selected"   fme_point_cloud $(OUTPUT_POINTCLOUD_FTYPE)
+
+MACRO COLLECTION_HANDLING NOT_THIS_TIME
+MACRO INSTANCE_FILTERING *
+INCLUDE [    if 0 {       puts "MACRO COLLECTION_HANDLING *";       if <Unused> {          puts "MACRO INSTANCE_FILTERING NOT_THIS_TIME";       };    };    if {{$(OUTPUT_INSTANCE_FTYPE)} == "not_selected"} {       puts "MACRO INSTANCE_FILTERING NOT_THIS_TIME";    }; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_InputPassThrough    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___       @Geometry(FIX_FMETYPE_FMEGEOMETRY)
+FACTORY_DEF $(INSTANCE_FILTERING) TestFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_InstanceTest    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___    TEST @Geometry(IS_GEOMETRY_INSTANCE) == 1    OUTPUT PASSED FEATURE_TYPE $(OUTPUT_INSTANCE_FTYPE)    OUTPUT FAILED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___
+FACTORY_DEF $(COLLECTION_HANDLING) TestFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_CollectionTest    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___    TEST &fme_type == "fme_collection"    OUTPUT FAILED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Not_Collection___    OUTPUT PASSED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Collection___
+FACTORY_DEF $(COLLECTION_HANDLING) DeaggregateFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_Deagg    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Collection___    HOMOGENIZE_COLLECTIONS YES    RECURSIVE YES    SET_FME_TYPE YES    INSTANTIATE_GEOMETRY_INSTANCES_NEW <Unused>    OUTPUT POINT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT LINE FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT POLYGON FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT DONUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT AGGREGATE FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_RouterPrepper    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Not_Collection___    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___    OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Prepped___        $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_0a02c9f2_251f_4871_b3cb_fb2988ec9d760_targetFeatureType @Lookup($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_RouterTable,&fme_type)
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_Router    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Prepped___    TEST @Value($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_0a02c9f2_251f_4871_b3cb_fb2988ec9d760_targetFeatureType) != "not_selected"    OUTPUT PASSED FEATURE_TYPE * @FeatureType(@Value($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_0a02c9f2_251f_4871_b3cb_fb2988ec9d760_targetFeatureType))                                 @RemoveAttributes($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_0a02c9f2_251f_4871_b3cb_fb2988ec9d760_targetFeatureType)    OUTPUT FAILED FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_<UNFILTERED>"        @RemoveAttributes($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_0a02c9f2_251f_4871_b3cb_fb2988ec9d760_targetFeatureType)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_POINTCLOUD"    OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TARGET_GRID$encode),$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter) = 250 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_250 OUTPUT FAILED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "_pointcloud_2_eeagrid_target_grid" "SET_TO" "$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TARGET_GRID$encode)"    OUTPUT OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+Lookup "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_LOOKUP_TABLE"   1000            1099511627520   10000           1099511562240   100000          1099494850560   1000000         1095216660480   ""              ""   ENCODED_SUPPORTUNICODE
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_OUTPUT"         @Lookup($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_LOOKUP_TABLE,"_pointcloud_2_eeagrid_target_grid",FORWARD|ENCODED_ATTR|REAL_NULL_SUPPORT, _pointcloud_2_eeagrid_target_grid_mask)
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_TYPE_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_EXPRESSION_LIST
+INCLUDE [    foreach {component componenttype expression} [split {$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PC_COMPONENT) Int64 @EvaluateExpression(FDIV,STRING_ENCODED,<space><at>int64<openparen><tab><space><space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space>68719476736<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space><space>4294967296<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space>268435456<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space>16777216<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space>1048576<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space>65536<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space>4096<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space>256<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space><space>100<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space><space>16<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space><space>100<closeparen><closeparen><space>%<space>10<closeparen><lf><closeparen><space><amp><space><at>int64<openparen><at>Value<openparen>_pointcloud_2_eeagrid_target_grid_mask<closeparen><closeparen>,$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator)}] {       lappend lists(COMPONENT) $component;       lappend lists(COMPONENT_TYPE) $componenttype;       if [regexp {@EvaluateExpression\(STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } elseif [regexp {@EvaluateExpression\(FDIV,STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } else {          lappend lists(EXPRESSION) $expression;       };    };    foreach {listName} [array names lists] {       puts "MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_${listName}_LIST \"[join $lists($listName) {;}]\"";    }; ]
+FACTORY_DEF * PointCloudEvaluationFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_OUTPUT"    MODE SET_COMPONENT_VALUES    COMPONENT_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_LIST)    COMPONENT_TYPE_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_TYPE_LIST)    EXPRESSION_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_EXPRESSION_LIST)    FORCE_FLOAT_DIVISION yes    OUTPUT RESULT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_RESULT"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_TYPE_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_EXPRESSION_LIST
+INCLUDE [    foreach {component componenttype expression} [split {$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PC_COMPONENT) Int64 @EvaluateExpression(FDIV,STRING_ENCODED,1099511627776<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space>68719476736<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space><space>4294967296<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space>268435456<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space>16777216<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space>1048576<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space>65536<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space>4096<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space>256<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space><space>250<closeparen><closeparen><space><space><amp><space>3<closeparen><space>*<space><space><space><space><space><space><space><space><space><space>16<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space><space>250<closeparen><closeparen><space><space><amp><space>3<closeparen>,$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2)}] {       lappend lists(COMPONENT) $component;       lappend lists(COMPONENT_TYPE) $componenttype;       if [regexp {@EvaluateExpression\(STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } elseif [regexp {@EvaluateExpression\(FDIV,STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } else {          lappend lists(EXPRESSION) $expression;       };    };    foreach {listName} [array names lists] {       puts "MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_${listName}_LIST \"[join $lists($listName) {;}]\"";    }; ]
+FACTORY_DEF * PointCloudEvaluationFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_250"    MODE SET_COMPONENT_VALUES    COMPONENT_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_LIST)    COMPONENT_TYPE_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_TYPE_LIST)    EXPRESSION_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_EXPRESSION_LIST)    FORCE_FLOAT_DIVISION yes    OUTPUT RESULT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_RESULT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_RESULT"    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_RESULT"    OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,_pointcloud_2_eeagrid_target_grid_mask,_pointcloud_2_eeagrid_target_grid)        @RemoveAttributes(fme_pcre_match"$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Result1476963506 Output Collector"   INPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Result"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Rejected1476963506 Output Collector"   INPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_<UNFILTERED>"   OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Rejected"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN PointCloudEeaGridNumComponentAdder,1,,bfe10b01-5c65-44a2-8ae3-8350abdc4a0f,"Embedded by Default",No,NO_PARALLELISM,,No,16177,YES,No
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#!   SHOW_ANNOTATIONS="true"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   HISTORY=""
+#!   DESCRIPTION="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   FME_DOCUMENT_GUID="bfe10b01-5c65-44a2-8ae3-8350abdc4a0f"
+#!   ZOOM_SCALE="100"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   FME_SERVER_SERVICES=""
+#!   REQUIREMENTS_KEYWORD="none"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="2713.26 759.382"
+#!   CATEGORY=""
+#!   LAST_SAVE_BUILD="FME(R) 2016.0.1.1 (20160224 - Build 16177 - WIN64)"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_BUILD_NUM="16177"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   FMX_INSERT_MODE="Embedded by Default"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="PointCloudEeaGridNumComponentAdder"
+#!   LAST_SAVE_DATE="2016-09-05T10:37:15"
+#!   VIEW_POSITION="-446.879 78.1258"
+#!   DOC_TOP_LEFT="-249.872 -862.258"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   BLOCKED_LOOPING="No"
+#!   XFORM_DEPRECATED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   PASSWORD=""
+#!   WORKSPACE_VERSION="1"
+#!   ITERATION_COUNT_ATTR=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI PC_COMPONENT_ENCODED PC_COMPONENT x%y%z%* Point Cloud Target Component:"
+#!   DEFAULT_VALUE="gid"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI STRING_OR_CHOICE_OR_ATTR TARGET_GRID 100%250%1000%10000%100000%1000000 Target Grid:"
+#!   DEFAULT_VALUE="100"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PointCloudExpressionEvaluator"
+#!   VERSION="2"
+#!   POSITION="1275.01 -352.254"
+#!   BOUNDING_RECT="1275.01 -352.254 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid_mask" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPRESSION_TABLE" PARM_VALUE="$(PC_COMPONENT) Int64 &lt;space&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;tab&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;68719476736&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;4294967296&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;268435456&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16777216&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1048576&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;65536&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;4096&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;256&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;100&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;100&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;lf&gt;&lt;closeparen&gt;&lt;space&gt;&lt;amp&gt;&lt;space&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_pointcloud_2_eeagrid_target_grid_mask&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PointCloudExpressionEvaluator"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="680.257 -102.876"
+#!   BOUNDING_RECT="680.257 -102.876 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="250"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(TARGET_GRID)&lt;space&gt;=&lt;space&gt;250&lt;quote&gt;,250"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="PointCloudExpressionEvaluator"
+#!   VERSION="2"
+#!   POSITION="1275.01 -102.876"
+#!   BOUNDING_RECT="1275.01 -102.876 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="RESULT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXPRESSION_TABLE" PARM_VALUE="$(PC_COMPONENT) Int64 1099511627776&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;68719476736&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000000&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;4294967296&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;268435456&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;100000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16777216&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1048576&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;10000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;65536&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;4096&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;256&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;x&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;250&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;16&lt;lf&gt;&lt;tab&gt;+&lt;space&gt;&lt;openparen&gt;&lt;at&gt;int64&lt;openparen&gt;&lt;at&gt;floor&lt;openparen&gt;&lt;at&gt;Component&lt;openparen&gt;y&lt;closeparen&gt;&lt;space&gt;&lt;solidus&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;250&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;%&lt;space&gt;10&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PointCloudExpressionEvaluator_2"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeValueMapper"
+#!   VERSION="6"
+#!   POSITION="774.008 -643.506"
+#!   BOUNDING_RECT="774.008 -643.506 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid_mask" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="_pointcloud_2_eeagrid_target_grid"/>
+#!     <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_pointcloud_2_eeagrid_target_grid_mask"/>
+#!     <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward (Source To Destination)"/>
+#!     <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="1000,1099511627520,10000,1099511562240,100000,1099494850560,1000000,1095216660480"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MAPPING_GRP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="751.132 -373.191"
+#!   BOUNDING_RECT="751.132 -373.191 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pointcloud_2_eeagrid_target_grid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _pointcloud_2_eeagrid_target_grid SET_TO $(TARGET_GRID)"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="16"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1915.64 -102.876"
+#!   BOUNDING_RECT="1915.64 -102.876 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_pointcloud_2_eeagrid_target_grid_mask,_pointcloud_2_eeagrid_target_grid"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="GeometryFilter"
+#!   VERSION="7"
+#!   POSITION="184.377 -742.006"
+#!   BOUNDING_RECT="184.377 -742.006 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16177"
+#! >
+#!     <OUTPUT_FEAT NAME="POINTCLOUD"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_PARM PARM_NAME="INSTANTIATE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BREAK_AGG" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryFilter"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_PORT_NAMES" PARM_VALUE="&quot;Point Cloud&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Input"
+#!   POSITION="-249.872 -102.876"
+#!   BOUNDING_RECT="-249.872 -102.876 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Result"
+#!   POSITION="2463.39 -102.876"
+#!   BOUNDING_RECT="2463.39 -102.876 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="21"
+#!   NAME="Rejected"
+#!   POSITION="2463.39 -862.258"
+#!   BOUNDING_RECT="2463.39 -862.258 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="3"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="7"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="16"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="21"
+#!   SOURCE_PORT_DESC="fo 1"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PC_COMPONENT gid
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TARGET_GRID 100
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input1473064635 Input Splitter"   INPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+MACRO OUTPUT_POINTCLOUD_FTYPE not_selected
+MACRO OUTPUT_POINTCLOUD_FTYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_POINTCLOUD
+MACRO OUTPUT_INSTANCE_FTYPE not_selected
+
+Lookup $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_RouterTable   ""  "not_selected"   fme_point_cloud $(OUTPUT_POINTCLOUD_FTYPE)
+
+MACRO COLLECTION_HANDLING NOT_THIS_TIME
+MACRO INSTANCE_FILTERING *
+INCLUDE [    if 0 {       puts "MACRO COLLECTION_HANDLING *";       if <Unused> {          puts "MACRO INSTANCE_FILTERING NOT_THIS_TIME";       };    };    if {{$(OUTPUT_INSTANCE_FTYPE)} == "not_selected"} {       puts "MACRO INSTANCE_FILTERING NOT_THIS_TIME";    }; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_InputPassThrough    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___       @Geometry(FIX_FMETYPE_FMEGEOMETRY)
+FACTORY_DEF $(INSTANCE_FILTERING) TestFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_InstanceTest    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___    TEST @Geometry(IS_GEOMETRY_INSTANCE) == 1    OUTPUT PASSED FEATURE_TYPE $(OUTPUT_INSTANCE_FTYPE)    OUTPUT FAILED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___
+FACTORY_DEF $(COLLECTION_HANDLING) TestFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_CollectionTest    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___    TEST &fme_type == "fme_collection"    OUTPUT FAILED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Not_Collection___    OUTPUT PASSED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Collection___
+FACTORY_DEF $(COLLECTION_HANDLING) DeaggregateFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_Deagg    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Collection___    HOMOGENIZE_COLLECTIONS YES    RECURSIVE YES    SET_FME_TYPE YES    INSTANTIATE_GEOMETRY_INSTANCES_NEW <Unused>    OUTPUT POINT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT LINE FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT POLYGON FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT DONUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    OUTPUT AGGREGATE FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_RouterPrepper    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___HomogeneousAggregate___    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Not_Collection___    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Input___    OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Prepped___        $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_ffba1174_10eb_4be0_b597_5a4c6bcaf4b20_targetFeatureType @Lookup($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_RouterTable,&fme_type)
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_Router    INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter___Prepped___    TEST @Value($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_ffba1174_10eb_4be0_b597_5a4c6bcaf4b20_targetFeatureType) != "not_selected"    OUTPUT PASSED FEATURE_TYPE * @FeatureType(@Value($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_ffba1174_10eb_4be0_b597_5a4c6bcaf4b20_targetFeatureType))                                 @RemoveAttributes($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_ffba1174_10eb_4be0_b597_5a4c6bcaf4b20_targetFeatureType)    OUTPUT FAILED FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_<UNFILTERED>"        @RemoveAttributes($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_ffba1174_10eb_4be0_b597_5a4c6bcaf4b20_targetFeatureType)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_POINTCLOUD"    OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TARGET_GRID$encode),$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter) = 250 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_250 OUTPUT FAILED FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_<lt>UNFILTERED<gt>"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "_pointcloud_2_eeagrid_target_grid" "SET_TO" "$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TARGET_GRID$encode)"    OUTPUT OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+Lookup "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_LOOKUP_TABLE"   1000            1099511627520   10000           1099511562240   100000          1099494850560   1000000         1095216660480   ""              ""   ENCODED_SUPPORTUNICODE
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_OUTPUT"         @Lookup($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_LOOKUP_TABLE,"_pointcloud_2_eeagrid_target_grid",FORWARD|ENCODED_ATTR|REAL_NULL_SUPPORT, _pointcloud_2_eeagrid_target_grid_mask)
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_TYPE_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_EXPRESSION_LIST
+INCLUDE [    foreach {component componenttype expression} [split {$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PC_COMPONENT) Int64 @EvaluateExpression(FDIV,STRING_ENCODED,<space><at>int64<openparen><tab><space><space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space>68719476736<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space><space>4294967296<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space>268435456<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space>16777216<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space>1048576<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space>65536<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space>4096<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space>256<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space><space>100<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space><space>16<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space><space>100<closeparen><closeparen><space>%<space>10<closeparen><lf><closeparen><space><amp><space><at>int64<openparen><at>Value<openparen>_pointcloud_2_eeagrid_target_grid_mask<closeparen><closeparen>,$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator)}] {       lappend lists(COMPONENT) $component;       lappend lists(COMPONENT_TYPE) $componenttype;       if [regexp {@EvaluateExpression\(STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } elseif [regexp {@EvaluateExpression\(FDIV,STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } else {          lappend lists(EXPRESSION) $expression;       };    };    foreach {listName} [array names lists] {       puts "MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_${listName}_LIST \"[join $lists($listName) {;}]\"";    }; ]
+FACTORY_DEF * PointCloudEvaluationFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeValueMapper_OUTPUT"    MODE SET_COMPONENT_VALUES    COMPONENT_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_LIST)    COMPONENT_TYPE_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_COMPONENT_TYPE_LIST)    EXPRESSION_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_EXPRESSION_LIST)    FORCE_FLOAT_DIVISION yes    OUTPUT RESULT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_RESULT"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_TYPE_LIST
+DEFAULT_MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_EXPRESSION_LIST
+INCLUDE [    foreach {component componenttype expression} [split {$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PC_COMPONENT) Int64 @EvaluateExpression(FDIV,STRING_ENCODED,1099511627776<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space>68719476736<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space>1000000<closeparen><closeparen><closeparen><space><space><space><space><space><space>*<space><space>4294967296<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space>268435456<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space>100000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space>16777216<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space>1048576<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space>10000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space>65536<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space>4096<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space>1000<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space>256<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>x<closeparen><space><solidus><space><space><space><space><space>250<closeparen><closeparen><space>%<space>10<closeparen><space>*<space><space><space><space><space><space><space><space><space><space>16<lf><tab>+<space><openparen><at>int64<openparen><at>floor<openparen><at>Component<openparen>y<closeparen><space><solidus><space><space><space><space><space>250<closeparen><closeparen><space>%<space>10<closeparen>,$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2)}] {       lappend lists(COMPONENT) $component;       lappend lists(COMPONENT_TYPE) $componenttype;       if [regexp {@EvaluateExpression\(STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } elseif [regexp {@EvaluateExpression\(FDIV,STRING_ENCODED,(.*),.+\)} $expression -> unwrapped] {          lappend lists(EXPRESSION) $unwrapped;       } else {          lappend lists(EXPRESSION) $expression;       };    };    foreach {listName} [array names lists] {       puts "MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_${listName}_LIST \"[join $lists($listName) {;}]\"";    }; ]
+FACTORY_DEF * PointCloudEvaluationFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_TestFilter_250"    MODE SET_COMPONENT_VALUES    COMPONENT_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_LIST)    COMPONENT_TYPE_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_COMPONENT_TYPE_LIST)    EXPRESSION_LIST $($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_EXPRESSION_LIST)    FORCE_FLOAT_DIVISION yes    OUTPUT RESULT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_RESULT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_2_RESULT"    INPUT  FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_PointCloudExpressionEvaluator_RESULT"    OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,_pointcloud_2_eeagrid_target_grid_mask,_pointcloud_2_eeagrid_target_grid)        @RemoveAttributes(fme_pcre_match"$($(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Result1473064635 Output Collector"   INPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Result"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Rejected1473064635 Output Collector"   INPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_GeometryFilter_<UNFILTERED>"   OUTPUT FEATURE_TYPE "$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME)_Rejected"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(PointCloudEeaGridNumComponentAdder_WORKSPACE_NAME))}]
+

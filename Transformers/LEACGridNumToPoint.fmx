@@ -1,0 +1,316 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN LEACGridNumToPoint,1,LEAC,f3b36732-a7c3-4eb2-a21e-3f556a0d28bf,"Linked by Default",no,,,No,15515,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Converts a LEAC GridNum code into a vertex point.</p>
+# 
+# TRANSFORMER_END
+#! FMX_INSERT_MODE="Linked by Default"
+#! SHOW_ANNOTATIONS="true"
+#! ZOOM_SCALE="100"
+#! HISTORY=""
+#! FME_PROCESS_COUNT=""
+#! DOC_TOP_LEFT="-1432.52 -598.5"
+#! REQUIREMENTS_KEYWORD="none"
+#! FME_DOCUMENT_PRIORGUID="56557e08-c318-4399-b9c4-01965f797e89,08ebe2e0-c4e2-4f89-a8c6-261efaec63dc,2700317b-016a-4ac1-8ee0-5ba71b629f25,a065a9b1-e1e0-4f5e-bdf6-b16d75e8f179,770da457-ae71-4096-baa0-0bb731a15285,c58c017a-4eb4-4c01-9b61-72403ece9c7f,74f22cff-6409-4314-801f-097a0f49976b"
+#! ITERATION_COUNT_ATTR=""
+#! CATEGORY="LEAC"
+#! VIEW_POSITION="-2061.02 1041.01"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Converts a LEAC GridNum code into a vertex point.&lt;/p&gt;&#10;"
+#! FME_SERVER_SERVICES=""
+#! BLOCKED_LOOPING="no"
+#! FME_PROCESS_GROUP_BY=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! XFORM_DEPRECATED="No"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN64)"
+#! MAX_LOOP_ITERATIONS=""
+#! FME_BUILD_NUM="15515"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="LEACGridNumToPoint"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="2488.03 1326.01"
+#! LAST_SAVE_DATE="2016-01-14T16:15:14"
+#! FME_DOCUMENT_GUID="f3b36732-a7c3-4eb2-a21e-3f556a0d28bf"
+#! REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! WORKSPACE_VERSION="1"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! PASSWORD=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR GRIDNUM GridNum:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;GridNum&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL ATTRLIST FME_PROCESS_GROUP_BY &quot; &quot; Parallel Process By:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="14"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;X Upper Left Coordinate : 900000.0&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Y Upper Left Coordinate : 5500000.0&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;X Cell Spacing: 1000&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Y Cell Spacing: 1000&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Number of Columns : 65000&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Number of Rows : 46000&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Column 900&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Row  5499&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-1432.52 727.511"
+#! TOP_LEFT="-1432.52 727.511"
+#! BOTTOM_RIGHT="-429.01 244.506"
+#! BOUNDING_RECT="-1432.52 727.511 1003.51 483.005"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="15"
+#! NAME="New Bookmark"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The Rasters fit exactly in the EEA GRID Therefore we can calculate the offset of the first tile (upper left) on 900,5499.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-844.51 282.003"
+#! BOTTOM_RIGHT="844.51 -598.5"
+#! BOUNDING_RECT="-844.51 282.003 1689.02 880.503"
+#! STICKY="true"
+#! COLOUR="0.529412,0.384314,0.14902"
+#! CONTENTS="16 12 8 13 10 9 11 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-619.635 13.005"
+#! BOUNDING_RECT="-619.635 13.005 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="GridNum" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumCol" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumRow" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_GridNumCol,&lt;at&gt;Evaluate&lt;openparen&gt;&lt;at&gt;Substring&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;GridNum&lt;closeparen&gt;&lt;comma&gt;1&lt;comma&gt;4&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;-&lt;space&gt;900&lt;closeparen&gt;,_GridNumRow,&lt;at&gt;Evaluate&lt;openparen&gt;5499&lt;space&gt;-&lt;space&gt;&lt;at&gt;Right&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;GridNum&lt;closeparen&gt;&lt;comma&gt;4&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CalcColRow"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-619.635 -213.494"
+#! BOUNDING_RECT="-619.635 -213.494 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="GridNum" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumCol" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumRow" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="x,&lt;at&gt;Evaluate&lt;openparen&gt;900000.0&lt;space&gt;+&lt;space&gt;&lt;openparen&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_GridNumCol&lt;closeparen&gt;*1000&lt;closeparen&gt;&lt;space&gt;+&lt;space&gt;500&lt;closeparen&gt;&lt;closeparen&gt;,y,&lt;at&gt;Evaluate&lt;openparen&gt;&lt;openparen&gt;5500000.0&lt;space&gt;-&lt;space&gt;&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_GridNumRow&lt;closeparen&gt;*1000&lt;closeparen&gt;-&lt;space&gt;500&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CalcXY"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="VertexCreator"
+#! VERSION="1"
+#! POSITION="23.7452 13.005"
+#! BOUNDING_RECT="23.7452 13.005 631.887 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15539"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="GridNum" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumCol" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumRow" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="GridNum" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumCol" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumRow" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="YVAL" PARM_VALUE="@Value(y)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE_NAME" PARM_VALUE="Add Point"/>
+#! <XFORM_PARM PARM_NAME="ZVAL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VertexCreator"/>
+#! <XFORM_PARM PARM_NAME="XVAL" PARM_VALUE="@Value(x)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="CoordinateSystemSetter"
+#! VERSION="0"
+#! POSITION="35.7452 -243.494"
+#! BOUNDING_RECT="35.7452 -243.494 619.887 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15480"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="GridNum" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumCol" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumRow" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE="ETRS89.Europe/EqArea"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CoordinateSystemSetter"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="Output"
+#! POSITION="1055.51 -106.995"
+#! BOUNDING_RECT="1055.51 -106.995 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="_GridNumCol" />
+#! <XFORM_ATTR ATTR_NAME="_GridNumRow" />
+#! <XFORM_ATTR ATTR_NAME="col" />
+#! <XFORM_ATTR ATTR_NAME="GridNum" />
+#! <XFORM_ATTR ATTR_NAME="row" />
+#! <XFORM_ATTR ATTR_NAME="x" />
+#! <XFORM_ATTR ATTR_NAME="y" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="7"
+#! NAME="Input"
+#! POSITION="-1356.76 13.005"
+#! BOUNDING_RECT="-1356.76 13.005 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="GridNum" ATTR_VALUE="$(GRIDNUM)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(LEACGridNumToPoint_WORKSPACE_NAME)_GRIDNUM <at>Value<openparen>GridNum<closeparen>
+DEFAULT_MACRO $(LEACGridNumToPoint_WORKSPACE_NAME)_FME_PROCESS_GROUP_BY 
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO LEACGridNumToPoint_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(LEACGridNumToPoint_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(LEACGridNumToPoint_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LEACGridNumToPoint_WORKSPACE_NAME)_Input1452784514 Input Splitter"   INPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,GridNum,$($(LEACGridNumToPoint_WORKSPACE_NAME)_GRIDNUM), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(LEACGridNumToPoint_WORKSPACE_NAME)_CalcColRow ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_Input" ATTR _GridNumCol <at>Evaluate<openparen><at>Substring<openparen><at>Value<openparen>GridNum<closeparen><comma>1<comma>4<closeparen><space><space>-<space>900<closeparen> ATTR _GridNumRow <at>Evaluate<openparen>5499<space>-<space><at>Right<openparen><at>Value<openparen>GridNum<closeparen><comma>4<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_CalcColRow_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(LEACGridNumToPoint_WORKSPACE_NAME)_CalcXY ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_CalcColRow_OUTPUT" ATTR x <at>Evaluate<openparen>900000.0<space>+<space><openparen><openparen><at>Value<openparen>_GridNumCol<closeparen>*1000<closeparen><space>+<space>500<closeparen><closeparen> ATTR y <at>Evaluate<openparen><openparen>5500000.0<space>-<space><openparen><at>Value<openparen>_GridNumRow<closeparen>*1000<closeparen>-<space>500<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_CalcXY_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * VertexCreatorFactory    FACTORY_NAME $(LEACGridNumToPoint_WORKSPACE_NAME)_VertexCreator    INPUT  FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_CalcXY_OUTPUT"    MODE ADD    CONTINUE_ON_ERROR YES    XVAL "@EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>x<closeparen>,$(LEACGridNumToPoint_WORKSPACE_NAME)_VertexCreator)"    YVAL "@EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>y<closeparen>,$(LEACGridNumToPoint_WORKSPACE_NAME)_VertexCreator)"    OUTPUT OUTPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_VertexCreator_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(LEACGridNumToPoint_WORKSPACE_NAME)_CoordinateSystemSetter    INPUT  FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_VertexCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_CoordinateSystemSetter_OUTPUT"         @CoordSys("ETRS89.Europe/EqArea")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LEACGridNumToPoint_WORKSPACE_NAME)_Output1452784514 Output Collector"   INPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_CoordinateSystemSetter_OUTPUT"   OUTPUT FEATURE_TYPE "$(LEACGridNumToPoint_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(LEACGridNumToPoint_WORKSPACE_NAME))}]

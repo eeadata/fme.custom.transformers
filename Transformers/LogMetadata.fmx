@@ -1,0 +1,565 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN LogMetadata,1,AirQuality,27183a92-c1db-451b-bf72-2a815a59ebcd,"Linked by Default",No,NO_PARALLELISM,,No,15515,YES,No
+# TRANSFORMER_END
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! FME_SERVER_SERVICES=""
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN64)"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! MAX_LOOP_ITERATIONS=""
+#! FME_DOCUMENT_GUID="27183a92-c1db-451b-bf72-2a815a59ebcd"
+#! DOC_EXTENTS="2904 488.504"
+#! PASSWORD=""
+#! WORKSPACE_VERSION="1"
+#! CATEGORY="AirQuality"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! SHOW_INFO_NODES="true"
+#! FME_BUILD_NUM="15515"
+#! ATTR_TYPE_ENCODING="SDF"
+#! LEGAL_TERMS_CONDITIONS=""
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! FMX_INSERT_MODE="Linked by Default"
+#! ZOOM_SCALE="100"
+#! LAST_SAVE_DATE="2016-01-05T12:54:42"
+#! REQUIREMENTS=""
+#! DESCRIPTION=""
+#! REQUIREMENTS_KEYWORD=""
+#! USAGE=""
+#! HISTORY=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_DOCUMENT_PRIORGUID="f26c767f-bf15-43e8-9ec1-bc3e2e732514,e1f6157f-60d9-43a6-914e-5d57cefb126b,58d1937b-7ab3-45bd-ab94-782614f52205,1a9a5097-489d-4773-98e3-048e7c638b3f,8b001bdb-3372-4af5-8f26-157168f8f4c4,0ca52bcd-4ead-4a8b-abd5-c6342cc1966b,a6437ee7-055d-4bfe-83a5-f811c0edf2eb,f60a3c6b-0614-4f7b-83a6-0253ecb0fed1,5b8e6701-5aca-4fac-b4a7-db0f20e5596f,aa5924a4-96ab-43a3-bb8b-c17d4e312baa,978cd7c9-b6a8-4364-a9c9-00df0bf75f1c,fd3acf00-7e9c-40aa-b3db-caf83e829ecd,7d5b65c3-8e3a-415a-a127-836ce06ae409,7aac3761-43ee-4475-a1b4-ce92117c5626"
+#! TITLE="LogMetadata"
+#! VIEW_POSITION="-2097.02 1116.01"
+#! BLOCKED_LOOPING="No"
+#! FME_PROCESS_GROUP_BY=""
+#! DOC_TOP_LEFT="-1867.51 -113.001"
+#! XFORM_DEPRECATED="No"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SUCCESS success:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;success&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR OBSERVATION_ID Observation Id:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;observation_id&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ERROR_TEXT Error Text:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;error_text&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FEATUREOFINTEREST_LOCALID Featureofinterest Localid:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;featureofinterest_localid&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FEATUREOFINTEREST_CREATED Fk Featureofinterest Created:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;featureofinterest_created&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PROCEDURE_CREATED Fk Procedure Created:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;procedure_created&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SAMPLINGPOINT_CREATED Fk Samplingpoint Created:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;samplingpoint_created&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PROCEDURE_LOCALID Procedure Localid:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;procedure_localid&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR PROPERTY_ID Property Id:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;property_id&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SAMPLINGPOINT_LOCALID Samplingpoint Localid:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;samplingpoint_localid&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR WARNING_TEXT Warning Text:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;warning_text&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR METADATA_LOG Metadata Log:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;metadata_log&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ERROR_LOG Error Log:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;error_log&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR WARNING_LOG Warning Log:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;warning_log&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="Aggregator"
+#! VERSION="12"
+#! POSITION="-1136.51 161.501"
+#! BOUNDING_RECT="-1136.51 161.501 515.501 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="procedure_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="property_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Geometry - Assemble One Level"/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DistinctObservations"/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="Homogeneous Collection (If Possible)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="observation_id featureofinterest_localid procedure_localid property_id samplingpoint_localid"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="XMLTemplater"
+#! VERSION="3"
+#! POSITION="-545.498 161.501"
+#! BOUNDING_RECT="-545.498 161.501 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="procedure_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="property_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xml" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="xml"/>
+#! <XFORM_PARM PARM_NAME="ERROR_QUERY_EXPR" PARM_VALUE="&lt;lt&gt;error&lt;gt&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;error_text&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lt&gt;&lt;solidus&gt;error&lt;gt&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONSECUTIVE_GROUPS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ROOT_QUERY_EXPR" PARM_VALUE="&lt;lt&gt;input&lt;space&gt;observationId=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;foiId=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;featureofinterest_localid&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;procedureId=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;procedure_localid&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;spId=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;samplingpoint_localid&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;opencurly&gt;fme:process-features&lt;openparen&gt;&lt;quote&gt;CREATED&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;comma&gt;&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;opencurly&gt;fme:process-features&lt;openparen&gt;&lt;quote&gt;ERROR&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;comma&gt;&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;input&lt;gt&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUB_TEMPLATE_PARAMS" PARM_VALUE="CREATED_QUERY_EXPR,&quot;WHOLE_LINE TEXT_EDIT_XQUERY_OR_ATTR GET%PROCESS%XMLSAMPLEGEN%GEOMETRY&quot;,&quot;CREATED Template Expression:&quot;,ERROR_QUERY_EXPR,&quot;WHOLE_LINE TEXT_EDIT_XQUERY_OR_ATTR GET%PROCESS%XMLSAMPLEGEN%GEOMETRY&quot;,&quot;ERROR Template Expression:&quot;"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VISIBLE_QUERY_VALIDATE" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_XML_HEADER" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="CREATED_QUERY_EXPR" PARM_VALUE="&lt;lt&gt;created&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;observation&lt;space&gt;id=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;if&lt;space&gt;&lt;openparen&gt;string&lt;openparen&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;featureofinterest_created&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;=&lt;quote&gt;1&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;then&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;foi&lt;space&gt;id=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;featureofinterest_localid&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else&lt;space&gt;&lt;openparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;if&lt;space&gt;&lt;openparen&gt;string&lt;openparen&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;procedure_created&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;=&lt;quote&gt;1&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;then&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;procedure&lt;space&gt;id=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;procedure_localid&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else&lt;space&gt;&lt;openparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;if&lt;space&gt;&lt;openparen&gt;string&lt;openparen&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;samplingpoint_created&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;=&lt;quote&gt;1&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;then&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;samplingPoint&lt;space&gt;id=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;samplingpoint_localid&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;space&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else&lt;space&gt;&lt;openparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;opencurly&gt;if&lt;space&gt;&lt;openparen&gt;string&lt;openparen&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;warning_text&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;!=&lt;quote&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;space&gt;then&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;warning&lt;gt&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;warning_text&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lt&gt;&lt;solidus&gt;warning&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else&lt;space&gt;&lt;openparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;created&lt;gt&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLTemplater"/>
+#! <XFORM_PARM PARM_NAME="ROOT_QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="-1097.51 -42.0007"
+#! BOUNDING_RECT="-1097.51 -42.0007 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="success" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="error_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="procedure_created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="procedure_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="property_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_localid" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="warning_text" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="success" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="error_text" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_localid" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="procedure_created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="procedure_localid" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="property_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_localid" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="warning_text" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;success&lt;closeparen&gt; != 0"/>
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CreationSuccess"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="XMLAppender"
+#! VERSION="3"
+#! POSITION="-57.4996 375.503"
+#! BOUNDING_RECT="-57.4996 375.503 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="UNUSED_DOCUMENT"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="UNUSED_FRAGMENT"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_localid" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="procedure_localid" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="property_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_localid" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xml" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PRETTY_PRINTING_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_DOCUMENT_ATTR" PARM_VALUE="metadata_log"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLAppender"/>
+#! <XFORM_PARM PARM_NAME="XML_DOCUMENT_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PRETTY_PRINT" PARM_VALUE="yes"/>
+#! <XFORM_PARM PARM_NAME="XML_OUTPUT_ATTR" PARM_VALUE="metadata_log"/>
+#! <XFORM_PARM PARM_NAME="APPEND_FRAGMENTS_AS_LONG" PARM_VALUE="Succeeding Children"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_ENCODING" PARM_VALUE="utf-8"/>
+#! <XFORM_PARM PARM_NAME="XML_OUTPUT_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TABS_WITH_SPACES" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="APPEND_PATH_IN_DOCUMENT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FRAGMENT_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_OUTPUT_TYPE" PARM_VALUE="Attribute"/>
+#! <XFORM_PARM PARM_NAME="INDENT_SIZE" PARM_VALUE="1"/>
+#! <XFORM_PARM PARM_NAME="XML_FRAGMENT_ATTR" PARM_VALUE="xml"/>
+#! <XFORM_PARM PARM_NAME="XML_DOCUMENT_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Document"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FRAGMENT_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_FRAGMENT_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Fragment"/>
+#! <XFORM_PARM PARM_NAME="XML_DOCUMENT_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_OUTPUT_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="22"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-545.498 375.503"
+#! BOUNDING_RECT="-545.498 375.503 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="metadata_log,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;_FME_NO_OP_&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST metadata_log ATTRIBUTE_VALUE_NULL _FME_BLANK_STRING_;TEST metadata_log ATTRIBUTE_IS_EMPTY _FME_BLANK_STRING_;TEST metadata_log ATTRIBUTE_IS_MISSING _FME_BLANK_STRING_&apos;&lt;lt&gt;metadataModifications&lt;gt&gt;&lt;lt&gt;&lt;solidus&gt;metadataModifications&lt;gt&gt;&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RootIfEmpty"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="32"
+#! TYPE="AttributeRemover"
+#! VERSION="1"
+#! POSITION="487.998 282.004"
+#! BOUNDING_RECT="487.998 282.004 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="observation_id"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="9"
+#! NAME="DistinctObservations_Input"
+#! POSITION="-1867.51 -42.0007"
+#! BOUNDING_RECT="-1867.51 -42.0007 604.501 71"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="success" ATTR_VALUE="$(SUCCESS)" />
+#! <XFORM_ATTR ATTR_NAME="observation_id" ATTR_VALUE="$(OBSERVATION_ID)" />
+#! <XFORM_ATTR ATTR_NAME="error_text" ATTR_VALUE="$(ERROR_TEXT)" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_localid" ATTR_VALUE="$(FEATUREOFINTEREST_LOCALID)" />
+#! <XFORM_ATTR ATTR_NAME="featureofinterest_created" ATTR_VALUE="$(FEATUREOFINTEREST_CREATED)" />
+#! <XFORM_ATTR ATTR_NAME="procedure_created" ATTR_VALUE="$(PROCEDURE_CREATED)" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_created" ATTR_VALUE="$(SAMPLINGPOINT_CREATED)" />
+#! <XFORM_ATTR ATTR_NAME="procedure_localid" ATTR_VALUE="$(PROCEDURE_LOCALID)" />
+#! <XFORM_ATTR ATTR_NAME="property_id" ATTR_VALUE="$(PROPERTY_ID)" />
+#! <XFORM_ATTR ATTR_NAME="samplingpoint_localid" ATTR_VALUE="$(SAMPLINGPOINT_LOCALID)" />
+#! <XFORM_ATTR ATTR_NAME="warning_text" ATTR_VALUE="$(WARNING_TEXT)" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" ATTR_VALUE="$(METADATA_LOG)" />
+#! <XFORM_ATTR ATTR_NAME="error_log" ATTR_VALUE="$(ERROR_LOG)" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" ATTR_VALUE="$(WARNING_LOG)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="JustXML_Output"
+#! POSITION="1036.49 251.502"
+#! BOUNDING_RECT="1036.49 251.502 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="metadata_log" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="25"
+#! NAME="ExistingTemplate"
+#! POSITION="-1097.51 315.503"
+#! BOUNDING_RECT="-1097.51 315.503 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="observation_id" ATTR_VALUE="$(OBSERVATION_ID)" />
+#! <XFORM_ATTR ATTR_NAME="metadata_log" ATTR_VALUE="$(METADATA_LOG)" />
+#! <XFORM_ATTR ATTR_NAME="error_log" ATTR_VALUE="$(ERROR_LOG)" />
+#! <XFORM_ATTR ATTR_NAME="warning_log" ATTR_VALUE="$(WARNING_LOG)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 2"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="25"
+#! TARGET_NODE="22"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="33"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="32"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="32"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_SUCCESS <at>Value<openparen>success<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_OBSERVATION_ID <at>Value<openparen>observation_id<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_ERROR_TEXT <at>Value<openparen>error_text<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_FEATUREOFINTEREST_LOCALID <at>Value<openparen>featureofinterest_localid<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_FEATUREOFINTEREST_CREATED <at>Value<openparen>featureofinterest_created<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_PROCEDURE_CREATED <at>Value<openparen>procedure_created<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_SAMPLINGPOINT_CREATED <at>Value<openparen>samplingpoint_created<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_PROCEDURE_LOCALID <at>Value<openparen>procedure_localid<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_PROPERTY_ID <at>Value<openparen>property_id<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_SAMPLINGPOINT_LOCALID <at>Value<openparen>samplingpoint_localid<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_WARNING_TEXT <at>Value<openparen>warning_text<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_METADATA_LOG <at>Value<openparen>metadata_log<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_ERROR_LOG <at>Value<openparen>error_log<closeparen>
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_WARNING_LOG <at>Value<openparen>warning_log<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO LogMetadata_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(LogMetadata_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(LogMetadata_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_Input1451994882 Input Splitter"   INPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_Input"   OUTPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_Input_0_fI3353OEH4c=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,success,$($(LogMetadata_WORKSPACE_NAME)_SUCCESS),observation_id,$($(LogMetadata_WORKSPACE_NAME)_OBSERVATION_ID),error_text,$($(LogMetadata_WORKSPACE_NAME)_ERROR_TEXT),featureofinterest_localid,$($(LogMetadata_WORKSPACE_NAME)_FEATUREOFINTEREST_LOCALID),featureofinterest_created,$($(LogMetadata_WORKSPACE_NAME)_FEATUREOFINTEREST_CREATED),procedure_created,$($(LogMetadata_WORKSPACE_NAME)_PROCEDURE_CREATED),samplingpoint_created,$($(LogMetadata_WORKSPACE_NAME)_SAMPLINGPOINT_CREATED),procedure_localid,$($(LogMetadata_WORKSPACE_NAME)_PROCEDURE_LOCALID),property_id,$($(LogMetadata_WORKSPACE_NAME)_PROPERTY_ID),samplingpoint_localid,$($(LogMetadata_WORKSPACE_NAME)_SAMPLINGPOINT_LOCALID),warning_text,$($(LogMetadata_WORKSPACE_NAME)_WARNING_TEXT),metadata_log,$($(LogMetadata_WORKSPACE_NAME)_METADATA_LOG),error_log,$($(LogMetadata_WORKSPACE_NAME)_ERROR_LOG),warning_log,$($(LogMetadata_WORKSPACE_NAME)_WARNING_LOG), FEATURE_TYPE)"   OUTPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_Input_1_fI3353OEH4c=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,success,$($(LogMetadata_WORKSPACE_NAME)_SUCCESS),observation_id,$($(LogMetadata_WORKSPACE_NAME)_OBSERVATION_ID),error_text,$($(LogMetadata_WORKSPACE_NAME)_ERROR_TEXT),featureofinterest_localid,$($(LogMetadata_WORKSPACE_NAME)_FEATUREOFINTEREST_LOCALID),featureofinterest_created,$($(LogMetadata_WORKSPACE_NAME)_FEATUREOFINTEREST_CREATED),procedure_created,$($(LogMetadata_WORKSPACE_NAME)_PROCEDURE_CREATED),samplingpoint_created,$($(LogMetadata_WORKSPACE_NAME)_SAMPLINGPOINT_CREATED),procedure_localid,$($(LogMetadata_WORKSPACE_NAME)_PROCEDURE_LOCALID),property_id,$($(LogMetadata_WORKSPACE_NAME)_PROPERTY_ID),samplingpoint_localid,$($(LogMetadata_WORKSPACE_NAME)_SAMPLINGPOINT_LOCALID),warning_text,$($(LogMetadata_WORKSPACE_NAME)_WARNING_TEXT),metadata_log,$($(LogMetadata_WORKSPACE_NAME)_METADATA_LOG),error_log,$($(LogMetadata_WORKSPACE_NAME)_ERROR_LOG),warning_log,$($(LogMetadata_WORKSPACE_NAME)_WARNING_LOG), FEATURE_TYPE)"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LogMetadata_WORKSPACE_NAME)_ExistingTemplate1451994882 Input Splitter"   INPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_ExistingTemplate"   OUTPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_ExistingTemplate" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,observation_id,$($(LogMetadata_WORKSPACE_NAME)_OBSERVATION_ID),metadata_log,$($(LogMetadata_WORKSPACE_NAME)_METADATA_LOG),error_log,$($(LogMetadata_WORKSPACE_NAME)_ERROR_LOG),warning_log,$($(LogMetadata_WORKSPACE_NAME)_WARNING_LOG), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_RootIfEmpty ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_ExistingTemplate" ATTR metadata_log "FME_CONDITIONAL:DEFAULT_VALUE'_FME_NO_OP_'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST metadata_log ATTRIBUTE_VALUE_NULL _FME_BLANK_STRING_;TEST metadata_log ATTRIBUTE_IS_EMPTY _FME_BLANK_STRING_;TEST metadata_log ATTRIBUTE_IS_MISSING _FME_BLANK_STRING_'<lt>metadataModifications<gt><lt><solidus>metadataModifications<gt>'FME_NUM_CONDITIONS2___"    OUTPUT OUTPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_RootIfEmpty_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_CreationSuccess    INPUT  FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_Input_1_fI3353OEH4c="    TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>success<closeparen>,$(LogMetadata_WORKSPACE_NAME)_CreationSuccess) != 0 ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_CreationSuccess_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_CreationSuccess_FAILED"
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(LogMetadata_WORKSPACE_NAME)_DistinctObservations_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(LogMetadata_WORKSPACE_NAME)_DistinctObservations_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE observation_id featureofinterest_localid procedure_localid property_id samplingpoint_localid} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_DistinctObservations    INPUT  FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_Input_0_fI3353OEH4c="    MODE ONE_LEVEL    GROUP_BY observation_id featureofinterest_localid procedure_localid property_id samplingpoint_localid    $($(LogMetadata_WORKSPACE_NAME)_DistinctObservations_BREAK_ATTR)    REMOVE_GEOMETRY NO    ACCUMULATE_ATTRIBUTES Never    SEPARATOR <comma>    PRODUCE_MULTIS YES    OUTPUT AGGREGATE FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_AGGREGATE"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_XMLTemplater_CREATED_INPUT_FACTORY INPUT FEATURE_TYPE __dummy__  INPUT  FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_CreationSuccess_PASSED" OUTPUT FEATURE_TYPE $(LogMetadata_WORKSPACE_NAME)_XMLTemplater_DataFeatures    __xml_templater_bucket__ CREATED
+FACTORY_DEF * TeeFactory FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_XMLTemplater_ERROR_INPUT_FACTORY INPUT FEATURE_TYPE __dummy__  INPUT  FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_CreationSuccess_FAILED" OUTPUT FEATURE_TYPE $(LogMetadata_WORKSPACE_NAME)_XMLTemplater_DataFeatures    __xml_templater_bucket__ ERROR
+FACTORY_DEF * XMLTemplaterFactory FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_XMLTemplater INPUT CONTROL_FEATURE FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_DistinctObservations_AGGREGATE" INPUT DATA_FEATURE FEATURE_TYPE $(LogMetadata_WORKSPACE_NAME)_XMLTemplater_DataFeatures RESULT_ATTR xml OUTPUT_XML_HEADER YES BUCKET_ATTR_NAME __xml_templater_bucket__ CONTROL_TEMPLATE_EXPR <lt>input<space>observationId=<quote><opencurly>fme:get-attribute<openparen><quote>observation_id<quote><closeparen><closecurly><quote><space>foiId=<quote><opencurly>fme:get-attribute<openparen><quote>featureofinterest_localid<quote><closeparen><closecurly><quote><space>procedureId=<quote><opencurly>fme:get-attribute<openparen><quote>procedure_localid<quote><closeparen><closecurly><quote><space>spId=<quote><opencurly>fme:get-attribute<openparen><quote>samplingpoint_localid<quote><closeparen><closecurly><quote><gt><lf><opencurly>fme:process-features<openparen><quote>CREATED<quote><comma><space><quote>observation_id<quote><comma><space>fme:get-attribute<openparen><quote>observation_id<quote><closeparen><closeparen><closecurly><lf><opencurly>fme:process-features<openparen><quote>ERROR<quote><comma><space><quote>observation_id<quote><comma><space>fme:get-attribute<openparen><quote>observation_id<quote><closeparen><closeparen><closecurly><lf><lt><solidus>input<gt> BUCKET_TEMPLATE_EXPR CREATED <lt>created<gt><lf><space><space><space><space><lt>observation<space>id=<quote><opencurly>fme:get-attribute<openparen><quote>observation_id<quote><closeparen><closecurly><quote><space><solidus><gt><lf><space><space><space><space><opencurly>if<space><openparen>string<openparen>fme:get-attribute<openparen><quote>featureofinterest_created<quote><closeparen><closeparen>=<quote>1<quote><closeparen><space>then<lf><space><space><space><space><space><space><space><space><lt>foi<space>id=<quote><opencurly>fme:get-attribute<openparen><quote>featureofinterest_localid<quote><closeparen><closecurly><quote><space><solidus><gt><lf><space><space><space><space><space><space><space><space>else<space><openparen><closeparen><closecurly><lf><space><space><space><space><opencurly>if<space><openparen>string<openparen>fme:get-attribute<openparen><quote>procedure_created<quote><closeparen><closeparen>=<quote>1<quote><closeparen><space>then<lf><space><space><space><space><space><space><space><space><lt>procedure<space>id=<quote><opencurly>fme:get-attribute<openparen><quote>procedure_localid<quote><closeparen><closecurly><quote><space><solidus><gt><lf><space><space><space><space><space><space><space><space>else<space><openparen><closeparen><closecurly><lf><space><space><space><space><opencurly>if<space><openparen>string<openparen>fme:get-attribute<openparen><quote>samplingpoint_created<quote><closeparen><closeparen>=<quote>1<quote><closeparen><space>then<lf><space><space><space><space><space><space><space><space><lt>samplingPoint<space>id=<quote><opencurly>fme:get-attribute<openparen><quote>samplingpoint_localid<quote><closeparen><closecurly><quote><space><solidus><gt><lf><space><space><space><space><space><space><space><space>else<space><openparen><closeparen><closecurly><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><opencurly>if<space><openparen>string<openparen>fme:get-attribute<openparen><quote>warning_text<quote><closeparen><closeparen>!=<quote><quote><closeparen><space>then<lf><space><space><space><space><space><space><space><space><lt>warning<gt><opencurly>fme:get-attribute<openparen><quote>warning_text<quote><closeparen><closecurly><lt><solidus>warning<gt><lf><space><space><space><space><space><space><space><space>else<space><openparen><closeparen><closecurly><lf><lt><solidus>created<gt> BUCKET_TEMPLATE_EXPR ERROR <lt>error<gt><opencurly>fme:get-attribute<openparen><quote>error_text<quote><closeparen><closecurly><lt><solidus>error<gt> OUTPUT XML_DOCUMENT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_XMLTemplater_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XMLAppenderFactory    FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_XMLAppender    INPUT XML_DOCUMENT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_RootIfEmpty_OUTPUT"    INPUT XML_FRAGMENT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_XMLTemplater_OUTPUT"    XML_DOCUMENT_INPUT_TYPE IO_ATTRIBUTE    XML_DOCUMENT_ATTR "metadata_log"    APPEND_FRAGMENTS_AS SUCCEEDING_CHILDREN    APPEND_PATH_IN_DOCUMENT ""    XML_FRAGMENT_INPUT_TYPE IO_ATTRIBUTE    XML_FRAGMENT_ATTR "xml"    XML_OUTPUT_TYPE IO_ATTRIBUTE    XML_OUTPUT_ATTR "metadata_log"    XML_OUTPUT_ENCODING utf-8    PRETTY_PRINT yes    INDENT_SIZE 1    REPLACE_TABS_WITH_SPACES no    OUTPUT APPENDED FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_XMLAppender_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(LogMetadata_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(LogMetadata_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_XMLAppender_OUTPUT"    OUTPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,observation_id)        @RemoveAttributes(fme_pcre_match"$($(LogMetadata_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LogMetadata_WORKSPACE_NAME)_JustXML_Output1451994882 Output Collector"   INPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(LogMetadata_WORKSPACE_NAME)_JustXML_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(LogMetadata_WORKSPACE_NAME))}]

@@ -1,0 +1,1447 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN EEAArcGisOnlineMetaGrabber,2,Metadata,6bcc57b1-2621-43d0-9671-edbd1b27f9ba,"Linked by Default",No,NO_PARALLELISM,,No,20632,YES,No,37,No,
+# <p>Get meta data information from any object inside ArcGis online. </p>
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Metadata"
+#!   DESCRIPTION="&lt;p&gt;Get meta data information from any object inside ArcGis online. &lt;/p&gt;"
+#!   DOC_EXTENTS="5397.86 1024.07"
+#!   DOC_TOP_LEFT="-1718.39 -1728.96"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="20632"
+#!   FME_DOCUMENT_GUID="6bcc57b1-2621-43d0-9671-edbd1b27f9ba"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="20&lt;solidus&gt;08&lt;solidus&gt;2019,Jan&lt;space&gt;Bliki,First&lt;space&gt;Ceation,23&lt;solidus&gt;02&lt;solidus&gt;2021,Peter&lt;space&gt;Segerstedt,Now&lt;space&gt;using&lt;space&gt;Named&lt;space&gt;Connection&lt;space&gt;instead&lt;space&gt;of&lt;space&gt;user&lt;solidus&gt;pass&lt;comma&gt;&lt;space&gt;removed&lt;space&gt;dependency&lt;space&gt;to&lt;space&gt;AGO_GenerateToken&lt;comma&gt;&lt;space&gt;AGO_GetItem"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2020.1.3.0 (20201001 - Build 20632 - WIN64)"
+#!   LAST_SAVE_DATE="2021-02-23T14:10:01"
+#!   MARKDOWN_DESCRIPTION="Get meta data information from any object inside ArcGis online. "
+#!   MARKDOWN_USAGE="This component will use the &quot;EuropeanEnvironmentAgency&quot; user to find the item and extract the meta data.The identifier is the number you can find in the URL for example.&#10;&#10;https://eea.maps.arcgis.com/home/webmap/viewer.html?useExisting=1&amp;layers=a0fd552218554c319be052f5269089d9&#10;&#10;This &apos;a0fd552218554c319be052f5269089d9&apos; is the identifier you should copy."
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   REPLACED_BY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="EEAArcGisOnlineMetaGrabber"
+#!   USAGE="&lt;p&gt;This component will use the &quot;EuropeanEnvironmentAgency&quot; user to find the item and extract the meta data.The identifier is the number you can find in the URL for example.&lt;/p&gt;&#10;&lt;p&gt;https://eea.maps.arcgis.com/home/webmap/viewer.html?useExisting=1&amp;amp;layers=a0fd552218554c319be052f5269089d9&lt;/p&gt;&#10;&lt;p&gt;This &apos;a0fd552218554c319be052f5269089d9&apos; is the identifier you should copy.&lt;/p&gt;"
+#!   USE_MARKDOWN="YES"
+#!   VIEW_POSITION="-1881.27 246.877"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR ItemID ArcGis online Item identifier:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_CONNECTION_OR_ATTR_ENCODED AUTH_NAMED_CONNECTION EEAArcGISToken%EXCLUDE_SERVICES:&quot;Amazon Web Services&quot;,&quot;HDFS Insecure Client&quot;,&quot;HDFS Delegation Token&quot;,&quot;HDFS Kerberos&quot; Web Connection:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="JSONFlattener"
+#!   VERSION="6"
+#!   POSITION="389.18796988140821 -704.88371883718855"
+#!   BOUNDING_RECT="389.18796988140821 -704.88371883718855 431 71"
+#!   ORDER="500000000000008"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20632"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ERROR_LIST_ATTR" PARM_VALUE="_json_error"/>
+#!     <XFORM_PARM PARM_NAME="FILEPATH_OR_URL" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INPUT_SETTINGS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_ago_itemMeta&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="id owner created modified title type typeKeywords description tags accessInformation licenseInfo extent error"/>
+#!     <XFORM_PARM PARM_NAME="PREFIX_STRING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READ_FROM_FILE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFlattener"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="HTMLStripper"
+#!   VERSION="3"
+#!   POSITION="2105.024673248442 -704.88371883718855"
+#!   BOUNDING_RECT="2105.024673248442 -704.88371883718855 431 71"
+#!   ORDER="500000000000009"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20632"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="html_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_errors" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FieldNames" PARM_VALUE="licenseInfo,description"/>
+#!     <XFORM_PARM PARM_NAME="HandleNewLines" PARM_VALUE="As a new line"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTMLStripper"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="1582.0469309710193 -704.88371883718855"
+#!   BOUNDING_RECT="1582.0469309710193 -704.88371883718855 431 71"
+#!   ORDER="500000000000010"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="html_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; html_description SET_TO &lt;at&gt;Value&lt;openparen&gt;description&lt;closeparen&gt;  html_license SET_TO &lt;at&gt;Value&lt;openparen&gt;licenseInfo&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2699.1848133489889 -704.88371883718855"
+#!   BOUNDING_RECT="2699.1848133489889 -704.88371883718855 431 71"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="html_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_errors"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="TestFilter"
+#!   VERSION="2"
+#!   POSITION="935.16546215633093 -704.88371883718855"
+#!   BOUNDING_RECT="935.16546215633093 -704.88371883718855 431 71"
+#!   ORDER="500000000000013"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20632"
+#! >
+#!     <OUTPUT_FEAT NAME="OK"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="ERROR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="ERROR"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Across Output Ports"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;&lt;Unused&gt;&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;error.code&lt;space&gt;NOT_ATTRIBUTE_HAS_A_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&quot;,OK"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="23"
+#!   TYPE="AttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="1616.4222747244569 -1150.0115001150011"
+#!   BOUNDING_RECT="1616.4222747244569 -1150.0115001150011 431 71"
+#!   ORDER="500000000000016"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="error.message _error RENAME_SET_DEFAULT "/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="26"
+#!   TYPE="HTTPCaller"
+#!   VERSION="2"
+#!   POSITION="-1122.0128751287514 -723.38371883718855"
+#!   BOUNDING_RECT="-1122.0128751287514 -723.38371883718855 561.00106825772946 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20632"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(AUTH_NAMED_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="FOLLOW_WITH_ORIGINAL_METHOD"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="REDIRECT_AUTH" PARM_VALUE="ORIGINAL_DOMAIN_ONLY"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_ago_itemData"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;www.arcgis.com&lt;solidus&gt;sharing&lt;solidus&gt;rest&lt;solidus&gt;content&lt;solidus&gt;items&lt;solidus&gt;$(ItemID)&lt;solidus&gt;data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/x-www-form-urlencoded"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCallerGetItemData"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="28"
+#!   TYPE="HTTPCaller"
+#!   VERSION="2"
+#!   POSITION="-330.75506255062567 -723.38371883718855"
+#!   BOUNDING_RECT="-330.75506255062567 -723.38371883718855 565.00106825772946 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20632"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(AUTH_NAMED_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="FOLLOW_WITH_ORIGINAL_METHOD"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="REDIRECT_AUTH" PARM_VALUE="ORIGINAL_DOMAIN_ONLY"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_ago_itemMeta"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;www.arcgis.com&lt;solidus&gt;sharing&lt;solidus&gt;rest&lt;solidus&gt;content&lt;solidus&gt;items&lt;solidus&gt;$(ItemID)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/x-www-form-urlencoded"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCallerGetItemMeta"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="32"
+#!   TYPE="Junction"
+#!   VERSION="0"
+#!   POSITION="493.7224297242974 -1667.9551456532495"
+#!   BOUNDING_RECT="493.7224297242974 -1667.9551456532495 61 61"
+#!   ORDER="500000000000017"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20632"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Junction"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Input"
+#!   POSITION="-1718.3856708549988 -723.38371883718855"
+#!   BOUNDING_RECT="-1718.3856708549988 -723.38371883718855 431 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="13"
+#!   NAME="Output"
+#!   POSITION="3248.4699846998469 -704.88371883718855"
+#!   BOUNDING_RECT="3248.4699846998469 -704.88371883718855 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="created" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="description" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="extent" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="html_description" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="id" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="modified" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="owner" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="tags" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="title" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="type" ATTR_TYPE="varchar(200)" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" ATTR_TYPE="varchar(200)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="15"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="2389.0863908639094 -1550.0159473630597"
+#!   BOUNDING_RECT="2389.0863908639094 -1550.0159473630597 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="37"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="26"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OK"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="23"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="32"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 1 ERROR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="33"
+#!   SOURCE_NODE="28"
+#!   TARGET_NODE="32"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="26"
+#!   TARGET_NODE="28"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="36"
+#!   SOURCE_NODE="28"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0,0,0,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_ItemID 
+DEFAULT_MACRO $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION 
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input1614085801 Input Splitter"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData       INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,https:<solidus><solidus>www.arcgis.com<solidus>sharing<solidus>rest<solidus>content<solidus>items<solidus>$($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_ItemID$encode)<solidus>data,$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_ago_itemData"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY ""    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "application/x-www-form-urlencoded"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS FOLLOW_WITH_ORIGINAL_METHOD    REDIRECT_AUTH ORIGINAL_DOMAIN_ONLY    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION),$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData_Output"    OUTPUT REJECTED FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta       INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData_Output"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,https:<solidus><solidus>www.arcgis.com<solidus>sharing<solidus>rest<solidus>content<solidus>items<solidus>$($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_ItemID$encode),$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_ago_itemMeta"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY ""    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "application/x-www-form-urlencoded"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS FOLLOW_WITH_ORIGINAL_METHOD    REDIRECT_AUTH ORIGINAL_DOMAIN_ONLY    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION),$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta_Output"    OUTPUT REJECTED FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Junction    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta_<REJECTED>"    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemData_<REJECTED>"    OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Junction_Output"
+# -------------------------------------------------------------------------
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTTPCallerGetItemMeta_Output"    MODE FLATTEN    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_ago_itemMeta<closeparen>,$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener)"    READ_FROM_FILE NO    FILEPATH_OR_URL "<Unused>"    EXPLODE_QUERY "json"    RECURSIVE_FLATTEN YES    ERROR_LIST_ATTR "_json_error"    OUTPUT EXPLODED FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener <REJECTED> Transformer Output Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_OUTPUT"    OUTPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST error.code NOT_ATTRIBUTE_HAS_A_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "<Unused>" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER ACROSS_OUTPUT_PORTS OUTPUT PASSED FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_OK OUTPUT FAILED FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_ERROR INPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_ERROR
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_ERROR" 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION { "error.message" "_error" "RENAME_SET_DEFAULT" "" }    OUTPUT OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_OK"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "html_description" "SET_TO" "<at>Value<openparen>description<closeparen>" }      ATTR_ACTION { "" "html_license" "SET_TO" "<at>Value<openparen>licenseInfo<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper Input Input Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Input"
+MACRO HTMLStripper_WORKSPACE_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper
+MACRO $(HTMLStripper_WORKSPACE_NAME)_XFORMER_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper
+MACRO $(HTMLStripper_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(HTMLStripper_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(HTMLStripper_WORKSPACE_NAME)_FieldNames licenseInfo,description
+MACRO $(HTMLStripper_WORKSPACE_NAME)_HandleNewLines As a new line
+INCLUDE_CUSTOM_TRANSFORMER_VER HTMLStripper:3
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Output"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Output"
+# -------------------------------------------------------------------------
+# Build the List removal function and regular expression if there was any list attributes to be removed.
+# If not, then we will not have any extra list removal call to @RemoveAttributes, which speeds the
+# normal, non-list removal especially when in Bulk Mode.  Note that this computation of the regular expressions is done
+# once during mapping file parse time.
+INCLUDE [    set listAttributeRemoveRegexps {};    set anyList {no};    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append listAttributeRemoveRegexps ",^$attr$";       set anyList {yes};    };    if { ${anyList} == {no} } {        puts {MACRO $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_LIST_FUNC }    } else {        puts "MACRO $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_LIST_FUNC @RemoveAttributes(fme_pcre_match\"$listAttributeRemoveRegexps\")"    }; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Output"    OUTPUT { FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,_errors)        $($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_LIST_FUNC)         }
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Output1614085801 Output Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Output" @RemoveAttributes(_ago_itemData,_http_status_code,_ago_itemMeta,error) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_<Rejected>1614085801 Output Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Junction_Output"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_<Rejected>"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN EEAArcGisOnlineMetaGrabber,1,Metadata,a6b71ea8-2eb8-478b-abf3-5a005b110a04,"Linked by Default",No,NO_PARALLELISM,,No,18592,YES,No,36
+# <p>Get meta data information from any object inside ArcGis online. </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Metadata"
+#!   DESCRIPTION="&lt;p&gt;Get meta data information from any object inside ArcGis online. &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="4813.73 823.945"
+#!   DOC_TOP_LEFT="-1530.88 -1550.02"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18592"
+#!   FME_DOCUMENT_GUID="a6b71ea8-2eb8-478b-abf3-5a005b110a04"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="20&lt;solidus&gt;08&lt;solidus&gt;2019,Jan&lt;space&gt;Bliki,First&lt;space&gt;Ceation"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.2.1 (20190319 - Build 18592 - WIN64)"
+#!   LAST_SAVE_DATE="2019-08-20T11:06:47"
+#!   MARKDOWN_DESCRIPTION="Get meta data information from any object inside ArcGis online. "
+#!   MARKDOWN_USAGE="This component will use the &quot;EuropeanEnvironmentAgency&quot; user to find the item and extract the meta data.The identifier is the number you can find in the URL for example.&#10;&#10;https://eea.maps.arcgis.com/home/webmap/viewer.html?useExisting=1&amp;layers=a0fd552218554c319be052f5269089d9&#10;&#10;This &apos;a0fd552218554c319be052f5269089d9&apos; is the identifier you should copy."
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="36"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="EEAArcGisOnlineMetaGrabber"
+#!   USAGE="&lt;p&gt;This component will use the &quot;EuropeanEnvironmentAgency&quot; user to find the item and extract the meta data.The identifier is the number you can find in the URL for example.&lt;/p&gt;&#10;&lt;p&gt;https://eea.maps.arcgis.com/home/webmap/viewer.html?useExisting=1&amp;amp;layers=a0fd552218554c319be052f5269089d9&lt;/p&gt;&#10;&lt;p&gt;This &apos;a0fd552218554c319be052f5269089d9&apos; is the identifier you should copy.&lt;/p&gt;"
+#!   USE_MARKDOWN="YES"
+#!   VIEW_POSITION="-1703.14 100.001"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR ItemID ArcGis online Item identifier:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="AGO_GetItem"
+#!   VERSION="1"
+#!   POSITION="-393.13060830437496 -726.07073078508961"
+#!   BOUNDING_RECT="-393.13060830437496 -726.07073078508961 -1 -1"
+#!   ORDER="500000000000002"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ArcGisToken" PARM_VALUE="@Value(ArcGis_token)"/>
+#!     <XFORM_PARM PARM_NAME="ItemID" PARM_VALUE="$(ItemID)"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AGO_GetItem"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="referer" PARM_VALUE="https://www.arcgis.com"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="AGO_GenerateToken"
+#!   VERSION="3"
+#!   POSITION="-976.88379583624919 -727.94544953227705"
+#!   BOUNDING_RECT="-976.88379583624919 -727.94544953227705 503.75768757687615 71"
+#!   ORDER="500000000000006"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="Authenticated"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AGO_GenerateToken"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="loginname" PARM_VALUE="EuropeanEnvironmentAgency"/>
+#!     <XFORM_PARM PARM_NAME="password" PARM_VALUE="fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszhfvAv5z4URECcNkuhFcNesTmF2daTDRclb8Osuc2v3nMpy17LiFlParCEEdlU0m/1soVqyj+H0izDYs5tzc5NotMxfzTnlqr+/4b0tZ+vUUw0X+/akB5CIzRKRO5uw6NaMnfoIKLxRJ97Dq/LXd22NfX6Pz3ymOYnjHlfAe0Cq0rBzT7mszVNmni+lAyE8nBAubzm2p6EjVYYFUE7jNff94gMe27vh1D2hYk/mGLquAMAWEPt7N/c7sgzzBgEPhgNfE3UFz6pRgeQA1c19pXl8Y2NtDLsijNnB6nQPgP99tzJ/Hsw5IdZA7xorDUpXKABrUUZQRgDPAGly+xP8kBodpMF+AkVPfc)"/>
+#!     <XFORM_PARM PARM_NAME="referer" PARM_VALUE="https:&lt;solidus&gt;&lt;solidus&gt;eea.maps.arcgis.com"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="JSONFlattener"
+#!   VERSION="5"
+#!   POSITION="311.0621886235956 -729.8201682794645"
+#!   BOUNDING_RECT="311.0621886235956 -729.8201682794645 -1 -1"
+#!   ORDER="500000000000008"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ERROR_LIST_ATTR" PARM_VALUE="_json_error"/>
+#!     <XFORM_PARM PARM_NAME="FILEPATH_OR_URL" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INPUT_SETTINGS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_ago_itemMeta&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="id owner created modified title type typeKeywords description tags accessInformation licenseInfo extent error"/>
+#!     <XFORM_PARM PARM_NAME="PREFIX_STRING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="READ_FROM_FILE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFlattener"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="HTMLStripper"
+#!   VERSION="3"
+#!   POSITION="2105.024673248442 -729.8201682794645"
+#!   BOUNDING_RECT="2105.024673248442 -729.8201682794645 -1 -1"
+#!   ORDER="500000000000009"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="html_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_errors" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="FieldNames" PARM_VALUE="licenseInfo,description"/>
+#!     <XFORM_PARM PARM_NAME="HandleNewLines" PARM_VALUE="As a new line"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTMLStripper"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="1582.0469309710193 -729.8201682794645"
+#!   BOUNDING_RECT="1582.0469309710193 -729.8201682794645 -1 -1"
+#!   ORDER="500000000000010"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="html_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; html_description SET_TO &lt;at&gt;Value&lt;openparen&gt;description&lt;closeparen&gt;  html_license SET_TO &lt;at&gt;Value&lt;openparen&gt;licenseInfo&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="17"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2717.9350008508636 -789.8201682794645"
+#!   BOUNDING_RECT="2717.9350008508636 -789.8201682794645 -1 -1"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="html_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_errors"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="935.16546215633093 -729.8201682794645"
+#!   BOUNDING_RECT="935.16546215633093 -729.8201682794645 -1 -1"
+#!   ORDER="500000000000013"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OK"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="ERROR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="ERROR"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;&lt;Unused&gt;&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;error.code&lt;space&gt;NOT_ATTRIBUTE_HAS_A_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&quot;,OK"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="23"
+#!   TYPE="AttributeRenamer"
+#!   VERSION="4"
+#!   POSITION="1616.4222747244569 -1150.0115001150011"
+#!   BOUNDING_RECT="1616.4222747244569 -1150.0115001150011 -1 -1"
+#!   ORDER="500000000000016"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18592"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemData" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_ago_itemMeta" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="owner" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="created" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="modified" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="tags" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="extent" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="error.message _error RENAME_SET_DEFAULT "/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="11"
+#!   NAME="Input"
+#!   POSITION="-1530.8837958362487 -746.44544953227705"
+#!   BOUNDING_RECT="-1530.8837958362487 -746.44544953227705 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="13"
+#!   NAME="Output"
+#!   POSITION="3282.8453284532843 -849.8201682794645"
+#!   BOUNDING_RECT="3282.8453284532843 -849.8201682794645 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="accessInformation" />
+#!     <XFORM_ATTR ATTR_NAME="ArcGis_token" />
+#!     <XFORM_ATTR ATTR_NAME="created" />
+#!     <XFORM_ATTR ATTR_NAME="description" />
+#!     <XFORM_ATTR ATTR_NAME="extent" />
+#!     <XFORM_ATTR ATTR_NAME="html_description" />
+#!     <XFORM_ATTR ATTR_NAME="html_license" />
+#!     <XFORM_ATTR ATTR_NAME="id" />
+#!     <XFORM_ATTR ATTR_NAME="licenseInfo" />
+#!     <XFORM_ATTR ATTR_NAME="modified" />
+#!     <XFORM_ATTR ATTR_NAME="owner" />
+#!     <XFORM_ATTR ATTR_NAME="tags" />
+#!     <XFORM_ATTR ATTR_NAME="title" />
+#!     <XFORM_ATTR ATTR_NAME="type" />
+#!     <XFORM_ATTR ATTR_NAME="typeKeywords" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="15"
+#!   NAME="&lt;Rejected&gt;"
+#!   POSITION="2389.0863908639094 -1550.0159473630597"
+#!   BOUNDING_RECT="2389.0863908639094 -1550.0159473630597 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 LOGIN"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 Authenticated"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="17"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OK"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="23"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;Rejected&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 1 ERROR"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+DEFAULT_MACRO $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_ItemID 
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input1566292007 Input Splitter"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken LOGIN Input Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_LOGIN"
+MACRO AGO_GenerateToken_WORKSPACE_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken
+MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_XFORMER_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken
+MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(AGO_GenerateToken_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_loginname EuropeanEnvironmentAgency
+MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_password fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszhfvAv5z4URECcNkuhFcNesTmF2daTDRclb8Osuc2v3nMpy17LiFlParCEEdlU0m/1soVqyj+H0izDYs5tzc5NotMxfzTnlqr+/4b0tZ+vUUw0X+/akB5CIzRKRO5uw6NaMnfoIKLxRJ97Dq/LXd22NfX6Pz3ymOYnjHlfAe0Cq0rBzT7mszVNmni+lAyE8nBAubzm2p6EjVYYFUE7jNff94gMe27vh1D2hYk/mGLquAMAWEPt7N/c7sgzzBgEPhgNfE3UFz6pRgeQA1c19pXl8Y2NtDLsijNnB6nQPgP99tzJ/Hsw5IdZA7xorDUpXKABrUUZQRgDPAGly+xP8kBodpMF+AkVPfc)
+MACRO $(AGO_GenerateToken_WORKSPACE_NAME)_referer https:<solidus><solidus>eea.maps.arcgis.com
+INCLUDE_CUSTOM_TRANSFORMER_VER AGO_GenerateToken:3
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken Authenticated Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_Authenticated"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_Authenticated"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken <Rejected> Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_<Rejected>"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_<Rejected>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem Input Input Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_Authenticated"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem_Input"
+MACRO AGO_GetItem_WORKSPACE_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem
+MACRO $(AGO_GetItem_WORKSPACE_NAME)_XFORMER_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem
+MACRO $(AGO_GetItem_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(AGO_GetItem_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(AGO_GetItem_WORKSPACE_NAME)_ArcGisToken @Value(ArcGis_token)
+MACRO $(AGO_GetItem_WORKSPACE_NAME)_referer https://www.arcgis.com
+MACRO $(AGO_GetItem_WORKSPACE_NAME)_ItemID $($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_ItemID)
+INCLUDE_CUSTOM_TRANSFORMER_VER AGO_GetItem:1
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem_Output"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem_Output"
+# -------------------------------------------------------------------------
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GetItem_Output"    MODE FLATTEN    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_ago_itemMeta<closeparen>,$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener)"    READ_FROM_FILE NO    FILEPATH_OR_URL <Unused>    EXPLODE_QUERY "json"    RECURSIVE_FLATTEN YES    ERROR_LIST_ATTR "_json_error"    OUTPUT EXPLODED FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener <REJECTED> Transformer Output Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_<REJECTED>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_JSONFlattener_OUTPUT"    OUTPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_Condition_1 INPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST error.code NOT_ATTRIBUTE_HAS_A_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "<Unused>" OUTPUT PASSED FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_OK OUTPUT FAILED FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_ERROR INPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_ERROR
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_ERROR" 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION { "error.message" "_error" "RENAME_SET_DEFAULT" "" }    OUTPUT OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_TestFilter_OK"    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "html_description" "SET_TO" "<at>Value<openparen>description<closeparen>" }      ATTR_ACTION { "" "html_license" "SET_TO" "<at>Value<openparen>licenseInfo<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper Input Input Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Input"
+MACRO HTMLStripper_WORKSPACE_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper
+MACRO $(HTMLStripper_WORKSPACE_NAME)_XFORMER_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper
+MACRO $(HTMLStripper_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(HTMLStripper_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(HTMLStripper_WORKSPACE_NAME)_FieldNames licenseInfo,description
+MACRO $(HTMLStripper_WORKSPACE_NAME)_HandleNewLines As a new line
+INCLUDE_CUSTOM_TRANSFORMER_VER HTMLStripper:3
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Output"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Output"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_HTMLStripper_Output"    OUTPUT { FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,_errors)        @RemoveAttributes(fme_pcre_match"$($(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")         }
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Output1566292007 Output Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_Output" @RemoveAttributes(_ago_itemData,_ago_itemMeta,error)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_<Rejected>1566292007 Output Collector"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"   INPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_AGO_GenerateToken_<Rejected>"   OUTPUT FEATURE_TYPE "$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME)_<Rejected>"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(EEAArcGisOnlineMetaGrabber_WORKSPACE_NAME))}]
+

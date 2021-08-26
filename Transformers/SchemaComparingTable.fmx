@@ -1,0 +1,760 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN SchemaComparingTable,1,EEAValidation,1f495ec5-ed69-4110-8a56-653e63b5b20f,"Linked by Default",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">When receiving multiple tables form countries they might sometimes define fields wrongly. In order to find this tool will compile from a table containing country, table and field name a list that contains "X" or "-" for every field name existing or missing. </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-2721 768"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Linked by Default"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When receiving multiple tables form countries they might sometimes define fields wrongly. In order to find this tool will compile from a table containing country, table and field name a list that contains &quot;X&quot; or &quot;-&quot; for every field name existing or missing. &lt;/p&gt;&#10;"
+#! TITLE="SchemaComparingTable"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="EEAValidation"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE.  See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Use this Transformer together with the MSWordCrossTable in order to represent the content user friendly.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;example: the input table could look like this.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Country Table Field&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field1&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field2&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field3&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field1&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field3&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field4&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FR Table1 field1&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FR Table1 field2&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When you provide these fields into this Transformer the result looks like&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Country Table Field valueMapping&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field1 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field1 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FR Table1 field1 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field2 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field2 -&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FR Table1 field2 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field3 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field3 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FR Table1 field3 -&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;BE Table1 field4 -&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DE Table1 field4 X&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;FR Table1 field4 -&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! HISTORY="20&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#! FME_DOCUMENT_PRIORGUID="591c7a57-6efa-4ce4-827d-d6135d09bc6e"
+#! DOC_TOP_LEFT="-2194 -664"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-07-23T11:36:10"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4473 990"
+#! FME_DOCUMENT_GUID="1f495ec5-ed69-4110-8a56-653e63b5b20f"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FIELD Attribute containing &quot;Field&quot;:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR TABLE Attribute containing &quot;Table&quot;:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;Table&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR COUNTRY Attribute containg &quot;Country&quot;:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;Country&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="37"
+#! NAME="Get all Attributes for each table"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-1409 249"
+#! BOTTOM_RIGHT="-306 -220"
+#! STICKY="true"
+#! COLOUR="0.4,0.0392157,0.294118"
+#! CONTENTS="19 5 2 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="39"
+#! NAME="Countries per table"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-1413 -391"
+#! BOTTOM_RIGHT="-286 -810"
+#! STICKY="true"
+#! COLOUR="0.729412,0.0666667,0.858824"
+#! CONTENTS="23 11 22 9 10 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="40"
+#! NAME="Join all tables and all fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-258 232"
+#! BOTTOM_RIGHT="855 -795"
+#! STICKY="true"
+#! COLOUR="0.258824,0.776471,0.00784314"
+#! CONTENTS="26 27 34 6 12 25 35 13 14 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="Aggregator"
+#! VERSION="11"
+#! POSITION="-1341 138"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="Table Field"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator_2"/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="Sorter"
+#! VERSION="2"
+#! POSITION="-1334 -45"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="SORTED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="Field ALPHA ASCENDING"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="-208 142"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger_2"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;Table&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;Table&lt;closeparen&gt; AUTO"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1638 -128"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="valueMapping" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="X"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="valueMapping,X"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1641 -277"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="valueMapping" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="-"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="valueMapping,-"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="Aggregator"
+#! VERSION="11"
+#! POSITION="-1337 -481"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="Country Table"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator_4"/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="Aggregator"
+#! VERSION="11"
+#! POSITION="-1339 -664"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="Table"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator_5"/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE="Country"/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="-789 -567"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="Field"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="344 139"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_country{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_country"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="Country"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="ListExploder"
+#! VERSION="3"
+#! POSITION="349 -25"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="LIST_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder"/>
+#! <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="List Elements and Original Attributes"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_country{}"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="AttributeRenamer"
+#! VERSION="2"
+#! POSITION="329 -235"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer_2"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_country,Country,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="1019 1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="Country Table"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;Field&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;Field&lt;closeparen&gt; AUTO"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="34"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="352 -412"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="Field" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Table" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Country" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_element_index"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="41"
+#! NAME="Output"
+#! POSITION="2279 -152"
+#! COLLAPSED="false"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="Field" />
+#! <XFORM_ATTR ATTR_NAME="Table" />
+#! <XFORM_ATTR ATTR_NAME="Country" />
+#! <XFORM_ATTR ATTR_NAME="_element_index" />
+#! <XFORM_ATTR ATTR_NAME="valueMapping" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="43"
+#! NAME="Input"
+#! POSITION="-2194 326"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="Field" ATTR_VALUE="$(FIELD)" />
+#! <XFORM_ATTR ATTR_NAME="Table" ATTR_VALUE="$(TABLE)" />
+#! <XFORM_ATTR ATTR_NAME="Country" ATTR_VALUE="$(COUNTRY)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="45"
+#! SOURCE_NODE="43"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="46"
+#! SOURCE_NODE="43"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="48"
+#! SOURCE_NODE="43"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS="879 267"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="44"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="41"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="49"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="41"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="35"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="34"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="36"
+#! SOURCE_NODE="34"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FIELD 
+DEFAULT_MACRO $(SchemaComparingTable_WORKSPACE_NAME)_TABLE <at>Value<openparen>Table<closeparen>
+DEFAULT_MACRO $(SchemaComparingTable_WORKSPACE_NAME)_COUNTRY <at>Value<openparen>Country<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO SchemaComparingTable_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SchemaComparingTable_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SchemaComparingTable_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaComparingTable_WORKSPACE_NAME)_Input1406108170 Input Splitter"   INPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input_0_8bHfB7MSNq8=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,Field,$($(SchemaComparingTable_WORKSPACE_NAME)_FIELD),Table,$($(SchemaComparingTable_WORKSPACE_NAME)_TABLE),Country,$($(SchemaComparingTable_WORKSPACE_NAME)_COUNTRY), FEATURE_TYPE)"   OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input_1_8bHfB7MSNq8=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,Field,$($(SchemaComparingTable_WORKSPACE_NAME)_FIELD),Table,$($(SchemaComparingTable_WORKSPACE_NAME)_TABLE),Country,$($(SchemaComparingTable_WORKSPACE_NAME)_COUNTRY), FEATURE_TYPE)"   OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input_2_8bHfB7MSNq8=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,Field,$($(SchemaComparingTable_WORKSPACE_NAME)_FIELD),Table,$($(SchemaComparingTable_WORKSPACE_NAME)_TABLE),Country,$($(SchemaComparingTable_WORKSPACE_NAME)_COUNTRY), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_4_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_4_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE Country Table} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_4    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input_2_8bHfB7MSNq8="    MODE ONE_LEVEL    GROUP_BY Country Table    $($(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_4_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_4_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_5_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_5_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE Table} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_5    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_4_AGGREGATE"    MODE ONE_LEVEL    GROUP_BY Table    $($(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_5_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    CONCATENATE_FIELDS Country    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_5_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_5_AGGREGATE"    OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(Field)        @RemoveAttributes(fme_regexp_match"$($(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE Table Field} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_2    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input_1_8bHfB7MSNq8="    MODE ONE_LEVEL    GROUP_BY Table Field    $($(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_2_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_Sorter    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Aggregator_2_AGGREGATE"    SORT_BY Field ALPHA ASCENDING    OUTPUT SORTED FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Sorter_SORTED"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2    INPUT REFERENCER FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Sorter_SORTED"    INPUT REFERENCEE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_OUTPUT"    REFERENCE_INFO $($(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Table<closeparen>,$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2) @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Table<closeparen>,$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2) AUTO    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_MERGED"
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitDelim]] }      {         set $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitWidths;            set source [FME_GetAttribute {"Country"}];            set attrNum 0;            set listName {_country};            set attrPos 0;            foreach width [set $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitDelim;            set delim [set $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_33e8ed80_dc2b_4d33_9bdf_678bbba37c920_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"Country"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_country};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_2_MERGED"    OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_ListExploder    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    LIST_NAME "_country{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    MODE LEAN    OUTPUT ELEMENT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_ListExploder_LIST_FOUND"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_AttributeRenamer_2    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_ListExploder_LIST_FOUND"    OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL, _country,Country,"")
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_2    INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"        @RemoveAttributes(_element_index)        @RemoveAttributes(fme_regexp_match"$($(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_2_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger    GROUP_BY Country Table    INPUT REFERENCER FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_AttributeRemover_2_OUTPUT"    INPUT REFERENCEE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Input_0_8bHfB7MSNq8="    REFERENCE_INFO $($(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Field<closeparen>,$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>Field<closeparen>,$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger) AUTO    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_MERGED"    OUTPUT INCOMPLETE FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_NOT_MERGED"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_- ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_NOT_MERGED" ATTR valueMapping -    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_-_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(SchemaComparingTable_WORKSPACE_NAME)_X ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_FeatureMerger_MERGED" ATTR valueMapping X    OUTPUT OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_X_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SchemaComparingTable_WORKSPACE_NAME)_Output1406108170 Output Collector"   INPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_X_OUTPUT"   INPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_-_OUTPUT"   OUTPUT FEATURE_TYPE "$(SchemaComparingTable_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SchemaComparingTable_WORKSPACE_NAME))}]

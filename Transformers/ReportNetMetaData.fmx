@@ -1,0 +1,1817 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN ReportNetMetaData,1,ReportNet,df03803f-1f82-4331-91e9-ecffbabd4b1e,"Linked by Default",No,NO_PARALLELISM,,No,17291,YES,No,27
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Reportnet REST-API To read metadata for delivered data from countries.</p>
+# 
+# TRANSFORMER_END
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   WORKSPACE_VERSION="1"
+#!   PYTHON_COMPATIBILITY="27"
+#!   SHOW_INFO_NODES="true"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   BLOCKED_LOOPING="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   MARKDOWN_USAGE=""
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   CATEGORY="ReportNet"
+#!   ZOOM_SCALE="100"
+#!   USE_MARKDOWN="NO"
+#!   LAST_SAVE_DATE="2017-08-02T09:51:14"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_BUILD_NUM="17291"
+#!   FME_SERVER_SERVICES=""
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The REST API documentation is currently available here.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Symbol&apos;; color:#1f497d;&quot;&gt;·&lt;/span&gt;&#10;    &lt;span style=&quot; color:#1f497d;&quot;&gt;In OpenAPI spec format: &lt;/span&gt;&#10;    &lt;a href=&quot;https://raw.githubusercontent.com/eea/Products.Reportek/master/Products/Reportek/docs/api/swagger_api.yaml&quot;&gt;&#10;        &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;swagger_api.yaml &lt;/span&gt;&#10;    &lt;/a&gt;&#10;    &lt;span style=&quot; color:#1f497d;&quot;&gt;, which can be pasted into the &lt;/span&gt;&#10;    &lt;a href=&quot;http://editor.swagger.io/&quot;&gt;&#10;        &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Swagger editor &lt;/span&gt;&#10;    &lt;/a&gt;&#10;    &lt;span style=&quot; color:#1f497d;&quot;&gt;for example.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Symbol&apos;; color:#1f497d;&quot;&gt;·&lt;/span&gt;&#10;    &lt;span style=&quot; color:#1f497d;&quot;&gt;In markdown at &lt;/span&gt;&#10;    &lt;a href=&quot;https://github.com/eea/Products.Reportek/tree/5a207d7f6d618da7d1bacbc1c78c7e7195d9276b/Products/Reportek/docs/api/markdown&quot;&gt;&#10;        &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://github.com/eea/Products.Reportek/tree/5a207d7f6d618da7d1bacbc1c78c7e7195d9276b/Products/Reportek/docs/api/markdown &lt;/span&gt;&#10;    &lt;/a&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; color:#1f497d;&quot;&gt;Unfortunately it seems we haven’t updated the docs with the last changes, so in the meantime you can see that filtering on statusDateStart/statusDateEnd is also possible: &lt;/span&gt;&#10;    &lt;a href=&quot;https://taskman.eionet.europa.eu/issues/71535#note-151&quot;&gt;&#10;        &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://taskman.eionet.europa.eu/issues/71535#note-151 &lt;/span&gt;&#10;    &lt;/a&gt;&#10;&lt;/p&gt;&#10;"
+#!   XFORM_DEPRECATED="No"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Reportnet REST-API To read metadata for delivered data from countries.&lt;/p&gt;&#10;"
+#!   MAX_LOOP_ITERATIONS=""
+#!   LAST_SAVE_BUILD="FME(R) 2017.0.1.1 (20170512 - Build 17291 - WIN64)"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   FME_DOCUMENT_GUID="df03803f-1f82-4331-91e9-ecffbabd4b1e"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   MARKDOWN_DESCRIPTION=""
+#!   SHOW_ANNOTATIONS="true"
+#!   VIEW_POSITION="2768.78 431.254"
+#!   HISTORY=""
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   DOC_EXTENTS="9097.33 1651.06"
+#!   DOC_TOP_LEFT="-1495.51 -1362.62"
+#!   PASSWORD=""
+#!   TITLE="ReportNetMetaData"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI LOOKUP_CHOICE_OR_ATTR isReleased Released,1%Unreleased,0 Envelopes to return:"
+#!   DEFAULT_VALUE="1"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR obligations obligation(s), delimit with comma if several:"
+#!   DEFAULT_VALUE="697"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL LOOKUP_LISTBOX_OR_ATTR countryCode Austria,AT%Belgium,BE%Bulgaria,BG%Croatia,HR%Cyprus,CY%Czech&lt;space&gt;Republic,CZ%Denmark,DK%Estonia,EE%EU,EU%Finland,FI%France,FR%Germany,DE%Greece,GR%Hungary,HU%Ireland,IE%Italy,IT%Latvia,LV%Lithuania,LT%Luxembourg,LU%Malta,MT%Netherlands,NL%Norway,NO%Poland,PL%Portugal,PT%Romania,RO%Slovakia,SK%Slovenia,SI%Spain,ES%Sweden,SE%Switzerland,CH%United&lt;space&gt;Kingdom,GB Country code(s):"
+#!   DEFAULT_VALUE="AT BE"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR SpecificFiles Filextensions of interest, delimit with comma if several:"
+#!   DEFAULT_VALUE="txt,xlsm,pdf"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL DATE_OR_ATTR reportingDateStart &quot;{}&quot; &quot;{}&quot; Reporting date from:"
+#!   DEFAULT_VALUE="20150401"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL DATE_OR_ATTR reportingDateEnd &quot;{}&quot; &quot;{}&quot; Reporting date til:"
+#!   DEFAULT_VALUE="20170801"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_CONNECTION_OR_ATTR_ENCODED AUTH_NAMED_CONNECTION EXCLUDE_SERVICES:&quot;Amazon Web Services&quot; Web Connection:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="32"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example request:&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://cdr.eionet.europa.eu/api/envelopes?countryCode=si&amp;amp;isReleased=1&amp;amp;obligations=697&amp;amp;fields=files,title&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://cdr.eionet.europa.eu/api/envelopes?countryCode=si&amp;amp;isReleased=1&amp;amp;obligations=697&amp;amp;fields=files,title&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="671.881 288.441"
+#!   TOP_LEFT="671.881 288.441"
+#!   BOTTOM_RIGHT="2425.02 149.065"
+#!   BOUNDING_RECT="671.881 288.441 1753.14 139.376"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="10"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="33"
+#!   NAME="Specify returnfields, handle MS"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-137.799 -60.1056"
+#!   BOTTOM_RIGHT="568.756 -706.257"
+#!   BOUNDING_RECT="-137.799 -60.1056 706.555 646.151"
+#!   STICKY="true"
+#!   COLOUR="0.184314,0.486275,0.631373"
+#!   CONTENTS="18 2 3 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="34"
+#!   NAME="Fragment into envelopes"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="1590.64 -60.1056"
+#!   BOTTOM_RIGHT="2250.02 -587.506"
+#!   BOUNDING_RECT="1590.64 -60.1056 659.384 527.4"
+#!   STICKY="true"
+#!   COLOUR="0.776471,0.054902,0.192157"
+#!   CONTENTS="7 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="35"
+#!   NAME="Fetch filemetadata"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="4736.55 -49.4802"
+#!   BOTTOM_RIGHT="5321.93 -740.632"
+#!   BOUNDING_RECT="4736.55 -49.4802 585.378 691.152"
+#!   STICKY="true"
+#!   COLOUR="0.937255,0.419608,0.803922"
+#!   CONTENTS="8 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="36"
+#!   NAME="Tidy up and datefiltering"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3937.54 -49.4802"
+#!   BOTTOM_RIGHT="4618.8 -740.632"
+#!   BOUNDING_RECT="3937.54 -49.4802 681.261 691.152"
+#!   STICKY="true"
+#!   COLOUR="0.156863,0.537255,0.521569"
+#!   CONTENTS="9 26 10 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="37"
+#!   NAME="Fetch parameters"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-918.759 -53.8555"
+#!   BOTTOM_RIGHT="-225.002 -703.133"
+#!   BOUNDING_RECT="-918.759 -53.8555 693.757 649.277"
+#!   STICKY="true"
+#!   COLOUR="0.431373,0.14902,0.27451"
+#!   CONTENTS="4 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="38"
+#!   NAME="Prepare and make httprequest"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="671.881 -53.8555"
+#!   BOTTOM_RIGHT="1534.39 -791.258"
+#!   BOUNDING_RECT="671.881 -53.8555 862.509 737.402"
+#!   STICKY="true"
+#!   COLOUR="0.027451,0.811765,0.376471"
+#!   CONTENTS="5 6 21 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="39"
+#!   NAME="Fail"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="671.881 -862.615"
+#!   BOTTOM_RIGHT="1421.88 -1362.62"
+#!   BOUNDING_RECT="671.881 -862.615 750 500"
+#!   STICKY="true"
+#!   COLOUR="0.258824,0.494118,0.87451"
+#!   CONTENTS="15 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="40"
+#!   NAME="Filter specific files, if specified"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="5449.05 -49.4802"
+#!   BOTTOM_RIGHT="6178.18 -1003.13"
+#!   BOUNDING_RECT="5449.05 -49.4802 729.133 953.653"
+#!   STICKY="true"
+#!   COLOUR="0.803922,0.301961,0.0156863"
+#!   CONTENTS="31 13 11 12 27 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="50"
+#!   NAME="Extract obligations and history"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="2315.65 -60.1056"
+#!   BOTTOM_RIGHT="2950.03 -578.131"
+#!   BOUNDING_RECT="2315.65 -60.1056 634.379 518.025"
+#!   STICKY="true"
+#!   COLOUR="0.254902,0.231373,0.847059"
+#!   CONTENTS="46 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="53"
+#!   NAME="Handle obligations and history"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="3075.03 -49.4802"
+#!   BOTTOM_RIGHT="3803.16 -745.883"
+#!   BOUNDING_RECT="3075.03 -49.4802 728.132 696.403"
+#!   STICKY="true"
+#!   COLOUR="0.47451,0.337255,0.376471"
+#!   CONTENTS="51 47 48 "
+#! />
+#! <BOOKMARK
+#!   IDENTIFIER="57"
+#!   NAME="Tidy up. Format date"
+#!   DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="6281.31 -49.4802"
+#!   BOTTOM_RIGHT="6850.07 -600.006"
+#!   BOUNDING_RECT="6281.31 -49.4802 568.755 550.526"
+#!   STICKY="true"
+#!   COLOUR="0.694118,0.584314,0.721569"
+#!   CONTENTS="58 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="29.9515 -206.981"
+#!   BOUNDING_RECT="29.9515 -206.981 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; _fields SET_TO files&lt;comma&gt;title&lt;comma&gt;countryCode&lt;comma&gt;obligations&lt;comma&gt;creator&lt;comma&gt;description&lt;comma&gt;history&lt;comma&gt;isBlockedByQCError&lt;comma&gt;modifiedDate&lt;comma&gt;periodDescription&lt;comma&gt;periodEndYear&lt;comma&gt;periodStartYear&lt;comma&gt;reportingDate&lt;comma&gt;status&lt;comma&gt;statusDate&lt;comma&gt;url"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="20.5764 -440.38"
+#!   BOUNDING_RECT="20.5764 -440.38 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;backslash&gt;s"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_countryCode"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-822.884 -187.606"
+#!   BOUNDING_RECT="-822.884 -187.606 547.881 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_isReleased $(isReleased) _obligations $(obligations) _countryCode $(countryCode) _SpecificFiles $(SpecificFiles) _reportingDateStart $(reportingDateStart) _reportingDateEnd $(reportingDateEnd)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="SubDocumentTransformer"
+#!   VERSION="0"
+#!   POSITION="875.382 -194.481"
+#!   BOUNDING_RECT="875.382 -194.481 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="UrlCompiler"/>
+#!     <XFORM_PARM PARM_NAME="URI" PARM_VALUE="http://cdr.eionet.europa.eu/api/envelopes"/>
+#!     <XFORM_PARM PARM_NAME="FieldNames" PARM_VALUE="_countryCode,_isReleased,_fields,_obligations"/>
+#!     <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="UrlCompiler"/>
+#!     <XFORM_PARM PARM_NAME="PrefixRemover" PARM_VALUE="__"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="875.382 -469.606"
+#!   BOUNDING_RECT="875.382 -469.606 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_URL&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(AUTH_NAMED_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="GET"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="JSONFragmenter"
+#!   VERSION="6"
+#!   POSITION="1708.39 -206.981"
+#!   BOUNDING_RECT="1708.39 -206.981 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="Envelope_files Envelope_countryCode Envelope_title Envelope_creator Envelope_description Envelope_isBlockedByQCError Envelope_modifiedDate Envelope_periodDescription Envelope_periodEndYear Envelope_periodStartYear Envelope_reportingDate Envelope_status Envelope_statusDate Envelope_url Envelope_history Envelope_obligations"/>
+#!     <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json&lt;openbracket&gt;&lt;quote&gt;envelopes&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;*&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE="Envelope_"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter"/>
+#!     <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="JSONFragmenter"
+#!   VERSION="6"
+#!   POSITION="4819.93 -211.356"
+#!   BOUNDING_RECT="4819.93 -211.356 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="FRAGMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="Envelope_files"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="File_fileSizeHR File_contentType File_uploadDate File_archivedFiles File_title File_url File_isRestricted File_schemaURL File_fileSize"/>
+#!     <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json&lt;openbracket&gt;*&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE="File_"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter_2"/>
+#!     <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="4083.42 -401.359"
+#!   BOUNDING_RECT="4083.42 -401.359 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;Envelope_reportingDate&lt;closeparen&gt; RANGE &lt;openparen&gt;&lt;at&gt;Evaluate&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_reportingDateStart&lt;closeparen&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;at&gt;Evaluate&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;_reportingDateEnd&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#!     <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeManager"
+#!   VERSION="1"
+#!   POSITION="4064.67 -139.48"
+#!   BOUNDING_RECT="4064.67 -139.48 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="_fields _fields  REMOVE _isReleased _isReleased  REMOVE _obligations _obligations  REMOVE _countryCode _countryCode  REMOVE _SpecificFiles _SpecificFiles  NO_OP _reportingDateStart _reportingDateStart  NO_OP _reportingDateEnd _reportingDateEnd  NO_OP _URL _URL  REMOVE _response_body _response_body  REMOVE _http_status_code _http_status_code  REMOVE json_type json_type  REMOVE json_index json_index  REMOVE Envelope_files Envelope_files  NO_OP Envelope_countryCode Envelope_countryCode  NO_OP Envelope_title Envelope_title  NO_OP Envelope_creator Envelope_creator  NO_OP Envelope_description Envelope_description  NO_OP Envelope_isBlockedByQCError Envelope_isBlockedByQCError  NO_OP Envelope_modifiedDate Envelope_modifiedDate &lt;at&gt;DateTimeParse&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;Envelope_modifiedDate&lt;closeparen&gt;&lt;comma&gt;%Y-%m-%d&lt;closeparen&gt; SET_TO Envelope_periodDescription Envelope_periodDescription  NO_OP Envelope_periodEndYear Envelope_periodEndYear  NO_OP Envelope_periodStartYear Envelope_periodStartYear  NO_OP Envelope_reportingDate Envelope_reportingDate &lt;at&gt;DateTimeParse&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;Envelope_reportingDate&lt;closeparen&gt;&lt;comma&gt;%Y-%m-%d&lt;closeparen&gt; SET_TO Envelope_status Envelope_status  NO_OP Envelope_statusDate Envelope_statusDate &lt;at&gt;DateTimeParse&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;Envelope_statusDate&lt;closeparen&gt;&lt;comma&gt;%Y-%m-%d&lt;closeparen&gt; SET_TO Envelope_url Envelope_url  NO_OP envelopeobligations envelopeobligations  REMOVE envelopehistory envelopehistory  REMOVE Envelope_history Envelope_history  REMOVE Envelope_obligations Envelope_obligations  REMOVE"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="5607.43 -718.756"
+#!   BOUNDING_RECT="5607.43 -718.756 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_first_match" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="^.*&lt;backslash&gt;.&lt;at&gt;Value&lt;openparen&gt;_SpecificFiles&lt;closeparen&gt;&lt;dollar&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;File_url&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_first_match"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="StringReplacer"
+#!   VERSION="4"
+#!   POSITION="5620.93 -453.129"
+#!   BOUNDING_RECT="5620.93 -453.129 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="|."/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_2"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_SpecificFiles"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="Tester"
+#!   VERSION="2"
+#!   POSITION="5586.55 -167.605"
+#!   BOUNDING_RECT="5586.55 -167.605 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST _SpecificFiles ATTRIBUTE_IS_EMPTY &quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_2"/>
+#!     <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="46"
+#!   TYPE="JSONExtractor"
+#!   VERSION="3"
+#!   POSITION="2430.28 -234.481"
+#!   BOUNDING_RECT="2430.28 -234.481 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="EVALUATED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeobligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopehistory" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeobligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopehistory" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_response_body&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
+#!     <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="envelopeobligations json&lt;openbracket&gt;&lt;quote&gt;obligations&lt;quote&gt;&lt;closebracket&gt; envelopehistory json&lt;openbracket&gt;&lt;quote&gt;history&lt;quote&gt;&lt;closebracket&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="48"
+#!   TYPE="JSONFlattener"
+#!   VERSION="4"
+#!   POSITION="3253.15 -164.107"
+#!   BOUNDING_RECT="3253.15 -164.107 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeobligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopehistory" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeobligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopehistory" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="INPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;envelopeobligations&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PREFIX_STRING" PARM_VALUE="envelope_obligations"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ERROR_LIST_ATTR" PARM_VALUE="_json_error"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFlattener_obl"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="47"
+#!   TYPE="JSONFlattener"
+#!   VERSION="4"
+#!   POSITION="3253.15 -495.881"
+#!   BOUNDING_RECT="3253.15 -495.881 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeobligations" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="envelopehistory" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_isReleased" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SpecificFiles" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateStart" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_reportingDateEnd" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_files" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_history" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_obligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopeobligations" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="envelopehistory" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="INPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;envelopehistory&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PREFIX_STRING" PARM_VALUE="envelope_history"/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ERROR_LIST_ATTR" PARM_VALUE="_json_error"/>
+#!     <XFORM_PARM PARM_NAME="FLATTEN_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFlattener_hist"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="58"
+#!   TYPE="AttributeManager"
+#!   VERSION="1"
+#!   POSITION="6339.68 -197.129"
+#!   BOUNDING_RECT="6339.68 -197.129 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="Envelope_countryCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_creator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_isBlockedByQCError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_modifiedDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodEndYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_periodStartYear" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_reportingDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_statusDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="Envelope_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSizeHR" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_contentType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_uploadDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_archivedFiles" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_title" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_url" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_isRestricted" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_schemaURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="File_fileSize" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="_SpecificFiles _SpecificFiles  REMOVE _reportingDateStart _reportingDateStart  REMOVE _reportingDateEnd _reportingDateEnd  REMOVE json_type json_type  REMOVE json_index json_index  REMOVE Envelope_files Envelope_files  REMOVE Envelope_countryCode Envelope_countryCode  NO_OP Envelope_title Envelope_title  NO_OP Envelope_creator Envelope_creator  NO_OP Envelope_description Envelope_description  NO_OP Envelope_isBlockedByQCError Envelope_isBlockedByQCError  NO_OP Envelope_modifiedDate Envelope_modifiedDate  NO_OP Envelope_periodDescription Envelope_periodDescription  NO_OP Envelope_periodEndYear Envelope_periodEndYear  NO_OP Envelope_periodStartYear Envelope_periodStartYear  NO_OP Envelope_reportingDate Envelope_reportingDate  NO_OP Envelope_status Envelope_status  NO_OP Envelope_statusDate Envelope_statusDate  NO_OP Envelope_url Envelope_url  NO_OP File_fileSizeHR File_fileSizeHR  NO_OP File_contentType File_contentType  NO_OP File_uploadDate File_uploadDate &lt;at&gt;DateTimeParse&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;File_uploadDate&lt;closeparen&gt;&lt;comma&gt;%Y-%m-%d&lt;closeparen&gt; SET_TO File_archivedFiles File_archivedFiles  NO_OP File_title File_title  NO_OP File_url File_url  NO_OP File_isRestricted File_isRestricted  NO_OP File_schemaURL File_schemaURL  NO_OP File_fileSize File_fileSize  NO_OP _first_match _first_match  REMOVE"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager_3"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="14"
+#!   NAME="Input"
+#!   POSITION="-1495.51 -321.982"
+#!   BOUNDING_RECT="-1495.51 -321.982 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="15"
+#!   NAME="Metadata_error"
+#!   POSITION="795.886 -990.636"
+#!   BOUNDING_RECT="795.886 -990.636 565.253 71"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_error" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="16"
+#!   NAME="Metadata"
+#!   POSITION="6980.31 -115.106"
+#!   BOUNDING_RECT="6980.31 -115.106 621.508 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="14"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 Input"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="46"
+#!   SOURCE_PORT_DESC="fo 0 FRAGMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="60"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 FRAGMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="44"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="58"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="45"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="58"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="49"
+#!   SOURCE_NODE="46"
+#!   TARGET_NODE="48"
+#!   SOURCE_PORT_DESC="fo 0 EVALUATED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="47"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="51"
+#!   SOURCE_NODE="48"
+#!   TARGET_NODE="47"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="59"
+#!   SOURCE_NODE="58"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;Rejected&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#!   NAME="UrlCompiler"
+#!   DOC_DYNAMIC_INPUT_ATTRS="0"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   PYTHON_COMPATIBILITY=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   MARKDOWN_USAGE=""
+#!   CATEGORY="Manipulators"
+#!   ZOOM_SCALE="100"
+#!   USE_MARKDOWN="NO"
+#!   LAST_SAVE_DATE="2017-04-26T15:00:16"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Compiles a URL form a number of attributes. The URL can already contain parameters and these new parameters will be nicely added. Special codes in the values will be escaped. Attributes that do not contain any value will be ignored.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;URI&lt;/span&gt;: The starting URL, The url can be based on other parameters. for example http://myurl.com or http://myurl.com?parameter=20&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Parameters&lt;/span&gt;: List those attributes that you want to include into the URL. The name of attribute will become to name of the field. Use &lt;span style=&quot; font-weight:600;&quot;&gt;Prefix remover &lt;/span&gt;if a prefix of the field needs to be removed.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Result Attribute&lt;/span&gt;: The new name of the attribute exposed. Default set as _URL&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Prefix remover&lt;/span&gt;: The prefix to remove before they are added as parameters. For example if all you attributes start with the same prefix &apos;__Param_name&apos;, &apos;__Param_maxindex&apos;. Added &apos;_Param_&apos; would result in parameters sush as &apos;name&apos; and &apos;maxindex&apos;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   XFORM_DEPRECATED="No"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Converts attributes as a GET URL string. Attributes that have no value will be automaticaly ignored. This transformer helps reducing the amount of transformers you usualy need to compile an URL.&lt;/p&gt;&#10;"
+#!   LAST_SAVE_BUILD="FME(R) 2017.0.0.0 (20170228 - Build 17259 - WIN64)"
+#!   FME_DOCUMENT_GUID="235b30dc-a4d1-4188-b2a9-e260a78e7e28"
+#!   MARKDOWN_DESCRIPTION=""
+#!   HISTORY="16&lt;solidus&gt;01&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creation,26&lt;solidus&gt;04&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Add&lt;space&gt;prefix&lt;space&gt;remover"
+#!   VIEW_POSITION="-137.501 1140.64"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   DOC_EXTENTS="3064.84 185.001"
+#!   DOC_TOP_LEFT="-97.0636 87.5012"
+#!   IS_VISIBLE="true"
+#!   SUPPRESS_UPGRADE="false"
+#!   TITLE="UrlCompiler"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR URI URI:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR FieldNames &quot; &quot; Field names:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR PrefixRemover Prefix remover:"
+#!   DEFAULT_VALUE="__"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="13"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Performs the concatination of URL attributes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1585.39 272.502"
+#!   TOP_LEFT="1585.39 272.502"
+#!   BOTTOM_RIGHT="1584.39 273.502"
+#!   BOUNDING_RECT="1585.39 272.502 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="2"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="1715.64 87.5012"
+#!   BOUNDING_RECT="1715.64 87.5012 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="_URL"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;urllib&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;function&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;class&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FieldNames&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_FieldNames&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TargetAttribute&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_TargetAttribute&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_URI&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;PrefixRemover&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__PrefixRemover&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FieldNamesList&lt;space&gt;=&lt;space&gt;FieldNames.split&lt;openparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;fieldName&lt;space&gt;in&lt;space&gt;FieldNamesList:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;newAttribute&lt;space&gt;=&lt;space&gt;str&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;closeparen&gt;.strip&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;remove&lt;space&gt;prefix&lt;space&gt;if&lt;space&gt;it&lt;space&gt;exists&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;len&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;space&gt;&lt;gt&gt;=&lt;space&gt;len&lt;openparen&gt;PrefixRemover&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;len&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;space&gt;!=&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fieldName=fieldName.lstrip&lt;openparen&gt;PrefixRemover&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;newAttribute&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;MyUrl&lt;space&gt;==&lt;space&gt;&lt;quote&gt;&lt;quote&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;fieldName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;=&lt;apos&gt;&lt;space&gt;+&lt;space&gt;urllib.quote&lt;openparen&gt;newAttribute&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;MyUrl&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;fieldName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;=&lt;apos&gt;&lt;space&gt;+&lt;space&gt;urllib.quote&lt;openparen&gt;newAttribute&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;result&lt;space&gt;back&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;baseURL.find&lt;openparen&gt;&lt;apos&gt;?&lt;apos&gt;&lt;closeparen&gt;&lt;gt&gt;-1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;baseURL&lt;openbracket&gt;-1:&lt;closebracket&gt;&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;&lt;apos&gt;?&lt;apos&gt;&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;it&lt;space&gt;back&lt;space&gt;to&lt;space&gt;FME&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;TargetAttribute&lt;comma&gt;baseURL&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="530.255 87.5012"
+#!   BOUNDING_RECT="530.255 87.5012 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__URLCompiler_FieldNames $(FieldNames) __URLCompiler_URI $(URI) __PrefixRemover $(PrefixRemover)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2314.64 87.5012"
+#!   BOUNDING_RECT="2314.64 87.5012 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="__PrefixRemover,__URLCompiler_FieldNames,__URLCompiler_URI,__URLCompiler_TargetAttribute"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="1136.51 87.5012"
+#!   BOUNDING_RECT="1136.51 87.5012 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17291"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; __URLCompiler_TargetAttribute SET_TO _URL"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="Input"
+#!   POSITION="-97.0636 87.5012"
+#!   BOUNDING_RECT="-97.0636 87.5012 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="7"
+#!   NAME="Output"
+#!   POSITION="2967.78 87.5012"
+#!   BOUNDING_RECT="2967.78 87.5012 -1 -1"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+FME_PYTHON_VERSION 27
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_isReleased 1
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_obligations 697
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_countryCode AT BE
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_SpecificFiles txt,xlsm,pdf
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_reportingDateStart 20150401
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_reportingDateEnd 20170801
+DEFAULT_MACRO $(ReportNetMetaData_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION 
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO ReportNetMetaData_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(ReportNetMetaData_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(ReportNetMetaData_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_Input1501660274 Input Splitter"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_isReleased {$($(ReportNetMetaData_WORKSPACE_NAME)_isReleased)} _obligations {$($(ReportNetMetaData_WORKSPACE_NAME)_obligations$encode)} _countryCode {$($(ReportNetMetaData_WORKSPACE_NAME)_countryCode$encode)} _SpecificFiles {$($(ReportNetMetaData_WORKSPACE_NAME)_SpecificFiles$encode)} _reportingDateStart {$($(ReportNetMetaData_WORKSPACE_NAME)_reportingDateStart$encode)} _reportingDateEnd {$($(ReportNetMetaData_WORKSPACE_NAME)_reportingDateEnd$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "_fields" "SET_TO" "files<comma>title<comma>countryCode<comma>obligations<comma>creator<comma>description<comma>history<comma>isBlockedByQCError<comma>modifiedDate<comma>periodDescription<comma>periodEndYear<comma>periodStartYear<comma>reportingDate<comma>status<comma>statusDate<comma>url"    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_c87bc10c_3149_4116_b263_b81a2cc2b6040_replacer { findText replaceText invalidValue} {     set attrs [split \"_countryCode\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{YES} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_c87bc10c_3149_4116_b263_b81a2cc2b6040_replacer {<backslash>s} {<comma>} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler Input Input Collector"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_OUTPUT"   OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler_Input"
+MACRO UrlCompiler_WORKSPACE_NAME $(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler
+MACRO $(UrlCompiler_WORKSPACE_NAME)_XFORMER_NAME $(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler
+MACRO $(UrlCompiler_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(UrlCompiler_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(UrlCompiler_WORKSPACE_NAME)_SUB_DOC_NAME UrlCompiler
+MACRO $(UrlCompiler_WORKSPACE_NAME)_URI http://cdr.eionet.europa.eu/api/envelopes
+MACRO $(UrlCompiler_WORKSPACE_NAME)_FieldNames _countryCode,_isReleased,_fields,_obligations
+MACRO $(UrlCompiler_WORKSPACE_NAME)_PrefixRemover __
+DEFAULT_MACRO UrlCompiler_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(UrlCompiler_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(UrlCompiler_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UrlCompiler_WORKSPACE_NAME)_Input1501660274 Input Splitter"   INPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__URLCompiler_FieldNames {$($(UrlCompiler_WORKSPACE_NAME)_FieldNames$encode)} __URLCompiler_URI {$($(UrlCompiler_WORKSPACE_NAME)_URI$encode)} __PrefixRemover {$($(UrlCompiler_WORKSPACE_NAME)_PrefixRemover$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "__URLCompiler_TargetAttribute" "SET_TO" "_URL"    OUTPUT OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>urllib<lf>#<space>Template<space>Function<space>interface:<lf>#<space>When<space>using<space>this<space>function<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>#<space>When<space>using<space>this<space>class<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>FieldNames<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_FieldNames<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>TargetAttribute<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_TargetAttribute<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>baseURL<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_URI<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>PrefixRemover<space>=<space>feature.getAttribute<openparen><quote>__PrefixRemover<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>FieldNamesList<space>=<space>FieldNames.split<openparen><quote><comma><quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>MyUrl<space>=<space><quote><quote><lf><space><space><space><space><space><space><space><space>for<space>fieldName<space>in<space>FieldNamesList:<lf><space><space><space><space><space><space><space><space><space><space><space><space>newAttribute<space>=<space>str<openparen>feature.getAttribute<openparen>fieldName<closeparen><closeparen>.strip<openparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>remove<space>prefix<space>if<space>it<space>exists<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>len<openparen>fieldName<closeparen><space><gt>=<space>len<openparen>PrefixRemover<closeparen><space>and<space>len<openparen>fieldName<closeparen><space>!=<space>0:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>fieldName=fieldName.lstrip<openparen>PrefixRemover<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>newAttribute<space>!=<space><apos><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>MyUrl<space>==<space><quote><quote>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>MyUrl<space>=<space>fieldName<space>+<space><apos>=<apos><space>+<space>urllib.quote<openparen>newAttribute<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>MyUrl<space>=<space>MyUrl<space>+<space><apos><amp><apos><space>+<space>fieldName<space>+<space><apos>=<apos><space>+<space>urllib.quote<openparen>newAttribute<closeparen><lf><space><space><space><space><space><space><space><space>#<space>Send<space>result<space>back<lf><space><space><space><space><space><space><space><space>if<space>baseURL.find<openparen><apos>?<apos><closeparen><gt>-1:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>baseURL<openbracket>-1:<closebracket><space>!=<space><apos><amp><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space><apos><amp><apos><space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space><apos>?<apos><space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space>#<space>Send<space>it<space>back<space>to<space>FME<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>TargetAttribute<comma>baseURL<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,__PrefixRemover,__URLCompiler_FieldNames,__URLCompiler_URI,__URLCompiler_TargetAttribute)        @RemoveAttributes(fme_pcre_match"$($(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UrlCompiler_WORKSPACE_NAME)_Output1501660274 Output Collector"   INPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(UrlCompiler_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler_Output"   OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler_Output"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller       INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_UrlCompiler_Output"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_URL<closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller)"    HTTP_METHOD GET    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "<Unused>"    MULTIPART_UPLOAD <Unused>    UPLOAD_CONTENT_TYPE "<Unused>"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR ""    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(ReportNetMetaData_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION),$(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller_Output"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_JSONFragmenter    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller_Output"    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR Yes    PREF_STRING "Envelope_"    JSON_ATTR "_response_body"    OUTPUT_ATTRIBUTE "_response_body"    EXPLODE_QUERY "json<openbracket><quote>envelopes<quote><closebracket><openbracket>*<closebracket>"    RECURSIVE_FLATTEN NO    OUTPUT EXPLODED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFragmenter_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_JSONExtractor    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFragmenter_FRAGMENTS"    MODE EXTRACT    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response_body<closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_JSONExtractor)"    QUERIES envelopeobligations json<openbracket><quote>obligations<quote><closebracket> envelopehistory json<openbracket><quote>history<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONExtractor_EVALUATED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    MODE FLATTEN    PREF_STRING "envelope_obligations"    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>envelopeobligations<closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl)"    EXPLODE_QUERY "json"    RECURSIVE_FLATTEN YES    ERROR_LIST_ATTR "_json_error"    OUTPUT EXPLODED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl_<REJECTED>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_obl_OUTPUT"    MODE FLATTEN    PREF_STRING "envelope_history"    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>envelopehistory<closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist)"    EXPLODE_QUERY "json"    RECURSIVE_FLATTEN YES    ERROR_LIST_ATTR "_json_error"    OUTPUT EXPLODED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist_<REJECTED>"
+# -------------------------------------------------------------------------
+
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_AttributeManager    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFlattener_hist_OUTPUT"    MULTI_FEATURE_MODE NO     NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    ATTR_ACTION "_fields" "_fields" "" "REMOVE"     ATTR_ACTION "_isReleased" "_isReleased" "" "REMOVE"     ATTR_ACTION "_obligations" "_obligations" "" "REMOVE"     ATTR_ACTION "_countryCode" "_countryCode" "" "REMOVE"     ATTR_ACTION "_URL" "_URL" "" "REMOVE"     ATTR_ACTION "_response_body" "_response_body" "" "REMOVE"     ATTR_ACTION "_http_status_code" "_http_status_code" "" "REMOVE"     ATTR_ACTION "json_type" "json_type" "" "REMOVE"     ATTR_ACTION "json_index" "json_index" "" "REMOVE"     ATTR_ACTION "Envelope_modifiedDate" "Envelope_modifiedDate" "<at>DateTimeParse<openparen><at>Value<openparen>Envelope_modifiedDate<closeparen><comma>%Y-%m-%d<closeparen>" "SET_TO"     ATTR_ACTION "Envelope_reportingDate" "Envelope_reportingDate" "<at>DateTimeParse<openparen><at>Value<openparen>Envelope_reportingDate<closeparen><comma>%Y-%m-%d<closeparen>" "SET_TO"     ATTR_ACTION "Envelope_statusDate" "Envelope_statusDate" "<at>DateTimeParse<openparen><at>Value<openparen>Envelope_statusDate<closeparen><comma>%Y-%m-%d<closeparen>" "SET_TO"     ATTR_ACTION "envelopeobligations" "envelopeobligations" "" "REMOVE"     ATTR_ACTION "envelopehistory" "envelopehistory" "" "REMOVE"     ATTR_ACTION "Envelope_history" "Envelope_history" "" "REMOVE"     ATTR_ACTION "Envelope_obligations" "Envelope_obligations" "" "REMOVE"    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_AttributeManager_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_AttributeManager_OUTPUT"    TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>Envelope_reportingDate<closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_Tester) RANGE @EvaluateExpression(FDIV,STRING_ENCODED,<openparen><at>Evaluate<openparen><at>Value<openparen>_reportingDateStart<closeparen><closeparen><comma><at>Evaluate<openparen><at>Value<openparen>_reportingDateEnd<closeparen><closeparen><closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_Tester) ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Tester_PASSED"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_JSONFragmenter_2    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Tester_PASSED"    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR Yes    PREF_STRING "File_"    JSON_ATTR "Envelope_files"    OUTPUT_ATTRIBUTE "Envelope_files"    EXPLODE_QUERY "json<openbracket>*<closebracket>"    RECURSIVE_FLATTEN NO    OUTPUT EXPLODED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFragmenter_2_FRAGMENTS"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_Tester_2    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_JSONFragmenter_2_FRAGMENTS"    TEST _SpecificFiles ATTRIBUTE_IS_EMPTY "" ENCODED    BOOLEAN_OPERATOR OR    OUTPUT PASSED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Tester_2_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Tester_2_FAILED"
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_2_35095a81_873d_43a0_a69b_86145388d8ed0_replacer { findText replaceText invalidValue} {     set attrs [split \"_SpecificFiles\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [FME_ReplaceRegex $(casemac) $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_2    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Tester_2_FAILED"    OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"         @Tcl2("$(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_2_35095a81_873d_43a0_a69b_86145388d8ed0_replacer {<comma>} {|.} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher_a38b7748_93e1_4e53_b513_60407e9f30c90_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set matches [FME_DecodeText $matches];   set matchedParts [FME_DecodeText $matchedParts];   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName [FME_DecodeText $matchedChars];      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"    TEST @Tcl2("$(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher_a38b7748_93e1_4e53_b513_60407e9f30c90_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>File_url<closeparen>,$(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher)} {@EvaluateExpression(FDIV,STRING_ENCODED,^.*<backslash>.<at>Value<openparen>_SpecificFiles<closeparen><dollar>,$(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher)} {_first_match} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher_MATCHED"
+
+# -------------------------------------------------------------------------
+
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(ReportNetMetaData_WORKSPACE_NAME)_AttributeManager_3    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_StringSearcher_MATCHED"    INPUT  FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Tester_2_PASSED"    MULTI_FEATURE_MODE NO     NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    ATTR_ACTION "_SpecificFiles" "_SpecificFiles" "" "REMOVE"     ATTR_ACTION "_reportingDateStart" "_reportingDateStart" "" "REMOVE"     ATTR_ACTION "_reportingDateEnd" "_reportingDateEnd" "" "REMOVE"     ATTR_ACTION "json_type" "json_type" "" "REMOVE"     ATTR_ACTION "json_index" "json_index" "" "REMOVE"     ATTR_ACTION "Envelope_files" "Envelope_files" "" "REMOVE"     ATTR_ACTION "File_uploadDate" "File_uploadDate" "<at>DateTimeParse<openparen><at>Value<openparen>File_uploadDate<closeparen><comma>%Y-%m-%d<closeparen>" "SET_TO"     ATTR_ACTION "_first_match" "_first_match" "" "REMOVE"    OUTPUT OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_AttributeManager_3_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_Metadata_error1501660274 Output Collector"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_HTTPCaller_<Rejected>"   OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Metadata_error" @RemoveAttributes(_fields,_isReleased,_obligations,_countryCode,_SpecificFiles,_reportingDateStart,_reportingDateEnd,_URL)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(ReportNetMetaData_WORKSPACE_NAME)_Metadata1501660274 Output Collector"   INPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_AttributeManager_3_OUTPUT"   OUTPUT FEATURE_TYPE "$(ReportNetMetaData_WORKSPACE_NAME)_Metadata"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(ReportNetMetaData_WORKSPACE_NAME))}]

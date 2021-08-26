@@ -1,0 +1,2458 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN GetServerStatistics,1,"ArcGis Server",1f45f888-4c0f-45f5-be44-99427fbe08b7,"Embedded by Default",No,NO_PARALLELISM,,No,15515,YES,No
+# TRANSFORMER_END
+#! PASSWORD=""
+#! LEGAL_TERMS_CONDITIONS=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY="ArcGis Server"
+#! FME_BUILD_NUM="15515"
+#! FME_SERVER_SERVICES=""
+#! DESCRIPTION=""
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FME_DOCUMENT_PRIORGUID=""
+#! LAST_SAVE_BUILD="FME(R) 2015.1.1.0 (20150715 - Build 15515 - WIN32)"
+#! BLOCKED_LOOPING="No"
+#! REQUIREMENTS=""
+#! VIEW_POSITION="5794.79 438.162"
+#! HISTORY=""
+#! LAST_SAVE_DATE="2015-10-06T10:47:48"
+#! ZOOM_SCALE="76"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! MAX_LOOP_ITERATIONS=""
+#! SHOW_INFO_NODES="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! REQUIREMENTS_KEYWORD=""
+#! DOC_TOP_LEFT="-1159.99 -1613.73"
+#! DOC_EXTENTS="12499.8 1268.49"
+#! ITERATION_COUNT_ATTR=""
+#! FME_DOCUMENT_GUID="1f45f888-4c0f-45f5-be44-99427fbe08b7"
+#! SHOW_ANNOTATIONS="true"
+#! WORKSPACE_VERSION="1"
+#! FMX_INSERT_MODE="Embedded by Default"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! TITLE="GetServerStatistics"
+#! XFORM_DEPRECATED="No"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ARCGISSERVERURL ArcGisServerUrl:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ArcGisServerUrl&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR TOKEN Token:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;Token&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR reportName reportName:"
+#! DEFAULT_VALUE="serverStatistics"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR EXECUTIONDATE ExecutionDate:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ExecutionDate&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ARCGISSERVERID ArcGisServerID:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ArcGisServerID&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR CRITICALERROR CriticalError:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;CriticalError&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SERVERNAME ServerName:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ServerName&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR MONITORINGTYPE MonitoringType:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;MonitoringType&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="21"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If the report exists, we edit the date_begin and date_end of the request. If the report doesn&apos;t exists, we create it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1000.65 -954.245"
+#! TOP_LEFT="1000.65 -954.245"
+#! BOTTOM_RIGHT="2450.67 -1086.25"
+#! BOUNDING_RECT="1000.65 -954.245 1450.02 132.001"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="20"
+#! NAME="Check if usage report &quot;serverStatistics&quot; exist"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="984.127 -476.005"
+#! BOTTOM_RIGHT="2623.56 -1086.25"
+#! BOUNDING_RECT="984.127 -476.005 1639.43 610.241"
+#! STICKY="true"
+#! COLOUR="0.137255,0.494118,0.831373"
+#! CONTENTS="124 6 95 105 59 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="22"
+#! NAME="Edit the report with the current dates"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2695.36 -345.242"
+#! BOTTOM_RIGHT="4330.88 -845.242"
+#! BOUNDING_RECT="2695.36 -345.242 1635.52 500"
+#! STICKY="true"
+#! COLOUR="0.431373,0.839216,0.494118"
+#! CONTENTS="60 24 102 62 26 99 63 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="23"
+#! NAME="Create new report"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2695.36 -884.742"
+#! BOTTOM_RIGHT="4325.88 -1384.74"
+#! BOUNDING_RECT="2695.36 -884.742 1630.52 500"
+#! STICKY="true"
+#! COLOUR="0.458824,0.0784314,0.247059"
+#! CONTENTS="17 121 64 122 72 96 97 84 110 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="34"
+#! NAME="Get usage report data"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="4782.29 -445.503"
+#! BOTTOM_RIGHT="11268.9 -1127.51"
+#! BOUNDING_RECT="4782.29 -445.503 6486.57 682.007"
+#! STICKY="true"
+#! COLOUR="0.486275,0.294118,0.247059"
+#! CONTENTS="101 82 106 94 111 83 103 85 109 87 52 104 70 88 113 107 86 81 100 93 57 79 78 90 69 92 73 51 91 71 68 49 80 58 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="1014.63 -714.242"
+#! BOUNDING_RECT="1014.63 -714.242 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="usageReportURL"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="usageReportURL,&lt;at&gt;Value&lt;openparen&gt;ArcGisServerUrl&lt;closeparen&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;admin&lt;solidus&gt;usagereports&lt;solidus&gt;$(reportName)&lt;solidus&gt;data?filterType=json&lt;amp&gt;filter=&lt;opencurly&gt;&lt;quote&gt;machines&lt;quote&gt;:&lt;quote&gt;*&lt;quote&gt;&lt;closecurly&gt;&lt;amp&gt;f=pjson&lt;amp&gt;Token=&lt;at&gt;Value&lt;openparen&gt;Token&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="24"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="2752.36 -500.012"
+#! BOUNDING_RECT="2752.36 -500.012 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="editUsageReportURL"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="editUsageReportURL,&lt;at&gt;Value&lt;openparen&gt;ArcGisServerUrl&lt;closeparen&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;admin&lt;solidus&gt;usagereports&lt;solidus&gt;$(reportName)&lt;solidus&gt;edit?usagereport=&lt;opencurly&gt;&lt;quote&gt;reportname&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;$(reportName)&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;since&lt;quote&gt;:&lt;at&gt;Value&lt;openparen&gt;period&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;queries&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;opencurly&gt;&lt;quote&gt;resourceURIs&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;quote&gt;services&lt;solidus&gt;&lt;quote&gt;&lt;closebracket&gt;&lt;comma&gt;&lt;quote&gt;metrics&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;quote&gt;RequestCount&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestsFailed&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestsTimedOut&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestMaxResponseTime&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestAvgResponseTime&lt;quote&gt;&lt;closebracket&gt;&lt;closecurly&gt;&lt;closebracket&gt;&lt;comma&gt;&lt;quote&gt;metadata&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;closecurly&gt;&lt;amp&gt;f=pjson&lt;amp&gt;Token=&lt;at&gt;Value&lt;openparen&gt;Token&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="17"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="2737.69 -1019.58"
+#! BOUNDING_RECT="2737.69 -1019.58 505.354 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="createUsageReportURL"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="createUsageReportURL,&lt;at&gt;Value&lt;openparen&gt;ArcGisServerUrl&lt;closeparen&gt;&lt;solidus&gt;arcgis&lt;solidus&gt;admin&lt;solidus&gt;usagereports&lt;solidus&gt;add?usagereport=&lt;opencurly&gt;&lt;quote&gt;reportname&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;$(reportName)&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;since&lt;quote&gt;:&lt;at&gt;Value&lt;openparen&gt;period&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;queries&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;opencurly&gt;&lt;quote&gt;resourceURIs&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;quote&gt;services&lt;solidus&gt;&lt;quote&gt;&lt;closebracket&gt;&lt;comma&gt;&lt;quote&gt;metrics&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;quote&gt;RequestCount&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestsFailed&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestsTimedOut&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestMaxResponseTime&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;RequestAvgResponseTime&lt;quote&gt;&lt;closebracket&gt;&lt;closecurly&gt;&lt;closebracket&gt;&lt;comma&gt;&lt;quote&gt;metadata&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;closecurly&gt;&lt;amp&gt;f=pjson&lt;amp&gt;Token=&lt;at&gt;Value&lt;openparen&gt;Token&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="59"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="2116.21 -610.489"
+#! BOUNDING_RECT="2116.21 -610.489 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Report_Exists"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="AND"/>
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST _response NOT_ATTRIBUTE_VALUE_NULL &quot;&quot;&#10;TEST _response NOT_ATTRIBUTE_IS_EMPTY &quot;&quot;&#10;TEST _response NOT_ATTRIBUTE_IS_MISSING &quot;&quot;&#10;TEST &lt;at&gt;Value&lt;openparen&gt;_response&lt;closeparen&gt; NOT_CONTAINS &lt;quote&gt;status&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;error&lt;quote&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="65"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="-643.789 -632.741"
+#! BOUNDING_RECT="-643.789 -632.741 531.596 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="Output"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CalculateTimeRangeMilliis"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXECUTIONDATE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;ExecutionDate&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="CalculateTimeRangeMillis"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="51"
+#! TYPE="JSONFragmenter"
+#! VERSION="3"
+#! POSITION="6030.8 -673.477"
+#! BOUNDING_RECT="6030.8 -673.477 493.006 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="EXPLODED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter_time"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_response_body"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json[&quot;report&quot;][&quot;time-slices&quot;][*]"/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="EXPLODE_FORMAT" PARM_VALUE="JSON"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="49"
+#! TYPE="JSONFragmenter"
+#! VERSION="3"
+#! POSITION="6030.8 -862.256"
+#! BOUNDING_RECT="6030.8 -862.256 513.006 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="EXPLODED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFragmenter_values"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="metric-type"/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_response_body"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PREF_STRING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="JSON_QUERY" PARM_VALUE="json[&quot;report&quot;][&quot;report-data&quot;][*][*]"/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_ATTR" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="RECURSIVE" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="EXPLODE_FORMAT" PARM_VALUE="JSON"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="57"
+#! TYPE="FeatureMerger"
+#! VERSION="13"
+#! POSITION="7209.65 -593.752"
+#! BOUNDING_RECT="7209.65 -593.752 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="MERGE_COUNT_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="IGNORE_NULLS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_element_indexdate&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;json_index&lt;closeparen&gt; AUTO &lt;at&gt;Value&lt;openparen&gt;ArcGisServerID&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;ArcGisServerID&lt;closeparen&gt; AUTO"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GENERATE_LIST_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Requestor"/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Supplier"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="58"
+#! TYPE="ListExploder"
+#! VERSION="4"
+#! POSITION="6688.81 -862.256"
+#! BOUNDING_RECT="6688.81 -862.256 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="LIST_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder_data"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_indexdate"/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#! <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Original"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="data{}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="69"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="5453.8 -722.507"
+#! BOUNDING_RECT="5453.8 -722.507 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="data&lt;opencurly&gt;&lt;closecurly&gt;,&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="78"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="7698.66 -727.505"
+#! BOUNDING_RECT="7698.66 -727.505 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;metric-type&lt;closeparen&gt;,&lt;at&gt;Value&lt;openparen&gt;data&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="68"
+#! TYPE="AttributeExposer"
+#! VERSION="0"
+#! POSITION="8208.83 -727.505"
+#! BOUNDING_RECT="8208.83 -727.505 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="RequestCount,RequestsFailed,RequestsTimedOut,RequestMaxResponseTime,RequestAvgResponseTime"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="83"
+#! TYPE="Aggregator"
+#! VERSION="12"
+#! POSITION="8718.83 -727.505"
+#! BOUNDING_RECT="8718.83 -727.505 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="ArcGisServerID time-slices"/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="92"
+#! TYPE="AttributeKeeper"
+#! VERSION="3"
+#! POSITION="10248.7 -727.505"
+#! BOUNDING_RECT="10248.7 -727.505 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="ArcGisServerID,CriticalError,Date,RequestAvgResponseTime,RequestCount,RequestMaxResponseTime,RequestsFailed,RequestsTimedOut,MonitoringType"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="90"
+#! TYPE="AttributeRenamer"
+#! VERSION="3"
+#! POSITION="9232.83 -727.505"
+#! BOUNDING_RECT="9232.83 -727.505 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="time-slices,Date,&lt;at&gt;Value&lt;openparen&gt;time-slices&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="81"
+#! TYPE="PythonCaller"
+#! VERSION="4"
+#! POSITION="9742.84 -727.505"
+#! BOUNDING_RECT="9742.84 -727.505 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MillisToDatetime"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;datetime&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;f&lt;space&gt;=&lt;space&gt;float&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;Date&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;dt&lt;space&gt;=&lt;space&gt;datetime.datetime.fromtimestamp&lt;openparen&gt;f&lt;space&gt;&lt;solidus&gt;&lt;space&gt;1000&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;Date&lt;apos&gt;&lt;comma&gt;&lt;space&gt;str&lt;openparen&gt;dt&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="85"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="10753.9 -737.507"
+#! BOUNDING_RECT="10753.9 -737.507 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="fme_db_operation" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="db_operation"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="fme_db_operation,INSERT"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="80"
+#! TYPE="DateFormatter"
+#! VERSION="4"
+#! POSITION="9742.84 -884.023"
+#! BOUNDING_RECT="9742.84 -884.023 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Date" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metric-type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_element_indexdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="Date"/>
+#! <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="FME Date/Time (%Y%m%d%H%M%S)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="Unknown - Automatic Detection"/>
+#! <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE="_FME_NO_OP_"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="100"
+#! TYPE="HTTPFetcher"
+#! VERSION="3"
+#! POSITION="4918.83 -722.507"
+#! BOUNDING_RECT="4918.83 -722.507 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPFetcher"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;usageReportURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="105"
+#! TYPE="HTTPFetcher"
+#! VERSION="3"
+#! POSITION="1565.64 -692.741"
+#! BOUNDING_RECT="1565.64 -692.741 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPFetcher_3"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;usageReportURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="72"
+#! TYPE="AttributeKeeper"
+#! VERSION="3"
+#! POSITION="2763.87 -1185.59"
+#! BOUNDING_RECT="2763.87 -1185.59 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="ArcGisServerID,ArcGisServerUrl,createUsageReportURL,CriticalError,ExecutionDate,Token,usageReportURL,MonitoringType"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="64"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="3807.62 -1019.58"
+#! BOUNDING_RECT="3807.62 -1019.58 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Report_Created"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="AND"/>
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST _response NOT_ATTRIBUTE_VALUE_NULL &quot;&quot;&#10;TEST _response NOT_ATTRIBUTE_IS_EMPTY &quot;&quot;&#10;TEST _response NOT_ATTRIBUTE_IS_MISSING &quot;&quot;&#10;TEST &lt;at&gt;Value&lt;openparen&gt;_response&lt;closeparen&gt; NOT_CONTAINS &lt;quote&gt;status&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;error&lt;quote&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="110"
+#! TYPE="HTTPCaller"
+#! VERSION="0"
+#! POSITION="3318.49 -1109.97"
+#! BOUNDING_RECT="3318.49 -1109.97 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="Output"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;createUsageReportURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#! <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#! <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller_created"/>
+#! <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="Text (text/plain)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#! <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response"/>
+#! <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#! <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="99"
+#! TYPE="HTTPCaller"
+#! VERSION="0"
+#! POSITION="3318.49 -513.241"
+#! BOUNDING_RECT="3318.49 -513.241 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="Output"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;editUsageReportURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#! <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#! <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller_edited"/>
+#! <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="Text (text/plain)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#! <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response"/>
+#! <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#! <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="60"
+#! TYPE="Tester"
+#! VERSION="2"
+#! POSITION="3807.62 -486.954"
+#! BOUNDING_RECT="3807.62 -486.954 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="PASSED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="FAILED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Report_Edited"/>
+#! <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="AND"/>
+#! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
+#! <XFORM_PARM PARM_NAME="TEST_DESCRIPTION" PARM_VALUE="&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST _response NOT_ATTRIBUTE_VALUE_NULL &quot;&quot;&#10;TEST _response NOT_ATTRIBUTE_IS_EMPTY &quot;&quot;&#10;TEST _response NOT_ATTRIBUTE_IS_MISSING &quot;&quot;&#10;TEST &lt;at&gt;Value&lt;openparen&gt;_response&lt;closeparen&gt; NOT_CONTAINS &lt;quote&gt;status&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;error&lt;quote&gt;"/>
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="63"
+#! TYPE="AttributeKeeper"
+#! VERSION="3"
+#! POSITION="2763.87 -641.013"
+#! BOUNDING_RECT="2763.87 -641.013 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper_3"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="ArcGisServerID,ArcGisServerUrl,CriticalError,editUsageReportURL,ExecutionDate,Token,usageReportURL,MonitoringType"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="107"
+#! TYPE="AttributeKeeper"
+#! VERSION="3"
+#! POSITION="4912.1 -550.901"
+#! BOUNDING_RECT="4912.1 -550.901 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper_4"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="ArcGisServerID,ArcGisServerUrl,CriticalError,ExecutionDate,Token,usageReportURL,MonitoringType"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="111"
+#! TYPE="AttributeKeeper"
+#! VERSION="3"
+#! POSITION="4918.83 -940.62"
+#! BOUNDING_RECT="4918.83 -940.62 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper_5"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="ArcGisServerID,ArcGisServerUrl,CriticalError,ExecutionDate,Token,usageReportURL,MonitoringType"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="103"
+#! TYPE="AttributeRenamer"
+#! VERSION="3"
+#! POSITION="6667.81 -673.477"
+#! BOUNDING_RECT="6667.81 -673.477 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="time-slices" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="data{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="json_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer_2"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_response_body,time-slices,&lt;at&gt;Value&lt;openparen&gt;_response_body&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="74"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="5482.05 -1542.73"
+#! BOUNDING_RECT="5482.05 -1542.73 443.677 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StadisticsError"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="text_line_data,&lt;openbracket&gt;$(FME_BUILD_DATE)&lt;closebracket&gt;&lt;space&gt;#&lt;space&gt;AGS&lt;space&gt;services&lt;space&gt;statistics&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;checked.&lt;space&gt;&lt;lf&gt;&lt;at&gt;Value&lt;openparen&gt;_response&lt;closeparen&gt;&lt;cr&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="118"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="4349.93 -673.477"
+#! BOUNDING_RECT="4349.93 -673.477 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="editUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_error,The&lt;space&gt;usagereport&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;created."/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="121"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="4316.5 -1219.52"
+#! BOUNDING_RECT="4316.5 -1219.52 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="usageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="createUsageReportURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_4"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_error,The&lt;space&gt;usagereport&lt;space&gt;can&lt;space&gt;not&lt;space&gt;be&lt;space&gt;created."/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="127"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="481.335 -692.741"
+#! BOUNDING_RECT="481.335 -692.741 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="period" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="period"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="period,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;&lt;space&gt;&lt;quote&gt;LAST_WEEK&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;aggregationInterval&lt;quote&gt;:&lt;space&gt;10080&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST &lt;at&gt;Value&lt;openparen&gt;MonitoringType&lt;closeparen&gt; = DAY&apos;&lt;space&gt;&lt;quote&gt;CUSTOM&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;from&lt;quote&gt;:&lt;at&gt;Value&lt;openparen&gt;yesterday&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;to&lt;quote&gt;:&lt;at&gt;Value&lt;openparen&gt;now&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;aggregationInterval&lt;quote&gt;:&lt;space&gt;1440&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="128"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-11.5267 -669.744"
+#! BOUNDING_RECT="-11.5267 -669.744 -1 -1"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Token" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="MonitoringType {$(MONITORINGTYPE)}"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="2"
+#! NAME="Input"
+#! POSITION="-1159.99 -714.242"
+#! BOUNDING_RECT="-1159.99 -714.242 -1 -1"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerUrl" ATTR_VALUE="$(ARCGISSERVERURL)" />
+#! <XFORM_ATTR ATTR_NAME="Token" ATTR_VALUE="$(TOKEN)" />
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" ATTR_VALUE="$(EXECUTIONDATE)" />
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" ATTR_VALUE="$(ARCGISSERVERID)" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" ATTR_VALUE="$(CRITICALERROR)" />
+#! <XFORM_ATTR ATTR_NAME="ServerName" ATTR_VALUE="$(SERVERNAME)" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" ATTR_VALUE="$(MONITORINGTYPE)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="77"
+#! NAME="ServerStatistics"
+#! POSITION="11339.8 -737.507"
+#! BOUNDING_RECT="11339.8 -737.507 -1 -1"
+#! COLLAPSED="false"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ArcGisServerID" />
+#! <XFORM_ATTR ATTR_NAME="CriticalError" />
+#! <XFORM_ATTR ATTR_NAME="Date" />
+#! <XFORM_ATTR ATTR_NAME="fme_db_operation" />
+#! <XFORM_ATTR ATTR_NAME="MonitoringType" />
+#! <XFORM_ATTR ATTR_NAME="RequestAvgResponseTime" />
+#! <XFORM_ATTR ATTR_NAME="RequestCount" />
+#! <XFORM_ATTR ATTR_NAME="RequestMaxResponseTime" />
+#! <XFORM_ATTR ATTR_NAME="RequestsFailed" />
+#! <XFORM_ATTR ATTR_NAME="RequestsTimedOut" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="75"
+#! NAME="error"
+#! POSITION="6080.39 -1532.02"
+#! BOUNDING_RECT="6080.39 -1532.02 -1 -1"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="59"
+#! TARGET_NODE="17"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="63"
+#! TARGET_NODE="99"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="66"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="65"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="52"
+#! SOURCE_NODE="69"
+#! TARGET_NODE="51"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="70"
+#! SOURCE_NODE="49"
+#! TARGET_NODE="58"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="73"
+#! SOURCE_NODE="69"
+#! TARGET_NODE="49"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="71"
+#! SOURCE_NODE="58"
+#! TARGET_NODE="57"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="79"
+#! SOURCE_NODE="57"
+#! TARGET_NODE="78"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="88"
+#! SOURCE_NODE="78"
+#! TARGET_NODE="68"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="87"
+#! SOURCE_NODE="68"
+#! TARGET_NODE="83"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="93"
+#! SOURCE_NODE="83"
+#! TARGET_NODE="90"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="82"
+#! SOURCE_NODE="90"
+#! TARGET_NODE="81"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="86"
+#! SOURCE_NODE="92"
+#! TARGET_NODE="85"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="89"
+#! SOURCE_NODE="85"
+#! TARGET_NODE="77"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="91"
+#! SOURCE_NODE="81"
+#! TARGET_NODE="80"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="94"
+#! SOURCE_NODE="80"
+#! TARGET_NODE="92"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="101"
+#! SOURCE_NODE="100"
+#! TARGET_NODE="69"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="95"
+#! SOURCE_NODE="105"
+#! TARGET_NODE="59"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="98"
+#! SOURCE_NODE="59"
+#! TARGET_NODE="24"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="84"
+#! SOURCE_NODE="17"
+#! TARGET_NODE="72"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="96"
+#! SOURCE_NODE="72"
+#! TARGET_NODE="110"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="97"
+#! SOURCE_NODE="110"
+#! TARGET_NODE="64"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="62"
+#! SOURCE_NODE="99"
+#! TARGET_NODE="60"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="102"
+#! SOURCE_NODE="24"
+#! TARGET_NODE="63"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="108"
+#! SOURCE_NODE="60"
+#! TARGET_NODE="107"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="109"
+#! SOURCE_NODE="107"
+#! TARGET_NODE="100"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="112"
+#! SOURCE_NODE="64"
+#! TARGET_NODE="111"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="113"
+#! SOURCE_NODE="111"
+#! TARGET_NODE="100"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="104"
+#! SOURCE_NODE="51"
+#! TARGET_NODE="103"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="106"
+#! SOURCE_NODE="103"
+#! TARGET_NODE="57"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="76"
+#! SOURCE_NODE="74"
+#! TARGET_NODE="75"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="114"
+#! SOURCE_NODE="100"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="115"
+#! SOURCE_NODE="99"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="116"
+#! SOURCE_NODE="110"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="117"
+#! SOURCE_NODE="105"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS="2337 -1582"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="119"
+#! SOURCE_NODE="60"
+#! TARGET_NODE="118"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="120"
+#! SOURCE_NODE="118"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="122"
+#! SOURCE_NODE="64"
+#! TARGET_NODE="121"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="123"
+#! SOURCE_NODE="121"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="124"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="105"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="125"
+#! SOURCE_NODE="127"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="129"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="128"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="130"
+#! SOURCE_NODE="128"
+#! TARGET_NODE="127"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! <SUBDOCUMENT
+#! NAME="CalculateTimeRangeMillis"
+#! LEGAL_TERMS_CONDITIONS=""
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! CATEGORY=""
+#! DESCRIPTION=""
+#! IS_VISIBLE="false"
+#! FME_DOCUMENT_PRIORGUID=""
+#! DOC_DYNAMIC_INPUT_ATTRS="0"
+#! REQUIREMENTS=""
+#! VIEW_POSITION="-1074.01 384.004"
+#! HISTORY=""
+#! ZOOM_SCALE="100"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! REQUIREMENTS_KEYWORD=""
+#! DOC_TOP_LEFT="-1031.41 -70.1261"
+#! DOC_EXTENTS="2134.16 99.5032"
+#! FME_DOCUMENT_GUID=""
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE=""
+#! TITLE="CalculateTimeRangeMillis"
+#! SUPPRESS_UPGRADE="false"
+#! XFORM_DEPRECATED="No"
+#! >
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR EXECUTIONDATE ExecutionDate:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ExecutionDate&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="AttributeCreator"
+#! VERSION="7"
+#! POSITION="-468.408 29.3771"
+#! BOUNDING_RECT="-468.408 29.3771 430 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Today"/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="now,&lt;at&gt;Value&lt;openparen&gt;ExecutionDate&lt;closeparen&gt;,yesterday,&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="PythonCaller"
+#! VERSION="4"
+#! POSITION="88.5921 29.3771"
+#! BOUNDING_RECT="88.5921 29.3771 430 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15515"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="now" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Yesterday"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="processFeature"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;datetime&lt;lf&gt;import&lt;space&gt;time&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;datestring&lt;space&gt;=&lt;space&gt;datetime.datetime.strptime&lt;openparen&gt;str&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;now&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;%Y%m%d%H%M%S&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;-&lt;space&gt;datetime.timedelta&lt;openparen&gt;days=1&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sModificationTime&lt;space&gt;=&lt;space&gt;time.strptime&lt;openparen&gt;str&lt;openparen&gt;datestring&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;%Y-%m-%d&lt;space&gt;%H:%M:%S&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lCookieModificationTime&lt;space&gt;=&lt;space&gt;time.mktime&lt;openparen&gt;sModificationTime&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;1000&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;yesterday&lt;apos&gt;&lt;comma&gt;&lt;space&gt;lCookieModificationTime&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sModificationTime2&lt;space&gt;=&lt;space&gt;time.strptime&lt;openparen&gt;str&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;now&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;%Y%m%d%H%M%S&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;lCookieModificationTime2&lt;space&gt;=&lt;space&gt;time.mktime&lt;openparen&gt;sModificationTime2&lt;closeparen&gt;&lt;space&gt;*&lt;space&gt;1000&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;apos&gt;now&lt;apos&gt;&lt;comma&gt;&lt;space&gt;lCookieModificationTime2&lt;closeparen&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="5"
+#! NAME="Output"
+#! POSITION="672.754 29.3771"
+#! BOUNDING_RECT="672.754 29.3771 430 71"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" />
+#! <XFORM_ATTR ATTR_NAME="now" />
+#! <XFORM_ATTR ATTR_NAME="yesterday" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="6"
+#! NAME="Input"
+#! POSITION="-1031.41 0.87386"
+#! BOUNDING_RECT="-1031.41 0.87386 430 71"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ExecutionDate" ATTR_VALUE="$(EXECUTIONDATE)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! </SUBDOCUMENT>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_ARCGISSERVERURL <at>Value<openparen>ArcGisServerUrl<closeparen>
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_TOKEN <at>Value<openparen>Token<closeparen>
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_reportName serverStatistics
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_EXECUTIONDATE <at>Value<openparen>ExecutionDate<closeparen>
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_ARCGISSERVERID <at>Value<openparen>ArcGisServerID<closeparen>
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_CRITICALERROR <at>Value<openparen>CriticalError<closeparen>
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_SERVERNAME <at>Value<openparen>ServerName<closeparen>
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_MONITORINGTYPE <at>Value<openparen>MonitoringType<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO GetServerStatistics_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetServerStatistics_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetServerStatistics_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetServerStatistics_WORKSPACE_NAME)_Input1444121268 Input Splitter"   INPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,ArcGisServerUrl,$($(GetServerStatistics_WORKSPACE_NAME)_ARCGISSERVERURL),Token,$($(GetServerStatistics_WORKSPACE_NAME)_TOKEN),ExecutionDate,$($(GetServerStatistics_WORKSPACE_NAME)_EXECUTIONDATE),ArcGisServerID,$($(GetServerStatistics_WORKSPACE_NAME)_ARCGISSERVERID),CriticalError,$($(GetServerStatistics_WORKSPACE_NAME)_CRITICALERROR),ServerName,$($(GetServerStatistics_WORKSPACE_NAME)_SERVERNAME),MonitoringType,$($(GetServerStatistics_WORKSPACE_NAME)_MONITORINGTYPE), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis Input Input Collector"   INPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis_Input"
+MACRO CalculateTimeRangeMillis_WORKSPACE_NAME $(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis
+MACRO $(CalculateTimeRangeMillis_WORKSPACE_NAME)_XFORMER_NAME $(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis
+MACRO $(CalculateTimeRangeMillis_WORKSPACE_NAME)_TRANSFORMER_GROUP 
+MACRO $(CalculateTimeRangeMillis_WORKSPACE_NAME)___COMPOUND_PARAMETERS 
+MACRO $(CalculateTimeRangeMillis_WORKSPACE_NAME)_SUB_DOC_NAME CalculateTimeRangeMillis
+MACRO $(CalculateTimeRangeMillis_WORKSPACE_NAME)_EXECUTIONDATE <at>Value<openparen>ExecutionDate<closeparen>
+DEFAULT_MACRO CalculateTimeRangeMillis_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(CalculateTimeRangeMillis_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(CalculateTimeRangeMillis_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Input1444121268 Input Splitter"   INPUT FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,ExecutionDate,$($(CalculateTimeRangeMillis_WORKSPACE_NAME)_EXECUTIONDATE), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(CalculateTimeRangeMillis_WORKSPACE_NAME)_Today ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Input" ATTR now <at>Value<openparen>ExecutionDate<closeparen> ATTR yesterday ""    OUTPUT OUTPUT FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Today_OUTPUT" 
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(CalculateTimeRangeMillis_WORKSPACE_NAME)_Yesterday    INPUT  FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Today_OUTPUT"    SYMBOL_NAME processFeature    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>datetime<lf>import<space>time<lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>datestring<space>=<space>datetime.datetime.strptime<openparen>str<openparen>feature.getAttribute<openparen><apos>now<apos><closeparen><closeparen><comma><space><apos>%Y%m%d%H%M%S<apos><closeparen><space>-<space>datetime.timedelta<openparen>days=1<closeparen><lf><space><space><space><space><lf><space><space><space><space>sModificationTime<space>=<space>time.strptime<openparen>str<openparen>datestring<closeparen><comma><space><quote>%Y-%m-%d<space>%H:%M:%S<quote><closeparen><lf><space><space><space><space>lCookieModificationTime<space>=<space>time.mktime<openparen>sModificationTime<closeparen><space>*<space>1000<lf><space><space><space><space>feature.setAttribute<openparen><apos>yesterday<apos><comma><space>lCookieModificationTime<closeparen><lf><space><space><space><space><lf><space><space><space><space><lf><space><space><space><space>sModificationTime2<space>=<space>time.strptime<openparen>str<openparen>feature.getAttribute<openparen><apos>now<apos><closeparen><closeparen><comma><space><quote>%Y%m%d%H%M%S<quote><closeparen><lf><space><space><space><space>lCookieModificationTime2<space>=<space>time.mktime<openparen>sModificationTime2<closeparen><space>*<space>1000<lf><space><space><space><space>feature.setAttribute<openparen><apos>now<apos><comma><space>lCookieModificationTime2<closeparen><lf><lf><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Yesterday_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Output1444121268 Output Collector"   INPUT FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Yesterday_OUTPUT"   OUTPUT FEATURE_TYPE "$(CalculateTimeRangeMillis_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(CalculateTimeRangeMillis_WORKSPACE_NAME))}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis Output Output Renamer/Nuker"   INPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis_Output"   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis_Output"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"MonitoringType {$($(GetServerStatistics_WORKSPACE_NAME)_MONITORINGTYPE)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_CalculateTimeRangeMilliis_Output"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_period ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_ParameterFetcher_OUTPUT" ATTR period "FME_CONDITIONAL:DEFAULT_VALUE'<space><quote>LAST_WEEK<quote><comma><quote>aggregationInterval<quote>:<space>10080'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST <at>Value<openparen>MonitoringType<closeparen> = DAY'<space><quote>CUSTOM<quote><comma><quote>from<quote>:<at>Value<openparen>yesterday<closeparen><comma><quote>to<quote>:<at>Value<openparen>now<closeparen><comma><quote>aggregationInterval<quote>:<space>1440'FME_NUM_CONDITIONS2___"    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_period_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_usageReportURL ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_period_OUTPUT" ATTR usageReportURL <at>Value<openparen>ArcGisServerUrl<closeparen><solidus>arcgis<solidus>admin<solidus>usagereports<solidus>$($(GetServerStatistics_WORKSPACE_NAME)_reportName$encode)<solidus>data?filterType=json<amp>filter=<opencurly><quote>machines<quote>:<quote>*<quote><closecurly><amp>f=pjson<amp>Token=<at>Value<openparen>Token<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_usageReportURL_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_3       INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_usageReportURL_OUTPUT"    TARGET_URL @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>usageReportURL<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_3)    SAVE_FILE No    OUTPUT_FILENAME "<Unused>"    TARGET_ATTR "_response"    HTTP_METHOD GET    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_3_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_3_<REJECTED>"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_Report_Exists    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_3_OUTPUT"    TEST _response NOT_ATTRIBUTE_VALUE_NULL "" ENCODED TEST _response NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST _response NOT_ATTRIBUTE_IS_MISSING "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_Report_Exists) NOT_CONTAINS <quote>status<quote>:<space><quote>error<quote> ENCODED    BOOLEAN_OPERATOR AND    OUTPUT PASSED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Exists_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Exists_FAILED"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_createUsageReportURL ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Exists_FAILED" ATTR createUsageReportURL <at>Value<openparen>ArcGisServerUrl<closeparen><solidus>arcgis<solidus>admin<solidus>usagereports<solidus>add?usagereport=<opencurly><quote>reportname<quote>:<space><quote>$($(GetServerStatistics_WORKSPACE_NAME)_reportName$encode)<quote><comma><quote>since<quote>:<at>Value<openparen>period<closeparen><comma><quote>queries<quote>:<space><openbracket><opencurly><quote>resourceURIs<quote>:<space><openbracket><quote>services<solidus><quote><closebracket><comma><quote>metrics<quote>:<space><openbracket><quote>RequestCount<quote><comma><quote>RequestsFailed<quote><comma><quote>RequestsTimedOut<quote><comma><quote>RequestMaxResponseTime<quote><comma><quote>RequestAvgResponseTime<quote><closebracket><closecurly><closebracket><comma><quote>metadata<quote>:<space><quote><quote><closecurly><amp>f=pjson<amp>Token=<at>Value<openparen>Token<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_createUsageReportURL_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_2_c2085912_a16c_4f13_9f02_c21bd347ab300_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_2    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_createUsageReportURL_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"        @KeepAttributes(fme_encoded,ArcGisServerID,ArcGisServerUrl,createUsageReportURL,CriticalError,ExecutionDate,Token,usageReportURL,MonitoringType,fme_pcre_match,"^fme_$($(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_2_c2085912_a16c_4f13_9f02_c21bd347ab300_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_created       INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_2_OUTPUT"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>createUsageReportURL<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_created)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    TARGET_ATTR "_response"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY ""    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "text/plain"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "<Unused>"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_created_Output"    OUTPUT REJECTED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_created_<Rejected>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_Report_Created    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_created_Output"    TEST _response NOT_ATTRIBUTE_VALUE_NULL "" ENCODED TEST _response NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST _response NOT_ATTRIBUTE_IS_MISSING "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_Report_Created) NOT_CONTAINS <quote>status<quote>:<space><quote>error<quote> ENCODED    BOOLEAN_OPERATOR AND    OUTPUT PASSED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Created_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Created_FAILED"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_4 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Created_FAILED" ATTR _error The<space>usagereport<space>can<space>not<space>be<space>created.    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_5_2d0429cd_b3e6_4195_8133_b651fe2636d80_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_5    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Created_PASSED"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_5_OUTPUT"        @KeepAttributes(fme_encoded,ArcGisServerID,ArcGisServerUrl,CriticalError,ExecutionDate,Token,usageReportURL,MonitoringType,fme_pcre_match,"^fme_$($(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_5_2d0429cd_b3e6_4195_8133_b651fe2636d80_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_editUsageReportURL ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Exists_PASSED" ATTR editUsageReportURL <at>Value<openparen>ArcGisServerUrl<closeparen><solidus>arcgis<solidus>admin<solidus>usagereports<solidus>$($(GetServerStatistics_WORKSPACE_NAME)_reportName$encode)<solidus>edit?usagereport=<opencurly><quote>reportname<quote>:<space><quote>$($(GetServerStatistics_WORKSPACE_NAME)_reportName$encode)<quote><comma><quote>since<quote>:<at>Value<openparen>period<closeparen><comma><quote>queries<quote>:<space><openbracket><opencurly><quote>resourceURIs<quote>:<space><openbracket><quote>services<solidus><quote><closebracket><comma><quote>metrics<quote>:<space><openbracket><quote>RequestCount<quote><comma><quote>RequestsFailed<quote><comma><quote>RequestsTimedOut<quote><comma><quote>RequestMaxResponseTime<quote><comma><quote>RequestAvgResponseTime<quote><closebracket><closecurly><closebracket><comma><quote>metadata<quote>:<space><quote><quote><closecurly><amp>f=pjson<amp>Token=<at>Value<openparen>Token<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_editUsageReportURL_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_3_e638d8af_1048_4a3b_8275_b4bc82b219bc0_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_3    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_editUsageReportURL_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_3_OUTPUT"        @KeepAttributes(fme_encoded,ArcGisServerID,ArcGisServerUrl,CriticalError,editUsageReportURL,ExecutionDate,Token,usageReportURL,MonitoringType,fme_pcre_match,"^fme_$($(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_3_e638d8af_1048_4a3b_8275_b4bc82b219bc0_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_edited       INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_3_OUTPUT"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>editUsageReportURL<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_edited)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    TARGET_ATTR "_response"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY ""    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "text/plain"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "<Unused>"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_edited_Output"    OUTPUT REJECTED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_edited_<Rejected>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_Report_Edited    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_edited_Output"    TEST _response NOT_ATTRIBUTE_VALUE_NULL "" ENCODED TEST _response NOT_ATTRIBUTE_IS_EMPTY "" ENCODED TEST _response NOT_ATTRIBUTE_IS_MISSING "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_Report_Edited) NOT_CONTAINS <quote>status<quote>:<space><quote>error<quote> ENCODED    BOOLEAN_OPERATOR AND    OUTPUT PASSED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Edited_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Edited_FAILED"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_3 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Edited_FAILED" ATTR _error The<space>usagereport<space>can<space>not<space>be<space>created.    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_4_32b0122d_eab2_43ea_9ae7_4e5fd00fec950_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_4    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Report_Edited_PASSED"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_4_OUTPUT"        @KeepAttributes(fme_encoded,ArcGisServerID,ArcGisServerUrl,CriticalError,ExecutionDate,Token,usageReportURL,MonitoringType,fme_pcre_match,"^fme_$($(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_4_32b0122d_eab2_43ea_9ae7_4e5fd00fec950_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher       INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_5_OUTPUT"    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_4_OUTPUT"    TARGET_URL @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>usageReportURL<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher)    SAVE_FILE No    OUTPUT_FILENAME "<Unused>"    TARGET_ATTR "_response_body"    HTTP_METHOD GET    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_StadisticsError ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_3_<REJECTED>"    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_3_OUTPUT"    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_edited_<Rejected>"    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_4_OUTPUT"    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPCaller_created_<Rejected>" ATTR text_line_data <openbracket>$(FME_BUILD_DATE$encode)<closebracket><space>#<space>AGS<space>services<space>statistics<space>can<space>not<space>be<space>checked.<space><lf><at>Value<openparen>_response<closeparen><cr><lf>    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_StadisticsError_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_HTTPFetcher_OUTPUT" ATTR data<opencurly><closecurly> ""    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator OUTPUT Splitter"   INPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_OUTPUT_0_dF4gbeIBrLM="   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_OUTPUT_1_dF4gbeIBrLM="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_JSONFragmenter_values    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_OUTPUT_1_dF4gbeIBrLM="    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR Yes    JSON_ATTR _response_body    EXPLODE_QUERY "json<openbracket><quote>report<quote><closebracket><openbracket><quote>report-data<quote><closebracket><openbracket>*<closebracket><openbracket>*<closebracket>"    RECURSIVE_FLATTEN YES    OUTPUT EXPLODED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_JSONFragmenter_values_EXPLODED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_ListExploder_data    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_JSONFragmenter_values_EXPLODED"    LIST_NAME "data{}"    ELEMENT_NUMBER_FIELD "_element_indexdate"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "ORIGINAL_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_ListExploder_data_LIST_FOUND"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_JSONFragmenter_time    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_OUTPUT_0_dF4gbeIBrLM="    MODE EXPLODE    EXPLODE_FORMAT JSON    EXTRACT_ATTR No    JSON_ATTR _response_body    EXPLODE_QUERY "json<openbracket><quote>report<quote><closebracket><openbracket><quote>time-slices<quote><closebracket><openbracket>*<closebracket>"    RECURSIVE_FLATTEN <Unused>    OUTPUT EXPLODED FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_JSONFragmenter_time_EXPLODED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer_2    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_JSONFragmenter_time_EXPLODED"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL_ENCODED, _response_body,time-slices,"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_response_body<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer_2)")
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger    INPUT REFERENCER FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_ListExploder_data_LIST_FOUND"    INPUT REFERENCEE FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"    REFERENCE_INFO $($(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_element_indexdate<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>json_index<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger) AUTO @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>ArcGisServerID<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>ArcGisServerID<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger) AUTO    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "REQUESTOR_IF_CONFLICT"    IGNORE_NULLS "No"    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_MERGED"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_2 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_FeatureMerger_MERGED" ATTR <at>Value<openparen>metric-type<closeparen> <at>Value<openparen>data<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT" 
+# -------------------------------------------------------------------------
+
+# Expose all attributes.  This ensures that if you expose fme_dataset, you will get it.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(GetServerStatistics_WORKSPACE_NAME)_Aggregator_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(GetServerStatistics_WORKSPACE_NAME)_Aggregator_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE ArcGisServerID time-slices} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_Aggregator    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeExposer_OUTPUT"    MODE ONE_LEVEL    GROUP_BY ArcGisServerID time-slices    $($(GetServerStatistics_WORKSPACE_NAME)_Aggregator_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Yes    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Aggregator_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_Aggregator_AGGREGATE"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL_ENCODED, time-slices,Date,"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>time-slices<closeparen>,$(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer)")
+
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_MillisToDatetime    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>datetime<lf><lf>#<space>Template<space>Function<space>interface:<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>f<space>=<space>float<openparen>feature.getAttribute<openparen><apos>Date<apos><closeparen><closeparen><lf><space><space><space><space><space><space><space><space>dt<space>=<space>datetime.datetime.fromtimestamp<openparen>f<space><solidus><space>1000<closeparen><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><apos>Date<apos><comma><space>str<openparen>dt<closeparen><closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_MillisToDatetime_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(GetServerStatistics_WORKSPACE_NAME)_DateFormatter_formatter {invalidValue} {       set dateFormat {FME Date/Time (%Y%m%d%H%M%S)};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {Date} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set srcfmt {};        if {{FME_AUTOMATIC} != {FME_AUTOMATIC}} {            set srcfmt {FME_AUTOMATIC};        } else {          set comment { In Automatic mode we ignore the millisecond part };          regexp {^[^.]*} $date date;        };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };        };        set sourceFormatOpt {};        if {[string length $srcfmt] > 0} {           set sourceFormatOpt \"-format {$srcfmt}\";        };        set comment { Compute the output value and catch any errors };        set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                           set output [clock format $seconds -format $dateFormat];        }];        set comment { If there was error then we try again by removing digits after last decimal };        if { $error != 0 } {           set index [string last "." $date];           if { $index > 0 } {              set date [eval string range $date 0 [expr $index-1]];              set dateLen [string length $date];              set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];           };        };        if { $error == 0 } {           FME_SetAttribute $attr $output;        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_DateFormatter    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_MillisToDatetime_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_DateFormatter_OUTPUT"         @Tcl2("$(GetServerStatistics_WORKSPACE_NAME)_DateFormatter_formatter {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_d3862739_36c6_41f4_98be_724ccc8f93fa0_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper    INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_DateFormatter_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_OUTPUT"        @KeepAttributes(fme_encoded,ArcGisServerID,CriticalError,Date,RequestAvgResponseTime,RequestCount,RequestMaxResponseTime,RequestsFailed,RequestsTimedOut,MonitoringType,fme_pcre_match,"^fme_$($(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_d3862739_36c6_41f4_98be_724ccc8f93fa0_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetServerStatistics_WORKSPACE_NAME)_db_operation ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_AttributeKeeper_OUTPUT" ATTR fme_db_operation INSERT    OUTPUT OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_db_operation_OUTPUT" 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetServerStatistics_WORKSPACE_NAME)_ServerStatistics1444121268 Output Collector"   INPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_db_operation_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_ServerStatistics"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetServerStatistics_WORKSPACE_NAME)_error1444121268 Output Collector"   INPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_StadisticsError_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetServerStatistics_WORKSPACE_NAME)_error"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetServerStatistics_WORKSPACE_NAME))}]

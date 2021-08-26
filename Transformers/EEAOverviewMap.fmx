@@ -1,0 +1,732 @@
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN EEAOverviewMap,1,EEAValidation,6b7ab1b4-e345-4307-949d-43f6bc8a4624,"Embedded Always",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Build an overview map from two layers and zooms to those features found. </p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The following reference layer can be used to mach ISO2 country codes</p>
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">E:\ReferenceData\EuroBoundary_WM.gdb\WorldBoundaries </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-1938 441"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Embedded Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Build an overview map from two layers and zooms to those features found. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The following reference layer can be used to mach ISO2 country codes&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;E:\ReferenceData\EuroBoundary_WM.gdb\WorldBoundaries &lt;/p&gt;&#10;"
+#! TITLE="EEAOverviewMap"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="EEAValidation"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: LGPL-2.1+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Lesser General Public License for more details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License: GPL-2+&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;License as published by the Free Software Foundation; either&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;version.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PURPOSE.  See the GNU General Public License for more&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;details.&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; .&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;/&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Link a feature set to the &quot;Features&quot; input and a reference layer to the &quot;Reference&quot; input. Define the codes matching the reference layer to the features. &lt;/p&gt;&#10;"
+#! HISTORY="15&lt;solidus&gt;07&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiator"
+#! FME_DOCUMENT_PRIORGUID="78a184b5-b944-4f0c-9cd3-f07031649309"
+#! DOC_TOP_LEFT="-1784 -1183"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-07-23T11:35:24"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4069 1377"
+#! FME_DOCUMENT_GUID="6b7ab1b4-e345-4307-949d-43f6bc8a4624"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI COLOR_PICK MatchedColor Color for features found:"
+#! DEFAULT_VALUE="0,1,0.498039"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI COLOR_PICK MissingColor Color for features missing:"
+#! DEFAULT_VALUE="1,1,1"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR FeatureCode Feature unique code:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;country_code&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ReferenceCode Reference code:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ISO_2DIGIT&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="31"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A little enoying but the only way to dynamicaly zoom and pass on the boundbox to Mapnik&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="851 -255"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="851 -255"
+#! BOTTOM_RIGHT="1477 -396"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#! IDENTIFIER="36"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Produce an overview map and find features to a reference dataset. A common issue for EEA validators. The result can easily be exposed on websites or workd documents.&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Creator: Jan Bliki&lt;/span&gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Date: 02/07/2014&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-1784 194"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="-1784 194"
+#! BOTTOM_RIGHT="-1011 130"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="30"
+#! NAME="in order to pass the boundingbox"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="796 -144"
+#! BOTTOM_RIGHT="1533 -1690"
+#! STICKY="true"
+#! COLOUR="0.439216,0.27451,0.784314"
+#! CONTENTS="6 7 31 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="32"
+#! NAME="Calculate the boundingbox and extract"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-459 -150"
+#! BOTTOM_RIGHT="736 -918"
+#! STICKY="true"
+#! COLOUR="0.231373,0.027451,0.309804"
+#! CONTENTS="15 5 16 4 17 2 3 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="33"
+#! NAME="Produce picture"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1593 -147"
+#! BOTTOM_RIGHT="2123 -1677"
+#! STICKY="true"
+#! COLOUR="0.784314,0.819608,0.286275"
+#! CONTENTS="8 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="34"
+#! NAME="Merge both datasets"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-1046 -153"
+#! BOTTOM_RIGHT="-494 -930"
+#! STICKY="true"
+#! COLOUR="0.0392157,0.109804,0.364706"
+#! CONTENTS="1 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="35"
+#! NAME="If no link in the reference then this is reported here as well"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-1104 -1074"
+#! BOTTOM_RIGHT="744 -1287"
+#! STICKY="true"
+#! COLOUR="0.803922,0.537255,0.694118"
+#! CONTENTS="12 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="-996 -305"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes and Geometry"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FindMissing"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="$(FeatureCode) $(ReferenceCode) STRING"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="BoundingBoxAccumulator"
+#! VERSION="2"
+#! POSITION="-385 -314"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="BOUNDING_BOX"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <OUTPUT_FEAT NAME="ORIGINAL"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TOPFER_INDEX" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="BoundingBox"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="DESTINATION_SCALE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SOURCE_SCALE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="GeometryExtractor"
+#! VERSION="7"
+#! POSITION="171 -302"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="OGCVERSION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="_geometry"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryExtractor"/>
+#! <XFORM_PARM PARM_NAME="GEOHASH_PRECISION_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OGEOSMS_URL_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OMIT_NAMESPACES_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="LEVELS_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="Esri JSON"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="JSONExtractor"
+#! VERSION="1"
+#! POSITION="189 -472"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="EVALUATED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="_mapMinx json&lt;openbracket&gt;&lt;quote&gt;rings&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt; _mapMiny json&lt;openbracket&gt;&lt;quote&gt;rings&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt;&lt;openbracket&gt;1&lt;closebracket&gt; _mapMaxx json&lt;openbracket&gt;&lt;quote&gt;rings&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt;&lt;openbracket&gt;1&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt; _mapMaxy json&lt;openbracket&gt;&lt;quote&gt;rings&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;0&lt;closebracket&gt;&lt;openbracket&gt;2&lt;closebracket&gt;&lt;openbracket&gt;1&lt;closebracket&gt;"/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="_geometry"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="VariableSetter"
+#! VERSION="2"
+#! POSITION="187 -652"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#! <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableSetter"/>
+#! <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_mapMinx&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="x1"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="963 -589"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MergeExtentFound"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="1 1 AUTO"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="950 -1145"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="country_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMinx" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMiny" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxx" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_mapMaxy" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MergeExtMissing"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="1 1 AUTO"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="MapnikRasterizer"
+#! VERSION="0"
+#! POSITION="1641 -964"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="RASTER"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUND_EXTENTS_MAX_Y" PARM_VALUE="@Value(_mapMaxy)"/>
+#! <XFORM_PARM PARM_NAME="GROUND_EXTENTS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REFERENCED_FILES" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="BACKGROUND_IMAGE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUND_EXTENTS_MIN_Y" PARM_VALUE="@Value(_mapMiny)"/>
+#! <XFORM_PARM PARM_NAME="NUM_ROWS" PARM_VALUE="1000"/>
+#! <XFORM_PARM PARM_NAME="INTERPRETATION_TYPE" PARM_VALUE="RGB24"/>
+#! <XFORM_PARM PARM_NAME="GROUND_EXTENTS_MAX_X" PARM_VALUE="@Value(_mapMaxx)"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MapnikRasterizer"/>
+#! <XFORM_PARM PARM_NAME="BACKGROUND_COLOR_ALPHA" PARM_VALUE="1.0"/>
+#! <XFORM_PARM PARM_NAME="GROUND_EXTENTS_MIN_X" PARM_VALUE="@Value(_mapMinx)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_PROPERTIES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COLROW_OR_SPACING" PARM_VALUE="Columns and Rows"/>
+#! <XFORM_PARM PARM_NAME="INPUT_PARMS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="BACKGROUND_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NUM_COLUMNS" PARM_VALUE="1000"/>
+#! <XFORM_PARM PARM_NAME="SPACING" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MAPNIK_CONFIG" PARM_VALUE="CountriesShown;polygon;color-group&lt;semicolon&gt;&lt;semicolon&gt;fill&lt;semicolon&gt;$(MatchedColor)&lt;semicolon&gt;fill-opacity&lt;semicolon&gt;1&lt;semicolon&gt;smoothing-group&lt;semicolon&gt;&lt;semicolon&gt;gamma&lt;semicolon&gt;1&lt;semicolon&gt;gamma-method&lt;semicolon&gt;power&lt;semicolon&gt;smooth&lt;semicolon&gt;0&lt;semicolon&gt;comp-group&lt;semicolon&gt;&lt;semicolon&gt;comp-op&lt;semicolon&gt;src-over;CountriesMisssing;polygon;color-group&lt;semicolon&gt;&lt;semicolon&gt;fill&lt;semicolon&gt;$(MissingColor)&lt;semicolon&gt;fill-opacity&lt;semicolon&gt;1&lt;semicolon&gt;smoothing-group&lt;semicolon&gt;&lt;semicolon&gt;gamma&lt;semicolon&gt;1&lt;semicolon&gt;gamma-method&lt;semicolon&gt;power&lt;semicolon&gt;smooth&lt;semicolon&gt;0&lt;semicolon&gt;comp-group&lt;semicolon&gt;&lt;semicolon&gt;comp-op&lt;semicolon&gt;src-over;CountryBorders;line;color-group&lt;semicolon&gt;&lt;semicolon&gt;stroke&lt;semicolon&gt;0&lt;comma&gt;0&lt;comma&gt;0&lt;semicolon&gt;stroke-opacity&lt;semicolon&gt;1&lt;semicolon&gt;line-style-group&lt;semicolon&gt;&lt;semicolon&gt;stroke-width&lt;semicolon&gt;1&lt;semicolon&gt;stroke-linejoin&lt;semicolon&gt;miter&lt;semicolon&gt;stroke-linecap&lt;semicolon&gt;butt&lt;semicolon&gt;stroke-dasharray&lt;semicolon&gt;&lt;semicolon&gt;stroke-miterlimit&lt;semicolon&gt;4&lt;semicolon&gt;positioning-group&lt;semicolon&gt;&lt;semicolon&gt;offset&lt;semicolon&gt;0&lt;semicolon&gt;smoothing-group&lt;semicolon&gt;&lt;semicolon&gt;stroke-gamma&lt;semicolon&gt;1&lt;semicolon&gt;stroke-gamma-method&lt;semicolon&gt;power&lt;semicolon&gt;smooth&lt;semicolon&gt;0&lt;semicolon&gt;rasterizer&lt;semicolon&gt;full&lt;semicolon&gt;comp-group&lt;semicolon&gt;&lt;semicolon&gt;comp-op&lt;semicolon&gt;src-over;CountryNames;text;text-properties-group&lt;semicolon&gt;&lt;semicolon&gt;name&lt;semicolon&gt;$(ReferenceCode)&lt;semicolon&gt;face-name&lt;semicolon&gt;Tahoma&lt;comma&gt;Normal&lt;semicolon&gt;size&lt;semicolon&gt;18&lt;semicolon&gt;color-group&lt;semicolon&gt;&lt;semicolon&gt;fill&lt;semicolon&gt;0&lt;comma&gt;0&lt;comma&gt;0&lt;semicolon&gt;opacity&lt;semicolon&gt;1&lt;semicolon&gt;halo-fill&lt;semicolon&gt;1&lt;comma&gt;1&lt;comma&gt;1&lt;semicolon&gt;halo-radius&lt;semicolon&gt;0&lt;semicolon&gt;positioning-group&lt;semicolon&gt;&lt;semicolon&gt;text-ratio&lt;semicolon&gt;0&lt;semicolon&gt;wrap-width&lt;semicolon&gt;0&lt;semicolon&gt;wrap-before&lt;semicolon&gt;No&lt;semicolon&gt;spacing&lt;semicolon&gt;0&lt;semicolon&gt;character-spacing&lt;semicolon&gt;0&lt;semicolon&gt;line-spacing&lt;semicolon&gt;0&lt;semicolon&gt;label-position-tolerance&lt;semicolon&gt;0&lt;semicolon&gt;dx&lt;semicolon&gt;0&lt;semicolon&gt;dy&lt;semicolon&gt;0&lt;semicolon&gt;avoid-edges&lt;semicolon&gt;No&lt;semicolon&gt;minimum-distance&lt;semicolon&gt;0&lt;semicolon&gt;minimum-padding&lt;semicolon&gt;0&lt;semicolon&gt;minimum-path-length&lt;semicolon&gt;0&lt;semicolon&gt;allow-overlap&lt;semicolon&gt;No&lt;semicolon&gt;orientation&lt;semicolon&gt;0&lt;semicolon&gt;placement&lt;semicolon&gt;point&lt;semicolon&gt;placement-type&lt;semicolon&gt;dummy&lt;semicolon&gt;placements&lt;semicolon&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;semicolon&gt;max-char-angle-delta&lt;semicolon&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;semicolon&gt;horizontal-alignment&lt;semicolon&gt;auto&lt;semicolon&gt;justify-alignment&lt;semicolon&gt;auto&lt;semicolon&gt;vertical-alignment&lt;semicolon&gt;auto&lt;semicolon&gt;comp-group&lt;semicolon&gt;&lt;semicolon&gt;comp-op&lt;semicolon&gt;src-over"/>
+#! <XFORM_PARM PARM_NAME="BACKGROUND_COLOR" PARM_VALUE="1,1,1"/>
+#! <XFORM_PARM PARM_NAME="SPECIFY_GROUND_EXTENTS" PARM_VALUE="Specify ground extents"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="9"
+#! NAME="Features"
+#! POSITION="-1757 -454"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="country_code" ATTR_VALUE="$(FeatureCode)" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" ATTR_VALUE="$(ReferenceCode)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="10"
+#! NAME="Reference"
+#! POSITION="-1772 -727"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="country_code" ATTR_VALUE="$(FeatureCode)" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" ATTR_VALUE="$(ReferenceCode)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="11"
+#! NAME="Raster"
+#! POSITION="2285 -949"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="fme_basename" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="12"
+#! NAME="NotInReference"
+#! POSITION="-1030 -1183"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="country_code" />
+#! <XFORM_ATTR ATTR_NAME="ISO_2DIGIT" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="14"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS="36 -861 808 -866"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="15"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 3"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 2"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 2"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 3"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MatchedColor 0,1,0.498039
+DEFAULT_MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MissingColor 1,1,1
+DEFAULT_MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FeatureCode <at>Value<openparen>country_code<closeparen>
+DEFAULT_MACRO $(EEAOverviewMap_WORKSPACE_NAME)_ReferenceCode <at>Value<openparen>ISO_2DIGIT<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO EEAOverviewMap_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(EEAOverviewMap_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(EEAOverviewMap_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_Features1406108124 Input Splitter"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Features"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Features" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,country_code,$($(EEAOverviewMap_WORKSPACE_NAME)_FeatureCode),ISO_2DIGIT,$($(EEAOverviewMap_WORKSPACE_NAME)_ReferenceCode), FEATURE_TYPE)"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_Reference1406108124 Input Splitter"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Reference"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Reference" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,country_code,$($(EEAOverviewMap_WORKSPACE_NAME)_FeatureCode),ISO_2DIGIT,$($(EEAOverviewMap_WORKSPACE_NAME)_ReferenceCode), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {GEOM_AND_ATTRS} == {ATTRIBUTES} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO ATTRIBUTES";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_BUILD} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {GEOM_AND_ATTRS} == {GEOM_AND_ATTRS} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_FindMissing    INPUT REFERENCER FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Features"    INPUT REFERENCEE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Reference"    REFERENCE_INFO $($(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(STRING_ENCODED,$($(EEAOverviewMap_WORKSPACE_NAME)_FeatureCode),$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing) @EvaluateExpression(STRING_ENCODED,$($(EEAOverviewMap_WORKSPACE_NAME)_ReferenceCode),$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing) STRING    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_MERGED"    OUTPUT INCOMPLETE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_NOT_MERGED"    OUTPUT UNREFERENCED FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_UNREFERENCED"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    if { {NO} == {YES} } {       puts {MACRO DO_TOPFER TOPFER_INDEX <Unused> <Unused> <Unused>};    } else {       puts {MACRO DO_TOPFER };    } ]
+FACTORY_DEF * BoundingBoxFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_BoundingBox    INPUT  FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_MERGED"    BOUNDING_BOX_TYPE GEOMETRIC    $(DO_TOPFER)    OUTPUT BOUNDING_BOX FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_BoundingBox_BOUNDING_BOX"    OUTPUT ORIGINAL FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_BoundingBox_ORIGINAL"
+
+# -------------------------------------------------------------------------
+
+# First determine which function we are going to be using -- we can do
+# this statically at parse time for efficiency sake
+
+MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function
+INCLUDE [ if {{ESRIJSON} == {fmebinary} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,"_geometry") }           } elseif {{ESRIJSON} == {fmehex} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,"_geometry") }           } elseif {{ESRIJSON} == {fmexml} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,"_geometry") }           } elseif {{ESRIJSON} == {polyline} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_POLYLINE,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {wkt} ||                      {ESRIJSON} == {wkb} ||                      {ESRIJSON} == {wkbhex} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,ESRIJSON,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {GEOJSON} ||                     {ESRIJSON} == {ESRIJSON} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,ESRIJSON,"_geometry") }           } elseif {{ESRIJSON} == {KML} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {GEORSS_SIMPLE} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,ESRIJSON,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {GML_2.1.2} ||                     {ESRIJSON} == {GML_3.1.1} ||                     {ESRIJSON} == {GML_3.2.1} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,ESRIJSON,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {geohash} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @GeoHash(TO_ATTRIBUTE,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {ogeosms} } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,ESRIJSON,"_geometry",<Unused>) }           } elseif {{ESRIJSON} == {geosms} ||                     {ESRIJSON} == {geo}    } {               puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,ESRIJSON,"_geometry") }           }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor    INPUT  FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_BoundingBox_BOUNDING_BOX"    OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_OUTPUT"         $($(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_Function)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_JSONExtractor    INPUT  FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_GeometryExtractor_OUTPUT"    MODE EXTRACT    JSON_ATTR _geometry    QUERIES _mapMinx json<openbracket><quote>rings<quote><closebracket><openbracket>0<closebracket><openbracket>0<closebracket><openbracket>0<closebracket> _mapMiny json<openbracket><quote>rings<quote><closebracket><openbracket>0<closebracket><openbracket>0<closebracket><openbracket>1<closebracket> _mapMaxx json<openbracket><quote>rings<quote><closebracket><openbracket>0<closebracket><openbracket>1<closebracket><openbracket>0<closebracket> _mapMaxy json<openbracket><quote>rings<quote><closebracket><openbracket>0<closebracket><openbracket>2<closebracket><openbracket>1<closebracket>    OUTPUT EVALUATED FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_JSONExtractor_EVALUATED"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_VAR x1
+INCLUDE [ if {{Local} == {Local}} {   puts {MACRO $(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_VAR $(WB_CURRENT_CONTEXT)_x1}; } ]
+Tcl2 proc $(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_7825f27f_c688_4751_bd75_1b78dbe4a4540_setGlobalVar {varName varValue} {   set attrName $(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_tempAttr;   FME_SetAttribute $attrName [FME_DecodeText $varValue];   FME_Execute GlobalVariable $varName fme_attribute_name $attrName;   FME_UnsetAttributes $(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_tempAttr; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter    INPUT  FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_OUTPUT"        @Tcl2("$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_7825f27f_c688_4751_bd75_1b78dbe4a4540_setGlobalVar {$($(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_VAR)} {@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_mapMinx<closeparen>,$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter)} ")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter OUTPUT Splitter"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_OUTPUT"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_OUTPUT_0_Z9Kal4qCFyo="   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_OUTPUT_1_Z9Kal4qCFyo="
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing    INPUT REFERENCER FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_UNREFERENCED"    INPUT REFERENCEE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_OUTPUT_0_Z9Kal4qCFyo="    REFERENCE_INFO $($(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_REFERENCE_INFO)    REFERENCE_TABLE 1 1 AUTO    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_MERGED"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing MERGED Splitter"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_MERGED"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_MERGED_0_cYP21eMSpNI="   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_MERGED_1_cYP21eMSpNI="
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound    INPUT REFERENCER FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_BoundingBox_ORIGINAL"    INPUT REFERENCEE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_VariableSetter_OUTPUT_1_Z9Kal4qCFyo="    REFERENCE_INFO $($(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_REFERENCE_INFO)    REFERENCE_TABLE 1 1 AUTO    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound MERGED Splitter"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED_0_7SIgm185JqU="   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED_1_7SIgm185JqU="   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED_2_7SIgm185JqU="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * MapnikFactory    FACTORY_NAME $(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer    LAYERS "CountriesShown;polygon;color-group<semicolon><semicolon>fill<semicolon>@EvaluateExpression(STRING,$($(EEAOverviewMap_WORKSPACE_NAME)_MatchedColor$encode),$(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer)<semicolon>fill-opacity<semicolon>1<semicolon>smoothing-group<semicolon><semicolon>gamma<semicolon>1<semicolon>gamma-method<semicolon>power<semicolon>smooth<semicolon>0<semicolon>comp-group<semicolon><semicolon>comp-op<semicolon>src-over;CountriesMisssing;polygon;color-group<semicolon><semicolon>fill<semicolon>@EvaluateExpression(STRING,$($(EEAOverviewMap_WORKSPACE_NAME)_MissingColor$encode),$(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer)<semicolon>fill-opacity<semicolon>1<semicolon>smoothing-group<semicolon><semicolon>gamma<semicolon>1<semicolon>gamma-method<semicolon>power<semicolon>smooth<semicolon>0<semicolon>comp-group<semicolon><semicolon>comp-op<semicolon>src-over;CountryBorders;line;color-group<semicolon><semicolon>stroke<semicolon>0<comma>0<comma>0<semicolon>stroke-opacity<semicolon>1<semicolon>line-style-group<semicolon><semicolon>stroke-width<semicolon>1<semicolon>stroke-linejoin<semicolon>miter<semicolon>stroke-linecap<semicolon>butt<semicolon>stroke-dasharray<semicolon><semicolon>stroke-miterlimit<semicolon>4<semicolon>positioning-group<semicolon><semicolon>offset<semicolon>0<semicolon>smoothing-group<semicolon><semicolon>stroke-gamma<semicolon>1<semicolon>stroke-gamma-method<semicolon>power<semicolon>smooth<semicolon>0<semicolon>rasterizer<semicolon>full<semicolon>comp-group<semicolon><semicolon>comp-op<semicolon>src-over;CountryNames;text;text-properties-group<semicolon><semicolon>name<semicolon>@EvaluateExpression(STRING,$($(EEAOverviewMap_WORKSPACE_NAME)_ReferenceCode),$(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer)<semicolon>face-name<semicolon>Tahoma<comma>Normal<semicolon>size<semicolon>18<semicolon>color-group<semicolon><semicolon>fill<semicolon>0<comma>0<comma>0<semicolon>opacity<semicolon>1<semicolon>halo-fill<semicolon>1<comma>1<comma>1<semicolon>halo-radius<semicolon>0<semicolon>positioning-group<semicolon><semicolon>text-ratio<semicolon>0<semicolon>wrap-width<semicolon>0<semicolon>wrap-before<semicolon>No<semicolon>spacing<semicolon>0<semicolon>character-spacing<semicolon>0<semicolon>line-spacing<semicolon>0<semicolon>label-position-tolerance<semicolon>0<semicolon>dx<semicolon>0<semicolon>dy<semicolon>0<semicolon>avoid-edges<semicolon>No<semicolon>minimum-distance<semicolon>0<semicolon>minimum-padding<semicolon>0<semicolon>minimum-path-length<semicolon>0<semicolon>allow-overlap<semicolon>No<semicolon>orientation<semicolon>0<semicolon>placement<semicolon>point<semicolon>placement-type<semicolon>dummy<semicolon>placements<semicolon><lt>Unused<gt><semicolon>max-char-angle-delta<semicolon><lt>Unused<gt><semicolon>horizontal-alignment<semicolon>auto<semicolon>justify-alignment<semicolon>auto<semicolon>vertical-alignment<semicolon>auto<semicolon>comp-group<semicolon><semicolon>comp-op<semicolon>src-over"    INPUT CountriesShown FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED_2_7SIgm185JqU="    INPUT CountriesMisssing FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_MERGED_0_cYP21eMSpNI="    INPUT CountryBorders FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED_1_7SIgm185JqU="    INPUT CountryBorders FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtMissing_MERGED_1_cYP21eMSpNI="    INPUT CountryNames FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MergeExtentFound_MERGED_0_7SIgm185JqU="    NUM_COLUMNS "1000"    NUM_ROWS "1000"    INTERPRETATION "RGB24"    BACKGROUND_COLOR "1,1,1"    BACKGROUND_COLOR_ALPHA "1.0"    GROUND_EXTENTS_MIN_X "@Value(_mapMinx)"    GROUND_EXTENTS_MIN_Y "@Value(_mapMiny)"    GROUND_EXTENTS_MAX_X "@Value(_mapMaxx)"    GROUND_EXTENTS_MAX_Y "@Value(_mapMaxy)"    OUTPUT RASTER FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer_RASTER"       @SupplyAttributes(?,fme_basename,$(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_Raster1406108124 Output Collector"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_MapnikRasterizer_RASTER"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_Raster"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(EEAOverviewMap_WORKSPACE_NAME)_NotInReference1406108124 Output Collector"   INPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_FindMissing_NOT_MERGED"   OUTPUT FEATURE_TYPE "$(EEAOverviewMap_WORKSPACE_NAME)_NotInReference"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(EEAOverviewMap_WORKSPACE_NAME))}]

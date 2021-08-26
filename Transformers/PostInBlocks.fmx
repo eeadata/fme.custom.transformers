@@ -1,0 +1,824 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN PostInBlocks,1,,98e5d19a-5459-47c2-9ae7-f8f8c8d63514,"Linked by Default",No,NO_PARALLELISM,,No,19825,YES,No,,No
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DOC_EXTENTS="3964.04 1401.7"
+#!   DOC_TOP_LEFT="-2996.06 -1167.98"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="19825"
+#!   FME_DOCUMENT_GUID="98e5d19a-5459-47c2-9ae7-f8f8c8d63514"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY=""
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2019.2.3.2 (20200320 - Build 19825 - WIN64)"
+#!   LAST_SAVE_DATE="2020-10-01T11:17:59"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="PostInBlocks"
+#!   USAGE=""
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-3168 425.786"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="64"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI URL_OR_ATTR_ENCODED POST_URL https%http Post Url:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;post_URL&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR PROVIDERID providerId:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;providerId&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR DATAFLOWID dataflowId:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;dataflowId&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR APIKEY apiKey:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;apiKey&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR DATASETID datasetId:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;datasetId&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR NUMRECORDSINBLOCK NumRecordsInBlock:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;NumRecordsInBlock&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR TABLENAME TableName:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;TableName&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR JSON_BODYPOST Json Bodypost:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;json_bodypost&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="27"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ERROR IN HTTP REQUEST&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2271.1778983880477 -963.41587667824433"
+#!   TOP_LEFT="-2271.1778983880477 -963.41587667824433"
+#!   BOTTOM_RIGHT="-1521.1778983880477 -1013.4158766782443"
+#!   BOUNDING_RECT="-2271.1778983880477 -963.41587667824433 750 50"
+#!   ORDER="500000000000179"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="true"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="18"
+#!   NAME="If NumRecordsInBlock is negative, then just one POST"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-2451.4460501612093 233.71872774439993"
+#!   ORDER="500000000000212"
+#!   PALETTE_COLOR="Color1"
+#!   BOTTOM_RIGHT="-1335.9508595085949 -273.440234402344"
+#!   BOUNDING_RECT="-2451.4460501612093 233.71872774439993 1115.4951906526144 507.15896214674393"
+#!   STICKY="true"
+#!   COLOUR="0.59999999999999998,0.80000000000000004,0.80000000000000004,1"
+#!   CONTENTS="8 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="19"
+#!   NAME="Prepare POST JSON body request"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-1250.2935891366005 233.71872774439993"
+#!   ORDER="500000000000213"
+#!   PALETTE_COLOR="Color1"
+#!   BOTTOM_RIGHT="-492.19242192421916 -710.94460944609432"
+#!   BOUNDING_RECT="-1250.2935891366005 233.71872774439993 758.10116721238137 944.6633371904943"
+#!   STICKY="true"
+#!   COLOUR="0.59999999999999998,0.80000000000000004,0.80000000000000004,1"
+#!   CONTENTS="28 12 7 9 13 6 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="20"
+#!   NAME="Reporter or custodian"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-436.33071058443102 233.71872774439993"
+#!   ORDER="500000000000214"
+#!   PALETTE_COLOR="Color1"
+#!   BOTTOM_RIGHT="155.66928941556898 -437.50437504375037"
+#!   BOUNDING_RECT="-436.33071058443102 233.71872774439993 592 671.2231027881503"
+#!   STICKY="true"
+#!   COLOUR="0.59999999999999998,0.80000000000000004,0.80000000000000004,1"
+#!   CONTENTS="4 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="21"
+#!   NAME="HTTP POST REQUEST"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="217.87792977929769 233.71872774439993"
+#!   ORDER="500000000000215"
+#!   PALETTE_COLOR="Color1"
+#!   BOTTOM_RIGHT="967.97792977929771 -453.6035984621829"
+#!   BOUNDING_RECT="217.87792977929769 233.71872774439993 750.10000000000002 687.32232620658283"
+#!   STICKY="true"
+#!   COLOUR="0.59999999999999998,0.80000000000000004,0.80000000000000004,1"
+#!   CONTENTS="5 3 "
+#! >
+#! </BOOKMARK>
+#! <BOOKMARK
+#!   IDENTIFIER="29"
+#!   NAME="Error handling"
+#!   DESCRIPTION=""
+#!   TOP_LEFT="-2451.4460501612093 -816.41441414414135"
+#!   ORDER="500000000000176"
+#!   PALETTE_COLOR="Error"
+#!   BOTTOM_RIGHT="-372.95650250542303 -1167.980429804298"
+#!   BOUNDING_RECT="-2451.4460501612093 -816.41441414414135 2078.4895476557863 351.56601566015661"
+#!   STICKY="true"
+#!   COLOUR="0.96078431372549022,0.29019607843137257,0.29019607843137257,1"
+#!   CONTENTS="27 23 25 22 "
+#! >
+#! </BOOKMARK>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="347.87792977929769 -227.60359846218287"
+#!   BOUNDING_RECT="347.87792977929769 -227.60359846218287 546.10000000000002 71"
+#!   ORDER="500000000000002"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE="dataflowId;&lt;at&gt;Value&lt;openparen&gt;dataflowId&lt;closeparen&gt; providerId;&lt;at&gt;Value&lt;openparen&gt;providerId&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="1000"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE="Authorization;&lt;at&gt;Value&lt;openparen&gt;apiKey&lt;closeparen&gt; Content-Type;application&lt;solidus&gt;json"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;post_URL&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="3000"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;POST_block&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="JSON (application/json)"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPPOST_PROVIDER"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="-360.0495777731029 -1.2825222681001804"
+#!   BOUNDING_RECT="-360.0495777731029 -1.2825222681001804 454 71"
+#!   ORDER="500000000000129"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;providerId&lt;closeparen&gt; = design"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester_4"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="347.87792977929769 105.21872774439993"
+#!   BOUNDING_RECT="347.87792977929769 105.21872774439993 570.10000000000002 71"
+#!   ORDER="500000000000002"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE="dataflowId;&lt;at&gt;Value&lt;openparen&gt;dataflowId&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="1000"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE="Authorization;&lt;at&gt;Value&lt;openparen&gt;apiKey&lt;closeparen&gt; Content-Type;application&lt;solidus&gt;json"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_response_body"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;post_URL&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="3000"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;POST_block&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="JSON (application/json)"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPPOST_CUSTODIAN"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="-1111.5118313190223 105.21872774439993"
+#!   BOUNDING_RECT="-1111.5118313190223 105.21872774439993 454 71"
+#!   ORDER="500000000000205"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="POST_block"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;json&lt;lf&gt;&lt;lf&gt;&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.featureList&lt;space&gt;=&lt;space&gt;&lt;openbracket&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.featureList.append&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature&lt;space&gt;=&lt;space&gt;self.featureList&lt;openbracket&gt;0&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;the&lt;space&gt;size&lt;space&gt;of&lt;space&gt;the&lt;space&gt;block&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sizeBlock&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;NumRecordsInBlock&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;the&lt;space&gt;name&lt;space&gt;of&lt;space&gt;the&lt;space&gt;table&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;tableName&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;TableName&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;Json&lt;space&gt;from&lt;space&gt;Feature&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;data&lt;space&gt;=&lt;space&gt;json.loads&lt;openparen&gt;str&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;&lt;apos&gt;json_bodypost&lt;apos&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Get&lt;space&gt;records&lt;space&gt;from&lt;space&gt;data&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;records&lt;space&gt;=&lt;space&gt;data&lt;openbracket&gt;&lt;quote&gt;records&lt;quote&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Loop&lt;space&gt;for&lt;space&gt;generate&lt;space&gt;the&lt;space&gt;blocks&lt;space&gt;of&lt;space&gt;the&lt;space&gt;specific&lt;space&gt;size&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;i&lt;space&gt;in&lt;space&gt;range&lt;openparen&gt;0&lt;comma&gt;len&lt;openparen&gt;records&lt;closeparen&gt;&lt;comma&gt;int&lt;openparen&gt;sizeBlock&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Initialize&lt;space&gt;sentece&lt;space&gt;for&lt;space&gt;make&lt;space&gt;POST&lt;space&gt;request&lt;space&gt;in&lt;space&gt;Rn3&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sentence&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;opencurly&gt;&lt;space&gt;&lt;backslash&gt;&lt;quote&gt;tables&lt;backslash&gt;&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;opencurly&gt;&lt;backslash&gt;&lt;quote&gt;tableName&lt;backslash&gt;&lt;quote&gt;:&lt;space&gt;&lt;backslash&gt;&lt;quote&gt;&lt;quote&gt;&lt;space&gt;+&lt;space&gt;tableName&lt;space&gt;+&lt;space&gt;&lt;quote&gt;&lt;backslash&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;backslash&gt;&lt;quote&gt;records&lt;backslash&gt;&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;If&lt;space&gt;they&lt;space&gt;are&lt;space&gt;more&lt;space&gt;records&lt;space&gt;than&lt;space&gt;the&lt;space&gt;specific&lt;space&gt;block&lt;space&gt;size&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;i+int&lt;openparen&gt;sizeBlock&lt;closeparen&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;len&lt;openparen&gt;records&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fields&lt;space&gt;=&lt;space&gt;records&lt;openbracket&gt;i:i+int&lt;openparen&gt;sizeBlock&lt;closeparen&gt;&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;j&lt;space&gt;in&lt;space&gt;range&lt;openparen&gt;len&lt;openparen&gt;fields&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;j&lt;space&gt;&lt;lt&gt;&lt;space&gt;len&lt;openparen&gt;fields&lt;closeparen&gt;&lt;space&gt;-&lt;space&gt;1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sentence&lt;space&gt;+=&lt;space&gt;str&lt;openparen&gt;fields&lt;openbracket&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;space&gt;+&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sentence&lt;space&gt;+=&lt;space&gt;str&lt;openparen&gt;fields&lt;openbracket&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;The&lt;space&gt;number&lt;space&gt;of&lt;space&gt;records&lt;space&gt;are&lt;space&gt;less&lt;space&gt;than&lt;space&gt;the&lt;space&gt;specific&lt;space&gt;block&lt;space&gt;size&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fields&lt;space&gt;=&lt;space&gt;records&lt;openbracket&gt;i:&lt;closebracket&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;j&lt;space&gt;in&lt;space&gt;range&lt;openparen&gt;len&lt;openparen&gt;fields&lt;closeparen&gt;&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;j&lt;space&gt;&lt;lt&gt;&lt;space&gt;len&lt;openparen&gt;fields&lt;closeparen&gt;&lt;space&gt;-&lt;space&gt;1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sentence&lt;space&gt;+=&lt;space&gt;str&lt;openparen&gt;fields&lt;openbracket&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;space&gt;+&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sentence&lt;space&gt;+=&lt;space&gt;str&lt;openparen&gt;fields&lt;openbracket&gt;j&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;sentence&lt;space&gt;+=&lt;space&gt;&lt;quote&gt;&lt;closebracket&gt;&lt;closecurly&gt;&lt;closebracket&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Set&lt;space&gt;the&lt;space&gt;different&lt;space&gt;block&lt;space&gt;sentence&lt;space&gt;for&lt;space&gt;make&lt;space&gt;Post&lt;space&gt;request&lt;space&gt;to&lt;space&gt;the&lt;space&gt;features&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;&lt;quote&gt;POST_block&lt;quote&gt;&lt;comma&gt;sentence&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="-1084.1678078787877 -97.116726270517347"
+#!   BOUNDING_RECT="-1084.1678078787877 -97.116726270517347 454 71"
+#!   ORDER="500000000000209"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;apos&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;quote&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="POST_block"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="Tester"
+#!   VERSION="3"
+#!   POSITION="-2097.8183938846464 41.686657423696744"
+#!   BOUNDING_RECT="-2097.8183938846464 41.686657423696744 454 71"
+#!   ORDER="500000000000210"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BOOL_OP" PARM_VALUE="OR"/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_MSG" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="COMPOSITE_TEST" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE" PARM_VALUE="TEST &lt;at&gt;Value&lt;openparen&gt;NumRecordsInBlock&lt;closeparen&gt; &gt;= 0"/>
+#!     <XFORM_PARM PARM_NAME="TEST_CLAUSE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="TEST"/>
+#!     <XFORM_PARM PARM_NAME="TEST_PREVIEW_GROUP" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Tester"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="AttributeManager"
+#!   VERSION="2"
+#!   POSITION="-1080.261518815897 -511.18336693692396"
+#!   BOUNDING_RECT="-1080.261518815897 -511.18336693692396 454 71"
+#!   ORDER="500000000000211"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="post_URL post_URL  NO_OP providerId providerId  NO_OP dataflowId dataflowId  NO_OP apiKey apiKey  NO_OP datasetId datasetId  NO_OP NumRecordsInBlock NumRecordsInBlock  NO_OP TableName TableName  NO_OP json_bodypost json_bodypost  NO_OP  POST_block &lt;opencurly&gt;&lt;space&gt;&lt;quote&gt;tables&lt;quote&gt;:&lt;space&gt;&lt;openbracket&gt;&lt;opencurly&gt;&lt;quote&gt;tableName&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;TableName&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;at&gt;Substring&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;json_bodypost&lt;closeparen&gt;&lt;comma&gt;1&lt;comma&gt;&lt;at&gt;StringLength&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;json_bodypost&lt;closeparen&gt;&lt;space&gt;-&lt;space&gt;1&lt;closeparen&gt;&lt;closeparen&gt;&lt;space&gt;&lt;closebracket&gt;&lt;closecurly&gt; SET_TO"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="22"
+#!   TYPE="Junction"
+#!   VERSION="0"
+#!   POSITION="-1396.9508595085949 -997.41652668474444"
+#!   BOUNDING_RECT="-1396.9508595085949 -997.41652668474444 61 61"
+#!   ORDER="500000000000177"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_response_body" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Junction"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="23"
+#!   TYPE="Terminator"
+#!   VERSION="3"
+#!   POSITION="-949.76474813173991 -997.41652668474444"
+#!   BOUNDING_RECT="-949.76474813173991 -997.41652668474444 454 71"
+#!   ORDER="500000000000178"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Translation&lt;space&gt;Terminated"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Terminator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="28"
+#!   TYPE="StringReplacer"
+#!   VERSION="5"
+#!   POSITION="-1084.1678078787877 -322.76020002819843"
+#!   BOUNDING_RECT="-1084.1678078787877 -322.76020002819843 454 71"
+#!   ORDER="500000000000216"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="19825"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="post_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="POST_block" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="None"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#!     <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;quote&gt;&lt;quote&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="POST_block"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_2"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Input"
+#!   POSITION="-2996.0608158088644 -26.015767277606727"
+#!   BOUNDING_RECT="-2996.0608158088644 -26.015767277606727 430 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="post_URL" ATTR_VALUE="$(POST_URL)" />
+#!     <XFORM_ATTR ATTR_NAME="providerId" ATTR_VALUE="$(PROVIDERID)" />
+#!     <XFORM_ATTR ATTR_NAME="dataflowId" ATTR_VALUE="$(DATAFLOWID)" />
+#!     <XFORM_ATTR ATTR_NAME="apiKey" ATTR_VALUE="$(APIKEY)" />
+#!     <XFORM_ATTR ATTR_NAME="datasetId" ATTR_VALUE="$(DATASETID)" />
+#!     <XFORM_ATTR ATTR_NAME="NumRecordsInBlock" ATTR_VALUE="$(NUMRECORDSINBLOCK)" />
+#!     <XFORM_ATTR ATTR_NAME="TableName" ATTR_VALUE="$(TABLENAME)" />
+#!     <XFORM_ATTR ATTR_NAME="json_bodypost" ATTR_VALUE="$(JSON_BODYPOST)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="28"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="22"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="28"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="true"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 1 FAILED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_POST_URL <at>Value<openparen>post_URL<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_PROVIDERID <at>Value<openparen>providerId<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_DATAFLOWID <at>Value<openparen>dataflowId<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_APIKEY <at>Value<openparen>apiKey<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_DATASETID <at>Value<openparen>datasetId<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_NUMRECORDSINBLOCK <at>Value<openparen>NumRecordsInBlock<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_TABLENAME <at>Value<openparen>TableName<closeparen>
+DEFAULT_MACRO $(PostInBlocks_WORKSPACE_NAME)_JSON_BODYPOST <at>Value<openparen>json_bodypost<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO PostInBlocks_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(PostInBlocks_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(PostInBlocks_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PostInBlocks_WORKSPACE_NAME)_Input1601543879 Input Splitter"   INPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,post_URL,$($(PostInBlocks_WORKSPACE_NAME)_POST_URL),providerId,$($(PostInBlocks_WORKSPACE_NAME)_PROVIDERID),dataflowId,$($(PostInBlocks_WORKSPACE_NAME)_DATAFLOWID),apiKey,$($(PostInBlocks_WORKSPACE_NAME)_APIKEY),datasetId,$($(PostInBlocks_WORKSPACE_NAME)_DATASETID),NumRecordsInBlock,$($(PostInBlocks_WORKSPACE_NAME)_NUMRECORDSINBLOCK),TableName,$($(PostInBlocks_WORKSPACE_NAME)_TABLENAME),json_bodypost,$($(PostInBlocks_WORKSPACE_NAME)_JSON_BODYPOST), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_Tester    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Input"    TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>NumRecordsInBlock<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_Tester) >= 0 ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_FAILED"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_AttributeManager    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_FAILED"    MULTI_FEATURE_MODE NO     NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    ATTR_ACTION { "" "POST_block" "<opencurly><space><quote>tables<quote>:<space><openbracket><opencurly><quote>tableName<quote>:<space><quote><at>Value<openparen>TableName<closeparen><quote><comma><space><at>Substring<openparen><at>Value<openparen>json_bodypost<closeparen><comma>1<comma><at>StringLength<openparen><at>Value<openparen>json_bodypost<closeparen><space>-<space>1<closeparen><closeparen><space><closebracket><closecurly>" "SET_TO" }    OUTPUT OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_AttributeManager_OUTPUT"
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_PythonCaller_2    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_PASSED"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>json<lf><lf><lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>self.featureList<space>=<space><openbracket><closebracket><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>self.featureList.append<openparen>feature<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>feature<space>=<space>self.featureList<openbracket>0<closebracket><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>Get<space>the<space>size<space>of<space>the<space>block<lf><space><space><space><space><space><space><space><space>sizeBlock<space>=<space>feature.getAttribute<openparen><apos>NumRecordsInBlock<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>Get<space>the<space>name<space>of<space>the<space>table<lf><space><space><space><space><space><space><space><space>tableName<space>=<space>feature.getAttribute<openparen><apos>TableName<apos><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>Get<space>Json<space>from<space>Feature<lf><space><space><space><space><space><space><space><space>data<space>=<space>json.loads<openparen>str<openparen>feature.getAttribute<openparen><apos>json_bodypost<apos><closeparen><closeparen><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>Get<space>records<space>from<space>data<lf><space><space><space><space><space><space><space><space>records<space>=<space>data<openbracket><quote>records<quote><closebracket><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>#<space>Loop<space>for<space>generate<space>the<space>blocks<space>of<space>the<space>specific<space>size<lf><space><space><space><space><space><space><space><space>for<space>i<space>in<space>range<openparen>0<comma>len<openparen>records<closeparen><comma>int<openparen>sizeBlock<closeparen><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Initialize<space>sentece<space>for<space>make<space>POST<space>request<space>in<space>Rn3<lf><space><space><space><space><space><space><space><space><space><space><space><space>sentence<space>=<space><quote><opencurly><space><backslash><quote>tables<backslash><quote>:<space><openbracket><opencurly><backslash><quote>tableName<backslash><quote>:<space><backslash><quote><quote><space>+<space>tableName<space>+<space><quote><backslash><quote><comma><space><backslash><quote>records<backslash><quote>:<space><openbracket><quote><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>If<space>they<space>are<space>more<space>records<space>than<space>the<space>specific<space>block<space>size<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>i+int<openparen>sizeBlock<closeparen><space><lt><space>len<openparen>records<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>fields<space>=<space>records<openbracket>i:i+int<openparen>sizeBlock<closeparen><closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>for<space>j<space>in<space>range<openparen>len<openparen>fields<closeparen><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>j<space><lt><space>len<openparen>fields<closeparen><space>-<space>1:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>sentence<space>+=<space>str<openparen>fields<openbracket>j<closebracket><closeparen><space>+<quote><comma><quote><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>sentence<space>+=<space>str<openparen>fields<openbracket>j<closebracket><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>The<space>number<space>of<space>records<space>are<space>less<space>than<space>the<space>specific<space>block<space>size<lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>fields<space>=<space>records<openbracket>i:<closebracket><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>for<space>j<space>in<space>range<openparen>len<openparen>fields<closeparen><closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>j<space><lt><space>len<openparen>fields<closeparen><space>-<space>1:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>sentence<space>+=<space>str<openparen>fields<openbracket>j<closebracket><closeparen><space>+<quote><comma><quote><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>sentence<space>+=<space>str<openparen>fields<openbracket>j<closebracket><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>sentence<space>+=<space><quote><closebracket><closecurly><closebracket><closecurly><quote><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Set<space>the<space>different<space>block<space>sentence<space>for<space>make<space>Post<space>request<space>to<space>the<space>features<lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen><quote>POST_block<quote><comma>sentence<closeparen><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>    OUTPUT PYOUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"    USE_REGEX NO    CASE_SENSITIVE NO    SOURCE_ATTRIBUTES { POST_block }    FIND_TEXT { <apos> }    REPLACE_TEXT { <quote> }    REPLACE_NO_MATCH { _FME_NO_OP_ }    OUTPUT OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_StringReplacer_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} StringReplacerFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_StringReplacer_2    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_StringReplacer_OUTPUT"    USE_REGEX NO    CASE_SENSITIVE NO    SOURCE_ATTRIBUTES { POST_block }    FIND_TEXT { None }    REPLACE_TEXT { <quote><quote> }    REPLACE_NO_MATCH { _FME_NO_OP_ }    OUTPUT OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_Tester_4    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_AttributeManager_OUTPUT"    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_StringReplacer_2_OUTPUT"    TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>providerId<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_Tester_4) = design ENCODED    BOOLEAN_OPERATOR OR    COMPOSITE_TEST_EXPR "1"    FEATURE_TABLE_SHIM_SUPPORT Yes    PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT    OUTPUT PASSED FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_4_PASSED"    OUTPUT FAILED FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_4_FAILED"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER       INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_4_FAILED"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>post_URL<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>POST_block<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER)"    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "application/json"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE Authorization;@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>apiKey<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER) Content-Type;application<solidus>json    ADDITIONAL_URL_PARAMETERS dataflowId;@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>dataflowId<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER) providerId;@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>providerId<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER)    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "<Unused>"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR ""    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 1000    TRANSFER_TIMEOUT_LENGTH 3000    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER_Output"    OUTPUT REJECTED FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER Output Transformer Output Nuker"   INPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER_Output"
+# -------------------------------------------------------------------------
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN       INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Tester_4_PASSED"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>post_URL<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_response_body"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>POST_block<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN)"    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "application/json"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE Authorization;@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>apiKey<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN) Content-Type;application<solidus>json    ADDITIONAL_URL_PARAMETERS dataflowId;@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>dataflowId<closeparen>,$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN)    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "<Unused>"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR ""    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 1000    TRANSFER_TIMEOUT_LENGTH 3000    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "<Unused>"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN_Output"    OUTPUT REJECTED FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN_<REJECTED>"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN Output Transformer Output Nuker"   INPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN_Output"
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_Junction    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_PROVIDER_<REJECTED>"    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_HTTPPOST_CUSTODIAN_<REJECTED>"    OUTPUT FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Junction_Output"
+# -------------------------------------------------------------------------
+# The default behaviour is to abort on any feature entering the transformer.
+# If Workbench has set the _WB_BYPASS_TERMINATION macro to a value of "Yes",
+# then the features will instead be passed through with a feature type of
+# __WB_BYPASS_TERMINATOR__, which Workbench will send to a visualizer or
+# somesuch.
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PostInBlocks_WORKSPACE_NAME)_Terminator    INPUT  FEATURE_TYPE "$(PostInBlocks_WORKSPACE_NAME)_Junction_Output"    TEST "$(_WB_BYPASS_TERMINATION)" == Yes    OUTPUT PASSED FEATURE_TYPE __WB_BYPASS_TERMINATOR__       @SupplyAttributes(_wb_termination_feature_type,@FeatureType())       @SupplyAttributes(ENCODED,_wb_termination_message,"Translation<space>Terminated")       @SupplyAttributes(_wb_termination_xformer,"$(PostInBlocks_WORKSPACE_NAME)_Terminator")       @SupplyAttributes(_wb_termination_feature,Yes)    OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED,"Translation<space>Terminated")
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(PostInBlocks_WORKSPACE_NAME))}]

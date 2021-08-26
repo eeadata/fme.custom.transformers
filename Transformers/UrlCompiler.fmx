@@ -1,0 +1,663 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN UrlCompiler,2,Manipulators,606a3116-a4f4-400e-a873-df98faf3df12,"Linked by Default",No,NO_PARALLELISM,,No,19630,YES,No,36,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Converts attributes as a GET URL string. Attributes that have no value will be automaticaly ignored. This transformer helps reducing the amount of transformers you usualy need to compile an URL.</p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Manipulators"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Converts attributes as a GET URL string. Attributes that have no value will be automaticaly ignored. This transformer helps reducing the amount of transformers you usualy need to compile an URL.&lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="3495.84 256.001"
+#!   DOC_TOP_LEFT="-97.0636 16.5012"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="19630"
+#!   FME_DOCUMENT_GUID="606a3116-a4f4-400e-a873-df98faf3df12"
+#!   FME_DOCUMENT_PRIORGUID="235b30dc-a4d1-4188-b2a9-e260a78e7e28,3daaac9c-45c8-4aeb-a7a1-ef167762e1bf"
+#!   FME_LINKED_TRANSFORMER_VERSION="2"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_PROCESS_PRESERVE_GROUP_ATTR="No"
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="16&lt;solidus&gt;01&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creation,26&lt;solidus&gt;04&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Add&lt;space&gt;prefix&lt;space&gt;remover"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2019.1.2.0 (20190829 - Build 19630 - WIN64)"
+#!   LAST_SAVE_DATE="2019-09-16T14:29:05"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="36"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="UrlCompiler"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Compiles a URL form a number of attributes. The URL can already contain parameters and these new parameters will be nicely added. Special codes in the values will be escaped. Attributes that do not contain any value will be ignored.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;URI&lt;/span&gt;: The starting URL, The url can be based on other parameters. for example http://myurl.com or http://myurl.com?parameter=20&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Parameters&lt;/span&gt;: List those attributes that you want to include into the URL. The name of attribute will become to name of the field. Use &lt;span style=&quot; font-weight:600;&quot;&gt;Prefix remover &lt;/span&gt;if a prefix of the field needs to be removed.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Result Attribute&lt;/span&gt;: The new name of the attribute exposed. Default set as _URL&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Prefix remover&lt;/span&gt;: The prefix to remove before they are added as parameters. For example if all you attributes start with the same prefix &apos;__Param_name&apos;, &apos;__Param_maxindex&apos;. Added &apos;_Param_&apos; would result in parameters sush as &apos;name&apos; and &apos;maxindex&apos;.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   USE_MARKDOWN="NO"
+#!   VIEW_POSITION="-243.752 1153.14"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR URI URI:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR FieldNames &quot; &quot; Field names:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT MATCHED_RESULT_ATTR Result Attribute:"
+#!   DEFAULT_VALUE="_URL"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR PrefixRemover Prefix remover:"
+#!   DEFAULT_VALUE="__"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="12"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Performs the concatination of URL attributes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1585.3900000000001 272.50200000000001"
+#!   TOP_LEFT="1585.3900000000001 272.50200000000001"
+#!   BOTTOM_RIGHT="1584.3900000000001 273.50200000000001"
+#!   BOUNDING_RECT="1585.3900000000001 272.50200000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="1"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="13"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Used to allow the user&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;in providing an attribute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1056.26 272.50200000000001"
+#!   TOP_LEFT="1056.26 272.50200000000001"
+#!   BOTTOM_RIGHT="1055.26 273.50200000000001"
+#!   BOUNDING_RECT="1056.26 272.50200000000001 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="8"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="1715.6400000000001 87.501199999999997"
+#!   BOUNDING_RECT="1715.6400000000001 87.501199999999997 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="18520"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;urllib.parse&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;function&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;class&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FieldNames&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_FieldNames&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TargetAttribute&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_TargetAttribute&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_URI&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;PrefixRemover&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__PrefixRemover&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FieldNamesList&lt;space&gt;=&lt;space&gt;FieldNames.split&lt;openparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;fieldName&lt;space&gt;in&lt;space&gt;FieldNamesList:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;newAttribute&lt;space&gt;=&lt;space&gt;str&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;closeparen&gt;.strip&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;remove&lt;space&gt;prefix&lt;space&gt;if&lt;space&gt;it&lt;space&gt;exists&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;len&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;space&gt;&lt;gt&gt;=&lt;space&gt;len&lt;openparen&gt;PrefixRemover&lt;closeparen&gt;&lt;space&gt;and&lt;space&gt;len&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;space&gt;!=&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;fieldName=fieldName.lstrip&lt;openparen&gt;PrefixRemover&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;newAttribute&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;MyUrl&lt;space&gt;==&lt;space&gt;&lt;quote&gt;&lt;quote&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;fieldName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;=&lt;apos&gt;&lt;space&gt;+&lt;space&gt;urllib.parse.quote&lt;openparen&gt;newAttribute&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;MyUrl&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;fieldName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;=&lt;apos&gt;&lt;space&gt;+&lt;space&gt;urllib.parse.quote&lt;openparen&gt;newAttribute&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;result&lt;space&gt;back&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;baseURL.find&lt;openparen&gt;&lt;apos&gt;?&lt;apos&gt;&lt;closeparen&gt;&lt;gt&gt;-1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;baseURL&lt;openbracket&gt;-1:&lt;closebracket&gt;&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;&lt;apos&gt;?&lt;apos&gt;&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;it&lt;space&gt;back&lt;space&gt;to&lt;space&gt;FME&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;TargetAttribute&lt;comma&gt;baseURL&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="530.255 87.501199999999997"
+#!   BOUNDING_RECT="530.255 87.501199999999997 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__URLCompiler_FieldNames $(FieldNames) __URLCompiler_URI $(URI) __URLCompiler_TargetAttribute $(MATCHED_RESULT_ATTR) __PrefixRemover $(PrefixRemover)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="1108.3900000000001 87.501199999999997"
+#!   BOUNDING_RECT="1108.3900000000001 87.501199999999997 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__PrefixRemover" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="$(MATCHED_RESULT_ATTR)"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2314.6399999999999 87.501199999999997"
+#!   BOUNDING_RECT="2314.6399999999999 87.501199999999997 431 71"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="17259"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="__URLCompiler_FieldNames,__PrefixRemover,__URLCompiler_URI,__URLCompiler_TargetAttribute"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Input"
+#!   POSITION="-97.063599999999994 87.501199999999997"
+#!   BOUNDING_RECT="-97.063599999999994 87.501199999999997 431 71"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Output"
+#!   POSITION="2967.7800000000002 87.501199999999997"
+#!   BOUNDING_RECT="2967.7800000000002 87.501199999999997 431 71"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="5"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 36
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_URI 
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_FieldNames 
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_MATCHED_RESULT_ATTR _URL
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_PrefixRemover __
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO UrlCompiler_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(UrlCompiler_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(UrlCompiler_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UrlCompiler_WORKSPACE_NAME)_Input1568636945 Input Splitter"   INPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+Tcl2 proc $(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__URLCompiler_FieldNames {$($(UrlCompiler_WORKSPACE_NAME)_FieldNames$encode)} __URLCompiler_URI {$($(UrlCompiler_WORKSPACE_NAME)_URI$encode)} __URLCompiler_TargetAttribute {$($(UrlCompiler_WORKSPACE_NAME)_MATCHED_RESULT_ATTR$encode)} __PrefixRemover {$($(UrlCompiler_WORKSPACE_NAME)_PrefixRemover$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(UrlCompiler_WORKSPACE_NAME)_StringSearcher_6ab91897_8bd1_4e5e_9188_78c1fefb8b2a0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set matches [FME_DecodeText $matches];   set matchedParts [FME_DecodeText $matchedParts];   set stringToSearch [FME_ReplaceRegex "\015\012?" [FME_DecodeText $stringToSearch] "\012"];   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] $stringToSearch];   if {[llength [lindex $results 0]] > 0} {      set attrName [FME_DecodeText $matchedChars];      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    TEST @Tcl2("$(UrlCompiler_WORKSPACE_NAME)_StringSearcher_6ab91897_8bd1_4e5e_9188_78c1fefb8b2a0_doGrep {0} {0} {$($(UrlCompiler_WORKSPACE_NAME)_MATCHED_RESULT_ATTR$encode)} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_StringSearcher_MATCHED"
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_StringSearcher_MATCHED"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>urllib.parse<lf>#<space>Template<space>Function<space>interface:<lf>#<space>When<space>using<space>this<space>function<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>#<space>When<space>using<space>this<space>class<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>FieldNames<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_FieldNames<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>TargetAttribute<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_TargetAttribute<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>baseURL<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_URI<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>PrefixRemover<space>=<space>feature.getAttribute<openparen><quote>__PrefixRemover<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>FieldNamesList<space>=<space>FieldNames.split<openparen><quote><comma><quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>MyUrl<space>=<space><quote><quote><lf><space><space><space><space><space><space><space><space>for<space>fieldName<space>in<space>FieldNamesList:<lf><space><space><space><space><space><space><space><space><space><space><space><space>newAttribute<space>=<space>str<openparen>feature.getAttribute<openparen>fieldName<closeparen><closeparen>.strip<openparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>remove<space>prefix<space>if<space>it<space>exists<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>len<openparen>fieldName<closeparen><space><gt>=<space>len<openparen>PrefixRemover<closeparen><space>and<space>len<openparen>fieldName<closeparen><space>!=<space>0:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>fieldName=fieldName.lstrip<openparen>PrefixRemover<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>newAttribute<space>!=<space><apos><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>MyUrl<space>==<space><quote><quote>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>MyUrl<space>=<space>fieldName<space>+<space><apos>=<apos><space>+<space>urllib.parse.quote<openparen>newAttribute<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>MyUrl<space>=<space>MyUrl<space>+<space><apos><amp><apos><space>+<space>fieldName<space>+<space><apos>=<apos><space>+<space>urllib.parse.quote<openparen>newAttribute<closeparen><lf><space><space><space><space><space><space><space><space>#<space>Send<space>result<space>back<lf><space><space><space><space><space><space><space><space>if<space>baseURL.find<openparen><apos>?<apos><closeparen><gt>-1:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>baseURL<openbracket>-1:<closebracket><space>!=<space><apos><amp><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space><apos><amp><apos><space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space><apos>?<apos><space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space>#<space>Send<space>it<space>back<space>to<space>FME<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>TargetAttribute<comma>baseURL<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT { FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,__URLCompiler_FieldNames,__PrefixRemover,__URLCompiler_URI,__URLCompiler_TargetAttribute)        @RemoveAttributes(fme_pcre_match"$($(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")         }
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UrlCompiler_WORKSPACE_NAME)_Output1568636945 Output Collector"   INPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(UrlCompiler_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN UrlCompiler,1,Manipulators,246e9c1b-d1d8-4111-828b-a40209f62c13,"Linked by Default",No,NO_PARALLELISM,,No,18520,YES,No,
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Converts a number af attributes into a URL string and don't add if no value provided. </p>
+# 
+# TRANSFORMER_END
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BLOCKED_LOOPING="No"
+#!   CATEGORY="Manipulators"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Converts a number af attributes into a URL string and don&apos;t add if no value provided. &lt;/p&gt;&#10;"
+#!   DOC_EXTENTS="3064.84 185.001"
+#!   DOC_TOP_LEFT="-172.064 250.003"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="18520"
+#!   FME_DOCUMENT_GUID="246e9c1b-d1d8-4111-828b-a40209f62c13"
+#!   FME_DOCUMENT_PRIORGUID="045b7348-a0c3-4eee-92b8-043339236b85,a6fc1a48-d157-43bc-a0cd-802813a56d1e,1b74c7cc-4782-4aad-b87c-2f349181ce4e,20b9de90-ea48-4cca-8867-08a27abc067f"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_PROCESS_GROUP_BY=""
+#!   FME_SERVER_SERVICES=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   HISTORY="16&lt;solidus&gt;01&lt;solidus&gt;2017,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creation"
+#!   ITERATION_COUNT_ATTR=""
+#!   LAST_SAVE_BUILD="FME(R) 2018.1.0.0 (20180717 - Build 18520 - WIN64)"
+#!   LAST_SAVE_DATE="2019-04-05T14:22:39"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOOP_ITERATIONS=""
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY=""
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="UrlCompiler"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;To compile a URL from a set af attributes. &lt;/p&gt;&#10;"
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-506.255 1193.76"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   XFORM_DEPRECATED="No"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR URI URI:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR FieldNames &quot; &quot; Field names:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT MATCHED_RESULT_ATTR Result Attribute:"
+#!   DEFAULT_VALUE="_URL"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="12"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Performs the concatination of URL attributes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1510.3889374893747 435.00381259812593"
+#!   TOP_LEFT="1510.3889374893747 435.00381259812593"
+#!   BOTTOM_RIGHT="1509.3889374893747 436.00381259812593"
+#!   BOUNDING_RECT="1510.3889374893747 435.00381259812593 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19215686274509805"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="1"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="13"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Used to allow the user&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;in providing an attribute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1043.7589374893746 435.00381259812593"
+#!   TOP_LEFT="1043.7589374893746 435.00381259812593"
+#!   BOTTOM_RIGHT="1042.7589374893746 436.00381259812593"
+#!   BOUNDING_RECT="1043.7589374893746 435.00381259812593 -1 -1"
+#!   ORDER="500000000000000"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.78431372549019607,0.19215686274509805"
+#!   SIZE_POLICY="8"
+#!   ANCHORED_NODE="8"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="1640.6389374893747 250.00281259812596"
+#!   BOUNDING_RECT="1640.6389374893747 250.00281259812596 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;urllib&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;function&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;class&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FieldNames&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_FieldNames&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;TargetAttribute&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_TargetAttribute&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__URLCompiler_URI&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;FieldNamesList&lt;space&gt;=&lt;space&gt;FieldNames.split&lt;openparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;quote&gt;&lt;closeparen&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;for&lt;space&gt;fieldName&lt;space&gt;in&lt;space&gt;FieldNamesList:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;newAttribute&lt;space&gt;=&lt;space&gt;str&lt;openparen&gt;feature.getAttribute&lt;openparen&gt;fieldName&lt;closeparen&gt;&lt;closeparen&gt;.strip&lt;openparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;newAttribute&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;MyUrl&lt;space&gt;==&lt;space&gt;&lt;quote&gt;&lt;quote&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;fieldName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;=&lt;apos&gt;&lt;space&gt;+&lt;space&gt;urllib.quote&lt;openparen&gt;newAttribute&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;MyUrl&lt;space&gt;=&lt;space&gt;MyUrl&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;fieldName&lt;space&gt;+&lt;space&gt;&lt;apos&gt;=&lt;apos&gt;&lt;space&gt;+&lt;space&gt;urllib.quote&lt;openparen&gt;newAttribute&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;result&lt;space&gt;back&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;baseURL.find&lt;openparen&gt;&lt;apos&gt;?&lt;apos&gt;&lt;closeparen&gt;&lt;gt&gt;-1:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;baseURL&lt;openbracket&gt;-1:&lt;closebracket&gt;&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;&lt;apos&gt;&lt;amp&gt;&lt;apos&gt;&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;baseURL&lt;space&gt;=&lt;space&gt;baseURL&lt;space&gt;+&lt;space&gt;&lt;apos&gt;?&lt;apos&gt;&lt;space&gt;+&lt;space&gt;MyUrl&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Send&lt;space&gt;it&lt;space&gt;back&lt;space&gt;to&lt;space&gt;FME&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;TargetAttribute&lt;comma&gt;baseURL&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="455.25393748937461 250.00281259812596"
+#!   BOUNDING_RECT="455.25393748937461 250.00281259812596 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__URLCompiler_FieldNames {$(FieldNames)} __URLCompiler_URI {$(URI)} __URLCompiler_TargetAttribute {$(MATCHED_RESULT_ATTR)}"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="1095.8889374893747 250.00281259812596"
+#!   BOUNDING_RECT="1095.8889374893747 250.00281259812596 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_FieldNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_URI" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__URLCompiler_TargetAttribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="$(MATCHED_RESULT_ATTR)"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2236.5189374893744 250.00281259812596"
+#!   BOUNDING_RECT="2236.5189374893744 250.00281259812596 -1 -1"
+#!   ORDER="500000000000000"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_URL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="__URLCompiler_TargetAttribute,__URLCompiler_URI,__URLCompiler_FieldNames"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="3"
+#!   NAME="Input"
+#!   POSITION="-172.06436251062539 250.00281259812596"
+#!   BOUNDING_RECT="-172.06436251062539 250.00281259812596 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Output"
+#!   POSITION="2892.7789374893746 250.00281259812596"
+#!   BOUNDING_RECT="2892.7789374893746 250.00281259812596 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="5"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="11"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+
+FME_PYTHON_VERSION 
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_URI 
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_FieldNames 
+DEFAULT_MACRO $(UrlCompiler_WORKSPACE_NAME)_MATCHED_RESULT_ATTR _URL
+#! START_HEADER
+#! END_HEADER
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO UrlCompiler_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(UrlCompiler_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(UrlCompiler_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UrlCompiler_WORKSPACE_NAME)_Input1554466959 Input Splitter"   INPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+Tcl2 proc $(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__URLCompiler_FieldNames {$($(UrlCompiler_WORKSPACE_NAME)_FieldNames$encode)} __URLCompiler_URI {$($(UrlCompiler_WORKSPACE_NAME)_URI$encode)} __URLCompiler_TargetAttribute {$($(UrlCompiler_WORKSPACE_NAME)_MATCHED_RESULT_ATTR$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+# -------------------------------------------------------------------------
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(UrlCompiler_WORKSPACE_NAME)_StringSearcher_ff3ae5ec_14d3_4419_ad6e_f679b6bba29e0_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set matches [FME_DecodeText $matches];   set matchedParts [FME_DecodeText $matchedParts];   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName [FME_DecodeText $matchedChars];      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    TEST @Tcl2("$(UrlCompiler_WORKSPACE_NAME)_StringSearcher_ff3ae5ec_14d3_4419_ad6e_f679b6bba29e0_doGrep {0} {0} {$($(UrlCompiler_WORKSPACE_NAME)_MATCHED_RESULT_ATTR$encode)} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_StringSearcher_MATCHED"
+# -------------------------------------------------------------------------
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_PythonCaller    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_StringSearcher_MATCHED"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>urllib<lf>#<space>Template<space>Function<space>interface:<lf>#<space>When<space>using<space>this<space>function<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>#<space>When<space>using<space>this<space>class<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>FieldNames<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_FieldNames<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>TargetAttribute<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_TargetAttribute<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>baseURL<space>=<space>feature.getAttribute<openparen><quote>__URLCompiler_URI<quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>FieldNamesList<space>=<space>FieldNames.split<openparen><quote><comma><quote><closeparen><semicolon><lf><space><space><space><space><space><space><space><space>MyUrl<space>=<space><quote><quote><lf><space><space><space><space><space><space><space><space>for<space>fieldName<space>in<space>FieldNamesList:<lf><space><space><space><space><space><space><space><space><space><space><space><space>newAttribute<space>=<space>str<openparen>feature.getAttribute<openparen>fieldName<closeparen><closeparen>.strip<openparen><closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>newAttribute<space>!=<space><apos><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>MyUrl<space>==<space><quote><quote>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>MyUrl<space>=<space>fieldName<space>+<space><apos>=<apos><space>+<space>urllib.quote<openparen>newAttribute<closeparen><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>MyUrl<space>=<space>MyUrl<space>+<space><apos><amp><apos><space>+<space>fieldName<space>+<space><apos>=<apos><space>+<space>urllib.quote<openparen>newAttribute<closeparen><lf><space><space><space><space><space><space><space><space>#<space>Send<space>result<space>back<lf><space><space><space><space><space><space><space><space>if<space>baseURL.find<openparen><apos>?<apos><closeparen><gt>-1:<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>baseURL<openbracket>-1:<closebracket><space>!=<space><apos><amp><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space><apos><amp><apos><space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space>baseURL<space>=<space>baseURL<space>+<space><apos>?<apos><space>+<space>MyUrl<lf><space><space><space><space><space><space><space><space>#<space>Send<space>it<space>back<space>to<space>FME<lf><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>TargetAttribute<comma>baseURL<closeparen><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_PythonCaller_OUTPUT"
+# -------------------------------------------------------------------------
+INCLUDE [    set macroLine "MACRO $(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME $(UrlCompiler_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_PythonCaller_OUTPUT"    OUTPUT { FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,__URLCompiler_TargetAttribute,__URLCompiler_URI,__URLCompiler_FieldNames)        @RemoveAttributes(fme_pcre_match"$($(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")         }
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(UrlCompiler_WORKSPACE_NAME)_Output1554466959 Output Collector"   INPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(UrlCompiler_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(UrlCompiler_WORKSPACE_NAME))}]
+
+

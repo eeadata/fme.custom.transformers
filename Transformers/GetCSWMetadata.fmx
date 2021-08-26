@@ -1,0 +1,1194 @@
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN GetCSWMetadata,1,"Web Services",dee05ba3-9ef6-42bb-98ea-9d36beedbdf6,"Linked by Default",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Gets metadata from a Discovery service</p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="-2469 54"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Linked by Default"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Gets metadata from a Discovery service&lt;/p&gt;&#10;"
+#! TITLE="GetCSWMetadata"
+#! MAX_LOOP_ITERATIONS=""
+#! ITERATION_COUNT_ATTR=""
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="Web Services"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Call a Discovery service with a layer name to get the service layer metadata&lt;/p&gt;&#10;"
+#! HISTORY="29&lt;solidus&gt;08&lt;solidus&gt;2014,I&lt;u00f1&gt;aki&lt;space&gt;Diaz&lt;space&gt;de&lt;space&gt;Cerio,V.1.0"
+#! FME_DOCUMENT_PRIORGUID=""
+#! DOC_TOP_LEFT="-1721 -1068"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-09-08T14:01:12"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Discovery service URL and Layer title&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="5115 1079"
+#! FME_DOCUMENT_GUID="dee05ba3-9ef6-42bb-98ea-9d36beedbdf6"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR CSWURL CSW service URL:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;discoveryServURL&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR SERVICETYPEVERSION Service version:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;ServiceTypeVersion&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR LAYER Layer:"
+#! DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL LOOKUP_CHOICE_OR_ATTR HTTP_Mode POST,POST%GET,GET HTTP Mode:"
+#! DEFAULT_VALUE="POST"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR MaxNumResults Max number of results (1-100):"
+#! DEFAULT_VALUE="100"
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL IGNORE ATTRLIST_COMMAS Layerss &quot; &quot; Layerss:"
+#! DEFAULT_VALUE="Layers"
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="46"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Call a Discovery service with a layer name to get the service layer metadata.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="3 -773"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="3 -773"
+#! BOTTOM_RIGHT="753 -823"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="10"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#! IDENTIFIER="47"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;There are some errors in the &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;HTTP Get mode.It is recommended&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;to use the POST mode with the &lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;XML attribute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-729 11"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="-729 11"
+#! BOTTOM_RIGHT="-729 11"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="2"
+#! />
+#! <COMMENT
+#! IDENTIFIER="48"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;URL rejected&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1202 -586"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1202 -586"
+#! BOTTOM_RIGHT="1202 -586"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="8"
+#! />
+#! <COMMENT
+#! IDENTIFIER="49"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;OK!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="1410 -200"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="1410 -200"
+#! BOTTOM_RIGHT="1410 -200"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="6"
+#! />
+#! <COMMENT
+#! IDENTIFIER="50"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;No results&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="2031 -913"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="2031 -913"
+#! BOTTOM_RIGHT="2031 -913"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="9"
+#! />
+#! <COMMENT
+#! IDENTIFIER="51"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;Not all the results returned&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="2258 -636"
+#! ORDER="5e+014"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! TOP_LEFT="2258 -636"
+#! BOTTOM_RIGHT="2258 -636"
+#! COLOUR="1,1,0.784314,0.192157"
+#! SIZE_POLICY="8"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="14"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="52"
+#! NAME="HTTP GET Gets metadata from a Discovery service "
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-138 -18"
+#! BOTTOM_RIGHT="993 -369"
+#! STICKY="false"
+#! COLOUR="0.356863,0.87451,0.74902"
+#! CONTENTS=""
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="53"
+#! NAME="HTTP POST Gets metadata from a Discovery service "
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-146 -391"
+#! BOTTOM_RIGHT="1002 -731"
+#! STICKY="true"
+#! COLOUR="0.301961,0.494118,0.854902"
+#! CONTENTS="4 3 23 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="54"
+#! NAME="Filter HTTP Mode"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-716 -213"
+#! BOTTOM_RIGHT="-183 -585"
+#! STICKY="true"
+#! COLOUR="0.721569,0.709804,0.439216"
+#! CONTENTS="5 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="55"
+#! NAME="Test the results"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1590 -228"
+#! BOTTOM_RIGHT="2687 -597"
+#! STICKY="true"
+#! COLOUR="0.294118,0.74902,0.458824"
+#! CONTENTS="32 7 10 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="56"
+#! NAME="Read Metadata"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1035 -291"
+#! BOTTOM_RIGHT="1559 -552"
+#! STICKY="true"
+#! COLOUR="0,0.709804,0.137255"
+#! CONTENTS="6 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="57"
+#! NAME="Clean the output"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2820 -390"
+#! BOTTOM_RIGHT="3335 -845"
+#! STICKY="true"
+#! COLOUR="0.584314,0.0666667,0.0901961"
+#! CONTENTS="11 12 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="HTTPFetcher"
+#! VERSION="3"
+#! POSITION="533 -120"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;discoveryServURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPFetcher"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="discovery_contents"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-44 -120"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="URL_Creator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="discoveryURL,&lt;at&gt;Value&lt;openparen&gt;discoveryServURL&lt;closeparen&gt;?service=CSW&lt;amp&gt;version=&lt;at&gt;Value&lt;openparen&gt;ServiceTypeVersion&lt;closeparen&gt;&lt;amp&gt;request=GetRecords&lt;amp&gt;TypeNames=csw:Record&lt;amp&gt;constraintLanguage=CQL_TEXT&lt;amp&gt;ElementName=&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;&lt;quote&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="3"
+#! TYPE="HTTPUploader"
+#! VERSION="3"
+#! POSITION="461 -500"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;discoveryServURL&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="REQUEST_HEADER" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_PORT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#! <XFORM_PARM PARM_NAME="HTTP_REQUEST_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="application/xml"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_USERNAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROXY_AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;xmlQueryEqual&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PROXY_URL" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="UPLOAD_METHOD" PARM_VALUE="POST"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPUploader"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#! <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#! <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Basic"/>
+#! <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="metadata"/>
+#! <XFORM_PARM PARM_NAME="PROXY_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-72 -481"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XML_Creator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="xmlQueryAll,&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;?&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;csw:GetRecords&lt;space&gt;xmlns:csw=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;cat&lt;solidus&gt;csw&lt;solidus&gt;2.0.2&lt;quote&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;xmlns:gmd=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.isotc211.org&lt;solidus&gt;2005&lt;solidus&gt;gmd&lt;quote&gt;&lt;space&gt;service=&lt;quote&gt;CSW&lt;quote&gt;&lt;space&gt;version=&lt;quote&gt;2.0.2&lt;quote&gt;&lt;space&gt;resultType=&lt;quote&gt;results&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Query&lt;space&gt;typeNames=&lt;quote&gt;gmd:MD_Metadata&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Constraint&lt;space&gt;version=&lt;quote&gt;1.1.0&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Filter&lt;space&gt;xmlns=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;ogc&lt;quote&gt;&lt;space&gt;xmlns:gml=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;gml&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Constraint&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Query&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;csw:GetRecords&lt;gt&gt;&lt;lf&gt;,xmlQueryLike10Count,&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;?&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;csw:GetRecords&lt;space&gt;xmlns:csw=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;cat&lt;solidus&gt;csw&lt;solidus&gt;2.0.2&lt;quote&gt;&lt;space&gt;xmlns:gmd=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.isotc211.org&lt;solidus&gt;2005&lt;solidus&gt;gmd&lt;quote&gt;&lt;space&gt;service=&lt;quote&gt;CSW&lt;quote&gt;&lt;space&gt;version=&lt;quote&gt;2.0.2&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Query&lt;space&gt;typeNames=&lt;quote&gt;csw:Record&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Constraint&lt;space&gt;version=&lt;quote&gt;1.1.0&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Filter&lt;space&gt;xmlns=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;ogc&lt;quote&gt;&lt;space&gt;xmlns:gml=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;gml&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyIsLike&lt;space&gt;wildCard=&lt;quote&gt;%&lt;quote&gt;&lt;space&gt;singleChar=&lt;quote&gt;_&lt;quote&gt;&lt;space&gt;escapeChar=&lt;quote&gt;&lt;backslash&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyName&lt;gt&gt;AnyText&lt;lt&gt;&lt;solidus&gt;PropertyName&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Literal&lt;gt&gt;%&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;%&lt;lt&gt;&lt;solidus&gt;Literal&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;PropertyIsLike&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;Filter&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Constraint&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Query&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;csw:GetRecords&lt;gt&gt;&lt;lf&gt;,xmlQueryLike10,&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;?&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;csw:GetRecords&lt;space&gt;xmlns:csw=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;cat&lt;solidus&gt;csw&lt;solidus&gt;2.0.2&lt;quote&gt;&lt;space&gt;xmlns:gmd=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.isotc211.org&lt;solidus&gt;2005&lt;solidus&gt;gmd&lt;quote&gt;&lt;space&gt;service=&lt;quote&gt;CSW&lt;quote&gt;&lt;space&gt;version=&lt;quote&gt;2.0.2&lt;quote&gt;&lt;space&gt;resultType=&lt;quote&gt;results&lt;quote&gt;&lt;space&gt;maxRecords=&lt;quote&gt;100&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Query&lt;space&gt;typeNames=&lt;quote&gt;csw:Record&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Constraint&lt;space&gt;version=&lt;quote&gt;1.1.0&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Filter&lt;space&gt;xmlns=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;ogc&lt;quote&gt;&lt;space&gt;xmlns:gml=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;gml&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyIsLike&lt;space&gt;wildCard=&lt;quote&gt;%&lt;quote&gt;&lt;space&gt;singleChar=&lt;quote&gt;_&lt;quote&gt;&lt;space&gt;escapeChar=&lt;quote&gt;&lt;backslash&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyName&lt;gt&gt;AnyText&lt;lt&gt;&lt;solidus&gt;PropertyName&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Literal&lt;gt&gt;%&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;%&lt;lt&gt;&lt;solidus&gt;Literal&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;PropertyIsLike&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;Filter&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Constraint&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Query&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;csw:GetRecords&lt;gt&gt;&lt;lf&gt;,xmlQueryLike,&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;?&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;csw:GetRecords&lt;space&gt;xmlns:csw=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;cat&lt;solidus&gt;csw&lt;solidus&gt;2.0.2&lt;quote&gt;&lt;space&gt;xmlns:gmd=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.isotc211.org&lt;solidus&gt;2005&lt;solidus&gt;gmd&lt;quote&gt;&lt;space&gt;service=&lt;quote&gt;CSW&lt;quote&gt;&lt;space&gt;version=&lt;quote&gt;2.0.2&lt;quote&gt;&lt;space&gt;resultType=&lt;quote&gt;results&lt;quote&gt;&lt;space&gt;maxRecords=&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;maxNumResults&lt;closeparen&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Query&lt;space&gt;typeNames=&lt;quote&gt;csw:Record&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Constraint&lt;space&gt;version=&lt;quote&gt;1.1.0&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Filter&lt;space&gt;xmlns=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;ogc&lt;quote&gt;&lt;space&gt;xmlns:gml=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;gml&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyIsLike&lt;space&gt;wildCard=&lt;quote&gt;%&lt;quote&gt;&lt;space&gt;singleChar=&lt;quote&gt;_&lt;quote&gt;&lt;space&gt;escapeChar=&lt;quote&gt;&lt;backslash&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyName&lt;gt&gt;AnyText&lt;lt&gt;&lt;solidus&gt;PropertyName&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Literal&lt;gt&gt;%&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;%&lt;lt&gt;&lt;solidus&gt;Literal&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;PropertyIsLike&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;Filter&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Constraint&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Query&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;csw:GetRecords&lt;gt&gt;&lt;lf&gt;,xmlQueryEqual,&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;?&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;csw:GetRecords&lt;space&gt;xmlns:csw=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;cat&lt;solidus&gt;csw&lt;solidus&gt;2.0.2&lt;quote&gt;&lt;space&gt;xmlns:gmd=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.isotc211.org&lt;solidus&gt;2005&lt;solidus&gt;gmd&lt;quote&gt;&lt;space&gt;service=&lt;quote&gt;CSW&lt;quote&gt;&lt;space&gt;version=&lt;quote&gt;2.0.2&lt;quote&gt;&lt;space&gt;resultType=&lt;quote&gt;results&lt;quote&gt;&lt;space&gt;maxRecords=&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;maxNumResults&lt;closeparen&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Query&lt;space&gt;typeNames=&lt;quote&gt;csw:Record&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;csw:Constraint&lt;space&gt;version=&lt;quote&gt;1.1.0&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Filter&lt;space&gt;xmlns=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;ogc&lt;quote&gt;&lt;space&gt;xmlns:gml=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.opengis.net&lt;solidus&gt;gml&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyIsEqualTo&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;PropertyName&lt;gt&gt;AnyText&lt;lt&gt;&lt;solidus&gt;PropertyName&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;Literal&lt;gt&gt;&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;&lt;lt&gt;&lt;solidus&gt;Literal&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;PropertyIsEqualTo&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;Filter&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Constraint&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;&lt;solidus&gt;csw:Query&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;csw:GetRecords&lt;gt&gt;&lt;lf&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="-642 -303"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="HTTP&lt;space&gt;GET"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="HTTP&lt;space&gt;POST"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(HTTP_Mode)&lt;space&gt;=&lt;space&gt;GET&lt;quote&gt;,HTTP&lt;space&gt;GET,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(HTTP_Mode)&lt;space&gt;=&lt;space&gt;POST&lt;quote&gt;,HTTP&lt;space&gt;POST"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestHTTPMode"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="XMLFlattener"
+#! VERSION="2"
+#! POSITION="1109 -381"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE="SearchResults.numberOfRecordsReturned SearchResults.numberOfRecordsMatched SearchStatus.timestamp SearchResults.numberOfRecordsReturned"/>
+#! <XFORM_PARM PARM_NAME="SUB_FRAGMENT_OPTIONS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRIBUTE_XML" PARM_VALUE="metadata"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_EXPOSE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFlattener"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE_TYPE" PARM_VALUE="Attribute with XML document"/>
+#! <XFORM_PARM PARM_NAME="FILE_XML" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EMBEDDED_EXPRESSIONS" PARM_VALUE="*"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FLATTEN_OPTIONS" PARM_VALUE="&lt;lt&gt;structure&lt;space&gt;&lt;space&gt;&lt;lf&gt;separator=&lt;quote&gt;.&lt;quote&gt;&lt;space&gt;&lt;lf&gt;map-empty-elements=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;&lt;lf&gt;matched-prefix=&lt;quote&gt;attributes&lt;quote&gt;&lt;space&gt;&lt;lf&gt;matched-attributes=&lt;quote&gt;yes&lt;quote&gt;&lt;space&gt;&lt;lf&gt;cardinality=&lt;quote&gt;+&lt;opencurly&gt;?&lt;closecurly&gt;&lt;quote&gt;&lt;lf&gt;except-expression=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;structure-prefix=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;child-position-attribute=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;attribute-identifier=&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;ui-mode=&lt;quote&gt;basic&lt;quote&gt;&lt;solidus&gt;&lt;gt&gt;"/>
+#! <XFORM_PARM PARM_NAME="FEATURE_PATHS_STRUCTURE_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="1667 -322"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Results"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NotAll"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="Empty"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SearchResults.numberOfRecordsReturned&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;gt&gt;&lt;space&gt;0&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SearchResults.numberOfRecordsReturned&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SearchResults.numberOfRecordsMatched&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,Results,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SearchResults.numberOfRecordsReturned&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;!=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SearchResults.numberOfRecordsMatched&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,NotAll"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestSolutions"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Empty"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1093 -706"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreatorRejected"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="errorType,Metadata&lt;space&gt;request,hasError,True,errorDescription,&lt;at&gt;Value&lt;openparen&gt;_error&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2262 -890"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreatorEmpty"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="errorType,Metadata&lt;space&gt;no&lt;space&gt;match,hasError,True,errorDescription,&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;&lt;space&gt;is&lt;space&gt;not&lt;space&gt;found&lt;space&gt;in&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;discoveryURL&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2198 -431"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreatorOK"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="errorType,OK,hasError,False,errorDescription,&quot;&quot;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="2858 -498"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="_headers&lt;opencurly&gt;&lt;closecurly&gt;.value _headers&lt;opencurly&gt;&lt;closecurly&gt;.name _headers&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xmlQueryAll,xmlQueryFilterCount,xmlQueryFilterResult,_error,_http_status_code,discovery_contents,SearchResults.numberOfRecordsReturned,SearchResults.numberOfRecordsMatched,SearchStatus.timestamp"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="2869 -659"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="_headers&lt;opencurly&gt;&lt;closecurly&gt;.value _headers&lt;opencurly&gt;&lt;closecurly&gt;.name _headers&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="xmlQueryAll,xmlQueryFilterCount,xmlQueryFilterResult,_error,_http_status_code,discovery_contents,SearchResults.numberOfRecordsReturned,SearchResults.numberOfRecordsMatched,SearchStatus.timestamp"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RejectedRemover"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="-1179 -275"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="MaxNumResultsCreator"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="maxNumResults,$(MaxNumResults)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2262 -738"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="Layer" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="maxNumResults" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryAll" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10Count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike10" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryLike" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlQueryEqual" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="metadata" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="discovery_contents" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsReturned" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchResults.numberOfRecordsMatched" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="SearchStatus.timestamp" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="hasError" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreatorNotAll"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="errorType,Not&lt;space&gt;all&lt;space&gt;metadata,hasError,True,errorDescription,Not&lt;space&gt;all&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;Layer&lt;closeparen&gt;&lt;space&gt;records&lt;space&gt;returned&lt;space&gt;in&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;discoveryURL&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="18"
+#! TYPE="Inspector"
+#! VERSION="3"
+#! POSITION="1663 -618"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLFlattener_Output"/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="19"
+#! NAME="Metadata"
+#! POSITION="3393 -562"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" />
+#! <XFORM_ATTR ATTR_NAME="serviceURL" />
+#! <XFORM_ATTR ATTR_NAME="Layer" />
+#! <XFORM_ATTR ATTR_NAME="metadata" />
+#! <XFORM_ATTR ATTR_NAME="discoveryURL" />
+#! <XFORM_ATTR ATTR_NAME="errorType" />
+#! <XFORM_ATTR ATTR_NAME="hasError" />
+#! <XFORM_ATTR ATTR_NAME="errorDescription" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="20"
+#! NAME="Discovery"
+#! POSITION="-1721 -276"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="ServiceTypeVersion" ATTR_VALUE="$(SERVICETYPEVERSION)" />
+#! <XFORM_ATTR ATTR_NAME="Layer" ATTR_VALUE="$(LAYER)" />
+#! <XFORM_ATTR ATTR_NAME="discoveryServURL" ATTR_VALUE="$(CSWURL)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="21"
+#! NAME="Rejected"
+#! POSITION="3394 -724"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="32"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="33"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="35"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="21"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="37"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="38"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="39"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="40"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS="1779 -1062 2742 -1068"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="45"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="18"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="61"
+#! SOURCE_NODE="20"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_CSWURL <at>Value<openparen>discoveryServURL<closeparen>
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_SERVICETYPEVERSION <at>Value<openparen>ServiceTypeVersion<closeparen>
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_LAYER <at>Value<openparen>Layer<closeparen>
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_HTTP_Mode POST
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_MaxNumResults 100
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_Layerss Layers
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO GetCSWMetadata_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(GetCSWMetadata_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(GetCSWMetadata_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCSWMetadata_WORKSPACE_NAME)_Discovery1410177672 Input Splitter"   INPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_Discovery"   OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_Discovery" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING,ServiceTypeVersion,$($(GetCSWMetadata_WORKSPACE_NAME)_SERVICETYPEVERSION),Layer,$($(GetCSWMetadata_WORKSPACE_NAME)_LAYER),discoveryServURL,$($(GetCSWMetadata_WORKSPACE_NAME)_CSWURL), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_MaxNumResultsCreator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_Discovery" ATTR maxNumResults $($(GetCSWMetadata_WORKSPACE_NAME)_MaxNumResults$encode)    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_MaxNumResultsCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_MaxNumResultsCreator_OUTPUT"    OUTPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TestFactory_0 INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,$($(GetCSWMetadata_WORKSPACE_NAME)_HTTP_Mode),$(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode) = GET ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_HTTP<space>GET OUTPUT FAILED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TestFactory_1 INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,$($(GetCSWMetadata_WORKSPACE_NAME)_HTTP_Mode),$(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode) = POST ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_HTTP<space>POST OUTPUT FAILED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode <lt>UNFILTERED<gt> Output Nuker"   INPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_<lt>UNFILTERED<gt>"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XML_Creator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_HTTP<space>POST" ATTR xmlQueryAll <lt>?xml<space>version=<quote>1.0<quote>?<gt><lf><lt>csw:GetRecords<space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><lf><space><space><space><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><space>resultType=<quote>results<quote><gt><lf><space><space><space><space><lt>csw:Query<space>typeNames=<quote>gmd:MD_Metadata<quote><gt><lf><space><space><space><space><space><space><space><space><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt>Filter<space>xmlns=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><solidus><gt><lf><space><space><space><space><space><space><space><space><lt><solidus>csw:Constraint<gt><lf><space><space><space><space><lt><solidus>csw:Query<gt><lf><lt><solidus>csw:GetRecords<gt><lf> ATTR xmlQueryLike10Count <lt>?xml<space>version=<quote>1.0<quote>?<gt><lf><lt>csw:GetRecords<space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><gt><lf><space><space><space><space><lt>csw:Query<space>typeNames=<quote>csw:Record<quote><gt><lf><space><space><space><space><space><space><space><space><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt>Filter<space>xmlns=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyIsLike<space>wildCard=<quote>%<quote><space>singleChar=<quote>_<quote><space>escapeChar=<quote><backslash><quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyName<gt>AnyText<lt><solidus>PropertyName<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>Literal<gt>%<at>Value<openparen>Layer<closeparen>%<lt><solidus>Literal<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>PropertyIsLike<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>Filter<gt><lf><space><space><space><space><space><space><space><space><lt><solidus>csw:Constraint<gt><lf><space><space><space><space><lt><solidus>csw:Query<gt><lf><lt><solidus>csw:GetRecords<gt><lf> ATTR xmlQueryLike10 <lt>?xml<space>version=<quote>1.0<quote>?<gt><lf><lt>csw:GetRecords<space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><space>resultType=<quote>results<quote><space>maxRecords=<quote>100<quote><gt><lf><space><space><space><space><lt>csw:Query<space>typeNames=<quote>csw:Record<quote><gt><lf><space><space><space><space><space><space><space><space><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt>Filter<space>xmlns=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyIsLike<space>wildCard=<quote>%<quote><space>singleChar=<quote>_<quote><space>escapeChar=<quote><backslash><quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyName<gt>AnyText<lt><solidus>PropertyName<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>Literal<gt>%<at>Value<openparen>Layer<closeparen>%<lt><solidus>Literal<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>PropertyIsLike<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>Filter<gt><lf><space><space><space><space><space><space><space><space><lt><solidus>csw:Constraint<gt><lf><space><space><space><space><lt><solidus>csw:Query<gt><lf><lt><solidus>csw:GetRecords<gt><lf> ATTR xmlQueryLike <lt>?xml<space>version=<quote>1.0<quote>?<gt><lf><lt>csw:GetRecords<space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><space>resultType=<quote>results<quote><space>maxRecords=<quote><at>Value<openparen>maxNumResults<closeparen><quote><gt><lf><space><space><space><space><lt>csw:Query<space>typeNames=<quote>csw:Record<quote><gt><lf><space><space><space><space><space><space><space><space><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt>Filter<space>xmlns=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyIsLike<space>wildCard=<quote>%<quote><space>singleChar=<quote>_<quote><space>escapeChar=<quote><backslash><quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyName<gt>AnyText<lt><solidus>PropertyName<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>Literal<gt>%<at>Value<openparen>Layer<closeparen>%<lt><solidus>Literal<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>PropertyIsLike<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>Filter<gt><lf><space><space><space><space><space><space><space><space><lt><solidus>csw:Constraint<gt><lf><space><space><space><space><lt><solidus>csw:Query<gt><lf><lt><solidus>csw:GetRecords<gt><lf> ATTR xmlQueryEqual <lt>?xml<space>version=<quote>1.0<quote>?<gt><lf><lt>csw:GetRecords<space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><space>resultType=<quote>results<quote><space>maxRecords=<quote><at>Value<openparen>maxNumResults<closeparen><quote><gt><lf><space><space><space><space><lt>csw:Query<space>typeNames=<quote>csw:Record<quote><gt><lf><space><space><space><space><space><space><space><space><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt>Filter<space>xmlns=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyIsEqualTo<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>PropertyName<gt>AnyText<lt><solidus>PropertyName<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt>Literal<gt><at>Value<openparen>Layer<closeparen><lt><solidus>Literal<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>PropertyIsEqualTo<gt><lf><space><space><space><space><space><space><space><space><space><space><space><space><lt><solidus>Filter<gt><lf><space><space><space><space><space><space><space><space><lt><solidus>csw:Constraint<gt><lf><space><space><space><space><lt><solidus>csw:Query<gt><lf><lt><solidus>csw:GetRecords<gt><lf>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XML_Creator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader       INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XML_Creator_OUTPUT"    TARGET_URL "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>discoveryServURL<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader)"    TARGET_ATTR metadata    HTTP_METHOD POST    UPLOAD_BODY "@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>xmlQueryEqual<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader)"    UPLOAD_CONTENT_TYPE "application/xml"    AUTH_USERNAME ""    AUTH_PASSWORD ""    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES No    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_URL_Creator ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_TestHTTPMode_HTTP<space>GET" ATTR discoveryURL <at>Value<openparen>discoveryServURL<closeparen>?service=CSW<amp>version=<at>Value<openparen>ServiceTypeVersion<closeparen><amp>request=GetRecords<amp>TypeNames=csw:Record<amp>constraintLanguage=CQL_TEXT<amp>ElementName=<quote><at>Value<openparen>Layer<closeparen><quote>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_URL_Creator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_HTTPFetcher       INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_URL_Creator_OUTPUT"    TARGET_URL @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>discoveryServURL<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_HTTPFetcher)    SAVE_FILE No    OUTPUT_FILENAME "<Unused>"    TARGET_ATTR "discovery_contents"    HTTP_METHOD GET    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES No    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    OUTPUT REJECTED FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>"
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorRejected ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader_<REJECTED>"    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPFetcher_<REJECTED>" ATTR errorType Metadata<space>request ATTR hasError True ATTR errorDescription <at>Value<openparen>_error<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorRejected_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XFMapFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPUploader_OUTPUT"    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_HTTPFetcher_OUTPUT"    XML_STREAM "metadata"    XFMAP_FEATURE_PATHS_EXPRESSION "*"    XFMAP_FEATURE_PATHS_STRUCTURE "<lt>structure<space><space><lf>separator=<quote>.<quote><space><lf>map-empty-elements=<quote>yes<quote><space><lf>matched-prefix=<quote>attributes<quote><space><lf>matched-attributes=<quote>yes<quote><space><lf>cardinality=<quote>+<opencurly>?<closecurly><quote><lf>except-expression=<quote><quote><lf>structure-prefix=<quote><quote><lf>child-position-attribute=<quote><quote><lf>attribute-identifier=<quote><quote><lf>ui-mode=<quote>basic<quote><solidus><gt>"    OUTPUT_ONE_FEATURE_PER_INPUT yes    OUTPUT MAPPED FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener OUTPUT Splitter"   INPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_OUTPUT_0_vt7HQx50yCk="   OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_OUTPUT_1_vt7HQx50yCk="
+# -------------------------------------------------------------------------
+
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         if { [string length {}] > 0 } {             set catter "" ;             set comma "" ;             foreach attr {} {                 set catter "$catter$comma@Value(\"$attr\")" ;                 set comma ",_," ;             } ;             puts "MACRO CATMAC _@Concatenate($catter)" ;         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_FeatureDirector    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_OUTPUT_1_vt7HQx50yCk="    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___FeatureDirector1    INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___VectorFeatures___    OUTPUT PASSED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___PointCloudFeatures___
+# Vector features simply may get their colors overridden
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_VectorSetterUpper    INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+
+Tcl2 proc $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING <Unused>;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___PointCloudThinner    INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_thinPointCloud")
+Tcl2 proc $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_RasterSetterUpper    INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+
+DEFAULT_MACRO $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_VIS_FEAT_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+
+FACTORY_DEF * RecorderFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($($(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_Output_192208f7_b7f3_4b9a_8df5_fdeaf9a1b0910_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA ServiceTypeVersion,varchar<openparen>255<closeparen>,Layer,varchar<openparen>255<closeparen>,discoveryServURL,varchar<openparen>255<closeparen>,maxNumResults,varchar<openparen>255<closeparen>,xmlQueryAll,varchar<openparen>255<closeparen>,xmlQueryLike10Count,varchar<openparen>255<closeparen>,xmlQueryLike10,varchar<openparen>255<closeparen>,xmlQueryLike,varchar<openparen>255<closeparen>,xmlQueryEqual,varchar<openparen>255<closeparen>,_error,varchar<openparen>255<closeparen>,_http_status_code,varchar<openparen>255<closeparen>,metadata,varchar<openparen>255<closeparen>,discoveryURL,varchar<openparen>255<closeparen>,discovery_contents,varchar<openparen>255<closeparen>,SearchResults.numberOfRecordsReturned,varchar<openparen>255<closeparen>,SearchResults.numberOfRecordsMatched,varchar<openparen>255<closeparen>,SearchStatus.timestamp,varchar<openparen>255<closeparen>    MODE RECORD    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_XMLFlattener_OUTPUT_0_vt7HQx50yCk="    OUTPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TestFactory_0 INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>SearchResults.numberOfRecordsReturned<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions) > 0 ENCODED TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>SearchResults.numberOfRecordsReturned<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions) = @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>SearchResults.numberOfRecordsMatched<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions) ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_Results OUTPUT FAILED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TestFactory_1 INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>SearchResults.numberOfRecordsReturned<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions) != @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>SearchResults.numberOfRecordsMatched<closeparen>,$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions) ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_NotAll OUTPUT FAILED FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_Empty INPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_Empty
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorEmpty ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_Empty" ATTR errorType Metadata<space>no<space>match ATTR hasError True ATTR errorDescription <at>Value<openparen>Layer<closeparen><space>is<space>not<space>found<space>in<space><at>Value<openparen>discoveryURL<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorEmpty_OUTPUT" 
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorNotAll ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_NotAll" ATTR errorType Not<space>all<space>metadata ATTR hasError True ATTR errorDescription Not<space>all<space><at>Value<openparen>Layer<closeparen><space>records<space>returned<space>in<space><at>Value<openparen>discoveryURL<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorNotAll_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetCSWMetadata_WORKSPACE_NAME)_RejectedRemover_LIST_EXP ";    foreach attr [split "_headers<opencurly><closecurly>.value _headers<opencurly><closecurly>.name _headers<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_RejectedRemover    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorNotAll_OUTPUT"    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorRejected_OUTPUT"    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorEmpty_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_RejectedRemover_OUTPUT"        @RemoveAttributes(xmlQueryAll,xmlQueryFilterCount,xmlQueryFilterResult,_error,_http_status_code,discovery_contents,SearchResults.numberOfRecordsReturned,SearchResults.numberOfRecordsMatched,SearchStatus.timestamp)        @RemoveAttributes(fme_regexp_match"$($(GetCSWMetadata_WORKSPACE_NAME)_RejectedRemover_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorOK ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_TestSolutions_Results" ATTR errorType OK ATTR hasError False ATTR errorDescription ""    OUTPUT OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorOK_OUTPUT" 
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(GetCSWMetadata_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split "_headers<opencurly><closecurly>.value _headers<opencurly><closecurly>.name _headers<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(GetCSWMetadata_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeCreatorOK_OUTPUT"    OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(xmlQueryAll,xmlQueryFilterCount,xmlQueryFilterResult,_error,_http_status_code,discovery_contents,SearchResults.numberOfRecordsReturned,SearchResults.numberOfRecordsMatched,SearchStatus.timestamp)        @RemoveAttributes(fme_regexp_match"$($(GetCSWMetadata_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCSWMetadata_WORKSPACE_NAME)_Metadata1410177672 Output Collector"   INPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_Metadata"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(GetCSWMetadata_WORKSPACE_NAME)_Rejected1410177672 Output Collector"   INPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_RejectedRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(GetCSWMetadata_WORKSPACE_NAME)_Rejected"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(GetCSWMetadata_WORKSPACE_NAME))}]

@@ -1,0 +1,1408 @@
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN cleanBoolean,2,EEACleanup,b00b1c77-0811-4410-b2ce-02cad8db999a,"Linked Always",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Clean up attributes containing multiple true false statements from different languages. An attribute might contain y,n or true,false etc... </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="138 -117"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="2"
+#! FMX_INSERT_MODE="Linked Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Clean up attributes containing multiple true false statements from different languages. An attribute might contain y,n or true,false etc... &lt;/p&gt;&#10;"
+#! TITLE="cleanBoolean"
+#! MAX_LOOP_ITERATIONS="100"
+#! ITERATION_COUNT_ATTR="_cleanBoolean_counter"
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="EEACleanup"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Data from different sources can provide different types of Booleans. This can be language related or simply text or integer implementations. No,Yes or True,False or Oui,Non should all be transformed in one common way.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Simply select the list of attributes you like to transform and define the type of boolean to use.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Content not matched to the integrated list of booleans will simply be ignored. &lt;/p&gt;&#10;"
+#! HISTORY="19&lt;solidus&gt;11&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creator,13&lt;solidus&gt;04&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Had&lt;space&gt;troubles&lt;space&gt;with&lt;space&gt;attributes&lt;space&gt;that&lt;space&gt;contained&lt;space&gt;spaces&lt;comma&gt;&lt;space&gt;now&lt;space&gt;solved"
+#! FME_DOCUMENT_PRIORGUID=""
+#! DOC_TOP_LEFT="-541 -1379"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2015-04-13T14:25:55"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None &lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4890 1123"
+#! FME_DOCUMENT_GUID="b00b1c77-0811-4410-b2ce-02cad8db999a"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR FieldNames &quot; &quot; Attributes names:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI CHOICE_OR_ATTR attrOut yes/no%true/false%-1/0%1/0%y/n Boolean choice:"
+#! DEFAULT_VALUE="true/false"
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="32"
+#! NAME="Extract attributes"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract attribute and split true/false from attrOut parameter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="52 -543"
+#! BOTTOM_RIGHT="607 -1431"
+#! STICKY="true"
+#! COLOUR="0.47451,0.803922,0"
+#! CONTENTS="10 8 21 20 9 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="33"
+#! NAME="Set lowercase and clean up"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;All no,yes or N,Y or 0,-1 will be transformed into one choice...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2181 -584"
+#! BOTTOM_RIGHT="2736 -1316"
+#! STICKY="true"
+#! COLOUR="0.486275,0.411765,0.447059"
+#! CONTENTS="18 7 5 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="34"
+#! NAME="Insert into new field"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Move the content into the new field name selected by the end user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2775 -593"
+#! BOTTOM_RIGHT="3329 -1313"
+#! STICKY="true"
+#! COLOUR="0.121569,0.764706,0.121569"
+#! CONTENTS="6 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="35"
+#! NAME="Loop trough all fields names"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1254 -14"
+#! BOTTOM_RIGHT="4161 -1640"
+#! STICKY="true"
+#! COLOUR="0.509804,0.109804,0.254902"
+#! CONTENTS="14 27 33 7 6 4 37 30 41 15 26 18 5 39 40 12 3 16 34 29 31 17 38 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="36"
+#! NAME="Count Fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="656 -540"
+#! BOTTOM_RIGHT="1216 -1431"
+#! STICKY="true"
+#! COLOUR="0.992157,0.509804,0.364706"
+#! CONTENTS="23 11 13 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="37"
+#! NAME="Get Next FieldName"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1594 -591"
+#! BOTTOM_RIGHT="2149 -1311"
+#! STICKY="true"
+#! COLOUR="0.266667,0.964706,0.984314"
+#! CONTENTS="39 40 14 41 12 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="38"
+#! NAME="Check if more Fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3370 -597"
+#! BOTTOM_RIGHT="3934 -1314"
+#! STICKY="true"
+#! COLOUR="0.0666667,0.384314,0.929412"
+#! CONTENTS="15 29 16 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeValueMapper"
+#! VERSION="5"
+#! POSITION="2259 -1100"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward (Source To Destination)"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="setNoYes"/>
+#! <XFORM_PARM PARM_NAME="MAPPING_GRP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_attrValue&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="0,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,false,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,non,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,-1,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,true,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,n,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,y,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,1,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,oui,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,no,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,yes,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,ja,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,nee,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,neen,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,da,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,njet,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="_attrValue"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2849 -960"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="IntoNewField"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__cleanAttrfield&lt;closeparen&gt;,&lt;at&gt;Value&lt;openparen&gt;_attrValue&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="StringCaseChanger"
+#! VERSION="5"
+#! POSITION="2255 -875"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringCaseChanger"/>
+#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="Selected Attributes"/>
+#! <XFORM_PARM PARM_NAME="CHANGE_TYPE" PARM_VALUE="lowercase"/>
+#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="126 -852"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_fieldNames {$(FieldNames)} _attrOut {$(attrOut)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="127 -1046"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_truefalse"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_truefalse"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_attrOut"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;solidus&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="122 -1232"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_fieldNames"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="ListElementCounter"
+#! VERSION="1"
+#! POSITION="736 -868"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_cleanAttrfield&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListElementCounter"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="ListIndexer"
+#! VERSION="1"
+#! POSITION="1669 -775"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="_"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="__cleanAttrField"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_cleanAttrfield{}"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="@Value(_count_cleanAttrfield)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="730 -1101"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_count_cleanAttrfield)-1"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_countMinusOne"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1680 -1137"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_attrValue,&lt;at&gt;Value&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;__cleanAttrfield&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="3444 -820"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_count_cleanAttrfield)-1"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_countMinusOne_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="16"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="3454 -1002"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Finished"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Next"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_count_cleanAttrfield&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;0&lt;quote&gt;,Finished"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="LoopOnceMore"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Next"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="39"
+#! TYPE="AttributeTrimmer"
+#! VERSION="3"
+#! POSITION="1685 -954"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="__cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE="&lt;quote&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RemoveQuotes"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="1"
+#! NAME="Input"
+#! POSITION="-541 -939"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="2"
+#! NAME="Ouput"
+#! POSITION="4349 -990"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="3"
+#! NAME="LoopFieldNames"
+#! POSITION="1374 -256"
+#! COLLAPSED="true"
+#! PUBLISHED="false"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="LoopFieldNames"
+#! POSITION="3445 -1379"
+#! COLLAPSED="true"
+#! IS_SOURCE="loop"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="40"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="39"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="39"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(cleanBoolean_WORKSPACE_NAME)_FieldNames 
+DEFAULT_MACRO $(cleanBoolean_WORKSPACE_NAME)_attrOut true/false
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO cleanBoolean_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(cleanBoolean_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(cleanBoolean_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanBoolean_WORKSPACE_NAME)_Input1428927955 Input Splitter"   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Input"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames1428927955 Input Splitter"   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"   OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_fieldNames {$($(cleanBoolean_WORKSPACE_NAME)_FieldNames$encode)} _attrOut {$($(cleanBoolean_WORKSPACE_NAME)_attrOut$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitDelim [FME_DecodeText {<solidus>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitDelim]] }      {         set $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitWidths [split [regsub -all {s$} {<solidus>} {}] s];         proc $(cleanBoolean_WORKSPACE_NAME)__truefalse_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitWidths;            set source [FME_GetAttribute {"_attrOut"}];            set attrNum 0;            set listName {_truefalse};            set attrPos 0;            foreach width [set $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(cleanBoolean_WORKSPACE_NAME)__truefalse_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitDelim;            set delim [set $(cleanBoolean_WORKSPACE_NAME)__truefalse_0b598da2_dafd_4be1_88fe_0fa2399c5be01_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_attrOut"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_truefalse};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__truefalse    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__truefalse_OUTPUT"         @Tcl2($(cleanBoolean_WORKSPACE_NAME)__truefalse_doSplit)
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitDelim]] }      {         set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitWidths;            set source [FME_GetAttribute {"_fieldNames"}];            set attrNum 0;            set listName {_cleanAttrfield};            set attrPos 0;            foreach width [set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitDelim;            set delim [set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_758ec8c5_ecb3_45cb_b5b2_a119f4984ffb1_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_fieldNames"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_cleanAttrfield};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__truefalse_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_OUTPUT"         @Tcl2($(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_ListElementCounter    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ListElementCounter_OUTPUT"         "_count_cleanAttrfield" @NumElements("_cleanAttrfield<opencurly><closecurly>",ENCODED)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__countMinusOne    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ListElementCounter_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_OUTPUT"         "_count_cleanAttrfield" "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>-1,$(cleanBoolean_WORKSPACE_NAME)__countMinusOne)"
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_indexer {index numElements prefix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {_cleanAttrfield{}} \"{$index}\" listWithIndex;    regsub \"{}\" {_cleanAttrfield{}} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)___cleanAttrField    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_OUTPUT"    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"    TEST @Value(_count_cleanAttrfield) >= 0    OUTPUT PASSED FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_OUTPUT" @Tcl2("$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_indexer @Value(_count_cleanAttrfield) 0 {_}")    OUTPUT FAILED FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_OUTPUT" @Tcl2("$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_indexer @Value(_count_cleanAttrfield) @NumElements(_cleanAttrfield{})  {_}")
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanBoolean_WORKSPACE_NAME)_RemoveQuotes_3983d88f_4e83_4916_b112_87fb02d246d11_trimmer { trimChars} {    set attrs [split {__cleanAttrfield} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_RemoveQuotes    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_RemoveQuotes_OUTPUT"      @Tcl2("$(cleanBoolean_WORKSPACE_NAME)_RemoveQuotes_3983d88f_4e83_4916_b112_87fb02d246d11_trimmer {<quote>} ")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__attrValue ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_RemoveQuotes_OUTPUT" ATTR _attrValue <at>Value<openparen><at>Value<openparen>__cleanAttrfield<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__attrValue_OUTPUT" 
+# -------------------------------------------------------------------------
+INCLUDE [          if { ({Selected Attributes} == {All Attributes}) } {             puts {MACRO $(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_func @RenameAttributes(PERFORM_OPERATION,value,.*,lower,"-_")};          } else {             puts {MACRO $(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_func @RenameAttributes(LIST_ATTR, "value", "_attrValue",lower,"-_")};          }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__attrValue_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_OUTPUT"         $($(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_func)
+
+# -------------------------------------------------------------------------
+Lookup "$(cleanBoolean_WORKSPACE_NAME)_setNoYes_LOOKUP_TABLE"   0               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   false           @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   non             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   -1              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   true            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   n               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   y               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   1               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   oui             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   no              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   yes             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   ja              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   nee             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   neen            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   da              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   njet            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   ""              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_attrValue<closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   ENCODED_SUPPORTUNICODE
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_setNoYes    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_setNoYes_OUTPUT"         @Lookup($(cleanBoolean_WORKSPACE_NAME)_setNoYes_LOOKUP_TABLE,"_attrValue",FORWARD|ENCODED_ATTR|REAL_NULL_SUPPORT, _attrValue)
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_IntoNewField ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_setNoYes_OUTPUT" ATTR <at>Value<openparen>__cleanAttrfield<closeparen> <at>Value<openparen>_attrValue<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_IntoNewField_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_IntoNewField_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2_OUTPUT"         "_count_cleanAttrfield" "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>-1,$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2)"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2_OUTPUT"    OUTPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TestFactory_0 INPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_count_cleanAttrfield<closeparen>,$(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore) < 0 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Finished OUTPUT FAILED FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Next INPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Next
+FACTORY_DEF * BranchingFactory   TARGET_FACTORY "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames1428927955 Input Splitter"   FACTORY_NAME "Loop to $(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames1428927955 Input Splitter"   MAXIMUM_COUNT -1   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Next"   OUTPUT PASSED FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanBoolean_WORKSPACE_NAME)_Ouput1428927955 Output Collector"   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Finished"   OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Ouput" @RemoveAttributes(_fieldNames,_attrOut,_count_cleanAttrfield,__cleanAttrfield,_attrValue) @RemoveAttributes(fme_regexp_match,_truefalse{},_cleanAttrfield{})
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(cleanBoolean_WORKSPACE_NAME))}]
+#! <?xml version="1.0" encoding="windows-1252" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN cleanBoolean,1,EEACleanup,b0adb671-220d-482a-9dc9-51c108f755a4,"Linked Always",No,NO_PARALLELISM,,No,14338,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Clean up attributes containing multiple true false statements from different languages. An attribute might contain y,n or true,false etc... </p>
+# 
+# TRANSFORMER_END
+#! PASSWORD=""
+#! ATTR_TYPE_ENCODING="SDF"
+#! VIEW_POSITION="138 -117"
+#! SHOW_INFO_NODES="true"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FMX_INSERT_MODE="Linked Always"
+#! BLOCKED_LOOPING="No"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Clean up attributes containing multiple true false statements from different languages. An attribute might contain y,n or true,false etc... &lt;/p&gt;&#10;"
+#! TITLE="cleanBoolean"
+#! MAX_LOOP_ITERATIONS="100"
+#! ITERATION_COUNT_ATTR="_cleanBoolean_counter"
+#! FME_BUILD_NUM="14338"
+#! ZOOM_SCALE="100"
+#! CATEGORY="EEACleanup"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_PROCESS_GROUP_BY=""
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Data from different sources can provide different types of Booleans. This can be language related or simply text or integer implementations. No,Yes or True,False or Oui,Non should all be transformed in one common way.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Simply select the list of attributes you like to transform and define the type of boolean to use.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Content not matched to the integrated list of booleans will simply be ignored. &lt;/p&gt;&#10;"
+#! HISTORY="19&lt;solidus&gt;11&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creator"
+#! FME_DOCUMENT_PRIORGUID="fb1654d4-6346-48cd-a3ad-a3918fa600ad,08067145-6250-4006-8d4f-d547e613ae11"
+#! DOC_TOP_LEFT="-541 -1379"
+#! XFORM_DEPRECATED="No"
+#! REQUIREMENTS_KEYWORD="none"
+#! LAST_SAVE_DATE="2014-11-19T14:10:13"
+#! WORKSPACE_VERSION="1"
+#! LAST_SAVE_BUILD="FME(R) 2014 SP2 (20140606 - Build 14338 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None&lt;/p&gt;&#10;"
+#! DOC_EXTENTS="4890 1123"
+#! FME_DOCUMENT_GUID="b0adb671-220d-482a-9dc9-51c108f755a4"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_ANNOTATIONS="true"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR FieldNames &quot; &quot; Attributes names:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI CHOICE_OR_ATTR attrOut yes/no%true/false%-1/0%1/0%y/n Boolean choice:"
+#! DEFAULT_VALUE="true/false"
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="32"
+#! NAME="Extract attributes"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract attribute and split true/false from attrOut parameter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="52 -543"
+#! BOTTOM_RIGHT="607 -1431"
+#! STICKY="true"
+#! COLOUR="0.47451,0.803922,0"
+#! CONTENTS="9 10 20 8 21 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="33"
+#! NAME="Set lowercase and clean up"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;All no,yes or N,Y or 0,-1 will be transformed into one choice...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2181 -584"
+#! BOTTOM_RIGHT="2736 -1316"
+#! STICKY="true"
+#! COLOUR="0.486275,0.411765,0.447059"
+#! CONTENTS="7 5 18 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="34"
+#! NAME="Insert into new field"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Move the content into the new field name selected by the end user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2775 -593"
+#! BOTTOM_RIGHT="3329 -1313"
+#! STICKY="true"
+#! COLOUR="0.121569,0.764706,0.121569"
+#! CONTENTS="6 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="35"
+#! NAME="Loop trough all fields names"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1254 -14"
+#! BOTTOM_RIGHT="4161 -1640"
+#! STICKY="true"
+#! COLOUR="0.509804,0.109804,0.254902"
+#! CONTENTS="3 12 16 25 27 37 14 18 34 4 7 6 31 26 33 29 17 38 15 30 5 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="36"
+#! NAME="Count Fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="656 -540"
+#! BOTTOM_RIGHT="1216 -1431"
+#! STICKY="true"
+#! COLOUR="0.992157,0.509804,0.364706"
+#! CONTENTS="11 13 23 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="37"
+#! NAME="Get Next FieldName"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1594 -591"
+#! BOTTOM_RIGHT="2149 -1311"
+#! STICKY="true"
+#! COLOUR="0.266667,0.964706,0.984314"
+#! CONTENTS="14 25 12 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="38"
+#! NAME="Check if more Fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3370 -597"
+#! BOTTOM_RIGHT="3934 -1314"
+#! STICKY="true"
+#! COLOUR="0.0666667,0.384314,0.929412"
+#! CONTENTS="15 29 16 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="AttributeValueMapper"
+#! VERSION="5"
+#! POSITION="2259 -1100"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward (Source To Destination)"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="setNoYes"/>
+#! <XFORM_PARM PARM_NAME="MAPPING_GRP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_attrValue&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="0,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,false,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,non,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,-1,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,true,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,n,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,y,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,1,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,oui,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,no,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,yes,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,ja,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,nee,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,neen,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;,da,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;0&lt;closecurly&gt;&lt;closeparen&gt;,njet,&lt;at&gt;Value&lt;openparen&gt;_truefalse&lt;opencurly&gt;1&lt;closecurly&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="_attrValue"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2849 -960"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="IntoNewField"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__cleanAttrfield&lt;closeparen&gt;,&lt;at&gt;Value&lt;openparen&gt;_attrValue&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="StringCaseChanger"
+#! VERSION="5"
+#! POSITION="2255 -875"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringCaseChanger"/>
+#! <XFORM_PARM PARM_NAME="ATTRCHOICE" PARM_VALUE="Selected Attributes"/>
+#! <XFORM_PARM PARM_NAME="CHANGE_TYPE" PARM_VALUE="lowercase"/>
+#! <XFORM_PARM PARM_NAME="ATTRLIST" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTRS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="126 -852"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_fieldNames {$(FieldNames)} _attrOut {$(attrOut)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="9"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="127 -1046"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_truefalse"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_truefalse"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_attrOut"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;solidus&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="122 -1232"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_fieldNames"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="ListElementCounter"
+#! VERSION="1"
+#! POSITION="736 -868"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_cleanAttrfield&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListElementCounter"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="ListIndexer"
+#! VERSION="1"
+#! POSITION="1669 -775"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="_"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="__cleanAttrField"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_cleanAttrfield{}"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="@Value(_count_cleanAttrfield)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="730 -1101"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_count_cleanAttrfield)-1"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_countMinusOne"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1668 -966"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_attrValue,&lt;at&gt;Value&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;__cleanAttrfield&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="3444 -820"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_count_cleanAttrfield)-1"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_countMinusOne_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="16"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="3454 -1002"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="Finished"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Next"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_count_cleanAttrfield&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;0&lt;quote&gt;,Finished"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="LoopOnceMore"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Next"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="1"
+#! NAME="Input"
+#! POSITION="-541 -939"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="2"
+#! NAME="Ouput"
+#! POSITION="4349 -990"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="3"
+#! NAME="LoopFieldNames"
+#! POSITION="1374 -256"
+#! COLLAPSED="true"
+#! PUBLISHED="false"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="LoopFieldNames"
+#! POSITION="3445 -1379"
+#! COLLAPSED="true"
+#! IS_SOURCE="loop"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(cleanBoolean_WORKSPACE_NAME)_FieldNames 
+DEFAULT_MACRO $(cleanBoolean_WORKSPACE_NAME)_attrOut true/false
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO cleanBoolean_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(cleanBoolean_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(cleanBoolean_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanBoolean_WORKSPACE_NAME)_Input1416402613 Input Splitter"   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Input"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames1416402613 Input Splitter"   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"   OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_fieldNames {$($(cleanBoolean_WORKSPACE_NAME)_FieldNames$encode)} _attrOut {$($(cleanBoolean_WORKSPACE_NAME)_attrOut$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitDelim [FME_DecodeText {<solidus>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitDelim]] }      {         set $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitWidths [split [regsub -all {s$} {<solidus>} {}] s];         proc $(cleanBoolean_WORKSPACE_NAME)__truefalse_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitWidths;            set source [FME_GetAttribute {"_attrOut"}];            set attrNum 0;            set listName {_truefalse};            set attrPos 0;            foreach width [set $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(cleanBoolean_WORKSPACE_NAME)__truefalse_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitDelim;            set delim [set $(cleanBoolean_WORKSPACE_NAME)__truefalse_e3a54a9e_fe82_4f75_b035_4029ecd0cf2f10_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_attrOut"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_truefalse};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__truefalse    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__truefalse_OUTPUT"         @Tcl2($(cleanBoolean_WORKSPACE_NAME)__truefalse_doSplit)
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitDelim]] }      {         set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitWidths;            set source [FME_GetAttribute {"_fieldNames"}];            set attrNum 0;            set listName {_cleanAttrfield};            set attrPos 0;            foreach width [set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_doSplit {}         {            global $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitDelim;            set delim [set $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_ad72137c_c15b_4280_bfea_3484bdb59ff910_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_fieldNames"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_cleanAttrfield};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__truefalse_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_OUTPUT"         @Tcl2($(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_ListElementCounter    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__cleanAttrfield_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ListElementCounter_OUTPUT"         "_count_cleanAttrfield" @NumElements("_cleanAttrfield<opencurly><closecurly>",ENCODED)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__countMinusOne    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_ListElementCounter_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_OUTPUT"         "_count_cleanAttrfield" "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>-1,$(cleanBoolean_WORKSPACE_NAME)__countMinusOne)"
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_indexer {index numElements prefix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {_cleanAttrfield{}} \"{$index}\" listWithIndex;    regsub \"{}\" {_cleanAttrfield{}} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)___cleanAttrField    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_OUTPUT"    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"    TEST @Value(_count_cleanAttrfield) >= 0    OUTPUT PASSED FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_OUTPUT" @Tcl2("$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_indexer @Value(_count_cleanAttrfield) 0 {_}")    OUTPUT FAILED FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_OUTPUT" @Tcl2("$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_indexer @Value(_count_cleanAttrfield) @NumElements(_cleanAttrfield{})  {_}")
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__attrValue ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)___cleanAttrField_OUTPUT" ATTR _attrValue <at>Value<openparen><at>Value<openparen>__cleanAttrfield<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__attrValue_OUTPUT" 
+# -------------------------------------------------------------------------
+INCLUDE [          if { ({Selected Attributes} == {All Attributes}) } {             puts {MACRO $(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_func @RenameAttributes(PERFORM_OPERATION,value,.*,lower,"-_")};          } else {             puts {MACRO $(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_func @RenameAttributes(LIST_ATTR, "value", "_attrValue",lower,"-_")};          }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__attrValue_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_OUTPUT"         $($(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_func)
+
+# -------------------------------------------------------------------------
+Lookup "$(cleanBoolean_WORKSPACE_NAME)_setNoYes_LOOKUP_TABLE"   0               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   false           @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   non             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   -1              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   true            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   n               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   y               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   1               @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   oui             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   no              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   yes             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   ja              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   nee             @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   neen            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   da              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>0<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   njet            @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_truefalse<opencurly>1<closecurly><closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   ""              @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_attrValue<closeparen>,$(cleanBoolean_WORKSPACE_NAME)_setNoYes)   ENCODED_SUPPORTUNICODE
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_setNoYes    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_StringCaseChanger_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_setNoYes_OUTPUT"         @Lookup($(cleanBoolean_WORKSPACE_NAME)_setNoYes_LOOKUP_TABLE,"_attrValue",FORWARD|ENCODED_ATTR|REAL_NULL_SUPPORT, _attrValue)
+
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_IntoNewField ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_setNoYes_OUTPUT" ATTR <at>Value<openparen>__cleanAttrfield<closeparen> <at>Value<openparen>_attrValue<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_IntoNewField_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_IntoNewField_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2_OUTPUT"         "_count_cleanAttrfield" "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>-1,$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2)"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore    INPUT  FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)__countMinusOne_2_OUTPUT"    OUTPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TestFactory_0 INPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_count_cleanAttrfield<closeparen>,$(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore) < 0 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Finished OUTPUT FAILED FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Next INPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Next
+FACTORY_DEF * BranchingFactory   TARGET_FACTORY "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames1416402613 Input Splitter"   FACTORY_NAME "Loop to $(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames1416402613 Input Splitter"   MAXIMUM_COUNT -1   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Next"   OUTPUT PASSED FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopFieldNames"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanBoolean_WORKSPACE_NAME)_Ouput1416402613 Output Collector"   INPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_LoopOnceMore_Finished"   OUTPUT FEATURE_TYPE "$(cleanBoolean_WORKSPACE_NAME)_Ouput" @RemoveAttributes(_fieldNames,_attrOut,_count_cleanAttrfield,__cleanAttrfield,_attrValue) @RemoveAttributes(fme_regexp_match,_truefalse{},_cleanAttrfield{})
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(cleanBoolean_WORKSPACE_NAME))}]
+

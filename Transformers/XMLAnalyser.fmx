@@ -1,0 +1,1243 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN XMLAnalyser,1,XML,5ea1a885-a015-4498-b07f-bdc227afa2d9,"Linked by Default",No,NO_PARALLELISM,,No,15480,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Find all unique XPaths and counts how many nodes. Provide the last nodes without children as a list to the xpath they fall under. </p>
+# 
+# TRANSFORMER_END
+#! ZOOM_SCALE="100"
+#! FME_BUILD_NUM="15480"
+#! FME_PROCESS_GROUP_BY=""
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None &lt;/p&gt;&#10;"
+#! MAX_LOOP_ITERATIONS=""
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! SHOW_INFO_NODES="true"
+#! FME_DOCUMENT_PRIORGUID="8986c580-af2a-4a91-8038-f924fd0c4fe6,016bb684-246f-4289-8985-a784261e7326"
+#! DOC_EXTENTS="6127 2182"
+#! XFORM_DEPRECATED="No"
+#! HISTORY="30&lt;solidus&gt;05&lt;solidus&gt;2014,Jan&lt;space&gt;Bliki,Initiation"
+#! FME_DOCUMENT_GUID="5ea1a885-a015-4498-b07f-bdc227afa2d9"
+#! DOC_TOP_LEFT="-2601 -1831"
+#! WORKSPACE_VERSION="1"
+#! FMX_INSERT_MODE="Linked by Default"
+#! PASSWORD=""
+#! CATEGORY="XML"
+#! ATTR_TYPE_ENCODING="SDF"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;To understand an XML file it&apos;s usefull to know how its structured. The XMLAnalyser will perform a scan over the entire XML and return all unique XPaths in the file. This should give you the information to build the XMLFragmenter and XMLFlatener in FME. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example: Imagine you had the following XML&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;root&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;a&amp;gt;test&amp;lt;/a&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;b&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;c&amp;gt;test1&amp;lt;/c&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;d&amp;gt;test2&amp;lt;/d&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;/b&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;/root&amp;gt;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The result of the transformer would be&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;xmlPath , totalRecords , xmlNodes&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;root , 1 , a&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;root/b , 1 , c,d&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="XMLAnalyser"
+#! VIEW_POSITION="-2643.03 315.003"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Find all unique XPaths and counts how many nodes. Provide the last nodes without children as a list to the xpath they fall under. &lt;/p&gt;&#10;"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License: LGPL-2.1+&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is free software; you can redistribute it and/or&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;modify it under the terms of the GNU Lesser General Public&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License as published by the Free Software Foundation; either&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version 2.1 of the License, or (at your option) any later version.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This package is distributed in the hope that it will be useful,&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Lesser General Public License for more details.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;&#10;        &lt;br/&gt;&#10;    &lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License: GPL-2+&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is free software; you can redistribute it&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;and/or modify it under the terms of the GNU General Public&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;License as published by the Free Software Foundation; either&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version 2 of the License, or (at your option) any later&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;version.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;This tansformer is distributed in the hope that it will be&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;useful, but WITHOUT ANY WARRANTY; without even the implied&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;PURPOSE. See the GNU General Public License for more&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;details.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;If you like to receive the GNU Lesser General Public, write to the Free Software&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; color:#000000;&quot;&gt;.&lt;/span&gt;&#10;&lt;/p&gt;&#10;"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! REQUIREMENTS_KEYWORD="none"
+#! SHOW_ANNOTATIONS="true"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.0.1 (20150507 - Build 15480 - WIN64)"
+#! FME_SERVER_SERVICES=""
+#! BLOCKED_LOOPING="No"
+#! ITERATION_COUNT_ATTR=""
+#! LAST_SAVE_DATE="2015-06-17T14:18:49"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI CHOICE XML_TYPE &quot;None (File is specified in query)&quot;%&quot;Attribute specifying XML&quot;%&quot;XML file&quot; XML Input:"
+#! DEFAULT_VALUE="Attribute specifying XML"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR XMLString XML Attribute:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL FILEMUSTEXIST_OR_ATTR XML_FILE XML_Files(*.xml)|*.xml|All_Files(*.*)|*.* XML File:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="56"
+#! NAME="Get all nodes that contain children"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-929 351"
+#! BOTTOM_RIGHT="847 -407"
+#! BOUNDING_RECT="-929 351 1776 758"
+#! STICKY="true"
+#! COLOUR="0.466667,0.329412,0.564706"
+#! CONTENTS="84 64 67 83 41 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="57"
+#! NAME="Get all nodes that have no children"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-927 -427"
+#! BOTTOM_RIGHT="844 -1149"
+#! BOUNDING_RECT="-927 -427 1771 722"
+#! STICKY="true"
+#! COLOUR="0.2,0.027451,0.576471"
+#! CONTENTS="81 72 82 71 8 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="58"
+#! NAME="Split Node from XPath"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="943 -431"
+#! BOTTOM_RIGHT="1511 -1146"
+#! BOUNDING_RECT="943 -431 568 715"
+#! STICKY="true"
+#! COLOUR="0.286275,0.0431373,0.0666667"
+#! CONTENTS="40 38 87 29 86 85 44 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="59"
+#! NAME="Put them all together"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1592 -426"
+#! BOTTOM_RIGHT="2156 -963"
+#! BOUNDING_RECT="1592 -426 564 537"
+#! STICKY="true"
+#! COLOUR="0.592157,0.721569,0.439216"
+#! CONTENTS="36 34 32 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="60"
+#! NAME="Merge XPath and Elements"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2224 186"
+#! BOTTOM_RIGHT="2841 -960"
+#! BOUNDING_RECT="2224 186 617 1146"
+#! STICKY="true"
+#! COLOUR="0.658824,0.00392157,0.792157"
+#! CONTENTS="31 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="61"
+#! NAME="Sort and cleanup"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2870 186"
+#! BOTTOM_RIGHT="3430 -963"
+#! BOUNDING_RECT="2870 186 560 1149"
+#! STICKY="true"
+#! COLOUR="0.356863,0.94902,0.803922"
+#! CONTENTS="51 50 11 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="77"
+#! NAME="Get namespaces (uri&apos;s) from XML"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-917 -1176"
+#! BOTTOM_RIGHT="837 -1831"
+#! BOUNDING_RECT="-917 -1176 1754 655"
+#! STICKY="true"
+#! COLOUR="0.27451,0.521569,0.764706"
+#! CONTENTS="80 79 74 78 73 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="StatisticsCalculator"
+#! VERSION="6"
+#! POSITION="128 -717"
+#! BOUNDING_RECT="128 -717 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="SUMMARY"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="CUMULATIVE"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_PARM PARM_NAME="STDEV_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="__featureCounter _list"/>
+#! <XFORM_PARM PARM_NAME="ATTIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COMPUTE_HISTOGRAM" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="MODE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="HISTO_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MEDIAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RANGE_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE="_count"/>
+#! <XFORM_PARM PARM_NAME="PREPEND_ATTR_NAME_CHOICE" PARM_VALUE="For multiple results only"/>
+#! <XFORM_PARM PARM_NAME="MAX_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MIN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUM_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#! <XFORM_PARM PARM_NAME="MEAN_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NUMERIC_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STATS_ATTRS" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StatisticsCalculator_2"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="Sorter"
+#! VERSION="2"
+#! POSITION="2951 -234"
+#! BOUNDING_RECT="2951 -234 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="SORTED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="_list ALPHA ASCENDING"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="29"
+#! TYPE="FilenamePartExtractor"
+#! VERSION="3"
+#! POSITION="1032 -521"
+#! BOUNDING_RECT="1032 -521 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FULLNAME_ATTR" PARM_VALUE="xmlNodes"/>
+#! <XFORM_PARM PARM_NAME="EXTENSION_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_list&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="DIRPATH_ATTR" PARM_VALUE="xmlPath"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ROOTNAME_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DIRNAME_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FilenamePartExtractor"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="32"
+#! TYPE="Aggregator"
+#! VERSION="11"
+#! POSITION="1666 -562"
+#! BOUNDING_RECT="1666 -562 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="__featureCounter _list"/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE="xmlNodes"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="31"
+#! TYPE="FeatureMerger"
+#! VERSION="11"
+#! POSITION="2274 -87"
+#! BOUNDING_RECT="2274 -87 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="NOT_MERGED"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <XFORM_ATTR ATTR_NAME="numReferences" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#! <XFORM_PARM PARM_NAME="IGNORE_NULLS" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX_DUMMY" PARM_VALUE="YES"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUPPLIERS_FIRST" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="SUPPLIER_PREFIX" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="JOIN_KEYS" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__featureCounter&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;__featureCounter&lt;closeparen&gt; NUM &lt;at&gt;Value&lt;openparen&gt;_list&lt;closeparen&gt; &lt;at&gt;Value&lt;openparen&gt;_list&lt;closeparen&gt; AUTO"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="GEOM_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="JOIN_ATTRIBUTES_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="36"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="1677 -738"
+#! BOUNDING_RECT="1677 -738 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_count"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="40"
+#! TYPE="AttributeTrimmer"
+#! VERSION="3"
+#! POSITION="1029 -975"
+#! BOUNDING_RECT="1029 -975 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE="&lt;solidus&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeTrimmer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="38"
+#! TYPE="AttributeRenamer"
+#! VERSION="2"
+#! POSITION="1026 -818"
+#! BOUNDING_RECT="1026 -818 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="xmlPath,_list,&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="41"
+#! TYPE="Aggregator"
+#! VERSION="11"
+#! POSITION="107 7"
+#! BOUNDING_RECT="107 7 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="AGGREGATE"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="__featureCounter _list"/>
+#! <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#! <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE="_count"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#! <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="Yes"/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Aggregator_2"/>
+#! <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="50"
+#! TYPE="AttributeRenamer"
+#! VERSION="2"
+#! POSITION="2944 -427"
+#! BOUNDING_RECT="2944 -427 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="totalRecords" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_list,xmlPath,&quot;&quot;,_count,totalRecords,&quot;&quot;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="53"
+#! TYPE="Counter"
+#! VERSION="2"
+#! POSITION="-1977 -297"
+#! BOUNDING_RECT="-1977 -297 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="START" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="__featureCounter"/>
+#! <XFORM_PARM PARM_NAME="DOMAIN" PARM_VALUE="__featureCounter"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Counter"/>
+#! <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="62"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-1971 -489"
+#! BOUNDING_RECT="-1971 -489 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_XMLString {$(XMLString)} _XML_FILE {$(XML_FILE)}"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="65"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="-1725 -684"
+#! BOUNDING_RECT="-1725 -684 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15480"
+#! >
+#! <OUTPUT_FEAT NAME="Attribute"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="XML&lt;space&gt;file"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;$(XML_TYPE)&lt;space&gt;=&lt;space&gt;Attribute&lt;lt&gt;space&lt;gt&gt;specifying&lt;lt&gt;space&lt;gt&gt;XML&lt;quote&gt;,Attribute"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="XML&lt;space&gt;file"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="73"
+#! TYPE="XQueryExploder"
+#! VERSION="0"
+#! POSITION="-860 -1566"
+#! BOUNDING_RECT="-860 -1566 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="namespaces" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INVALID"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="namespaces" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="@Value(_XML_FILE)"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#! <XFORM_PARM PARM_NAME="TAG_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="declare&lt;space&gt;namespace&lt;space&gt;functx&lt;space&gt;=&lt;space&gt;&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.functx.com&lt;quote&gt;&lt;semicolon&gt;&lt;lf&gt;declare&lt;space&gt;function&lt;space&gt;functx:namespaces-in-use&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;space&gt;&lt;dollar&gt;root&lt;space&gt;as&lt;space&gt;node&lt;openparen&gt;&lt;closeparen&gt;?&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;as&lt;space&gt;xs:anyURI*&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;distinct-values&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;dollar&gt;root&lt;solidus&gt;descendant-or-self::*&lt;solidus&gt;&lt;openparen&gt;.|&lt;at&gt;*&lt;closeparen&gt;&lt;solidus&gt;namespace-uri&lt;openparen&gt;.&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;closecurly&gt;&lt;space&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;functx:namespaces-in-use&lt;openparen&gt;.&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="namespaces"/>
+#! <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="XML file"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XQueryExploder"/>
+#! <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="74"
+#! TYPE="XQueryExploder"
+#! VERSION="0"
+#! POSITION="-867 -1266"
+#! BOUNDING_RECT="-867 -1266 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="namespaces" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INVALID"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="namespaces" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="_XMLString"/>
+#! <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#! <XFORM_PARM PARM_NAME="TAG_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="declare&lt;space&gt;namespace&lt;space&gt;functx&lt;space&gt;=&lt;space&gt;&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;www.functx.com&lt;quote&gt;&lt;semicolon&gt;&lt;lf&gt;declare&lt;space&gt;function&lt;space&gt;functx:namespaces-in-use&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;space&gt;&lt;dollar&gt;root&lt;space&gt;as&lt;space&gt;node&lt;openparen&gt;&lt;closeparen&gt;?&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;&lt;space&gt;as&lt;space&gt;xs:anyURI*&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;distinct-values&lt;openparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;dollar&gt;root&lt;solidus&gt;descendant-or-self::*&lt;solidus&gt;&lt;openparen&gt;.|&lt;at&gt;*&lt;closeparen&gt;&lt;solidus&gt;namespace-uri&lt;openparen&gt;.&lt;closeparen&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;closecurly&gt;&lt;space&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;functx:namespaces-in-use&lt;openparen&gt;.&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="namespaces"/>
+#! <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="Attribute specifying XML"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XQueryExploder_2"/>
+#! <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="81"
+#! TYPE="XQueryExploder"
+#! VERSION="0"
+#! POSITION="-843 -845"
+#! BOUNDING_RECT="-843 -845 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INVALID"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="@Value(_XML_FILE)"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#! <XFORM_PARM PARM_NAME="TAG_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="declare&lt;space&gt;namespace&lt;space&gt;functx=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;ww.functx.com&lt;quote&gt;&lt;semicolon&gt;&lt;lf&gt;declare&lt;space&gt;function&lt;space&gt;functx:path-to-node&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;space&gt;&lt;dollar&gt;nodes&lt;space&gt;as&lt;space&gt;node&lt;openparen&gt;&lt;closeparen&gt;*&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;xs:string*&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;lf&gt;&lt;dollar&gt;nodes&lt;solidus&gt;string-join&lt;openparen&gt;ancestor-or-self::*&lt;solidus&gt;name&lt;openparen&gt;.&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;lf&gt;functx:path-to-node&lt;openparen&gt;&lt;solidus&gt;&lt;solidus&gt;*&lt;openbracket&gt;count&lt;openparen&gt;.&lt;solidus&gt;*&lt;closeparen&gt;=0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="XML file"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XQueryExploder_3"/>
+#! <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="82"
+#! TYPE="XQueryExploder"
+#! VERSION="0"
+#! POSITION="-840 -554"
+#! BOUNDING_RECT="-840 -554 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INVALID"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="_XMLString"/>
+#! <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#! <XFORM_PARM PARM_NAME="TAG_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="declare&lt;space&gt;namespace&lt;space&gt;functx=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;ww.functx.com&lt;quote&gt;&lt;semicolon&gt;&lt;lf&gt;declare&lt;space&gt;function&lt;space&gt;functx:path-to-node&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;space&gt;&lt;dollar&gt;nodes&lt;space&gt;as&lt;space&gt;node&lt;openparen&gt;&lt;closeparen&gt;*&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;xs:string*&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;lf&gt;&lt;dollar&gt;nodes&lt;solidus&gt;string-join&lt;openparen&gt;ancestor-or-self::*&lt;solidus&gt;name&lt;openparen&gt;.&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;lf&gt;functx:path-to-node&lt;openparen&gt;&lt;solidus&gt;&lt;solidus&gt;*&lt;openbracket&gt;count&lt;openparen&gt;.&lt;solidus&gt;*&lt;closeparen&gt;=0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="Attribute specifying XML"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XQueryExploder_4"/>
+#! <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="83"
+#! TYPE="XQueryExploder"
+#! VERSION="0"
+#! POSITION="-858 240"
+#! BOUNDING_RECT="-858 240 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INVALID"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="_XMLString"/>
+#! <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#! <XFORM_PARM PARM_NAME="TAG_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="declare&lt;space&gt;namespace&lt;space&gt;functx=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;ww.functx.com&lt;quote&gt;&lt;semicolon&gt;&lt;lf&gt;declare&lt;space&gt;function&lt;space&gt;functx:path-to-node&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;space&gt;&lt;dollar&gt;nodes&lt;space&gt;as&lt;space&gt;node&lt;openparen&gt;&lt;closeparen&gt;*&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;xs:string*&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;lf&gt;&lt;dollar&gt;nodes&lt;solidus&gt;string-join&lt;openparen&gt;ancestor-or-self::*&lt;solidus&gt;name&lt;openparen&gt;.&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;lf&gt;functx:path-to-node&lt;openparen&gt;&lt;solidus&gt;&lt;solidus&gt;*&lt;openbracket&gt;count&lt;openparen&gt;.&lt;solidus&gt;*&lt;closeparen&gt;&lt;gt&gt;0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="Attribute specifying XML"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XQueryExploder_5"/>
+#! <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="64"
+#! TYPE="XQueryExploder"
+#! VERSION="0"
+#! POSITION="-843 -83"
+#! BOUNDING_RECT="-843 -83 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="QUERY_RESULTS"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="INVALID"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XMLString" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_XML_FILE" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="QUERY_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="WRITE_XML_HEADER" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XQUERY_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XML_FILE" PARM_VALUE="@Value(_XML_FILE)"/>
+#! <XFORM_PARM PARM_NAME="XML_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XQUERY_TYPE" PARM_VALUE="XQuery expression"/>
+#! <XFORM_PARM PARM_NAME="TAG_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_EXPR" PARM_VALUE="declare&lt;space&gt;namespace&lt;space&gt;functx=&lt;quote&gt;http:&lt;solidus&gt;&lt;solidus&gt;ww.functx.com&lt;quote&gt;&lt;semicolon&gt;&lt;lf&gt;declare&lt;space&gt;function&lt;space&gt;functx:path-to-node&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;openparen&gt;&lt;space&gt;&lt;dollar&gt;nodes&lt;space&gt;as&lt;space&gt;node&lt;openparen&gt;&lt;closeparen&gt;*&lt;space&gt;&lt;closeparen&gt;&lt;space&gt;as&lt;space&gt;xs:string*&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;lf&gt;&lt;dollar&gt;nodes&lt;solidus&gt;string-join&lt;openparen&gt;ancestor-or-self::*&lt;solidus&gt;name&lt;openparen&gt;.&lt;closeparen&gt;&lt;comma&gt;&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;closecurly&gt;&lt;semicolon&gt;&lt;lf&gt;&lt;lf&gt;functx:path-to-node&lt;openparen&gt;&lt;solidus&gt;&lt;solidus&gt;*&lt;openbracket&gt;count&lt;openparen&gt;.&lt;solidus&gt;*&lt;closeparen&gt;&lt;gt&gt;0&lt;closebracket&gt;&lt;closeparen&gt;&lt;lf&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_SOURCE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_list"/>
+#! <XFORM_PARM PARM_NAME="XML_REMOVE_SOURCE_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XML_TYPE" PARM_VALUE="XML file"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XQueryExploder_6"/>
+#! <XFORM_PARM PARM_NAME="RESULT_SETTINGS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="85"
+#! TYPE="StringReplacer"
+#! VERSION="3"
+#! POSITION="1028 -663"
+#! BOUNDING_RECT="1028 -663 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="__featureCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_list" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlPath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="NO_MATCH_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="NO_MATCH" PARM_VALUE="_FME_NO_OP_"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="xmlPath"/>
+#! <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE="&lt;solidus&gt;"/>
+#! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;backslash&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
+#! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="24"
+#! NAME="xmlPaths"
+#! POSITION="3526 -342"
+#! BOUNDING_RECT="3526 -342 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="xmlPath" />
+#! <XFORM_ATTR ATTR_NAME="totalRecords" />
+#! <XFORM_ATTR ATTR_NAME="xmlNodes" />
+#! <XFORM_ATTR ATTR_NAME="xml" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="26"
+#! NAME="Input"
+#! POSITION="-2601 -301"
+#! BOUNDING_RECT="-2601 -301 0 0"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="78"
+#! NAME="namespaces"
+#! POSITION="184 -1508"
+#! BOUNDING_RECT="184 -1508 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! <XFORM_ATTR ATTR_NAME="namespaces" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="34"
+#! SOURCE_NODE="32"
+#! TARGET_NODE="36"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="35"
+#! SOURCE_NODE="31"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="37"
+#! SOURCE_NODE="36"
+#! TARGET_NODE="31"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="42"
+#! SOURCE_NODE="40"
+#! TARGET_NODE="32"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="43"
+#! SOURCE_NODE="31"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="44"
+#! SOURCE_NODE="38"
+#! TARGET_NODE="40"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="48"
+#! SOURCE_NODE="41"
+#! TARGET_NODE="31"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="49"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="29"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="51"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="50"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="52"
+#! SOURCE_NODE="50"
+#! TARGET_NODE="24"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="55"
+#! SOURCE_NODE="26"
+#! TARGET_NODE="53"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="63"
+#! SOURCE_NODE="53"
+#! TARGET_NODE="62"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="54"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="81"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="66"
+#! SOURCE_NODE="62"
+#! TARGET_NODE="65"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="68"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="83"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="75"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="76"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="73"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="79"
+#! SOURCE_NODE="74"
+#! TARGET_NODE="78"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="80"
+#! SOURCE_NODE="73"
+#! TARGET_NODE="78"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="70"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="82"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="71"
+#! SOURCE_NODE="82"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="72"
+#! SOURCE_NODE="81"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="69"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="64"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="67"
+#! SOURCE_NODE="64"
+#! TARGET_NODE="41"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="84"
+#! SOURCE_NODE="83"
+#! TARGET_NODE="41"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="86"
+#! SOURCE_NODE="29"
+#! TARGET_NODE="85"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="87"
+#! SOURCE_NODE="85"
+#! TARGET_NODE="38"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(XMLAnalyser_WORKSPACE_NAME)_XML_TYPE Attribute specifying XML
+DEFAULT_MACRO $(XMLAnalyser_WORKSPACE_NAME)_XMLString 
+DEFAULT_MACRO $(XMLAnalyser_WORKSPACE_NAME)_XML_FILE 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO XMLAnalyser_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(XMLAnalyser_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(XMLAnalyser_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLAnalyser_WORKSPACE_NAME)_Input1434543529 Input Splitter"   INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(XMLAnalyser_WORKSPACE_NAME)_Counter_284cf0e8_91e9_416e_adf6_a18ea791d5e60_createDomain { in_domainName } {    set domainName $in_domainName;    if { {Local} == {Local} }    {       set xFormName [FME_EncodeText {$(XMLAnalyser_WORKSPACE_NAME)_Counter_}];       set domainName $xFormName$domainName;    };    return $domainName; }
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_Counter    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Counter_OUTPUT"         "__featureCounter" @Count(fme_encoded,@Tcl2("$(XMLAnalyser_WORKSPACE_NAME)_Counter_284cf0e8_91e9_416e_adf6_a18ea791d5e60_createDomain {__featureCounter}"), "0")
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_XMLString {$($(XMLAnalyser_WORKSPACE_NAME)_XMLString)} _XML_FILE {$($(XMLAnalyser_WORKSPACE_NAME)_XML_FILE$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Counter_OUTPUT"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,$($(XMLAnalyser_WORKSPACE_NAME)_XML_TYPE$encode),$(XMLAnalyser_WORKSPACE_NAME)_TestFilter) = Attribute<space>specifying<space>XML ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute OUTPUT FAILED FEATURE_TYPE $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file INPUT FEATURE_TYPE $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter Attribute Splitter"   INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute"   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute_0_cLjYHerL9ic="   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute_1_cLjYHerL9ic="   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute_2_cLjYHerL9ic="
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter XML<space>file Splitter"   INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file"   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file_0_RdNorl8ZKO8="   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file_1_RdNorl8ZKO8="   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file_2_RdNorl8ZKO8="
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_3    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file_1_RdNorl8ZKO8="    XQUERY_EXPR declare<space>namespace<space>functx=<quote>http:<solidus><solidus>ww.functx.com<quote><semicolon><lf>declare<space>function<space>functx:path-to-node<lf><space><space><space><space><openparen><space><dollar>nodes<space>as<space>node<openparen><closeparen>*<space><closeparen><space>as<space>xs:string*<space><opencurly><lf><lf><dollar>nodes<solidus>string-join<openparen>ancestor-or-self::*<solidus>name<openparen>.<closeparen><comma><space><apos><solidus><apos><closeparen><lf><closecurly><semicolon><lf><lf>functx:path-to-node<openparen><solidus><solidus>*<openbracket>count<openparen>.<solidus>*<closeparen>=0<closebracket><closeparen><lf>    XML_FILE "@EvaluateExpression(STRING,<at>Value<openparen>_XML_FILE<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_3)"    MODE SINGLE_FEATURE    EXPLODE_MODE yes    RESULT_ATTR _list    WRITE_HEADER No    USE_W3C_UPDATE_EXTENSIONS no    COPY_INPUT_ATTRS yes    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_3_QUERY_RESULTS"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_6    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file_2_RdNorl8ZKO8="    XQUERY_EXPR declare<space>namespace<space>functx=<quote>http:<solidus><solidus>ww.functx.com<quote><semicolon><lf>declare<space>function<space>functx:path-to-node<lf><space><space><space><space><openparen><space><dollar>nodes<space>as<space>node<openparen><closeparen>*<space><closeparen><space>as<space>xs:string*<space><opencurly><lf><lf><dollar>nodes<solidus>string-join<openparen>ancestor-or-self::*<solidus>name<openparen>.<closeparen><comma><space><apos><solidus><apos><closeparen><lf><closecurly><semicolon><lf><lf>functx:path-to-node<openparen><solidus><solidus>*<openbracket>count<openparen>.<solidus>*<closeparen><gt>0<closebracket><closeparen><lf>    XML_FILE "@EvaluateExpression(STRING,<at>Value<openparen>_XML_FILE<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_6)"    MODE SINGLE_FEATURE    EXPLODE_MODE yes    RESULT_ATTR _list    WRITE_HEADER No    USE_W3C_UPDATE_EXTENSIONS no    COPY_INPUT_ATTRS yes    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_6_QUERY_RESULTS"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_XML<space>file_0_RdNorl8ZKO8="    XQUERY_EXPR declare<space>namespace<space>functx<space>=<space><quote>http:<solidus><solidus>www.functx.com<quote><semicolon><lf>declare<space>function<space>functx:namespaces-in-use<lf><space><space><openparen><space><dollar>root<space>as<space>node<openparen><closeparen>?<space><closeparen><space><space>as<space>xs:anyURI*<space><opencurly><lf><lf><space><space><space>distinct-values<openparen><lf><space><space><space><space><space><space><dollar>root<solidus>descendant-or-self::*<solidus><openparen>.|<at>*<closeparen><solidus>namespace-uri<openparen>.<closeparen><closeparen><lf><space><closecurly><space><semicolon><lf><space><lf><space>functx:namespaces-in-use<openparen>.<closeparen>    XML_FILE "@EvaluateExpression(STRING,<at>Value<openparen>_XML_FILE<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder)"    MODE SINGLE_FEATURE    EXPLODE_MODE yes    RESULT_ATTR namespaces    WRITE_HEADER No    USE_W3C_UPDATE_EXTENSIONS no    COPY_INPUT_ATTRS yes    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_QUERY_RESULTS"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_2    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute_0_cLjYHerL9ic="    XQUERY_EXPR declare<space>namespace<space>functx<space>=<space><quote>http:<solidus><solidus>www.functx.com<quote><semicolon><lf>declare<space>function<space>functx:namespaces-in-use<lf><space><space><openparen><space><dollar>root<space>as<space>node<openparen><closeparen>?<space><closeparen><space><space>as<space>xs:anyURI*<space><opencurly><lf><lf><space><space><space>distinct-values<openparen><lf><space><space><space><space><space><space><dollar>root<solidus>descendant-or-self::*<solidus><openparen>.|<at>*<closeparen><solidus>namespace-uri<openparen>.<closeparen><closeparen><lf><space><closecurly><space><semicolon><lf><space><lf><space>functx:namespaces-in-use<openparen>.<closeparen>    XML_ATTR _XMLString    MODE SINGLE_FEATURE    EXPLODE_MODE yes    RESULT_ATTR namespaces    WRITE_HEADER No    USE_W3C_UPDATE_EXTENSIONS no    COPY_INPUT_ATTRS yes    REMOVE_SOURCE_XML_ATTR No    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_2_QUERY_RESULTS"
+
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_4    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute_2_cLjYHerL9ic="    XQUERY_EXPR declare<space>namespace<space>functx=<quote>http:<solidus><solidus>ww.functx.com<quote><semicolon><lf>declare<space>function<space>functx:path-to-node<lf><space><space><space><space><openparen><space><dollar>nodes<space>as<space>node<openparen><closeparen>*<space><closeparen><space>as<space>xs:string*<space><opencurly><lf><lf><dollar>nodes<solidus>string-join<openparen>ancestor-or-self::*<solidus>name<openparen>.<closeparen><comma><space><apos><solidus><apos><closeparen><lf><closecurly><semicolon><lf><lf>functx:path-to-node<openparen><solidus><solidus>*<openbracket>count<openparen>.<solidus>*<closeparen>=0<closebracket><closeparen><lf>    XML_ATTR _XMLString    MODE SINGLE_FEATURE    EXPLODE_MODE yes    RESULT_ATTR _list    WRITE_HEADER No    USE_W3C_UPDATE_EXTENSIONS no    COPY_INPUT_ATTRS yes    REMOVE_SOURCE_XML_ATTR No    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_4_QUERY_RESULTS"
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO __$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_41186a13_d5f7_43ac_8458_7ec044a1e6550_GROUP_BY
+MACRO __$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_41186a13_d5f7_43ac_8458_7ec044a1e6550_GROUP_BY __featureCounter _list
+DYNAMIC_FUNCTION_CONFIGURATION Python FMEOBJECTS
+DYNAMIC_FUNCTION_CONFIGURATION Python import StatisticsCalculator
+DYNAMIC_FUNCTION_CONFIGURATION Python "StatisticsCalculator.connectTransformer(    '$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2',{     'GROUP_BY_MACRO':'__$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_41186a13_d5f7_43ac_8458_7ec044a1e6550_GROUP_BY',     'GROUP_BY':'__featureCounter _list',     'STATS_ATTRS':'_list',     'COUNT_ATTR':'_count',     'COMPUTE_HISTOGRAM':'NO',     'HISTO_ATTR':'<Unused>',     'PREPEND_ATTR_NAME':'No',     None:None})"
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_InputProcessor    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_3_QUERY_RESULTS"    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_4_QUERY_RESULTS"    OUTPUT FEATURE_TYPE __ORIGINAL__       @Python(StatisticsCalculator.recordFeature,$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2)
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_UnneededInputNuker    INPUT FEATURE_TYPE __ORIGINAL__
+FACTORY_DEF * SortFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_CompleteOutputter    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__
+FACTORY_DEF * CreationFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_SummaryCreator    CREATE_AT_END    NUMBER_TO_CREATE 1    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_SummaryExploder    LIST_NAME $(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_stats{}    MODE LEAN_AND_MEAN    CLONE_GEOMETRY no    INPUT FEATURE_TYPE __UNUSED_INPUT_TO_GUARANTEE_FACTORY_DOESNT_CONSUME_EVERYTHING__    INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"       @Python(StatisticsCalculator.summarizeStatistics,$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2,__SINGLE_GUY__)    OUTPUT ELEMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_FilenamePartExtractor    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_StatisticsCalculator_2_SUMMARY"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_FilenamePartExtractor_OUTPUT"         @SupplyAttributes("xmlPath",@Filenamepart(ENCODED,DIRNAME,"@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_list<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_FilenamePartExtractor)"))         @SupplyAttributes("xmlNodes",@Filenamepart(ENCODED,FILENAME,"@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_list<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_FilenamePartExtractor)"))
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {NO} == {NO} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(XMLAnalyser_WORKSPACE_NAME)_StringReplacer_32b54241_4822_4f79_a2ca_67d6e2bd90280_replacer { findText replaceText invalidValue} {     set attrs [split \"xmlPath\" {,}];     set findValue [FME_DecodeText $findText];     set replaceValue [FME_DecodeText $replaceText];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set noMatch true;       if {{NO} == {YES}} {         set newAttrVal [regsub $(casemac) -all -- $findValue $attrVal $replaceValue];       } else {         set newAttrVal [string map $(casemac) [list $findValue $replaceValue] $attrVal];       };       if { $newAttrVal ne $attrVal } {         set noMatch false;         FME_SetAttribute $attr $newAttrVal;       };       if {$noMatch} {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_StringReplacer    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_FilenamePartExtractor_OUTPUT"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_StringReplacer_OUTPUT"         @Tcl2("$(XMLAnalyser_WORKSPACE_NAME)_StringReplacer_32b54241_4822_4f79_a2ca_67d6e2bd90280_replacer {<backslash>} {<solidus>} {_FME_NO_OP_}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_AttributeRenamer    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_StringReplacer_OUTPUT"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL, xmlPath,_list,"")
+
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(XMLAnalyser_WORKSPACE_NAME)_AttributeTrimmer_165c1d4b_58e7_4900_bd8e_468c38b149210_trimmer { trimChars} {    set attrs [split {_list} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_AttributeTrimmer    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeRenamer_OUTPUT"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"      @Tcl2("$(XMLAnalyser_WORKSPACE_NAME)_AttributeTrimmer_165c1d4b_58e7_4900_bd8e_468c38b149210_trimmer {<solidus>} ")
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(XMLAnalyser_WORKSPACE_NAME)_Aggregator_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(XMLAnalyser_WORKSPACE_NAME)_Aggregator_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE __featureCounter _list} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_Aggregator    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeTrimmer_OUTPUT"    MODE ONE_LEVEL    GROUP_BY __featureCounter _list    $($(XMLAnalyser_WORKSPACE_NAME)_Aggregator_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Never    CONCATENATE_FIELDS xmlNodes    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Aggregator_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(XMLAnalyser_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Aggregator_AGGREGATE"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(_count)        @RemoveAttributes(fme_regexp_match"$($(XMLAnalyser_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XQueryFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_5    INPUT SOURCE_DOCUMENT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_TestFilter_Attribute_1_cLjYHerL9ic="    XQUERY_EXPR declare<space>namespace<space>functx=<quote>http:<solidus><solidus>ww.functx.com<quote><semicolon><lf>declare<space>function<space>functx:path-to-node<lf><space><space><space><space><openparen><space><dollar>nodes<space>as<space>node<openparen><closeparen>*<space><closeparen><space>as<space>xs:string*<space><opencurly><lf><lf><dollar>nodes<solidus>string-join<openparen>ancestor-or-self::*<solidus>name<openparen>.<closeparen><comma><space><apos><solidus><apos><closeparen><lf><closecurly><semicolon><lf><lf>functx:path-to-node<openparen><solidus><solidus>*<openbracket>count<openparen>.<solidus>*<closeparen><gt>0<closebracket><closeparen><lf>    XML_ATTR _XMLString    MODE SINGLE_FEATURE    EXPLODE_MODE yes    RESULT_ATTR _list    WRITE_HEADER No    USE_W3C_UPDATE_EXTENSIONS no    COPY_INPUT_ATTRS yes    REMOVE_SOURCE_XML_ATTR No    OUTPUT QUERY_RESULTS FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_5_QUERY_RESULTS"
+
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(XMLAnalyser_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(XMLAnalyser_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE __featureCounter _list} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_Aggregator_2    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_5_QUERY_RESULTS"    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_6_QUERY_RESULTS"    MODE ONE_LEVEL    GROUP_BY __featureCounter _list    $($(XMLAnalyser_WORKSPACE_NAME)_Aggregator_2_BREAK_ATTR)    REMOVE_GEOMETRY YES    COUNT_ATTRIBUTE "_count"    ACCUMULATE_ATTRIBUTES Yes    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Aggregator_2_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+INCLUDE [if { {ATTRIBUTES} == {ATTRIBUTES} } {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO ATTRIBUTES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {POLYGONS}} {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_POLYS";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {AGGREGATES}} {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} && {<Unused>} == {LINESFROMPOINTS}} {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_LINES_FROM_POINTS";             }          elseif { {ATTRIBUTES} == {GEOM_BUILD} } {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_BUILD_AGGREGATES";             }          elseif { {ATTRIBUTES} == {GEOM_AND_ATTRS} } {                puts "MACRO $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO GEOM_AND_ATTR_BUILD_AGGREGATES";             }          else {}; ]
+
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger    INPUT REFERENCER FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Aggregator_2_AGGREGATE"    INPUT REFERENCEE FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeRemover_OUTPUT"    REFERENCE_INFO $($(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_REFERENCE_INFO)    REFERENCE_TABLE @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__featureCounter<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__featureCounter<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger) NUM @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_list<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger) @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_list<closeparen>,$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger) AUTO    IGNORE_NULLS "Yes"    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    REFERENCEES_FIRST No    OUTPUT COMPLETE FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_MERGED"    OUTPUT INCOMPLETE FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_NOT_MERGED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_Sorter    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_NOT_MERGED"    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_FeatureMerger_MERGED"    SORT_BY _list ALPHA ASCENDING    OUTPUT SORTED FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Sorter_SORTED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(XMLAnalyser_WORKSPACE_NAME)_AttributeRenamer_2    INPUT  FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_Sorter_SORTED"    OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"         @RenameAttributes(ATTR_LIST_DEF_VAL, _list,xmlPath,"",_count,totalRecords,"")
+
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLAnalyser_WORKSPACE_NAME)_xmlPaths1434543529 Output Collector"   INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_xmlPaths" @RemoveAttributes(__featureCounter,_XMLString,_XML_FILE)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(XMLAnalyser_WORKSPACE_NAME)_namespaces1434543529 Output Collector"   INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_QUERY_RESULTS"   INPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_XQueryExploder_2_QUERY_RESULTS"   OUTPUT FEATURE_TYPE "$(XMLAnalyser_WORKSPACE_NAME)_namespaces" @RemoveAttributes(__featureCounter,_XMLString,_XML_FILE)
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(XMLAnalyser_WORKSPACE_NAME))}]

@@ -1,0 +1,669 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN cleanCodeFromURI,1,EEACleanup,e1ac7a47-fc95-4210-9819-f4600663aa77,"Linked by Default",No,NO_PARALLELISM,,No,15485,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Clean up attributes containing a URI. for example RDF results might have a full URI towards a code but sometimes only the code is to our interest.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#! DOC_TOP_LEFT="-541 -1640"
+#! PASSWORD=""
+#! REQUIREMENTS_KEYWORD="none"
+#! SHOW_ANNOTATIONS="true"
+#! ITERATION_COUNT_ATTR="_cleanBoolean_counter"
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.0.3 (20150623 - Build 15485 - WIN64)"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! SHOW_INFO_NODES="true"
+#! CATEGORY="EEACleanup"
+#! DOC_EXTENTS="4890 1626"
+#! WORKSPACE_VERSION="1"
+#! FME_PROCESS_GROUP_BY=""
+#! MAX_LOOP_ITERATIONS="100"
+#! XFORM_DEPRECATED="No"
+#! FME_DOCUMENT_GUID="e1ac7a47-fc95-4210-9819-f4600663aa77"
+#! VIEW_POSITION="84.0008 216.002"
+#! FME_DOCUMENT_PRIORGUID="b00b1c77-0811-4410-b2ce-02cad8db999a,13de1dbe-20a0-4357-b12d-6e6fbe1167f8,04b0e15d-4fc9-46bf-8cb5-e24ffd26d8f3,952b76c3-56e5-47e6-8778-03c66879f88b"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! FMX_INSERT_MODE="Linked by Default"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;For example&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&quot;http://dd.eionet.europa.eu/vocabulary/aq/timezone/&lt;span style=&quot; font-weight:600;&quot;&gt;UTC+01&quot; &lt;/span&gt;would result into&lt;span style=&quot; font-weight:600;&quot;&gt; &quot;UTC+01&quot;&lt;/span&gt;&#10;&lt;/p&gt;&#10;"
+#! ZOOM_SCALE="100"
+#! TITLE="cleanCodeFromURI"
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None &lt;/p&gt;&#10;"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Clean up attributes containing a URI. for example RDF results might have a full URI towards a code but sometimes only the code is to our interest.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! ATTR_TYPE_ENCODING="SDF"
+#! HISTORY="05&lt;solidus&gt;082015,Jan&lt;space&gt;Bliki,Initial&lt;space&gt;creator"
+#! LAST_SAVE_DATE="2015-08-13T14:37:52"
+#! BLOCKED_LOOPING="No"
+#! FME_BUILD_NUM="15485"
+#! FME_SERVER_SERVICES=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI ATTRLIST_COMMAS_OR_ATTR FieldNames &quot; &quot; Attributes names:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="32"
+#! NAME="Extract attributes"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract attribute and split true/false from attrOut parameter.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="52 -543"
+#! BOTTOM_RIGHT="607 -1431"
+#! BOUNDING_RECT="52 -543 555 888"
+#! STICKY="true"
+#! COLOUR="0.47451,0.803922,0"
+#! CONTENTS="8 44 10 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="33"
+#! NAME="Grab Last part of URI"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11px;&quot;&gt;We use the file name part Extractor as this provides the nececary result.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2181 -584"
+#! BOTTOM_RIGHT="2736 -1316"
+#! BOUNDING_RECT="2181 -584 555 732"
+#! STICKY="true"
+#! COLOUR="0.486275,0.411765,0.447059"
+#! CONTENTS="42 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="34"
+#! NAME="Insert into new field"
+#! DESCRIPTION="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:11px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Move the content into the new field name selected by the end user.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="2775 -593"
+#! BOTTOM_RIGHT="3329 -1313"
+#! BOUNDING_RECT="2775 -593 554 720"
+#! STICKY="true"
+#! COLOUR="0.121569,0.764706,0.121569"
+#! CONTENTS="6 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="35"
+#! NAME="Loop trough all fields names"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1254 -14"
+#! BOTTOM_RIGHT="4161 -1640"
+#! BOUNDING_RECT="1254 -14 2907 1626"
+#! STICKY="true"
+#! COLOUR="0.509804,0.109804,0.254902"
+#! CONTENTS="31 4 39 27 41 29 40 37 15 34 43 30 3 16 38 26 12 6 14 42 33 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="36"
+#! NAME="Count Fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="656 -540"
+#! BOTTOM_RIGHT="1216 -1431"
+#! BOUNDING_RECT="656 -540 560 891"
+#! STICKY="true"
+#! COLOUR="0.992157,0.509804,0.364706"
+#! CONTENTS="13 11 23 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="37"
+#! NAME="Get Next FieldName"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="1594 -591"
+#! BOTTOM_RIGHT="2149 -1311"
+#! BOUNDING_RECT="1594 -591 555 720"
+#! STICKY="true"
+#! COLOUR="0.266667,0.964706,0.984314"
+#! CONTENTS="41 39 14 12 40 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="38"
+#! NAME="Check if more Fields"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="3370 -597"
+#! BOTTOM_RIGHT="3934 -1314"
+#! BOUNDING_RECT="3370 -597 564 717"
+#! STICKY="true"
+#! COLOUR="0.0666667,0.384314,0.929412"
+#! CONTENTS="15 16 29 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="2849 -960"
+#! BOUNDING_RECT="2849 -960 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="IntoNewField"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__cleanAttrfield&lt;closeparen&gt;,&lt;at&gt;Value&lt;openparen&gt;_attrValue&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="126 -852"
+#! BOUNDING_RECT="126 -852 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_fieldNames {$(FieldNames)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="10"
+#! TYPE="AttributeSplitter"
+#! VERSION="2"
+#! POSITION="126 -1101"
+#! BOUNDING_RECT="126 -1101 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_fieldNames"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_cleanAttrfield"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="11"
+#! TYPE="ListElementCounter"
+#! VERSION="1"
+#! POSITION="736 -868"
+#! BOUNDING_RECT="736 -868 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListElementCounter"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_cleanAttrfield&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="12"
+#! TYPE="ListIndexer"
+#! VERSION="1"
+#! POSITION="1669 -775"
+#! BOUNDING_RECT="1669 -775 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_cleanAttrfield{}"/>
+#! <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="_"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="__cleanAttrField"/>
+#! <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="@Value(_count_cleanAttrfield)"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="13"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="730 -1101"
+#! BOUNDING_RECT="730 -1101 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_count_cleanAttrfield)-1"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_countMinusOne"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="14"
+#! TYPE="AttributeCreator"
+#! VERSION="5"
+#! POSITION="1680 -1137"
+#! BOUNDING_RECT="1680 -1137 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_attrValue,&lt;at&gt;Value&lt;openparen&gt;&lt;at&gt;Value&lt;openparen&gt;__cleanAttrfield&lt;closeparen&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="15"
+#! TYPE="ExpressionEvaluator"
+#! VERSION="2"
+#! POSITION="3444 -820"
+#! BOUNDING_RECT="3444 -820 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXPRESSION" PARM_VALUE="@Value(_count_cleanAttrfield)-1"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="_countMinusOne_2"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_count_cleanAttrfield"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="16"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="3454 -1002"
+#! BOUNDING_RECT="3454 -1002 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="Finished"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Next"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_count_cleanAttrfield&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;&lt;lt&gt;&lt;space&gt;0&lt;quote&gt;,Finished"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="LoopOnceMore"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Next"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="39"
+#! TYPE="AttributeTrimmer"
+#! VERSION="3"
+#! POSITION="1685 -954"
+#! BOUNDING_RECT="1685 -954 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14338"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RemoveQuotes"/>
+#! <XFORM_PARM PARM_NAME="TRIM_CHARS" PARM_VALUE="&lt;quote&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRIM_TYPE" PARM_VALUE="Both"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="__cleanAttrfield"/>
+#! <XFORM_PARM PARM_NAME="TRIM_TO_NONE" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="42"
+#! TYPE="FilenamePartExtractor"
+#! VERSION="3"
+#! POSITION="2244.52 -933.51"
+#! BOUNDING_RECT="2244.52 -933.51 464.508 71"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="15485"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fieldNames" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_cleanAttrfield{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_count_cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrValue" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_attrOut" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="_truefalse{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__cleanAttrfield" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="DIRPATH_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_attrValue&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="DIRNAME_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FilenamePartExtractor"/>
+#! <XFORM_PARM PARM_NAME="ROOTNAME_ATTR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="FULLNAME_ATTR" PARM_VALUE="_attrValue"/>
+#! <XFORM_PARM PARM_NAME="EXTENSION_ATTR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="1"
+#! NAME="Input"
+#! POSITION="-541 -939"
+#! BOUNDING_RECT="-541 -939 0 0"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="2"
+#! NAME="Ouput"
+#! POSITION="4349 -990"
+#! BOUNDING_RECT="4349 -990 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="1"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="3"
+#! NAME="LoopFieldNames"
+#! POSITION="1374 -256"
+#! BOUNDING_RECT="1374 -256 0 0"
+#! COLLAPSED="true"
+#! PUBLISHED="false"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="4"
+#! NAME="LoopFieldNames"
+#! POSITION="3445 -1379"
+#! BOUNDING_RECT="3445 -1379 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="loop"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="19"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="11"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="13"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="42"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="28"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="29"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="30"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="31"
+#! SOURCE_NODE="16"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="40"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="39"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="41"
+#! SOURCE_NODE="39"
+#! TARGET_NODE="14"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="43"
+#! SOURCE_NODE="42"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="44"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(cleanCodeFromURI_WORKSPACE_NAME)_FieldNames 
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO cleanCodeFromURI_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(cleanCodeFromURI_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(cleanCodeFromURI_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanCodeFromURI_WORKSPACE_NAME)_Input1439469472 Input Splitter"   INPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_Input"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames1439469472 Input Splitter"   INPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames"   OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_fieldNames {$($(cleanCodeFromURI_WORKSPACE_NAME)_FieldNames$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitDelim]] }      {         set $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_doSplit {}         {            global $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitWidths;            set source [FME_GetAttribute {"_fieldNames"}];            set attrNum 0;            set listName {_cleanAttrfield};            set attrPos 0;            foreach width [set $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_doSplit {}         {            global $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitDelim;            set delim [set $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_ce91251a_3029_4362_a970_3932ac20e4100_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_fieldNames"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {_cleanAttrfield};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_OUTPUT"         @Tcl2($(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_ListElementCounter    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__cleanAttrfield_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_ListElementCounter_OUTPUT"         "_count_cleanAttrfield" @NumElements("_cleanAttrfield<opencurly><closecurly>",ENCODED)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_ListElementCounter_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne_OUTPUT"         "_count_cleanAttrfield" "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>-1,$(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne)"
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField_indexer {index numElements prefix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {_cleanAttrfield{}} \"{$index}\" listWithIndex;    regsub \"{}\" {_cleanAttrfield{}} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne_OUTPUT"    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames"    TEST "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>,$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField)" >= 0    OUTPUT PASSED FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField_OUTPUT" @Tcl2("$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField_indexer @EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>,$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField) 0 {_}")    OUTPUT FAILED FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField_OUTPUT" @Tcl2("$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField_indexer @EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>,$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField) @NumElements(_cleanAttrfield{})  {_}")
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(cleanCodeFromURI_WORKSPACE_NAME)_RemoveQuotes_e39030bc_0f0e_484f_89be_d35fc85270e10_trimmer { trimChars} {    set attrs [split {__cleanAttrfield} {,}];    set trimChars [FME_DecodeText $trimChars];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {[string length $trimChars] == 0} {             set result [string trim $attrVal];         } else {             set result [string trim $attrVal $trimChars];         };          if {[string length $result] == 0 && {Yes} == {No}} {              if { {trim} == {trimleft}} {                set lastPos [expr $length - 1];                set result [string range $attrVal $lastPos $lastPos ];              } elseif { {trim} == {trimright}} {                set result [string range $attrVal 0 0];              } else {                set midPos [expr $length / 2];                set result [string range $attrVal $midPos $midPos];              };          };          FME_SetAttribute $attr $result;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_RemoveQuotes    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)___cleanAttrField_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_RemoveQuotes_OUTPUT"      @Tcl2("$(cleanCodeFromURI_WORKSPACE_NAME)_RemoveQuotes_e39030bc_0f0e_484f_89be_d35fc85270e10_trimmer {<quote>} ")
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)__attrValue ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_RemoveQuotes_OUTPUT" ATTR _attrValue <at>Value<openparen><at>Value<openparen>__cleanAttrfield<closeparen><closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__attrValue_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_FilenamePartExtractor    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__attrValue_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_FilenamePartExtractor_OUTPUT"         @SupplyAttributes("_attrValue",@Filenamepart(ENCODED,FILENAME,"@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_attrValue<closeparen>,$(cleanCodeFromURI_WORKSPACE_NAME)_FilenamePartExtractor)"))
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_IntoNewField ATTRSET_PROPAGATE_MISSING YES INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_FilenamePartExtractor_OUTPUT" ATTR <at>Value<openparen>__cleanAttrfield<closeparen> <at>Value<openparen>_attrValue<closeparen>    OUTPUT OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_IntoNewField_OUTPUT" 
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne_2    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_IntoNewField_OUTPUT"    OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne_2_OUTPUT"         "_count_cleanAttrfield" "@EvaluateExpression(FLOAT,<at>Value<openparen>_count_cleanAttrfield<closeparen>-1,$(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne_2)"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore    INPUT  FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)__countMinusOne_2_OUTPUT"    OUTPUT FEATURE_TYPE $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_TestFactory_0 INPUT FEATURE_TYPE $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_count_cleanAttrfield<closeparen>,$(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore) < 0 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_Finished OUTPUT FAILED FEATURE_TYPE $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_Next INPUT FEATURE_TYPE $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_Next
+FACTORY_DEF * BranchingFactory   TARGET_FACTORY "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames1439469472 Input Splitter"   FACTORY_NAME "Loop to $(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames1439469472 Input Splitter"   MAXIMUM_COUNT -1   INPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_Next"   OUTPUT PASSED FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopFieldNames"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(cleanCodeFromURI_WORKSPACE_NAME)_Ouput1439469472 Output Collector"   INPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_LoopOnceMore_Finished"   OUTPUT FEATURE_TYPE "$(cleanCodeFromURI_WORKSPACE_NAME)_Ouput" @RemoveAttributes(_fieldNames,_count_cleanAttrfield,_attrValue,_attrOut,__cleanAttrfield) @RemoveAttributes(fme_regexp_match,_cleanAttrfield{},_truefalse{})
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(cleanCodeFromURI_WORKSPACE_NAME))}]

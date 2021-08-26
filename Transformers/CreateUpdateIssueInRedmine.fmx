@@ -1,0 +1,1490 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN CreateUpdateIssueInRedmine,1,Redmine,f9e1d202-7de7-4678-9975-56a4f1de3206,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Creating/Update an issue inside a Redmine taskmanager </p>
+# 
+# TRANSFORMER_END
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   FME_DOCUMENT_GUID="f9e1d202-7de7-4678-9975-56a4f1de3206"
+#!   SHOW_INFO_NODES="true"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   BLOCKED_LOOPING="No"
+#!   TITLE="CreateUpdateIssueInRedmine"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   PASSWORD=""
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   FME_SERVER_SERVICES=""
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   FME_PROCESS_GROUP_BY=""
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   SHOW_ANNOTATIONS="true"
+#!   DOC_TOP_LEFT="-2940.52 -1484.39"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN32)"
+#!   ZOOM_SCALE="100"
+#!   XFORM_DEPRECATED="No"
+#!   LAST_SAVE_DATE="2017-02-03T15:19:52"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   MAX_LOOP_ITERATIONS=""
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_DOCUMENT_PRIORGUID="be25deac-9ab0-43d7-9d5b-9a0eb4bf4956,b5c434cd-410e-4d33-a8ec-a2135d278aad,0df89909-70b4-44e7-b0da-1ffc8826ee73,a3d3a46e-75d0-40f8-babb-e03a6d476964,1698900b-5bcf-458b-81db-0a0f8c887592,35c1674b-97e2-4b3e-a8b9-f23a93e59658,8968690c-5c9d-4a10-9b24-0763672e919f"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Creating/Update an issue inside a Redmine taskmanager &lt;/p&gt;&#10;"
+#!   WORKSPACE_VERSION="1"
+#!   DOC_EXTENTS="7381.19 1376.89"
+#!   ITERATION_COUNT_ATTR=""
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;issue ID: When issue ID is provided it is expected that we UPDATE an issue inside RedMine otherwise we will CREATE an issue.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_BUILD_NUM="16674"
+#!   CATEGORY="Redmine"
+#!   HISTORY=""
+#!   VIEW_POSITION="625.006 1487.51"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR RedMineURI RedMine URI:"
+#!   DEFAULT_VALUE="https://taskman.eionet.europa.eu"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI NAMED_CONNECTION_ENCODED_OR_ATTR AUTH_NAMED_CONNECTION &quot; &quot; Web Connection:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR issue_id Issue ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI INTEGER_OR_ATTR project_id Project ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR tracker_id Tracker ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR status_id Status ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR priority_id Priority ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_ATTR subject Subject:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_EDIT_OR_NUM_OR_ATTR description Description:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR category_id Category ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR fixed_version_id_ Version ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR assigned_to_id Assigned to ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR parent_issue_id Parent issue ID:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI CHOICE_OR_ATTR is_private true%false Is Private:"
+#!   DEFAULT_VALUE="false"
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR startdate Start date:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR duedate Due date:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL INTEGER_OR_ATTR estimated_hours Estimated Hours:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR custom_fields Custom fields:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL CHOICE_OR_ATTR FMEDebugMode On%Off FME Debug mode:"
+#!   DEFAULT_VALUE="Off"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="24"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Post Redmine JSON&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2946.91 -687.136"
+#!   TOP_LEFT="2946.91 -687.136"
+#!   BOTTOM_RIGHT="2945.91 -686.136"
+#!   BOUNDING_RECT="2946.91 -687.136 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="16"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="41"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Split on ,&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-143.751 -890.01"
+#!   TOP_LEFT="-143.751 -890.01"
+#!   BOTTOM_RIGHT="-144.751 -889.01"
+#!   BOUNDING_RECT="-143.751 -890.01 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="23"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="46"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Produce JSON for creating&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;an Issue in Redmine&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="740.632 -230.628"
+#!   TOP_LEFT="740.632 -230.628"
+#!   BOTTOM_RIGHT="739.632 -229.628"
+#!   BOUNDING_RECT="740.632 -230.628 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="10"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="47"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Cleanup JSON by&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;removing empty elements&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1350.88 -258.753"
+#!   TOP_LEFT="1350.88 -258.753"
+#!   BOTTOM_RIGHT="1349.88 -257.753"
+#!   BOUNDING_RECT="1350.88 -258.753 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="13"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="48"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Extract IssueID&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="3828.16 -107.503"
+#!   TOP_LEFT="3828.16 -107.503"
+#!   BOTTOM_RIGHT="3827.16 -106.503"
+#!   BOUNDING_RECT="3828.16 -107.503 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="25"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="57"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;PUT Redmine JSON&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2946.91 -110.878"
+#!   TOP_LEFT="2946.91 -110.878"
+#!   BOTTOM_RIGHT="2945.91 -109.878"
+#!   BOUNDING_RECT="2946.91 -110.878 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="56"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="60"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Split on :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="385.379 -970.887"
+#!   TOP_LEFT="385.379 -970.887"
+#!   BOTTOM_RIGHT="384.379 -969.887"
+#!   BOUNDING_RECT="385.379 -970.887 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="55"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#!   IDENTIFIER="45"
+#!   NAME="CUSTOM_FIELDS"
+#!   DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   TOP_LEFT="-428.129 -753.133"
+#!   BOTTOM_RIGHT="840.631 -1484.39"
+#!   BOUNDING_RECT="-428.129 -753.133 1268.76 731.257"
+#!   STICKY="true"
+#!   COLOUR="0.854902,0.266667,0.694118"
+#!   CONTENTS="23 40 41 38 44 55 60 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-2354.14 -475.005"
+#!   BOUNDING_RECT="-2354.14 -475.005 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="_assigned_to_id {$(assigned_to_id)} _category_id {$(category_id)} _custom_fields {$(custom_fields)} _description {$(description)} _estimated_hours {$(estimated_hours)} _fixed_version_id_ {$(fixed_version_id_)} _is_private {$(is_private)} _parent_issue_id {$(parent_issue_id)} _priority_id {$(priority_id)} _project_id {$(project_id)} _status_id {$(status_id)} _subject {$(subject)} _tracker_id {$(tracker_id)} _issue_id {$(issue_id)} _startdate {$(startdate)} _duedate {$(duedate)} _FMEDebugMode {$(FMEDebugMode)}"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="JSONTemplater"
+#!   VERSION="0"
+#!   POSITION="740.632 -475.005"
+#!   BOUNDING_RECT="740.632 -475.005 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONTemplater"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="__IssueCreateCounter"/>
+#!     <XFORM_PARM PARM_NAME="ROOT_QUERY_EXPR" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;issue&lt;quote&gt;:&lt;space&gt;&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;project_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_project_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;tracker_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_tracker_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;status_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_status_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;priority_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_priority_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;subject&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_subject&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;description&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_description&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;category_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_category_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;fixed_version_id_&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_fixed_version_id_&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;assigned_to_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_assigned_to_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;parent_issue_id&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_parent_issue_id&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;is_private&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_is_private&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;estimated_hours&lt;quote&gt;:&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_estimated_hours&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;custom_fields&lt;quote&gt;:fme:process-features&lt;openparen&gt;&lt;quote&gt;CUSTOM_FIELD&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;start_date&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_startdate&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;quote&gt;due_date&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_duedate&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOT_QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SUB_TEMPLATE_PARAMS" PARM_VALUE="CUSTOM_FIELD_QUERY_EXPR,&quot;WHOLE_LINE TEXT_EDIT_XQUERY_OR_ATTR JSON%GET%PROCESS%GEOMETRY%NOBRACES&quot;,&quot;CUSTOM_FIELD Template Expression:&quot;"/>
+#!     <XFORM_PARM PARM_NAME="VISIBLE_QUERY_VALIDATE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="CONSECUTIVE_GROUPS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_issue_json"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_FIELD_QUERY_EXPR" PARM_VALUE="&lt;opencurly&gt;&lt;quote&gt;value&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_custom_fields&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;quote&gt;&lt;closeparen&gt;&lt;comma&gt;&lt;quote&gt;id&lt;quote&gt;:fme:get-attribute&lt;openparen&gt;&lt;quote&gt;_custom_fields&lt;opencurly&gt;0&lt;closecurly&gt;.part&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="JSONFormatter"
+#!   VERSION="2"
+#!   POSITION="1350.88 -475.005"
+#!   BOUNDING_RECT="1350.88 -475.005 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.line" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.column" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_json_error{}.severity" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="Pretty Print"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONFormatter"/>
+#!     <XFORM_PARM PARM_NAME="INPUT_SETTINGS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_SETTINGS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INDENT_STYLE" PARM_VALUE="3 spaces"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_ENCODING" PARM_VALUE="UTF-8"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_issue_json&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_NULLS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_EMPTY_STRINGS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_ATTR" PARM_VALUE="_issue_json"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_SETTINGS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_EMPTY_OBJECTS_AND_ARRAYS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_LIST_ATTR" PARM_VALUE="_json_error"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="16"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="2946.91 -868.762"
+#!   BOUNDING_RECT="2946.91 -868.762 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="$(RedMineURI)&lt;solidus&gt;issues.json"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(AUTH_NAMED_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_issue_json&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="JSON (application/json)"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="POST"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_redmin_json_response"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="25"
+#!   TYPE="JSONExtractor"
+#!   VERSION="3"
+#!   POSITION="3774.03 -292.504"
+#!   BOUNDING_RECT="3774.03 -292.504 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="EVALUATED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
+#!     <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="issue_id json&lt;openbracket&gt;&lt;quote&gt;issue&lt;quote&gt;&lt;closebracket&gt;&lt;openbracket&gt;&lt;quote&gt;id&lt;quote&gt;&lt;closebracket&gt;"/>
+#!     <XFORM_PARM PARM_NAME="JSON_DOCUMENT" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_redmin_json_response&lt;closeparen&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-797.883 -475.005"
+#!   BOUNDING_RECT="-797.883 -475.005 504.13 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="custom_fields"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="no&lt;space&gt;custom_fields"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_custom_fields&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;ATTRIBUTE_HAS_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;,custom_fields"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="no&lt;space&gt;custom_fields"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="23"
+#!   TYPE="AttributeSplitter"
+#!   VERSION="3"
+#!   POSITION="-244.753 -1028.14"
+#!   BOUNDING_RECT="-244.753 -1028.14 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#!     <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_custom_fields"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="_custom_fields"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="33"
+#!   TYPE="Counter"
+#!   VERSION="2"
+#!   POSITION="-1310.39 -475.005"
+#!   BOUNDING_RECT="-1310.39 -475.005 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Counter"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#!     <XFORM_PARM PARM_NAME="START" PARM_VALUE="0"/>
+#!     <XFORM_PARM PARM_NAME="DOMAIN" PARM_VALUE="IssueCreateCounter"/>
+#!     <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="__IssueCreateCounter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="38"
+#!   TYPE="ListExploder"
+#!   VERSION="5"
+#!   POSITION="-244.753 -1217.26"
+#!   BOUNDING_RECT="-244.753 -1217.26 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="ELEMENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Incoming List"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListExploder"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_custom_fields{}"/>
+#!     <XFORM_PARM PARM_NAME="INCOMING_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_element_index"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Incoming List"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="36"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="1933.39 -471.88"
+#!   BOUNDING_RECT="1933.39 -471.88 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="UPDATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="CREATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Debug"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_issue_id&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;ATTRIBUTE_HAS_VALUE&lt;space&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;quote&gt;&lt;lf&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_FMEDebugMode&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Off&lt;quote&gt;,UPDATE,BOOL_OP&lt;comma&gt;AND&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;_FMEDebugMode&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Off&lt;quote&gt;,CREATE"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Debug"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="56"
+#!   TYPE="HTTPCaller"
+#!   VERSION="1"
+#!   POSITION="2946.91 -292.504"
+#!   BOUNDING_RECT="2946.91 -292.504 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Output"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;Rejected&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_json" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_error" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.name" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_headers{}.value" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_http_status_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="HTTP_RESPONSE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_HEADER_LIST_ATTR" PARM_VALUE="_headers"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_USERNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_REQUEST_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FILENAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_METHOD" PARM_VALUE="Web Connection"/>
+#!     <XFORM_PARM PARM_NAME="TARGET_URL" PARM_VALUE="$(RedMineURI)&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;_project_id&lt;closeparen&gt;&lt;solidus&gt;issues&lt;solidus&gt;&lt;at&gt;Value&lt;openparen&gt;_issue_id&lt;closeparen&gt;.json"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFER_TIMEOUT_LENGTH" PARM_VALUE="90"/>
+#!     <XFORM_PARM PARM_NAME="CONNECTION_TIMEOUT_LENGTH" PARM_VALUE="60"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_MULTI" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_NAMED_CONNECTION" PARM_VALUE="$(AUTH_NAMED_CONNECTION)"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_BODY" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_issue_json&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FILE_PATH_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="RESPONSE_FILE_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MULTIPART_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="FILE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_RESPONSE_PARAMETERS" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="VERIFY_SSL_CERTIFICATES" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_CONTENT_TYPE" PARM_VALUE="JSON (application/json)"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_METHOD" PARM_VALUE="PUT"/>
+#!     <XFORM_PARM PARM_NAME="CUSTOM_HEADERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_DIRNAME" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTIPARTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="AUTH_PASSWORD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="STATUS_CODE_ATTR" PARM_VALUE="_http_status_code"/>
+#!     <XFORM_PARM PARM_NAME="HTTPURL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR_ENCODING" PARM_VALUE="auto-detect"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="HTTPCaller_2"/>
+#!     <XFORM_PARM PARM_NAME="FOLLOW_REDIRECTS" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ADDITIONAL_URL_PARAMETERS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TARGET_ATTR" PARM_VALUE="_redmin_json_response"/>
+#!     <XFORM_PARM PARM_NAME="USE_COOKIES" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="HTTP_AUTH_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SAVE_FILE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="UPLOAD_TYPE" PARM_VALUE="Specify Upload Body"/>
+#!     <XFORM_PARM PARM_NAME="ERROR_ATTR" PARM_VALUE="_error"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="51"
+#!   TYPE="DateFormatter"
+#!   VERSION="5"
+#!   POSITION="-1844.77 -475.005"
+#!   BOUNDING_RECT="-1844.77 -475.005 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="INVALID_DATE_VALUE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DateFormatter"/>
+#!     <XFORM_PARM PARM_NAME="FMT" PARM_VALUE="%Y-%m-%d"/>
+#!     <XFORM_PARM PARM_NAME="DATE_ATTR" PARM_VALUE="_duedate,_startdate"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SRCFMT" PARM_VALUE="Unknown - Automatic Detection"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="55"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="318.753 -1127.76"
+#!   BOUNDING_RECT="318.753 -1127.76 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_first_match" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_assigned_to_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_category_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_custom_fields" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_description" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_estimated_hours" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_fixed_version_id_" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_is_private" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_parent_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_priority_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_project_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_status_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_subject" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_tracker_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_issue_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_startdate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_duedate" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_FMEDebugMode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__IssueCreateCounter" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_element_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;&lt;openbracket&gt;0-9&lt;closebracket&gt;&lt;opencurly&gt;2&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;:&lt;openparen&gt;.*&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="_first_match"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_2"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_custom_fields&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="_custom_fields"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Input"
+#!   POSITION="-2940.52 -475.005"
+#!   BOUNDING_RECT="-2940.52 -475.005 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Success"
+#!   POSITION="4440.67 -346.879"
+#!   BOUNDING_RECT="4440.67 -346.879 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="1"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="_redmin_json_response" />
+#!     <XFORM_ATTR ATTR_NAME="issue_id" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="6"
+#!   NAME="Failure"
+#!   POSITION="4440.67 -793.758"
+#!   BOUNDING_RECT="4440.67 -793.758 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="61"
+#!   NAME="Debug"
+#!   POSITION="2825.03 -1331.26"
+#!   BOUNDING_RECT="2825.03 -1331.26 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="52"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="51"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="37"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="16"
+#!   TARGET_NODE="25"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 custom_fields"
+#!   TARGET_PORT_DESC="fi 0 ROOT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="23"
+#!   SOURCE_PORT_DESC="fo 0 custom_fields"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="40"
+#!   SOURCE_NODE="23"
+#!   TARGET_NODE="38"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="27"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 EVALUATED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="35"
+#!   SOURCE_NODE="33"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="50"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="56"
+#!   SOURCE_PORT_DESC="fo 0 UPDATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="44"
+#!   SOURCE_NODE="38"
+#!   TARGET_NODE="55"
+#!   SOURCE_PORT_DESC="fo 0 ELEMENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="53"
+#!   SOURCE_NODE="51"
+#!   TARGET_NODE="33"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="55"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 1 CUSTOM_FIELD"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="58"
+#!   SOURCE_NODE="56"
+#!   TARGET_NODE="25"
+#!   SOURCE_PORT_DESC="fo 0 Output"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="16"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;Rejected&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="30"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 1 no&lt;lt&gt;space&lt;gt&gt;custom_fields"
+#!   TARGET_PORT_DESC="fi 0 ROOT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="49"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="54"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 1 CREATE"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="59"
+#!   SOURCE_NODE="56"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;Rejected&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="62"
+#!   SOURCE_NODE="36"
+#!   TARGET_NODE="61"
+#!   SOURCE_PORT_DESC="fo 2 Debug"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_RedMineURI https://taskman.eionet.europa.eu
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_issue_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_project_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_tracker_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_status_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_priority_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_subject 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_description 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_category_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_fixed_version_id_ 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_assigned_to_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_parent_issue_id 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_is_private false
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_startdate 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_duedate 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_estimated_hours 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_custom_fields 
+DEFAULT_MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_FMEDebugMode Off
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO CreateUpdateIssueInRedmine_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(CreateUpdateIssueInRedmine_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Input1486131592 Input Splitter"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"_assigned_to_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_assigned_to_id$encode)} _category_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_category_id$encode)} _custom_fields {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_custom_fields$encode)} _description {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_description)} _estimated_hours {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_estimated_hours$encode)} _fixed_version_id_ {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_fixed_version_id_$encode)} _is_private {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_is_private$encode)} _parent_issue_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_parent_issue_id$encode)} _priority_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_priority_id$encode)} _project_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_project_id$encode)} _status_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_status_id$encode)} _subject {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_subject)} _tracker_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_tracker_id$encode)} _issue_id {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_issue_id$encode)} _startdate {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_startdate$encode)} _duedate {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_duedate$encode)} _FMEDebugMode {$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_FMEDebugMode$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_DateFormatter_formatter {invalidValue} {       set dateFormat {%Y-%m-%d};       if { [string compare $dateFormat {FME Date/Time (%Y%m%d%H%M%S)}] == 0 } {          set dateFormat {%Y%m%d%H%M%S};       } elseif { [string compare $dateFormat {FME Date (%Y%m%d)}] == 0} {          set dateFormat {%Y%m%d};       } elseif { [string compare $dateFormat {FME Time (%H%M%S)}] == 0} {          set dateFormat {%H%M%S};       } elseif { [string compare $dateFormat {ISO Date (%Y-%m-%d)}] == 0} {          set dateFormat {%Y-%m-%d};       } elseif { [string compare $dateFormat {ISO DateTime (%Y-%m-%dT%H:%M:%S)}] == 0} {          set dateFormat {%Y-%m-%dT%H:%M:%S};       } elseif { [string compare $dateFormat {ISO Time (%H:%M:%S)}] == 0} {          set dateFormat {%H:%M:%S};       } elseif { [string compare $dateFormat {Locale Date (%c)}] == 0} {          set dateFormat {%c};       };     set attrs [split {_duedate,_startdate} {,}];     foreach attr $attrs {        set date [string trim [FME_GetAttribute $attr]];        set comment { Don't touch NULL or empty attribute values };        if { [string length $date] == 0 } { continue; };        set srcfmt {};        if {{FME_AUTOMATIC} != {FME_AUTOMATIC}} {            set srcfmt {FME_AUTOMATIC};        } else {           set comment { In Automatic mode we ignore the millisecond part };           regexp {^[^.]*} $date date;           set comment { Treat single char as invalid date };           if { [regexp {^.$} $date] } {              set date {};           };        };        set comment { An empty $date at this point is invalid, so don't process further };        set dateLen [string length $date];        if {$dateLen > 0} {           if {[string length $srcfmt] == 0} {              set attrFull $attr;              append attrFull .full;              set fullDate [FME_GetAttribute $attrFull];              if { [string compare -length $dateLen $date $fullDate] == 0 } {                 set extra [string range $fullDate $dateLen end]000000;                 set date [string range \"$date$extra\" 0 13];                 set dateLen 14              };              if {($dateLen == 14) && [regexp {^[0-9]*$} $date]} {                 set srcfmt %Y%m%d%H%M%S;              };           };           set sourceFormatOpt {};           if {[string length $srcfmt] > 0} {              set sourceFormatOpt \"-format {$srcfmt}\";           };           set comment { Compute the output value and catch any errors };           set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt];                              set output [clock format $seconds -format $dateFormat];           }];           set comment { If there was error then we try again by removing digits after last decimal };           if { $error != 0 } {              set index [string last "." $date];              if { $index > 0 } {                 set date [eval string range $date 0 [expr $index-1]];                 set dateLen [string length $date];                 set error [catch { set seconds [eval clock scan "{$date}" $sourceFormatOpt]; set output [clock format $seconds -format $dateFormat]; }];              };           };           if { $error == 0 } {              FME_SetAttribute $attr $output;           };        };        if { (0 == $dateLen) || ($error != 0) } {          if { $invalidValue == {FME_NULL_VALUE} } {             FME_SetAttributeNull $attr;          } elseif { $invalidValue != {_FME_NO_OP_} }  {             FME_SetAttribute $attr [FME_DecodeText $invalidValue];          };        };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_DateFormatter    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_DateFormatter_OUTPUT"         @Tcl2("$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_DateFormatter_formatter {}")
+
+# -------------------------------------------------------------------------
+
+# Create the DomainName that this transformer will use.
+# Because @Count itself will evalute the expression to calculate the
+# domain, we don't need to do anything in Tcl per feature going by
+
+INCLUDE [    set domainPrefix {};    if { {Local} == {Local} }    {       set domainPrefix [FME_EncodeText {$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_}];    };    puts "MACRO $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_FULL_DOMAIN ${domainPrefix}IssueCreateCounter"; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_Counter    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_DateFormatter_OUTPUT"         @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)    OUTPUT FEATURE_TYPE ___TOREJECTOR___         "__IssueCreateCounter" @Count(REJECTABLE,fme_encoded,$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_FULL_DOMAIN),"0")
+FACTORY_DEF * TestFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_Rejector    INPUT FEATURE_TYPE ___TOREJECTOR___    TEST @Value(fme_rejection_code) != ""    OUTPUT PASSED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_<REJECTED>"       @RemoveAttributes(___fme_rejection_code___)    OUTPUT FAILED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_OUTPUT"       @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter <REJECTED> Output Nuker"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_<REJECTED>"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Counter_OUTPUT"    OUTPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_custom_fields<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter) ATTRIBUTE_HAS_VALUE "" ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_custom_fields OUTPUT FAILED FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_no<space>custom_fields INPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_no<space>custom_fields
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter custom_fields Splitter"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_custom_fields"   OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_custom_fields_0_6HPknVYuQ/g="   OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_custom_fields_1_4mbyWijaaQM="
+# -------------------------------------------------------------------------
+
+Tcl2 set $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitDelim]] }      {         set $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitWidths;            set source [FME_GetAttribute [FME_DecodeText {_custom_fields}]];            set attrNum 0;            set listName [FME_DecodeText {_custom_fields}];            set attrPos 0;            set keepEmptyParts [string equal {No} {No}];            foreach width [set $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               set part [string trim $bit];               if { $keepEmptyParts || $part != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $part;                  incr attrNum;               };               incr attrPos $width;            };         };      }      else      {         proc $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitDelim;            set delim [set $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_c13a18a8_e767_4d84_9e53_30f23b5405090_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute [FME_DecodeText {_custom_fields}]];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              lappend bits [string range $source $startIndex [expr $nextIndex-1]];              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            lappend bits [string range $source $startIndex end];            set listName [FME_DecodeText {_custom_fields}];            set attrNum 0;            foreach bit $bits            {               set trimmedPart [string trim $bit];               if { $keepEmptyParts || $trimmedPart != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $trimmedPart;                  incr attrNum;               };            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_custom_fields_1_4mbyWijaaQM="    OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * ElementFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ListExploder    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    LIST_NAME "_custom_fields{}"    ELEMENT_NUMBER_FIELD "_element_index"    CLONE_GEOMETRY    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "INCOMING_IF_CONFLICT"    INCOMING_PREFIX "<Unused>"    OUTPUT ELEMENT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ListExploder_ELEMENTS"         @RemoveAttributes(ElementFactory.baseCloned)
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_StringSearcher_2_b1bf1954_7846_44ef_a19c_5a133c28ab440_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName $matchedChars;      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_StringSearcher_2    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_ListExploder_ELEMENTS"    TEST @Tcl2("$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_StringSearcher_2_b1bf1954_7846_44ef_a19c_5a133c28ab440_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_custom_fields<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_StringSearcher_2)} {<openparen><openbracket>0-9<closebracket><opencurly>2<comma><closecurly><closeparen>:<openparen>.*<closeparen>} {_first_match} {} {_custom_fields}") > 0    OUTPUT PASSED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_StringSearcher_2_MATCHED"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONTemplater_CUSTOM_FIELD_INPUT_FACTORY INPUT FEATURE_TYPE __dummy__  INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_StringSearcher_2_MATCHED" OUTPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONTemplater_DataFeatures    __xml_templater_bucket__ CUSTOM_FIELD
+FACTORY_DEF * XMLTemplaterFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONTemplater INPUT CONTROL_FEATURE FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_custom_fields_0_6HPknVYuQ/g="    INPUT CONTROL_FEATURE FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_no<space>custom_fields" INPUT DATA_FEATURE FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONTemplater_DataFeatures RESULT_ATTR _issue_json OUTPUT_XML_HEADER NO GROUP_BY __IssueCreateCounter CONSECUTIVE_GROUPS NO BUCKET_ATTR_NAME __xml_templater_bucket__ CONTROL_TEMPLATE_EXPR <opencurly><lf><space><space><quote>issue<quote>:<space><opencurly><lf><space><space><space><space><quote>project_id<quote>:<space>fme:get-attribute<openparen><quote>_project_id<quote><closeparen><comma><lf><space><space><space><space><quote>tracker_id<quote>:<space>fme:get-attribute<openparen><quote>_tracker_id<quote><closeparen><comma><lf><space><space><space><space><quote>status_id<quote>:<space>fme:get-attribute<openparen><quote>_status_id<quote><closeparen><comma><lf><space><space><space><space><quote>priority_id<quote>:<space>fme:get-attribute<openparen><quote>_priority_id<quote><closeparen><comma><lf><space><space><space><space><quote>subject<quote>:<space>fme:get-attribute<openparen><quote>_subject<quote><closeparen><comma><lf><space><space><space><space><quote>description<quote>:<space>fme:get-attribute<openparen><quote>_description<quote><closeparen><comma><lf><space><space><space><space><quote>category_id<quote>:<space>fme:get-attribute<openparen><quote>_category_id<quote><closeparen><comma><lf><space><space><space><space><quote>fixed_version_id_<quote>:<space>fme:get-attribute<openparen><quote>_fixed_version_id_<quote><closeparen><comma><lf><space><space><space><space><quote>assigned_to_id<quote>:<space>fme:get-attribute<openparen><quote>_assigned_to_id<quote><closeparen><comma><lf><space><space><space><space><quote>parent_issue_id<quote>:<space>fme:get-attribute<openparen><quote>_parent_issue_id<quote><closeparen><comma><lf><space><space><space><space><quote>is_private<quote>:<space>fme:get-attribute<openparen><quote>_is_private<quote><closeparen><comma><lf><space><space><space><space><quote>estimated_hours<quote>:<space>fme:get-attribute<openparen><quote>_estimated_hours<quote><closeparen><comma><lf><space><space><space><space><quote>custom_fields<quote>:fme:process-features<openparen><quote>CUSTOM_FIELD<quote><closeparen><comma><lf><space><space><space><space><quote>start_date<quote>:fme:get-attribute<openparen><quote>_startdate<quote><closeparen><comma><lf><space><space><space><space><quote>due_date<quote>:fme:get-attribute<openparen><quote>_duedate<quote><closeparen><lf><space><space><closecurly><lf><closecurly> BUCKET_TEMPLATE_EXPR CUSTOM_FIELD "<opencurly><quote>value<quote>:fme:get-attribute<openparen><quote>_custom_fields<opencurly>1<closecurly>.part<quote><closeparen><comma><quote>id<quote>:fme:get-attribute<openparen><quote>_custom_fields<opencurly>0<closecurly>.part<quote><closeparen><closecurly>" OUTPUT XML_DOCUMENT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONTemplater_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONFormatterFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONFormatter       INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONTemplater_OUTPUT"    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_issue_json<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONFormatter)"    FORMAT PRETTY_PRINT    INDENT_SIZE 3    REMOVE_EMPTY_STRINGS YES    REMOVE_NULL_VALUES YES    REMOVE_EMPTY_OBJECTS_AND_ARRAYS YES    OUTPUT_ATTR "_issue_json"    OUTPUT_ENCODING UTF-8    SYNTAX_ERROR_LIST_ATTR "_json_error"    OUTPUT OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONFormatter_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONFormatter_OUTPUT"    OUTPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_issue_id<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2) ATTRIBUTE_HAS_VALUE "" ENCODED TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_FMEDebugMode<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2) = Off ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_UPDATE OUTPUT FAILED FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TestFactory_1 INPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_FMEDebugMode<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2) = Off ENCODED BOOLEAN_OPERATOR AND COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_CREATE OUTPUT FAILED FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_Debug INPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_Debug
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller       INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_CREATE"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_RedMineURI$encode)<solidus>issues.json,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller)"    HTTP_METHOD POST    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_redmin_json_response"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_issue_json<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller)"    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "application/json"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION),$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_Output"    OUTPUT REJECTED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_<Rejected>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * HTTPFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2       INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_UPDATE"    TARGET_URL "@EvaluateExpression(FDIV,STRING_ENCODED,$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_RedMineURI$encode)<solidus><at>Value<openparen>_project_id<closeparen><solidus>issues<solidus><at>Value<openparen>_issue_id<closeparen>.json,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2)"    HTTP_METHOD PUT    SAVE_FILE NO    OUTPUT_FILENAME "<Unused>"    OUTPUT_DIRECTORY "<Unused>"    FILE_EXTENSION "<Unused>"    TARGET_ATTR "_redmin_json_response"    FILE_PATH_ATTR "<Unused>"    UPLOAD_FILE "<Unused>"    UPLOAD_BODY "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_issue_json<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2)"    MULTIPART_UPLOAD NO    UPLOAD_CONTENT_TYPE "application/json"    COMBINED_MULTIPART_TABLE    REQUEST_HEADER_TABLE    ADDITIONAL_URL_PARAMETERS    AUTH_USERNAME "<Unused>"    AUTH_PASSWORD "<Unused>"    AUTH_METHOD "NC"    TARGET_ATTRIBUTE_ENCODING auto-detect    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    CONNECTION_TIMEOUT_LENGTH 60    TRANSFER_TIMEOUT_LENGTH 90    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    NAMED_CONNECTION "@EvaluateExpression(FDIV,STRING_ENCODED,$($(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_AUTH_NAMED_CONNECTION),$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2)"    USE_COOKIES No    OUTPUT OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2_Output"    OUTPUT REJECTED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2_<Rejected>"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME $(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONExtractor    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_Output"    INPUT  FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2_Output"    MODE EXTRACT    JSON_DOCUMENT "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_redmin_json_response<closeparen>,$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONExtractor)"    QUERIES issue_id json<openbracket><quote>issue<quote><closebracket><openbracket><quote>id<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONExtractor_EVALUATED"    OUTPUT REJECTED FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONExtractor_<REJECTED>"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Success1486131592 Output Collector"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONExtractor_EVALUATED"   OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Success" @RemoveAttributes(_assigned_to_id,_category_id,_custom_fields,_description,_estimated_hours,_fixed_version_id_,_is_private,_parent_issue_id,_priority_id,_project_id,_status_id,_subject,_tracker_id,_issue_id,_startdate,_duedate,_FMEDebugMode,__IssueCreateCounter,_issue_json,_http_status_code) @RemoveAttributes(fme_regexp_match,_headers{}.name,_headers{}.value)
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Failure1486131592 Output Collector"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_<Rejected>"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_JSONExtractor_<REJECTED>"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_HTTPCaller_2_<Rejected>"   OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Failure"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Debug1486131592 Output Collector"   INPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_TestFilter_2_Debug"   OUTPUT FEATURE_TYPE "$(CreateUpdateIssueInRedmine_WORKSPACE_NAME)_Debug"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(CreateUpdateIssueInRedmine_WORKSPACE_NAME))}]

@@ -1,0 +1,294 @@
+# =========================================================================
+
+TRANSFORMER_NAME: ExcelFeatureTypeFinder
+
+ALIASES: 
+
+VERSION: 1
+ 
+CATEGORY: Infrastructure
+
+INPUT_TAGS: <BLANK>
+
+OUTPUT_TAGS: FOUND MAPPED UNUSED ERROR
+
+PRESERVES_ATTRIBUTES: yes
+
+FEATURE_HOLDING: NONE
+
+NUKERS_REQUIRED: yes
+
+ATTRIBUTES_ADDED: xlsx_row_id fme_feature_type FOUND:src_feature_type_name MAPPED:src_feature_type_name FOUND:fme_feature_type_name FOUND:attribute{}.name FOUND:attribute{}.fme_data_type FOUND:attribute_rename{}.from FOUND:attribute_rename{}.to
+
+
+PARAMETER_NAME: TRANSFORMER_GROUP
+PARAMETER_TYPE: GROUP XFORMER_NAME
+PARAMETER_PROMPT: Transformer
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: TRANSFORMER_DESCRIPTION_GROUP
+PARAMETER_TYPE: DISCLOSUREGROUP TRANSFORMER_DESCRIPTION
+PARAMETER_PROMPT: Description
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: PARAMETERS_GROUP
+PARAMETER_TYPE: GROUP XLSX_DATASET%FEATURE_TYPE_SIGNATURES%FIELD_SEP%ACTION%DROP_EMPTY
+PARAMETER_PROMPT: Parameters
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: TRANSFORMER_DESCRIPTION
+PARAMETER_TYPE: NAMEDMESSAGE 
+PARAMETER_PROMPT: <p>This transformer can be used to find ranges in Excel Spreadsheets by specifying one or more Feature Type Name/Signature-pairs.</p><p>It will produce a Schema Feature on the Found output port for each header region in the spreadsheet that matches one of the Feature Type Signatures.</p><p>If Find and Map is specified (default), it will also perform a Schema Map on rows below a matched header.<br/><i>Tip: An AttributeExposer can be used to reflect the mapped features in FME Workbench.</i></p><p>If Drop Unused Rows is set to No, any unmatched or empty records will be output through the Unused port.</p><p>If Continue Past Signature is set to Yes, any fieldnames to the right of the signature will be added as well.</p>
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: XLSX_DATASET
+PARAMETER_TYPE: FILENAME_MUSTEXIST_ENCODED_OR_ATTR Excel_Files(*.xlsx)|*.xlsx|All_files(*)|*
+PARAMETER_PROMPT: Excel File Path:
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: FEATURE_TYPE_SIGNATURES
+PARAMETER_TYPE: GUI_LINE_TABLE NO_LABEL%NO_MOVE%"COL_DELIM:;"%"ROW_DELIM:/"%"Feature Type Name"%"STRING_ENCODED_OR_ATTR FEATURE_TYPE_NAME"%"Signature"%"STRING_ENCODED_OR_ATTR FEATURE_TYPE_SIGNATURE"
+PARAMETER_PROMPT: Feature Type Signatures:
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: FIELD_SEP
+PARAMETER_TYPE: STRING_ENCODED_OR_ATTR
+PARAMETER_PROMPT: Field Separator:
+PARAMETER_DEFAULT: <comma>
+
+PARAMETER_NAME: ACTION
+PARAMETER_TYPE: STRING_OR_CHOICE_ENCODED_OR_ATTR Find<space>Feature<space>Types%Find<space>and<space>Map
+PARAMETER_PROMPT: Action to perform:
+PARAMETER_DEFAULT: Find<space>and<space>Map
+
+PARAMETER_NAME: DROP_UNUSED
+PARAMETER_TYPE: STRING_OR_CHOICE_ENCODED_OR_ATTR Yes%No
+PARAMETER_PROMPT: Drop Unused Rows:
+PARAMETER_DEFAULT: Yes
+
+PARAMETER_NAME: CONTINUE_PAST_SIGNATURE
+PARAMETER_TYPE: STRING_OR_CHOICE_ENCODED_OR_ATTR Yes%No
+PARAMETER_PROMPT: Continue past signature:
+PARAMETER_DEFAULT: No
+
+
+TOOLTIP_START
+
+TOOLTIP_END
+ 
+CHANGE_LOG_START
+
+CHANGE_LOG_END
+
+TEMPLATE_START
+
+FACTORY_DEF * QueryFactory                                             
+    FACTORY_NAME $(XFORMER_NAME)
+    $(INPUT_LINES)                
+    FCTQUERY_INTERACTION "NONE"
+    COMBINE_ATTRIBUTES  PREFER_RESULT
+    QUERYFCT_ATTRIBUTE_PREFIX <Unused>                                  
+    QUERYFCT_TABLE_SEPARATOR SPACE                                      
+    COMBINE_GEOMETRY    QUERY_ONLY                                      
+    ENABLE_CACHE        NO                                              
+    READER_TYPE         GENERIC                                         
+    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$(XLSX_DATASET),$(XFORMER_NAME))" 
+    QUERYFCT_IDS        ""                                              
+    READER_DIRECTIVES META_MACROS,SourceREAL_FORMAT<comma>XLSXR,METAFILE,GENERIC 
+    QUERYFCT_OUTPUT     "DATA_ONLY"                                     
+    CONTINUE_ON_READER_ERROR YES                                        
+    READER_PARAMS_WWJD                                                                                         
+    OUTPUT RESULT FEATURE_TYPE *                                        
+        @SupplyAttributes(fme_feature_type,@FeatureType())             
+        @Tcl2("set FME_FeatureType {$(XFORMER_NAME)_To_PythonCaller}")
+        @Transform(GENERIC,FME_GENERIC,ALIAS_GEOMETRY)
+        @SupplyAttributes(_ExcelFeatureTypeFinder_xlsx_dataset,@EvaluateExpression(FDIV,STRING_ENCODED,$(XLSX_DATASET),$(XFORMER_NAME)))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_action,@EvaluateExpression(FDIV,STRING_ENCODED,$(ACTION),$(XFORMER_NAME)))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_drop_unused,@EvaluateExpression(FDIV,STRING_ENCODED,$(DROP_UNUSED),$(XFORMER_NAME)))
+		@SupplyAttributes(_ExcelFeatureTypeFinder_continue_past_signature,@EvaluateExpression(FDIV,STRING_ENCODED,$(CONTINUE_PAST_SIGNATURE),$(XFORMER_NAME)))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_feature_type_signatures,$(FEATURE_TYPE_SIGNATURES))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_field_sep,$(FIELD_SEP))
+    OUTPUT READER_ERROR FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+        
+FACTORY_DEF * PythonFactory
+   FACTORY_NAME $(XFORMER_NAME)_PythonCaller
+   INPUT  FEATURE_TYPE $(XFORMER_NAME)_To_PythonCaller
+   SYMBOL_NAME ExcelFeatureTypeFinder.FeatureProcessor
+   PYTHON_NAMESPACE FMEOBJECTS
+   SOURCE_CODE import<space>ExcelFeatureTypeFinder
+   OUTPUT PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_To_Output_Filter
+
+
+FACTORY_DEF * AttributeFilterFactory
+    FACTORY_NAME $(XFORMER_NAME)_Output_Filter
+    COMMAND_PARM_EVALUATION SINGLE_PASS
+    INPUT FEATURE_TYPE $(XFORMER_NAME)_To_Output_Filter
+    FILTER_ATTRIBUTE _ExcelFeatureTypeFinder_status
+    FILTER_VALUES <lt>EMPTY<gt> <lt>MISSING<gt> <lt>NULL<gt> <lt>UNFILTERED<gt> found mapped unused
+    OUTPUT <lt>EMPTY<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT <lt>MISSING<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT <lt>NULL<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT <lt>UNFILTERED<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT found FEATURE_TYPE $(OUTPUT_FOUND_FTYPE)
+        @RemoveAttributes(fme_regexp_match,^_ExcelFeatureTypeFinder_*)
+        $(OUTPUT_FOUND_FUNCS)
+    OUTPUT mapped FEATURE_TYPE $(OUTPUT_MAPPED_FTYPE)
+        @RemoveAttributes(fme_regexp_match,^_ExcelFeatureTypeFinder_*)
+        $(OUTPUT_MAPPED_FUNCS)
+    OUTPUT unused FEATURE_TYPE $(OUTPUT_UNUSED_FTYPE)
+        @RemoveAttributes(fme_regexp_match,^_ExcelFeatureTypeFinder_*)
+        $(OUTPUT_MAPPED_FUNCS)
+
+TEMPLATE_END
+
+
+# =========================================================================
+# =========================================================================
+
+TRANSFORMER_NAME: ExcelFeatureTypeFinder
+
+ALIASES: 
+
+VERSION: 0
+ 
+CATEGORY: Infrastructure
+
+INPUT_TAGS: <BLANK>
+
+OUTPUT_TAGS: FOUND MAPPED UNUSED ERROR
+
+PRESERVES_ATTRIBUTES: yes
+
+FEATURE_HOLDING: NONE
+
+NUKERS_REQUIRED: yes
+
+ATTRIBUTES_ADDED: xlsx_row_id fme_feature_type FOUND:src_feature_type_name MAPPED:src_feature_type_name FOUND:fme_feature_type_name FOUND:attribute{}.name FOUND:attribute{}.fme_data_type FOUND:attribute_rename{}.from FOUND:attribute_rename{}.to
+
+
+PARAMETER_NAME: TRANSFORMER_GROUP
+PARAMETER_TYPE: GROUP XFORMER_NAME
+PARAMETER_PROMPT: Transformer
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: TRANSFORMER_DESCRIPTION_GROUP
+PARAMETER_TYPE: DISCLOSUREGROUP TRANSFORMER_DESCRIPTION
+PARAMETER_PROMPT: Description
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: PARAMETERS_GROUP
+PARAMETER_TYPE: GROUP XLSX_DATASET%FEATURE_TYPE_SIGNATURES%FIELD_SEP%ACTION%DROP_EMPTY
+PARAMETER_PROMPT: Parameters
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: TRANSFORMER_DESCRIPTION
+PARAMETER_TYPE: NAMEDMESSAGE 
+PARAMETER_PROMPT: <p>This transformer can be used to find ranges in Excel Spreadsheets by specifying one or more Feature Type Name/Signature-pairs.</p><p>It will produce a Schema Feature on the Found output port for each header region in the spreadsheet that matches one of the Feature Type Signatures.</p><p>If Find and Map is specified (default), it will also perform a Schema Map on rows below a matched header.<br/><i>Tip: An AttributeExposer can be used to reflect the mapped features in FME Workbench.</i></p><p>If Drop Unused Rows is set to No, any unmatched or empty records will be output through the Unused port.</p>
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: XLSX_DATASET
+PARAMETER_TYPE: FILENAME_MUSTEXIST_ENCODED_OR_ATTR Excel_Files(*.xlsx)|*.xlsx|All_files(*)|*
+PARAMETER_PROMPT: Excel File Path:
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: FEATURE_TYPE_SIGNATURES
+PARAMETER_TYPE: GUI_LINE_TABLE NO_LABEL%NO_MOVE%"COL_DELIM:;"%"ROW_DELIM:/"%"Feature Type Name"%"STRING_ENCODED_OR_ATTR FEATURE_TYPE_NAME"%"Signature"%"STRING_ENCODED_OR_ATTR FEATURE_TYPE_SIGNATURE"
+PARAMETER_PROMPT: Feature Type Signatures:
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: FIELD_SEP
+PARAMETER_TYPE: STRING_ENCODED_OR_ATTR
+PARAMETER_PROMPT: Field Separator:
+PARAMETER_DEFAULT: <comma>
+
+PARAMETER_NAME: ACTION
+PARAMETER_TYPE: STRING_OR_CHOICE_ENCODED_OR_ATTR Find<space>Feature<space>Types%Find<space>and<space>Map
+PARAMETER_PROMPT: Action to perform:
+PARAMETER_DEFAULT: Find<space>and<space>Map
+
+PARAMETER_NAME: DROP_UNUSED
+PARAMETER_TYPE: STRING_OR_CHOICE_ENCODED_OR_ATTR Yes%No
+PARAMETER_PROMPT: Drop Unused Rows:
+PARAMETER_DEFAULT: Yes
+
+
+TOOLTIP_START
+
+TOOLTIP_END
+ 
+CHANGE_LOG_START
+
+CHANGE_LOG_END
+
+TEMPLATE_START
+
+FACTORY_DEF * QueryFactory                                             
+    FACTORY_NAME $(XFORMER_NAME)
+    $(INPUT_LINES)                
+    FCTQUERY_INTERACTION "NONE"
+    COMBINE_ATTRIBUTES  PREFER_RESULT
+    QUERYFCT_ATTRIBUTE_PREFIX <Unused>                                  
+    QUERYFCT_TABLE_SEPARATOR SPACE                                      
+    COMBINE_GEOMETRY    QUERY_ONLY                                      
+    ENABLE_CACHE        NO                                              
+    READER_TYPE         GENERIC                                         
+    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$(XLSX_DATASET),$(XFORMER_NAME))" 
+    QUERYFCT_IDS        ""                                              
+    READER_DIRECTIVES META_MACROS,SourceREAL_FORMAT<comma>XLSXR,METAFILE,GENERIC 
+    QUERYFCT_OUTPUT     "DATA_ONLY"                                     
+    CONTINUE_ON_READER_ERROR YES                                        
+    READER_PARAMS_WWJD                                                                                         
+    OUTPUT RESULT FEATURE_TYPE *                                        
+        @SupplyAttributes(fme_feature_type,@FeatureType())             
+        @Tcl2("set FME_FeatureType {$(XFORMER_NAME)_To_PythonCaller}")
+        @Transform(GENERIC,FME_GENERIC,ALIAS_GEOMETRY)
+        @SupplyAttributes(_ExcelFeatureTypeFinder_xlsx_dataset,@EvaluateExpression(FDIV,STRING_ENCODED,$(XLSX_DATASET),$(XFORMER_NAME)))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_action,@EvaluateExpression(FDIV,STRING_ENCODED,$(ACTION),$(XFORMER_NAME)))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_drop_unused,@EvaluateExpression(FDIV,STRING_ENCODED,$(DROP_UNUSED),$(XFORMER_NAME)))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_feature_type_signatures,$(FEATURE_TYPE_SIGNATURES))
+        @SupplyAttributes(_ExcelFeatureTypeFinder_field_sep,$(FIELD_SEP))
+    OUTPUT READER_ERROR FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+        
+FACTORY_DEF * PythonFactory
+   FACTORY_NAME $(XFORMER_NAME)_PythonCaller
+   INPUT  FEATURE_TYPE $(XFORMER_NAME)_To_PythonCaller
+   SYMBOL_NAME ExcelFeatureTypeFinder.FeatureProcessor
+   PYTHON_NAMESPACE FMEOBJECTS
+   SOURCE_CODE import<space>ExcelFeatureTypeFinder
+   OUTPUT PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_To_Output_Filter
+
+
+FACTORY_DEF * AttributeFilterFactory
+    FACTORY_NAME $(XFORMER_NAME)_Output_Filter
+    COMMAND_PARM_EVALUATION SINGLE_PASS
+    INPUT FEATURE_TYPE $(XFORMER_NAME)_To_Output_Filter
+    FILTER_ATTRIBUTE _ExcelFeatureTypeFinder_status
+    FILTER_VALUES <lt>EMPTY<gt> <lt>MISSING<gt> <lt>NULL<gt> <lt>UNFILTERED<gt> found mapped unused
+    OUTPUT <lt>EMPTY<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT <lt>MISSING<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT <lt>NULL<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT <lt>UNFILTERED<gt> FEATURE_TYPE $(OUTPUT_ERROR_FTYPE)
+        $(OUTPUT_ERROR_FUNCS)
+    OUTPUT found FEATURE_TYPE $(OUTPUT_FOUND_FTYPE)
+        @RemoveAttributes(fme_regexp_match,^_ExcelFeatureTypeFinder_*)
+        $(OUTPUT_FOUND_FUNCS)
+    OUTPUT mapped FEATURE_TYPE $(OUTPUT_MAPPED_FTYPE)
+        @RemoveAttributes(fme_regexp_match,^_ExcelFeatureTypeFinder_*)
+        $(OUTPUT_MAPPED_FUNCS)
+    OUTPUT unused FEATURE_TYPE $(OUTPUT_UNUSED_FTYPE)
+        @RemoveAttributes(fme_regexp_match,^_ExcelFeatureTypeFinder_*)
+        $(OUTPUT_MAPPED_FUNCS)
+
+TEMPLATE_END
+
+
+# =========================================================================

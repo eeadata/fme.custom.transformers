@@ -1,0 +1,395 @@
+#! <?xml version="1.0" encoding="utf-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN DuplicateRemoverByDate,1,EEAValidation,a0291142-a478-4fa5-88fa-8815b61bce3d,"Linked by Default",No,NO_PARALLELISM,,No,15480,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Remove duplicated features and select the most recent once. </p>
+# 
+# TRANSFORMER_END
+#! MAX_LOOP_ITERATIONS=""
+#! FME_PROCESS_GROUPS_ORDERED="No"
+#! FME_DOCUMENT_PRIORGUID="4df593ca-5f0b-4ee7-9dde-fd71ccee3a5d,2dc2a173-71be-42aa-bf30-b08e37494fa3,bc8617ca-719e-41a7-9075-c8a08368a25f"
+#! REQUIREMENTS="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;None &lt;/p&gt;&#10;"
+#! FMX_INSERT_MODE="Linked by Default"
+#! PASSWORD=""
+#! REQUIREMENTS_KEYWORD="none"
+#! ITERATION_COUNT_ATTR=""
+#! XFORM_DEPRECATED="No"
+#! HISTORY="15&lt;solidus&gt;06&lt;solidus&gt;2015,Jan&lt;space&gt;Bliki,First&lt;space&gt;initial&lt;space&gt;creation"
+#! DOC_EXTENTS="3737 687"
+#! WARN_INVALID_XFORM_PARAM="Yes"
+#! FME_DOCUMENT_GUID="a0291142-a478-4fa5-88fa-8815b61bce3d"
+#! USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;In come cases we need to extract the unique features from a dataset based on their identifiers. This transformer will allow you to define the identifier and a date field representing the lastest value. The result will be one feature for every single identifier and this feature will be the newest record based on the provided date attribute.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This transformer is simular to the &quot;DuplicateRemover&quot; with the difference that you can specify a date.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;UniqueCode:&lt;/span&gt; The attribute that identifies what we see as unique. Concatinate attributes together in case you want multiple fields as identifier.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-weight:600;&quot;&gt;Date field:&lt;/span&gt; The field containing a date value. The features will be ordered decending. &lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Example:&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Imagine you have the following features.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;FieldA,FieldB,Date                ,Value&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;AA     ,BB     ,201301000200,24&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;CD    , CC    ,201301000200,26&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;AA     ,BB     ,201401000200,28&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When you would assign the followin attributes&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;UniqueCode=@Value(FieldA)__@Value(FieldB)&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;DateField=@Vlaue(Date)&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The &quot;Unique&quot; output would have&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;FieldA,FieldB,Date                ,Value&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;AA     ,BB     ,201401000200,28&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;CD    , CC    ,201301000200,26&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The &quot;Duplicates&quot; output would have&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;FieldA,FieldB,Date                ,Value&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;span style=&quot; font-style:italic;&quot;&gt;AA     ,BB     ,201301000200,24&lt;/span&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! TITLE="DuplicateRemoverByDate"
+#! WORKSPACE_VERSION="1"
+#! DOC_TOP_LEFT="-1517 -1090"
+#! FME_PROCESS_GROUP_BY=""
+#! CATEGORY="EEAValidation"
+#! BLOCKED_LOOPING="No"
+#! VIEW_POSITION="-1809.02 255.003"
+#! ATTR_TYPE_ENCODING="SDF"
+#! LAST_SAVE_BUILD="FME(R) 2015.1.0.1 (20150507 - Build 15480 - WIN64)"
+#! FME_PROCESS_COUNT="NO_PARALLELISM"
+#! SHOW_INFO_NODES="true"
+#! ZOOM_SCALE="100"
+#! FME_SERVER_SERVICES=""
+#! DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Remove duplicated features and select the most recent once. &lt;/p&gt;&#10;"
+#! LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! FME_LINKED_TRANSFORMER_VERSION="1"
+#! FME_BUILD_NUM="15480"
+#! LAST_SAVE_DATE="2015-06-15T13:14:52"
+#! SHOW_ANNOTATIONS="true"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI OPTIONAL TEXT_OR_ATTR UniqueCode UniqueCode:"
+#! DEFAULT_VALUE=""
+#! IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI DATE_TIME_OR_ATTR DateOrder Date field:"
+#! DEFAULT_VALUE="20150615120000"
+#! IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! <BOOKMARK
+#! IDENTIFIER="14"
+#! NAME="Evaluate if unique using FME Variable"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="262 -403"
+#! BOTTOM_RIGHT="2056 -1090"
+#! BOUNDING_RECT="262 -403 1794 687"
+#! STICKY="true"
+#! COLOUR="0.909804,0.709804,0.964706"
+#! CONTENTS="5 13 7 12 11 6 2 "
+#! />
+#! <BOOKMARK
+#! IDENTIFIER="25"
+#! NAME="Sort Date decending"
+#! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
+#! TOP_LEFT="-362 -408"
+#! BOTTOM_RIGHT="192 -1086"
+#! BOUNDING_RECT="-362 -408 554 678"
+#! STICKY="true"
+#! COLOUR="0.909804,0.219608,0.156863"
+#! CONTENTS="1 "
+#! />
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="Sorter"
+#! VERSION="2"
+#! POSITION="-288 -707"
+#! BOUNDING_RECT="-288 -707 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="SORTED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__UniqueCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__DateOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="__UniqueCode ALPHA ASCENDING __DateOrder NUMERIC DESCENDING"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="2"
+#! TYPE="VariableSetter"
+#! VERSION="2"
+#! POSITION="939 -874"
+#! BOUNDING_RECT="939 -874 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__UniqueCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__DateOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__previousUniqueKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="previousUniqueKey"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableSetter"/>
+#! <XFORM_PARM PARM_NAME="VALUE" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;__UniqueCode&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#! <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="VariableRetriever"
+#! VERSION="2"
+#! POSITION="354 -855"
+#! BOUNDING_RECT="354 -855 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__UniqueCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__DateOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__previousUniqueKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="VARNAME" PARM_VALUE="previousUniqueKey"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="VALUE_ATTR" PARM_VALUE="__previousUniqueKey"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="VariableRetriever"/>
+#! <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Local"/>
+#! <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="TestFilter"
+#! VERSION="1"
+#! POSITION="927 -606"
+#! BOUNDING_RECT="927 -606 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="TheSame"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__UniqueCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__DateOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__previousUniqueKey" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <OUTPUT_FEAT NAME="Unique"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="__UniqueCode" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="__DateOrder" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_ATTR ATTR_NAME="__previousUniqueKey" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#! <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__UniqueCode&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;__previousUniqueKey&lt;lt&gt;closeparen&lt;gt&gt;&lt;quote&gt;,TheSame"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Unique"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="AttributeRemover"
+#! VERSION="0"
+#! POSITION="1534 -901"
+#! BOUNDING_RECT="1534 -901 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="__UniqueCode,__DateOrder,__previousUniqueKey"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="21"
+#! TYPE="ParameterFetcher"
+#! VERSION="4"
+#! POSITION="-889 -693"
+#! BOUNDING_RECT="-889 -693 0 0"
+#! ORDER="5e+014"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! LAST_PARM_EDIT="14440"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="released" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__UniqueCode" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="__DateOrder" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__UniqueCode {$(UniqueCode)} __DateOrder {$(DateOrder)}"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="15"
+#! NAME="Unique"
+#! POSITION="2220 -961"
+#! BOUNDING_RECT="2220 -961 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="country_code" />
+#! <XFORM_ATTR ATTR_NAME="EUCD_SA_CM" />
+#! <XFORM_ATTR ATTR_NAME="released" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="17"
+#! NAME="Input"
+#! POSITION="-1517 -698"
+#! BOUNDING_RECT="-1517 -698 0 0"
+#! COLLAPSED="true"
+#! PUBLISHED="true"
+#! IS_SOURCE="true"
+#! ATTR_MODE="0"
+#! >
+#! <XFORM_ATTR ATTR_NAME="released" ATTR_VALUE="$(DateOrder)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#! IDENTIFIER="19"
+#! NAME="Duplicates"
+#! POSITION="2217 -653"
+#! BOUNDING_RECT="2217 -653 0 0"
+#! COLLAPSED="true"
+#! IS_SOURCE="false"
+#! ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="12"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="13"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="20"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="22"
+#! SOURCE_NODE="17"
+#! TARGET_NODE="21"
+#! SOURCE_PORT_DESC="0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="21"
+#! TARGET_NODE="1"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! 
+DEFAULT_MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_UniqueCode 
+DEFAULT_MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_DateOrder 20150615120000
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO DuplicateRemoverByDate_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(DuplicateRemoverByDate_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(DuplicateRemoverByDate_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Input1434366892 Input Splitter"   INPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Input" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,released,$($(DuplicateRemoverByDate_WORKSPACE_NAME)_DateOrder$encode), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__UniqueCode {$($(DuplicateRemoverByDate_WORKSPACE_NAME)_UniqueCode$encode)} __DateOrder {$($(DuplicateRemoverByDate_WORKSPACE_NAME)_DateOrder$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_Sorter    INPUT  FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SORT_BY __UniqueCode ALPHA ASCENDING __DateOrder NUMERIC DESCENDING    OUTPUT SORTED FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Sorter_SORTED"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableRetriever_VAR previousUniqueKey
+INCLUDE [if {{Local} == {Local}} {   puts {MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableRetriever_VAR $(WB_CURRENT_CONTEXT)_previousUniqueKey}; };
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableRetriever    INPUT  FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Sorter_SORTED"    OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableRetriever_OUTPUT"        @GlobalVariable("$($(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableRetriever_VAR)",fme_result_attribute,__previousUniqueKey)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableRetriever_OUTPUT"    OUTPUT FEATURE_TYPE $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__UniqueCode<closeparen>,$(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2) = @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__previousUniqueKey<closeparen>,$(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2) ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TheSame OUTPUT FAILED FEATURE_TYPE $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_Unique INPUT FEATURE_TYPE $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_Unique
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_VAR previousUniqueKey
+INCLUDE [ if {{Local} == {Local}} {   puts {MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_VAR $(WB_CURRENT_CONTEXT)_previousUniqueKey}; } ]
+Tcl2 proc $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_079041f3_6190_433a_8cfa_2df647cfa78a2_setGlobalVar {varName varValue} {   set attrName $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_tempAttr;   FME_SetAttribute $attrName [FME_DecodeText $varValue];   FME_Execute GlobalVariable $varName fme_attribute_name $attrName;   FME_UnsetAttributes $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_tempAttr; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter    INPUT  FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_Unique"    OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_OUTPUT"        @Tcl2("$(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_079041f3_6190_433a_8cfa_2df647cfa78a2_setGlobalVar {$($(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_VAR)} {@EvaluateExpression(STRING_ENCODED,<at>Value<openparen>__UniqueCode<closeparen>,$(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter)} ")
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(DuplicateRemoverByDate_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "{\[0-9\]+}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(DuplicateRemoverByDate_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_VariableSetter_OUTPUT"    OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(__UniqueCode,__DateOrder,__previousUniqueKey)        @RemoveAttributes(fme_regexp_match"$($(DuplicateRemoverByDate_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Unique1434366892 Output Collector"   INPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Unique"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Duplicates1434366892 Output Collector"   INPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_TestFilter_2_TheSame"   OUTPUT FEATURE_TYPE "$(DuplicateRemoverByDate_WORKSPACE_NAME)_Duplicates"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(DuplicateRemoverByDate_WORKSPACE_NAME))}]

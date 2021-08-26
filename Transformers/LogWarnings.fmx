@@ -1,0 +1,511 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN LogWarnings,1,AirQuality,bf9ea482-978c-489b-9d76-8fa55b9d686f,"Linked by Default",No,NO_PARALLELISM,,No,16492,YES,No
+# 
+# TRANSFORMER_END
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   SHOW_ANNOTATIONS="true"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   MAX_LOOP_ITERATIONS=""
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   SHOW_INFO_NODES="true"
+#!   TITLE="LogWarnings"
+#!   REQUIREMENTS_KEYWORD=""
+#!   FME_DOCUMENT_PRIORGUID="1b4976a3-2e77-4558-a29c-98a3697c9221,28f28c2c-8004-4e1a-8c72-750b7f9655fb,7f9ef0fe-4e44-4495-8047-3fda56e40831,3d08ad84-a547-41a8-b1ef-a5e7208b0617,9944d588-83e9-4c71-bfdb-e8e0b912d0b4,434441e8-ef24-486b-adf4-427f4ed2bfa2,48b60370-a3a9-4a4f-b73e-e9ae2713681e,5f01a188-4c2f-44a8-a053-cb590381f82d,87302dc4-224a-4dd1-9474-ec2577e9abd5,960da2fb-ba25-49e3-a857-54842abb665a,d9271057-b46d-45f6-964c-707c3daf72f9,6ad239cc-5ccf-46cd-a692-4ba504df5a2a,adee8dc6-f6ca-4e6d-b0bb-065ccded293b,5b27d62b-d509-432f-855a-c759d95fd3d6,f39da909-549a-48b3-b826-a9dfeff17dba,6a9ac6b6-0f8c-491d-8fd9-933afbcc7953,25ee4e4a-8242-4905-938f-6ed987cd79d7,d07060cd-a35c-4d53-9cf7-a29bf022b02f,c1c63b1b-64ab-448d-a2e9-b6752085985c"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_BUILD_NUM="16492"
+#!   BLOCKED_LOOPING="No"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   ZOOM_SCALE="100"
+#!   FME_PROCESS_GROUP_BY=""
+#!   XFORM_DEPRECATED="No"
+#!   LEGAL_TERMS_CONDITIONS=""
+#!   FME_DOCUMENT_GUID="bf9ea482-978c-489b-9d76-8fa55b9d686f"
+#!   WORKSPACE_VERSION="1"
+#!   LAST_SAVE_DATE="2017-01-19T12:09:44"
+#!   DOC_TOP_LEFT="-1257.62 71.1561"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   DESCRIPTION=""
+#!   PASSWORD=""
+#!   HISTORY=""
+#!   FME_SERVER_SERVICES=""
+#!   DOC_EXTENTS="2640.62 376.85"
+#!   CATEGORY="AirQuality"
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.0.0 (20160419 - Build 16492 - WIN64)"
+#!   REQUIREMENTS=""
+#!   VIEW_POSITION="-1718.77 1109.39"
+#!   USAGE=""
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR MESSAGE message:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;message&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR DATA data:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;data&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR OBSERVATION_ID Observation Id:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;observation_id&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR WARNING_LOG Warning Log:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;warning_log&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR METADATA_LOG Metadata Log:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;metadata_log&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_EDIT_OR_NUM_OR_ATTR ERROR_LOG Error Log:"
+#!   DEFAULT_VALUE="&lt;at&gt;Value&lt;openparen&gt;error_log&lt;closeparen&gt;"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="Aggregator"
+#!   VERSION="12"
+#!   POSITION="-679.615 253.245"
+#!   BOUNDING_RECT="-679.615 253.245 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15515"
+#! >
+#!     <OUTPUT_FEAT NAME="AGGREGATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Geometry - Assemble One Level"/>
+#!     <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="observation_id"/>
+#!     <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="DistinctObsId"/>
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="Homogeneous Collection (If Possible)"/>
+#!     <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="XMLTemplater"
+#!   VERSION="3"
+#!   POSITION="-207.697 193.245"
+#!   BOUNDING_RECT="-207.697 193.245 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15515"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLTemplater"/>
+#!     <XFORM_PARM PARM_NAME="VISIBLE_QUERY_VALIDATE" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SUB_TEMPLATE_PARAMS" PARM_VALUE="MSG_QUERY_EXPR,&quot;WHOLE_LINE TEXT_EDIT_XQUERY_OR_ATTR GET%PROCESS%XMLSAMPLEGEN%GEOMETRY&quot;,&quot;MSG Template Expression:&quot;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOT_QUERY_EXPR" PARM_VALUE="&lt;lt&gt;observation&lt;space&gt;id=&lt;quote&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;quote&gt;&lt;gt&gt;&lt;lf&gt;&lt;opencurly&gt;fme:process-features&lt;openparen&gt;&lt;quote&gt;MSG&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;comma&gt;&lt;space&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;observation_id&lt;quote&gt;&lt;closeparen&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;observation&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MSG_QUERY_EXPR" PARM_VALUE="&lt;lt&gt;warning&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;message&lt;gt&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;message&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lt&gt;&lt;solidus&gt;message&lt;gt&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lt&gt;data&lt;gt&gt;&lt;opencurly&gt;fme:get-attribute&lt;openparen&gt;&lt;quote&gt;data&lt;quote&gt;&lt;closeparen&gt;&lt;closecurly&gt;&lt;lt&gt;&lt;solidus&gt;data&lt;gt&gt;&lt;lf&gt;&lt;lt&gt;&lt;solidus&gt;warning&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CONSECUTIVE_GROUPS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ROOT_QUERY_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_XML_HEADER" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="RESULT_ATTRIBUTE" PARM_VALUE="_result"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="Aggregator"
+#!   VERSION="12"
+#!   POSITION="-679.615 71.1561"
+#!   BOUNDING_RECT="-679.615 71.1561 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16492"
+#! >
+#!     <OUTPUT_FEAT NAME="AGGREGATE"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PARENT_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ID_SELECTION" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_ONE_LEVEL_GROUP" PARM_VALUE="FME_DISCLOSURE_CLOSED"/>
+#!     <XFORM_PARM PARM_NAME="ACCUM_ATTRS_NAME" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TO_TRAIT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MODE" PARM_VALUE="Attributes Only"/>
+#!     <XFORM_PARM PARM_NAME="CONCAT_ATTRS" PARM_VALUE="data"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="message observation_id"/>
+#!     <XFORM_PARM PARM_NAME="COUNT_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Concatenate_data"/>
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_TYPE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;comma&gt;"/>
+#!     <XFORM_PARM PARM_NAME="GEOM_NAME_FIELD" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_ID" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ASSEMBLE_HIERARCHY_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="CHILD_ID_ATTR" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ORDERED" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="XMLAppender"
+#!   VERSION="3"
+#!   POSITION="303.741 224.768"
+#!   BOUNDING_RECT="303.741 224.768 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15515"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="UNUSED_DOCUMENT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="UNUSED_FRAGMENT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_result" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="XML_OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FME_PROCESS_GROUPS_ORDERED" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XML_DOCUMENT_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FME_PROCESS_COUNTDISP" PARM_VALUE="No Parallelism"/>
+#!     <XFORM_PARM PARM_NAME="XML_DOCUMENT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_FRAGMENT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_FRAGMENT_ATTR" PARM_VALUE="_result"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_ENCODING" PARM_VALUE="utf-8"/>
+#!     <XFORM_PARM PARM_NAME="APPEND_FRAGMENTS_AS_LONG" PARM_VALUE="Succeeding Children"/>
+#!     <XFORM_PARM PARM_NAME="XML_OUTPUT_TYPE" PARM_VALUE="Attribute"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_OUTPUT_ATTR" PARM_VALUE="warning_log"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="XMLAppender"/>
+#!     <XFORM_PARM PARM_NAME="XML_FRAGMENT_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Fragment"/>
+#!     <XFORM_PARM PARM_NAME="APPEND_PATH_IN_DOCUMENT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_DOCUMENT_INPUT_TYPE" PARM_VALUE="Attribute Specifying XML Document"/>
+#!     <XFORM_PARM PARM_NAME="XML_OUTPUT_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PRETTY_PRINT" PARM_VALUE="yes"/>
+#!     <XFORM_PARM PARM_NAME="REPLACE_TABS_WITH_SPACES" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="PRETTY_PRINTING_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XML_FRAGMENT_FILE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="INDENT_SIZE" PARM_VALUE="1"/>
+#!     <XFORM_PARM PARM_NAME="XML_DOCUMENT_ATTR" PARM_VALUE="warning_log"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="27"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="843.375 116.634"
+#!   BOUNDING_RECT="843.375 116.634 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15515"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="data,message,observation_id"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="33"
+#!   TYPE="AttributeCreator"
+#!   VERSION="7"
+#!   POSITION="-207.697 448.006"
+#!   BOUNDING_RECT="-207.697 448.006 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="15515"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="observation_id" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="warning_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="warning_log,&quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;_FME_NO_OP_&apos;BOOL_OP;OR;COMPOSITE_TEST;&lt;Unused&gt;;TEST warning_log ATTRIBUTE_VALUE_NULL _FME_BLANK_STRING_;TEST warning_log ATTRIBUTE_IS_EMPTY _FME_BLANK_STRING_;TEST warning_log ATTRIBUTE_IS_MISSING _FME_BLANK_STRING_&apos;&lt;lt&gt;warnings&lt;gt&gt;&lt;lt&gt;&lt;solidus&gt;warnings&lt;gt&gt;&apos;FME_NUM_CONDITIONS2___&quot;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="18"
+#!   NAME="DistinctObsId_Input"
+#!   POSITION="-1257.62 193.245"
+#!   BOUNDING_RECT="-1257.62 193.245 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="message" ATTR_VALUE="$(MESSAGE)" />
+#!     <XFORM_ATTR ATTR_NAME="data" ATTR_VALUE="$(DATA)" />
+#!     <XFORM_ATTR ATTR_NAME="observation_id" ATTR_VALUE="$(OBSERVATION_ID)" />
+#!     <XFORM_ATTR ATTR_NAME="warning_log" ATTR_VALUE="$(WARNING_LOG)" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" ATTR_VALUE="$(METADATA_LOG)" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" ATTR_VALUE="$(ERROR_LOG)" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="20"
+#!   NAME="Output"
+#!   POSITION="1383 116.634"
+#!   BOUNDING_RECT="1383 116.634 -1 -1"
+#!   COLLAPSED="false"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="warning_log" />
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="17"
+#!   NAME="ExistingTemplate"
+#!   POSITION="-774.703 416.506"
+#!   BOUNDING_RECT="-774.703 416.506 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#!     <XFORM_ATTR ATTR_NAME="message" ATTR_VALUE="$(MESSAGE)" />
+#!     <XFORM_ATTR ATTR_NAME="data" ATTR_VALUE="$(DATA)" />
+#!     <XFORM_ATTR ATTR_NAME="observation_id" ATTR_VALUE="$(OBSERVATION_ID)" />
+#!     <XFORM_ATTR ATTR_NAME="warning_log" ATTR_VALUE="$(WARNING_LOG)" />
+#!     <XFORM_ATTR ATTR_NAME="metadata_log" ATTR_VALUE="$(METADATA_LOG)" />
+#!     <XFORM_ATTR ATTR_NAME="error_log" ATTR_VALUE="$(ERROR_LOG)" />
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="17"
+#!   TARGET_NODE="33"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="18"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="18"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="9"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 AGGREGATE"
+#!   TARGET_PORT_DESC="fi 0 ROOT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 1 FRAGMENT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 AGGREGATE"
+#!   TARGET_PORT_DESC="fi 1 MSG"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="27"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="27"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="36"
+#!   SOURCE_NODE="33"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 DOCUMENT"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_MESSAGE <at>Value<openparen>message<closeparen>
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_DATA <at>Value<openparen>data<closeparen>
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_OBSERVATION_ID <at>Value<openparen>observation_id<closeparen>
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_WARNING_LOG <at>Value<openparen>warning_log<closeparen>
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_METADATA_LOG <at>Value<openparen>metadata_log<closeparen>
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_ERROR_LOG <at>Value<openparen>error_log<closeparen>
+#! START_HEADER
+#! END_HEADER
+
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO LogWarnings_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(LogWarnings_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(LogWarnings_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_Input1484824184 Input Splitter"   INPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_Input"   OUTPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_Input_0_xghoysghxXs=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,message,$($(LogWarnings_WORKSPACE_NAME)_MESSAGE),data,$($(LogWarnings_WORKSPACE_NAME)_DATA),observation_id,$($(LogWarnings_WORKSPACE_NAME)_OBSERVATION_ID),warning_log,$($(LogWarnings_WORKSPACE_NAME)_WARNING_LOG),metadata_log,$($(LogWarnings_WORKSPACE_NAME)_METADATA_LOG),error_log,$($(LogWarnings_WORKSPACE_NAME)_ERROR_LOG), FEATURE_TYPE)"   OUTPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_Input_1_OQRaJr8UB7U=" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,message,$($(LogWarnings_WORKSPACE_NAME)_MESSAGE),data,$($(LogWarnings_WORKSPACE_NAME)_DATA),observation_id,$($(LogWarnings_WORKSPACE_NAME)_OBSERVATION_ID),warning_log,$($(LogWarnings_WORKSPACE_NAME)_WARNING_LOG),metadata_log,$($(LogWarnings_WORKSPACE_NAME)_METADATA_LOG),error_log,$($(LogWarnings_WORKSPACE_NAME)_ERROR_LOG), FEATURE_TYPE)"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LogWarnings_WORKSPACE_NAME)_ExistingTemplate1484824184 Input Splitter"   INPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_ExistingTemplate"   OUTPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_ExistingTemplate" "@EvaluateExpression(ATTR_CREATE_EXPR_PROPAGATE_MISSING_FDIV,message,$($(LogWarnings_WORKSPACE_NAME)_MESSAGE),data,$($(LogWarnings_WORKSPACE_NAME)_DATA),observation_id,$($(LogWarnings_WORKSPACE_NAME)_OBSERVATION_ID),warning_log,$($(LogWarnings_WORKSPACE_NAME)_WARNING_LOG),metadata_log,$($(LogWarnings_WORKSPACE_NAME)_METADATA_LOG),error_log,$($(LogWarnings_WORKSPACE_NAME)_ERROR_LOG), FEATURE_TYPE)"
+# -------------------------------------------------------------------------
+FACTORY_DEF * AttrSetFactory FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_AttributeCreator ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV INPUT  FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_ExistingTemplate" ATTR warning_log "FME_CONDITIONAL:DEFAULT_VALUE'_FME_NO_OP_'BOOL_OP;OR;COMPOSITE_TEST;<Unused>;TEST warning_log ATTRIBUTE_VALUE_NULL _FME_BLANK_STRING_;TEST warning_log ATTRIBUTE_IS_EMPTY _FME_BLANK_STRING_;TEST warning_log ATTRIBUTE_IS_MISSING _FME_BLANK_STRING_'<lt>warnings<gt><lt><solidus>warnings<gt>'FME_NUM_CONDITIONS2___"    OUTPUT OUTPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_AttributeCreator_OUTPUT" 
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_DistinctObsId_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(LogWarnings_WORKSPACE_NAME)_DistinctObsId_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE observation_id} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_DistinctObsId    INPUT  FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_Input_0_xghoysghxXs="    MODE ONE_LEVEL    GROUP_BY observation_id    $($(LogWarnings_WORKSPACE_NAME)_DistinctObsId_BREAK_ATTR)    REMOVE_GEOMETRY NO    ACCUMULATE_ATTRIBUTES Never    SEPARATOR <comma>    PRODUCE_MULTIS YES    OUTPUT AGGREGATE FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_AGGREGATE"
+
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO $(LogWarnings_WORKSPACE_NAME)_Concatenate_data_BREAK_ATTR
+INCLUDE [if {"No" == "Yes"} {puts {MACRO $(LogWarnings_WORKSPACE_NAME)_Concatenate_data_BREAK_ATTR BREAK_BEFORE_FIELD_CHANGE message observation_id} }]
+FACTORY_DEF * AggregateFactory    FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_Concatenate_data    INPUT  FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_Input_1_OQRaJr8UB7U="    MODE ONE_LEVEL    GROUP_BY message observation_id    $($(LogWarnings_WORKSPACE_NAME)_Concatenate_data_BREAK_ATTR)    REMOVE_GEOMETRY YES    ACCUMULATE_ATTRIBUTES Yes    CONCATENATE_FIELDS data    SEPARATOR <comma>    OUTPUT AGGREGATE FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_Concatenate_data_AGGREGATE"
+
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_XMLTemplater_MSG_INPUT_FACTORY INPUT FEATURE_TYPE __dummy__  INPUT  FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_Concatenate_data_AGGREGATE" OUTPUT FEATURE_TYPE $(LogWarnings_WORKSPACE_NAME)_XMLTemplater_DataFeatures    __xml_templater_bucket__ MSG
+FACTORY_DEF * XMLTemplaterFactory FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_XMLTemplater INPUT CONTROL_FEATURE FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_DistinctObsId_AGGREGATE" INPUT DATA_FEATURE FEATURE_TYPE $(LogWarnings_WORKSPACE_NAME)_XMLTemplater_DataFeatures RESULT_ATTR _result OUTPUT_XML_HEADER YES BUCKET_ATTR_NAME __xml_templater_bucket__ CONTROL_TEMPLATE_EXPR <lt>observation<space>id=<quote><opencurly>fme:get-attribute<openparen><quote>observation_id<quote><closeparen><closecurly><quote><gt><lf><opencurly>fme:process-features<openparen><quote>MSG<quote><comma><space><quote>observation_id<quote><comma><space>fme:get-attribute<openparen><quote>observation_id<quote><closeparen><closeparen><closecurly><lf><lt><solidus>observation<gt> BUCKET_TEMPLATE_EXPR MSG "<lt>warning<gt><lf><space><space><space><space><lt>message<gt><opencurly>fme:get-attribute<openparen><quote>message<quote><closeparen><closecurly><lt><solidus>message<gt><lf><space><space><space><space><lt>data<gt><opencurly>fme:get-attribute<openparen><quote>data<quote><closeparen><closecurly><lt><solidus>data<gt><lf><lt><solidus>warning<gt>" OUTPUT XML_DOCUMENT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_XMLTemplater_OUTPUT"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * XMLAppenderFactory    FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_XMLAppender    INPUT XML_DOCUMENT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    INPUT XML_FRAGMENT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_XMLTemplater_OUTPUT"    XML_DOCUMENT_INPUT_TYPE IO_ATTRIBUTE    XML_DOCUMENT_ATTR "warning_log"    APPEND_FRAGMENTS_AS SUCCEEDING_CHILDREN    APPEND_PATH_IN_DOCUMENT ""    XML_FRAGMENT_INPUT_TYPE IO_ATTRIBUTE    XML_FRAGMENT_ATTR "_result"    XML_OUTPUT_TYPE IO_ATTRIBUTE    XML_OUTPUT_ATTR "warning_log"    XML_OUTPUT_ENCODING utf-8    PRETTY_PRINT yes    INDENT_SIZE 1    REPLACE_TABS_WITH_SPACES no    OUTPUT APPENDED FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_XMLAppender_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(LogWarnings_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(LogWarnings_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_XMLAppender_OUTPUT"    OUTPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,data,message,observation_id)        @RemoveAttributes(fme_pcre_match"$($(LogWarnings_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(LogWarnings_WORKSPACE_NAME)_Output1484824184 Output Collector"   INPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(LogWarnings_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(LogWarnings_WORKSPACE_NAME))}]

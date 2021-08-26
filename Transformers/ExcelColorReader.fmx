@@ -1,0 +1,113 @@
+# =========================================================================
+
+TRANSFORMER_NAME: ExcelColorReader
+
+ALIASES: 
+
+VERSION: 0
+ 
+CATEGORY: Infrastructure
+
+INPUT_TAGS: <BLANK>
+
+OUTPUT_TAGS: CELLS ROWS REJECTED
+
+PRESERVES_ATTRIBUTES: yes
+
+
+FEATURE_HOLDING: NONE
+
+NUKERS_REQUIRED: yes
+
+ATTRIBUTES_ADDED: CELLS:fme_feature_type CELLS:fme_dataset CELLS:xlsx_row_id CELLS:xlsx_col_id CELLS:fme_fill_color CELLS:rgb CELLS:color_type CELLS:cellvalue ROWS:fme_feature_type ROWS:fme_dataset ROWS:xlsx_row_id ROWS:cell_colors{}.attribute_name ROWS:cell_colors{}.rgb ROWS:cell_colors{}.color_type ROWS:cell_colors{}.fme_fill_color REJECTED:_excelcolorreader_status
+
+PARAMETER_NAME: TRANSFORMER_GROUP
+PARAMETER_TYPE: GROUP XFORMER_NAME
+PARAMETER_PROMPT: Transformer
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: PARAMETERS_GROUP
+PARAMETER_TYPE: GROUP DATASET%TABLELIST%OUTPUTSTRATEGY
+PARAMETER_PROMPT: Parameters
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: DATASET
+PARAMETER_TYPE: FILENAME_MUSTEXIST_OR_ATTR_ENCODED Excel_Files(*.xlsx)|*.xlsx|All_files(*)|*
+PARAMETER_PROMPT: Excel Workbook:
+PARAMETER_DEFAULT:
+
+PARAMETER_NAME: TABLELIST
+PARAMETER_TYPE: DYNAMIC_MULTI_SELECT_OR_ATTR_ENCODED $[DATASET_DECODE],_FORMAT_OVERRIDE_,XLSXR
+PARAMETER_PROMPT: Sheets:
+PARAMETER_DEFAULT: 
+
+PARAMETER_NAME: OUTPUTSTRATEGY
+PARAMETER_TYPE: CHOICE_OR_ATTR_ENCODED Features%Attributes
+PARAMETER_PROMPT: Output cells as
+PARAMETER_DEFAULT: Features
+
+
+TOOLTIP_START
+
+TOOLTIP_END
+ 
+CHANGE_LOG_START
+
+CHANGE_LOG_END
+
+TEMPLATE_START
+
+
+
+FACTORY_DEF * PythonFactory
+   FACTORY_NAME $(XFORMER_NAME)_PythonCaller
+   PYTHON_NAMESPACE FMEOBJECTS
+   $(INPUT_LINES)
+   @EvaluateExpression(ATTR_CREATE_EXPR_TYPED,_excelcolorreader_dataset,"$(DATASET)",STRING_ENCODED,_excelcolorreader_tablelist,"$(TABLELIST)",STRING_ENCODED,_excelcolorreader_strategy,"$(OUTPUTSTRATEGY)",STRING_ENCODED,_excelcolorreader_transformername,"$(XFORMER_NAME)",STRING_ENCODED,$(XFORMER_NAME))
+   SYMBOL_NAME _excelcolorreader_symbol
+   PYTHON_NAMESPACE FMEOBJECTS
+   SOURCE_CODE _excelcolorreader_fallback_status<space>=<space><apos>error<apos><lf>def<space>fallback_set_status<openparen>feature<closeparen>:<lf><space><space><space><space>feature.setAttribute<openparen><apos>_excelcolorreader_status<apos><comma><space>_excelcolorreader_fallback_status<closeparen><lf>_excelcolorreader_symbol<space>=<space>fallback_set_status<lf>try:<lf><space><space><space><space>import<space>ExcelColorReader<lf><space><space><space><space>if<space>ExcelColorReader._LOAD_OK:<lf><space><space><space><space><space><space><space><space>#_excelcolorreader_symbol<space>=<space>ExcelColorReader.ColorReader<lf><space><space><space><space><space><space><space><space>_excelcolorreader_symbol<space>=<space>ExcelColorReader.ColorReader<lf><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space>_excelcolorreader_fallback_status<space>=<space>ExcelColorReader._LOAD_ERROR<lf>except<space>Exception<space>as<space>e<space>:<lf><space><space><space><space>_excelcolorreader_fallback_status<space>=<space>str<openparen>e<closeparen><lf>
+   OUTPUT PYOUTPUT FEATURE_TYPE $(XFORMER_NAME)_TO_OUTPUTFILTER
+
+FACTORY_DEF * AttributeFilterFactory
+   FACTORY_NAME $(XFORMER_NAME)_OutputFilter
+   COMMAND_PARM_EVALUATION SINGLE_PASS
+   INPUT FEATURE_TYPE $(XFORMER_NAME)_TO_OUTPUTFILTER
+   FILTER_ATTRIBUTE _excelcolorreader_status
+   FILTER_VALUES <lt>UNFILTERED<gt> cell row
+   OUTPUT <lt>UNFILTERED<gt> FEATURE_TYPE $(XFORMER_NAME)_TO_FALLBACK
+                 @RemoveAttributes(fme_encoded,_excelcolorreader_dataset,_excelcolorreader_tablelist,_excelcolorreader_strategy,_excelcolorreader_transformername)
+   OUTPUT cell FEATURE_TYPE $(OUTPUT_CELLS_FTYPE)
+                 $(OUTPUT_CELLS_FUNCS)
+                 @RemoveAttributes(fme_encoded,_excelcolorreader_dataset,_excelcolorreader_tablelist,_excelcolorreader_strategy,_excelcolorreader_transformername,_excelcolorreader_status)
+   OUTPUT row FEATURE_TYPE $(OUTPUT_ROWS_FTYPE)
+                 $(OUTPUT_ROWS_FUNCS)
+                 @RemoveAttributes(fme_encoded,_excelcolorreader_dataset,_excelcolorreader_tablelist,_excelcolorreader_strategy,_excelcolorreader_transformername,_excelcolorreader_status)
+
+FACTORY_DEF * QueryFactory
+   FACTORY_NAME $(XFORMER_NAME)_GenericFallback
+   INPUT  FEATURE_TYPE $(XFORMER_NAME)_TO_FALLBACK
+      @Log("$(XFORMER_NAME): Falling back to generic reader")
+   QUERYFCT_TABLE_SEPARATOR COLON
+   COMBINE_ATTRIBUTES  PREFER_RESULT
+   COMBINE_GEOMETRY    RESULT_ONLY
+   ENABLE_CACHE        NO
+   READER_TYPE         GENERIC
+   READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,$(DATASET),$(XFORMER_NAME)_GenericFallback)"
+   QUERYFCT_IDS        "@EvaluateExpression(FDIV,STRING_ENCODED,$(TABLELIST),$(XFORMER_NAME)_GenericFallback)"
+   READER_DIRECTIVES META_MACROS,SourceREAL_FORMAT<comma>XLSXR,METAFILE,GENERIC
+   QUERYFCT_OUTPUT     DATA_ONLY
+   CONTINUE_ON_READER_ERROR YES
+   READER_PARAMS       REAL_FORMAT XLSXR
+   OUTPUT RESULT FEATURE_TYPE *
+                 @SupplyAttributes(fme_feature_type,@FeatureType())
+                 @Tcl2("set FME_FeatureType $(OUTPUT_ROWS_FTYPE)")
+                 $(OUTPUT_ROWS_FUNCS)
+   OUTPUT READER_ERROR FEATURE_TYPE  $(OUTPUT_REJECTED_FTYPE)
+                 $(OUTPUT_REJECTED_FUNCS)
+
+
+TEMPLATE_END
+
+# =========================================================================
+

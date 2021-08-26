@@ -1,0 +1,389 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN PathAnalyzer,1,Manipulators,05f17cfc-0102-4f92-acb6-6739ee5ed9e7,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Checks what seperator is used in a path. If you use / or \. It also checks if the path provider is a directory or filename on disk. Uknown is given if the path can't be found.</p>
+# <p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">
+#     <br/>
+# </p>
+# 
+# TRANSFORMER_END
+#!   LAST_SAVE_DATE="2016-12-14T16:16:21"
+#!   VIEW_POSITION="-1196.89 325.003"
+#!   DOC_TOP_LEFT="-653.001 -811.631"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   CATEGORY="Manipulators"
+#!   PASSWORD=""
+#!   ZOOM_SCALE="100"
+#!   SHOW_INFO_NODES="true"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   HISTORY="14&lt;solidus&gt;12&lt;solidus&gt;2016,Jan&lt;space&gt;Bliki,Initiator"
+#!   MAX_LOOP_ITERATIONS=""
+#!   FME_BUILD_NUM="16674"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Checks what seperator is used in a path. If you use / or \. It also checks if the path provider is a directory or filename on disk. Uknown is given if the path can&apos;t be found.&lt;/p&gt;&#10;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_DOCUMENT_PRIORGUID="cc4fb094-cc2e-4432-bc70-035135493747"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   WORKSPACE_VERSION="1"
+#!   FME_PROCESS_GROUP_BY=""
+#!   TITLE="PathAnalyzer"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   ITERATION_COUNT_ATTR=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   FME_SERVER_SERVICES=""
+#!   FME_DOCUMENT_GUID="05f17cfc-0102-4f92-acb6-6739ee5ed9e7"
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   BLOCKED_LOOPING="No"
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   SHOW_ANNOTATIONS="true"
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   USAGE="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Adding paths can sometimes be tricky. This transformer asissts in finding out what the current path is using so you continue using it correctly.&lt;/p&gt;&#10;"
+#!   XFORM_DEPRECATED="No"
+#!   DOC_EXTENTS="2475.76 489.753"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI TEXT_OR_ATTR Path Path to analyse:"
+#!   DEFAULT_VALUE=""
+#!   IS_STAND_ALONE="true"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT MATCHED_RESULT_ATTR Seperator attribute:"
+#!   DEFAULT_VALUE="_PathSeperator"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL TEXT FILE_ATTR_TYPE File type attribute:"
+#!   DEFAULT_VALUE="_FileType"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="15"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Use this to steal the attribute exposure attribute&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-352.128 -672.628"
+#!   TOP_LEFT="-352.128 -672.628"
+#!   BOTTOM_RIGHT="-353.128 -671.628"
+#!   BOUNDING_RECT="-352.128 -672.628 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="9"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="PythonCaller"
+#!   VERSION="4"
+#!   POSITION="515.63 -321.878"
+#!   BOUNDING_RECT="515.63 -321.878 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Attribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_PathType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PYTHONSOURCE" PARM_VALUE="import&lt;space&gt;fme&lt;lf&gt;import&lt;space&gt;fmeobjects&lt;lf&gt;import&lt;space&gt;os&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Function&lt;space&gt;interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;function&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;def&lt;space&gt;processFeature&lt;openparen&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;lf&gt;#&lt;space&gt;Template&lt;space&gt;Class&lt;space&gt;Interface:&lt;lf&gt;#&lt;space&gt;When&lt;space&gt;using&lt;space&gt;this&lt;space&gt;class&lt;comma&gt;&lt;space&gt;make&lt;space&gt;sure&lt;space&gt;its&lt;space&gt;name&lt;space&gt;is&lt;space&gt;set&lt;space&gt;as&lt;space&gt;the&lt;space&gt;value&lt;space&gt;of&lt;lf&gt;#&lt;space&gt;the&lt;space&gt;&lt;apos&gt;Class&lt;space&gt;or&lt;space&gt;Function&lt;space&gt;to&lt;space&gt;Process&lt;space&gt;Features&lt;apos&gt;&lt;space&gt;transformer&lt;space&gt;parameter&lt;lf&gt;class&lt;space&gt;FeatureProcessor&lt;openparen&gt;object&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;__init__&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;input&lt;openparen&gt;self&lt;comma&gt;feature&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_filepath&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__PathAnalyzer_Path&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_targetAttribute&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__PathAnalyzer_Attribute&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_targetAttrType&lt;space&gt;=&lt;space&gt;feature.getAttribute&lt;openparen&gt;&lt;quote&gt;__PathAnalyzer_PathType&lt;quote&gt;&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;_targetAttrType&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;Is&lt;space&gt;this&lt;space&gt;a&lt;space&gt;directory&lt;comma&gt;&lt;space&gt;a&lt;space&gt;file&lt;space&gt;or&lt;space&gt;a&lt;space&gt;none&lt;space&gt;existing&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.isdir&lt;openparen&gt;_filepath&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_type&lt;space&gt;=&lt;space&gt;&lt;apos&gt;dir&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;os.path.isfile&lt;openparen&gt;_filepath&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_type&lt;space&gt;=&lt;space&gt;&lt;apos&gt;file&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_type&lt;space&gt;=&lt;space&gt;&lt;apos&gt;unknown&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;_targetAttrType&lt;comma&gt;_type&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;_targetAttribute&lt;space&gt;!=&lt;space&gt;&lt;apos&gt;&lt;apos&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;#&lt;space&gt;check&lt;space&gt;if&lt;space&gt;we&lt;space&gt;use&lt;space&gt;&lt;solidus&gt;&lt;space&gt;or&lt;space&gt;&lt;backslash&gt;&lt;space&gt;inside&lt;space&gt;the&lt;space&gt;path&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;_filepath.find&lt;openparen&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;&lt;gt&gt;&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_pathseperator&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;if&lt;space&gt;_filepath.find&lt;openparen&gt;&lt;apos&gt;&lt;backslash&gt;&lt;backslash&gt;&lt;apos&gt;&lt;closeparen&gt;&lt;space&gt;&lt;gt&gt;&lt;space&gt;0:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_pathseperator&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;backslash&gt;&lt;backslash&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;else:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;_pathseperator&lt;space&gt;=&lt;space&gt;&lt;apos&gt;&lt;solidus&gt;&lt;apos&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;feature.setAttribute&lt;openparen&gt;_targetAttribute&lt;comma&gt;_pathseperator&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;self.pyoutput&lt;openparen&gt;feature&lt;closeparen&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;def&lt;space&gt;close&lt;openparen&gt;self&lt;closeparen&gt;:&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;pass"/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="HIDE_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PYTHONSYMBOL" PARM_VALUE="FeatureProcessor"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="PythonCaller_2"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NEW_ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="515.63 -577.254"
+#!   BOUNDING_RECT="515.63 -577.254 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Attribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_PathType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_PathSeperator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Path" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Attribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_PathType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="dd"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="$(MATCHED_RESULT_ATTR)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="dd"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="ParameterFetcher"
+#!   VERSION="4"
+#!   POSITION="-29.1255 -321.878"
+#!   BOUNDING_RECT="-29.1255 -321.878 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Attribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_PathType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ParameterFetcher"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="__PathAnalyzer_Path {$(Path)} __PathAnalyzer_Attribute {$(MATCHED_RESULT_ATTR)} __PathAnalyzer_PathType {$(FILE_ATTR_TYPE)}"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="16"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="1169.63 -347.503"
+#!   BOUNDING_RECT="1169.63 -347.503 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_PathSeperator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="__PathAnalyzer_Attribute,__PathAnalyzer_PathType,__PathAnalyzer_Path"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="20"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="515.63 -811.631"
+#!   BOUNDING_RECT="515.63 -811.631 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Path" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Attribute" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_PathType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_PathSeperator" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_FileType" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Path" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_Attribute" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="__PathAnalyzer_PathType" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_PathSeperator" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher_2"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="dd"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="$(FILE_ATTR_TYPE)"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="dd"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="2"
+#!   NAME="Input"
+#!   POSITION="-653.001 -321.878"
+#!   BOUNDING_RECT="-653.001 -321.878 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="4"
+#!   NAME="Output"
+#!   POSITION="1822.76 -381.878"
+#!   BOUNDING_RECT="1822.76 -381.878 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="10"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="false"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="20"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="false"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="16"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="22"
+#!   SOURCE_NODE="20"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="false"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+DEFAULT_MACRO $(PathAnalyzer_WORKSPACE_NAME)_Path 
+DEFAULT_MACRO $(PathAnalyzer_WORKSPACE_NAME)_MATCHED_RESULT_ATTR _PathSeperator
+DEFAULT_MACRO $(PathAnalyzer_WORKSPACE_NAME)_FILE_ATTR_TYPE _FileType
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO PathAnalyzer_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(PathAnalyzer_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(PathAnalyzer_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PathAnalyzer_WORKSPACE_NAME)_Input1481728581 Input Splitter"   INPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher_doFetch {} {    foreach {name val} {"__PathAnalyzer_Path {$($(PathAnalyzer_WORKSPACE_NAME)_Path$encode)} __PathAnalyzer_Attribute {$($(PathAnalyzer_WORKSPACE_NAME)_MATCHED_RESULT_ATTR$encode)} __PathAnalyzer_PathType {$($(PathAnalyzer_WORKSPACE_NAME)_FILE_ATTR_TYPE$encode)}"} {         if { [string match {*<at>*} $val] == 1 } {             set val [FME_Execute EvaluateExpression {STRING} $val {$(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher}];         } elseif {[string match {*FME_CONDITIONAL*} $val] == 1} {             set val [FME_Execute EvaluateExpression {STRING} $val {$(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher}];         } else {             set val [FME_DecodeTextOrAttr $val];         };       FME_SetAttribute [FME_DecodeText $name] $val    } }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher    INPUT  FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"         @Tcl2($(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher_doFetch)
+
+# -------------------------------------------------------------------------
+
+
+FME_PYTHON_PATH "$(FME_MF_DIR)"
+
+FACTORY_DEF * PythonFactory    FACTORY_NAME $(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2    INPUT  FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_ParameterFetcher_OUTPUT"    SYMBOL_NAME FeatureProcessor    PYTHON_NAMESPACE FMEOBJECTS    SOURCE_CODE import<space>fme<lf>import<space>fmeobjects<lf>import<space>os<lf>#<space>Template<space>Function<space>interface:<lf>#<space>When<space>using<space>this<space>function<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>def<space>processFeature<openparen>feature<closeparen>:<lf><space><space><space><space>pass<lf><lf>#<space>Template<space>Class<space>Interface:<lf>#<space>When<space>using<space>this<space>class<comma><space>make<space>sure<space>its<space>name<space>is<space>set<space>as<space>the<space>value<space>of<lf>#<space>the<space><apos>Class<space>or<space>Function<space>to<space>Process<space>Features<apos><space>transformer<space>parameter<lf>class<space>FeatureProcessor<openparen>object<closeparen>:<lf><space><space><space><space>def<space>__init__<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass<lf><space><space><space><space>def<space>input<openparen>self<comma>feature<closeparen>:<lf><space><space><space><space><space><space><space><space>_filepath<space>=<space>feature.getAttribute<openparen><quote>__PathAnalyzer_Path<quote><closeparen><lf><space><space><space><space><space><space><space><space>_targetAttribute<space>=<space>feature.getAttribute<openparen><quote>__PathAnalyzer_Attribute<quote><closeparen><lf><space><space><space><space><space><space><space><space>_targetAttrType<space>=<space>feature.getAttribute<openparen><quote>__PathAnalyzer_PathType<quote><closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>if<space>_targetAttrType<space>!=<space><apos><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>Is<space>this<space>a<space>directory<comma><space>a<space>file<space>or<space>a<space>none<space>existing<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.isdir<openparen>_filepath<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>_type<space>=<space><apos>dir<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>os.path.isfile<openparen>_filepath<closeparen>:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>_type<space>=<space><apos>file<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>_type<space>=<space><apos>unknown<apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>_targetAttrType<comma>_type<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>if<space>_targetAttribute<space>!=<space><apos><apos>:<lf><space><space><space><space><space><space><space><space><space><space><space><space>#<space>check<space>if<space>we<space>use<space><solidus><space>or<space><backslash><space>inside<space>the<space>path<lf><space><space><space><space><space><space><space><space><space><space><space><space>if<space>_filepath.find<openparen><apos><solidus><apos><closeparen><space><gt><space>0:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>_pathseperator<space>=<space><apos><solidus><apos><lf><space><space><space><space><space><space><space><space><space><space><space><space>else:<space><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>if<space>_filepath.find<openparen><apos><backslash><backslash><apos><closeparen><space><gt><space>0:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>_pathseperator<space>=<space><apos><backslash><backslash><apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>else:<lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space>_pathseperator<space>=<space><apos><solidus><apos><lf><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space><space><space><space><space>feature.setAttribute<openparen>_targetAttribute<comma>_pathseperator<closeparen><lf><space><space><space><space><space><space><space><space><lf><space><space><space><space><space><space><space><space>self.pyoutput<openparen>feature<closeparen><lf><space><space><space><space>def<space>close<openparen>self<closeparen>:<lf><space><space><space><space><space><space><space><space>pass    OUTPUT PYOUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2 OUTPUT Splitter"   INPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT"   OUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT_0_rm9QvzIZpro="   OUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT_1_fw+1vGu+BpM="
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT_0_rm9QvzIZpro= Disabled Nuker -1 10"   INPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT_0_rm9QvzIZpro="
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_43773930_3460_4671_b6c6_a5d9ead033602_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName $matchedChars;      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PathAnalyzer_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT_0_rm9QvzIZpro="    TEST @Tcl2("$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_43773930_3460_4671_b6c6_a5d9ead033602_doGrep {dd} {dd} {$($(PathAnalyzer_WORKSPACE_NAME)_MATCHED_RESULT_ATTR)} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_MATCHED"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_MATCHED Disabled Nuker -1 19"   INPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_MATCHED"
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2_b646ea85_9224_4360_8d9c_0b12823b6c1f2_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName $matchedChars;      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2    INPUT  FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_MATCHED"    TEST @Tcl2("$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2_b646ea85_9224_4360_8d9c_0b12823b6c1f2_doGrep {dd} {dd} {$($(PathAnalyzer_WORKSPACE_NAME)_FILE_ATTR_TYPE)} {} {}") > 0    OUTPUT PASSED FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2_MATCHED"
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2_MATCHED Disabled Nuker -1 22"   INPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2_MATCHED"
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(PathAnalyzer_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split ""] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(PathAnalyzer_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_PythonCaller_2_OUTPUT_1_fw+1vGu+BpM="    INPUT  FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_StringSearcher_2_MATCHED"    OUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,__PathAnalyzer_Attribute,__PathAnalyzer_PathType,__PathAnalyzer_Path)        @RemoveAttributes(fme_pcre_match"$($(PathAnalyzer_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(PathAnalyzer_WORKSPACE_NAME)_Output1481728581 Output Collector"   INPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_AttributeRemover_OUTPUT"   OUTPUT FEATURE_TYPE "$(PathAnalyzer_WORKSPACE_NAME)_Output"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(PathAnalyzer_WORKSPACE_NAME))}]

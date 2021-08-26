@@ -1,0 +1,953 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <TRANSFORMER
+# TRANSFORMER_BEGIN SQLDWStatusChecker,1,Jedi,b99a96d8-4bc3-46dc-a275-930edff888be,"Linked by Default",No,NO_PARALLELISM,,No,16674,YES,No
+# <p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Checks the status of SQLDW. WARNING: Can only run on the FME Server (FMEBatch)</p>
+# 
+# TRANSFORMER_END
+#!   DOC_TOP_LEFT="-4159.29 -399.754"
+#!   ZOOM_SCALE="92"
+#!   TITLE="SQLDWStatusChecker"
+#!   FME_DOCUMENT_PRIORGUID="249864b8-792c-4575-8932-8ce606e2200b,1a662595-d956-4db6-8a8a-23a13bce804e"
+#!   USAGE="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   SHOW_ANNOTATIONS="true"
+#!   BLOCKED_LOOPING="No"
+#!   DESCRIPTION="&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Checks the status of SQLDW. WARNING: Can only run on the FME Server (FMEBatch)&lt;/p&gt;&#10;"
+#!   FME_LINKED_TRANSFORMER_VERSION="1"
+#!   FME_BUILD_NUM="16674"
+#!   CATEGORY="Jedi"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   FME_PROCESS_COUNT="NO_PARALLELISM"
+#!   FME_SERVER_SERVICES=""
+#!   LAST_SAVE_BUILD="FME(R) 2016.1.2.1 (20160929 - Build 16674 - WIN64)"
+#!   ITERATION_COUNT_ATTR=""
+#!   FME_PROCESS_GROUPS_ORDERED="No"
+#!   REQUIREMENTS_KEYWORD="none"
+#!   WORKSPACE_VERSION="1"
+#!   DOC_EXTENTS="8559.33 696.632"
+#!   FME_DOCUMENT_GUID="b99a96d8-4bc3-46dc-a275-930edff888be"
+#!   HISTORY=""
+#!   VIEW_POSITION="-2965.38 658.974"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   LAST_SAVE_DATE="2017-02-17T16:14:23"
+#!   PASSWORD=""
+#!   REQUIREMENTS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#!   FME_PROCESS_GROUP_BY=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   MAX_LOOP_ITERATIONS=""
+#!   FMX_ATTRIBUTE_PROPOGATION_MODE="AUTO"
+#!   XFORM_DEPRECATED="No"
+#!   FMX_INSERT_MODE="Linked by Default"
+#!   SHOW_INFO_NODES="true"
+#!   LEGAL_TERMS_CONDITIONS="&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&#10;    &lt;br/&gt;&#10;&lt;/p&gt;&#10;"
+#! >
+#! <DATASETS>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="22"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;dwh_status.ps1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="-2833.42 100.105"
+#!   TOP_LEFT="-2833.42 100.105"
+#!   BOTTOM_RIGHT="-2834.42 101.105"
+#!   BOUNDING_RECT="-2833.42 100.105 -1 -1"
+#!   ORDER="5e+14"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   COLOUR="1,1,0.784314,0.192157"
+#!   SIZE_POLICY="8"
+#!   COMMENT_TYPE="REGULAR"
+#!   ANCHORED_NODE="7"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="1"
+#!   TYPE="AttributeSplitter"
+#!   VERSION="3"
+#!   POSITION="94.615 -45.2725"
+#!   BOUNDING_RECT="94.615 -45.2725 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DELIMITER" PARM_VALUE="&lt;lf&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRIM_OPTION" PARM_VALUE="Both"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="SQLDW_status"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSplitter"/>
+#!     <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="_SQLDW_status"/>
+#!     <XFORM_PARM PARM_NAME="DROP_EMPTY_PARTS" PARM_VALUE="No"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="2"
+#!   TYPE="ListSearcher"
+#!   VERSION="5"
+#!   POSITION="682.99 -45.2725"
+#!   BOUNDING_RECT="682.99 -45.2725 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="FOUND"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_FOUND"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="SEARCH_TYPE" PARM_VALUE="First to contain regular expression"/>
+#!     <XFORM_PARM PARM_NAME="INDEX_GROUP" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="INDEX_ATTR" PARM_VALUE="_list_index"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_SQLDW_status&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_VALUE" PARM_VALUE="Status"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListSearcher"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="ListIndexer"
+#!   VERSION="2"
+#!   POSITION="1212.51 -45.2725"
+#!   BOUNDING_RECT="1212.51 -45.2725 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Status_SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Status_SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="INDEX" PARM_VALUE="@Value(_list_index)"/>
+#!     <XFORM_PARM PARM_NAME="PREFIX" PARM_VALUE="_Status"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="_SQLDW_status{}"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListIndexer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="4"
+#!   TYPE="StringSearcher"
+#!   VERSION="3"
+#!   POSITION="1793.76 -45.2725"
+#!   BOUNDING_RECT="1793.76 -45.2725 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Status_SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__firstmatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_Status{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_Status{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="NOT_MATCHED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="_Status_SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_PARTS_ATTR" PARM_VALUE="_SQLDW_Status"/>
+#!     <XFORM_PARM PARM_NAME="STRING_TO_SEARCH" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_Status_SQLDW_status&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MATCHES_ATTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="MATCHED_RESULT_ATTR" PARM_VALUE="__firstmatch"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="&lt;openparen&gt;:&lt;backslash&gt;s&lt;opencurly&gt;0&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;&lt;openparen&gt;&lt;openbracket&gt;a-z|A-Z&lt;closebracket&gt;&lt;opencurly&gt;1&lt;comma&gt;&lt;closecurly&gt;&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringSearcher"/>
+#!     <XFORM_PARM PARM_NAME="CASE" PARM_VALUE="no"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="5"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="2328.14 -45.2725"
+#!   BOUNDING_RECT="2328.14 -45.2725 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_status{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_list_index" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_Status_SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="__firstmatch" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_Status{}.part" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_SQLDW_Status{}.startIndex" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; SQLDW_status SET_TO &lt;at&gt;Value&lt;openparen&gt;_SQLDW_Status&lt;opencurly&gt;1&lt;closecurly&gt;.part&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="6"
+#!   TYPE="AttributeRemover"
+#!   VERSION="1"
+#!   POSITION="2862.52 -45.2725"
+#!   BOUNDING_RECT="2862.52 -45.2725 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="_Status_SQLDW_status,_list_index,__firstmatch,_pathname,text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="LIST_ATTRS" PARM_VALUE="_SQLDW_Status&lt;opencurly&gt;&lt;closecurly&gt; _SQLDW_Status&lt;opencurly&gt;&lt;closecurly&gt;.part _SQLDW_Status&lt;opencurly&gt;&lt;closecurly&gt;.startIndex _SQLDW_status&lt;opencurly&gt;&lt;closecurly&gt;"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="SystemCaller"
+#!   VERSION="3"
+#!   POSITION="-2862.54 -75.9807"
+#!   BOUNDING_RECT="-2862.54 -75.9807 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CMD" PARM_VALUE="PowerShell.exe&lt;space&gt;c:&lt;backslash&gt;azure&lt;backslash&gt;dwh_status.ps1&lt;space&gt;&lt;space&gt;-NonInteractive&lt;space&gt;-NoProfile&lt;space&gt;2&lt;gt&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;_pathname&lt;closeparen&gt;_error.log&lt;space&gt;1&lt;gt&gt;&lt;space&gt;&lt;at&gt;Value&lt;openparen&gt;_pathname&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="DOSStatus"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SystemCaller_3"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="8"
+#!   TYPE="TempPathnameCreator"
+#!   VERSION="0"
+#!   POSITION="-3581.29 -75.9807"
+#!   BOUNDING_RECT="-3581.29 -75.9807 551.006 71"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="PATHNAME_ATTR" PARM_VALUE="_pathname"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="BASENAME" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="EXTENSION" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TempPathnameCreator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="9"
+#!   TYPE="FeatureReader"
+#!   VERSION="8"
+#!   POSITION="-1516.4 -50.9805"
+#!   BOUNDING_RECT="-1516.4 -50.9805 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="&lt;SCHEMA&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_feature_type_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.fme_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="attribute{}.native_data_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_short_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_format_long_name" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;OTHER&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="INITIATOR"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="_matched_records" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="_reader_error" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_PARM PARM_NAME="AVAILABLE_FEATURE_TYPES" PARM_VALUE="_FEATUREREADER_OPTIONAL_FTTR_"/>
+#!     <XFORM_PARM PARM_NAME="PORTS_FROM_FTTR" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureReader"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_ENCODING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_DIRECTIVES" PARM_VALUE="META_MACROS,SourceREAD_WHOLE_FILE_AT_ONCE&lt;comma&gt;YES&lt;comma&gt;SourceREAD_BOTTOM_UP&lt;comma&gt;NO&lt;comma&gt;SourceSKIP_LINES&lt;comma&gt;0&lt;comma&gt;SourceSKIP_FOOTER&lt;comma&gt;0&lt;comma&gt;SourceENCODING&lt;comma&gt;&lt;comma&gt;SourceEXPOSE_ATTRS_GROUP&lt;comma&gt;FME_DISCLOSURE_OPEN&lt;comma&gt;SourceTEXTLINE_EXPOSE_FORMAT_ATTRS&lt;comma&gt;,METAFILE,TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="ENABLE_CACHE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="SINGLE_PORT" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUTPORTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRS_TO_EXPOSE" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="FORMAT_PARAMS" PARM_VALUE="TEXTLINE_ENCODING,&quot;OPTIONAL STRING_OR_ENCODING SYSTEM%*&quot;,TEXTLINE&lt;space&gt;Character&lt;space&gt;Encoding:,TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS,&quot;IGNORE TEXT&quot;,TEXTLINE&lt;space&gt;Additional&lt;space&gt;Attributes&lt;space&gt;to&lt;space&gt;Expose:,TEXTLINE_EXPOSE_ATTRS_GROUP,&quot;OPTIONAL DISCLOSUREGROUP TEXTLINE_EXPOSE_FORMAT_ATTRS&quot;,TEXTLINE&lt;space&gt;Schema&lt;space&gt;Attributes,TEXTLINE_READ_WHOLE_FILE_AT_ONCE,&quot;OPTIONAL ACTIVECHOICE YES,READ_BOTTOM_UP,SKIP_LINES,SKIP_FOOTER%NO&quot;,TEXTLINE&lt;space&gt;Read&lt;space&gt;Whole&lt;space&gt;File&lt;space&gt;at&lt;space&gt;Once:"/>
+#!     <XFORM_PARM PARM_NAME="READER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="CONSTRAINTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_FEATURES_DISPLAY" PARM_VALUE="Data Features"/>
+#!     <XFORM_PARM PARM_NAME="MAX_FEATURES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Initiator and Result"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_EXPOSE_ATTRS_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="MERGE_HANDLING_GROUP" PARM_VALUE="FME_DISCLOSURE_OPEN"/>
+#!     <XFORM_PARM PARM_NAME="WHERE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FTTR_SEPARATOR" PARM_VALUE="SPACE"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_PORTS_MODE" PARM_VALUE="PORTS_FROM_FTTR"/>
+#!     <XFORM_PARM PARM_NAME="INTERACT" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE="TEXTLINE"/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_TEXTLINE_EXPOSE_FORMAT_ATTRS" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEXTLINE_READ_WHOLE_FILE_AT_ONCE" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="COMBINE_GEOM" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="FEATURETYPES" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DATASET" PARM_VALUE="&lt;at&gt;Value&lt;openparen&gt;_pathname&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="SELECTED_PORTS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="CACHE_TIMEOUT_HRS" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Result"/>
+#!     <XFORM_PARM PARM_NAME="SUPPORTED_SPATIAL_INTERACTIONS" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeCreator"
+#!   VERSION="8"
+#!   POSITION="-488.57 -50.9805"
+#!   BOUNDING_RECT="-488.57 -50.9805 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; SQLDW_status SET_TO &lt;at&gt;Value&lt;openparen&gt;text_line_data&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="11"
+#!   TYPE="AttributeExposer"
+#!   VERSION="0"
+#!   POSITION="-986.326 -50.9805"
+#!   BOUNDING_RECT="-986.326 -50.9805 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="text_line_data"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeExposer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="30"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="-2201.02 -75.9807"
+#!   BOUNDING_RECT="-2201.02 -75.9807 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Ok"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Failed"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="_pathname" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;DOSStatus&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;0&lt;quote&gt;,Ok"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Failed"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="33"
+#!   TYPE="Terminator"
+#!   VERSION="2"
+#!   POSITION="-2241.65 -399.754"
+#!   BOUNDING_RECT="-2241.65 -399.754 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="The&lt;space&gt;PowerShell&lt;space&gt;&lt;quote&gt;c:&lt;backslash&gt;azure&lt;backslash&gt;dws_status.ps1&lt;quote&gt;&lt;space&gt;could&lt;space&gt;not&lt;space&gt;be&lt;space&gt;executed&lt;space&gt;by&lt;space&gt;FME.&lt;space&gt;Please&lt;space&gt;check&lt;space&gt;if&lt;space&gt;it&lt;space&gt;is&lt;space&gt;available"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Terminator"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="35"
+#!   TYPE="TestFilter"
+#!   VERSION="1"
+#!   POSITION="3566.53 296.878"
+#!   BOUNDING_RECT="3566.53 296.878 -1 -1"
+#!   ORDER="5e+14"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="16674"
+#! >
+#!     <OUTPUT_FEAT NAME="Online"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="Resuming"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="Pausing"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <OUTPUT_FEAT NAME="Paused"/>
+#!     <FEAT_COLLAPSED COLLAPSED="3"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="3" />
+#!     <OUTPUT_FEAT NAME="Other"/>
+#!     <FEAT_COLLAPSED COLLAPSED="4"/>
+#!     <XFORM_ATTR ATTR_NAME="SQLDW_status" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_ATTR ATTR_NAME="DOSStatus" IS_USER_CREATED="false" FEAT_INDEX="4" />
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SQLDW_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Online&lt;quote&gt;,Online,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SQLDW_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Resuming&lt;quote&gt;,Resuming,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SQLDW_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Pausing&lt;quote&gt;,Pausing,BOOL_OP&lt;comma&gt;OR&lt;comma&gt;COMPOSITE_TEST&lt;comma&gt;&lt;lt&gt;Unused&lt;gt&gt;&lt;comma&gt;TEST_CLAUSE&lt;comma&gt;&lt;quote&gt;TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;SQLDW_status&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;=&lt;space&gt;Paused&lt;quote&gt;,Paused"/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="Other"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter_2"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <SUBDOCUMENT_IOS>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="25"
+#!   NAME="Input"
+#!   POSITION="-4159.29 -94.4807"
+#!   BOUNDING_RECT="-4159.29 -94.4807 -1 -1"
+#!   COLLAPSED="true"
+#!   PUBLISHED="true"
+#!   IS_SOURCE="true"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="27"
+#!   NAME="Failed"
+#!   POSITION="3525.9 -371.879"
+#!   BOUNDING_RECT="3525.9 -371.879 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="36"
+#!   NAME="Online"
+#!   POSITION="4400.04 296.878"
+#!   BOUNDING_RECT="4400.04 296.878 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="37"
+#!   NAME="Resuming"
+#!   POSITION="4400.04 171.879"
+#!   BOUNDING_RECT="4400.04 171.879 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="38"
+#!   NAME="Pausing"
+#!   POSITION="4400.04 40.6284"
+#!   BOUNDING_RECT="4400.04 40.6284 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! <SUBDOCUMENT_IO
+#!   IDENTIFIER="39"
+#!   NAME="Paused"
+#!   POSITION="4400.04 -77.1472"
+#!   BOUNDING_RECT="4400.04 -77.1472 -1 -1"
+#!   COLLAPSED="true"
+#!   IS_SOURCE="false"
+#!   ATTR_MODE="0"
+#! >
+#! </SUBDOCUMENT_IO>
+#! </SUBDOCUMENT_IOS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="26"
+#!   SOURCE_NODE="25"
+#!   TARGET_NODE="8"
+#!   SOURCE_PORT_DESC="0"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="1"
+#!   TARGET_NODE="2"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="fo 0 FOUND"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="4"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="15"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="5"
+#!   SOURCE_PORT_DESC="fo 0 MATCHED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="5"
+#!   TARGET_NODE="6"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="6"
+#!   TARGET_NODE="35"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="31"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="30"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="18"
+#!   SOURCE_NODE="8"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="1"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="19"
+#!   SOURCE_NODE="11"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="32"
+#!   SOURCE_NODE="30"
+#!   TARGET_NODE="9"
+#!   SOURCE_PORT_DESC="fo 0 Ok"
+#!   TARGET_PORT_DESC="fi 0 INITIATOR"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="40"
+#!   SOURCE_NODE="35"
+#!   TARGET_NODE="36"
+#!   SOURCE_PORT_DESC="fo 0 Online"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="28"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="27"
+#!   SOURCE_PORT_DESC="fo 1 NOT_FOUND"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS="1118 -387"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="29"
+#!   SOURCE_NODE="4"
+#!   TARGET_NODE="27"
+#!   SOURCE_PORT_DESC="fo 1 NOT_MATCHED"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="11"
+#!   SOURCE_PORT_DESC="fo 1 &lt;lt&gt;OTHER&lt;gt&gt;"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="34"
+#!   SOURCE_NODE="30"
+#!   TARGET_NODE="33"
+#!   SOURCE_PORT_DESC="fo 1 Failed"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="41"
+#!   SOURCE_NODE="35"
+#!   TARGET_NODE="37"
+#!   SOURCE_PORT_DESC="fo 1 Resuming"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="42"
+#!   SOURCE_NODE="35"
+#!   TARGET_NODE="38"
+#!   SOURCE_PORT_DESC="fo 2 Pausing"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="44"
+#!   SOURCE_NODE="9"
+#!   TARGET_NODE="27"
+#!   SOURCE_PORT_DESC="fo 3 &lt;lt&gt;REJECTED&lt;gt&gt;"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="43"
+#!   SOURCE_NODE="35"
+#!   TARGET_NODE="39"
+#!   SOURCE_PORT_DESC="fo 3 Paused"
+#!   TARGET_PORT_DESC="0"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </TRANSFORMER>
+#! START_HEADER
+#! END_HEADER
+
+LOG_TIMINGS YES
+LOG_FILTER_MASK -1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+DEFAULT_MACRO SQLDWStatusChecker_WORKSPACE_NAME ""
+INCLUDE [puts {MACRO WB_OLD_CONTEXT_$(SQLDWStatusChecker_WORKSPACE_NAME) $(WB_CURRENT_CONTEXT)};          puts {MACRO WB_CURRENT_CONTEXT $(SQLDWStatusChecker_WORKSPACE_NAME)}]
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_Input1487344463 Input Splitter"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Input"   OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Input"
+# -------------------------------------------------------------------------
+
+# On translation startup, prep the temporary directory that this instance of the
+# xformer will populate with its temporary files.  We'll do this by asking for a
+# temporary filename, and then instead of using it as a file, we'll add our UUID to
+# it to make a super unique name, which will become the directory we'll use for all
+# the temp files we hand out.
+# And we'll set up to have the END_TCL delete that entire directory when we shut down.
+# To do that, we'll use the "environment" to hold our master subidirectory, keyed by
+# our UUID as the environment variable name.  That is the only way to pass information
+# from @Tcl2 to FME_END_TCL (via the "env" variable, because they use different Tcl
+# interpretters)
+
+Tcl2 set sampleTempFile [FME_TempFilename];      set ourTempDir {};      append ourTempDir $sampleTempFile {$(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0};      file mkdir $ourTempDir;      set env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_dir) $ourTempDir;      set env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_file) $sampleTempFile;      set gNumTempFilesHandedOut 0;
+
+# Cleanup time. Remove the directory this transformer was using for its temp files, as well as the
+# original temp file that was created as our "seed" to get us a unique starting point.
+
+FME_END_TCL file delete -force $env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_dir) $env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_file) ;      unset env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_dir);      unset env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_file);
+# Actually create and return a well formed filename that is guaranteed not to be there.
+# We know we're working inside a directory unique to our instance of the transformer.
+# So we can just increment serially within there to be sure we're not making a previously existing file
+# We need to also provide a default for the filename base if they didn't give us one (we'll
+# use the XFORMER_NAME), and take care to handle a no-extension-desired situation as well as
+# a situation where the extension started with a .
+
+Tcl2 proc $(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_makeTemp {baseName extension} {      global env;      global gNumTempFilesHandedOut;      if { [string length $extension ] == 0 } {          set extensionSep {};      } elseif { [string index $extension 0] == {.} } {          set extensionSep {};      } else {          set extensionSep {.};      };      if { $baseName == {} } {          set baseName {$(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator};      };      set curClock [clock clicks];      set last7ClockDigits [string range $curClock end-6 end];      append aGoodTempFile $env($(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_8d5101ac_6b43_46c5_8ca0_ff9b243f5fda0_dir) [file separator] [FME_DecodeText $baseName] {_}                           $last7ClockDigits {_} $gNumTempFilesHandedOut                           $extensionSep [FME_DecodeText $extension];      incr gNumTempFilesHandedOut;      FME_SetAttribute [FME_DecodeText _pathname] $aGoodTempFile; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Input"    OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_OUTPUT"         @Tcl2("$(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_makeTemp {} {}")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_SystemCaller_3    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TempPathnameCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_SystemCaller_3_OUTPUT"         "DOSStatus"         @System(LOG_PREFIX,$(SQLDWStatusChecker_WORKSPACE_NAME)_SystemCaller_3,ENCODED,"@EvaluateExpression(FDIV,STRING_ENCODED,PowerShell.exe<space>c:<backslash>azure<backslash>dwh_status.ps1<space><space>-NonInteractive<space>-NoProfile<space>2<gt><space><at>Value<openparen>_pathname<closeparen>_error.log<space>1<gt><space><at>Value<openparen>_pathname<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_SystemCaller_3)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_SystemCaller_3_OUTPUT"    OUTPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_TestFactory_0 INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>DOSStatus<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter) = 0 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_Ok OUTPUT FAILED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_Failed INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_Failed
+# -------------------------------------------------------------------------
+
+# The default behaviour is to abort on any feature entering the transformer.
+# If Workbench has set the _WB_BYPASS_TERMINATION macro to a value of "Yes",
+# then the features will instead be passed through with a feature type of
+# __WB_BYPASS_TERMINATOR__, which Workbench will send to a visualizer or
+# somesuch.
+
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_Terminator    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_Failed"    TEST "$(_WB_BYPASS_TERMINATION)" == Yes    OUTPUT PASSED FEATURE_TYPE __WB_BYPASS_TERMINATOR__       @SupplyAttributes(_wb_termination_feature_type,@FeatureType())       @SupplyAttributes(ENCODED,_wb_termination_message,"The<space>PowerShell<space><quote>c:<backslash>azure<backslash>dws_status.ps1<quote><space>could<space>not<space>be<space>executed<space>by<space>FME.<space>Please<space>check<space>if<space>it<space>is<space>available")       @SupplyAttributes(_wb_termination_xformer,"$(SQLDWStatusChecker_WORKSPACE_NAME)_Terminator")       @SupplyAttributes(_wb_termination_feature,Yes)    OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED,"The<space>PowerShell<space><quote>c:<backslash>azure<backslash>dws_status.ps1<quote><space>could<space>not<space>be<space>executed<space>by<space>FME.<space>Please<space>check<space>if<space>it<space>is<space>available")
+
+# -------------------------------------------------------------------------
+MACRO $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED 
+MACRO $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_DIRECTIVES EXPOSE_ATTRS_GROUP,FME_DISCLOSURE_OPEN,READ_WHOLE_FILE_AT_ONCE,YES
+
+# Values come in encoded and come out decoded.
+Tcl2 proc $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_findInListElseDefault { valueEncoded defaultValue } {    if { [lsearch [split {$($(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_OUTPUT_PORTS_ENCODED)}] $valueEncoded] >= 0} {       return $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_[FME_DecodeText $valueEncoded]    } else {       return $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_$defaultValue    } }
+# Always provide an INTERACTION, otherwise the factory defaults to ENVELOPE_INTERSECTS
+INCLUDE [if { ( {<Unused>} == {<Unused>} ) || ( {($INTERACT_OPTIONS)} == {} ) } {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION NONE};          } else {             puts {MACRO FCTQUERY_INTERACTION_LINE FCTQUERY_INTERACTION "<Unused>"};          }         ]
+# Consolidate the attribute merge options to what the factory expects
+DEFAULT_MACRO $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS
+INCLUDE [       if { {MERGE} == {MERGE} } {          puts "MACRO $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS PREFER_RESULT";       } else {          puts "MACRO $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS MERGE";       };    ]
+FACTORY_DEF * QueryFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_Ok"    $(FCTQUERY_INTERACTION_LINE)    COMBINE_ATTRIBUTES  $($(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_COMBINE_ATTRS)    QUERYFCT_ATTRIBUTE_PREFIX <Unused>    QUERYFCT_TABLE_SEPARATOR SPACE    COMBINE_GEOMETRY    RESULT_ONLY    ENABLE_CACHE        NO    READER_TYPE         TEXTLINE    READER_DATASET      "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_pathname<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader)"    QUERYFCT_IDS        ""    READER_DIRECTIVES META_MACROS,SourceREAD_WHOLE_FILE_AT_ONCE<comma>YES<comma>SourceREAD_BOTTOM_UP<comma>NO<comma>SourceSKIP_LINES<comma>0<comma>SourceSKIP_FOOTER<comma>0<comma>SourceENCODING<comma><comma>SourceEXPOSE_ATTRS_GROUP<comma>FME_DISCLOSURE_OPEN<comma>SourceTEXTLINE_EXPOSE_FORMAT_ATTRS<comma>,METAFILE,TEXTLINE    QUERYFCT_OUTPUT     "DATA_ONLY"    CONTINUE_ON_READER_ERROR YES    READER_PARAMS_WWJD     $($(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_DIRECTIVES)    OUTPUT RESULT FEATURE_TYPE *         @SupplyAttributes(fme_feature_type,@FeatureType())         @Tcl2("set FME_FeatureType [$(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_findInListElseDefault [FME_EncodeText $FME_FeatureType] {<OTHER>}]")         @Transform(TEXTLINE,FME_GENERIC,ALIAS_GEOMETRY)    OUTPUT READER_ERROR FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_<REJECTED>"
+
+# -------------------------------------------------------------------------
+
+# Expose all attributes.  This ensures that if you expose fme_dataset, you will get it.
+
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeExposer    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_<OTHER>"    OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeExposer_OUTPUT"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeCreator    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeExposer_OUTPUT"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "SQLDW_status" "SET_TO" "<at>Value<openparen>text_line_data<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeCreator_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+Tcl2 set $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitDelim [FME_DecodeText {<lf>}];      if { [regexp {^([1-9][0-9]*s)+$} [set $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitDelim]] }      {         set $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitWidths [split [regsub -all {s$} {<lf>} {}] s];         proc $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitWidths;            set source [FME_GetAttribute [FME_DecodeText {SQLDW_status}]];            set attrNum 0;            set listName [FME_DecodeText {_SQLDW_status}];            set attrPos 0;            set keepEmptyParts [string equal {No} {No}];            foreach width [set $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               set part [string trim $bit];               if { $keepEmptyParts || $part != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $part;                  incr attrNum;               };               incr attrPos $width;            };         };      }      else      {         proc $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_doSplit {}         {            global $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitDelim;            set delim [set $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_2e4a56c5_cdb8_43e6_b1a2_0bfac41c81d00_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute [FME_DecodeText {SQLDW_status}]];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              lappend bits [string range $source $startIndex [expr $nextIndex-1]];              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            lappend bits [string range $source $startIndex end];            set listName [FME_DecodeText {_SQLDW_status}];            set attrNum 0;            foreach bit $bits            {               set trimmedPart [string trim $bit];               if { $keepEmptyParts || $trimmedPart != \"\" } {                  FME_SetAttribute "$listName{$attrNum}" $trimmedPart;                  incr attrNum;               };            }          }       }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeCreator_OUTPUT"    OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"         @Tcl2($(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_doSplit)
+
+# -------------------------------------------------------------------------
+
+# most of this is close to the code from listindexer but not exact beucase
+# we have a type LIST_ATTR rather than type LIST_NAME so need
+# to figure out the list name
+Tcl2 proc $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50_indexer {index prefix} {    set fullListAttrName [FME_DecodeText _SQLDW_status<opencurly><closecurly>];    set lastBrace [string last  \"{}\" $fullListAttrName];    set listAttr [string range $fullListAttrName 0 [expr $lastBrace+1]];    regsub \"{}\" $listAttr \"{$index}\" listWithIndex;    regsub \"{}\" $listAttr {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeSplitter_OUTPUT"    OUTPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher__IndexedFeatures___         "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50" @SearchList(fme_encoded,"_SQLDW_status<opencurly><closecurly>","Status",REGULAR_EXPRESSION_ENCODED)
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher__Tester    INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher__IndexedFeatures___    TEST @Value($(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50) == "-1"    OUTPUT PASSED FEATURE_TYPE  "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_NOT_FOUND" @RemoveAttributes($(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50)    OUTPUT FAILED FEATURE_TYPE  $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher__IndexFound__
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher__Tester2    INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher__IndexFound__    TEST NO == "NO"    OUTPUT PASSED FEATURE_TYPE  "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_FOUND" @CopyAttributes(_list_index, $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50) @RemoveAttributes($(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50)    OUTPUT FAILED FEATURE_TYPE  "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_FOUND"  @Tcl2("$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50_indexer {@Value($(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50)} {<Unused>}") @CopyAttributes(_list_index, $(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50) @RemoveAttributes($(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_e73e0efb_ab75_429d_a138_5529f44330a50)
+
+# -------------------------------------------------------------------------
+
+Tcl2 proc $(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_indexer {index numElements prefix} {    if {$index < 0 } {       set index [expr $numElements + $index];    };    regsub \"{}\" {_SQLDW_status{}} \"{$index}\" listWithIndex;    regsub \"{}\" {_SQLDW_status{}} {} listBase;    set complexListExp "$listWithIndex\.";    set prefixLength [expr [string length $complexListExp]-1];    set prefix [FME_DecodeText $prefix];    foreach attr [FME_AttributeNames] {      set newAttr {};      if {$attr == $listWithIndex} {        set newAttr $listBase;      } elseif {[string first $complexListExp $attr] == 0} {        set newAttr [string replace $attr 0 $prefixLength];      };      if {$newAttr != {}} {          if {$prefix != {} } {            set newAttr $prefix$newAttr;          };          if {[string first {fme_} $newAttr] != 0} {              set first [string first {fme_} $newAttr];              lappend attrsToCopy $newAttr $attr;          };      };    };    if {[info exists attrsToCopy] && [llength $attrsToCopy] > 0} {      eval FME_Execute CopyAttributes $attrsToCopy;    }; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_IntTester    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_FOUND"    TEST "@EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_list_index<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer)" TYPE INT ENCODED    OUTPUT PASSED FEATURE_TYPE __toOutput__
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_ListIndexer    INPUT FEATURE_TYPE __toOutput__    TEST "@EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_list_index<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer)" >= 0    OUTPUT PASSED FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_OUTPUT" @Tcl2("$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_indexer @EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_list_index<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer) 0 {_Status}")    OUTPUT FAILED FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_OUTPUT" @Tcl2("$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_indexer @EvaluateExpression(FDIV,FLOAT,<at>Value<openparen>_list_index<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer) @NumElements(_SQLDW_status{})  {_Status}")
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc $(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher_ba0631ce_2bda_4077_95c6_d12d3a3b41f60_doGrep { stringToSearch regExp matchedChars matches matchedParts } {   set subMatches 1;   set results [FME_GetRegex $(casemac) [FME_DecodeText $regExp] [FME_DecodeText $stringToSearch]];   if {[llength [lindex $results 0]] > 0} {      set attrName $matchedChars;      FME_SetAttribute $attrName [lindex [lindex [lindex $results 0] 0] 0];      set index 0;      set parts [lindex $results 1];      foreach part $parts {         if {[llength $matchedParts] > 0} {             set attrName "$matchedParts{$index}.part";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matchedParts{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         incr index;      };      set index 0;      set regexMatches [lindex $results 0];      foreach part $regexMatches {         if {[llength $matches] > 0} {             set attrName "$matches{$index}.match";             FME_SetAttribute $attrName [lindex $part 0];             set attrName "$matches{$index}.startIndex";             FME_SetAttribute $attrName [lindex $part 1];         };         set isFirstMatch 0;         incr index;      };      return $index;   };   return -1; }
+FACTORY_DEF * TestFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListIndexer_OUTPUT"    TEST @Tcl2("$(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher_ba0631ce_2bda_4077_95c6_d12d3a3b41f60_doGrep {@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>_Status_SQLDW_status<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher)} {<openparen>:<backslash>s<opencurly>0<comma><closecurly><closeparen><openparen><openbracket>a-z|A-Z<closebracket><opencurly>1<comma><closecurly><closeparen>} {__firstmatch} {} {_SQLDW_Status}") > 0    OUTPUT PASSED FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher_MATCHED"    OUTPUT FAILED FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher_NOT_MATCHED"
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * AttrSetFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeCreator_2    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher_MATCHED"    MULTI_FEATURE_MODE NO 	 NULL_ATTR_MODE NO_OP 	 ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV 	 ATTR_ACTION "" "SQLDW_status" "SET_TO" "<at>Value<openparen>_SQLDW_Status<opencurly>1<closecurly>.part<closeparen>"    OUTPUT OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"
+
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    set macroLine "MACRO $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeRemover_LIST_EXP ";    foreach attr [split "_SQLDW_Status<opencurly><closecurly> _SQLDW_Status<opencurly><closecurly>.part _SQLDW_Status<opencurly><closecurly>.startIndex _SQLDW_status<opencurly><closecurly>"] {       set attr [FME_DecodeText $attr];       set attr [regsub "{}$" $attr "{}.*"];       set attr [regsub -all "{}" $attr "\\{\[0-9\]+\\}"];       append macroLine ",^$attr$";    };    puts $macroLine; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeRemover    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeCreator_2_OUTPUT"    OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeRemover_OUTPUT"        @RemoveAttributes(fme_encoded,_Status_SQLDW_status,_list_index,__firstmatch,_pathname,text_line_data)        @RemoveAttributes(fme_pcre_match"$($(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeRemover_LIST_EXP)")
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2    INPUT  FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_AttributeRemover_OUTPUT"    OUTPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0
+
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TestFactory_0 INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>SQLDW_status<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2) = Online ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Online OUTPUT FAILED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TestFactory_1 INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_1 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>SQLDW_status<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2) = Resuming ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Resuming OUTPUT FAILED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TestFactory_2 INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_2 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>SQLDW_status<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2) = Pausing ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Pausing OUTPUT FAILED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_3
+FACTORY_DEF * TestFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TestFactory_3 INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_3 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>SQLDW_status<closeparen>,$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2) = Paused ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Paused OUTPUT FAILED FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_4
+FACTORY_DEF * TeeFactory FACTORY_NAME $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Other INPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_TESTFILTERINPUTLINE_4 OUTPUT FEATURE_TYPE $(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Other
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2 Other Output Nuker"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Other"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_Failed1487344463 Output Collector"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_ListSearcher_NOT_FOUND"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_StringSearcher_NOT_MATCHED"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_FeatureReader_<REJECTED>"   OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Failed"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_Online1487344463 Output Collector"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Online"   OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Online"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_Resuming1487344463 Output Collector"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Resuming"   OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Resuming"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_Pausing1487344463 Output Collector"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Pausing"   OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Pausing"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(SQLDWStatusChecker_WORKSPACE_NAME)_Paused1487344463 Output Collector"   INPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_TestFilter_2_Paused"   OUTPUT FEATURE_TYPE "$(SQLDWStatusChecker_WORKSPACE_NAME)_Paused"
+INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(SQLDWStatusChecker_WORKSPACE_NAME))}]
